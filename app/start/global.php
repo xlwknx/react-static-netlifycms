@@ -48,7 +48,38 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 
 App::error(function(Exception $exception, $code)
 {
-	Log::error($exception);
+    // Catch Validator Exception
+    if($exception instanceof \Virgil\Exception\Validator) {
+        return Response::json(array(
+            'error' => array(
+                'code' => $exception->getCode()
+            )
+        ), Symfony\Component\HttpFoundation\Response::HTTP_BAD_REQUEST);
+    }
+
+    // Catch Method Not Allowed Exception
+    if($exception instanceof \Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException) {
+        return Response::json(array(
+            'error' => array(
+                'code' => Virgil\Error\Code::ROUTE_NOT_ALLOWED
+            )
+        ), Symfony\Component\HttpFoundation\Response::HTTP_INTERNAL_SERVER_ERROR);
+
+        Log::error('NotAllowedHttpException Route: ' . Request::url());
+    }
+
+    // Catch Route Not Found Exception
+    if ($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
+        return Response::json(array(
+            'error' => array(
+                'code' => Virgil\Error\Code::ROUTE_WAS_NOT_FOUND
+            )
+        ), Symfony\Component\HttpFoundation\Response::HTTP_INTERNAL_SERVER_ERROR);
+
+        Log::error('NotFoundHttpException Route: ' . Request::url());
+    }
+
+    Log::error($exception);
 });
 
 /*
