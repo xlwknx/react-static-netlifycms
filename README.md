@@ -49,8 +49,8 @@ php artisan migrate
     * [GET /application/list](#get-applicationlist)
     * [GET /application/reset-key/{application-id}](#get-applicationreset-key)
     * [POST /application](#post-application)
-    * [PUT /application/{application-id}](#put-application1)
-    * [DELETE /application/{application-id}](#delete-application1)
+    * [PUT /application/{application-id}](#put-application)
+    * [DELETE /application/{application-id}](#delete-application)
 * [Appendix A. Responses](#appendix-a-responses)
 
 #Account
@@ -361,7 +361,7 @@ Request sample
 curl -v -X POST http://api.virgilsecurity.com/application -data {"application":{"name": "First Virgil application", "description": "First amazing Virgil application", "url": "http://application.com"}}
 ```
 
-##PUT /application/1
+##PUT /application
 Update existing application instance.
 
 Request info
@@ -405,7 +405,7 @@ Request sample
 curl -v -X PUT http://api.virgilsecurity.com/application/1 -data {"application":{"id": 1, "name": "First Virgil application", "description": "First amazing Virgil application", "url": "http://application.com"}}
 ```
 
-##DELETE /application/1
+##DELETE /application
 DELETE existing application instance.
 
 Request info
