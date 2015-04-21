@@ -72,7 +72,7 @@ Request body
 ```json
 {
   "account": {
-    "username": "suhinin.dmitriy@gmail.com",
+    "email": "suhinin.dmitriy@gmail.com",
     "password": "password"
   }
 }
@@ -87,7 +87,7 @@ Response body
 
 Request sample
 ```
-curl -v -X POST http://api.virgilsecurity.com/account/signin -data {"account": {"username": "suhinin.dmitriy@gmail.com", "password": "password"}}
+curl -v -X POST http://api.virgilsecurity.com/account/signin -data {"account": {"email": "suhinin.dmitriy@gmail.com", "password": "password"}}
 ```
 
 ##POST /account/signout
@@ -129,7 +129,7 @@ Request body
 ```json
 {
   "account": {
-    "username": "suhinin.dmitriy@gmail.com",
+    "email": "suhinin.dmitriy@gmail.com",
     "password": "password",
     "type": 1
   }
@@ -142,14 +142,14 @@ Response body
   "account": {
     "id": 1,
     "type": 1,
-    "username": "suhinin.dmitriy@gmail.com"
+    "email": "suhinin.dmitriy@gmail.com"
   }
 }
 ```
 
 Request sample
 ```
-curl -v -X POST http://api.virgilsecurity.com/account/signup -data {"account": {"username": "suhinin.dmitriy@gmail.com", "password": "password", "type":1}}
+curl -v -X POST http://api.virgilsecurity.com/account/signup -data {"account": {"email": "suhinin.dmitriy@gmail.com", "password": "password", "type":1}}
 ```
 
 ##GET /account/type-list
@@ -463,7 +463,7 @@ Additional information about the error is returned as JSON-object like:
 ```
 30001 - Account was not found
 30002 - Account already exists
-30003 - Account username was not provided
+30003 - Account email was not provided
 30004 - Account password was not provided
 30005 - Account type was not provided
 30006 - Account tpe was not found

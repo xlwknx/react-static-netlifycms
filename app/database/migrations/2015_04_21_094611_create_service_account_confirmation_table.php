@@ -2,33 +2,31 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateServiceAccountTable extends Migration {
+class CreateServiceAccountConfirmationTable extends Migration {
 
-	/**
+    /**
 	 * Run the migrations.
 	 *
 	 * @return void
 	 */
 	public function up()
 	{
-        Schema::create('service_account', function($table)
+        Schema::create('service_account_confirmation', function($table)
         {
             $table->engine = 'InnoDB';
 
             $table->bigIncrements('id')->unsigned();
-            $table->string('email', 36)->unique();
-            $table->string('password', 36);
-            $table->bigInteger('type_id')->unsigned();
-            $table->smallInteger('confirmed')->unsigned();
+            $table->bigInteger('account_id')->unsigned();
+            $table->string('code', 6);
             $table->timestamps();
 
-            $table->foreign('type_id')
+            $table->foreign('account_id')
                 ->references('id')
-                ->on('service_account_type')
+                ->on('service_account')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->index('type_id');
+            $table->index('account_id');
 
         });
 	}
@@ -40,7 +38,7 @@ class CreateServiceAccountTable extends Migration {
 	 */
 	public function down()
 	{
-        Schema::drop('service_account');
+        Schema::drop('service_account_confirmation');
 	}
 
 }

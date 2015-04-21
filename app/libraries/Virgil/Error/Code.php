@@ -17,6 +17,7 @@ class Code {
     const ACCOUNT_PASSWORD_NOT_PROVIDED                 = 30004;
     const ACCOUNT_TYPE_NOT_PROVIDED                     = 30005;
     const ACCOUNT_TYPE_NOT_FOUND                        = 30006;
+    const ACCOUNT_NOT_CONFIRMED                         = 30007;
 
 
     // Authentication errors

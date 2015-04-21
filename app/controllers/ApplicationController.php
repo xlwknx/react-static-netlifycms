@@ -39,6 +39,10 @@ class ApplicationController extends AbstractController {
             Input::json()->get('application', null)
         );
 
+        AccountValidator::validateConfirmed(
+            $this->getCurrentAccount()
+        );
+
         AccountValidator::validateLimit(
             $this->getCurrentAccount()
         );

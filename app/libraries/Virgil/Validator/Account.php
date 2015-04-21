@@ -19,7 +19,7 @@ class Account {
     public static function validateSignin($data) {
 
         $account = \Account::whereUsername(
-            $data['username']
+            $data['email']
         )->wherePassword(
             md5($data['password'])
         )->first();
@@ -42,7 +42,7 @@ class Account {
      */
     public static function validateSignup($data) {
 
-        if(!isset($data['username'])) {
+        if(!isset($data['email'])) {
             throw new ValidatorException(
                 ErrorCode::ACCOUNT_USERNAME_NOT_PROVIDED
             );
@@ -64,10 +64,8 @@ class Account {
             $data['type']
         );
 
-        $account = \Account::whereUsername(
-            $data['username']
-        )->wherePassword(
-            $data['password']
+        $account = \Account::whereEmail(
+            $data['email']
         )->first();
 
         if($account) {
@@ -77,6 +75,24 @@ class Account {
         }
 
         return $data;
+    }
+
+    /**
+     * Validate if Account already confirmed
+     *
+     * @param $account
+     * @return bool
+     * @throws \Virgil\Exception\Validator
+     */
+    public static function validateConfirmed($account) {
+
+        if(!$account->isConfirmed()) {
+            throw new ValidatorException(
+                ErrorCode::ACCOUNT_NOT_CONFIRMED
+            );
+        }
+
+        return true;
     }
 
     /**

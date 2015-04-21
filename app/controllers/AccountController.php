@@ -47,7 +47,8 @@ class AccountController extends AbstractController {
             'account' => array(
                 'id' => $account->id,
                 'type' => $account->type_id,
-                'username' => $account->username
+                'email' => $account->email,
+                'confirmed' => $account->isConfirmed()
             )
         ), HttpResponse::HTTP_OK);
     }

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateServiceAccountType extends Migration {
+class CreateServiceAccountTypeTable extends Migration {
 
     /**
 	 * Run the migrations.
