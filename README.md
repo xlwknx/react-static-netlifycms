@@ -46,7 +46,7 @@ php artisan migrate
 * [Application](#application)
     * [GET /application/get/{application-id}](#get-applicationgetapplication-id)
     * [GET /application/list](#get-applicationlist)
-    * [GET /application/reset-key/{application-id}](#get-applicationreset-key1)
+    * [GET /application/reset-key/{application-id}](#get-applicationreset-key)
     * [POST /application](#post-application)
     * [PUT /application/{application-id}](#put-application1)
     * [DELETE /application/{application-id}](#delete-application1)
