@@ -361,6 +361,36 @@ Request sample
 curl -v -X PUT http://api.virgilsecurity.com/application/1 -data {"application":{"id": 1, "name": "First Virgil application", "description": "First amazing Virgil application", "url": "http://application.com"}}
 ```
 
+##DELETE /application/1
+DELETE existing application instance.
+
+Request info
+```
+HTTP Request method    DELETE
+Request URL            http://api.virgilsecurity.com/application/1
+Authorization Token    Needed
+```
+
+Header info
+```
+x-auth-token: a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8
+```
+
+Request body
+```json
+-
+```
+
+Response body
+```json
+-
+```
+
+Request sample
+```
+curl -v -X DELETE http://api.virgilsecurity.com/application/1
+```
+
 #Appendix A. Responses
 Application uses standard HTTP response codes:
 ```
