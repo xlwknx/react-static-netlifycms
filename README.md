@@ -155,7 +155,7 @@ curl -v -X POST http://api.virgilsecurity.com/account/signup -data {"account": {
 **`Application`** entity endpoints
 
 ##GET /application/get/{application-id}
-Retrieve application by application id
+Retrieve application by application id.
 
 Request info
 ```
@@ -193,7 +193,7 @@ curl -v -X GET http://api.virgilsecurity.com/application/get/1
 ```
 
 ##GET /application/list
-Retrieve application list
+Retrieve application list.
 
 Request info
 ```
@@ -240,7 +240,7 @@ curl -v -X GET http://api.virgilsecurity.com/application/list
 ```
 
 ##GET /application/reset-key/1
-Reset old application key and retrive new one
+Reset old application key and retrive new one.
 
 Request info
 ```
@@ -271,6 +271,50 @@ Response body
 Request sample
 ```
 curl -v -X GET http://api.virgilsecurity.com/application/reset-key/1
+```
+
+##POST /application
+Create new application instance.
+
+Request info
+```
+HTTP Request method    POST
+Request URL            http://api.virgilsecurity.com/application
+Authorization Token    Needed
+```
+
+Header info
+```
+x-auth-token: a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8
+```
+
+Request body
+```json
+{
+    "application": {
+        "name": "First Virgil Application",
+        "description": "First amazing Virgil application",
+        "url": "http://application.url.com"
+    }
+}
+```
+
+Response body
+```json
+{
+  "data": {
+        "id": 1,
+        "name": "First Virgil Application",
+        "description": "First amazing Virgil application",
+        "url": "http://application.com",
+        "key": "a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8"
+    }
+}
+```
+
+Request sample
+```
+curl -v -X POST http://api.virgilsecurity.com/application -data {"application":{"name": "First Virgil application", "description": "First amazing Virgil application", "url": "http://application.com"}}
 ```
 
 #Appendix A. Responses
