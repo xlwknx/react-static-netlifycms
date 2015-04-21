@@ -86,7 +86,34 @@ Response body
 
 Request sample
 ```
-curl -v -X GET http://api.virgilsecurity.com/account/signin -data {"account": {"username":"suhinin.dmitriy@gmail.com","password":"password"}}
+curl -v -X POST http://api.virgilsecurity.com/account/signin -data {"account": {"username": "suhinin.dmitriy@gmail.com", "password": "password"}}
+
+```
+
+##POST /account/signout
+
+Request info
+```
+HTTP Request method    POST
+Request URL            http://api.virgilsecurity.com/account/signout
+Authorization Token    Not needed
+```
+
+Request body
+```json
+{
+  "auth_token": "dbbbe6a906aa4d567531827beb66a2aadbbbe6a906aa4d567531827beb66a2aa"
+}
+```
+
+Response body
+```
+-
+```
+
+Request sample
+```
+curl -v -X POST http://api.virgilsecurity.com/account/signin -data {"auth_token": "dbbbe6a906aa4d567531827beb66a2aadbbbe6a906aa4d567531827beb66a2aa"}
 
 ```
 
