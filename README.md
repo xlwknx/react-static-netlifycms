@@ -44,7 +44,7 @@ php artisan migrate
     * [POST /account/signout](#post-accountsignout)
     * [POST /account/signup](#post-accountsignup)
 * [Application](#application)
-    * [GET /application/get/application/{application-id}](#get-applicationgetapplication-id)
+    * [GET /application/get/{application-id}](#get-applicationgetapplication-id)
     * [GET /application/list](#get-applicationlist)
     * [GET /application/reset-key/{application-id}](#get-applicationreset-key1)
     * [POST /application](#post-application)
