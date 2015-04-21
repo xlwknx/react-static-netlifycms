@@ -41,7 +41,7 @@ php artisan migrate
 ## API
 * [Account](#account)
     * [POST /account/signin](#post-accountsignin)
-    * [POST /account/signout]
+    * [POST /account/signout](#post-accountsignout)
     * [POST /account/signup]
 * [Application](#application)
     * [GET /application/get/application/{application-id}]
@@ -80,14 +80,13 @@ Request body
 Response body
 ```json
 {
-  "auth_token": "dbbbe6a906aa4d567531827beb66a2aadbbbe6a906aa4d567531827beb66a2aa",
+  "auth_token": "dbbbe6a906aa4d567531827beb66a2aadbbbe6a906aa4d567531827beb66a2aa"
 }
 ```
 
 Request sample
 ```
 curl -v -X POST http://api.virgilsecurity.com/account/signin -data {"account": {"username": "suhinin.dmitriy@gmail.com", "password": "password"}}
-
 ```
 
 ##POST /account/signout
@@ -113,9 +112,46 @@ Response body
 
 Request sample
 ```
-curl -v -X POST http://api.virgilsecurity.com/account/signin -data {"auth_token": "dbbbe6a906aa4d567531827beb66a2aadbbbe6a906aa4d567531827beb66a2aa"}
+curl -v -X POST http://api.virgilsecurity.com/account/signout -data {"auth_token": "dbbbe6a906aa4d567531827beb66a2aadbbbe6a906aa4d567531827beb66a2aa"}
+```
+
+##POST /account/signup
+
+Request info
+```
+HTTP Request method    POST
+Request URL            http://api.virgilsecurity.com/account/signup
+Authorization Token    Not needed
+```
+
+Request body
+```json
+{
+  "account": {
+    "username": "suhinin.dmitriy@gmail.com",
+    "password": "password",
+    "type": 1
+  }
+}
+```
+
+Response body
+```json
+{
+  "account": {
+    "id": 1,
+    "type": 1,
+    "username": "suhinin.dmitriy@gmail.com"
+  }
+}
+```
+
+Request sample
+```
+curl -v -X POST http://api.virgilsecurity.com/account/signup -data {"account": {"username": "suhinin.dmitriy@gmail.com", "password": "password", "type":1}}
 
 ```
+
 
 #Appendix A. Responses
 Application uses standard HTTP response codes:
