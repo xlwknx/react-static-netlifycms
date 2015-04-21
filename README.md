@@ -1,7 +1,7 @@
 Virgil Application RESTful Service
 =================
 
-RESTful service for application managemenet
+RESTful service for application management
 
 ## Installation
 
@@ -51,7 +51,7 @@ php artisan migrate
     * [POST /application](#post-application)
     * [PUT /application/{application-id}](#put-application1)
     * [DELETE /application/{application-id}](#delete-application1)
-* [Appendix A. Repsonses](#appendix-a-responses)
+* [Appendix A. Responses](#appendix-a-responses)
 
 #Account
 **`Account`** entity endpoints
@@ -444,7 +444,7 @@ Application uses standard HTTP response codes:
 500 - Server error
 ```
 
-Addtitional information about the error is returned as JSON-object like:
+Additional information about the error is returned as JSON-object like:
 ```json
 {
     "error": {
@@ -463,7 +463,7 @@ Addtitional information about the error is returned as JSON-object like:
 ```
 30001 - Account was not found
 30002 - Account already exists
-30003 - Account usernname was not provided
+30003 - Account username was not provided
 30004 - Account password was not provided
 30005 - Account type was not provided
 30006 - Account tpe was not found
@@ -475,7 +475,7 @@ Addtitional information about the error is returned as JSON-object like:
 50002 - Application description was not provided
 50003 - Application url was not provided
 50004 - Application was not found
-50005 - Application limit was exeeded
+50005 - Application limit was exceeded
 50006 - Application key was not found
 50007 - Application service was not recognized
 50008 - Application call limit was exceeded
