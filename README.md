@@ -149,7 +149,47 @@ Response body
 Request sample
 ```
 curl -v -X POST http://api.virgilsecurity.com/account/signup -data {"account": {"username": "suhinin.dmitriy@gmail.com", "password": "password", "type":1}}
+```
 
+#Application
+**`Application`** entity endpoints
+
+##GET /application/get/{application-id}
+Retrieve application by application id
+
+Request info
+```
+HTTP Request method    POST
+Request URL            http://api.virgilsecurity.com/application/get/1
+Authorization Token    Needed
+```
+
+Header info
+```
+x-auth-token: a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8
+```
+
+Request body
+```json
+-
+```
+
+Response body
+```json
+{
+  "data": {
+    "id": 1,
+    "name": "First Virgil Application",
+    "description": "First amazing Virgil application",
+    "url": "http://application.url.com",
+    "key": "a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8"
+  }
+}
+```
+
+Request sample
+```
+curl -v -X GET http://api.virgilsecurity.com/application/get/1
 ```
 
 
