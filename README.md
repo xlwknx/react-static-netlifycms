@@ -42,7 +42,7 @@ php artisan migrate
 * [Account](#account)
     * [POST /account/signin](#post-accountsignin)
     * [POST /account/signout](#post-accountsignout)
-    * [POST /account/signup]
+    * [POST /account/signup](#post-accountsignup)
 * [Application](#application)
     * [GET /application/get/application/{application-id}]
     * [GET /application/list]
