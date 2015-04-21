@@ -9,6 +9,13 @@ use Virgil\Error\Code as ErrorCode,
 
 class Account {
 
+    /**
+     * Validate signin action
+     *
+     * @param $data   - data for validation
+     * @return mixed
+     * @throws \Virgil\Exception\Validator
+     */
     public static function validateSignin($data) {
 
         $account = \Account::whereUsername(
@@ -26,6 +33,13 @@ class Account {
         return $account;
     }
 
+    /**
+     * Validate signup action
+     *
+     * @param $data   - data for validation
+     * @return mixed
+     * @throws \Virgil\Exception\Validator
+     */
     public static function validateSignup($data) {
 
         if(!isset($data['username'])) {
@@ -65,6 +79,13 @@ class Account {
         return $data;
     }
 
+    /**
+     * Validate Application limit
+     *
+     * @param $account
+     * @return bool
+     * @throws \Virgil\Exception\Validator
+     */
     public static function validateLimit($account) {
 
         $count = count(

@@ -8,7 +8,13 @@ use Virgil\Exception\Validator as ValidatorException,
 
 class Application {
 
-
+    /**
+     * Validate Application data
+     *
+     * @param $application
+     * @return mixed
+     * @throws \Virgil\Exception\Validator
+     */
     public static function validate($application) {
 
         if(!isset($application['name'])) {
@@ -32,6 +38,14 @@ class Application {
         return $application;
     }
 
+    /**
+     * Validate if Application already exists
+     *
+     * @param $account
+     * @param $application
+     * @return mixed
+     * @throws \Virgil\Exception\Validator
+     */
     public static function exists($account, $application) {
 
         $application = \Application::whereAccountId(
@@ -49,6 +63,14 @@ class Application {
         return $application;
     }
 
+    /**
+     * Validate Application key
+     *
+     * @param $service
+     * @param $appKey
+     * @return array
+     * @throws \Virgil\Exception\Validator
+     */
     public static function validateKey($service, $appKey) {
 
         $application = \Application::getApplicationByKey(

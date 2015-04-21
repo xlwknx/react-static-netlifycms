@@ -9,7 +9,12 @@ class Account extends Eloquent {
      */
     protected $table = 'service_account';
 
-
+    /**
+     * Create new Account instance
+     *
+     * @param $data
+     * @return Account
+     */
     public static function createAccount($data) {
 
         $account = new Account();
@@ -22,6 +27,12 @@ class Account extends Eloquent {
         return $account;
     }
 
+    /**
+     * Get Account instance by Authentication token
+     *
+     * @param $token
+     * @return bool
+     */
     public static function getAccountByAuthToken($token) {
 
         $authentication = \Authentication::whereToken(
@@ -35,6 +46,11 @@ class Account extends Eloquent {
         return false;
     }
 
+    /**
+     * Get AccountType relation instance
+     *
+     * @return mixed
+     */
     public function type() {
 
         return $this->belongsTo('AccountType');

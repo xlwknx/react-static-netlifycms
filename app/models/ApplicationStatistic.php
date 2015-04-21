@@ -9,6 +9,12 @@ class ApplicationStatistic extends Eloquent {
      */
     protected $table = 'service_application_statistic';
 
+    /**
+     * Log Application call
+     *
+     * @param Application $application
+     * @param AllowedService $service
+     */
     public static function log(Application $application, AllowedService $service) {
 
         $statistic = new \ApplicationStatistic();
@@ -19,6 +25,13 @@ class ApplicationStatistic extends Eloquent {
         $statistic->save();
     }
 
+    /**
+     * Get Service limit for given Application & Service
+     *
+     * @param Application $application
+     * @param AllowedService $service
+     * @return mixed
+     */
     public static function getServiceLimit(Application $application, AllowedService $service) {
 
         return DB::table('service_application_statistic')

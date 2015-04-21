@@ -7,6 +7,13 @@ use Virgil\Error\Code as ErrorCode,
 
 class Authentication {
 
+    /**
+     * Validate Authentication token
+     *
+     * @param $token
+     * @return mixed
+     * @throws \Virgil\Exception\Validator
+     */
     public static function validateAuthToken($token) {
 
         $authentication = \Authentication::whereToken(

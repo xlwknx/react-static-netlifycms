@@ -7,6 +7,13 @@ use Virgil\Error\Code as ErrorCode,
 
 class AccountType {
 
+    /**
+     * Validate Account Type instance
+     *
+     * @param $type
+     * @return bool
+     * @throws \Virgil\Exception\Validator
+     */
     public static function exists($type) {
 
         if(!\AccountType::find($type)) {

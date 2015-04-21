@@ -9,6 +9,11 @@ class AccountType extends Eloquent {
      */
     protected $table = 'service_account_type';
 
+    /**
+     * Get Account type list
+     *
+     * @return array
+     */
     public static function get() {
 
         return array(

@@ -9,6 +9,12 @@ class Application extends Eloquent implements JsonSerializable {
      */
     protected $table = 'service_application';
 
+    /**
+     * Get Application list by account
+     *
+     * @param Account $account
+     * @return mixed
+     */
     public static function getAccountApplicationList(Account $account) {
 
         return \Application::where(
@@ -16,6 +22,12 @@ class Application extends Eloquent implements JsonSerializable {
         )->get();
     }
 
+    /**
+     * Get Application instance by Application key
+     *
+     * @param $key
+     * @return mixed
+     */
     public static function getApplicationByKey($key) {
 
         return \Application::whereKey(
@@ -23,6 +35,13 @@ class Application extends Eloquent implements JsonSerializable {
         )->first();
     }
 
+    /**
+     * Create new Application instance
+     *
+     * @param Account $account
+     * @param $data
+     * @return Application
+     */
     public static function createApplication(Account $account, $data) {
 
         $application = new Application();
@@ -39,6 +58,12 @@ class Application extends Eloquent implements JsonSerializable {
         return $application;
     }
 
+    /**
+     * Update existing Application instance
+     *
+     * @param $data
+     * @return $this
+     */
     public function updateApplication($data) {
 
         $this->name = $data['name'];
@@ -50,6 +75,11 @@ class Application extends Eloquent implements JsonSerializable {
         return $this;
     }
 
+    /**
+     * Reset Application key
+     *
+     * @return $this
+     */
     public function resetApplicationKey() {
 
         $this->key = md5(
@@ -61,6 +91,11 @@ class Application extends Eloquent implements JsonSerializable {
         return $this;
     }
 
+    /**
+     * Serialize Application instance
+     *
+     * @return array|mixed
+     */
     public function jsonSerialize() {
 
         return array(
@@ -72,6 +107,11 @@ class Application extends Eloquent implements JsonSerializable {
         );
     }
 
+    /**
+     * Get Account relation instance
+     *
+     * @return mixed
+     */
     public function account() {
 
         return $this->belongsTo('Account');

@@ -14,6 +14,12 @@ class Authentication extends Eloquent {
      */
     protected $table = 'service_authentication';
 
+    /**
+     * Get Authentication token
+     *
+     * @param Account $account
+     * @return string
+     */
     public static function getAuthToken(Account $account) {
 
         // Clear old authentication token if it exists
@@ -31,6 +37,12 @@ class Authentication extends Eloquent {
         return $authentication->token;
     }
 
+    /**
+     * Clear Authentication token
+     *
+     * @param Authentication $authentication
+     * @return bool
+     */
     public static function clearAuthToken(Authentication $authentication) {
 
         \Authentication::whereToken(
@@ -40,12 +52,20 @@ class Authentication extends Eloquent {
         return true;
     }
 
+    /**
+     * Update Authentication lifetime
+     */
     public function updateTokenTime() {
 
         $this->created_at = date('Y-m-d H:i:s');
         $this->save();
     }
 
+    /**
+     * Get Account relation instance
+     *
+     * @return mixed
+     */
     public function account() {
         return $this->belongsTo('Account');
     }
