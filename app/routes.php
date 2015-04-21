@@ -23,6 +23,10 @@ Route::post('account/signup', array(
     'uses' => 'AccountController@signup'
 ));
 
+Route::get('account/type-list', array(
+    'uses' => 'AccountController@typeList'
+));
+
 
 Route::post('application/validate-key', array(
     'uses' => 'ApplicationController@validateKey'

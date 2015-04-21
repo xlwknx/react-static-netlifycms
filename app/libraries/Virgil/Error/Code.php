@@ -29,9 +29,9 @@ class Code {
     const APPLICATION_DESCRIPTION_NOT_PROVIDED          = 50002;
     const APPLICATION_URL_NOT_PROVIDED                  = 50003;
     const APPLICATION_NOT_FOUND                         = 50004;
-    const APPLICATION_LIMIT_EXCEEDED                    = 50007;
-    const APPLICATION_KEY_NOT_FOUND                     = 50008;
-    const APPLICATION_SERVICE_NOT_RECOGNIZED            = 50009;
-    const APPLICATION_CALL_LIMIT_EXCEEDED               = 50010;
+    const APPLICATION_LIMIT_EXCEEDED                    = 50005;
+    const APPLICATION_KEY_NOT_FOUND                     = 50006;
+    const APPLICATION_SERVICE_NOT_RECOGNIZED            = 50007;
+    const APPLICATION_CALL_LIMIT_EXCEEDED               = 50008;
 
 }

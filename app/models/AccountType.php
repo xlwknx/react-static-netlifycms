@@ -1,6 +1,6 @@
 <?php
 
-class AccountType extends Eloquent {
+class AccountType extends Eloquent implements JsonSerializable {
 
     /**
      * The database table used by the model.
@@ -17,6 +17,7 @@ class AccountType extends Eloquent {
     public static function get() {
 
         return array(
+
             array(
                 'id' => 1,
                 'name' => 'Free',
@@ -33,6 +34,23 @@ class AccountType extends Eloquent {
                 'limit_pki' => 9999,
                 'limit_auth' => 9999
             )
+        );
+    }
+
+    /**
+     * Serialize Account Type instance
+     *
+     * @return array|mixed
+     */
+    public function jsonSerialize() {
+
+        return array(
+            'id' => $this->id,
+            'name' => $this->name,
+            'limit_application' => $this->limit_application,
+            'limit_keyring' => $this->limit_keyring,
+            'limit_pki' => $this->limit_pki,
+            'limit_auth' => $this->limit_auth
         );
     }
 

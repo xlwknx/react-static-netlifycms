@@ -13,7 +13,7 @@ class AccountController extends AbstractController {
         );
 
         return \Response::json(array(
-            'auth-token' => Authentication::getAuthToken(
+            'auth_token' => Authentication::getAuthToken(
                 $account
             )
         ), HttpResponse::HTTP_OK);
@@ -22,7 +22,7 @@ class AccountController extends AbstractController {
     public function signout() {
 
         $authentication = AuthenticationValidator::validateAuthToken(
-            Input::json()->get('auth-token', null)
+            Input::json()->get('auth_token', null)
         );
 
         Authentication::clearAuthToken(
@@ -49,6 +49,20 @@ class AccountController extends AbstractController {
                 'type' => $account->type_id,
                 'username' => $account->username
             )
+        ), HttpResponse::HTTP_OK);
+    }
+
+    public function typeList() {
+
+        $list = \AccountType::all();
+
+        $data = array();
+        foreach($list as $type) {
+            $data[] = $type->jsonSerialize();
+        }
+
+        return \Response::json(array(
+            'data' => $data
         ), HttpResponse::HTTP_OK);
     }
 } 
