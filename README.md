@@ -159,7 +159,7 @@ Retrieve application by application id
 
 Request info
 ```
-HTTP Request method    POST
+HTTP Request method    GET
 Request URL            http://api.virgilsecurity.com/application/get/1
 Authorization Token    Needed
 ```
@@ -197,7 +197,7 @@ Retrieve application list
 
 Request info
 ```
-HTTP Request method    POST
+HTTP Request method    GET
 Request URL            http://api.virgilsecurity.com/application/list
 Authorization Token    Needed
 ```
@@ -237,6 +237,40 @@ Response body
 Request sample
 ```
 curl -v -X GET http://api.virgilsecurity.com/application/list
+```
+
+##GET /application/reset-key/1
+Reset old application key.
+
+Request info
+```
+HTTP Request method    GET
+Request URL            http://api.virgilsecurity.com/application/reset-key/1
+Authorization Token    Needed
+```
+
+Header info
+```
+x-auth-token: a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8
+```
+
+Request body
+```json
+-
+```
+
+Response body
+```json
+{
+  "data": {
+        "key": "a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8"
+    }
+}
+```
+
+Request sample
+```
+curl -v -X GET http://api.virgilsecurity.com/application/reset-key/1
 ```
 
 #Appendix A. Responses
