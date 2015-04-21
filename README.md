@@ -192,6 +192,52 @@ Request sample
 curl -v -X GET http://api.virgilsecurity.com/application/get/1
 ```
 
+##GET /application/list
+Retrieve application list
+
+Request info
+```
+HTTP Request method    POST
+Request URL            http://api.virgilsecurity.com/application/list
+Authorization Token    Needed
+```
+
+Header info
+```
+x-auth-token: a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8
+```
+
+Request body
+```json
+-
+```
+
+Response body
+```json
+{
+  "data": [
+    {
+        "id": 1,
+        "name": "First Virgil Application",
+        "description": "First amazing Virgil application",
+        "url": "http://application.url.com",
+        "key": "a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8"
+    },
+    {
+        "id": 2,
+        "name": "Another Virgil Application",
+        "description": "Another amazing Virgil application",
+        "url": "http://application.url.com",
+        "key": "12398f263b78e356e0871234152efa82f266db6521123e76c29a19c882919293"
+    }
+  ]
+}
+```
+
+Request sample
+```
+curl -v -X GET http://api.virgilsecurity.com/application/list
+```
 
 #Appendix A. Responses
 Application uses standard HTTP response codes:
