@@ -48,7 +48,7 @@ php artisan migrate
     * [GET /application/list](#get-applicationlist)
     * [GET /application/reset-key/{application-id}](#get-applicationreset-key1)
     * [POST /application](#post-application)
-    * [PUT /application/{application-id}]
+    * [PUT /application/{application-id}](#put-application1)
     * [DELETE /application/{application-id}]
 * [Appendix A. Repsonses](#appendix-a-responses)
 
