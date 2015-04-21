@@ -79,31 +79,22 @@ Addtitional information about the error is returned as JSON-object like:
 
 **`HTTP 400. Request error`** status is returned on request data validation errors
 ```
-20001 - Athentication password validation failed
-20002 - Athentication ticket validation failed
-20003 - Athentication account was not found by provided ticket 
-20004 - Athentication token validation failed
-20005 - Athentication token not found  
-20006 - Athentication token has expired
+30001 - Account was not found
+30002 - Account already exists
+30003 - Account usernname was not provided
+30004 - Account password was not provided
+30005 - Account type was not provided
+30006 - Account tpe was not found
 
-30001 - Signed validation failed
+40001 - Authentication token was not found
+40002 - Authentication token was expired
 
-40001 - Account validation failed
-40002 - Account was not found
-40003 - Account already exists
-40004 - Account password was not specified
-40005 - Account password validation failed
-40006 - Account was not found in PKI service
-40007 - Account type validation failed
-
-50001 - Certificate validation failed
-50002 - Certificate was not found
-50003 - Certificate already exists
-50004 - Certificate's key validation failed
-50005 - Certificate's key base64 validation failed
-
-60001 - Token was not found in request
-60002 - Ticket validation failed
-60003 - Account was not found by ticket
-60004 - Verification token ash expired
+50001 - Application name was not provided
+50002 - Application description was not provided
+50003 - Application url was not provided
+50004 - Application was not found
+50005 - Application limit was exeeded
+50006 - Application key was not found
+50007 - Application service was not recognized
+50008 - Application call limit was exceeded
 ```
