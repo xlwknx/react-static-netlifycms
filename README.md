@@ -48,7 +48,7 @@ php artisan migrate
     * [GET /application/list](#get-applicationlist)
     * [GET /application/reset-key/{application-id}](#get-applicationreset-key1)
     * [POST /application](#post-application)
-    * [PUT /application]
+    * [PUT /application/{application-id}]
     * [DELETE /application/{application-id}]
 * [Appendix A. Repsonses](#appendix-a-responses)
 
@@ -315,6 +315,50 @@ Response body
 Request sample
 ```
 curl -v -X POST http://api.virgilsecurity.com/application -data {"application":{"name": "First Virgil application", "description": "First amazing Virgil application", "url": "http://application.com"}}
+```
+
+##PUT /application/1
+Update existing application instance.
+
+Request info
+```
+HTTP Request method    PUT
+Request URL            http://api.virgilsecurity.com/application/1
+Authorization Token    Needed
+```
+
+Header info
+```
+x-auth-token: a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8
+```
+
+Request body
+```json
+{
+    "application": {
+        "name": "First Virgil Application",
+        "description": "First amazing Virgil application",
+        "url": "http://application.url.com"
+    }
+}
+```
+
+Response body
+```json
+{
+  "data": {
+        "id": 1,
+        "name": "First Virgil Application",
+        "description": "First amazing Virgil application",
+        "url": "http://application.com",
+        "key": "a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8"
+    }
+}
+```
+
+Request sample
+```
+curl -v -X PUT http://api.virgilsecurity.com/application/1 -data {"application":{"id": 1, "name": "First Virgil application", "description": "First amazing Virgil application", "url": "http://application.com"}}
 ```
 
 #Appendix A. Responses
