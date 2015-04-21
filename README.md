@@ -46,7 +46,7 @@ php artisan migrate
 * [Application](#application)
     * [GET /application/get/application/{application-id}](#get-applicationgetapplication-id)
     * [GET /application/list](#get-applicationlist)
-    * [GET /application/reset-key/{application-id}]
+    * [GET /application/reset-key/{application-id}](#get-applicationreset-key1)
     * [POST /application]
     * [PUT /application]
     * [DELETE /application/{application-id}]
@@ -240,7 +240,7 @@ curl -v -X GET http://api.virgilsecurity.com/application/list
 ```
 
 ##GET /application/reset-key/1
-Reset old application key.
+Reset old application key and retrive new one
 
 Request info
 ```
