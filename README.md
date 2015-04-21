@@ -43,10 +43,11 @@ php artisan migrate
     * [POST /account/signin](#post-accountsignin)
     * [POST /account/signout](#post-accountsignout)
     * [POST /account/signup](#post-accountsignup)
+    * [GET /account/type-list](#get-accounttype-list)
 * [Application](#application)
     * [GET /application/get/{application-id}](#get-applicationgetapplication-id)
     * [GET /application/list](#get-applicationlist)
-    * [GET /application/reset-key/{application-id}](#get-applicationreset-key1)
+    * [GET /application/reset-key/{application-id}](#get-applicationreset-key)
     * [POST /application](#post-application)
     * [PUT /application/{application-id}](#put-application1)
     * [DELETE /application/{application-id}](#delete-application1)
@@ -149,6 +150,49 @@ Response body
 Request sample
 ```
 curl -v -X POST http://api.virgilsecurity.com/account/signup -data {"account": {"username": "suhinin.dmitriy@gmail.com", "password": "password", "type":1}}
+```
+
+##GET /account/type-list
+
+Request info
+```
+HTTP Request method    POST
+Request URL            http://api.virgilsecurity.com/account/type-list
+Authorization Token    Not needed
+```
+
+Request body
+```json
+-
+```
+
+Response body
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Free",
+            "limit_application": 2,
+            "limit_keyring": 10,
+            "limit_pki": 100,
+            "limit_auth": 10
+        },
+        {
+            "id": 2,
+            "name": "Maximum",
+            "limit_application": 9999,
+            "limit_keyring": 9999,
+            "limit_pki": 9999,
+            "limit_auth": 9999
+        }
+    ]
+}
+```
+
+Request sample
+```
+curl -v -X GET http://api.virgilsecurity.com/account/type-list
 ```
 
 #Application
