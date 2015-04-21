@@ -52,6 +52,41 @@ php artisan migrate
     * [DELETE /application/{application-id}]
 * [Appendix A. Repsonses](#appendix-a-responses)
 
+#Account
+**`Account`** entity endpoints
+
+##POST /account/signin
+Retrieve authentication token.
+
+Service will create **`Authentication token`** that will be available during the 60 minutes after creation. During this time service will automatically prolong life time of the token in case if **`Authentication token`** widely used so don't need to prolong it manually. In case when **`Authentication token`** is used after 60 minutes of life time, service will throw the appropriate error.
+
+Request info
+```
+HTTP Request method    POST
+Request URL            http://api.virgilsecurity.com/account/signin
+Authorization Token    Not needed
+```
+
+Request body
+```json
+{
+  "account": {
+    "username": "suhinin.dmitriy@gmail.com",
+    "password": "password"
+  }
+}
+```
+
+Response body
+```json
+{
+  "auth_token": "dbbbe6a906aa4d567531827beb66a2aadbbbe6a906aa4d567531827beb66a2aa",
+}
+```
+
+Request sample
+```
+curl -v -X GET http://api.virgilsecurity.com/account/signin -data {"account": {"username":"suhinin.dmitriy@gmail.com","password":"password"}}
 
 #Appendix A. Responses
 Application uses standard HTTP response codes:
