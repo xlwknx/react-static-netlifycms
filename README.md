@@ -40,7 +40,7 @@ php artisan migrate
 
 ## API
 * [Account](#account)
-    * [POST /account/signin]
+    * [POST /account/signin](#post-accountsignin)
     * [POST /account/signout]
     * [POST /account/signup]
 * [Application](#application)
@@ -87,6 +87,8 @@ Response body
 Request sample
 ```
 curl -v -X GET http://api.virgilsecurity.com/account/signin -data {"account": {"username":"suhinin.dmitriy@gmail.com","password":"password"}}
+
+```
 
 #Appendix A. Responses
 Application uses standard HTTP response codes:
