@@ -44,6 +44,8 @@ php artisan migrate
     * [POST /account/signout](#post-accountsignout)
     * [POST /account/signup](#post-accountsignup)
     * [GET /account/type-list](#get-accounttype-list)
+    * [GET /account/confirm/](#get-accountconfirm)
+    * [POST /account/confirm/re-send']
 * [Application](#application)
     * [GET /application/get/{application-id}](#get-applicationgetapplication-id)
     * [GET /application/list](#get-applicationlist)
@@ -142,7 +144,8 @@ Response body
   "account": {
     "id": 1,
     "type": 1,
-    "email": "suhinin.dmitriy@gmail.com"
+    "email": "suhinin.dmitriy@gmail.com",
+    "confirmed": false
   }
 }
 ```
@@ -193,6 +196,61 @@ Response body
 Request sample
 ```
 curl -v -X GET http://api.virgilsecurity.com/account/type-list
+```
+
+##GET /account/confirm
+Confirm already existing account.
+
+Request info
+```
+HTTP Request method    POST
+Request URL            http://api.virgilsecurity.com/account/confirm/A4134D
+Authorization Token    Not needed
+```
+
+Request body
+```json
+-
+```
+
+Response body
+```json
+-
+```
+
+Request sample
+```
+curl -v -X GET http://api.virgilsecurity.com/account/confirm/A4134D
+```
+
+##POST /account/confirm/re-send
+Re send account confirmation code.
+
+Request info
+```
+HTTP Request method    POST
+Request URL            http://api.virgilsecurity.com/account/confirm/re-send
+Authorization Token    Not needed
+```
+
+Request body
+```json
+{
+    "account": {
+        "email": "suhinin.dmitriy@gmail.com",
+        "password": "password"
+    }
+}
+```
+
+Response body
+```json
+-
+```
+
+Request sample
+```
+curl -v -X POST http://api.virgilsecurity.com/account/confirm/re-send -data {"account": {"email": "suhinin.dmitriy@gmail.com", "password": "password"}}
 ```
 
 #Application
