@@ -159,7 +159,7 @@ curl -v -X POST http://api.virgilsecurity.com/account/signup -data {"account": {
 
 Request info
 ```
-HTTP Request method    POST
+HTTP Request method    GET
 Request URL            http://api.virgilsecurity.com/account/type-list
 Authorization Token    Not needed
 ```
@@ -203,7 +203,7 @@ Confirm already existing account.
 
 Request info
 ```
-HTTP Request method    POST
+HTTP Request method    GET
 Request URL            http://api.virgilsecurity.com/account/confirm/A4134D
 Authorization Token    Not needed
 ```
