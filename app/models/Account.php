@@ -31,19 +31,8 @@ class Account extends Eloquent {
 
         $account->save();
 
-        $confirmation = AccountConfirmation::createConfirmation(
+        Confirmation::createConfirmation(
             $account
-        );
-
-        Mail::send(
-            'email.confirmation',
-            array('confirmationCode' => $confirmation->code),
-            function($message) use ($account) {
-                $message->to(
-                    $account->email,
-                    $account->email
-                )->subject('VirgilSecurity KeyRing email confirmation');
-            }
         );
 
         return $account;
@@ -69,16 +58,6 @@ class Account extends Eloquent {
     }
 
     /**
-     * Get AccountType relation instance
-     *
-     * @return mixed
-     */
-    public function type() {
-
-        return $this->belongsTo('AccountType');
-    }
-
-    /**
      * Is Account confirmed
      *
      * @return bool
@@ -86,5 +65,15 @@ class Account extends Eloquent {
     public function isConfirmed() {
 
         return $this->confirmed == self::ACCOUNT_CONFIRMED ? true : false;
+    }
+
+    /**
+     * Get AccountType relation instance
+     *
+     * @return mixed
+     */
+    public function type() {
+
+        return $this->belongsTo('AccountType');
     }
 }

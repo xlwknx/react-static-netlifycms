@@ -2,6 +2,7 @@
 
 use Virgil\Validator\Account as AccountValidator,
     Virgil\Validator\Authentication as AuthenticationValidator,
+    Virgil\Validator\Confirmation as ConfirmationValidator,
     Symfony\Component\HttpFoundation\Response as HttpResponse;
 
 class AccountController extends AbstractController {
@@ -51,6 +52,40 @@ class AccountController extends AbstractController {
                 'confirmed' => $account->isConfirmed()
             )
         ), HttpResponse::HTTP_OK);
+    }
+
+    public function confirm($code) {
+
+        $confirmation = ConfirmationValidator::validateCode(
+            $code
+        );
+
+        $confirmation->confirmAccount();
+
+        return \Response::json(
+            null,
+            HttpResponse::HTTP_OK
+        );
+    }
+
+    public function resendConfirm() {
+
+        $account = AccountValidator::validateSignin(
+            Input::json()->get('account', null)
+        );
+
+        AccountValidator::validateConfirmed(
+            $account
+        );
+
+        Confirmation::createConfirmation(
+            $account
+        );
+
+        return \Response::json(
+            null,
+            HttpResponse::HTTP_OK
+        );
     }
 
     public function typeList() {

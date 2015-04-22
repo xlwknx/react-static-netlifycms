@@ -18,7 +18,7 @@ class Account {
      */
     public static function validateSignin($data) {
 
-        $account = \Account::whereUsername(
+        $account = \Account::whereEmail(
             $data['email']
         )->wherePassword(
             md5($data['password'])
@@ -78,6 +78,24 @@ class Account {
     }
 
     /**
+     * Validate if Account not confirmed yet
+     *
+     * @param $account
+     * @return bool
+     * @throws \Virgil\Exception\Validator
+     */
+    public static function validateNotConfirmed($account) {
+
+        if(!$account->isConfirmed()) {
+            throw new ValidatorException(
+                ErrorCode::ACCOUNT_NOT_CONFIRMED
+            );
+        }
+
+        return true;
+    }
+
+    /**
      * Validate if Account already confirmed
      *
      * @param $account
@@ -86,9 +104,9 @@ class Account {
      */
     public static function validateConfirmed($account) {
 
-        if(!$account->isConfirmed()) {
+        if($account->isConfirmed()) {
             throw new ValidatorException(
-                ErrorCode::ACCOUNT_NOT_CONFIRMED
+                ErrorCode::ACCOUNT_ALREADY_CONFIRMED
             );
         }
 

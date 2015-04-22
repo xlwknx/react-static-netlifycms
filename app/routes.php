@@ -27,6 +27,14 @@ Route::get('account/type-list', array(
     'uses' => 'AccountController@typeList'
 ));
 
+Route::get('account/confirm/{code}', array(
+    'uses' => 'AccountController@confirm'
+));
+
+Route::post('account/confirm/re-send', array(
+    'uses' => 'AccountController@resendConfirm'
+));
+
 
 Route::post('application/validate-key', array(
     'uses' => 'ApplicationController@validateKey'

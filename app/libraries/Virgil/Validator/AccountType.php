@@ -24,5 +24,4 @@ class AccountType {
 
         return true;
     }
-
 }

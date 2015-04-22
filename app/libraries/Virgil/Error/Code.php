@@ -18,6 +18,9 @@ class Code {
     const ACCOUNT_TYPE_NOT_PROVIDED                     = 30005;
     const ACCOUNT_TYPE_NOT_FOUND                        = 30006;
     const ACCOUNT_NOT_CONFIRMED                         = 30007;
+    const ACCOUNT_ALREADY_CONFIRMED                     = 30008;
+    const ACCOUNT_CONFIRMATION_NOT_FOUND                = 30009;
+    const ACCOUNT_CONFIRMATION_CODE_EXPIRED             = 30010;
 
 
     // Authentication errors
