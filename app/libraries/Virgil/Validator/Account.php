@@ -54,6 +54,7 @@ class Account {
             );
         }
 
+        /*
         if(!isset($data['type'])) {
             throw new ValidatorException(
                 ErrorCode::ACCOUNT_TYPE_NOT_PROVIDED
@@ -63,7 +64,7 @@ class Account {
         AccountTypeValidator::exists(
             $data['type']
         );
-
+        */
         $account = \Account::whereEmail(
             $data['email']
         )->first();

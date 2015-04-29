@@ -43,10 +43,11 @@ class ApplicationController extends AbstractController {
             $this->getCurrentAccount()
         );
 
+        /*
         AccountValidator::validateLimit(
             $this->getCurrentAccount()
         );
-
+        */
         return \Response::json(array(
             'data' => Application::createApplication(
                 $this->getCurrentAccount(),

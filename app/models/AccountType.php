@@ -20,19 +20,11 @@ class AccountType extends Eloquent implements JsonSerializable {
 
             array(
                 'id' => 1,
-                'name' => 'Free',
-                'limit_application' => 2,
-                'limit_keyring' => 100,
-                'limit_pki' => 100,
-                'limit_auth' => 100
-            ),
-            array(
-                'id' => 2,
-                'name' => 'Maximum',
-                'limit_application' => 9999,
-                'limit_keyring' => 9999,
-                'limit_pki' => 9999,
-                'limit_auth' => 9999
+                'name' => 'Unlimited',
+                'limit_application' => 99999999999,
+                'limit_keyring' => 99999999999,
+                'limit_pki' => 99999999999,
+                'limit_auth' => 99999999999
             )
         );
     }

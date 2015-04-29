@@ -93,6 +93,7 @@ class Application {
             );
         }
 
+        /*
         $count = \ApplicationStatistic::getServiceLimit(
             $application,
             $service
@@ -103,6 +104,7 @@ class Application {
                 ErrorCode::APPLICATION_CALL_LIMIT_EXCEEDED
             );
         }
+        */
 
         return array(
             'application' => $application,
