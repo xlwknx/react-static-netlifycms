@@ -43,7 +43,7 @@ php artisan migrate
     * [POST /account/signin](#post-accountsignin)
     * [POST /account/signout](#post-accountsignout)
     * [POST /account/signup](#post-accountsignup)
-    * [GET /account/type-list](#get-accounttype-list)
+    <!-- * [GET /account/type-list](#get-accounttype-list) -->
     * [GET /account/confirm/](#get-accountconfirm)
     * [POST /account/confirm/re-send](#post-accountconfirmre-send)
 * [Application](#application)
@@ -132,8 +132,7 @@ Request body
 {
   "account": {
     "email": "suhinin.dmitriy@gmail.com",
-    "password": "password",
-    "type": 1
+    "password": "password"
   }
 }
 ```
@@ -152,8 +151,9 @@ Response body
 
 Request sample
 ```
-curl -v -X POST http://api.virgilsecurity.com/account/signup -data {"account": {"email": "suhinin.dmitriy@gmail.com", "password": "password", "type":1}}
+curl -v -X POST http://api.virgilsecurity.com/account/signup -data {"account": {"email": "suhinin.dmitriy@gmail.com", "password": "password"}}
 ```
+<!--
 
 ##GET /account/type-list
 
@@ -197,6 +197,7 @@ Request sample
 ```
 curl -v -X GET http://api.virgilsecurity.com/account/type-list
 ```
+-->
 
 ##GET /account/confirm
 Confirm already existing account.
