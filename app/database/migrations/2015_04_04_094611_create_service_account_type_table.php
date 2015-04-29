@@ -17,7 +17,7 @@ class CreateServiceAccountTypeTable extends Migration {
 
             $table->bigIncrements('id')->unsigned();
             $table->string('name', 255);
-            $table->smallInteger('limit_application')->unsigned();
+            $table->bigInteger('limit_application')->unsigned();
             $table->bigInteger('limit_keyring')->unsigned();
             $table->bigInteger('limit_pki')->unsigned();
             $table->bigInteger('limit_auth')->unsigned();
