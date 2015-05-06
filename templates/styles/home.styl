@@ -1,12 +1,11 @@
-@require "reset"
-@require "common"
-@require "contact-us"
-@require "about"
-@require "how-it-works"
-
 .home-header-block
 	background-image url(../img/home/home-bg.png)
 	height 476px
+
+	.header
+		.header-nav
+			.header-nav-link
+				color #c3cbda
 
 .home-bottom-block
 	background-image url(../img/dotted-bg.png)
@@ -50,8 +49,9 @@
 		background url(../img/home/pagination-dot-active.png)
 
 .home-features
-	padding 5px 125px
+	padding 5px 0
 	height 64px
+	background white
 
 	.home-features-feature
 		float left
@@ -90,18 +90,18 @@
 		margin-top 30px
 
 .home-features-expanded
-	width 1041px
-	margin 0 auto
 	margin-top 34px
 
 	.home-features-expanded-col
 		float left
 
+	.home-features-expanded-col.right
+		margin-left 12px
+
 	.home-features-expanded-item
 		width 504px
 		height 156px
 		margin-top 12px
-		margin-left 12px
 		background #1d1b38
 		color white
 

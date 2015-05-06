@@ -8,7 +8,7 @@ var run_sequence = require('run-sequence');
 var config = {
 	styles: {
 		src: [
-			'./styles/home.styl'
+			'./styles/main.styl'
 		],
 
 		dist: 'app.css',
