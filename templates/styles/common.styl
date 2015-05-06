@@ -20,10 +20,17 @@ placeholder-color(color)
 	font-family "ClearSans"
 	box-sizing border-box
 
+.page
+	background-image url(../img/dotted-bg.png)
+	background-repeat repeat
+
 .container
 	clear both
 	width 1024px
 	margin 0 auto
+
+.cover
+	text-align center
 
 .clear
 	clear both
@@ -108,6 +115,7 @@ placeholder-color(color)
 			margin-left 0
 
 .btn-virgil
+	display inline-block
 	cursor pointer
 	outline none
 	border none
@@ -118,10 +126,24 @@ placeholder-color(color)
 	padding 15px 46px
 	font-size 16px
 	border-radius 80px
+	text-decoration none
 
 .btn-virgil.btn-transparent
 	border 3px solid #00f3e8
 	background transparent
+
+.page-heading
+	margin-top 12px
+	text-align center
+
+	h2
+		color white
+		font-size 40px
+	p
+		margin-top 26px
+		font-size 24px
+		line-height 30px
+		color $color-dark-text
 
 // forms
 
@@ -142,3 +164,17 @@ placeholder-color(color)
 
 .form-input.expand
 	width 100%
+
+ul.virgil-list
+	list-style none
+	padding 0
+	margin 0
+
+	li
+		margin-top 18px
+		padding-left 2em;
+		text-indent -.7em
+
+	li:before
+		content "• "
+		color $color-dark-text

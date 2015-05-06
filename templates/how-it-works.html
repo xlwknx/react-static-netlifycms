@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Virgil | Contact Us</title>
+	<link rel="stylesheet" href="dist/app.css" type="text/css" media="screen" charset="utf-8">
+</head>
+<body class="page how">
+	<header class="header">
+		<div class="header-block">
+			<img src="/img/logo.png" class="header-logo" alt="Virgil" />
+		</div>
+
+		<nav class="header-nav header-block header-nav-left">
+			<a href="/about" class="header-nav-link">ABOUT US</a>
+			<a href="/how-it-works" class="header-nav-link">HOW IT WORKS</a>
+		</nav>
+
+		<nav class="header-nav header-block header-nav-right">
+			<a href="/downloads" class="header-nav-link">DOWNLOADS</a>
+			<a href="/support" class="header-nav-link">SUPPORT</a>
+			<a href="/docs" class="header-nav-link">DOCUMENTATION</a>
+		</nav>
+	</header>
+
+	<section class="how-heading page-heading container">
+		<h2>How it Works?</h2>
+		<p>The Virgil Security Stack includes cryptographic libraries that operate in conjunction with a<br/>
+		global cloud-based key management infrastructure-as-a-service that allow developers to add<br/>
+		security to their products in hours instead of weeks or months – without having to become</br>
+		security experts themselves.<br/>
+		<br/>
+		Our cryptographic libraries include an open-sourced hybrid symmetric/asymmetric encryption<br/>
+		schema (ECIES) with cryptographic agility that delivers substantially stronger security.</p>
+	</section>
+
+	<section class="how-stack cover">
+		<img src="/img/how-it-works/stack.png" />
+	</section>
+
+	<section class="how-definition container">
+		<h3>Ephemeral key pair generation</h3>
+		<div class="how-definition-body">
+			Input parameters (see <a href="">PolarSSL documentation</a>):
+
+			<ul class="virgil-list">
+				<li>
+					Random number generation function – NIST SP 800-901: CTR_DRBG (Counter-mode block-cipher-based Deterministic Random Bit Generator).<br/>
+					The underlying algorithm used is AES-256 in counter mode.
+				</li>
+				<li>
+				Random number generation function “Personalization String” parameter – module id string (see section 8.7.1 of <a href="">NIST Special<br/>
+					Publication 800-90A</a>
+				</li>
+				<li>
+					Entropy function – on linux: /dev/urandom and on Windows: CryptGenRandom(), with high resolution timer (rdtsc) and HAVEGE.
+				</li>
+			</ul>
+		</div>
+
+		<h4>KA</h4>
+		<p>Key Agreement – function used for the generation of a shared secret by two parties. <a href="">PolarSSL ECDH</a> implementation is used.</p>
+
+		<h4>KDF</h4>
+		<p>Key Derivation function – mechanism produces a set of keys from keying material and some optional parameters. Self-implementation of KDF1<br/>
+		described in the <a href="">ISO-18033-2</a> Clause 6.2.2 is used. Underlying hash function is SHA-512.</p>
+
+		<h4>ENC</h4>
+		<p>Symmetric encryption algorithm. PolarSSL implementation of AES256-CBC mode is used.</p>
+	</section>
+
+	<section class="how-functional-diagram-title container">
+		<h3>ECIES encryption functional diagram</h3>
+	</section>
+
+	<section class="cover">
+		<img src="/img/how-it-works/functional-diagram-encryption.png" alt="Functional diagram" />
+	</section>
+
+	<section class="how-functional-diagram-title container">
+		<h3>ECIES decryption functional diagram</h3>
+	</section>
+
+	<section class="cover">
+		<img src="/img/how-it-works/functional-diagram-decryption.png" alt="Functional diagram" />
+	</section>
+
+	<footer class="footer">
+		<div class="footer-copy">
+			© Virgil Security, Inc. 2015
+		</div>
+
+		<div class="footer-links">
+			<a href="/why">Why Virgil</a>
+			<a href="/how-it-works">How it works</a>
+			<a href="/downloads">Downloads</a>
+			<a href="/support">Support</a>
+			<a href="/docs">Documentation</a>
+		</div>
+
+		<div class="footer-social">
+			<a href="http://twitter.com" target="_blank">
+				<img src="/img/social-twitter.png" alt="twitter" />
+			</a>
+			<a href="http://facebook.com" target="_blank">
+				<img src="/img/social-facebook.png" alt="facebook" />
+			</a>
+		</div>
+	</footer>
+</body>
+</html>
