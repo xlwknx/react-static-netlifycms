@@ -1,0 +1,19 @@
+{
+  "name": "templates",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ddain/VirgilWWW",
+  "authors": [
+    "boo1ean <boo1ean0807@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bxslider-4": "~4.2.3"
+  }
+}

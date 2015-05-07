@@ -16,15 +16,20 @@ var config = {
 	},
 
 	js: {
-		src: [ ],
-		dist: 'app.js',
+		src: [
+			'./bower_components/jquery/dist/jquery.js',
+			'./bower_components/bxslider-4/dist/jquery.bxslider.js',
+			'./js/home.js'
+		],
+
+		dist: 'home.js',
 		dest: './dist'
 	}
 };
 
 gulp.task('styles', function() {
 	return gulp.src(config.styles.src)
-		.pipe(stylus())
+		.pipe(stylus({ 'include css': true }))
 		.pipe(concat(config.styles.dist))
 		.pipe(gulp.dest(config.styles.dest));
 });
@@ -40,7 +45,10 @@ gulp.task('build', function() {
 });
 
 gulp.task('watch', ['build'], function() {
-	return gulp.watch(['./styles/**/*.*'], ['build']);
+	return gulp.watch([
+		'./styles/**/*.*',
+		'./js/**/*.*'
+	], ['build']);
 });
 
 gulp.task('default', ['watch']);

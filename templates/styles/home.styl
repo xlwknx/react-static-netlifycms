@@ -1,11 +1,16 @@
+@require "./jquery.bxslider.css"
+
+$color-header-text = #c3cbda
+
 .home-header-block
 	background-image url(../img/home/home-bg.png)
 	height 476px
 
 	.header
+		height 75px
 		.header-nav
 			.header-nav-link
-				color #c3cbda
+				color $color-header-text
 
 .home-bottom-block
 	background-image url(../img/dotted-bg.png)
@@ -15,7 +20,11 @@
 	color white
 	display block
 	text-align center
-	margin-top 20px
+
+	.home-slider-or-buttons
+		.or
+			margin 0 15px
+			color $color-header-text
 
 	.home-slider-title
 		font-size 50px
@@ -24,6 +33,7 @@
 		font-size 26px
 		margin-top 22px
 		line-height 32px
+		color $color-header-text
 
 	.home-slider-get-started
 		margin-top 25px
@@ -47,6 +57,62 @@
 
 	.home-slider-pagination-dot.active
 		background url(../img/home/pagination-dot-active.png)
+
+	.secure-the-future
+		margin-top 62px
+
+	.be-secure
+		margin-top -10px
+
+		.home-slider-description
+			font-size 23px
+
+		.home-slider-platforms-col
+			margin-top 16px
+			float left
+
+		.home-slider-platforms-col.right
+			margin-left 88px
+
+		.home-slider-platforms
+			width 524px
+			margin 0 auto
+			margin-top 22px
+			color $color-header-text
+
+			img
+				height 35px
+				width 35px
+				margin-left 14px
+				margin-top 6px
+
+	.internet-of-things
+		margin-top 60px
+
+	.ppu
+		margin-top 58px
+
+		.home-slider-title
+			font-size 40px
+
+	.without-password
+		margin-top 26px
+		.engines
+			margin-top 38px
+
+			a img
+				height 58px
+				width 58px
+				margin-left 16px
+
+			a:first img
+				margin-left 0
+
+	.secure-cloud
+		margin-top 70px
+
+		.home-slider-title
+			font-size 40px
 
 .home-features
 	padding 5px 0
@@ -82,7 +148,7 @@
 		line-height 42px
 	
 	.home-downloads-description
-		color #8382a3
+		color $color-dark-text
 		margin-top 34px
 		font-size 24px
 
@@ -126,3 +192,20 @@
 				line-height 22px
 				color #8382a3
 				margin-top 14px
+
+.bx-wrapper .bx-controls-direction a.bx-prev
+	left 50%
+	margin-left -490px
+
+.bx-wrapper .bx-controls-direction a.bx-next
+	left 50%
+	margin-left 442px
+
+//.home-slider-controls
+	//margin-top -220px
+
+	//.slider-next
+		//float right
+
+//.bx-pager
+	//text-align center
