@@ -1,0 +1,40 @@
+$color-dark-blue = #26243f
+.code-tabs
+	background #ccc
+
+.code-tabs-nav
+	height 50px
+	background $color-dark-blue
+
+.code-tabs-subnav
+	height 50px
+	background #ccccde
+	clear both
+
+.code-tabs-nav:after
+	clear both
+
+.code-tabs-nav-item
+	cursor pointer
+	outline none
+	border none
+	padding 15px 32px
+	font-size 16px
+	font-weight bold
+	float left
+	background $color-dark-blue
+	color white
+	border-right thin solid #35324c
+
+.code-tabs-nav-item.active
+	background #12112d
+
+.code-tabs-subnav-item
+	padding 18px 26px
+	background #ccccde
+	color #19192f
+	border-right none
+
+.code-tabs-subnav-item.active
+	background #e3e3ec
+	color #515078

@@ -19,6 +19,7 @@ var config = {
 		src: [
 			'./bower_components/jquery/dist/jquery.js',
 			'./bower_components/bxslider-4/dist/jquery.bxslider.js',
+			'./js/code-tabs.js',
 			'./js/home.js'
 		],
 

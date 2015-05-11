@@ -10,3 +10,8 @@ var slider = $('.home-slider').bxSlider({
 $('.home-features-feature').on('click', function () {
 	slider.goToSlide($(this).data('index'));
 });
+
+var tabs = new CodeTabs('.code-tabs');
+tabs.selectSection('php').selectTab('encrypt');
+
+
