@@ -320,6 +320,66 @@ ul.virgil-list li:before {
   content: "• ";
   color: #8382a3;
 }
+.md * {
+  color: #a9a8cb;
+}
+.md h1,
+.md h2,
+.md h3,
+.md h4,
+.md h5,
+.md h6 {
+  color: #fff;
+}
+.md h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+}
+.md h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+}
+.md h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+.md h4 {
+  font-size: 1.25em;
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.md p {
+  color: #a9a8cb;
+  margin-top: 0;
+  margin-bottom: 16px;
+  line-height: 22px;
+}
+.md pre {
+  background: #1d1b38;
+  color: #a9a8cb;
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  border-radius: 3px;
+  margin-bottom: 16px;
+}
+.md ul {
+  padding-left: 2em;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.md ul li {
+  line-height: 22px;
+}
+.md a {
+  color: #83eaff;
+}
 /***
  * BxSlider v4.2.2 - Fully loaded, responsive content slider
  * http://bxslider.com
@@ -841,6 +901,7 @@ ul.bxslider {
   color: #fff;
   text-align: center;
   cursor: pointer;
+  margin-top: 50px;
 }
 .choices .choices-section {
   margin-left: 60px;
@@ -850,7 +911,18 @@ ul.bxslider {
 }
 .choices span:hover,
 .choices span.active {
+  border-bottom: thin solid #83eaff;
   color: #83eaff;
+}
+.docs .docs-get-api-key {
+  text-align: center;
+}
+.docs .docs-get-api-key .description {
+  color: #a9a8cb;
+  line-height: 26px;
+}
+.docs .docs-get-api-key .btn-virgil {
+  margin-top: 36px;
 }
 .downloads .downloads-title h2 {
   font-size: 40px;

@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var stylus = require('gulp-stylus');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var markdown = require('gulp-markdown');
 var template_cache = require('gulp-angular-templatecache');
 var run_sequence = require('run-sequence');
 
@@ -27,6 +28,12 @@ var config = {
 		dest: './dist'
 	}
 };
+
+gulp.task('md', function () {
+	return gulp.src(['./docs/pki.md'])
+		.pipe(markdown())
+		.pipe(gulp.dest('dist'))
+});
 
 gulp.task('styles', function() {
 	return gulp.src(config.styles.src)
