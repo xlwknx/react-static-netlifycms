@@ -14,4 +14,30 @@ $('.home-features-feature').on('click', function () {
 var tabs = new CodeTabs('.code-tabs');
 tabs.selectSection('php').selectTab('encrypt');
 
+initTabs();
 
+function initTabs () {
+	var tabLinks = $('[data-tab-show]');
+	var tabContainers = $('[data-tab]');
+
+	tabLinks.on('click', showTab);
+
+	function showTab () {
+		var $el = $(this);
+		var tab = $el.data('tab-show');
+
+		tabLinks.removeClass('active');
+		$el.addClass('active');
+
+		hide(tabContainers);
+		show(tabContainers.filter('[data-tab=' + tab + ']'));
+	}
+
+	function show ($el) {
+		$el.removeClass('hide');
+	}
+
+	function hide ($el) {
+		$el.addClass('hide');
+	}
+}

@@ -254,7 +254,7 @@ h5 {
   background: #322f60;
   border: 3px solid #00f3e8;
   width: auto;
-  padding: 15px 46px;
+  padding: 18px 46px;
   font-size: 16px;
   border-radius: 80px;
   text-decoration: none;
@@ -881,19 +881,27 @@ ul.bxslider {
   color: #fff;
   background-image: url("/img/downloads/developers-active.png");
 }
+.downloads .choices .developers.active span,
+.downloads .choices .developers:hover span {
+  color: #fff;
+}
 .downloads .choices .end-users.active,
 .downloads .choices .end-users:hover {
   color: #fff;
   background-image: url("/img/downloads/end-users-active.png");
 }
+.downloads .choices .end-users.active span,
+.downloads .choices .end-users:hover span {
+  color: #fff;
+}
 .downloads .downloads-description {
-  margin-top: 20px;
+  margin-top: 28px;
   line-height: 26px;
   width: 630px;
   color: #a9a8cb;
 }
 .downloads .downloads-links {
-  margin-top: 40px;
+  margin-top: 36px;
 }
 .downloads .downloads-links .downloads-links-link {
   display: block;
@@ -909,4 +917,59 @@ ul.bxslider {
   margin-top: 10px;
   color: #fff;
   text-align: center;
+}
+.downloads .downloads-developers {
+  margin-top: 38px;
+}
+.downloads .downloads-developers .block {
+  width: 504px;
+  height: 348px;
+  float: left;
+  margin-left: 16px;
+  padding: 16px 48px;
+}
+.downloads .downloads-developers .block .headline img {
+  float: left;
+}
+.downloads .downloads-developers .block .headline h4 {
+  color: #fff;
+  font-size: 24px;
+  line-height: 70px;
+  margin-left: 98px;
+}
+.downloads .downloads-developers .block .list,
+.downloads .downloads-developers .block .description {
+  color: #fff;
+  margin-top: 12px;
+  line-height: 22px;
+  font-size: 16px;
+}
+.downloads .downloads-developers .block .list {
+  list-style-image: url("/img/downloads/list-bullet.png");
+  padding-left: 20px;
+  text-indent: 4px;
+}
+.downloads .downloads-developers .block .btn-virgil {
+  margin-top: 26px;
+}
+.downloads .downloads-developers .block:first-child {
+  margin-left: 0;
+}
+.downloads .downloads-developers .row {
+  margin-top: 16px;
+}
+.downloads .downloads-developers .row:first-child {
+  margin-top: 0;
+}
+.downloads .downloads-developers .downloads-develoeprs-pass {
+  background: #22478d;
+}
+.downloads .downloads-developers .downloads-develoeprs-sync {
+  background: #484a98;
+}
+.downloads .downloads-developers .downloads-develoeprs-mail {
+  background: #5c3f78;
+}
+.downloads .downloads-developers .downloads-develoeprs-keys {
+  background: #006f65;
 }
