@@ -795,14 +795,15 @@ ul.bxslider {
   margin-bottom: 35px;
 }
 .code-tabs {
-  background: #ccc;
+  margin-top: 50px;
+  background: #e3e3ec;
 }
 .code-tabs-nav {
   height: 50px;
   background: #26243f;
 }
 .code-tabs-subnav {
-  height: 50px;
+  height: 42px;
   background: #ccccde;
   clear: both;
 }
@@ -825,7 +826,7 @@ ul.bxslider {
   background: #12112d;
 }
 .code-tabs-subnav-item {
-  padding: 18px 26px;
+  padding: 11px 26px;
   background: #ccccde;
   color: #19192f;
   border-right: none;
@@ -833,4 +834,79 @@ ul.bxslider {
 .code-tabs-subnav-item.active {
   background: #e3e3ec;
   color: #515078;
+}
+.choices {
+  width: 392px;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+.choices .choices-section {
+  margin-left: 60px;
+}
+.choices .choices-section:first-child {
+  margin-left: 0;
+}
+.choices span:hover,
+.choices span.active {
+  color: #83eaff;
+}
+.downloads .downloads-title h2 {
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+}
+.downloads .choices {
+  margin-top: 30px;
+}
+.downloads .choices .tab {
+  padding-left: 44px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+  background-position-y: 2px;
+  background-repeat: no-repeat;
+  color: #a9a8cb;
+}
+.downloads .choices .end-users {
+  background-image: url("/img/downloads/end-users.png");
+}
+.downloads .choices .developers {
+  background-position-y: -4px;
+  background-image: url("/img/downloads/developers.png");
+}
+.downloads .choices .developers.active,
+.downloads .choices .developers:hover {
+  color: #fff;
+  background-image: url("/img/downloads/developers-active.png");
+}
+.downloads .choices .end-users.active,
+.downloads .choices .end-users:hover {
+  color: #fff;
+  background-image: url("/img/downloads/end-users-active.png");
+}
+.downloads .downloads-description {
+  margin-top: 20px;
+  line-height: 26px;
+  width: 630px;
+  color: #a9a8cb;
+}
+.downloads .downloads-links {
+  margin-top: 40px;
+}
+.downloads .downloads-links .downloads-links-link {
+  display: block;
+  float: left;
+  margin-left: 80px;
+  text-decoration: none;
+}
+.downloads .downloads-links .downloads-links-link img {
+  display: block;
+  width: 106px;
+}
+.downloads .downloads-links .downloads-links-link div {
+  margin-top: 10px;
+  color: #fff;
+  text-align: center;
 }
