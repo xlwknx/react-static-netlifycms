@@ -7,32 +7,37 @@
 	<link rel="stylesheet" href="dist/app.css" type="text/css" media="screen" charset="utf-8">
 </head>
 <body class="page signin">
-	<section class="hover signin-alert">Wrong password</section>
-
 	<section class="signin-heading page-heading container">
 		<h2>Enterprise and Developers Dashboard</h2>
 	</section>
 
 	<form class="container signin-form" method="post" action="/signin">
-		<div class="form-item">
+		<div class="form-item error">
 			<input class="form-input expand" type="text" name="email" placeholder="Your Email Address" />
-		</div>
-		<div class="form-item">
-			<input class="form-input expand" type="text" name="password" placeholder="Your Password" />
+			<div class="error-label">Invalid Email</div>
 		</div>
 
-		<div class="forgot">
-			<a href="">Forgot Password</a>
+		<div class="form-item error">
+			<input class="form-input expand" type="text" name="password" placeholder="Your Password" />
+			<div class="error-label">Password is tooooo poor</div>
+		</div>
+
+		<div class="form-item">
+			<input class="form-input expand" type="text" name="company_name" placeholder="Company Name (optional)" />
 		</div>
 
 		<section class="btn-container">
-			<button type="submit" class="btn-virgil btn-transparent">SIGN IN</button>
+			<button type="submit" class="btn-virgil btn-transparent">CREATE ACCOUNT</button>
 		</section>
 	</form>
 
+	<section class="container signin-tos">
+		By creating an account you agree to the Virgil Security<br/>
+		<a href="">Terms of Service</a> & <a href="">Privacy Policy</a>
+	</section>
 
 	<section class="container signin-signup">
-		<p>I'm not a registered user. <a href="/signup">Sign up for free</a></p>
+		<p>Already have an account? <a href="/signin">Sign in</a></p>
 	</section>
 </body>
 </html>

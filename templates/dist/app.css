@@ -286,6 +286,16 @@ button.btn-virgil {
 .form-item:first-child {
   margin-top: 0;
 }
+.form-item.error .form-input {
+  border-color: #b762be;
+}
+.form-item.error .error-label {
+  color: #b762be;
+  float: right;
+  margin-top: -30px;
+  width: 200px;
+  margin-right: -220px;
+}
 .form-input {
   background: rgba(255,255,255,0.1);
   outline: none;
@@ -1063,7 +1073,7 @@ ul.bxslider {
 }
 .signin .signin-form {
   width: 460px;
-  margin-top: 30px;
+  margin-top: 45px;
 }
 .signin .forgot {
   text-align: right;
@@ -1073,11 +1083,16 @@ ul.bxslider {
   text-align: center;
   margin-top: 30px;
 }
+.signin .signin-tos,
 .signin .signin-signup {
   color: #8382a3;
   margin-top: 50px;
   margin-bottom: 80px;
   text-align: center;
+  line-height: 20px;
+}
+.signin .signin-tos {
+  margin-top: 20px;
 }
 /*
 
