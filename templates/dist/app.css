@@ -1075,6 +1075,9 @@ ul.bxslider {
   width: 460px;
   margin-top: 45px;
 }
+.signin .signin-form.reset {
+  margin-top: 32px;
+}
 .signin .forgot {
   text-align: right;
   margin-top: 10px;
