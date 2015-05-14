@@ -38,7 +38,7 @@
 		<span class="choices-section" data-tab-show="api-reference">API REFERENCE</span>
 	</section>
 
-	<section class="docs container md" data-tab="samples">
+	<section class="docs container md hide" data-tab="samples">
 		<h1 id="topics">Topics</h1>
 		<ul>
 		<li><a href="#account">Account</a><ul>
@@ -552,7 +552,7 @@
 		<p>Both client and server must use the same algorithm to make a hash on the <strong>REQUEST_BODY</strong>. See <a href="http://stackoverflow.com/questions/4670494/how-to-cryptographically-hash-a-json-object">thread</a> to review the problem.</p>
 	</section>
 
-	<div class="code-tabs container hide" data-tab="api-reference">
+	<div class="code-tabs container" data-tab="api-reference">
 		<div class="code-tabs-nav">
 			<button class="code-tabs-nav-item" data-section="php">PHP</button>
 			<button class="code-tabs-nav-item" data-section="c#">C#</button>
@@ -566,7 +566,33 @@
 		<div class="sections">
 			<div class="section" data-section="php">
 				<pre data-tab="encrypt">
-					php encrypt
+<code class="lang-js">var marked = require('marked');
+var markdownString = '```js\n console.log("hello"); \n```';
+
+// Async highlighting with pygmentize-bundled
+marked.setOptions({
+	highlight: function (code, lang, callback) {
+		require('pygmentize-bundled')({ lang: lang, format: 'html' }, code, function (err, result) {
+			callback(err, result.toString());
+		});
+	}
+});
+
+// Using async version of marked
+marked(markdownString, function (err, content) {
+  if (err) throw err;
+  console.log(content);
+});
+
+// Synchronous highlighting with highlight.js
+marked.setOptions({
+  highlight: function (code) {
+	return require('highlight.js').highlightAuto(code).value;
+  }
+});
+
+console.log(marked(markdownString));
+</code>
 				</pre>
 				<pre data-tab="decrypt">
 					php decrypt

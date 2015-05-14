@@ -15,6 +15,9 @@ var tabs = new CodeTabs('.code-tabs');
 tabs.selectSection('php').selectTab('encrypt');
 
 initTabs();
+$('pre code').each(function(i, block) {
+	hljs.highlightBlock(block);
+});
 
 function initTabs () {
 	var tabLinks = $('[data-tab-show]');

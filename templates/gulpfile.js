@@ -20,6 +20,7 @@ var config = {
 		src: [
 			'./bower_components/jquery/dist/jquery.js',
 			'./bower_components/bxslider-4/dist/jquery.bxslider.js',
+			'./bower_components/highlightjs/highlight.pack.js',
 			'./js/code-tabs.js',
 			'./js/home.js'
 		],
@@ -31,7 +32,13 @@ var config = {
 
 gulp.task('md', function () {
 	return gulp.src(['./docs/pki.md'])
-		.pipe(markdown())
+		.pipe(markdown({
+			highlight: function (code, lang, callback) {
+				require('pygmentize-bundled')({ lang: lang, format: 'html' }, code, function (err, result) {
+					callback(err, result.toString());
+				});
+			}
+		}))
 		.pipe(gulp.dest('dist'))
 });
 
