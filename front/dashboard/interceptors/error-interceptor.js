@@ -14,7 +14,7 @@ angular.module('app.services').factory('errorInterceptor',
 				if (rejection.status === 401) {
 					auth.destroySession();
 					$location.path(config.urls.signin);
-				} else if (!(_.isObject(rejection.data) && rejection.data.errors)) {
+				} else if (!(_.isObject(rejection.data) && rejection.data.error)) {
 					$rootScope.hasError = true;
 					$timeout(function () {
 						$rootScope.hasError = false;

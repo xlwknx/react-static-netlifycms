@@ -14,7 +14,7 @@ angular.module('app.services').factory('config', [function () {
 		var result = false;
 
 		for (var i in conf.publicPages) {
-			result = result || (url.indexOf(conf.publicPages[i]) != 1);
+			result = result || (url.indexOf(conf.publicPages[i]) != -1);
 		}
 
 		return result;

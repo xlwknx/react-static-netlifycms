@@ -1,14 +1,28 @@
 'use strict';
 
 angular.module('app').
-	controller('NavigationCtrl', ['$scope', '$location', function($scope, $location) {
+	controller('NavigationCtrl',
+	['$scope', '$location', 'accounts', 'auth', 'config',
+	function($scope, $location, accounts, auth, config) {
+
 		// Check if current route is internal page
 		$scope.isInternalPage = function isInternalPage () {
 			return ['/signup', '/signin', '/reset'].indexOf($location.path()) === -1;
 		};
 
 		// Check if given path equals to current route
-		$scope.isActive = function (path) {
+		$scope.isActive = function isActive (path) {
 			return $location.path() == path;
 		};
+
+		$scope.signout = function signout () {
+			accounts.signout(auth.getUser()).$promise
+				.then(finalizeSignout);
+
+			function finalizeSignout () {
+				auth.destroySession();
+				$location.path(config.urls.signin);
+			}
+		}
+
 	}]);
