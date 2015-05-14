@@ -16,15 +16,14 @@ angular.module('app', ['ngRoute', 'app.services', 'app.resources', 'app.template
 	}])
 
 	.run(
-	['auth',
-	function(auth) {
+	['auth', '$rootScope', 'config', '$location',
+	function(auth, $rootScope, config, $location) {
 		auth.loadSession();
-		//auth.injectIntoScope();
 
-		//// Don't show login page for logged in users
-		//$rootScope.$on('$locationChangeStart', function (ev, next) {
-			//if (auth.isAuthenticated() && ((next.indexOf(config.urls.register) !== -1 || next.indexOf(config.urls.login) !== -1))) {
-				//$location.path(config.urls.home);
-			//}
-		//});
+		// Prevent logged in user from signin, signup, reset password pages
+		$rootScope.$on('$locationChangeStart', function (ev, next) {
+			if (auth.isAuthenticated() && config.isPublicPageUrl(next)) {
+				$location.path(config.urls.home);
+			}
+		});
 	}]);
