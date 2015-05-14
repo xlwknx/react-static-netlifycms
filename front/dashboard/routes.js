@@ -7,6 +7,7 @@ angular.module('app').config(['$routeProvider', '$locationProvider', function ($
 
 		when('/signin', { templateUrl: 'auth/signin.html', controller: 'SigninCtrl', reloadOnSearch: false }).
 		when('/signup', { templateUrl: 'auth/signup.html', controller: 'SignupCtrl', reloadOnSearch: false }).
+		when('/reset', { templateUrl: 'auth/reset.html', controller: 'ResetCtrl', reloadOnSearch: false }).
 
 		when('/apps', { templateUrl: 'apps/apps-list.html', controller: 'AppsListCtrl', reloadOnSearch: false }).
 		when('/apps/:id', { templateUrl: 'apps/app-edit.html', controller: 'AppEditCtrl', reloadOnSearch: false }).

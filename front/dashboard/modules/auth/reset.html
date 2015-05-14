@@ -1,25 +1,23 @@
 <div class="signin">
 	<section class="signin-heading page-heading container">
-		<h2>Enterprise and Developers Dashboard</h2>
+		<h2>
+			Reset Password to the Enterprise<br/>
+			and Developers Dashboard
+		</h2>
+		<p>
+			We'll send you and e-mail with instructions to reset your password.
+		</p>
 	</section>
 
-	<form class="container signin-form" method="post" action="/signin">
+	<form class="container signin-form reset" method="post" action="/signin">
 		<div class="form-item">
 			<input class="form-input expand" type="text" name="email" placeholder="Your Email Address" />
 		</div>
-		<div class="form-item">
-			<input class="form-input expand" type="text" name="password" placeholder="Your Password" />
-		</div>
-
-		<div class="forgot">
-			<a ng-href="/reset">Forgot Password</a>
-		</div>
 
 		<section class="btn-container">
-			<button type="submit" class="btn-virgil btn-transparent">SIGN IN</button>
+			<button type="submit" class="btn-virgil btn-transparent">RESET PASSWORD</button>
 		</section>
 	</form>
-
 
 	<section class="container signin-signup">
 		<p>I'm not a registered user. <a ng-href="/signup">Sign up for free</a></p>

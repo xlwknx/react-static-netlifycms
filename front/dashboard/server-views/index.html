@@ -9,27 +9,23 @@
 	<link href="/dist/app.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 </head>
-<body>
-	<div ng-controller="NavigationCtrl">
-		<header class="header" ng-if="isInternalPage()">
-			<a class="block" ng-href="/apps">
-				<img src="/img/logo.png" class="logo" alt="Virgil" />
-			</a>
-		</header>
-	</div>
+<body ng-controller="NavigationCtrl">
+	<header class="header" ng-if="isInternalPage()">
+		<a class="block" ng-href="/apps">
+			<img src="/img/logo.png" class="logo" alt="Virgil" />
+		</a>
+	</header>
 
-	<div ng-controller="NavigationCtrl">
-		<ul class="sidebar" ng-if="isInternalPage()">
-			<li ng-class="{ active: isActive('/apps') }">
-				<a ng-href="/apps">Apps</a>
-			</li>
-			<li ng-class="{ active: isActive('/users') }">
-				<a ng-href="/users">Users</a>
-			</li>
-		</ul>
-	</div>
+	<ul class="sidebar" ng-if="isInternalPage()">
+		<li ng-class="{ active: isActive('/apps') }">
+			<a ng-href="/apps">Apps</a>
+		</li>
+		<li ng-class="{ active: isActive('/users') }">
+			<a ng-href="/users">Users</a>
+		</li>
+	</ul>
 
-	<div class="content" ng-view></div>
+	<div class="content" ng-class="{ internal: isInternalPage() }" ng-view></div>
 
 	<script src='/dist/app.js'></script>
 </body>
