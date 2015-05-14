@@ -10,8 +10,8 @@ angular.module('app.services').factory('validationInterceptor', ['$q', '$documen
 			},
 
 			responseError: function (rejection) {
-				if (_.isObject(rejection.data) && rejection.data.errors) {
-					showErrors($document, rejection.data.errors);
+				if (_.isObject(rejection.data) && rejection.data.error) {
+					showErrors($document, prepareErrors(rejection.data.error));
 				}
 
 				return $q.reject(rejection);
@@ -20,14 +20,29 @@ angular.module('app.services').factory('validationInterceptor', ['$q', '$documen
 	}
 ]);
 
+
+var errorsMap = {
+	30001: { email: 'Account was not found' },
+	30002: { email: 'Account already exists' },
+	30003: { email: 'Account email was not provided' },
+	30004: { email: 'Account password was not provided' },
+	30005: { email: 'Account type was not provided' },
+	30006: { email: 'Account tpe was not found' },
+};
+
+// Adapter for code-based errors
+function prepareErrors (error) {
+	return errorsMap[error.code];
+}
+
 function showErrors (root, errors) {
 	clearErrors(root);
 
 	for (var field in errors) {
 		var input = root.find('[name="' + field + '"]:not([data-ignore])');
-		var wrapper = input.parents('.form-input');
+		var wrapper = input.parents('.form-item');
 
-		wrapper.addClass('has-error');
+		wrapper.addClass('error');
 
 		if (!wrapper.hasClass('no-err-msg')) {
 			wrapper.append(renderError(field, errors[field]));
@@ -36,10 +51,10 @@ function showErrors (root, errors) {
 }
 
 function clearErrors (root) {
-	root.find('span.error').remove();
-	root.find('.form-input.has-error').removeClass('has-error');
+	root.find('.error-label').remove();
+	root.find('.form-item.error').removeClass('error');
 }
 
 function renderError (field, message) {
-	return '<span class="error text-danger">' + message + '</span>';
+	return '<div class="error-label">' + message + '</div>';
 }

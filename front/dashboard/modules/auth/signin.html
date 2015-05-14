@@ -3,12 +3,12 @@
 		<h2>Enterprise and Developers Dashboard</h2>
 	</section>
 
-	<form class="container signin-form" method="post" action="/signin">
+	<form class="container signin-form">
 		<div class="form-item">
-			<input class="form-input expand" type="text" name="email" placeholder="Your Email Address" />
+			<input ng-model="account.email" class="form-input expand" type="text" name="email" placeholder="Your Email Address" />
 		</div>
 		<div class="form-item">
-			<input class="form-input expand" type="text" name="password" placeholder="Your Password" />
+			<input ng-model="account.password" class="form-input expand" type="text" name="password" placeholder="Your Password" />
 		</div>
 
 		<div class="forgot">
@@ -16,7 +16,7 @@
 		</div>
 
 		<section class="btn-container">
-			<button type="submit" class="btn-virgil btn-transparent">SIGN IN</button>
+			<button ng-click="submit(account)" class="btn-virgil btn-transparent">SIGN IN</button>
 		</section>
 	</form>
 
