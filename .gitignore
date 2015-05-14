@@ -8,3 +8,5 @@ composer.lock
 Thumbs.db
 bower_components
 node_modules
+.template-cache
+*.log
