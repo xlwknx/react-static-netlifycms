@@ -1,0 +1,278 @@
+$color-dark-text = #8382a3
+
+placeholder-color(color)
+    &::-webkit-input-placeholder 
+       color color !important
+    &:-moz-placeholder  /* Firefox 18- */
+       color color !important
+    &::-moz-placeholder  /* Firefox 19+ */
+       color color !important
+    &:-ms-input-placeholder  
+       color color !important
+
+@font-face
+	font-family "ClearSans"
+	src url(/fonts/ClearSans-Medium.woff)
+
+@font-face
+	font-family "PFCentroSlabPro-Medium"
+	src url(/fonts/PFCentroSlabPro-Medium.otf)
+
+@font-face
+	font-family "PFCentroSlabPro-Bold"
+	src url(/fonts/PFCentroSlabPro-Bold.otf)
+
+@font-face
+	font-family "PFCentroSlabPro-Light"
+	src url(/fonts/PFCentroSlabPro-Light.otf)
+
+*
+*:before
+*:after
+	box-sizing border-box
+
+*
+	font-family "PT Sans"
+
+h1, h2, h3, h4, h5
+	font-family "PFCentroSlabPro-Medium"
+
+.hide
+	display none
+
+.page
+	background-image url(../img/dotted-bg.png)
+	background-repeat repeat
+
+.container
+	clear both
+	width 1024px
+	margin 0 auto
+
+.cover
+	text-align center
+
+.clear
+	clear both
+
+.container:before
+.container:after
+  content: ""
+  display: table
+
+.container:after
+  clear both
+
+.col-50
+	float left
+	width 50%
+	padding-right 20px
+
+// header
+
+.header
+	padding 20px 0
+	height 100px
+
+	.header-block
+		float left
+		height 52px
+		line-height 52px
+
+	.header-nav
+		.header-nav-link
+			font-size 12px
+			text-decoration none
+			margin-left 20px
+			color $color-dark-text
+
+		.header-nav-link:first-child
+			margin-left 0
+
+	.header-logo
+		float left
+
+	.header-nav-left
+		float left
+		margin-left 32px
+
+	.header-nav-right
+		float right
+
+// footer
+
+.footer
+	height 130px
+	padding-top 80px
+	padding-bottom 50px
+
+	.footer-copy
+		color #6f6d8d
+		float left
+
+	.footer-links
+		margin-left 32px
+		float left
+
+		a
+			color #d4d4d6
+			text-decoration none
+			font-size 14px
+			margin-left 26px
+
+		a:first-child
+			margin-left 0
+
+	.footer-social
+		float right
+
+		a
+			text-decoration none
+			margin-left 28px
+
+			img
+				height 18px
+
+		a:first-child
+			margin-left 0
+
+// buttons
+
+.btn-virgil
+	display inline-block
+	cursor pointer
+	outline none
+	border none
+	color white
+	background #322f60
+	border 3px solid #00f3e8
+	width auto
+	padding 18px 46px
+	font-size 16px
+	border-radius 80px
+	text-decoration none
+
+button.btn-virgil
+	padding 14px 46px
+
+.btn-virgil.btn-transparent
+	border 3px solid #00f3e8
+	background transparent
+
+// page heading
+
+.page-heading
+	margin-top 12px
+	text-align center
+
+	h2
+		color white
+		font-size 40px
+	p
+		margin-top 26px
+		font-size 24px
+		line-height 30px
+		color $color-dark-text
+
+// forms
+
+.form-item
+	margin-top 26px
+
+.form-item:first-child
+	margin-top 0
+
+.form-item.error
+	.form-input
+		border-color #b762be
+
+	.error-label
+		color #b762be
+		float right
+		margin-top -30px
+		width 200px
+		margin-right -220px
+
+.form-input
+	placeholder-color($color-dark-text)
+	background rgba(255,255,255,0.1)
+	outline none
+	border 2px solid $color-dark-text
+	height 44px
+	padding 16px
+	color $color-dark-text
+
+.form-input.expand
+	width 100%
+
+// lists
+
+ul.virgil-list
+	list-style none
+	padding 0
+	margin 0
+
+	li
+		margin-top 18px
+		padding-left 2em;
+		text-indent -.7em
+
+	li:before
+		content "• "
+		color $color-dark-text
+
+.md
+	*
+		color #a9a8cb
+
+	h1, h2, h3, h4, h5, h6
+		color white
+
+	h1
+		padding-bottom 0.3em
+		font-size 2.25em
+		line-height 1.2
+
+	h2
+		padding-bottom 0.3em
+		font-size 1.75em
+		line-height 1.225
+
+	h3
+		font-size 1.5em
+		line-height 1.43
+
+	h4
+		font-size 1.25em
+		position relative
+		margin-top 1em
+		margin-bottom 16px
+		font-weight bold
+		line-height 1.4
+
+	p
+		color #a9a8cb
+		margin-top 0
+		margin-bottom 16px
+		line-height 22px
+
+	pre
+		background #1d1b38
+		color #a9a8cb
+		padding 16px
+		overflow auto
+		font-size 85%
+		line-height 1.45
+		border-radius 3px
+		margin-bottom 16px
+
+	ul
+		padding-left 2em
+		margin-top 0
+		margin-bottom 16px
+
+		li
+			line-height 22px
+
+	a
+		color #83eaff

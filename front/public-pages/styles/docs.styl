@@ -1,0 +1,71 @@
+$color-dark-blue = #26243f
+.code-tabs
+	margin-top 50px
+	background #e3e3ec
+
+.code-tabs-nav
+	height 50px
+	background $color-dark-blue
+
+.code-tabs-subnav
+	height 42px
+	background #ccccde
+	clear both
+
+.code-tabs-nav:after
+	clear both
+
+.code-tabs-nav-item
+	cursor pointer
+	outline none
+	border none
+	padding 15px 32px
+	font-size 16px
+	font-weight bold
+	float left
+	background $color-dark-blue
+	color white
+	border-right thin solid #35324c
+
+.code-tabs-nav-item.active
+	background #12112d
+
+.code-tabs-subnav-item
+	padding 11px 26px
+	background #ccccde
+	color #19192f
+	border-right none
+
+.code-tabs-subnav-item.active
+	background #e3e3ec
+	color #515078
+
+.choices
+	width 392px
+	font-size 20px
+	color white
+	text-align center
+	cursor pointer
+	margin-top 50px
+
+	.choices-section
+		margin-left 60px
+
+	.choices-section:first-child
+		margin-left 0
+
+	span:hover
+	span.active
+		border-bottom thin solid #83eaff
+		color #83eaff
+
+.docs
+	.docs-get-api-key
+		text-align center
+
+		.description
+			color #a9a8cb
+			line-height 26px
+
+		.btn-virgil
+			margin-top 36px
