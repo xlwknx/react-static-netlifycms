@@ -9,15 +9,19 @@
 		</p>
 	</section>
 
-	<form class="container signin-form reset" method="post" action="/signin">
+	<form class="container signin-form reset" ng-if="!isResetCompleted">
 		<div class="form-item">
-			<input class="form-input expand" type="text" name="email" placeholder="Your Email Address" />
+			<input ng-model="account.email" class="form-input expand" type="text" name="email" placeholder="Your Email Address" />
 		</div>
 
 		<section class="btn-container">
-			<button type="submit" class="btn-virgil btn-transparent">RESET PASSWORD</button>
+			<button ng-click="submit(account)" type="submit" class="btn-virgil btn-transparent">RESET PASSWORD</button>
 		</section>
 	</form>
+
+	<section class="container check-email" ng-if="isResetCompleted">
+		Please check your inbox.
+	</section>
 
 	<section class="container signin-signup">
 		<p>I'm not a registered user. <a ng-href="/signup">Sign up for free</a></p>
