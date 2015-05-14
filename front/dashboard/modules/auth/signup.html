@@ -3,25 +3,27 @@
 		<h2>Enterprise and Developers Dashboard</h2>
 	</section>
 
-	<form class="container signin-form" method="post" action="/signin">
-		<div class="form-item error">
-			<input class="form-input expand" type="text" name="email" placeholder="Your Email Address" />
-			<div class="error-label">Invalid Email</div>
-		</div>
-
-		<div class="form-item error">
-			<input class="form-input expand" type="text" name="password" placeholder="Your Password" />
-			<div class="error-label">Password is tooooo poor</div>
+	<form class="container signin-form" ng-if="!isSignupCompleted">
+		<div class="form-item">
+			<input ng-model="account.email" class="form-input expand" type="text" name="email" placeholder="Your Email Address" />
 		</div>
 
 		<div class="form-item">
-			<input class="form-input expand" type="text" name="company_name" placeholder="Company Name (optional)" />
+			<input ng-model="account.password" class="form-input expand" type="text" name="password" placeholder="Your Password" />
+		</div>
+
+		<div class="form-item">
+			<input ng-model="account.company_name" class="form-input expand" type="text" name="company_name" placeholder="Company Name (optional)" />
 		</div>
 
 		<section class="btn-container">
-			<button type="submit" class="btn-virgil btn-transparent">CREATE ACCOUNT</button>
+			<button ng-click="submit(account)" class="btn-virgil btn-transparent">CREATE ACCOUNT</button>
 		</section>
 	</form>
+
+	<section class="container confirm-email" ng-if="isSignupCompleted">
+		Please check your email address for confirmation.
+	</section>
 
 	<section class="container signin-tos">
 		By creating an account you agree to the Virgil Security<br/>
