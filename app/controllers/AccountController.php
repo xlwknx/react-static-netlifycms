@@ -45,12 +45,10 @@ class AccountController extends AbstractController {
         );
 
         return \Response::json(array(
-            'account' => array(
-                'id' => $account->id,
-                'type' => $account->type_id,
-                'email' => $account->email,
-                'confirmed' => $account->isConfirmed()
-            )
+            'id' => $account->id,
+            'type' => $account->type_id,
+            'email' => $account->email,
+            'confirmed' => $account->isConfirmed()
         ), HttpResponse::HTTP_OK);
     }
 
@@ -97,8 +95,8 @@ class AccountController extends AbstractController {
             $data[] = $type->jsonSerialize();
         }
 
-        return \Response::json(array(
-            'data' => $data
-        ), HttpResponse::HTTP_OK);
+        return \Response::json(
+            $data, HttpResponse::HTTP_OK
+        );
     }
 } 

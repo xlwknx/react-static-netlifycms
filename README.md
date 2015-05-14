@@ -233,13 +233,11 @@ Request body
 Response body
 ```json
 {
-  "data": {
     "id": 1,
     "name": "First Virgil Application",
     "description": "First amazing Virgil application",
     "url": "http://application.url.com",
     "key": "a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8"
-  }
 }
 ```
 
@@ -270,8 +268,7 @@ Request body
 
 Response body
 ```json
-{
-  "data": [
+[
     {
         "id": 1,
         "name": "First Virgil Application",
@@ -286,8 +283,7 @@ Response body
         "url": "http://application.url.com",
         "key": "12398f263b78e356e0871234152efa82f266db6521123e76c29a19c882919293"
     }
-  ]
-}
+]
 ```
 
 Request sample
@@ -347,24 +343,20 @@ x-auth-token: a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8
 Request body
 ```json
 {
-    "application": {
-        "name": "First Virgil Application",
-        "description": "First amazing Virgil application",
-        "url": "http://application.url.com"
-    }
+    "name": "First Virgil Application",
+    "description": "First amazing Virgil application",
+    "url": "http://application.url.com"
 }
 ```
 
 Response body
 ```json
 {
-  "data": {
-        "id": 1,
-        "name": "First Virgil Application",
-        "description": "First amazing Virgil application",
-        "url": "http://application.com",
-        "key": "a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8"
-    }
+    "id": 1,
+    "name": "First Virgil Application",
+    "description": "First amazing Virgil application",
+    "url": "http://application.com",
+    "key": "a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8"
 }
 ```
 
@@ -391,24 +383,20 @@ x-auth-token: a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8
 Request body
 ```json
 {
-    "application": {
-        "name": "First Virgil Application",
-        "description": "First amazing Virgil application",
-        "url": "http://application.url.com"
-    }
+    "name": "First Virgil Application",
+    "description": "First amazing Virgil application",
+    "url": "http://application.url.com"
 }
 ```
 
 Response body
 ```json
 {
-  "data": {
-        "id": 1,
-        "name": "First Virgil Application",
-        "description": "First amazing Virgil application",
-        "url": "http://application.com",
-        "key": "a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8"
-    }
+    "id": 1,
+    "name": "First Virgil Application",
+    "description": "First amazing Virgil application",
+    "url": "http://application.com",
+    "key": "a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8"
 }
 ```
 

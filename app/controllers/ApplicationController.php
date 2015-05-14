@@ -8,13 +8,12 @@ class ApplicationController extends AbstractController {
 
     public function getOne($application) {
 
-        return \Response::json(array(
-            'data' => ApplicationValidator::exists(
+        return \Response::json(
+            ApplicationValidator::exists(
                 $this->getCurrentAccount(),
                 $application
-            )
-        ), HttpResponse::HTTP_OK);
-
+            ), HttpResponse::HTTP_OK
+        );
     }
 
     public function getAll() {
@@ -28,9 +27,10 @@ class ApplicationController extends AbstractController {
             $data[] = $application->jsonSerialize();
         }
 
-        return \Response::json(array(
-            'data' => $data
-        ), HttpResponse::HTTP_OK);
+        return \Response::json(
+            $data,
+            HttpResponse::HTTP_OK
+        );
     }
 
     public function create() {
@@ -48,12 +48,12 @@ class ApplicationController extends AbstractController {
             $this->getCurrentAccount()
         );
         */
-        return \Response::json(array(
-            'data' => Application::createApplication(
+        return \Response::json(
+            Application::createApplication(
                 $this->getCurrentAccount(),
                 $data
-            )
-        ), HttpResponse::HTTP_OK);
+            ), HttpResponse::HTTP_OK
+        );
     }
 
     public function resetKey($application) {
@@ -66,9 +66,7 @@ class ApplicationController extends AbstractController {
         $application->resetApplicationKey();
 
         return \Response::json(array(
-            'data' => array(
-                'key' => $application->key
-            )
+            'key' => $application->key
         ), HttpResponse::HTTP_OK);
     }
 
@@ -79,13 +77,13 @@ class ApplicationController extends AbstractController {
             $application
         );
 
-        return \Response::json(array(
-            'data' => $application->updateApplication(
+        return \Response::json(
+            $application->updateApplication(
                 ApplicationValidator::validate(
                     Input::json()->get('application', null)
                 )
-            )
-        ), HttpResponse::HTTP_OK);
+            ), HttpResponse::HTTP_OK
+        );
     }
 
     public function delete($application) {
