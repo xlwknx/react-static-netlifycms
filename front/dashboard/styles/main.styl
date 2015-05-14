@@ -1,1 +1,36 @@
+$header-height = 67px
+
+// colors
+$color-sidebar = #354da4
+$color-sidebar-active-item = #049c90
+$color-body = #12122b
+$color-header = #1d1b38
+
+@require 'reset'
+@require 'sidebar'
 @require 'custom'
+
+*
+	font-family "PT Sans"
+
+*
+*:before
+*:after
+	box-sizing border-box
+
+body
+	background-color $color-body
+
+.header
+	background-color $color-header
+	padding 14px
+	height $header-height
+
+	.logo
+		height 36px
+
+	.block
+		display block
+
+.content
+	margin-left 220px

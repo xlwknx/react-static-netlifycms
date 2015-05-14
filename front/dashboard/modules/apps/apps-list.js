@@ -24,6 +24,7 @@ angular.module('app').
 		}
 
 		function fetch () {
-			$scope.apps = apps.query();
+			$scope.apps = [{}, {}];
+			//$scope.apps = apps.query();
 		}
 	}]);
