@@ -306,9 +306,7 @@ Request body
 Response body
 ```json
 {
-  "data": {
-        "key": "a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8"
-    }
+    "key": "a7498f263b78e356e087e0e4152efa82f266db6521ef2e76c29a19c8a3966bc8"
 }
 ```
 
