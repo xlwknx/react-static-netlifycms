@@ -72,10 +72,8 @@ Authorization Token    Not needed
 Request body
 ```json
 {
-  "account": {
     "email": "suhinin.dmitriy@gmail.com",
     "password": "password"
-  }
 }
 ```
 
@@ -129,22 +127,18 @@ Authorization Token    Not needed
 Request body
 ```json
 {
-  "account": {
     "email": "suhinin.dmitriy@gmail.com",
     "password": "password"
-  }
 }
 ```
 
 Response body
 ```json
 {
-  "account": {
     "id": 1,
     "type": 1,
     "email": "suhinin.dmitriy@gmail.com",
     "confirmed": false
-  }
 }
 ```
 
@@ -190,10 +184,8 @@ Authorization Token    Not needed
 Request body
 ```json
 {
-    "account": {
-        "email": "suhinin.dmitriy@gmail.com",
-        "password": "password"
-    }
+    "email": "suhinin.dmitriy@gmail.com",
+    "password": "password"
 }
 ```
 
