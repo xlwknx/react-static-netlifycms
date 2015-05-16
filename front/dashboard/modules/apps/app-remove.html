@@ -1,0 +1,19 @@
+<div class="overlay"></div>
+<div class="modal app-remove">
+	<div class="modal-head">
+		<h2>{{ app.name }}</h2>
+		<img ng-click="close()" class="modal-close" src="/img/apps-list/close.png"></span>
+		<div class="clear"></div>
+	</div>
+
+	<div class="modal-body">
+		Are you sure you want to delete this application?
+	</div>
+
+	<div class="clear"></div>
+
+	<div class="modal-footer">
+		<button ng-click="close()" class="btn-virgil btn-transparent close">CLOSE</button>
+		<button ng-click="remove(app)" class="btn-virgil btn-red remove">DELETE</button>
+	</div>
+</div>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app').
-	controller('AppEditCtrl', ['$scope', 'close', 'app', 'apps',
+	controller('AppRemoveCtrl', ['$scope', 'close', 'app', 'apps',
 	function($scope, closeModal, app, apps) {
 		$scope.app = app;
 

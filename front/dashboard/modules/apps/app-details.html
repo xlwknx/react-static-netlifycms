@@ -1,0 +1,66 @@
+<div class="app-details">
+
+	<div class="details-block">
+		<div class="heading">
+			<h2>{{ app.name }}</h2>
+
+			<div class="controls">
+					<span ng-click="update(app)" class="btn-edit"></span>
+					<span ng-click="remove(app)" class="btn-remove"></span>
+			</div>
+		</div>
+
+		<div class="clear"></div>
+
+		<div class="url">
+			<a ng-href="{{ app.url }}" target="_blank">{{ app.url }}</a>
+		</div>
+
+		<p class="description" ng-if="app.description">
+			{{ app.description }}
+		</p>
+
+		<div class="key-block">
+			<div class="label">Api Key for Production</div>
+			<div class="key-container">
+				<p class="key">
+					{{ app.key }}
+				</p>
+				<button class="btn-virgil btn-transparent">
+					GENERATE NEW API KEY
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<!--<div class="stats">-->
+		<!--<div class="total-users">-->
+			<!--<div class="label">-->
+				<!--Total Users-->
+			<!--</div>-->
+			<!--<div class="counter">-->
+			<!--</div>-->
+		<!--</div>-->
+		<!--<div class="users-this-month">-->
+			<!--<div class="label">-->
+				<!--Users This Month-->
+			<!--</div>-->
+			<!--<div class="counter">-->
+			<!--</div>-->
+		<!--</div>-->
+		<!--<div class="auths-this-month">-->
+			<!--<div class="label">-->
+				<!--Auths this month-->
+			<!--</div>-->
+			<!--<div class="counter">-->
+			<!--</div>-->
+		<!--</div>-->
+		<!--<div class="api-calls-this-month">-->
+			<!--<div class="label">-->
+				<!--Api Calls This Month-->
+			<!--</div>-->
+			<!--<div class="counter">-->
+			<!--</div>-->
+		<!--</div>-->
+	<!--</div>-->
+</div>
