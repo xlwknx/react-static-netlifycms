@@ -1,33 +1,21 @@
-<div class="row">
-	<div class="col col-md-3">
-		
-		<div class="form-group form-input">
-			<input type="text" class="form-control" ng-model="app.title" name="title" placeholder="title" />
-		</div>
-		
-		<div class="form-group form-input">
-			<input type="text" class="form-control" ng-model="app.description" name="title" placeholder="description" />
-		</div>
-		
-		<div class="form-group">
-			<button class="btn btn-primary btn-block" ng-click="create(app)">добавить app</button>
-		</div>
+<section class="apps-list">
+	<div class="headline">
+		<h2>Applications</h2>
+		<button class="btn-virgil btn-transparent">+ NEW APPLICATION</button>
 	</div>
 
-	<div class="col col-md-9">
-		<div class="row">
-			<div class="col col-md-12">
-				<table class="table">
-					<tr ng-repeat="app in apps">
-						
-						<td><a href="/apps/{{ app.id }}" target="_blank">{{ app.title }}</a></td>
-						
-						<td><a href="/apps/{{ app.id }}" target="_blank">{{ app.description }}</a></td>
-						
-						<td><button class="btn btn-xs btn-danger" ng-click="remove(app)">&times;</button></td>
-					</tr>
-				</table>
-			</div>
-		</div>
-	</div>
-</div>
+	<div class="clear"></div>
+
+	<section class="apps-table">
+		<table>
+			<tbody>
+				<tr ng-repeat="app in apps">
+					<td class="name"><a href="">{{ app.name }}</a></td>
+					<td class="url"><a ng-href="{{ app.url }}">{{ app.url }}</a></td>
+					<td class="key">{{ app.key }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+</section>
+
