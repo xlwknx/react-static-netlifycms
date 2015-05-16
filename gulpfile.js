@@ -30,6 +30,7 @@ var config = {
 			'./bower_components/angular-route/angular-route.js',
 			'./bower_components/angular-resource/angular-resource.js',
 			'./bower_components/a0-angular-storage/dist/angular-storage.js',
+			'./bower_components/angular-modal-service/dst/angular-modal-service.js',
 
 			'./front/dashboard/app.js',
 			'./front/dashboard/routes.js',
