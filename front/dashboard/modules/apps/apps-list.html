@@ -11,7 +11,7 @@
 			<tbody>
 				<tr ng-repeat="app in apps">
 					<td class="name"><a ng-href="/apps/{{ app.id }}">{{ app.name }}</a></td>
-					<td class="url"><a ng-href="{{ app.url }}">{{ app.url }}</a></td>
+					<td class="url"><a ng-href="{{ app.url }}" target="_blank" >{{ app.url }}</a></td>
 					<td class="key">{{ app.key }}</td>
 					<td class="controls">
 						<span ng-click="update(app)" class="btn-edit"></span>
