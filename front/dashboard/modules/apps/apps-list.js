@@ -19,7 +19,7 @@ angular.module('app').
 				inputs: {
 					app: { name: 'New Application' }
 				}
-			});
+			}).then(fetchOnModalClose);
 		}
 
 		function update (app) {
@@ -29,7 +29,7 @@ angular.module('app').
 				inputs: {
 					app: app
 				}
-			});
+			}).then(fetchOnModalClose);
 		}
 
 		function remove (app) {
@@ -38,6 +38,14 @@ angular.module('app').
 				controller: "AppRemoveCtrl",
 				inputs: {
 					app: app
+				}
+			}).then(fetchOnModalClose);
+		}
+
+		function fetchOnModalClose (modal) {
+			modal.close.then(function (isChanged) {
+				if (isChanged) {
+					fetch();
 				}
 			});
 		}

@@ -6,7 +6,7 @@ angular.module('app').
 		$scope.app = app;
 
 		$scope.close = function close () {
-			closeModal();
+			closeModal(false);
 		};
 
 		$scope.save = function save () {
@@ -19,7 +19,7 @@ angular.module('app').
 			}
 
 			promise.then(function () {
-				closeModal();
+				closeModal(true);
 			});
 		};
 	}]);

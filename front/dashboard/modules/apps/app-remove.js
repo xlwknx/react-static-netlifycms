@@ -6,20 +6,12 @@ angular.module('app').
 		$scope.app = app;
 
 		$scope.close = function close () {
-			closeModal();
+			closeModal(false);
 		};
 
-		$scope.save = function save () {
-			var promise;
-
-			if (app.id) {
-				promise = apps.update(app).$promise;
-			} else {
-				promise = apps.save(app).$promise;
-			}
-
-			promise.then(function () {
-				closeModal();
+		$scope.remove = function remove () {
+			apps.delete({ id: app.id }).$promise.then(function () {
+				closeModal(true);
 			});
 		};
 	}]);
