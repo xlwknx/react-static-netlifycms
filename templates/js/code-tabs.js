@@ -8,7 +8,7 @@ CodeTabs.prototype.bindElements = function bindElements (selector) {
 	this.$navs = this.$el.find('.code-tabs-nav .code-tabs-nav-item');
 	this.$subnavs = this.$el.find('.code-tabs-subnav .code-tabs-nav-item');
 	this.$sections = this.$el.find('.sections [data-section]');
-	this.$tabs = this.$sections.find('[data-tab]');
+	this.$tabs = this.$sections.find('[data-code-tab]');
 };
 
 CodeTabs.prototype.init = function init () {
@@ -44,9 +44,9 @@ CodeTabs.prototype.selectSection = function selectSection (section) {
 
 CodeTabs.prototype.selectTab = function selectTab (tab) {
 	this.$subnavs.removeClass('active');
-	this.$subnavs.filter('[data-tab=' + tab + ']').addClass('active');
+	this.$subnavs.filter('[data-code-tab=' + tab + ']').addClass('active');
 
 	this.$tabs.hide();
-	this.$tabs.filter('[data-tab=' + tab + ']').show();
+	this.$tabs.filter('[data-code-tab=' + tab + ']').show();
 	return this;
 };

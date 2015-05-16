@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var stylus = require('gulp-stylus');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var plumber = require('gulp-plumber');
 var markdown = require('gulp-markdown');
 var template_cache = require('gulp-angular-templatecache');
 var run_sequence = require('run-sequence');
@@ -31,12 +32,11 @@ var config = {
 };
 
 gulp.task('md', function () {
-	return gulp.src(['./docs/pki.md'])
+	return gulp.src(['./docs/pki.md', './docs/auth.md'])
+		.pipe(plumber())
 		.pipe(markdown({
-			highlight: function (code, lang, callback) {
-				require('pygmentize-bundled')({ lang: lang, format: 'html' }, code, function (err, result) {
-					callback(err, result.toString());
-				});
+			highlight: function (code) {
+				return require('highlight.js').highlightAuto(code).value;
 			}
 		}))
 		.pipe(gulp.dest('dist'))

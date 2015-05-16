@@ -1,647 +1,71 @@
-<h1 id="topics">Topics</h1>
+<p><a href="https://travis-ci.org/VirgilSecurity/virgil"><img src="https://travis-ci.org/VirgilSecurity/virgil.svg?branch=master" alt="Build Status"></a></p>
+<h1 id="library-virgil">Library: virgil</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Welcome to Virgil!</p>
+<p>Virgil is a stack of security libraries (ECIES with Crypto Agility wrapped in Virgil Cryptogram) and all the necessary
+infrastructure to enable seamless, end-to-end encryption for any application, platform or device.
+See below for currently available languages and platforms. 
+Get in touch with us to get preview access to our key infrastructure.</p>
+<p>Virgil Security, Inc., guides software developers into the forthcoming security world in which everything will be encrypted (and passwords will be eliminated).  In this world, the days of developers having to raise millions of dollars to build a secure chat, secure email, secure file-sharing, or a secure anything have come to an end.  Now developers can instead focus on building features that give them a competitive market advantage while end-users can enjoy the privacy and security they increasingly demand.</p>
+<h2 id="documentation">Documentation</h2>
+<p>See <a href="https://github.com/VirgilSecurity/virgil/wiki">Virgil Wiki</a> page for more details.</p>
+<h2 id="supported-languages-and-platforms">Supported languages and platforms</h2>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Platform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C++</td>
+<td>Any</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>Unix, Linux, OS X</td>
+</tr>
+<tr>
+<td>C#</td>
+<td>Any .NET platform or Xamarin</td>
+</tr>
+<tr>
+<td>ActionScript 3</td>
+<td>Any</td>
+</tr>
+<tr>
+<td>Node.js</td>
+<td>Any</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>Any</td>
+</tr>
+<tr>
+<td>Swift,Objective-C</td>
+<td>Coming April 2015</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Any</td>
+</tr>
+<tr>
+<td>Chrome,Firefox,Safari</td>
+<td>Available by Request</td>
+</tr>
+</tbody>
+</table>
+<h2 id="library-purposes">Library purposes</h2>
+<ol>
+<li>Encrypt and decrypt data.</li>
+<li>Sign and verify data.</li>
+<li>Work with objects from <a href="http://VirgilSecurity.com">Virgil Security PKI Service</a>.
+Virgil Key Infrustructure API is available in preview.
+Email: support@virgilsecurity.com to get early access</li>
+</ol>
+<h2 id="where-library-can-be-used">Where library can be used</h2>
 <ul>
-<li><a href="#account">Account</a><ul>
-<li><a href="#get-objectsaccountaccount-id">GET /objects/account/{account-id}</a></li>
+<li>on the client-side application;</li>
+<li>on the server-side application.</li>
 </ul>
-</li>
-<li><a href="#certificate">Certificate</a><ul>
-<li><a href="#post-objectscertificate-attach-use-case">POST /objects/certificate (ATTACH use-case)</a></li>
-<li><a href="#post-objectscertificate-create-use-case">POST /objects/certificate (CREATE use-case)</a></li>
-<li><a href="#get-objectscertificatecertificate-id">GET /objects/certificate/{certificate-id}</a></li>
-<li><a href="#remove-objectscertificatecertificate-id">REMOVE /objects/certificate/{certificate-id}</a></li>
-</ul>
-</li>
-<li><a href="#ticket">Ticket</a><ul>
-<li><a href="#post-objectsticket">POST /objects/ticket</a></li>
-<li><a href="#get-objectsticketticket-id">GET /objects/ticket/{ticket-id}</a></li>
-<li><a href="#remove-objectsticketticket-id">REMOVE /objects/ticket/{ticket-id}</a></li>
-<li><a href="#post-objectsticketticket-idactionsconfirm">POST /objects/ticket/{ticket-id}/actions/confirm</a></li>
-<li><a href="#post-objectsticketticket-idactionsresend-confirmation">POST /objects/ticket/{ticket-id}/actions/resend-confirmation</a></li>
-</ul>
-</li>
-<li><a href="#search">Search</a><ul>
-<li><a href="#post-searchaccount">POST /search/account</a></li>
-<li><a href="#post-searchticket">POST /search/ticket</a></li>
-</ul>
-</li>
-<li><a href="#appendix-a-response-codes">Appendix A. Repsonse codes</a></li>
-<li><a href="#Appendix B. Authorization">Appendix B. Authorization</a></li>
-</ul>
-<h1 id="account">Account</h1>
-<p><strong><code>Account</code></strong> entity endpoints</p>
-<h2 id="get-objects-account-account-id-">GET /objects/account/{account-id}</h2>
-<p>Retrieve <strong><code>Account</code></strong> entity including all nested <strong><code>Certificates</code></strong> by <strong>account-id</strong> specified.</p>
-<p>Request info</p>
-<pre><code><div class="highlight"><pre><span class="nx">HTTP</span> <span class="nx">Request</span> <span class="nx">method</span>    <span class="nx">GET</span>
-<span class="nx">Request</span> <span class="nx">URL</span>            <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/account/{account-id}</span>
-<span class="nx">Authorization</span>          <span class="nx">Not</span> <span class="nx">needed</span>
-</pre></div>
-
-</code></pre><p>Request body</p>
-<pre><code><div class="highlight"><pre><span class="o">-</span>
-</pre></div>
-
-</code></pre><p>Response body</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;account_id&quot;</span><span class="p">:</span> <span class="s2">&quot;e33898de-6302-4756-8f0c-5f6c5218e02e&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;certificates&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;account_id&quot;</span><span class="p">:</span> <span class="s2">&quot;e33898de-6302-4756-8f0c-5f6c5218e02e&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;certificate_id&quot;</span><span class="p">:</span> <span class="s2">&quot;3a768eea-cbda-4926-a82d-831cb89092aa&quot;</span>
-            <span class="p">},</span>
-            <span class="nt">&quot;public_key&quot;</span><span class="p">:</span> <span class="s2">&quot;BASE64-ENCODED-STRING&quot;</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;account_id&quot;</span><span class="p">:</span> <span class="s2">&quot;e33898de-6302-4756-8f0c-5f6c5218e02e&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;certificate_id&quot;</span><span class="p">:</span> <span class="s2">&quot;deb17e15-d47c-449f-b1b0-4d55247d153f&quot;</span>
-            <span class="p">},</span>
-            <span class="nt">&quot;public_key&quot;</span><span class="p">:</span> <span class="s2">&quot;BASE64-ENCODED-STRING&quot;</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre>
-<p>Request sample</p>
-<pre><code><div class="highlight"><pre><span class="nx">curl</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">X</span> <span class="nx">GET</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/account/6480ba7a-1b68-141e-b547-ef8d9adc3145</span>
-</pre></div>
-
-</code></pre><h1 id="certificate">Certificate</h1>
-<p><strong><code>Certificate</code></strong> entity endpoints.</p>
-<p>Create <strong><code>Certificate</code></strong> endpoint has two different use-cases:</p>
-<ul>
-<li><strong><code>ATTACH</code></strong>. Creates <strong><code>Certificate</code></strong> for <strong><code>Account</code></strong> specified by <strong>account_id</strong> parameter. The authorization is <strong>NEEDED</strong> and <strong>account_id</strong> parameter required.</li>
-<li><strong><code>CREATE</code></strong>. Creates new <strong><code>Account</code></strong> / <strong><code>Certificate</code></strong> pair. The authorization is <strong>NOT NEEDED</strong> and <strong>account_id</strong> parameter is omitted.</li>
-</ul>
-<p><strong>tickets</strong> parameter is optional when <strong><code>Certificate</code></strong> get created.</p>
-<h2 id="post-objects-certificate-attach-use-case-">POST /objects/certificate (ATTACH use-case)</h2>
-<p>Request info</p>
-<pre><code><div class="highlight"><pre><span class="nx">HTTP</span> <span class="nx">Request</span> <span class="nx">method</span>    <span class="nx">POST</span>
-<span class="nx">Request</span> <span class="nx">URL</span>            <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/certificate</span>
-<span class="nx">Authorization</span>          <span class="nx">Needed</span>
-<span class="nx">Parameters</span>             <span class="nx">public_key</span> <span class="o">-</span> <span class="nx">base64</span> <span class="nx">encoded</span> <span class="kr">public</span> <span class="nx">key</span> <span class="nx">string</span>
-</pre></div>
-
-</code></pre><p>Request body</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;account_id&quot;</span><span class="p">:</span> <span class="s2">&quot;30a7e1b3-e763-4789-a54d-fcc53dcf973a&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;public_key&quot;</span><span class="p">:</span> <span class="s2">&quot;BASE64-ENCODED-STRING&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;tickets&quot;</span><span class="p">:</span> <span class="p">[</span>                                             
-        <span class="p">{</span>
-            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;user_id&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;user@domain.com&quot;</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;user_id&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;application&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;warcraft.blizzard.com&quot;</span>
-        <span class="p">},</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;guid&quot;</span><span class="p">:</span> <span class="s2">&quot;a53e98e4-0197-4513-be6d-49836e406aaa&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre>
-<p>Response body</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;id&quot;</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;account_id&quot;</span><span class="p">:</span> <span class="s2">&quot;3a768eea-cbda-4926-a82d-831cb89092aa&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;certificate_id&quot;</span><span class="p">:</span> <span class="s2">&quot;17084b40-08f5-4bcd-a739-c0d08c176bad&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;public_key&quot;</span><span class="p">:</span> <span class="s2">&quot;BASE64-ENCODED-STRING&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;tickets&quot;</span><span class="p">:</span> <span class="p">[]</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre>
-<p>Request sample</p>
-<pre><code><div class="highlight"><pre><span class="nx">curl</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">X</span> <span class="nx">POST</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/certificate --data &#39;{&quot;account_id&quot;: &quot;30a7e1b3-e763-4789-a54d-fcc53dcf973a&quot;, &quot;public_key&quot; : &quot;BASE64-ENCODED-STRING&quot;, &quot;guid&quot;: &quot;a53e98e4-0197-4513-be6d-49836e406aaa&quot;}&#39;</span>
-</pre></div>
-
-</code></pre><h2 id="post-objects-certificate-create-use-case-">POST /objects/certificate (CREATE use-case)</h2>
-<p>Request info</p>
-<pre><code><div class="highlight"><pre><span class="nx">HTTP</span> <span class="nx">Request</span> <span class="nx">method</span>    <span class="nx">POST</span>
-<span class="nx">Request</span> <span class="nx">URL</span>            <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/certificate</span>
-<span class="nx">Authorization</span>          <span class="nx">Not</span> <span class="nx">Needed</span>
-</pre></div>
-
-</code></pre><p>Request body</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;public_key&quot;</span><span class="p">:</span> <span class="s2">&quot;BASE64-ENCODED-STRING&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;tickets&quot;</span><span class="p">:</span> <span class="p">[</span>                                              
-        <span class="p">{</span>
-            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;user_id&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;user@domain.com&quot;</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;user_id&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;application&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;warcraft.blizzard.com&quot;</span>
-        <span class="p">},</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;guid&quot;</span><span class="p">:</span> <span class="s2">&quot;a53e98e4-0197-4513-be6d-49836e406aaa&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre>
-<p>Response body</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;account_id&quot;</span><span class="p">:</span> <span class="s2">&quot;3a768eea-cbda-4926-a82d-831cb89092aa&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;certificate_id&quot;</span><span class="p">:</span> <span class="s2">&quot;17084b40-08f5-4bcd-a739-c0d08c176bad&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;public_key&quot;</span><span class="p">:</span> <span class="s2">&quot;BASE64-ENCODED-STRING&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;tickets&quot;</span><span class="p">:</span> <span class="p">[]</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre>
-<p>Request sample</p>
-<pre><code><div class="highlight"><pre><span class="nx">curl</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">X</span> <span class="nx">POST</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/certificate --data &#39;{&quot;public_key&quot; : &quot;BASE64-ENCODED-STRING&quot;, &quot;guid&quot;: &quot;a53e98e4-0197-4513-be6d-49836e406aaa&quot;}&#39;</span>
-</pre></div>
-
-</code></pre><h2 id="get-objects-certificate-certificate-id-">GET /objects/certificate/{certificate-id}</h2>
-<p>Retrieve the information on <strong><code>Certificate</code></strong> including all nested <strong><code>Tickets</code></strong>.</p>
-<p>Request info</p>
-<pre><code><div class="highlight"><pre><span class="nx">HTTP</span> <span class="nx">Request</span> <span class="nx">method</span>    <span class="nx">GET</span>
-<span class="nx">Request</span> <span class="nx">URL</span>            <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/certificate/{certificate-id}</span>
-<span class="nx">Authorization</span>          <span class="nx">Not</span> <span class="nx">needed</span>
-</pre></div>
-
-</code></pre><p>Request body</p>
-<pre><code><div class="highlight"><pre><span class="o">-</span>
-</pre></div>
-
-</code></pre><p>Response body</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;account_id&quot;</span><span class="p">:</span> <span class="s2">&quot;d63a8ffd-bdac-498c-b861-a53e11989cef&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;certificate_id&quot;</span><span class="p">:</span> <span class="s2">&quot;deb17e15-d47c-449f-b1b0-4d55247d153f&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;public_key&quot;</span><span class="p">:</span> <span class="s2">&quot;BASE64-ENCODED-STRING&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;tickets&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;user_id&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;phone&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;+1 123 777 7777&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;is_confirmed&quot;</span><span class="p">:</span> <span class="kc">false</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;user_id&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;domenik.reve@gmail.com&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;is_confirmed&quot;</span><span class="p">:</span> <span class="kc">true</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre>
-<p>Request sample</p>
-<pre><code><div class="highlight"><pre><span class="nx">curl</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">X</span> <span class="nx">GET</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/certificate/6480ba7a-1b68-141e-b547-ef8d9adc3145</span>
-</pre></div>
-
-</code></pre><h2 id="remove-objects-certificate-certificate-id-">REMOVE /objects/certificate/{certificate-id}</h2>
-<p>Remove the <strong><code>Certificate</code></strong> by it&#39;s id.</p>
-<p>Request info</p>
-<pre><code><div class="highlight"><pre><span class="nx">HTTP</span> <span class="nx">Request</span> <span class="nx">method</span>    <span class="nx">DELETE</span>
-<span class="nx">Request</span> <span class="nx">URL</span>            <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/certificate/{certificate-id}</span>
-<span class="nx">Authorization</span>          <span class="nx">Needed</span>
-</pre></div>
-
-</code></pre><p>Request body</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;guid&quot;</span><span class="p">:</span> <span class="s2">&quot;a53e98e4-0197-4513-be6d-49836e406aaa&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre>
-<p>Response body</p>
-<pre><code><div class="highlight"><pre><span class="o">-</span>
-</pre></div>
-
-</code></pre><p>Request sample</p>
-<pre><code><div class="highlight"><pre><span class="nx">curl</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">X</span> <span class="nx">DELETE</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/certificate/6480ba7a-1b68-141e-b547-ef8d9adc3145 --data &#39;{&quot;guid&quot;: &quot;a53e98e4-0197-4513-be6d-49836e406aaa&quot;}&#39;</span>
-</pre></div>
-
-</code></pre><h1 id="ticket">Ticket</h1>
-<p><strong><code>Ticket</code></strong> entity endpoints
-Available ticket class/type combinations are:</p>
-<ul>
-<li>user_id <pre><code class="lang-json"><div class="highlight"><pre>  <span class="s2">&quot;class&quot;</span><span class="err">:</span> <span class="s2">&quot;user_id&quot;</span><span class="err">,</span>
-  <span class="s2">&quot;type&quot;</span><span class="err">:</span> <span class="s2">&quot;phone&quot;</span><span class="err">,</span>
-  <span class="s2">&quot;value&quot;</span><span class="err">:</span> <span class="s2">&quot;+1 123 777 7777&quot;</span>
-</pre></div>
-
-</code></pre>
-<pre><code class="lang-json"><div class="highlight"><pre>  <span class="s2">&quot;class&quot;</span><span class="err">:</span> <span class="s2">&quot;user_id&quot;</span><span class="err">,</span>
-  <span class="s2">&quot;type&quot;</span><span class="err">:</span> <span class="s2">&quot;email&quot;</span><span class="err">,</span>
-  <span class="s2">&quot;value&quot;</span><span class="err">:</span> <span class="s2">&quot;super.trouper@gmail.com&quot;</span>
-</pre></div>
-
-</code></pre>
-<pre><code class="lang-json"><div class="highlight"><pre>  <span class="s2">&quot;class&quot;</span><span class="err">:</span> <span class="s2">&quot;user_id&quot;</span><span class="err">,</span>
-  <span class="s2">&quot;type&quot;</span><span class="err">:</span> <span class="s2">&quot;fax&quot;</span><span class="err">,</span>
-  <span class="s2">&quot;value&quot;</span><span class="err">:</span> <span class="s2">&quot;+1 123 777 7777&quot;</span>
-</pre></div>
-
-</code></pre>
-<pre><code class="lang-json"><div class="highlight"><pre>  <span class="s2">&quot;class&quot;</span><span class="err">:</span> <span class="s2">&quot;user_id&quot;</span><span class="err">,</span>
-  <span class="s2">&quot;type&quot;</span><span class="err">:</span> <span class="s2">&quot;domain&quot;</span><span class="err">,</span>
-  <span class="s2">&quot;value&quot;</span><span class="err">:</span> <span class="s2">&quot;example.com&quot;</span>
-</pre></div>
-
-</code></pre>
-<pre><code class="lang-json"><div class="highlight"><pre>  <span class="s2">&quot;class&quot;</span><span class="err">:</span> <span class="s2">&quot;user_id&quot;</span><span class="err">,</span>
-  <span class="s2">&quot;type&quot;</span><span class="err">:</span> <span class="s2">&quot;mac_address&quot;</span><span class="err">,</span>
-  <span class="s2">&quot;value&quot;</span><span class="err">:</span> <span class="s2">&quot;e6:89:35:df:f4:ed&quot;</span>
-</pre></div>
-
-</code></pre>
-<pre><code class="lang-json"><div class="highlight"><pre>  <span class="s2">&quot;class&quot;</span><span class="err">:</span> <span class="s2">&quot;user_id&quot;</span><span class="err">,</span>
-  <span class="s2">&quot;type&quot;</span><span class="err">:</span> <span class="s2">&quot;application&quot;</span><span class="err">,</span>
-  <span class="s2">&quot;value&quot;</span><span class="err">:</span> <span class="s2">&quot;com.example.application.name&quot;</span>
-</pre></div>
-
-</code></pre>
-</li>
-<li>user_info<pre><code class="lang-json"><div class="highlight"><pre>  <span class="s2">&quot;class&quot;</span><span class="err">:</span> <span class="s2">&quot;user_info&quot;</span><span class="err">,</span>
-  <span class="s2">&quot;type&quot;</span><span class="err">:</span> <span class="s2">&quot;first_name&quot;</span>
-  <span class="s2">&quot;value&quot;</span><span class="err">:</span> <span class="s2">&quot;Bob&quot;</span>
-</pre></div>
-
-</code></pre>
-<pre><code class="lang-json"><div class="highlight"><pre>  <span class="s2">&quot;class&quot;</span><span class="err">:</span> <span class="s2">&quot;user_info&quot;</span><span class="err">,</span>
-  <span class="s2">&quot;type&quot;</span><span class="err">:</span> <span class="s2">&quot;last_name&quot;</span>
-  <span class="s2">&quot;value&quot;</span><span class="err">:</span> <span class="s2">&quot;Bobson&quot;</span>
-</pre></div>
-
-</code></pre>
-</li>
-</ul>
-<h2 id="post-objects-ticket">POST /objects/ticket</h2>
-<p>Request info</p>
-<pre><code><div class="highlight"><pre><span class="nx">HTTP</span> <span class="nx">Request</span> <span class="nx">method</span>    <span class="nx">POST</span>
-<span class="nx">Request</span> <span class="nx">URL</span>            <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/ticket</span>
-<span class="nx">Authorization</span>          <span class="nx">Needed</span>
-</pre></div>
-
-</code></pre><p>Request body</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;certificate_id&quot;</span><span class="p">:</span> <span class="s2">&quot;30a7e1b3-e763-4789-a54d-fcc53dcf973a&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;class&quot;</span> <span class="p">:</span> <span class="s2">&quot;user_id&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;phone&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;value&quot;</span> <span class="p">:</span> <span class="s2">&quot;+1 123 777 7777&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;guid&quot;</span><span class="p">:</span> <span class="s2">&quot;3a768eea-cbda-4926-a82d-831cb89092aa&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
-   <span class="nt">&quot;certificate_id&quot;</span><span class="p">:</span> <span class="s2">&quot;30a7e1b3-e763-4789-a54d-fcc53dcf973a&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;user_info&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;last_name&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Maley&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;guid&quot;</span><span class="p">:</span> <span class="s2">&quot;3a768eea-cbda-4926-a82d-831cb89092aa&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
-   <span class="nt">&quot;certificate_id&quot;</span><span class="p">:</span> <span class="s2">&quot;30a7e1b3-e763-4789-a54d-fcc53dcf973a&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;class&quot;</span> <span class="p">:</span> <span class="s2">&quot;user_id&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;value&quot;</span> <span class="p">:</span> <span class="s2">&quot;daniel.rehl@yahoo.com&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;guid&quot;</span><span class="p">:</span> <span class="s2">&quot;3a768eea-cbda-4926-a82d-831cb89092aa&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre>
-<p>Response body</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;account_id&quot;</span><span class="p">:</span> <span class="s2">&quot;3a768eea-cbda-4926-a82d-831cb89092aa&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;certificate_id&quot;</span><span class="p">:</span> <span class="s2">&quot;17084b40-08f5-4bcd-a739-c0d08c176bad&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ticket_id&quot;</span><span class="p">:</span> <span class="s2">&quot;e33898de-6302-4756-8f0c-5f6c5218e02e&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;user_id&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;daniel.rehl@yahoo.com&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre>
-<p>Request sample</p>
-<pre><code><div class="highlight"><pre><span class="nx">curl</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">X</span> <span class="nx">POST</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/ticket --data &#39;{&quot;certificate_id&quot;: &quot;30a7e1b3-e763-4789-a54d-fcc53dcf973a&quot;, &quot;class&quot;: &quot;user_id&quot;, &quot;type&quot;: &quot;email&quot;, &quot;value&quot;: &quot;daniel.rehl@yahoo.com&quot;, &quot;guid&quot;: &quot;a53e98e4-0197-4513-be6d-49836e406aaa&quot;}&#39;</span>
-</pre></div>
-
-</code></pre><h2 id="get-objects-ticket-ticket-id-">GET /objects/ticket/{ticket-id}</h2>
-<p>Retrieve the information on <strong><code>Ticket</code></strong> including all nested <strong><code>Signs</code></strong>.</p>
-<p>Request info</p>
-<pre><code><div class="highlight"><pre><span class="nx">HTTP</span> <span class="nx">Request</span> <span class="nx">method</span>    <span class="nx">GET</span>
-<span class="nx">Request</span> <span class="nx">URL</span>            <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/ticket/{ticket-id}</span>
-<span class="nx">Authorization</span>          <span class="nx">Not</span> <span class="nx">needed</span>
-</pre></div>
-
-</code></pre><p>Request body</p>
-<pre><code><div class="highlight"><pre><span class="o">-</span>
-</pre></div>
-
-</code></pre><p>Response body</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;account_id&quot;</span><span class="p">:</span> <span class="s2">&quot;e33898de-6302-4756-8f0c-5f6c5218e02e&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;certificate_id&quot;</span><span class="p">:</span> <span class="s2">&quot;30a7e1b3-e763-4789-a54d-fcc53dcf973a&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ticket_id&quot;</span><span class="p">:</span> <span class="s2">&quot;cd171f7c-560d-4a62-8d65-16b87419a58c&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;user_id&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;user@domain.com&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre>
-<p>Request sample</p>
-<pre><code><div class="highlight"><pre><span class="nx">curl</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">X</span> <span class="nx">GET</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/ticket/6480ba7a-1b68-141e-b547-ef8d9adc3145</span>
-</pre></div>
-
-</code></pre><h2 id="remove-objects-ticket-ticket-id-">REMOVE /objects/ticket/{ticket-id}</h2>
-<p>Remove the <strong><code>Ticket</code></strong> by it&#39;s id.</p>
-<p>Request info</p>
-<pre><code><div class="highlight"><pre><span class="nx">HTTP</span> <span class="nx">Request</span> <span class="nx">method</span>    <span class="nx">DELETE</span>
-<span class="nx">Request</span> <span class="nx">URL</span>            <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/ticket/{ticket-id}</span>
-<span class="nx">Authorization</span>          <span class="nx">Needed</span>
-</pre></div>
-
-</code></pre><p>Request body</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;guid&quot;</span><span class="p">:</span> <span class="s2">&quot;a53e98e4-0197-4513-be6d-49836e406aaa&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre>
-<p>Response body</p>
-<pre><code><div class="highlight"><pre><span class="o">-</span>
-</pre></div>
-
-</code></pre><p>Request sample</p>
-<pre><code><div class="highlight"><pre><span class="nx">curl</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">X</span> <span class="nx">DELETE</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/ticket/6480ba7a-1b68-141e-b547-ef8d9adc3145 --data &#39;{&quot;guid&quot;: &quot;a53e98e4-0197-4513-be6d-49836e406aaa&quot;}&#39;</span>
-</pre></div>
-
-</code></pre><h2 id="post-objects-ticket-ticket-id-actions-confirm">POST /objects/ticket/{ticket-id}/actions/confirm</h2>
-<p>Confirm <strong><code>Ticket</code></strong> indentity ownership by specifying the code received on registration</p>
-<p>Request info</p>
-<pre><code><div class="highlight"><pre><span class="nx">HTTP</span> <span class="nx">Request</span> <span class="nx">method</span>    <span class="nx">POST</span>
-<span class="nx">Request</span> <span class="nx">URL</span>            <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/ticket/{ticket-id}/actions/confirm</span>
-<span class="nx">Authorization</span>          <span class="nx">Needed</span>
-</pre></div>
-
-</code></pre><p>Request body</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;F9U0W9&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;guid&quot;</span><span class="p">:</span> <span class="s2">&quot;a53e98e4-0197-4513-be6d-49836e406aaa&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre>
-<p>Response body</p>
-<pre><code><div class="highlight"><pre><span class="o">-</span>
-</pre></div>
-
-</code></pre><p>Request sample</p>
-<pre><code><div class="highlight"><pre><span class="nx">curl</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">X</span> <span class="nx">POST</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/ticket/6480ba7a-1b68-141e-b547-ef8d9adc3145/actions/confirm --data &#39;{&quot;guid&quot;: &quot;a53e98e4-0197-4513-be6d-49836e406aaa&quot;, &quot;code&quot;:&quot;F9U0W9&quot;}&#39;</span>
-</pre></div>
-
-</code></pre><h2 id="post-objects-ticket-ticket-id-actions-resend-confirmation">POST /objects/ticket/{ticket-id}/actions/resend-confirmation</h2>
-<p>Resend the <strong><code>Ticket</code></strong>&#39;s confirmation code</p>
-<p>Request info</p>
-<pre><code><div class="highlight"><pre><span class="nx">HTTP</span> <span class="nx">Request</span> <span class="nx">method</span>    <span class="nx">POST</span>
-<span class="nx">Request</span> <span class="nx">URL</span>            <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/ticket/{ticket-id}/actions/resend-confirmation</span>
-<span class="nx">Authorization</span>          <span class="nx">Needed</span>
-</pre></div>
-
-</code></pre><p>Request body</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;guid&quot;</span><span class="p">:</span> <span class="s2">&quot;a53e98e4-0197-4513-be6d-49836e406aaa&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre>
-<p>Response body</p>
-<pre><code><div class="highlight"><pre><span class="o">-</span>
-</pre></div>
-
-</code></pre><p>Request sample</p>
-<pre><code><div class="highlight"><pre><span class="nx">curl</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">X</span> <span class="nx">POST</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/ticket/6480ba7a-1b68-141e-b547-ef8d9adc3145/actions/resend-confirmation --data &#39;{&quot;guid&quot;: &quot;a53e98e4-0197-4513-be6d-49836e406aaa&quot;}&#39;</span>
-</pre></div>
-
-</code></pre><h1 id="search">Search</h1>
-<h2 id="post-search-account">POST /search/account</h2>
-<p>Request info</p>
-<pre><code><div class="highlight"><pre><span class="nx">HTTP</span> <span class="nx">Request</span> <span class="nx">method</span>    <span class="nx">POST</span>
-<span class="nx">Request</span> <span class="nx">URL</span>            <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/search/account</span>
-<span class="nx">Authorization</span>          <span class="nx">Not</span> <span class="nx">Needed</span>
-</pre></div>
-
-</code></pre><p>Request body</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;test@test.com&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre>
-<p>Response body</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">[</span>
-    <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;account_id&quot;</span><span class="p">:</span> <span class="s2">&quot;981d9537-3cc1-1236-6d63-8a7a608f572f&quot;</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;certificates&quot;</span><span class="p">:[</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;id&quot;</span><span class="p">:{</span>
-                    <span class="nt">&quot;account_id&quot;</span><span class="p">:</span> <span class="s2">&quot;dfb37d22-5995-bf14-46d8-0202a20f32de&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;certificate_id&quot;</span><span class="p">:</span> <span class="s2">&quot;75a152b8-022d-6137-3f1a-dc0353639fe8&quot;</span>
-                <span class="p">},</span>
-                <span class="nt">&quot;public_key&quot;</span><span class="p">:</span><span class="s2">&quot;tkjvnerovgboiej9u5gj4b0best&quot;</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-</pre></div>
-
-</code></pre>
-<p>Request sample</p>
-<pre><code><div class="highlight"><pre><span class="nx">curl</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">X</span> <span class="nx">POST</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/search/account --data &#39;{&quot;email&quot;: &quot;test@test.com&quot;}&#39;</span>
-</pre></div>
-
-</code></pre><h2 id="post-search-ticket">POST /search/ticket</h2>
-<p>Request info</p>
-<pre><code><div class="highlight"><pre><span class="nx">HTTP</span> <span class="nx">Request</span> <span class="nx">method</span>           <span class="nx">POST</span>
-<span class="nx">Request</span> <span class="nx">URL</span>                   <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/search/ticket</span>
-<span class="nx">Authorization</span>                 <span class="nx">Not</span> <span class="nx">Needed</span>
-<span class="nx">Optional</span> <span class="nx">GET</span> <span class="nx">paramenters</span>      <span class="o">?</span><span class="nx">expand</span><span class="o">=</span><span class="nx">certificate</span>
-</pre></div>
-
-</code></pre><p>Request body</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
-    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;test@test.com&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre>
-<p>Response body without ?expand=certificate</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">[</span>
-    <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:{</span>
-            <span class="nt">&quot;account_id&quot;</span><span class="p">:</span><span class="s2">&quot;dfb37d22-5995-bf14-46d8-0202a20f32de&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;certificate_id&quot;</span><span class="p">:</span><span class="s2">&quot;75a152b8-022d-6137-3f1a-dc0353639fe8&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;ticket_id&quot;</span><span class="p">:</span><span class="s2">&quot;a4fc6c26-42fd-97bf-a054-0bc3341100c3&quot;</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;user_id&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;email&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;sanram@ya.ru&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;signs&quot;</span><span class="p">:[]</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-</pre></div>
-
-</code></pre>
-<p>Response body with ?expand=certificate</p>
-<pre><code class="lang-json"><div class="highlight"><pre><span class="p">[</span>
-    <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:{</span>
-            <span class="nt">&quot;account_id&quot;</span><span class="p">:</span><span class="s2">&quot;dfb37d22-5995-bf14-46d8-0202a20f32de&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;certificate_id&quot;</span><span class="p">:</span><span class="s2">&quot;75a152b8-022d-6137-3f1a-dc0353639fe8&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;ticket_id&quot;</span><span class="p">:</span><span class="s2">&quot;a4fc6c26-42fd-97bf-a054-0bc3341100c3&quot;</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;user_id&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;email&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;sanram@ya.ru&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;signs&quot;</span><span class="p">:[],</span>
-        <span class="nt">&quot;expanded&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;certificate&quot;</span><span class="p">:{</span>
-                <span class="nt">&quot;id&quot;</span><span class="p">:{</span>
-                    <span class="nt">&quot;account_id&quot;</span><span class="p">:</span><span class="s2">&quot;dfb37d22-5995-bf14-46d8-0202a20f32de&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;certificate_id&quot;</span><span class="p">:</span><span class="s2">&quot;75a152b8-022d-6137-3f1a-dc0353639fe8&quot;</span>
-                <span class="p">},</span>
-                <span class="nt">&quot;public_key&quot;</span><span class="p">:</span><span class="s2">&quot;tkjvnerovgboiej9u5gj4b0best&quot;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">]</span>
-</pre></div>
-
-</code></pre>
-<p>Request sample</p>
-<pre><code><div class="highlight"><pre><span class="nx">curl</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">X</span> <span class="nx">POST</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/search/ticket\?expand\=certificate --data &#39;{&quot;email&quot;: &quot;test@test.com&quot;}&#39;</span>
-</pre></div>
-
-</code></pre><h1 id="appendix-a-response-codes">Appendix A. Response codes</h1>
-<p>Application uses standard HTTP response codes:</p>
-<pre><code><div class="highlight"><pre><span class="mi">200</span> <span class="o">-</span> <span class="nx">Success</span>
-<span class="mi">400</span> <span class="o">-</span> <span class="nx">Request</span> <span class="nx">error</span>
-<span class="mi">401</span> <span class="o">-</span> <span class="nx">Authorization</span> <span class="nx">error</span>
-<span class="mi">404</span> <span class="o">-</span> <span class="nx">Entity</span> <span class="nx">not</span> <span class="nx">found</span>
-<span class="mi">405</span> <span class="o">-</span> <span class="nx">Method</span> <span class="nx">not</span> <span class="nx">allowed</span>
-<span class="mi">500</span> <span class="o">-</span> <span class="nx">Server</span> <span class="nx">error</span>
-</pre></div>
-
-</code></pre><p>Addtitional information about the error is returned as JSON-object like:</p>
-<pre><code><div class="highlight"><pre><span class="p">{</span>
-    <span class="s2">&quot;error&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;code&quot;</span><span class="o">:</span> <span class="p">{</span><span class="nx">error</span><span class="o">-</span><span class="nx">code</span><span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-</code></pre><p><strong><code>HTTP 500. Server error</code></strong> status is returned on internal application errors</p>
-<pre><code><div class="highlight"><pre><span class="mi">10000</span> <span class="o">-</span> <span class="nx">Internal</span> <span class="nx">application</span> <span class="nx">error</span>
-<span class="mi">10001</span> <span class="o">-</span> <span class="nx">Application</span> <span class="nx">kernel</span> <span class="nx">error</span>
-<span class="mi">10010</span> <span class="o">-</span> <span class="nx">Internal</span> <span class="nx">application</span> <span class="nx">error</span>
-<span class="mi">10011</span> <span class="o">-</span> <span class="nx">Internal</span> <span class="nx">application</span> <span class="nx">error</span>
-<span class="mi">10012</span> <span class="o">-</span> <span class="nx">Internal</span> <span class="nx">application</span> <span class="nx">error</span>
-<span class="mi">10100</span> <span class="o">-</span> <span class="nx">JSON</span> <span class="nx">specified</span> <span class="nx">as</span> <span class="nx">a</span> <span class="nx">request</span> <span class="nx">body</span> <span class="nx">is</span> <span class="nx">invalid</span>
-</pre></div>
-
-</code></pre><p><strong><code>HTTP 401. Auth error</code></strong> status is returned on authorization errors</p>
-<pre><code><div class="highlight"><pre><span class="mi">10200</span> <span class="o">-</span> <span class="nx">Guid</span> <span class="nx">specified</span> <span class="nx">is</span> <span class="nx">expired</span> <span class="nx">already</span>
-<span class="mi">10201</span> <span class="o">-</span> <span class="nx">The</span> <span class="nx">Guid</span> <span class="nx">specified</span> <span class="nx">is</span> <span class="nx">invalid</span>
-<span class="mi">10202</span> <span class="o">-</span> <span class="nx">The</span> <span class="nx">Authorization</span> <span class="nx">header</span> <span class="nx">was</span> <span class="nx">not</span> <span class="nx">specified</span>
-<span class="mi">10203</span> <span class="o">-</span> <span class="nx">Certificate</span> <span class="nx">header</span> <span class="nx">not</span> <span class="nx">specified</span> <span class="nx">or</span> <span class="nx">incorrect</span>
-<span class="mi">10204</span> <span class="o">-</span> <span class="nx">The</span> <span class="nx">signed</span> <span class="nx">digest</span> <span class="nx">specified</span> <span class="nx">is</span> <span class="nx">incorrect</span>
-</pre></div>
-
-</code></pre><p><strong><code>HTTP 400. Request error</code></strong> status is returned on request data validation errors</p>
-<pre><code><div class="highlight"><pre><span class="mi">20000</span> <span class="o">-</span> <span class="nx">Account</span> <span class="nx">object</span> <span class="nx">not</span> <span class="nx">found</span> <span class="k">for</span> <span class="nx">id</span> <span class="nx">specified</span>
-<span class="mi">20100</span> <span class="o">-</span> <span class="nx">Certificate</span> <span class="nx">object</span> <span class="nx">not</span> <span class="nx">found</span> <span class="k">for</span> <span class="nx">id</span> <span class="nx">specified</span>
-<span class="mi">20101</span> <span class="o">-</span> <span class="nx">Certificate</span><span class="s1">&#39;s public key invalid</span>
-<span class="s1">20102 - Certificate&#39;</span><span class="nx">s</span> <span class="kr">public</span> <span class="nx">key</span> <span class="nx">not</span> <span class="nx">specified</span>
-<span class="mi">20103</span> <span class="o">-</span> <span class="nx">Certificate</span><span class="err">&#39;</span><span class="nx">s</span> <span class="kr">public</span> <span class="nx">key</span> <span class="nx">must</span> <span class="nx">be</span> <span class="nx">base64</span><span class="o">-</span><span class="nx">encoded</span> <span class="nx">string</span>
-<span class="mi">20200</span> <span class="o">-</span> <span class="nx">Ticket</span> <span class="nx">object</span> <span class="nx">not</span> <span class="nx">found</span> <span class="k">for</span> <span class="nx">id</span> <span class="nx">specified</span>
-<span class="mi">20201</span> <span class="o">-</span> <span class="nx">Ticket</span> <span class="nx">type</span> <span class="nx">specified</span> <span class="nx">is</span> <span class="nx">invalid</span>
-<span class="mi">20202</span> <span class="o">-</span> <span class="nx">Ticket</span> <span class="nx">type</span> <span class="nx">specified</span> <span class="k">for</span> <span class="nx">user</span> <span class="nx">identity</span> <span class="nx">is</span> <span class="nx">invalid</span>
-<span class="mi">20203</span> <span class="o">-</span> <span class="nx">Domain</span> <span class="nx">specified</span> <span class="k">for</span> <span class="nx">domain</span> <span class="nx">identity</span> <span class="nx">is</span> <span class="nx">invalid</span>
-<span class="mi">20204</span> <span class="o">-</span> <span class="nx">Email</span> <span class="nx">specified</span> <span class="k">for</span> <span class="nx">email</span> <span class="nx">identity</span> <span class="nx">is</span> <span class="nx">invalid</span>
-<span class="mi">20205</span> <span class="o">-</span> <span class="nx">Phone</span> <span class="nx">specified</span> <span class="k">for</span> <span class="nx">phone</span> <span class="nx">identity</span> <span class="nx">is</span> <span class="nx">invalid</span>
-<span class="mi">20206</span> <span class="o">-</span> <span class="nx">Fax</span> <span class="nx">specified</span> <span class="k">for</span> <span class="nx">fax</span> <span class="nx">identity</span> <span class="nx">is</span> <span class="nx">invalid</span>
-<span class="mi">20207</span> <span class="o">-</span> <span class="nx">Application</span> <span class="nx">specified</span> <span class="k">for</span> <span class="nx">application</span> <span class="nx">identity</span> <span class="nx">is</span> <span class="nx">invalid</span>
-<span class="mi">20208</span> <span class="o">-</span> <span class="nx">Mac</span> <span class="nx">address</span> <span class="nx">specified</span> <span class="k">for</span> <span class="nx">mac</span> <span class="nx">address</span> <span class="nx">identity</span> <span class="nx">is</span> <span class="nx">invalid</span>
-<span class="mi">20210</span> <span class="o">-</span> <span class="nx">Ticket</span> <span class="nx">integrity</span> <span class="nx">constraint</span> <span class="nx">violation</span>
-<span class="mi">20211</span> <span class="o">-</span> <span class="nx">Ticket</span> <span class="nx">confirmation</span> <span class="nx">entity</span> <span class="nx">not</span> <span class="nx">found</span> <span class="nx">by</span> <span class="nx">code</span> <span class="nx">specified</span>
-<span class="mi">20212</span> <span class="o">-</span> <span class="nx">Ticket</span> <span class="nx">confirmation</span> <span class="nx">code</span> <span class="nx">invalid</span>
-<span class="mi">20213</span> <span class="o">-</span> <span class="nx">Ticket</span> <span class="nx">was</span> <span class="nx">already</span> <span class="nx">confirmed</span> <span class="nx">and</span> <span class="nx">does</span> <span class="nx">not</span> <span class="nx">need</span> <span class="nx">further</span> <span class="nx">confirmation</span>
-<span class="mi">20214</span> <span class="o">-</span> <span class="nx">Ticket</span> <span class="kr">class</span> <span class="nx">specified</span> <span class="nx">is</span> <span class="nx">invalid</span>
-<span class="mi">20300</span> <span class="o">-</span> <span class="nx">User</span> <span class="nx">info</span> <span class="nx">ticket</span> <span class="nx">validation</span> <span class="nx">failed</span><span class="p">.</span> <span class="nx">Name</span> <span class="nx">is</span> <span class="nx">invalid</span>
-<span class="mi">20400</span> <span class="o">-</span> <span class="nx">Sign</span> <span class="nx">digest</span> <span class="nx">parameter</span> <span class="nx">validation</span> <span class="nx">failed</span>
-<span class="mi">20401</span> <span class="o">-</span> <span class="nx">Sign</span> <span class="nx">hash</span> <span class="nx">parameter</span> <span class="nx">validation</span> <span class="nx">failed</span>
-</pre></div>
-
-</code></pre><h1 id="appendix-b-authorization-http-header">Appendix B. Authorization HTTP header</h1>
-<p>The API is supposed to be open for read requests and requires authorization only on modification attempts.</p>
-<p>In order authorize user on modification attempt the API expects valid pair of HTTP headers set: <strong><code>SignedDigest</code></strong> header and <strong><code>Certificate</code></strong>. These headers must be set on each request to endpoints with authorization marked as <strong>NEEDED</strong>:</p>
-<pre><code><div class="highlight"><pre><span class="nx">POST</span> <span class="o">/</span><span class="nx">objects</span><span class="o">/</span><span class="nx">certificate</span> <span class="nx">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
-<span class="nx">Host</span><span class="o">:</span> <span class="nx">api</span><span class="p">.</span><span class="nx">virgil</span><span class="o">-</span><span class="nx">security</span><span class="p">.</span><span class="nx">com</span>
-<span class="nx">Certificate</span><span class="o">:</span> <span class="mi">3</span><span class="nx">a768eea</span><span class="o">-</span><span class="nx">cbda</span><span class="o">-</span><span class="mi">4926</span><span class="o">-</span><span class="nx">a82d</span><span class="o">-</span><span class="mi">831</span><span class="nx">cb89092aa</span> 
-<span class="nx">SignedDigest</span><span class="o">:</span> <span class="nx">MIG5DAZTSEEyNTYEgYgwgYUCQQCJLqIZilQM6MT</span><span class="o">+</span><span class="nx">UpBbrMkuvIW5Nj0hRwu5kH1PjocYhlBffillHnC</span><span class="o">/</span><span class="nx">rw</span><span class="o">+</span><span class="nx">BMsU0qiV0ZXRKKwrMRhbgVoUdVygkAkBm2QCQf88honRdxp5</span><span class="o">+</span><span class="nx">Vr5HE7XbqAlUYuYlMmSHSsdXtF4M3Q7</span><span class="o">/</span><span class="nx">oFgwJRxr0Yb4XFllZbm5Qf57YlGJ41KXXt7xDCRmYzAxM2ZmZS0yYjViLTRjMDQtZmQzNC1jMTM5ZThkY2Y3Yjg</span><span class="o">=</span>
-</pre></div>
-
-</code></pre><p>The request body gets signed on the client using user’s private key and this digest will be used as <strong><code>SignedDigest</code></strong> header. In order to verify the data fingerprint, additional header <strong><code>Certificate</code></strong> must contain the <strong>GUID</strong> of the certificate used to sign the data. Later on these headers are used to make sure the request body specified is unchanged and came from the valid client.</p>
-<p><strong>The authorization is disabled by default. To enable authorization middleware, you need to specify <code>Authorization</code> HTTP header</strong></p>
-<h3 id="client-authorization-calculation">Client Authorization calculation</h3>
-<p>The <strong>SignedDigest</strong> hash is calculated on client according rules:</p>
-<pre><code><div class="highlight"><pre><span class="nx">SIGN</span> <span class="o">=</span> <span class="nx">VirgilSigner</span><span class="o">::</span><span class="nx">sign</span><span class="p">(</span><span class="nx">REQUEST_BODY_TEXT</span><span class="p">,</span> <span class="nx">CERTIFICATE_ID</span><span class="p">,</span> <span class="nx">PRIVATE_KEY</span><span class="p">,</span> <span class="nx">PRIVATE_KEY_PWD</span><span class="p">)</span>
-<span class="nx">SIGNED</span><span class="o">-</span><span class="nx">DIGEST</span> <span class="o">=</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nx">SIGN</span><span class="o">-&gt;</span><span class="nx">toAsn1</span><span class="p">())</span>
-</pre></div>
-
-</code></pre><ul>
-<li><strong>REQUEST_BODY_TEXT</strong> - the text representation of the request body to be sent to API</li>
-<li><strong>VirgilSigner::sign</strong> - Virgil Seсurity library method to sign the data</li>
-<li><strong>PRIVATE_KEY</strong>, <strong>PRIVATE_KEY_PWD</strong> - private key / password pair for the user&#39;s certificate</li>
-<li><strong>CERTIFICATE_ID</strong> - The KeyRing certificate id</li>
-</ul>
-<h3 id="server-authorization-verification">Server Authorization verification</h3>
-<p>To authorize the request on server, this step is executed:</p>
-<pre><code><div class="highlight"><pre><span class="nx">VirgilSigner</span><span class="o">::</span><span class="nx">verify</span><span class="p">(</span><span class="nx">REQUEST_BODY</span><span class="p">,</span> <span class="nx">SIGN</span><span class="p">,</span> <span class="nx">CERTIFICATE_PUBLIC_KEY</span><span class="p">)</span> <span class="o">===</span> <span class="nx">True</span>
-</pre></div>
-
-</code></pre><ul>
-<li><strong>REQUEST_BODY</strong> - request text obtained by API</li>
-<li><strong>VirgilSigner::verify</strong> - Virgil Seсurity low-level API function to verify the sign</li>
-<li><strong>SIGN</strong> - is an object to evaluate the signed digest. Obtained by deserialization on <strong>SIGNED_DIGEST</strong></li>
-<li><strong>CERTIFICATE_PUBLIC_KEY</strong> - the public key extracted from the certificate specified by <strong>CERTIFICATE_ID</strong></li>
-</ul>
-<h3 id="authorization-hash-cardinality">Authorization hash cardinality</h3>
-<p>In order to provide good <strong><code>Authorization</code></strong> header cardinality and to prevent cases when the Authorization hash for the resource becomes static we need to add unique parameter to the request body. This parameter must be a <strong><code>GUID</code></strong> value and named as <strong>guid</strong>.
-All GUIDs used in authorized requests got stored in the database and are valid only once. On each further request with GUID used already request will be returned with <strong><code>401 Auth Error</code></strong> HTTP status.</p>
-<h3 id="request-example">Request example</h3>
-<pre><code><div class="highlight"><pre><span class="nx">curl</span> <span class="o">-</span><span class="nx">X</span> <span class="nx">POST</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//pki.virgilsecurity.com/objects/ticket --data &#39;{&quot;certificate_id&quot;:&quot;d1832f79-4049-ccb0-7a11-75dc0d4bd19c&quot;,&quot;type&quot;:&quot;user_id&quot;,&quot;data&quot;:{&quot;type&quot;:&quot;email&quot;,&quot;value&quot;:&quot;sanram@rambler.ru&quot;},&quot;guid&quot;:&quot;9d394ca0-9e3d-03ae-8f72-c423c37c3996&quot;}&#39; --header &#39;SignedDigest: MIGVDAZTSEEyNTYEgYgwgYUCQEOkQ22Z/a2qfhwXAup2WgabhHzkhAFp4c96QnyoJk9ngDwTJeoZopaFCYxt3uKgeZvJs02ffGZGiZBaFsNDcaYCQQCOxMqJDm5Q+611goZxqDdKahBWn8qkqxpjeaDrjR2a+d/rozccMSTfWTonRKk4c/wTlArVsHApD9/8osaydzsADAA=&#39; --header &#39;Certificate: 6e8d61dd-6f11-aabf-a46a-c4005240ce77&#39; --header &#39;Authorization: true&#39;</span>
-</pre></div>
-
-</code></pre><h3 id="json-canonicalization">JSON canonicalization</h3>
-<p>Both client and server must use the same algorithm to make a hash on the <strong>REQUEST_BODY</strong>. See <a href="http://stackoverflow.com/questions/4670494/how-to-cryptographically-hash-a-json-object">thread</a> to review the problem.</p>
