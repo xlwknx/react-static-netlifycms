@@ -11,9 +11,10 @@
     <body class="page">
         @include('includes.header')
 
+        @yield('content')
+
         <script src="/dist/public.js"></script>
 
-        @yield('content')
         <footer class="footer container">
             @include('includes.footer')
         </footer>
