@@ -37602,6 +37602,7 @@ angular.module('app').
 
 		$scope.update = update;
 		$scope.remove = remove;
+		$scope.reset = reset;
 
 		function update (app) {
 			modalService.showModal({
@@ -37626,6 +37627,14 @@ angular.module('app').
 						$location.path('/apps');
 					}
 				});
+			});
+		}
+
+		function reset () {
+			apps.resetKey({ id: $scope.app.id }).$promise.then(function (result) {
+				if (result.key) {
+					$scope.app.key = result.key;
+				}
 			});
 		}
 
@@ -38063,14 +38072,15 @@ angular.module('app.resources').factory('accounts', ['$resource',
 angular.module('app.resources').factory('apps', ['$resource',
 	function ($resource) {
 		return $resource('/application/:id', { id: '@id' }, {
-			query: { method: 'get', url: '/application/list', isArray: true },
-			get:   { method: 'get', url: '/application/get/:id' },
-			update: { method: 'PUT' }
+			query:    { method: 'get', url: '/application/list', isArray: true },
+			get:      { method: 'get', url: '/application/get/:id' },
+			update:   { method: 'put' },
+			resetKey: { method: 'post', url: '/application/reset-key/:id' }
 		});
 	}
 ]);
 
-angular.module("app.templates").run(["$templateCache", function($templateCache) {$templateCache.put("apps/app-details.html","<div class=\"app-details\">\n\n	<div class=\"details-block\">\n		<div class=\"heading\">\n			<h2>{{ app.name }}</h2>\n\n			<div class=\"controls\">\n					<span ng-click=\"update(app)\" class=\"btn-edit\"></span>\n					<span ng-click=\"remove(app)\" class=\"btn-remove\"></span>\n			</div>\n		</div>\n\n		<div class=\"clear\"></div>\n\n		<div class=\"url\">\n			<a ng-href=\"{{ app.url }}\" target=\"_blank\">{{ app.url }}</a>\n		</div>\n\n		<p class=\"description\" ng-if=\"app.description\">\n			{{ app.description }}\n		</p>\n\n		<div class=\"key-block\">\n			<div class=\"label\">Api Key for Production</div>\n			<div class=\"key-container\">\n				<p class=\"key\">\n					{{ app.key }}\n				</p>\n				<button class=\"btn-virgil btn-transparent\">\n					GENERATE NEW API KEY\n				</button>\n			</div>\n		</div>\n	</div>\n\n	<!--<div class=\"stats\">-->\n		<!--<div class=\"total-users\">-->\n			<!--<div class=\"label\">-->\n				<!--Total Users-->\n			<!--</div>-->\n			<!--<div class=\"counter\">-->\n			<!--</div>-->\n		<!--</div>-->\n		<!--<div class=\"users-this-month\">-->\n			<!--<div class=\"label\">-->\n				<!--Users This Month-->\n			<!--</div>-->\n			<!--<div class=\"counter\">-->\n			<!--</div>-->\n		<!--</div>-->\n		<!--<div class=\"auths-this-month\">-->\n			<!--<div class=\"label\">-->\n				<!--Auths this month-->\n			<!--</div>-->\n			<!--<div class=\"counter\">-->\n			<!--</div>-->\n		<!--</div>-->\n		<!--<div class=\"api-calls-this-month\">-->\n			<!--<div class=\"label\">-->\n				<!--Api Calls This Month-->\n			<!--</div>-->\n			<!--<div class=\"counter\">-->\n			<!--</div>-->\n		<!--</div>-->\n	<!--</div>-->\n</div>\n");
+angular.module("app.templates").run(["$templateCache", function($templateCache) {$templateCache.put("apps/app-details.html","<div class=\"app-details\">\n\n	<div class=\"details-block\">\n		<div class=\"heading\">\n			<h2>{{ app.name }}</h2>\n\n			<div class=\"controls\">\n					<span ng-click=\"update(app)\" class=\"btn-edit\"></span>\n					<span ng-click=\"remove(app)\" class=\"btn-remove\"></span>\n			</div>\n		</div>\n\n		<div class=\"clear\"></div>\n\n		<div class=\"url\">\n			<a ng-href=\"{{ app.url }}\" target=\"_blank\">{{ app.url }}</a>\n		</div>\n\n		<p class=\"description\" ng-if=\"app.description\">\n			{{ app.description }}\n		</p>\n\n		<div class=\"key-block\">\n			<div class=\"label\">Api Key for Production</div>\n			<div class=\"key-container\">\n				<p class=\"key\">\n					{{ app.key }}\n				</p>\n				<button ng-click=\"reset()\" class=\"btn-virgil btn-transparent\">\n					GENERATE NEW API KEY\n				</button>\n			</div>\n		</div>\n	</div>\n\n	<!--<div class=\"stats\">-->\n		<!--<div class=\"total-users\">-->\n			<!--<div class=\"label\">-->\n				<!--Total Users-->\n			<!--</div>-->\n			<!--<div class=\"counter\">-->\n			<!--</div>-->\n		<!--</div>-->\n		<!--<div class=\"users-this-month\">-->\n			<!--<div class=\"label\">-->\n				<!--Users This Month-->\n			<!--</div>-->\n			<!--<div class=\"counter\">-->\n			<!--</div>-->\n		<!--</div>-->\n		<!--<div class=\"auths-this-month\">-->\n			<!--<div class=\"label\">-->\n				<!--Auths this month-->\n			<!--</div>-->\n			<!--<div class=\"counter\">-->\n			<!--</div>-->\n		<!--</div>-->\n		<!--<div class=\"api-calls-this-month\">-->\n			<!--<div class=\"label\">-->\n				<!--Api Calls This Month-->\n			<!--</div>-->\n			<!--<div class=\"counter\">-->\n			<!--</div>-->\n		<!--</div>-->\n	<!--</div>-->\n</div>\n");
 $templateCache.put("apps/app-edit.html","<div class=\"overlay\"></div>\n<div class=\"modal app-edit\">\n	<div class=\"modal-head\">\n		<h2>{{ app.name }}</h2>\n		<img ng-click=\"close()\" class=\"modal-close\" src=\"/img/apps-list/close.png\"></span>\n		<div class=\"clear\"></div>\n	</div>\n\n	<div class=\"modal-body\">\n		<form class=\"app-edit-form form-vertical\">\n			<div class=\"form-group form-item\">\n				<label for=\"name\">Application Name</label>\n				<input type=\"text\" class=\"form-input\" name=\"name\" ng-model=\"app.name\" />\n			</div>\n			<div class=\"form-group form-item\">\n				<label for=\"name\">Description</label>\n				<textarea class=\"form-input\" name=\"description\" ng-model=\"app.description\"></textarea>\n			</div>\n			<div class=\"form-group form-item\">\n				<label for=\"name\">URL</label>\n				<input type=\"text\" class=\"form-input\" name=\"url\" ng-model=\"app.url\" />\n			</div>\n			<div class=\"form-group form-item\" ng-if=\"app.key\">\n				<label for=\"name\">Key</label>\n				<input type=\"text\" class=\"form-input key\" name=\"key\" ng-model=\"app.key\" disabled />\n			</div>\n		</form>\n	</div>\n\n	<div class=\"clear\"></div>\n\n	<div class=\"modal-footer\">\n		<button ng-click=\"close()\" class=\"btn-virgil btn-transparent close\">CLOSE</button>\n		<button ng-click=\"save(app)\" class=\"btn-virgil btn-green save\">SAVE</button>\n	</div>\n</div>\n");
 $templateCache.put("apps/app-remove.html","<div class=\"overlay\"></div>\n<div class=\"modal app-remove\">\n	<div class=\"modal-head\">\n		<h2>{{ app.name }}</h2>\n		<img ng-click=\"close()\" class=\"modal-close\" src=\"/img/apps-list/close.png\"></span>\n		<div class=\"clear\"></div>\n	</div>\n\n	<div class=\"modal-body\">\n		Are you sure you want to delete this application?\n	</div>\n\n	<div class=\"clear\"></div>\n\n	<div class=\"modal-footer\">\n		<button ng-click=\"close()\" class=\"btn-virgil btn-transparent close\">CLOSE</button>\n		<button ng-click=\"remove(app)\" class=\"btn-virgil btn-red remove\">DELETE</button>\n	</div>\n</div>\n");
 $templateCache.put("apps/apps-list.html","<section class=\"apps-list\">\n	<div class=\"headline\">\n		<h2>Applications</h2>\n		<button ng-click=\"create()\" class=\"btn-virgil btn-transparent\">+ NEW APPLICATION</button>\n	</div>\n\n	<div class=\"clear\"></div>\n\n	<section class=\"apps-table\">\n		<table>\n			<tbody>\n				<tr ng-repeat=\"app in apps\">\n					<td class=\"name\"><a ng-href=\"/apps/{{ app.id }}\">{{ app.name }}</a></td>\n					<td class=\"url\"><a ng-href=\"{{ app.url }}\" target=\"_blank\" >{{ app.url }}</a></td>\n					<td class=\"key\">{{ app.key }}</td>\n					<td class=\"controls\">\n						<span ng-click=\"update(app)\" class=\"btn-edit\"></span>\n						<span ng-click=\"remove(app)\" class=\"btn-remove\"></span>\n					</td>\n				</tr>\n			</tbody>\n		</table>\n	</section>\n\n\n</section>\n\n");

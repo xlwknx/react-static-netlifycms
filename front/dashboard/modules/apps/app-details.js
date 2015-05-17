@@ -9,6 +9,7 @@ angular.module('app').
 
 		$scope.update = update;
 		$scope.remove = remove;
+		$scope.reset = reset;
 
 		function update (app) {
 			modalService.showModal({
@@ -33,6 +34,14 @@ angular.module('app').
 						$location.path('/apps');
 					}
 				});
+			});
+		}
+
+		function reset () {
+			apps.resetKey({ id: $scope.app.id }).$promise.then(function (result) {
+				if (result.key) {
+					$scope.app.key = result.key;
+				}
 			});
 		}
 
