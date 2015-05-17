@@ -6,8 +6,8 @@ angular.module('app').
 	function($scope, $location, accounts, auth, config) {
 
 		// Check if current route is internal page
-		$scope.isInternalPage = function isInternalPage () {
-			return ['/signup', '/signin', '/reset'].indexOf($location.path()) === -1;
+		$scope.isInternalPageAllowed = function isInternalPageAllowed () {
+			return auth.isAuthenticated() && ['/signup', '/signin', '/reset'].indexOf($location.path()) === -1;
 		};
 
 		// Check if given path equals to current route

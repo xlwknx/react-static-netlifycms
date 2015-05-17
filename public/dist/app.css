@@ -438,6 +438,9 @@ button.btn-virgil {
 .clear {
   clear: both;
 }
+.hide {
+  display: none !important;
+}
 a {
   color: #83eaff;
 }
