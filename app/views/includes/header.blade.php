@@ -1,4 +1,5 @@
 @section('header')
+<header class="header container">
     <div class="header-block">
         <img src="img/logo.png" class="header-logo" alt="Virgil" />
     </div>
@@ -13,4 +14,5 @@
         <a href="/support" class="header-nav-link">SUPPORT</a>
         <a href="/documents" class="header-nav-link">DOCUMENTATION</a>
     </nav>
+</header>
 @section('stop')

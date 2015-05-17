@@ -83,20 +83,25 @@ Route::group(array('before' => 'authVerification'), function()
 | Frontend routes
 |--------------------------------------------------------------------------
 */
+
+Route::get('/', array(
+    'uses' => 'HomeController@index'
+));
+
 Route::get('about-us', array(
-    'uses' => 'IndexController@aboutUs'
+    'uses' => 'PublicController@aboutUs'
 ));
 
 Route::get('contact-us', array(
-    'uses' => 'IndexController@contactUs'
+    'uses' => 'PublicController@contactUs'
 ));
 
 Route::get('downloads', array(
-    'uses' => 'IndexController@downloads'
+    'uses' => 'PublicController@downloads'
 ));
 
 Route::get('documents', array(
-    'uses' => 'IndexController@documents'
+    'uses' => 'PublicController@documents'
 ));
 
 

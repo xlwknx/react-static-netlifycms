@@ -9,9 +9,14 @@
         <link rel="stylesheet" href="/dist/public.css" type="text/css" media="screen" charset="utf-8">
     </head>
     <body class="page ">
-        @include('includes.header')
+        <section class="home-header-block">
+            @include('includes.header')
+
+            @section('slider')@show
+        </section>
 
         @yield('content')
+
         <footer class="footer container">
             @include('includes.footer')
         </footer>
