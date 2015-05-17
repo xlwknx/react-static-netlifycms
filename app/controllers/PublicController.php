@@ -1,7 +1,7 @@
 <?php
 
 
-class PublicController extends BaseController {
+class PublicController extends AbstractController {
 
     /**
      * The layout that should be used for responses.

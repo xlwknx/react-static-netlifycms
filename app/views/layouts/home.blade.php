@@ -5,7 +5,7 @@
         <title>
             @section('title')@show
         </title>
-        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/dist/public.css" type="text/css" media="screen" charset="utf-8">
     </head>
     <body class="page ">

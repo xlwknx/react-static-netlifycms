@@ -4,11 +4,9 @@
     </div>
 
     <div class="footer-links">
-        <a href="/why">Why Virgil</a>
-        <a href="/how-it-works">How it works</a>
-        <a href="/downloads">Downloads</a>
-        <a href="/support">Support</a>
-        <a href="/documents">Documentation</a>
+        <a href="/about-us" class="header-nav-link">ABOUT US</a>
+        <a href="/downloads">DOWNLOADS</a>
+        <a href="/documents">DOCUMENTATION</a>
     </div>
 
     <div class="footer-social">

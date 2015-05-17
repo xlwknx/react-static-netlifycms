@@ -27,7 +27,7 @@ class Account extends Eloquent {
         $account->email     = $data['email'];
         $account->password  = md5($data['password']);
         $account->type_id   = 1; //$data['type'];
-        $account->confirmed = self::ACCOUNT_UNCONFIRMED;
+        $account->confirmed = self::ACCOUNT_CONFIRMED;
 
         $account->save();
 

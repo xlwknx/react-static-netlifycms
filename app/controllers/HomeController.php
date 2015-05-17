@@ -1,7 +1,7 @@
 <?php
 
 
-class HomeController extends BaseController {
+class HomeController extends AbstractController {
 
     /**
      * The layout that should be used for responses.

@@ -1,7 +1,7 @@
 <?php
 
 
-class DashboardController extends BaseController {
+class DashboardController extends AbstractController {
 
     /**
      * The layout that should be used for responses.
