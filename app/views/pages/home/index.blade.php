@@ -15,9 +15,9 @@
             Add in minutes. Benefit forever.
         </div>
 
-        <button class="home-slider-get-started btn-virgil">
+        <a class="home-slider-get-started btn-virgil" href="/dashboard">
             GET STARTED
-        </button>
+        </a>
     </div>
 
     <div class="home-slider-slide be-secure">
@@ -28,9 +28,9 @@
             Developers: want to eliminate passwotrds, encrypt everything, in hours,<br/>
             without having to become security expert?
         </div>
-        <button class="home-slider-get-started btn-virgil">
+        <a class="home-slider-get-started btn-virgil" href="/dashboard">
             GET STARTED
-        </button>
+        </a>
         <div class="home-slider-platforms">
             <p>Available on most platforms and for most popular programming languages.</p>
 
@@ -81,9 +81,9 @@
                 CONTACT US
             </button>
             <span class="or">or</span>
-            <button class="home-slider-get-started btn-virgil">
+            <a class="home-slider-get-started btn-virgil" href="/dashboard">
                 GET STARTED
-            </button>
+            </a>
         </div>
     </div>
 
@@ -103,9 +103,9 @@
                 CONTACT US
             </button>
             <span class="or">or</span>
-            <button class="home-slider-get-started btn-virgil">
+            <a class="home-slider-get-started btn-virgil" href="/dashboard">
                 GET STARTED
-            </button>
+            </a>
         </div>
     </div>
 
