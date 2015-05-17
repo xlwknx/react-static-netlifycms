@@ -941,8 +941,8 @@ ul.bxslider {
 .choices .choices-section:first-child {
   margin-left: 0;
 }
-.choices span:hover,
-.choices span.active {
+.choices > span:hover,
+.choices > span.active {
   border-bottom: thin solid #83eaff;
   color: #83eaff;
 }
