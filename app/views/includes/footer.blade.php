@@ -10,10 +10,10 @@
     </div>
 
     <div class="footer-social">
-        <a href="http://twitter.com" target="_blank">
+        <a href="https://twitter.com/VirgilSecurity" target="_blank">
             <img src="/img/social-twitter.png" alt="twitter" />
         </a>
-        <a href="http://facebook.com" target="_blank">
+        <a href="https://www.facebook.com/VirgilSec" target="_blank">
             <img src="/img/social-facebook.png" alt="facebook" />
         </a>
     </div>
