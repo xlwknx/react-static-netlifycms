@@ -10821,6 +10821,10 @@ var slider = $('.home-slider').bxSlider({
 		$('.home-features .active').addClass('hide');
 		$('.f' + next).addClass('hide');
 		$('.f' + next + '.active').removeClass('hide');
+	},
+
+	onSliderLoad: function onSliderLoad () {
+		$('.home-slider-slide:not(.bx-clone)').removeClass('hide');
 	}
 });
 
