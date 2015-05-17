@@ -5,7 +5,7 @@ class Authentication extends Eloquent {
     /**
      * Auth token life time in minutes
      */
-    CONST AUTH_TOKEN_LIFETIME = 5;
+    CONST AUTH_TOKEN_LIFETIME = 60;
 
     /**
      * The database table used by the model.
