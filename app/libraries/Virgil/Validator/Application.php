@@ -11,31 +11,37 @@ class Application {
     /**
      * Validate Application data
      *
-     * @param $application
-     * @return mixed
+     * @param $applicationName - application name
+     * @param $applicationDescription - application description
+     * @param $applicationUrl - application url
+     * @return array
      * @throws \Virgil\Exception\Validator
      */
-    public static function validate($application) {
+    public static function validate($applicationName, $applicationDescription, $applicationUrl) {
 
-        if(!isset($application['name'])) {
+        if(empty($applicationName)) {
             throw new ValidatorException(
                 ErrorCode::APPLICATION_NAME_NOT_PROVIDED
             );
         }
 
-        if(!isset($application['description'])) {
+        if(empty($applicationDescription)) {
             throw new ValidatorException(
                 ErrorCode::APPLICATION_DESCRIPTION_NOT_PROVIDED
             );
         }
 
-        if(!isset($application['url'])) {
+        if(empty($applicationUrl)) {
             throw new ValidatorException(
                 ErrorCode::APPLICATION_URL_NOT_PROVIDED
             );
         }
 
-        return $application;
+        return array(
+            'name' => $applicationName,
+            'description' => $applicationDescription,
+            'url' => $applicationUrl
+        );
     }
 
     /**

@@ -12,16 +12,17 @@ class Account {
     /**
      * Validate signin action
      *
-     * @param $data   - data for validation
+     * @param $email - account email
+     * @param $password - account password
      * @return mixed
      * @throws \Virgil\Exception\Validator
      */
-    public static function validateSignin($data) {
+    public static function validateSignin($email, $password) {
 
         $account = \Account::whereEmail(
-            $data['email']
+            $email
         )->wherePassword(
-            md5($data['password'])
+            md5($password)
         )->first();
 
         if(!$account) {
@@ -36,19 +37,21 @@ class Account {
     /**
      * Validate signup action
      *
-     * @param $data   - data for validation
+     * @param $email - account email
+     * @param $password - account password
+     * @param $companyName - account name
      * @return mixed
      * @throws \Virgil\Exception\Validator
      */
-    public static function validateSignup($data) {
+    public static function validateSignup($email, $password, $companyName) {
 
-        if(!isset($data['email'])) {
+        if(!isset($email)) {
             throw new ValidatorException(
                 ErrorCode::ACCOUNT_USERNAME_NOT_PROVIDED
             );
         }
 
-        if(!isset($data['password'])) {
+        if(!isset($password)) {
             throw new ValidatorException(
                 ErrorCode::ACCOUNT_PASSWORD_NOT_PROVIDED
             );
@@ -66,7 +69,7 @@ class Account {
         );
         */
         $account = \Account::whereEmail(
-            $data['email']
+            $email
         )->first();
 
         if($account) {
@@ -75,7 +78,11 @@ class Account {
             );
         }
 
-        return $data;
+        return array(
+            'email' => $email,
+            'password' => $password,
+            'company_name' => $companyName
+        );
     }
 
     /**

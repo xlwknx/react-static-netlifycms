@@ -36,7 +36,9 @@ class ApplicationController extends AbstractController {
     public function create() {
 
         $data = ApplicationValidator::validate(
-            Input::json()->get('application', null)
+            Input::json()->get('name', null),
+            Input::json()->get('description', null),
+            Input::json()->get('url', null)
         );
 
         AccountValidator::validateNotConfirmed(
@@ -80,7 +82,9 @@ class ApplicationController extends AbstractController {
         return \Response::json(
             $application->updateApplication(
                 ApplicationValidator::validate(
-                    Input::json()->get('application', null)
+                    Input::json()->get('name', null),
+                    Input::json()->get('description', null),
+                    Input::json()->get('url', null)
                 )
             ), HttpResponse::HTTP_OK
         );

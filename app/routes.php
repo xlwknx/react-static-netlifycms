@@ -76,5 +76,46 @@ Route::group(array('before' => 'authVerification'), function()
     Route::delete('application/{application}', array(
         'uses' => 'ApplicationController@delete'
     ));
-
 });
+
+/*
+|--------------------------------------------------------------------------
+| Frontend routes
+|--------------------------------------------------------------------------
+*/
+Route::get('about-us', array(
+    'uses' => 'IndexController@aboutUs'
+));
+
+Route::get('contact-us', array(
+    'uses' => 'IndexController@contactUs'
+));
+
+Route::get('downloads', array(
+    'uses' => 'IndexController@downloads'
+));
+
+Route::get('documents', array(
+    'uses' => 'IndexController@documents'
+));
+
+
+Route::get('signup', array(
+    'uses' => 'DashboardController@index'
+));
+
+Route::get('signin', array(
+    'uses' => 'DashboardController@index'
+));
+
+Route::get('signout', array(
+    'uses' => 'DashboardController@index'
+));
+
+Route::get('reset', array(
+    'uses' => 'DashboardController@index'
+));
+
+Route::get('dashboard', array(
+    'uses' => 'DashboardController@index'
+));

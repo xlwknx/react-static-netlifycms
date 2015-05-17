@@ -48,6 +48,12 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 
 App::error(function(Exception $exception, $code)
 {
+    if($code == 404 && BrowserDetect::isDesktop()) {
+        return Response::view(
+            'errors.404', array(), 404
+        );
+    }
+
     // Catch Validator Exception
     if($exception instanceof \Virgil\Exception\Validator) {
         return Response::json(array(

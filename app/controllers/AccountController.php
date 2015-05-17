@@ -10,7 +10,8 @@ class AccountController extends AbstractController {
     public function signin() {
 
         $account = AccountValidator::validateSignin(
-            Input::json()->get('account', null)
+            Input::json()->get('email', null),
+            Input::json()->get('password', null)
         );
 
         return \Response::json(array(
@@ -40,7 +41,9 @@ class AccountController extends AbstractController {
 
         $account = Account::createAccount(
             AccountValidator::validateSignup(
-                Input::json()->get('account', null)
+                Input::json()->get('email', null),
+                Input::json()->get('password', null),
+                Input::json()->get('company_name', null)
             )
         );
 
@@ -69,7 +72,8 @@ class AccountController extends AbstractController {
     public function resendConfirm() {
 
         $account = AccountValidator::validateSignin(
-            Input::json()->get('account', null)
+            Input::json()->get('email', null),
+            Input::json()->get('password', null)
         );
 
         AccountValidator::validateConfirmed(
