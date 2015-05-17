@@ -37746,35 +37746,6 @@ angular.module('app').
 'use strict';
 
 angular.module('app').
-	controller('NavigationCtrl',
-	['$scope', '$location', 'accounts', 'auth', 'config',
-	function($scope, $location, accounts, auth, config) {
-
-		// Check if current route is internal page
-		$scope.isInternalPage = function isInternalPage () {
-			return ['/signup', '/signin', '/reset'].indexOf($location.path()) === -1;
-		};
-
-		// Check if given path equals to current route
-		$scope.isActive = function isActive (path) {
-			return $location.path() == path;
-		};
-
-		$scope.signout = function signout () {
-			accounts.signout(auth.getUser()).$promise
-				.then(finalizeSignout);
-
-			function finalizeSignout () {
-				auth.destroySession();
-				$location.path(config.urls.signin);
-			}
-		}
-
-	}]);
-
-'use strict';
-
-angular.module('app').
 	controller('ResetCtrl',
 	['$scope', 'accounts', 'auth', '$location',
 	function($scope, accounts, auth, $location) {
@@ -37841,6 +37812,35 @@ angular.module('app').
 				$scope.isSignupCompleted = true;
 			}
 		};
+	}]);
+
+'use strict';
+
+angular.module('app').
+	controller('NavigationCtrl',
+	['$scope', '$location', 'accounts', 'auth', 'config',
+	function($scope, $location, accounts, auth, config) {
+
+		// Check if current route is internal page
+		$scope.isInternalPage = function isInternalPage () {
+			return ['/signup', '/signin', '/reset'].indexOf($location.path()) === -1;
+		};
+
+		// Check if given path equals to current route
+		$scope.isActive = function isActive (path) {
+			return $location.path() == path;
+		};
+
+		$scope.signout = function signout () {
+			accounts.signout(auth.getUser()).$promise
+				.then(finalizeSignout);
+
+			function finalizeSignout () {
+				auth.destroySession();
+				$location.path(config.urls.signin);
+			}
+		}
+
 	}]);
 
 angular.module('app.services').factory('auth',
@@ -38083,5 +38083,5 @@ $templateCache.put("apps/app-edit.html","<div class=\"overlay\"></div>\n<div cla
 $templateCache.put("apps/app-remove.html","<div class=\"overlay\"></div>\n<div class=\"modal app-remove\">\n	<div class=\"modal-head\">\n		<h2>{{ app.name }}</h2>\n		<img ng-click=\"close()\" class=\"modal-close\" src=\"/img/apps-list/close.png\"></span>\n		<div class=\"clear\"></div>\n	</div>\n\n	<div class=\"modal-body\">\n		Are you sure you want to delete this application?\n	</div>\n\n	<div class=\"clear\"></div>\n\n	<div class=\"modal-footer\">\n		<button ng-click=\"close()\" class=\"btn-virgil btn-transparent close\">CLOSE</button>\n		<button ng-click=\"remove(app)\" class=\"btn-virgil btn-red remove\">DELETE</button>\n	</div>\n</div>\n");
 $templateCache.put("apps/apps-list.html","<section class=\"apps-list\">\n	<div class=\"headline\">\n		<h2>Applications</h2>\n		<button ng-click=\"create()\" class=\"btn-virgil btn-transparent\">+ NEW APPLICATION</button>\n	</div>\n\n	<div class=\"clear\"></div>\n\n	<section class=\"apps-table\">\n		<table>\n			<tbody>\n				<tr ng-repeat=\"app in apps\">\n					<td class=\"name\"><a ng-href=\"/apps/{{ app.id }}\">{{ app.name }}</a></td>\n					<td class=\"url\"><a ng-href=\"{{ app.url }}\" target=\"_blank\" >{{ app.url }}</a></td>\n					<td class=\"key\">{{ app.key }}</td>\n					<td class=\"controls\">\n						<span ng-click=\"update(app)\" class=\"btn-edit\"></span>\n						<span ng-click=\"remove(app)\" class=\"btn-remove\"></span>\n					</td>\n				</tr>\n			</tbody>\n		</table>\n	</section>\n\n\n</section>\n\n");
 $templateCache.put("auth/reset.html","<div class=\"signin\">\n	<section class=\"signin-heading page-heading container\">\n		<h2>\n			Reset Password to the Enterprise<br/>\n			and Developers Dashboard\n		</h2>\n		<p>\n			We\'ll send you and e-mail with instructions to reset your password.\n		</p>\n	</section>\n\n	<form class=\"container signin-form reset\" ng-if=\"!isResetCompleted\">\n		<div class=\"form-item\">\n			<input ng-model=\"account.email\" class=\"form-input expand\" type=\"text\" name=\"email\" placeholder=\"Your Email Address\" />\n		</div>\n\n		<section class=\"btn-container\">\n			<button ng-click=\"submit(account)\" type=\"submit\" class=\"btn-virgil btn-transparent\">RESET PASSWORD</button>\n		</section>\n	</form>\n\n	<section class=\"container check-email\" ng-if=\"isResetCompleted\">\n		Please check your inbox.\n	</section>\n\n	<section class=\"container signin-signup\">\n		<p>I\'m not a registered user. <a ng-href=\"/signup\">Sign up for free</a></p>\n	</section>\n</div>\n");
-$templateCache.put("auth/signin.html","<div class=\"signin\">\n	<section class=\"signin-heading page-heading container\">\n		<h2>Enterprise and Developers Dashboard</h2>\n	</section>\n\n	<form class=\"container signin-form\">\n		<div class=\"form-item\">\n			<input ng-model=\"account.email\" class=\"form-input expand\" type=\"text\" name=\"email\" placeholder=\"Your Email Address\" />\n		</div>\n		<div class=\"form-item\">\n			<input ng-model=\"account.password\" class=\"form-input expand\" type=\"text\" name=\"password\" placeholder=\"Your Password\" />\n		</div>\n\n		<div class=\"forgot\">\n			<a ng-href=\"/reset\">Forgot Password</a>\n		</div>\n\n		<section class=\"btn-container\">\n			<button ng-click=\"submit(account)\" class=\"btn-virgil btn-transparent\">SIGN IN</button>\n		</section>\n	</form>\n\n\n	<section class=\"container signin-signup\">\n		<p>I\'m not a registered user. <a ng-href=\"/signup\">Sign up for free</a></p>\n	</section>\n</div>\n");
-$templateCache.put("auth/signup.html","<div class=\"signin\">\n	<section class=\"signin-heading page-heading container\">\n		<h2>Enterprise and Developers Dashboard</h2>\n	</section>\n\n	<form class=\"container signin-form\" ng-if=\"!isSignupCompleted\">\n		<div class=\"form-item\">\n			<input ng-model=\"account.email\" class=\"form-input expand\" type=\"text\" name=\"email\" placeholder=\"Your Email Address\" />\n		</div>\n\n		<div class=\"form-item\">\n			<input ng-model=\"account.password\" class=\"form-input expand\" type=\"text\" name=\"password\" placeholder=\"Your Password\" />\n		</div>\n\n		<div class=\"form-item\">\n			<input ng-model=\"account.company_name\" class=\"form-input expand\" type=\"text\" name=\"company_name\" placeholder=\"Company Name (optional)\" />\n		</div>\n\n		<section class=\"btn-container\">\n			<button ng-click=\"submit(account)\" class=\"btn-virgil btn-transparent\">CREATE ACCOUNT</button>\n		</section>\n	</form>\n\n	<section class=\"container check-email\" ng-if=\"isSignupCompleted\">\n		Please check your email address for confirmation.\n	</section>\n\n	<section class=\"container signin-tos\">\n		By creating an account you agree to the Virgil Security<br/>\n		<a target=\"_blank\" ng-href=\"/term-of-service\">Terms of Service</a> & <a target=\"_blank\" ng-href=\"/privacy-policy\">Privacy Policy</a>\n	</section>\n\n	<section class=\"container signin-signup\">\n		<p>Already have an account? <a ng-href=\"/signin\">Sign in</a></p>\n	</section>\n</div>\n");}]);
+$templateCache.put("auth/signin.html","<div class=\"signin\">\n	<section class=\"signin-heading page-heading container\">\n		<h2>Enterprise and Developers Dashboard</h2>\n	</section>\n\n	<form class=\"container signin-form\">\n		<div class=\"form-item\">\n			<input ng-model=\"account.email\" class=\"form-input expand\" type=\"text\" name=\"email\" placeholder=\"Your Email Address\" />\n		</div>\n		<div class=\"form-item\">\n			<input ng-model=\"account.password\" class=\"form-input expand\" type=\"password\" name=\"password\" placeholder=\"Your Password\" />\n		</div>\n\n		<div class=\"forgot\">\n			<a ng-href=\"/reset\">Forgot Password</a>\n		</div>\n\n		<section class=\"btn-container\">\n			<button ng-click=\"submit(account)\" class=\"btn-virgil btn-transparent\">SIGN IN</button>\n		</section>\n	</form>\n\n\n	<section class=\"container signin-signup\">\n		<p>I\'m not a registered user. <a ng-href=\"/signup\">Sign up for free</a></p>\n	</section>\n</div>\n");
+$templateCache.put("auth/signup.html","<div class=\"signin\">\n	<section class=\"signin-heading page-heading container\">\n		<h2>Enterprise and Developers Dashboard</h2>\n	</section>\n\n	<form class=\"container signin-form\" ng-if=\"!isSignupCompleted\">\n		<div class=\"form-item\">\n			<input ng-model=\"account.email\" class=\"form-input expand\" type=\"text\" name=\"email\" placeholder=\"Your Email Address\" />\n		</div>\n\n		<div class=\"form-item\">\n			<input ng-model=\"account.password\" class=\"form-input expand\" type=\"password\" name=\"password\" placeholder=\"Your Password\" />\n		</div>\n\n		<div class=\"form-item\">\n			<input ng-model=\"account.company_name\" class=\"form-input expand\" type=\"text\" name=\"company_name\" placeholder=\"Company Name (optional)\" />\n		</div>\n\n		<section class=\"btn-container\">\n			<button ng-click=\"submit(account)\" class=\"btn-virgil btn-transparent\">CREATE ACCOUNT</button>\n		</section>\n	</form>\n\n	<section class=\"container check-email\" ng-if=\"isSignupCompleted\">\n		Please check your email address for confirmation.\n	</section>\n\n	<section class=\"container signin-tos\">\n		By creating an account you agree to the Virgil Security<br/>\n		<a target=\"_blank\" ng-href=\"/term-of-service\">Terms of Service</a> & <a target=\"_blank\" ng-href=\"/privacy-policy\">Privacy Policy</a>\n	</section>\n\n	<section class=\"container signin-signup\">\n		<p>Already have an account? <a ng-href=\"/signin\">Sign in</a></p>\n	</section>\n</div>\n");}]);
