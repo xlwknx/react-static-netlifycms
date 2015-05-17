@@ -1,7 +1,9 @@
 @section('header')
 <header class="header container">
     <div class="header-block">
-        <img src="img/logo.png" class="header-logo" alt="Virgil" />
+        <a href="/">
+            <img src="img/logo.png" class="header-logo" alt="Virgil" />
+        </a>
     </div>
 
     <nav class="header-nav header-block header-nav-left">
