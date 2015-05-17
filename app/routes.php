@@ -105,6 +105,7 @@ Route::get('documents', array(
 ));
 
 
+
 Route::get('signup', array(
     'uses' => 'DashboardController@index'
 ));
@@ -122,5 +123,9 @@ Route::get('reset', array(
 ));
 
 Route::get('dashboard', array(
+    'uses' => 'DashboardController@index'
+));
+
+Route::get('apps/{application-id}', array(
     'uses' => 'DashboardController@index'
 ));
