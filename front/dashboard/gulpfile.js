@@ -1,45 +1,50 @@
 var helpers = require('../../gulp-helpers');
+var run_sequence = require('run-sequence');
 var gulp = helpers.gulp;
+
+function p (relative) {
+	return __dirname + '/' + relative;
+}
 
 var config = {
 	styles: {
 		src: [
-			'./front/dashboard/styles/main.styl'
+			p('.//styles/main.styl')
 		],
 
 		dist: 'app.css',
-		dest: './public/dist'
+		dest: p('../../public/dist')
 	},
 
 	templates: {
-		src: ['./front/dashboard/modules/**/*.html', './front/dashboard/directives/**/*.html'],
-		dest: './front/dashboard/.template-cache'
+		src: [p('./modules/**/*.html'), p('./directives/**/*.html')],
+		dest: p('./.template-cache')
 	},
 
 	js: {
 		src: [
-			'./bower_components/lodash/dist/lodash.min.js',
-			'./bower_components/jquery/dist/jquery.js',
-			'./bower_components/angular/angular.js',
+			p('../../bower_components/lodash/dist/lodash.min.js'),
+			p('../../bower_components/jquery/dist/jquery.js'),
+			p('../../bower_components/angular/angular.js'),
 
-			'./bower_components/angular-route/angular-route.js',
-			'./bower_components/angular-resource/angular-resource.js',
-			'./bower_components/a0-angular-storage/dist/angular-storage.js',
-			'./bower_components/angular-modal-service/dst/angular-modal-service.js',
+			p('../../bower_components/angular-route/angular-route.js'),
+			p('../../bower_components/angular-resource/angular-resource.js'),
+			p('../../bower_components/a0-angular-storage/dist/angular-storage.js'),
+			p('../../bower_components/angular-modal-service/dst/angular-modal-service.js'),
 
-			'./front/dashboard/app.js',
-			'./front/dashboard/routes.js',
-			'./front/dashboard/directives/**/*.js',
-			'./front/dashboard/modules/**/*.js',
-			'./front/dashboard/services/**/*.js',
-			'./front/dashboard/filters/**/*.js',
-			'./front/dashboard/interceptors/**/*.js',
-			'./front/dashboard/resources/**/*.js',
-			'./front/dashboard/.template-cache/*.js'
+			p('./app.js'),
+			p('./routes.js'),
+			p('./directives/**/*.js'),
+			p('./modules/**/*.js'),
+			p('./services/**/*.js'),
+			p('./filters/**/*.js'),
+			p('./interceptors/**/*.js'),
+			p('./resources/**/*.js'),
+			p('./.template-cache/*.js')
 		],
 
 		dist: 'app.js',
-		dest: './public/dist'
+		dest: p('../../public/dist')
 	}
 };
 
@@ -52,5 +57,5 @@ gulp.task('dashboard-build', function buildDashboard () {
 });
 
 gulp.task('dashboard-watch', ['dashboard-build'], function() {
-	return gulp.watch(['./front/dashboard/**/*.*'], ['dashboard-build']);
+	return gulp.watch([p('./**/*.*')], ['dashboard-build']);
 });
