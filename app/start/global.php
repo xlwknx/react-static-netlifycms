@@ -54,7 +54,7 @@ App::error(function(Exception $exception, $code)
         );
     }
 
-    // Catch Validator Exception
+    // Catch Authentication Exception
     if($exception instanceof \Virgil\Exception\Authentication) {
         return Response::json(array(
             'error' => array(
