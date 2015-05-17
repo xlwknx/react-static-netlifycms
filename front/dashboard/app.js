@@ -9,6 +9,7 @@ angular.module('app', ['ngRoute', 'app.services', 'app.resources', 'app.template
 	['$httpProvider',
 	function($httpProvider) {
 		$httpProvider.interceptors.push(
+			'authInterceptor',
 			'validationInterceptor',
 			'errorInterceptor',
 			'progressInterceptor'

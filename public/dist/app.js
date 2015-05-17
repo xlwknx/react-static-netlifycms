@@ -37549,6 +37549,7 @@ angular.module('app', ['ngRoute', 'app.services', 'app.resources', 'app.template
 	['$httpProvider',
 	function($httpProvider) {
 		$httpProvider.interceptors.push(
+			'authInterceptor',
 			'validationInterceptor',
 			'errorInterceptor',
 			'progressInterceptor'
@@ -37859,6 +37860,10 @@ angular.module('app.services').factory('auth',
 
 			getUser: function getUser () {
 				return $rootScope.user;
+			},
+
+			getAuthToken: function getAuthToken () {
+				return $rootScope.user.auth_token;
 			}
 		};
 
@@ -37888,6 +37893,23 @@ angular.module('app.services').factory('config', [function () {
 		return result;
 	}
 }]);
+
+angular.module('app.services').factory('authInterceptor',
+	['$q', '$location', 'auth', 
+	function ($q, $location, auth) {
+		return {
+			request: function (config) {
+				config.headers = config.headers || {};
+
+				if (auth.isAuthenticated() && !(config.url.indexOf('http') == 0)) {
+					config.headers['x-auth-token'] = auth.getAuthToken();
+				}
+
+				return config;
+			}
+		};
+	}
+]);
 
 angular.module('app.services').factory('errorInterceptor',
    ['$rootScope', '$timeout', '$q', '$location', 'config', 'auth',

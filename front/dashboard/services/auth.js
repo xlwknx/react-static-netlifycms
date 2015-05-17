@@ -22,6 +22,10 @@ angular.module('app.services').factory('auth',
 
 			getUser: function getUser () {
 				return $rootScope.user;
+			},
+
+			getAuthToken: function getAuthToken () {
+				return $rootScope.user.auth_token;
 			}
 		};
 
