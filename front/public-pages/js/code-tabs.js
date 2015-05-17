@@ -28,7 +28,7 @@ CodeTabs.prototype.init = function init () {
 
 	function selectTab () {
 		var $el = $(this);
-		var tab = $el.data('tab');
+		var tab = $el.data('code-tab');
 		self.selectTab(tab);
 	}
 };
