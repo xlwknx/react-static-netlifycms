@@ -3,16 +3,18 @@
 namespace Virgil\Validator;
 
 use Virgil\Error\Code as ErrorCode,
-    Virgil\Exception\Validator as ValidatorException;
+    Virgil\Exception\Validator as ValidatorException,
+    Virgil\Exception\Authentication as AuthenticationException;
 
 class Authentication {
 
     /**
-     * Validate Authentication token
+     * Validate Authentication tokens
      *
      * @param $token
      * @return mixed
      * @throws \Virgil\Exception\Validator
+     * @throws \Virgil\Exception\Authentication
      */
     public static function validateAuthToken($token) {
 
@@ -27,7 +29,7 @@ class Authentication {
         }
 
         if((strtotime('now') - strtotime($authentication->created_at)) / 60 > \Authentication::AUTH_TOKEN_LIFETIME) {
-            throw new ValidatorException(
+            throw new AuthenticationException(
                 ErrorCode::AUTHENTICATION_TOKEN_EXPIRED
             );
         }

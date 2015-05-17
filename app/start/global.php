@@ -55,6 +55,14 @@ App::error(function(Exception $exception, $code)
     }
 
     // Catch Validator Exception
+    if($exception instanceof \Virgil\Exception\Authentication) {
+        return Response::json(array(
+            'error' => array(
+                'code' => $exception->getCode()
+            )
+        ), Symfony\Component\HttpFoundation\Response::HTTP_UNAUTHORIZED);
+    }
+
     if($exception instanceof \Virgil\Exception\Validator) {
         return Response::json(array(
             'error' => array(
