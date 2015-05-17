@@ -1,7 +1,5 @@
-var gulp = require('gulp');
-var stylus = require('gulp-stylus');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
+var helpers = require('../../gulp-helpers');
+var gulp = helpers.gulp;
 var plumber = require('gulp-plumber');
 var markdown = require('gulp-markdown');
 var run_sequence = require('run-sequence');
@@ -45,18 +43,8 @@ gulp.task('public-md', function () {
 		.pipe(gulp.dest('dist'))
 });
 
-gulp.task('public-styles', function() {
-	return gulp.src(config.styles.src)
-		.pipe(stylus({ 'include css': true }))
-		.pipe(concat(config.styles.dist))
-		.pipe(gulp.dest(config.styles.dest));
-});
-
-gulp.task('public-js', function() {
-	return gulp.src(config.js.src)
-		.pipe(concat(config.js.dist))
-		.pipe(gulp.dest(config.js.dest));
-});
+gulp.task('public-styles', helpers.styles(config.styles.src, config.styles.dist, config.styles.dest));
+gulp.task('public-js',     helpers.js(config.js.src, config.js.dist, config.js.dest));
 
 gulp.task('public-build', function() {
 	return run_sequence(['public-styles'], ['public-js']);
