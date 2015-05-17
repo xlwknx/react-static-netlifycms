@@ -77,9 +77,9 @@
         </div>
 
         <div class="home-slider-or-buttons">
-            <button class="home-slider-get-started btn-virgil btn-transparent">
+            <a href="/contact" class="home-slider-get-started btn-virgil btn-transparent">
                 CONTACT US
-            </button>
+            </a>
             <span class="or">or</span>
             <a class="home-slider-get-started btn-virgil" href="/dashboard">
                 GET STARTED
@@ -99,9 +99,9 @@
         </div>
 
         <div class="home-slider-or-buttons">
-            <button class="home-slider-get-started btn-virgil btn-transparent">
+            <a href="/contact" class="home-slider-get-started btn-virgil btn-transparent">
                 CONTACT US
-            </button>
+            </a>
             <span class="or">or</span>
             <a class="home-slider-get-started btn-virgil" href="/dashboard">
                 GET STARTED
@@ -120,9 +120,9 @@
         </div>
 
         <div class="home-slider-or-buttons">
-            <button class="home-slider-get-started btn-virgil btn-transparent">
+            <a href="/contact" class="home-slider-get-started btn-virgil btn-transparent">
                 CONTACT US
-            </button>
+            </a>
             <span class="or">or build it yourself in just a few minutes.</span>
         </div>
 
@@ -208,7 +208,7 @@
                 Check out our apps
             </div>
 
-            <button class="home-downloads-btn btn-virgil btn-transparent">DOWNLOADS</button>
+            <a href="/downloads" class="home-downloads-btn btn-virgil btn-transparent">DOWNLOADS</a>
         </section>
 
         <section class="home-features-expanded container">
