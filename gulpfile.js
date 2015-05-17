@@ -5,6 +5,7 @@ var uglify = require('gulp-uglify');
 var plumber = require('gulp-plumber');
 var template_cache = require('gulp-angular-templatecache');
 var run_sequence = require('run-sequence');
+require('./front/public-pages/gulpfile');
 
 var config = {
 	styles: {
