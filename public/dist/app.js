@@ -37567,26 +37567,24 @@ angular.module('app', ['ngRoute', 'app.services', 'app.resources', 'app.template
 			var isAuthenticated = auth.isAuthenticated();
 
 			if (isAuthenticated && isPublic) {
-				$location.path(config.urls.home);
+				return $location.path(config.urls.home);
 			}
 
 			if (!isAuthenticated && !isPublic) {
-				$location.path(config.urls.signin);
+				return $location.path(config.urls.signin);
 			}
 		});
 	}]);
 
 angular.module('app').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {	$routeProvider.
 		when('/apps/:id', { templateUrl: 'apps/app-details.html', controller: 'AppDetailsCtrl', reloadOnSearch: false }).
-		when('/apps', { templateUrl: 'apps/apps-list.html', controller: 'AppsListCtrl', reloadOnSearch: false }).
+		when('/dashboard', { templateUrl: 'apps/apps-list.html', controller: 'AppsListCtrl', reloadOnSearch: false }).
 
 		when('/signin', { templateUrl: 'auth/signin.html', controller: 'SigninCtrl', reloadOnSearch: false }).
 		when('/signup', { templateUrl: 'auth/signup.html', controller: 'SignupCtrl', reloadOnSearch: false }).
 		when('/reset', { templateUrl: 'auth/reset.html', controller: 'ResetCtrl', reloadOnSearch: false }).
 
-		when('/apps', { templateUrl: 'apps/apps-list.html', controller: 'AppsListCtrl', reloadOnSearch: false }).
-
-		otherwise({ redirectTo: '/' });
+		otherwise({ redirectTo: '/dashboard' });
 
 		$locationProvider.html5Mode(true);
 }]);
@@ -37595,8 +37593,8 @@ angular.module('app').config(['$routeProvider', '$locationProvider', function ($
 
 angular.module('app').
 	controller('AppDetailsCtrl',
-	['$scope', 'apps', '$routeParams', 'ModalService', '$location',
-	function($scope, apps, $routeParams, modalService, $location) {
+	['$scope', 'apps', '$routeParams', 'ModalService', '$location', 'config',
+	function($scope, apps, $routeParams, modalService, $location, config) {
 
 		fetch();
 
@@ -37624,7 +37622,7 @@ angular.module('app').
 			}).then(function (modal) {
 				modal.close.then(function (isRemoved) {
 					if (isRemoved) {
-						$location.path('/apps');
+						$location.path(config.urls.home);
 					}
 				});
 			});
@@ -37748,6 +37746,35 @@ angular.module('app').
 'use strict';
 
 angular.module('app').
+	controller('NavigationCtrl',
+	['$scope', '$location', 'accounts', 'auth', 'config',
+	function($scope, $location, accounts, auth, config) {
+
+		// Check if current route is internal page
+		$scope.isInternalPage = function isInternalPage () {
+			return ['/signup', '/signin', '/reset'].indexOf($location.path()) === -1;
+		};
+
+		// Check if given path equals to current route
+		$scope.isActive = function isActive (path) {
+			return $location.path() == path;
+		};
+
+		$scope.signout = function signout () {
+			accounts.signout(auth.getUser()).$promise
+				.then(finalizeSignout);
+
+			function finalizeSignout () {
+				auth.destroySession();
+				$location.path(config.urls.signin);
+			}
+		}
+
+	}]);
+
+'use strict';
+
+angular.module('app').
 	controller('ResetCtrl',
 	['$scope', 'accounts', 'auth', '$location',
 	function($scope, accounts, auth, $location) {
@@ -37816,35 +37843,6 @@ angular.module('app').
 		};
 	}]);
 
-'use strict';
-
-angular.module('app').
-	controller('NavigationCtrl',
-	['$scope', '$location', 'accounts', 'auth', 'config',
-	function($scope, $location, accounts, auth, config) {
-
-		// Check if current route is internal page
-		$scope.isInternalPage = function isInternalPage () {
-			return ['/signup', '/signin', '/reset'].indexOf($location.path()) === -1;
-		};
-
-		// Check if given path equals to current route
-		$scope.isActive = function isActive (path) {
-			return $location.path() == path;
-		};
-
-		$scope.signout = function signout () {
-			accounts.signout(auth.getUser()).$promise
-				.then(finalizeSignout);
-
-			function finalizeSignout () {
-				auth.destroySession();
-				$location.path(config.urls.signin);
-			}
-		}
-
-	}]);
-
 angular.module('app.services').factory('auth',
 	['$rootScope', 'store',
 	function ($rootScope, store) {
@@ -37884,7 +37882,7 @@ angular.module('app.services').factory('config', [function () {
 	var conf = {
 		publicPages: ['/reset', '/signin', '/signup'],
 		urls: {
-			home: '/apps',
+			home: '/dashboard',
 			signin: '/signin'
 		},
 		isPublicPageUrl: isPublicPageUrl

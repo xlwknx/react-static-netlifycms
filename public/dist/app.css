@@ -317,7 +317,7 @@ button.btn-virgil {
 .modal {
   width: 750px;
   background: #12122b;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   margin-left: -375px;
@@ -394,7 +394,8 @@ button.btn-virgil {
   padding-bottom: 40px;
 }
 .app-details {
-  margin: 28px;
+  padding: 28px;
+  padding-right: 0;
 }
 .app-details p {
   color: #8382a3;

@@ -2,7 +2,7 @@ angular.module('app.services').factory('config', [function () {
 	var conf = {
 		publicPages: ['/reset', '/signin', '/signup'],
 		urls: {
-			home: '/apps',
+			home: '/dashboard',
 			signin: '/signin'
 		},
 		isPublicPageUrl: isPublicPageUrl

@@ -2,8 +2,8 @@
 
 angular.module('app').
 	controller('AppDetailsCtrl',
-	['$scope', 'apps', '$routeParams', 'ModalService', '$location',
-	function($scope, apps, $routeParams, modalService, $location) {
+	['$scope', 'apps', '$routeParams', 'ModalService', '$location', 'config',
+	function($scope, apps, $routeParams, modalService, $location, config) {
 
 		fetch();
 
@@ -31,7 +31,7 @@ angular.module('app').
 			}).then(function (modal) {
 				modal.close.then(function (isRemoved) {
 					if (isRemoved) {
-						$location.path('/apps');
+						$location.path(config.urls.home);
 					}
 				});
 			});
