@@ -126,6 +126,6 @@ Route::get('dashboard', array(
     'uses' => 'DashboardController@index'
 ));
 
-Route::get('apps/{application-id}', array(
+Route::get('apps/{application}', array(
     'uses' => 'DashboardController@index'
 ));
