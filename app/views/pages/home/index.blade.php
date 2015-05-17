@@ -20,7 +20,7 @@
         </a>
     </div>
 
-    <div class="home-slider-slide be-secure">
+    <div class="hide home-slider-slide be-secure">
         <h2 class="home-slider-title">
             Be Secure
         </h2>
@@ -65,7 +65,7 @@
         </div>
     </div>
 
-    <div class="home-slider-slide internet-of-things">
+    <div class="hide home-slider-slide internet-of-things">
         <h2 class="home-slider-title">
             Internet of Things
         </h2>
@@ -87,7 +87,7 @@
         </div>
     </div>
 
-    <div class="home-slider-slide ppu">
+    <div class="hide home-slider-slide ppu">
         <h2 class="home-slider-title">
             Pervasive, persistent, universal data<br/>
             security for your Enterprise
@@ -109,7 +109,7 @@
         </div>
     </div>
 
-    <div class="home-slider-slide without-password">
+    <div class="hide home-slider-slide without-password">
         <h2 class="home-slider-title">
             Authentication without passwords
         </h2>
@@ -135,7 +135,7 @@
         </div>
     </div>
 
-    <div class="home-slider-slide secure-cloud">
+    <div class="hide home-slider-slide secure-cloud">
         <h2 class="home-slider-title">
             Secure your cloud applications<br/>
             with passwordless authentication and<br/>
