@@ -61,7 +61,7 @@ Route::group(array('before' => 'authVerification'), function()
         'uses' => 'ApplicationController@getAll'
     ));
 
-    Route::get('application/reset-key/{application}', array(
+    Route::post('application/reset-key/{application}', array(
         'uses' => 'ApplicationController@resetKey'
     ));
 
