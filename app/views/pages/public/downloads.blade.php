@@ -22,7 +22,7 @@
             </span>
     </section>
 
-    <div data-tab="end-users">
+    <div data-tab="developers" class="hide">
         <section class="container downloads-description">
             Our libraries are available across the vast majority of programming languages on<br/>
             a preponderance of platforms (including Android, iOS, Linux, Mac, and Windows).<br/>
@@ -54,7 +54,7 @@
         </section>
     </div>
 
-    <div class="container downloads-developers hide" data-tab="developers">
+    <div class="container downloads-developers" data-tab="end-users">
         <div class="row">
             <div class="block downloads-develoeprs-pass">
                 <div class="headline">
