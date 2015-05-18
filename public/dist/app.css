@@ -438,7 +438,9 @@ button.btn-virgil {
 .clear {
   clear: both;
 }
+.initial-hide,
 .hide {
+  display: none !important;
   display: none !important;
 }
 a {

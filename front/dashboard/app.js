@@ -20,6 +20,7 @@ angular.module('app', ['ngRoute', 'app.services', 'app.resources', 'app.template
 	['auth', '$rootScope', 'config', '$location',
 	function(auth, $rootScope, config, $location) {
 		auth.loadSession();
+		$('.initial-hide').removeClass('initial-hide');
 
 		// Prevent logged in user from signin, signup, reset password pages
 		$rootScope.$on('$locationChangeStart', function (ev, next) {
