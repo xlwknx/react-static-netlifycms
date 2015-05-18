@@ -128,11 +128,11 @@
         </div>
 
         <div class="engines">
-            <a href=""><img src="/img/home/wordpress.png" /></a>
-            <a href=""><img src="/img/home/joomla.png" /></a>
-            <a href=""><img src="/img/home/drupal.png" /></a>
-            <a href=""><img src="/img/home/phpbb.png" /></a>
-            <a href=""><img src="/img/home/vanilla.png" /></a>
+            <a href="https://github.com/VirgilSecurity/VirgilPlugins/tree/master/wordpress/virgil_pass" target="_blank"><img src="/img/home/wordpress.png" /></a>
+            <a href="https://github.com/VirgilSecurity/VirgilPlugins/tree/master/joomla" target="_blank"><img src="/img/home/joomla.png" /></a>
+            <a href="https://github.com/VirgilSecurity/VirgilPlugins/tree/master/drupal/mod_virgil_auth" target="_blank"><img src="/img/home/drupal.png" /></a>
+            <a href="https://github.com/VirgilSecurity/VirgilPlugins/tree/master/phpbb/virgil/pass" target="_blank"><img src="/img/home/phpbb.png" /></a>
+            <a href="https://github.com/VirgilSecurity/VirgilPlugins/tree/master/vanillaforum/VirgilPass" target="_blank"><img src="/img/home/vanilla.png" /></a>
         </div>
     </div>
 
