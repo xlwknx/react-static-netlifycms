@@ -46,11 +46,11 @@
             </div>
 
             <div class="col-50">
-                <textarea class="form-input expand" placeholder="Message"></textarea>
+                <textarea name="message" class="form-input expand" placeholder="Message"></textarea>
             </div>
         </div>
         <div class="row">
-            <button type="submit" class="btn-virgil btn-transparent contact-form-submit">SEND</button>
+            <a href="mailto:support@virgilsecurity.com" class="btn-virgil btn-transparent contact-form-submit">SEND</a>
         </div>
     </form>
 </div>

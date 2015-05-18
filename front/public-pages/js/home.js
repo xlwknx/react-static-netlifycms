@@ -19,6 +19,8 @@ var tabs = new CodeTabs('.code-tabs');
 tabs.selectSection('php').selectTab('encrypt');
 
 initTabs();
+initForm();
+
 $('pre code').each(function(i, block) {
 	hljs.highlightBlock(block);
 });
@@ -46,5 +48,58 @@ function initTabs () {
 
 	function hide ($el) {
 		$el.addClass('hide');
+	}
+}
+
+function initForm () {
+	var subject = '';
+	var body = '';
+	var name = '';
+	var product = '';
+	var email = '';
+	var message = '';
+
+	$('[name="name"]').on('keyup', function () {
+		name = $(this).val();
+		subject = composeSubject(name, product);
+		updateLink();
+	});
+
+	$('[name="email"]').on('keyup', function () {
+		email = $(this).val();
+		updateLink();
+	});
+
+	$('[name="product"]').on('keyup', function () {
+		product = $(this).val();
+		subject = composeSubject(name, product);
+		updateLink();
+	});
+
+	$('[name="message"]').on('keyup', function () {
+		body = $(this).val();
+		updateLink();
+	});
+
+	function composeSubject (name, product) {
+		var subject = 'Contact Virgil: ';
+
+		if (name) {
+			subject += "from " + name + " ";
+		}
+		
+		if (product) {
+			subject += "about " + product;
+		}
+
+		return subject;
+	}
+
+	function updateLink () {
+		var href = 'mailto:support@virgilsecurity.com?subject='
+			+ encodeURIComponent(subject)
+			+ '&body=' + encodeURIComponent(body);
+
+		$('.contact-form-submit').attr('href', href);
 	}
 }
