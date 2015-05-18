@@ -15,7 +15,9 @@
             <p>+1 888-256-9014</p>
         </div>
         <div class="contact-contacts-item">
-            <img src="/img/contacts/contact-print.png" />
+			<a href="mailto:support@virgilsecurity.com">
+				<img src="/img/contacts/contact-print.png" />
+			</a>
             <p><a href="mailto:support@virgilsecurity.com">support@virgilsecurity.com</a></p>
         </div>
         <div class="contact-contacts-item social">
