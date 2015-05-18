@@ -24,10 +24,7 @@
 
     <div data-tab="developers" class="hide">
         <section class="container downloads-description">
-            Our libraries are available across the vast majority of programming languages on<br/>
-            a preponderance of platforms (including Android, iOS, Linux, Mac, and Windows).<br/>
-            This enables a new generation of enhanced privacy and security for applications,<br/>
-            cloud services, and the Internet of Things.
+			Virgil Pass Plugins
         </section>
 
         <section class="container downloads-links">

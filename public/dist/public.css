@@ -997,6 +997,8 @@ ul.bxslider {
 .downloads .downloads-description {
   margin-top: 28px;
   line-height: 26px;
+  text-align: center;
+  font-size: 30px;
   width: 630px;
   color: #a9a8cb;
 }
