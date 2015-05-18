@@ -77,7 +77,7 @@
         </div>
 
         <div class="home-slider-or-buttons">
-            <a href="/contact" class="home-slider-get-started btn-virgil btn-transparent">
+            <a href="/contact-us" class="home-slider-get-started btn-virgil btn-transparent">
                 CONTACT US
             </a>
             <span class="or">or</span>
@@ -99,7 +99,7 @@
         </div>
 
         <div class="home-slider-or-buttons">
-            <a href="/contact" class="home-slider-get-started btn-virgil btn-transparent">
+            <a href="/contact-us" class="home-slider-get-started btn-virgil btn-transparent">
                 CONTACT US
             </a>
             <span class="or">or</span>
@@ -120,7 +120,7 @@
         </div>
 
         <div class="home-slider-or-buttons">
-            <a href="/contact" class="home-slider-get-started btn-virgil btn-transparent">
+            <a href="/contact-us" class="home-slider-get-started btn-virgil btn-transparent">
                 CONTACT US
             </a>
             <span class="or">or build it yourself in just a few minutes.</span>
