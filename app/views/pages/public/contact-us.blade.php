@@ -21,10 +21,10 @@
         <div class="contact-contacts-item social">
             <img src="/img/contacts/contact-social.png" />
             <p>
-                <a class="twitter" href="http://twitter.com" target="_blank">
+                <a class="twitter" href="https://twitter.com/VirgilSecurity" target="_blank">
                     <img src="/img/social-twitter.png" alt="twitter" />
                 </a>
-                <a class="facebook" href="http://facebook.com" target="_blank">
+                <a class="facebook" href="https://www.facebook.com/VirgilSec" target="_blank">
                     <img src="/img/social-facebook.png" alt="facebook" />
                 </a>
             </p>
