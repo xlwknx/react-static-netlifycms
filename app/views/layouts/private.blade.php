@@ -10,21 +10,23 @@
         <link href='//fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     </head>
     <body ng-controller="NavigationCtrl">
-        <header class="header" ng-if="isInternalPage()">
-            <a class="block" ng-href="/apps">
-                <img src="/img/logo.png" class="logo" alt="Virgil" />
-            </a>
+		<div class="hide" ng-class="{ hide: !isInternalPageAllowed() }">
+			<header class="header">
+				<a class="block" ng-href="/dashboard">
+					<img src="/img/logo.png" class="logo" alt="Virgil" />
+				</a>
 
-            <a ng-click="signout()" class="block signout">
-                Sign Out
-            </a>
-        </header>
+				<a ng-click="signout()" class="block signout">
+					Sign Out
+				</a>
+			</header>
 
-        <ul class="sidebar" ng-if="isInternalPage()">
-            <li ng-class="{ active: isActive('/apps') }">
-                <a ng-href="/apps">Apps</a>
-            </li>
-        </ul>
+			<ul class="sidebar">
+				<li ng-class="{ active: isActive('/apps') }">
+					<a ng-href="/apps">Apps</a>
+				</li>
+			</ul>
+		</div>
 
         <div class="content" ng-class="{ internal: isInternalPage() }" ng-view></div>
 
