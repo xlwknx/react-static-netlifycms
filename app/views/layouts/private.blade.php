@@ -10,7 +10,7 @@
         <link href='//fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     </head>
     <body ng-controller="NavigationCtrl">
-		<div class="initial-hide" ng-class="{ hide: !isInternalPageAllowed() }">
+		<div class="initial-hide internal" ng-class="{ hide: !isInternalPageAllowed() }">
 			<header class="header">
 				<a class="block" ng-href="/dashboard">
 					<img src="/img/logo.png" class="logo" alt="Virgil" />
@@ -22,8 +22,8 @@
 			</header>
 
 			<ul class="sidebar">
-				<li ng-class="{ active: isActive('/apps') }">
-					<a ng-href="/apps">Apps</a>
+				<li ng-class="{ active: isActive('/dashboard') }">
+					<a ng-href="/dashboard">Apps</a>
 				</li>
 			</ul>
 		</div>

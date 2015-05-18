@@ -74,11 +74,11 @@
                 </div>
 
                 <div class="description">
-					Simple, secure passwordless authentication<br/>
-					for websites and apps.
+					Simple, end-to-end encrypted file sync for your documents,<br/>
+					photos, videos and files.
                 </div>
 
-				<div class="download-label">Comming soon...</div>
+				<div class="download-label">Coming soon...</div>
             </div>
             <div class="clear"></div>
         </div>
