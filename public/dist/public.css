@@ -932,12 +932,14 @@ ul.bxslider {
   background: transparent;
   color: #fff;
   border-right: thin solid #35324c;
+  height: 50px;
 }
 .code-tabs-subnav-item {
   padding: 11px 26px;
   background: #ccccde;
   color: #19192f;
   border-right: none;
+  height: 42px;
 }
 .code-tabs-subnav-item.active {
   background: #e3e3ec;

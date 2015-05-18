@@ -25,7 +25,7 @@ return array(
             'host'      => 'localhost',
             'database'  => 'virgil_api',
             'username'  => 'root',
-            'password'  => '',
+            'password'  => 'GN0z4JDtxf',
             'charset'   => 'utf8',
             'collation' => 'utf8_general_ci',
             'prefix'    => '',

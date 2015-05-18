@@ -3,6 +3,41 @@ VirgilKeyRing RESTful Service
 
 RESTful service for private keys managing
 
+## Installation
+
+Go to project folders
+
+Install dependencies via [Composer](https://getcomposer.org/).
+
+```shell
+composer.phar install
+```
+
+Create database and provide credentials for it in ```database.php``` according to env.
+E.g.
+
+```php
+return array(
+    'connections' => array(
+        'mysql' => array(
+            'driver'    => 'mysql',
+            'host'      => 'localhost',
+            'database'  => 'virgil_keyring',
+            'username'  => 'root',
+            'password'  => 'secret',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+        ),
+    ),
+);
+```
+Run database migrations.
+
+```shell
+php artisan migrate
+```
+
 ## API
 * [Authentication](#authentication)
     * [POST /authentication/get-token](#get-authenticationget-token)

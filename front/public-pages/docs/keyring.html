@@ -1,5 +1,30 @@
 <h1 id="virgilkeyring-restful-service">VirgilKeyRing RESTful Service</h1>
 <p>RESTful service for private keys managing</p>
+<h2 id="installation">Installation</h2>
+<p>Go to project folders</p>
+<p>Install dependencies via <a href="https://getcomposer.org/">Composer</a>.</p>
+<pre><code class="lang-shell">composer<span class="hljs-class">.phar</span> install
+</code></pre>
+<p>Create database and provide credentials for it in <code>database.php</code> according to env.
+E.g.</p>
+<pre><code class="lang-php"><span class="hljs-keyword">return</span> <span class="hljs-keyword">array</span>(
+    <span class="hljs-string">'connections'</span> =&gt; <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">'mysql'</span> =&gt; <span class="hljs-keyword">array</span>(
+            <span class="hljs-string">'driver'</span>    =&gt; <span class="hljs-string">'mysql'</span>,
+            <span class="hljs-string">'host'</span>      =&gt; <span class="hljs-string">'localhost'</span>,
+            <span class="hljs-string">'database'</span>  =&gt; <span class="hljs-string">'virgil_keyring'</span>,
+            <span class="hljs-string">'username'</span>  =&gt; <span class="hljs-string">'root'</span>,
+            <span class="hljs-string">'password'</span>  =&gt; <span class="hljs-string">'secret'</span>,
+            <span class="hljs-string">'charset'</span>   =&gt; <span class="hljs-string">'utf8'</span>,
+            <span class="hljs-string">'collation'</span> =&gt; <span class="hljs-string">'utf8_unicode_ci'</span>,
+            <span class="hljs-string">'prefix'</span>    =&gt; <span class="hljs-string">''</span>,
+        ),
+    ),
+);
+</code></pre>
+<p>Run database migrations.</p>
+<pre><code class="lang-shell"><span class="hljs-title">php</span> artisan migrate
+</code></pre>
 <h2 id="api">API</h2>
 <ul>
 <li><a href="#authentication">Authentication</a><ul>
