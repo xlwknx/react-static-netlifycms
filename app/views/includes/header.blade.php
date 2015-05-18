@@ -8,6 +8,7 @@
 
     <nav class="header-nav header-block header-nav-left">
         <a href="/about-us" class="header-nav-link">ABOUT US</a>
+        <a href="/contact-us" class="header-nav-link">CONTACT US</a>
     </nav>
 
     <nav class="header-nav header-block header-nav-right">

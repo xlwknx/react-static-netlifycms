@@ -5,6 +5,7 @@
 
     <div class="footer-links">
         <a href="/about-us" class="header-nav-link">ABOUT US</a>
+        <a href="/contact-us" class="header-nav-link">CONTACT US</a>
         <a href="/downloads">DOWNLOADS</a>
         <a href="/documents">DOCUMENTATION</a>
     </div>
