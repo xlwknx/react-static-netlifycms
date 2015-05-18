@@ -16,7 +16,7 @@ $('.home-features-feature').on('click', function () {
 });
 
 var tabs = new CodeTabs('.code-tabs');
-tabs.selectSection('php').selectTab('encrypt');
+tabs.selectSection('csharp').selectTab('generate-keys');
 
 initTabs();
 initForm();
