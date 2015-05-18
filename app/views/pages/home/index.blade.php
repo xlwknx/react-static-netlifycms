@@ -36,31 +36,31 @@
 
             <div class="home-slider-platforms-col">
                 <div>
-                    <a href=""><img src="/img/home/apple.png" /></a>
-                    <a href=""><img src="/img/home/ios.png" /></a>
-                    <a href=""><img src="/img/home/windows.png" /></a>
-                    <a href=""><img src="/img/home/android.png" /></a>
+                    <img src="/img/home/apple.png" />
+                    <img src="/img/home/ios.png" />
+                    <img src="/img/home/windows.png" />
+                    <img src="/img/home/android.png" />
                 </div>
                 <div>
-                    <a href=""><img src="/img/home/chrome.png" /></a>
-                    <a href=""><img src="/img/home/firefox.png" /></a>
-                    <a href=""><img src="/img/home/linux.png" /></a>
-                    <a href=""><img src="/img/home/bsd.png" /></a>
+                    <img src="/img/home/chrome.png" />
+                    <img src="/img/home/firefox.png" />
+                    <img src="/img/home/linux.png" />
+                    <img src="/img/home/bsd.png" />
                 </div>
             </div>
 
             <div class="home-slider-platforms-col right">
                 <div>
-                    <a href=""><img src="/img/home/archruby.png" /></a>
-                    <a href=""><img src="/img/home/objc.png" /></a>
-                    <a href=""><img src="/img/home/ruby.png" /></a>
-                    <a href=""><img src="/img/home/php.png" /></a>
+                    <img src="/img/home/archruby.png" /></a>
+                    <img src="/img/home/objc.png" /></a>
+                    <img src="/img/home/ruby.png" /></a>
+                    <img src="/img/home/php.png" /></a>
                 </div>
                 <div>
-                    <a href=""><img src="/img/home/c_sharp.png" /></a>
-                    <a href=""><img src="/img/home/nodecasts.png" /></a>
-                    <a href=""><img src="/img/home/as.png" /></a>
-                    <a href=""><img src="/img/home/nodejs.png" /></a>
+                    <img src="/img/home/c_sharp.png" />
+                    <img src="/img/home/nodecasts.png" />
+                    <img src="/img/home/as.png" />
+                    <img src="/img/home/nodejs.png" />
                 </div>
             </div>
         </div>
