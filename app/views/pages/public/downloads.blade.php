@@ -28,23 +28,23 @@
         </section>
 
         <section class="container downloads-links">
-            <a href="" class="downloads-links-link">
+            <a href="https://github.com/VirgilSecurity/VirgilPlugins/tree/master/wordpress/virgil_pass" target="_blank" class="downloads-links-link">
                 <img src="/img/downloads/wordpress.png" />
                 <div>Wordpress</div>
             </a>
-            <a href="" class="downloads-links-link">
+            <a href="https://github.com/VirgilSecurity/VirgilPlugins/tree/master/joomla" target="_blank" class="downloads-links-link">
                 <img src="/img/downloads/joomla.png" />
                 <div>Joomla</div>
             </a>
-            <a href="" class="downloads-links-link">
+            <a href="https://github.com/VirgilSecurity/VirgilPlugins/tree/master/drupal/mod_virgil_auth" target="_blank" class="downloads-links-link">
                 <img src="/img/downloads/drupal.png" />
                 <div>Drupal</div>
             </a>
-            <a href="" class="downloads-links-link">
+            <a href="https://github.com/VirgilSecurity/VirgilPlugins/tree/master/phpbb/virgil/pass" target="_blank" class="downloads-links-link">
                 <img src="/img/downloads/phpbb.png" />
                 <div>phpBB</div>
             </a>
-            <a href="" class="downloads-links-link">
+            <a href="https://github.com/VirgilSecurity/VirgilPlugins/tree/master/vanillaforum/VirgilPass" target="_blank" class="downloads-links-link">
                 <img src="/img/downloads/vanilla.png" />
                 <div>Vanilla</div>
             </a>
