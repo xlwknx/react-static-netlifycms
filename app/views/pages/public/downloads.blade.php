@@ -60,18 +60,11 @@
                 </div>
 
                 <div class="description">
-                    Your clients deserve the best security. Add it without being<br/>
-                    a security expert yourself. All data should be secure all the<br/>
-                    time. Users (or Your clients) expect it.
+					Simple, secure passwordless authentication<br/>
+					for websites and apps.
                 </div>
 
-                <ul class="list">
-                    <li>Simple-looking search terabytes of data</li>
-                    <li>Custom-built cluster management</li>
-                    <li>Built on HTML5 using multi-layer concurrency</li>
-                </ul>
-
-                <a class="btn-virgil btn-transparent">DOWNLOAD</a>
+				<div class="download-label">Downloads <a target="_blank" href="https://chrome.google.com/webstore/detail/virgil-pass/djdkdiphpdjgeoehicikgpgbdhmhdcmp"><img src="/img/home/chrome.png" /></a></div>
             </div>
 
             <div class="block downloads-develoeprs-sync">
@@ -81,18 +74,11 @@
                 </div>
 
                 <div class="description">
-                    Your clients deserve the best security. Add it without being<br/>
-                    a security expert yourself. All data should be secure all the<br/>
-                    time. Users (or Your clients) expect it.
+					Simple, secure passwordless authentication<br/>
+					for websites and apps.
                 </div>
 
-                <ul class="list">
-                    <li>Simple-looking search terabytes of data</li>
-                    <li>Custom-built cluster management</li>
-                    <li>Built on HTML5 using multi-layer concurrency</li>
-                </ul>
-
-                <a class="btn-virgil btn-transparent">DOWNLOAD</a>
+				<div class="download-label">Comming soon...</div>
             </div>
             <div class="clear"></div>
         </div>
@@ -105,20 +91,11 @@
                 </div>
 
                 <div class="description">
-                    Your clients deserve the best security. Add it without being<br/>
-                    a security expert yourself. All data should be secure all the<br/>
-                    time. Users (or Your clients) expect it.
+					Seamless end-to-end encrypted email for Outlook
+					clients that uses Virgil Keys.
                 </div>
 
-                <ul class="list">
-                    <li>
-                        Exploits relationships present in your enterprise<br/>
-                        data to provide a guided search
-                    </li>
-                    <li>Built on HTML5 using multi-layer concurrency</li>
-                </ul>
-
-                <a class="btn-virgil btn-transparent">DOWNLOAD</a>
+				<div class="download-label">Downloads <a href="https://virgilsecurity.com/downloads/Virgil_Outlook_Add-In_0.4.259.654.exe"><img src="/img/home/windows.png" /></a></div>
             </div>
             <div class="block downloads-develoeprs-keys">
                 <div class="headline">
@@ -127,20 +104,11 @@
                 </div>
 
                 <div class="description">
-                    Your clients deserve the best security. Add it without being<br/>
-                    a security expert yourself. All data should be secure all the<br/>
-                    time. Users (or Your clients) expect it.
+					Manage your Virgil Identity keys, as well as<br/>
+					apps that use them.
                 </div>
 
-                <ul class="list">
-                    <li>
-                        Exploits relationships present in your enterprise<br/>
-                        data to provide a guided search
-                    </li>
-                    <li>Built on HTML5 using multi-layer concurrency</li>
-                </ul>
-
-                <a class="btn-virgil btn-transparent">DOWNLOAD</a>
+				<div class="download-label">Downloads <a href="https://virgilsecurity.com/downloads/Virgil_KeyRing_0.5.240.688.exe"><img src="/img/home/windows.png" /></a></div>
             </div>
         </div>
     </div>
