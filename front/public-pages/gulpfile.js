@@ -21,6 +21,7 @@ var config = {
 	js: {
 		src: [
 			p('../../bower_components/jquery/dist/jquery.js'),
+			p('../../bower_components/hash-tabs/dist/jquery.hash-tabs.js'),
 			p('../../bower_components/bxslider-4/dist/jquery.bxslider.js'),
 			p('../../bower_components/highlightjs/highlight.pack.js'),
 			p('./js/code-tabs.js'),
@@ -33,14 +34,14 @@ var config = {
 };
 
 gulp.task('public-md', function () {
-	return gulp.src(['./docs/*.md'])
+	return gulp.src([p('./docs/*.md')])
 		.pipe(plumber())
 		.pipe(markdown({
 			highlight: function (code) {
 				return require('highlight.js').highlightAuto(code).value;
 			}
 		}))
-		.pipe(gulp.dest('dist'))
+		.pipe(gulp.dest(p('./docs')))
 });
 
 gulp.task('public-styles', helpers.styles(config.styles.src, config.styles.dist, config.styles.dest));

@@ -18,6 +18,11 @@ $('.home-features-feature').on('click', function () {
 var tabs = new CodeTabs('.code-tabs');
 tabs.selectSection('php').selectTab('encrypt');
 
+$(".api-reference").hashTabs({
+	tabNavSelector: '.api-menu',
+	tabPanelSelector: '.api-docs'
+});
+
 initTabs();
 initForm();
 

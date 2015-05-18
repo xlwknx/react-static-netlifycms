@@ -945,6 +945,16 @@ ul.bxslider {
   border-bottom: thin solid #83eaff;
   color: #83eaff;
 }
+.docs .api-reference {
+  margin-top: 40px;
+}
+.docs .api-reference .api-menu {
+  float: left;
+  width: 190px;
+}
+.docs .api-reference .api-container {
+  margin-left: 210px;
+}
 .docs .docs-get-api-key {
   text-align: center;
 }

@@ -21,6 +21,7 @@
     "a0-angular-storage": "~0.0.10",
     "angular-modal-service": "~0.6.6",
     "bxslider-4": "~4.2.3",
-    "highlightjs": "~8.5.0"
+    "highlightjs": "~8.5.0",
+    "hash-tabs": "*"
   }
 }
