@@ -5,7 +5,7 @@
 @section('content')
 <div class="page docs">
     <section class="container docs-get-api-key">
-        <a href="" class="btn-virgil btn-transparent">Get API KEY</a>
+        <a href="/signup" class="btn-virgil btn-transparent">Get API KEY</a>
     </section>
 
     <section class="container choices">
