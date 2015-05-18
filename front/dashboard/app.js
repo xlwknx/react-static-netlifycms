@@ -27,11 +27,13 @@ angular.module('app', ['ngRoute', 'app.services', 'app.resources', 'app.template
 			var isAuthenticated = auth.isAuthenticated();
 
 			if (isAuthenticated && isPublic) {
-				return $location.path(config.urls.home);
+				$location.path(config.urls.home);
+				return $location.replace();
 			}
 
 			if (!isAuthenticated && !isPublic) {
-				return $location.path(config.urls.signin);
+				$location.path(config.urls.signin);
+				return $location.replace();
 			}
 		});
 	}]);
