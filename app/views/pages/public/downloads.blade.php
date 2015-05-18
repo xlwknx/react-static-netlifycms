@@ -6,7 +6,7 @@
 @section('content')
 <div class="page downloads">
     <section class="container downloads-title">
-        <h2>Downloads</h2>
+        <h2>Download Virgil Apps</h2>
     </section>
 
     <section class="container choices">
