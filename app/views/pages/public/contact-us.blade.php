@@ -12,7 +12,7 @@
     <section class="contact-contacts container">
         <div class="contact-contacts-item">
             <img src="/img/contacts/contact-phone.png" />
-            <p>+1 888-256-9014</p>
+            <p>+1-571-348-4601</p>
         </div>
         <div class="contact-contacts-item">
 			<a href="mailto:support@virgilsecurity.com">
