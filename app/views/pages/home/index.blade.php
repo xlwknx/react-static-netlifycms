@@ -60,6 +60,7 @@
                     <a href=""><img src="/img/home/c_sharp.png" /></a>
                     <a href=""><img src="/img/home/nodecasts.png" /></a>
                     <a href=""><img src="/img/home/as.png" /></a>
+                    <a href=""><img src="/img/home/nodejs.png" /></a>
                 </div>
             </div>
         </div>
