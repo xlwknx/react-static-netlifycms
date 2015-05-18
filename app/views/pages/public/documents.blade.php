@@ -5,11 +5,6 @@
 @section('content')
 <div class="page docs">
     <section class="container docs-get-api-key">
-        <div class="description">
-            Protecting your work and your users with Virgil Security<br/>
-            service takes hours, not days.
-        </div>
-
         <a href="" class="btn-virgil btn-transparent">Get API KEY</a>
     </section>
 
