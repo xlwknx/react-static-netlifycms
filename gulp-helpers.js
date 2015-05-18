@@ -28,7 +28,7 @@ var helpers = {
 		return function () {
 			return gulp.src(src)
 				.pipe(concat(dist))
-				.pipe(uglify())
+				//.pipe(uglify())
 				.pipe(gulp.dest(dest));
 		}
 	}
