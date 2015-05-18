@@ -136,6 +136,10 @@ table {
   font-family: "PFCentroSlabPro-Light";
   src: url("/fonts/PFCentroSlabPro-Light.otf");
 }
+@font-face {
+  font-family: "PT Mono";
+  src: url("/fonts/PTM55FT.ttf");
+}
 *,
 *:before,
 *:after {
@@ -181,74 +185,6 @@ h5 {
   float: left;
   width: 50%;
   padding-right: 20px;
-}
-.header {
-  padding: 20px 0;
-  height: 100px;
-}
-.header .header-block {
-  float: left;
-  height: 52px;
-  line-height: 52px;
-}
-.header .header-nav .header-nav-link {
-  font-size: 12px;
-  text-decoration: none;
-  margin-left: 20px;
-  color: #8382a3;
-}
-.header .header-nav .header-nav-link:first-child {
-  margin-left: 0;
-}
-.header .header-nav .social {
-  float: right;
-  display: block;
-  margin-top: 5px;
-}
-.header .header-logo {
-  float: left;
-}
-.header .header-nav-left {
-  float: left;
-  margin-left: 32px;
-}
-.header .header-nav-right {
-  float: right;
-}
-.footer {
-  height: 130px;
-  padding-top: 80px;
-  padding-bottom: 50px;
-}
-.footer .footer-copy {
-  color: #6f6d8d;
-  float: left;
-}
-.footer .footer-links {
-  margin-left: 32px;
-  float: left;
-}
-.footer .footer-links a {
-  color: #d4d4d6;
-  text-decoration: none;
-  font-size: 14px;
-  margin-left: 26px;
-}
-.footer .footer-links a:first-child {
-  margin-left: 0;
-}
-.footer .footer-social {
-  float: right;
-}
-.footer .footer-social a {
-  text-decoration: none;
-  margin-left: 28px;
-}
-.footer .footer-social a img {
-  height: 18px;
-}
-.footer .footer-social a:first-child {
-  margin-left: 0;
 }
 .btn-virgil {
   display: inline-block;
@@ -397,6 +333,82 @@ ul.virgil-list li:before {
 }
 .md a {
   color: #83eaff;
+}
+.header {
+  padding: 20px 0;
+  height: 100px;
+}
+.header .header-block {
+  float: left;
+  height: 52px;
+  line-height: 52px;
+}
+.header .header-nav .header-nav-link {
+  font-size: 12px;
+  text-decoration: none;
+  margin-left: 20px;
+  color: #8382a3;
+}
+.header .header-nav .header-nav-link:first-child {
+  margin-left: 0;
+}
+.header .header-nav .social {
+  float: right;
+  display: block;
+  margin-top: 6px;
+}
+.header .header-nav .social img {
+  height: 18px;
+}
+.header .header-nav .facebook {
+  margin-left: 16px;
+}
+.header .header-logo {
+  float: left;
+}
+.header .header-nav-left {
+  float: left;
+  margin-left: 32px;
+}
+.header .header-nav-right {
+  float: right;
+}
+.footer {
+  height: 130px;
+  padding-top: 80px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+  width: 1024px;
+}
+.footer .footer-copy {
+  color: #6f6d8d;
+  float: left;
+}
+.footer .footer-links {
+  margin-left: 32px;
+  float: left;
+}
+.footer .footer-links a {
+  color: #d4d4d6;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 26px;
+}
+.footer .footer-links a:first-child {
+  margin-left: 0;
+}
+.footer .footer-social {
+  float: right;
+}
+.footer .footer-social a {
+  text-decoration: none;
+  margin-left: 16px;
+}
+.footer .footer-social a img {
+  height: 18px;
+}
+.footer .footer-social a:first-child {
+  margin-left: 0;
 }
 /***
  * BxSlider v4.2.2 - Fully loaded, responsive content slider
@@ -950,6 +962,19 @@ ul.bxslider {
   border-bottom: thin solid #83eaff;
   color: #83eaff;
 }
+code {
+  font-family: "PT Mono";
+  font-size: 13px;
+  line-height: 15px;
+}
+code * {
+  font-family: "PT Mono";
+  font-size: 13px;
+  line-height: 15px;
+}
+.docs .section {
+  background: #1d1b38;
+}
 .docs .api-reference {
   margin-top: 40px;
 }
@@ -1040,7 +1065,7 @@ ul.bxslider {
 }
 .downloads .downloads-developers .block {
   width: 504px;
-  height: 348px;
+  height: 209px;
   float: left;
   margin-left: 16px;
   padding: 16px 48px;
@@ -1066,6 +1091,17 @@ ul.bxslider {
   padding-left: 20px;
   text-indent: 4px;
 }
+.downloads .downloads-developers .block .download-label {
+  margin-top: 6px;
+  font-size: 20px;
+  color: #fff;
+}
+.downloads .downloads-developers .block .download-label img {
+  height: 32px;
+  position: relative;
+  top: 9px;
+  left: 6px;
+}
 .downloads .downloads-developers .block .btn-virgil {
   margin-top: 26px;
 }
@@ -1083,6 +1119,9 @@ ul.bxslider {
 }
 .downloads .downloads-developers .downloads-develoeprs-sync {
   background: #484a98;
+}
+.downloads .downloads-developers .downloads-develoeprs-sync .download-label {
+  margin-top: 22px;
 }
 .downloads .downloads-developers .downloads-develoeprs-mail {
   background: #5c3f78;

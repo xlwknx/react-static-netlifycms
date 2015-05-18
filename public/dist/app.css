@@ -192,6 +192,82 @@ button.btn-virgil {
 .form-input.expand {
   width: 100%;
 }
+.footer {
+  height: 130px;
+  padding-top: 80px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+  width: 1024px;
+}
+.footer .footer-copy {
+  color: #6f6d8d;
+  float: left;
+}
+.footer .footer-links {
+  margin-left: 32px;
+  float: left;
+}
+.footer .footer-links a {
+  color: #d4d4d6;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 26px;
+}
+.footer .footer-links a:first-child {
+  margin-left: 0;
+}
+.footer .footer-social {
+  float: right;
+}
+.footer .footer-social a {
+  text-decoration: none;
+  margin-left: 16px;
+}
+.footer .footer-social a img {
+  height: 18px;
+}
+.footer .footer-social a:first-child {
+  margin-left: 0;
+}
+.header {
+  padding: 20px 0;
+  height: 100px;
+}
+.header .header-block {
+  float: left;
+  height: 52px;
+  line-height: 52px;
+}
+.header .header-nav .header-nav-link {
+  font-size: 12px;
+  text-decoration: none;
+  margin-left: 20px;
+  color: #8382a3;
+}
+.header .header-nav .header-nav-link:first-child {
+  margin-left: 0;
+}
+.header .header-nav .social {
+  float: right;
+  display: block;
+  margin-top: 6px;
+}
+.header .header-nav .social img {
+  height: 18px;
+}
+.header .header-nav .facebook {
+  margin-left: 16px;
+}
+.header .header-logo {
+  float: left;
+}
+.header .header-nav-left {
+  float: left;
+  margin-left: 32px;
+}
+.header .header-nav-right {
+  float: right;
+}
 .signin .container {
   width: 1024px;
   margin: 0 auto;
@@ -211,7 +287,7 @@ button.btn-virgil {
   margin-bottom: 80px;
 }
 .signin .signin-heading {
-  margin-top: 52px;
+  margin-top: 25px;
   text-align: center;
 }
 .signin .signin-heading h2 {
@@ -243,8 +319,8 @@ button.btn-virgil {
 .signin .signin-tos,
 .signin .signin-signup {
   color: #8382a3;
-  margin-top: 50px;
-  margin-bottom: 80px;
+  margin-top: 40px;
+  margin-bottom: 0px;
   text-align: center;
   line-height: 20px;
 }
@@ -438,6 +514,10 @@ button.btn-virgil {
 .clear {
   clear: both;
 }
+.container {
+  width: 1024px;
+  margin: 0 auto;
+}
 .initial-hide,
 .hide {
   display: none !important;
@@ -449,7 +529,7 @@ a {
 body {
   background-color: #12122b;
 }
-.header {
+.internal .header {
   background-color: #1d1b38;
   position: fixed;
   padding: 14px;
@@ -457,17 +537,17 @@ body {
   top: 0;
   width: 100%;
 }
-.header .logo {
+.internal .header .logo {
   height: 36px;
 }
-.header .block {
+.internal .header .block {
   display: block;
   float: left;
   line-height: 36px;
   color: #8382a3;
   cursor: pointer;
 }
-.header .signout {
+.internal .header .signout {
   float: right;
 }
 .internal.content {
