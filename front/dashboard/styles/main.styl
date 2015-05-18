@@ -9,6 +9,8 @@ $color-dark-text = #8382a3
 
 @require 'reset'
 @require '../../public-pages/styles/forms'
+@require '../../public-pages/styles/footer'
+@require '../../public-pages/styles/header'
 @require 'signin'
 @require 'sidebar'
 @require 'apps-list'
@@ -27,6 +29,10 @@ $color-dark-text = #8382a3
 .clear
 	clear both
 
+.container
+	width 1024px
+	margin 0 auto
+
 .initial-hide
 .hide
 	display none !important
@@ -38,26 +44,27 @@ a
 body
 	background-color $color-body
 
-.header
-	background-color $color-header
-	position fixed
-	padding 14px
-	height $header-height
-	top 0
-	width 100%
+.internal
+	.header
+		background-color $color-header
+		position fixed
+		padding 14px
+		height $header-height
+		top 0
+		width 100%
 
-	.logo
-		height 36px
+		.logo
+			height 36px
 
-	.block
-		display block
-		float left
-		line-height 36px
-		color $color-dark-text
-		cursor pointer
+		.block
+			display block
+			float left
+			line-height 36px
+			color $color-dark-text
+			cursor pointer
 
-	.signout
-		float right
+		.signout
+			float right
 
 .internal.content
 	margin-left 220px
