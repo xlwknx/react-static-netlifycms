@@ -741,19 +741,28 @@ Authorization          <span class="hljs-keyword">Not</span> needed
           </div>
 
           <div class="code-tabs-subnav">
+           	  <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="setup">Setup</button>
               <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="generate-keys">Generate Keys</button>
+              <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="register-user">Register User</button>
+              <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="get-public-key">Get Public Key</button>
               <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="encrypt">Encrypt</button>
               <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="decrypt">Decrypt</button>
               <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="sign">Sign</button>
-              <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="verify">Verify</button>
-              <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="register-user">Register User (PKI)</button>
-              <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="get-public-key">Get Public Key (PKI)</button>
+              <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="verify">Verify</button>              
           </div>
 
-          <div class="sections">
-                  <div class="section" data-section="csharp">
-              <pre data-code-tab="generate-keys">
-                  <code class="lang-csharp">
+          <div class="sections">                   
+          <div class="section" data-section="csharp">                                 
+          	<pre data-code-tab="setup">
+          		<code class="lang-csharp">   
+  // Just simply add Virgil.Net package from NuGet repository.
+  // See examples and detailed instructions <a href="https://github.com/virgilsecurity/virgil-net">here</a>.
+
+  PM> Install-Package Virgil.Net                  		
+                </code>
+            </pre>  
+            <pre data-code-tab="generate-keys">
+                <code class="lang-csharp">
   using System;
   using System.IO;
   using System.Text;
@@ -1039,6 +1048,11 @@ Authorization          <span class="hljs-keyword">Not</span> needed
               </pre>
           </div>
               <div class="section" data-section="cpp">
+            <pre data-code-tab="setup">
+          		<code class="lang-cpp">   
+  // See examples and detailed instructions <a href="https://github.com/virgilsecurity/virgil-cpp">here</a>.
+                </code>
+            </pre>  
                   <pre data-code-tab="generate-keys">
                       <code class="lang-cpp">
   #include &lt;fstream&gt;
@@ -1789,6 +1803,14 @@ Authorization          <span class="hljs-keyword">Not</span> needed
           </div>
 
               <div class="section" data-section="php">
+          	<pre data-code-tab="setup">
+          		<code class="lang-ini">   
+  ; Add reference to virgil library in your php.ini file.
+  ; See examples and detailed instructions <a href="https://github.com/virgilsecurity/virgil-php">here</a>.
+
+  extension={VIRGIL LIB PATH}/virgil_php.so   
+                </code>
+            </pre>  
                   <pre data-code-tab="generate-keys">
                       <code class="lang-php">
   &lt;php
