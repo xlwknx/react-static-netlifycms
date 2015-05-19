@@ -742,12 +742,12 @@ Authorization          <span class="hljs-keyword">Not</span> needed
 
           <div class="code-tabs-subnav">
               <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="generate-keys">Generate Keys</button>
+              <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="register-user">Register User</button>
+              <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="get-public-key">Get Public Key</button>
               <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="encrypt">Encrypt</button>
               <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="decrypt">Decrypt</button>
               <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="sign">Sign</button>
-              <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="verify">Verify</button>
-              <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="register-user">Register User (PKI)</button>
-              <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="get-public-key">Get Public Key (PKI)</button>
+              <button class="code-tabs-nav-item code-tabs-subnav-item" data-code-tab="verify">Verify</button>              
           </div>
 
           <div class="sections">
