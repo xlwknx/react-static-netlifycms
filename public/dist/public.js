@@ -11222,7 +11222,7 @@ $('.home-features-feature').on('click', function () {
 });
 
 var tabs = new CodeTabs('.code-tabs');
-tabs.selectSection('csharp').selectTab('generate-keys');
+tabs.selectSection('csharp').selectTab('setup');
 
 initTabs();
 initForm();
