@@ -29,8 +29,9 @@ $env = $app->detectEnvironment(array(
     'local' => array(
         'virgil.www.local'
     ),
-    'development' => array(),
-    'staging' => array(),
+    'staging' => array(
+        'api-stg.virgilsecurity.com'
+    ),
     'production' => array(
         'api.virgilsecurity.com'
     )
