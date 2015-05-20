@@ -23,9 +23,9 @@ return array(
         'mysql' => array(
             'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => 'keyring',
-            'username'  => 'keyring_usr',
-            'password'  => 'fsasdfdfsd334Fa324',
+            'database'  => 'virgil_keyring',
+            'username'  => 'virgilkey_usr',
+            'password'  => 'w2sd23fslfs2',
             'charset'   => 'utf8',
             'collation' => 'utf8_general_ci',
             'prefix'    => '',
