@@ -25,7 +25,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'api',
 			'username'  => 'api_usr',
-			'password'  => 'fs2sfdal232SF',
+			'password'  => 'fs2sfdal232SFa324',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
