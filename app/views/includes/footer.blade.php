@@ -9,12 +9,15 @@
         <a href="/documents">DOCUMENTATION</a>
     </div>
 
-    <div class="footer-social">
+    <div class="footer-social">    
         <a href="https://twitter.com/VirgilSecurity" target="_blank">
             <img src="/img/social-twitter.png" alt="twitter" />
         </a>
         <a href="https://www.facebook.com/VirgilSec" target="_blank">
             <img src="/img/social-facebook.png" alt="facebook" />
+        </a>
+        <a href="https://www.linkedin.com/company/virgil-security-inc-" target="_blank">
+            <img src="/img/social-linkedin.png" alt="twitter" />
         </a>
     </div>
 @section('stop')
