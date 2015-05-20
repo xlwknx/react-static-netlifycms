@@ -11,6 +11,7 @@ class CreateServiceApplicationStatisticTable extends Migration {
 	 */
 	public function up()
 	{
+        /*
         Schema::create('service_application_statistic', function($table)
         {
             $table->engine = 'InnoDB';
@@ -45,6 +46,7 @@ class CreateServiceApplicationStatisticTable extends Migration {
             $table->index('service_id');
 
         });
+        */
 	}
 
 	/**
@@ -54,7 +56,7 @@ class CreateServiceApplicationStatisticTable extends Migration {
 	 */
 	public function down()
 	{
-        Schema::drop('service_account_statistic');
+        //Schema::drop('service_account_statistic');
 	}
 
 }

@@ -14,10 +14,18 @@ class AccountController extends AbstractController {
             Input::json()->get('password', null)
         );
 
+        $authToken = Authentication::getAuthToken(
+            $account
+        );
+
+        Cookie::queue(
+            'auth_token',
+            $authToken,
+            Authentication::AUTH_TOKEN_LIFETIME
+        );
+
         return \Response::json(array(
-            'auth_token' => Authentication::getAuthToken(
-                $account
-            )
+            'auth_token' => $authToken
         ), HttpResponse::HTTP_OK);
     }
 
@@ -30,6 +38,8 @@ class AccountController extends AbstractController {
         Authentication::clearAuthToken(
             $authentication
         );
+
+        Cookie::queue('auth_token', null, -1);
 
         return \Response::json(
             null,

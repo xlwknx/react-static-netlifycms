@@ -16,5 +16,10 @@ class AbstractController extends Controller {
                 $this->layout
             );
         }
+
+        View::share(
+            'auth_token',
+            Cookie::get('auth_token')
+        );
     }
 } 
