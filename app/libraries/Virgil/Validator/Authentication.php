@@ -23,7 +23,7 @@ class Authentication {
         )->first();
 
         if(!$authentication) {
-            throw new ValidatorException(
+            throw new AuthenticationException(
                 ErrorCode::AUTHENTICATION_TOKEN_NOT_FOUND
             );
         }
