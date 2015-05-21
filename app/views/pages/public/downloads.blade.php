@@ -95,7 +95,7 @@
 					clients that uses Virgil Keys.
                 </div>
 
-				<div class="download-label">Downloads <a href="https://virgilsecurity.com/downloads/Virgil_Outlook_Add-In_0.4.259.654.exe"><img src="/img/home/windows.png" /></a></div>
+				<div class="download-label">Downloads <a href="https://virgilsecurity.com/download/Virgil_Outlook_Add-In_0.4.259.654.exe"><img src="/img/home/windows.png" /></a></div>
             </div>
             <div class="block downloads-develoeprs-keys">
                 <div class="headline">
@@ -108,7 +108,7 @@
 					apps that use them.
                 </div>
 
-				<div class="download-label">Downloads <a href="https://virgilsecurity.com/downloads/Virgil_KeyRing_0.5.240.688.exe"><img src="/img/home/windows.png" /></a></div>
+				<div class="download-label">Downloads <a href="https://virgilsecurity.com/download/Virgil_KeyRing_0.5.240.688.exe"><img src="/img/home/windows.png" /></a></div>
             </div>
         </div>
     </div>
