@@ -196,12 +196,10 @@ button.btn-virgil {
   height: 130px;
   padding-top: 80px;
   padding-bottom: 50px;
-  margin: 0 auto;
-  width: 1024px;
 }
 .footer .footer-copy {
   color: #6f6d8d;
-  float: left;
+/*@media (max-width: $screen-xs-max)*/
 }
 .footer .footer-links {
   margin-left: 32px;

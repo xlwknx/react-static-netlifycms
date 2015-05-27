@@ -27,6 +27,8 @@ $color-header-text = #c3cbda
     .bx-pager
       padding 0
       bottom -35px
+      @extend .hidden-sm;
+      @extend .hidden-xs;
 
   .home-slider
     color white
@@ -42,6 +44,9 @@ $color-header-text = #c3cbda
       margin-top 0
       font-size 40px
 
+      @media (max-width: $screen-sm-max)
+        font-size 36px
+
       @media (max-width: $screen-xs-max)
         font-size 30px
 
@@ -49,6 +54,10 @@ $color-header-text = #c3cbda
       font-size 26px
       line-height 32px
       color $color-header-text
+
+      @media (max-width: $screen-sm-max)
+        font-size 18px
+        line-height 24px
 
       @media (max-width: $screen-xs-max)
         width 80%
@@ -79,11 +88,17 @@ $color-header-text = #c3cbda
         .home-slider-title
           font-size 50px
 
+          @media (max-width: $screen-sm-max)
+            font-size 36px
+
           @media (max-width: $screen-xs-max)
             font-size 24px
 
         .engines
           margin-top 38px
+
+          @media (max-width: $screen-sm-max)
+            font-size 36px
 
           @media (max-width: $screen-xs-max)
             margin-top 10px

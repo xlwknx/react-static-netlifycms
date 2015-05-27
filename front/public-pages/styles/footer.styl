@@ -2,16 +2,26 @@
   height 130px
   padding-top 80px
   padding-bottom 50px
-  margin 0 auto
-  width 1024px
 
   .footer-copy
     color #6f6d8d
     float left
 
+    @media (max-width: $screen-xs-max)
+      text-align center
+      font-size 16px
+
   .footer-links
     margin-left 32px
     float left
+
+    @media (max-width: $screen-xs-max)
+      text-align center
+      margin 0
+      padding 10px 0
+
+      & > .row
+        padding 10px 0
 
     a
       color #d4d4d6
@@ -34,3 +44,8 @@
 
     a:first-child
       margin-left 0
+
+    @media (max-width: $screen-xs-max)
+      text-align center
+      float left
+      padding-bottom 30px
