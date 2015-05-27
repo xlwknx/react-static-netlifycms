@@ -264,7 +264,7 @@
         <section class="home-features cover">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-9 col-xs-offset-1">
+                    <div class="col-xs-10">
                         <div class="home-features-feature f1" data-index="1">
                             <img src="/img/home/developers.png" alt="feature"/>
                         </div>
@@ -273,7 +273,7 @@
                             <img src="/img/home/developers-active.png" alt="feature"/>
                         </div>
                     </div>
-                    <div class="col-xs-9">
+                    <div class="col-xs-10">
                         <div class="home-features-feature f2" data-index="2">
                             <img src="/img/home/iot.png" alt="feature"/>
                         </div>
@@ -291,7 +291,7 @@
                             <img src="/img/home/enterprise-active.png" alt="feature"/>
                         </div>
                     </div>
-                    <div class="col-xs-9">
+                    <div class="col-xs-10">
                         <div class="home-features-feature f4" data-index="4">
                             <img src="/img/home/identity.png" alt="feature"/>
                         </div>
@@ -300,7 +300,7 @@
                             <img src="/img/home/identity-active.png" alt="feature"/>
                         </div>
                     </div>
-                    <div class="col-xs-9">
+                    <div class="col-xs-10">
                         <div class="home-features-feature f5" data-index="5">
                             <img src="/img/home/cloud.png" alt="feature"/>
                         </div>

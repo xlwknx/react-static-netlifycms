@@ -7166,8 +7166,8 @@ ul.bxslider {
   text-align: center;
   cursor: pointer;
 }
-.home-features .container .row .col-sm-4 {
-  min-width: 20%;
+.home-features .container .row .col-xs-10 {
+  width: 19.99%;
 }
 .home-features .container img {
   display: block;
@@ -7284,7 +7284,117 @@ ul.bxslider {
 }
 /*@require "about"*/
 /*@require "how-it-works"*/
-/*@require "docs"*/
+.code-tabs {
+  margin-top: 50px;
+  background: #e3e3ec;
+}
+.code-tabs .code-tabs-dots {
+  display: block;
+  float: left;
+  margin-top: 19px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.code-tabs-nav {
+  height: 50px;
+  background: #26243f;
+  background-image: -webkit-gradient(linear, 0 0, 0 63, from(rgba(0,0,0,0)), color-stop(0, #2c2b42), color-stop(0.793, #1d1d35), color-stop(0.825, #1b1d34), color-stop(1, #1b1b33), color-stop(1, rgba(0,0,0,0)));
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0), #2c2b42 0%, #1d1d35 79.3%, #1b1d34 82.5%, #1b1b33 100%, rgba(0,0,0,0) 100%);
+  background-image: -moz-linear-gradient(rgba(0,0,0,0), #2c2b42 0%, #1d1d35 79.3%, #1b1d34 82.5%, #1b1b33 100%, rgba(0,0,0,0) 100%);
+  background-image: -o-linear-gradient(rgba(0,0,0,0), #2c2b42 0%, #1d1d35 79.3%, #1b1d34 82.5%, #1b1b33 100%, rgba(0,0,0,0) 100%);
+  background-image: linear-gradient(rgba(0,0,0,0), #2c2b42 0%, #1d1d35 79.3%, #1b1d34 82.5%, #1b1b33 100%, rgba(0,0,0,0) 100%);
+}
+.code-tabs-nav .code-tabs-nav-item.active {
+  background: #12112d;
+  background-image: -webkit-gradient(linear, 0 0, 0 57, from(rgba(0,0,0,0)), color-stop(0.035, #1b1b33), color-stop(0.14, #1b1d34), to(#2a2b42));
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0), #1b1b33 3.5%, #1b1d34 14%, #2a2b42);
+  background-image: -moz-linear-gradient(rgba(0,0,0,0), #1b1b33 3.5%, #1b1d34 14%, #2a2b42);
+  background-image: -o-linear-gradient(rgba(0,0,0,0), #1b1b33 3.5%, #1b1d34 14%, #2a2b42);
+  background-image: linear-gradient(rgba(0,0,0,0), #1b1b33 3.5%, #1b1d34 14%, #2a2b42);
+  border: thin solid #35324c;
+  padding: 14px 32px;
+}
+.code-tabs-subnav {
+  height: 42px;
+  background: #ccccde;
+  clear: both;
+}
+.code-tabs-nav:after {
+  clear: both;
+}
+.code-tabs-nav-item {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 15px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  float: left;
+  background: transparent;
+  color: #fff;
+  border-right: thin solid #35324c;
+  height: 50px;
+}
+.code-tabs-subnav-item {
+  padding: 11px 26px;
+  background: #ccccde;
+  color: #19192f;
+  border-right: none;
+  height: 42px;
+}
+.code-tabs-subnav-item.active {
+  background: #e3e3ec;
+  color: #515078;
+}
+.choices {
+  width: 392px;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 50px;
+}
+.choices .choices-section {
+  margin-left: 60px;
+}
+.choices .choices-section:first-child {
+  margin-left: 0;
+}
+.choices > span:hover,
+.choices > span.active {
+  border-bottom: thin solid #83eaff;
+  color: #83eaff;
+}
+code {
+  font-family: "PT Mono";
+  font-size: 13px;
+  line-height: 15px;
+}
+code * {
+  font-family: "PT Mono";
+  font-size: 13px;
+  line-height: 15px;
+}
+.docs .section {
+  background: #1d1b38;
+}
+.docs .api-reference {
+  margin-top: 40px;
+}
+.docs .api-reference .api-menu {
+  float: left;
+  width: 190px;
+}
+.docs .api-reference .api-container {
+  margin-left: 210px;
+}
+.docs .docs-get-api-key {
+  text-align: center;
+}
+.docs .docs-get-api-key .description {
+  color: #a9a8cb;
+  line-height: 26px;
+}
 /*@require "downloads"*/
 /*@require "signin"*/
 /*@require "./highlight-js-rainbow.css"*/
