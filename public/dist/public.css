@@ -7235,7 +7235,53 @@ ul.bxslider {
   margin-top: 14px;
   padding: 0 14px 0 0;
 }
-/*@require "contact-us"*/
+.page.contact {
+  background-image: url("../img/dotted-bg.png");
+  background-repeat: repeat;
+}
+.page.contact .contact-contacts {
+  margin-top: 62px;
+}
+.page.contact .contact-contacts .contact-contacts-item {
+  color: #8382a3;
+  text-align: center;
+}
+.page.contact .contact-contacts .contact-contacts-item a {
+  color: #fff;
+  text-decoration: none;
+}
+.page.contact .contact-contacts .contact-contacts-item p {
+  margin-top: 22px;
+}
+.page.contact .contact-contacts .contact-contacts-item.social .facebook {
+  margin-left: 26px;
+}
+.page.contact .contact-form {
+  margin-top: 52px;
+}
+.page.contact .contact-form .textarea {
+  margin-top: 0;
+}
+@media (max-width: 767px) {
+  .page.contact .contact-form .textarea {
+    margin-top: 26px;
+  }
+}
+.page.contact .contact-form .textarea textarea {
+  height: 185px;
+}
+@media (max-width: 767px) {
+  .page.contact .contact-form .textarea textarea {
+    height: 100%;
+  }
+}
+.page.contact .contact-form .contact-form-footer {
+  text-align: center;
+}
+.page.contact .contact-form .contact-form-footer .contact-form-submit {
+  margin-top: 26px;
+  padding: 10px 50px;
+}
 /*@require "about"*/
 /*@require "how-it-works"*/
 /*@require "docs"*/

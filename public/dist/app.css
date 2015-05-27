@@ -199,11 +199,27 @@ button.btn-virgil {
 }
 .footer .footer-copy {
   color: #6f6d8d;
-/*@media (max-width: $screen-xs-max)*/
+  float: left;
+}
+@media (max-width: $screen-xs-max) {
+  .footer .footer-copy {
+    text-align: center;
+    font-size: 16px;
+  }
 }
 .footer .footer-links {
   margin-left: 32px;
   float: left;
+}
+@media (max-width: $screen-xs-max) {
+  .footer .footer-links {
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+  }
+  .footer .footer-links > .row {
+    padding: 10px 0;
+  }
 }
 .footer .footer-links a {
   color: #d4d4d6;
@@ -226,6 +242,13 @@ button.btn-virgil {
 }
 .footer .footer-social a:first-child {
   margin-left: 0;
+}
+@media (max-width: $screen-xs-max) {
+  .footer .footer-social {
+    text-align: center;
+    float: left;
+    padding-bottom: 30px;
+  }
 }
 .header .navbar-header {
   padding: 0 20px;
