@@ -55,17 +55,17 @@
                         </li>
                         <li class="visible-xs social-xs">
                             <div class="row">
-                                <div class="col-xs-2 col-xs-offset-9">
+                                <div class="col-xs-4 col-xs-offset-18">
                                     <a href="https://www.linkedin.com/company/virgil-security-inc-" class="header-nav-link social">
                                         <img src="/img/social-linkedin.png" alt="linkedin"/>
                                     </a>
                                 </div>
-                                <div class="col-xs-2">
+                                <div class="col-xs-4">
                                     <a href="https://www.facebook.com/VirgilSec" target="_blank" class="header-nav-link social facebook">
                                         <img src="/img/social-facebook.png" alt="facebook"/>
                                     </a>
                                 </div>
-                                <div class="col-xs-2">
+                                <div class="col-xs-4">
                                     <a href="https://twitter.com/VirgilSecurity" target="_blank" class="header-nav-link social">
                                         <img src="/img/social-twitter.png" alt="twitter"/>
                                     </a>

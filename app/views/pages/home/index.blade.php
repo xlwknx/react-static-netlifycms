@@ -6,17 +6,18 @@
     <div class="container">
         <section class="home-slider">
             <div class="home-slider-slide secure-the-future">
-                <h2 class="home-slider-title">
-                    <div class="row">
-                        <div class="col-xs-22 col-xs-offset-1">
+
+                <div class="row">
+                    <div class="col-xs-44 col-xs-offset-2">
+                        <h2 class="home-slider-title">
                             Secure the Future
-                        </div>
+                        </h2>
                     </div>
-                </h2>
+                </div>
 
                 <div class="home-slider-description">
                     <div class="row">
-                        <div class="col-xs-22 col-xs-offset-1">
+                        <div class="col-xs-44 col-xs-offset-2">
                             Passwordless Authentication,<br/>
                             Data Encryption and Data Integrity for your apps.<br/>
                             Add in minutes. Benefit forever.
@@ -25,7 +26,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-xs-22 col-xs-offset-1">
+                    <div class="col-xs-44 col-xs-offset-2">
                         <a class="home-slider-get-started btn-virgil" href="/documents">
                             GET STARTED
                         </a>
@@ -34,17 +35,18 @@
             </div>
 
             <div class="hide home-slider-slide be-secure">
-                <h2 class="home-slider-title">
-                    <div class="row">
-                        <div class="col-xs-22 col-xs-offset-1">
+
+                <div class="row">
+                    <div class="col-xs-44 col-xs-offset-2">
+                        <h2 class="home-slider-title">
                             Be Secure
-                        </div>
+                        </h2>
                     </div>
-                </h2>
+                </div>
 
                 <div class="home-slider-description">
                     <div class="row">
-                        <div class="col-xs-22 col-xs-offset-1">
+                        <div class="col-xs-44 col-xs-offset-2">
                             Developers: Want to eliminate passwords, encrypt everything, in just hours,<br/>
                             without having to become a security expert?
                         </div>
@@ -52,7 +54,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-xs-22 col-xs-offset-1">
+                    <div class="col-xs-44 col-xs-offset-2">
                         <a class="home-slider-get-started btn-virgil" href="/documents">
                             GET STARTED
                         </a>
@@ -61,13 +63,13 @@
 
                 <div class="home-slider-platforms">
                     <div class="row">
-                        <div class="col-xs-22 col-xs-offset-1">
+                        <div class="col-xs-44 col-xs-offset-2">
                             <p>Available on most major platforms and for the most popular programming languages.</p>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-xs-10 col-xs-offset-1 text-right home-slider-platforms-col">
+                        <div class="col-xs-20 col-xs-offset-2 text-right home-slider-platforms-col">
                             <div>
                                 <img src="/img/home/apple.png" title="Macintosh"/>
                                 <img src="/img/home/windows.png" title="Windows"/>
@@ -81,7 +83,7 @@
                                 <img src="/img/home/firefox.png" title="Firefox"/>
                             </div>
                         </div>
-                        <div class="col-xs-10 col-xs-offset-2 text-left home-slider-platforms-col right">
+                        <div class="col-xs-20 col-xs-offset-4 text-left home-slider-platforms-col right">
                             <div>
                                 <img src="/img/home/archruby.png" title="C/C++"/></a>
                                 <img src="/img/home/c_sharp.png" title="C#/.NET"/>
@@ -100,17 +102,18 @@
             </div>
 
             <div class="hide home-slider-slide internet-of-things">
-                <h2 class="home-slider-title">
-                    <div class="row">
-                        <div class="col-xs-22 col-xs-offset-1">
+
+                <div class="row">
+                    <div class="col-xs-44 col-xs-offset-2">
+                        <h2 class="home-slider-title">
                             Internet of Things
-                        </div>
+                        </h2>
                     </div>
-                </h2>
+                </div>
 
                 <div class="home-slider-description">
                     <div class="row">
-                        <div class="col-xs-22 col-xs-offset-1">
+                        <div class="col-xs-44 col-xs-offset-2">
                             Virgil Security provides a simple, open-source, security layer for<br/>
                             everything connected to the Internet.<br/>
                             Do you have IoT devices or a cloud service?<br/>
@@ -121,7 +124,7 @@
 
                 <div class="home-slider-or-buttons">
                     <div class="row">
-                        <div class="col-xs-22 col-xs-offset-1">
+                        <div class="col-xs-44 col-xs-offset-2">
                             <a href="/contact-us" class="home-slider-get-started btn-virgil btn-transparent">
                                 CONTACT US
                             </a>
@@ -135,18 +138,19 @@
             </div>
 
             <div class="hide home-slider-slide ppu">
-                <h2 class="home-slider-title">
-                    <div class="row">
-                        <div class="col-xs-22 col-xs-offset-1">
+
+                <div class="row">
+                    <div class="col-xs-44 col-xs-offset-2">
+                        <h2 class="home-slider-title">
                             Pervasive, persistent, universal data<br/>
                             security for your Enterprise
-                        </div>
+                        </h2>
                     </div>
-                </h2>
+                </div>
 
                 <div class="home-slider-description">
                     <div class="row">
-                        <div class="col-xs-22 col-xs-offset-1">
+                        <div class="col-xs-44 col-xs-offset-2">
                             Integrate with your business processes. Work with Virgil-enabled apps.<br/>
                             Breach no longer means data loss. Protect yourself from insider threats.
                         </div>
@@ -155,7 +159,7 @@
 
                 <div class="home-slider-or-buttons">
                     <div class="row">
-                        <div class="col-xs-22 col-xs-offset-1">
+                        <div class="col-xs-44 col-xs-offset-2">
                             <a href="/contact-us" class="home-slider-get-started btn-virgil btn-transparent">
                                 CONTACT US
                             </a>
@@ -169,17 +173,18 @@
             </div>
 
             <div class="hide home-slider-slide without-password">
-                <h2 class="home-slider-title">
-                    <div class="row">
-                        <div class="col-xs-22 col-xs-offset-1">
+
+                <div class="row">
+                    <div class="col-xs-44 col-xs-offset-2">
+                        <h2 class="home-slider-title">
                             Authentication without passwords
-                        </div>
+                        </h2>
                     </div>
-                </h2>
+                </div>
 
                 <div class="home-slider-description">
                     <div class="row">
-                        <div class="col-xs-22 col-xs-offset-1">
+                        <div class="col-xs-44 col-xs-offset-2">
                             Your device is your key. Support any application in minutes. Plugins for major<br/>
                             content management systems. Need to support a different platform…?
                         </div>
@@ -188,16 +193,17 @@
 
                 <div class="home-slider-or-buttons">
                     <div class="row">
-                        <div class="col-xs-22 col-xs-offset-1 hidden-xs">
+                        <div class="col-xs-44 col-xs-offset-2 hidden-xs">
                             <a href="/contact-us" class="home-slider-get-started btn-virgil btn-transparent">
                                 CONTACT US
                             </a>
                             <span class="or">or build it yourself in just a few minutes.</span>
                         </div>
-                        <div class="col-xs-22 col-xs-offset-1 visible-xs">
+                        <div class="col-xs-44 col-xs-offset-2 visible-xs">
                             <a href="/contact-us" class="home-slider-get-started btn-virgil btn-transparent">
                                 CONTACT US
                             </a>
+
                             <p style="margin-top: 10px;">
                                 <span class="or">or build it yourself in just a few minutes.</span>
                             </p>
@@ -207,7 +213,7 @@
 
                 <div class="engines">
                     <div class="row">
-                        <div class="col-xs-22 col-xs-offset-1">
+                        <div class="col-xs-44 col-xs-offset-2">
                             <a href="https://github.com/VirgilSecurity/VirgilPlugins/tree/master/wordpress/virgil_pass" title="Wordpress" target="_blank">
                                 <img src="/img/home/wordpress.png"/>
                             </a>
@@ -229,19 +235,20 @@
             </div>
 
             <div class="hide home-slider-slide secure-cloud">
-                <h2 class="home-slider-title">
-                    <div class="row">
-                        <div class="col-xs-22 col-xs-offset-1">
+
+                <div class="row">
+                    <div class="col-xs-44 col-xs-offset-2">
+                        <h2 class="home-slider-title">
                             Secure your cloud applications<br/>
                             with passwordless authentication and<br/>
                             end-to-end encryption
-                        </div>
+                        </h2>
                     </div>
-                </h2>
+                </div>
 
                 <div class="home-slider-description">
                     <div class="row">
-                        <div class="col-xs-22 col-xs-offset-1">
+                        <div class="col-xs-44 col-xs-offset-2">
                             Build end-to-end encryption into your cloud infrastructure, secure your<br/>
                             data at rest, and protect your clients from unauthorized access.<br/>
                         </div>
@@ -257,7 +264,7 @@
         <section class="home-features cover">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-4 col-xs-4">
+                    <div class="col-sm-8 col-xs-8">
                         <div class="home-features-feature f1" data-index="1">
                             <img src="/img/home/developers.png" alt="feature"/>
                         </div>
@@ -266,7 +273,7 @@
                             <img src="/img/home/developers-active.png" alt="feature"/>
                         </div>
                     </div>
-                    <div class="col-sm-4 col-xs-4">
+                    <div class="col-sm-8 col-xs-8">
                         <div class="home-features-feature f2" data-index="2">
                             <img src="/img/home/iot.png" alt="feature"/>
                         </div>
@@ -275,7 +282,7 @@
                             <img src="/img/home/iot-active.png" alt="feature"/>
                         </div>
                     </div>
-                    <div class="col-sm-4 col-xs-4">
+                    <div class="col-sm-8 col-xs-8">
                         <div class="home-features-feature f3" data-index="3">
                             <img src="/img/home/enterprise.png" alt="feature"/>
                         </div>
@@ -284,7 +291,7 @@
                             <img src="/img/home/enterprise-active.png" alt="feature"/>
                         </div>
                     </div>
-                    <div class="col-sm-4 col-xs-4">
+                    <div class="col-sm-8 col-xs-8">
                         <div class="home-features-feature f4" data-index="4">
                             <img src="/img/home/identity.png" alt="feature"/>
                         </div>
@@ -293,7 +300,7 @@
                             <img src="/img/home/identity-active.png" alt="feature"/>
                         </div>
                     </div>
-                    <div class="col-sm-4 col-xs-4">
+                    <div class="col-sm-8 col-xs-8">
                         <div class="home-features-feature f5" data-index="5">
                             <img src="/img/home/cloud.png" alt="feature"/>
                         </div>
@@ -321,50 +328,69 @@
             </section>
 
             <section class="home-features-expanded container">
-                <div class="home-features-expanded-col">
-                    <div class="home-features-expanded-item">
-                        <div class="home-features-expanded-item-icon">
-                            <img src="/img/home/feature-next-gen-sec.png"/>
-                        </div>
-                        <div class="home-features-expanded-item-description">
-                            <h4>Drop next generation security into your<br/>application.</h4>
 
-                            <p>Your customers deserve the best security. Add it without having to become a security expert yourself.</p>
-                        </div>
-                    </div>
-                    <div class="home-features-expanded-item">
-                        <div class="home-features-expanded-item-icon">
-                            <img src="/img/home/feature-identities.png"/>
-                        </div>
-                        <div class="home-features-expanded-item-description">
-                            <h4>Verify Identities.</h4>
+                <div class="row">
+                    <div class="col-xs-44 col-xs-offset-2">
+                        <div class="row">
+                            <div class="col-md-23 home-features-expanded-item">
+                                <div class="row">
+                                    <div class="col-xs-12 home-features-expanded-item-icon">
+                                        <img src="/img/home/feature-next-gen-sec.png"/>
+                                    </div>
+                                    <div class="col-xs-35 home-features-expanded-item-description">
+                                        <h4>Drop next generation security into your application.</h4>
 
-                            <p>Identity made simple and without passwords.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="home-features-expanded-col right">
-                    <div class="home-features-expanded-item">
-                        <div class="home-features-expanded-item-icon">
-                            <img src="/img/home/feature-data-enc.png"/>
-                        </div>
-                        <div class="home-features-expanded-item-description">
-                            <h4>Encrypt data both at rest and in transit.</h4>
+                                        <p>Your customers deserve the best security. Add it without having to become a security expert yourself.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-23 col-md-offset-2 home-features-expanded-item">
+                                <div class="row">
+                                    <div class="col-xs-12 home-features-expanded-item-icon">
+                                        <img src="/img/home/feature-identities.png"/>
+                                    </div>
+                                    <div class="col-xs-35 home-features-expanded-item-description">
+                                        <h4>Verify Identities.</h4>
 
-                            <p>All data should be secure all the time. You and your customers deserve it.</p>
-                        </div>
-                    </div>
-                    <div class="home-features-expanded-item">
-                        <div class="home-features-expanded-item-icon">
-                            <img src="/img/home/feature-sec-in-min.png"/>
-                        </div>
-                        <div class="home-features-expanded-item-description">
-                            <h4>Implement security in minutes.</h4>
-
-                            <p>We support the platforms and languages you know and love.</p>
+                                        <p>Identity made simple and without passwords.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-xs-44 col-xs-offset-2">
+                        <div class="row">
+                            <div class="col-md-23 home-features-expanded-item">
+                                <div class="row">
+                                    <div class="col-xs-12 home-features-expanded-item-icon">
+                                        <img src="/img/home/feature-data-enc.png"/>
+                                    </div>
+                                    <div class="col-xs-35 home-features-expanded-item-description">
+                                        <h4>Encrypt data both at rest and in transit.</h4>
+
+                                        <p>All data should be secure all the time. You and your customers deserve it.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-23 col-md-offset-2 home-features-expanded-item">
+                                <div class="row">
+                                    <div class="col-xs-12 home-features-expanded-item-icon">
+                                        <img src="/img/home/feature-sec-in-min.png"/>
+                                    </div>
+                                    <div class="col-xs-35 home-features-expanded-item-description">
+                                        <h4>Implement security in minutes.</h4>
+
+                                        <p>We support the platforms and languages you know and love.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </section>
         </div>
     </div>
