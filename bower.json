@@ -22,6 +22,7 @@
     "angular-modal-service": "~0.6.6",
     "bxslider-4": "~4.2.3",
     "highlightjs": "~8.5.0",
-    "hash-tabs": "*"
+    "hash-tabs": "*",
+    "bootstrap-stylus": "4.0.4"
   }
 }

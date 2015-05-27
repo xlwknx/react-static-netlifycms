@@ -229,44 +229,58 @@ button.btn-virgil {
 .footer .footer-social a:first-child {
   margin-left: 0;
 }
-.header {
-  padding: 20px 0;
-  height: 100px;
+.header .navbar-header {
+  padding: 0 20px;
 }
-.header .header-block {
-  float: left;
-  height: 52px;
-  line-height: 52px;
+.header .navbar-header .navbar-brand {
+  margin-top: -10px;
 }
-.header .header-nav .header-nav-link {
-  font-size: 12px;
-  text-decoration: none;
-  margin-left: 20px;
-  color: #8382a3;
+.header .navbar-header .navbar-toggle {
+  border-color: #c3cbda;
 }
-.header .header-nav .header-nav-link:first-child {
-  margin-left: 0;
+.header .navbar-header .navbar-toggle .icon-bar {
+  background-color: #c3cbda;
 }
-.header .header-nav .social {
-  float: right;
-  display: block;
-  margin-top: 6px;
+.header .navbar-nav {
+  margin: 0;
 }
-.header .header-nav .social img {
+.header .navbar-nav > li a,
+.header .navbar-nav > li a:hover {
+  background: transparent !important;
+  color: #c3cbda;
+  font-size: 14px;
+}
+@media (max-width: $screen-xs-max) {
+  .header .navbar-nav > li a.social,
+  .header .navbar-nav > li a:hover.social {
+    display: inline-block;
+    width: 47px;
+    height: 47px;
+    padding: 13px 0 0 13px;
+  }
+  .header .navbar-nav > li a.social.facebook,
+  .header .navbar-nav > li a:hover.social.facebook {
+    padding-left: 19px;
+  }
+}
+.header .navbar-nav > li a.social img,
+.header .navbar-nav > li a:hover.social img {
   height: 18px;
 }
-.header .header-nav .facebook {
-  margin-left: 16px;
+.header .navbar-nav > li a:hover {
+  background: rgba(195,203,218,0.1) !important;
 }
-.header .header-logo {
-  float: left;
+@media (min-width: $screen-xs-max) {
+  .header .navbar-nav > li a,
+  .header .navbar-nav > li a:hover {
+    background: transparent !important;
+    color: #c3cbda;
+    font-size: 12px;
+  }
 }
-.header .header-nav-left {
-  float: left;
-  margin-left: 32px;
-}
-.header .header-nav-right {
-  float: right;
+.header .navbar-nav.navbar-right .social-xs {
+  border-top: 1px solid #c3cbda;
+  border-bottom: 1px solid #c3cbda;
 }
 .signin .container {
   width: 1024px;

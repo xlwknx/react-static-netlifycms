@@ -1,40 +1,53 @@
 .header
-	padding 20px 0
-	height 100px
+  $color-header-text = #c3cbda
 
-	.header-block
-		float left
-		height 52px
-		line-height 52px
+  .navbar-header
+    padding 0 20px
 
-	.header-nav
-		.header-nav-link
-			font-size 12px
-			text-decoration none
-			margin-left 20px
-			color $color-dark-text
+    .navbar-brand
+      margin-top -10px
 
-		.header-nav-link:first-child
-			margin-left 0
+    .navbar-toggle
+      border-color $color-header-text
+      
+      .icon-bar
+        background-color $color-header-text
 
-		.social
-			float right
-			display block
-			margin-top 6px
+  .navbar-nav
+    margin 0
 
-			img
-				height 18px
+    > li a,
+    > li a:hover
+      background transparent !important
+      color $color-header-text
+      font-size 14px
 
-		.facebook
-			margin-left 16px
+      &.social
+        @media (max-width: $screen-xs-max)
+          display inline-block
+          width 47px
+          height 47px
+          padding 13px 0 0 13px
 
-	.header-logo
-		float left
+          &.facebook
+            padding-left 19px
 
-	.header-nav-left
-		float left
-		margin-left 32px
+        img
+          height 18px
 
-	.header-nav-right
-		float right
+    > li a:hover
+      background rgba(195, 203, 218, 0.1) !important
 
+    @media (min-width: $screen-xs-max)
+      > li a,
+      > li a:hover
+        background transparent !important
+        color $color-header-text
+        font-size 12px
+
+    &.navbar-right
+      .social-xs
+        $xs-menu-border-color = rgba(255, 255, 255, 0.15)
+
+        border-top 1px solid $xs-menu-border-color
+        border-bottom 1px solid $xs-menu-border-color

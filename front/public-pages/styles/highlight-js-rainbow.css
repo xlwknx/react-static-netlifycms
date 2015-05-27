@@ -17,10 +17,9 @@ Style with support for rainbow parens
   /*font-family: monospace;*/
 }
 
-
 .hljs-body,
 .hljs-collection {
-   color: #d1d9e1;
+  color: #d1d9e1;
 }
 
 .hljs-comment,
@@ -38,10 +37,12 @@ Style with support for rainbow parens
 .javascript .hljs-title,
 .hljs-addition,
 .css .hljs-tag {
-  color: #cc99cc;
+  color: #c9c;
 }
 
-.hljs-number { color: #f99157; }
+.hljs-number {
+  color: #f99157;
+}
 
 .hljs-command,
 .hljs-string,
@@ -76,7 +77,7 @@ Style with support for rainbow parens
 .haskell .hljs-label,
 .hljs-id,
 .hljs-name {
-   color: #ffcc66;
+  color: #fc6;
 }
 
 .hljs-tag .hljs-title,
