@@ -65,7 +65,7 @@ class ApplicationController extends AbstractController {
             $application
         );
 
-        $application->resetApplicationKey();
+        $application->resetApplicationToken();
 
         return \Response::json(array(
             'key' => $application->key

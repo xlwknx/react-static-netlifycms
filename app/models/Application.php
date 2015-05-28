@@ -49,7 +49,7 @@ class Application extends Eloquent implements JsonSerializable {
         $application->name = $data['name'];
         $application->description = $data['description'];
         $application->url = $data['url'];
-        $application->key = md5(
+        $application->token = md5(
             $account->id . $data['name'] . $data['description'] . $data['url'] . time()
         );
 
@@ -76,13 +76,13 @@ class Application extends Eloquent implements JsonSerializable {
     }
 
     /**
-     * Reset Application key
+     * Reset Application token
      *
      * @return $this
      */
-    public function resetApplicationKey() {
+    public function resetApplicationToken() {
 
-        $this->key = md5(
+        $this->token = md5(
             $this->account_id . $this->name . $this->description . $this->url . time()
         );
 
@@ -103,7 +103,7 @@ class Application extends Eloquent implements JsonSerializable {
             'name' => $this->name,
             'description' => $this->description,
             'url' => $this->url,
-            'key' => $this->key
+            'key' => $this->token
         );
     }
 
