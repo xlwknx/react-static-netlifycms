@@ -6696,10 +6696,10 @@ ul.virgil-list li:before {
   margin-top: -10px;
 }
 .header .navbar-header .navbar-toggle {
-  border-color: #c3cbda;
+  border-color: #8382a3;
 }
 .header .navbar-header .navbar-toggle .icon-bar {
-  background-color: #c3cbda;
+  background-color: #8382a3;
 }
 .header .navbar-nav {
   margin: 0;
@@ -6707,7 +6707,7 @@ ul.virgil-list li:before {
 .header .navbar-nav > li a,
 .header .navbar-nav > li a:hover {
   background: transparent !important;
-  color: #c3cbda;
+  color: #8382a3;
   font-size: 14px;
 }
 @media (max-width: 767px) {
@@ -6734,7 +6734,7 @@ ul.virgil-list li:before {
   .header .navbar-nav > li a,
   .header .navbar-nav > li a:hover {
     background: transparent !important;
-    color: #c3cbda;
+    color: #8382a3;
     font-size: 12px;
   }
 }
@@ -7004,6 +7004,10 @@ ul.bxslider {
   position: relative;
   background-image: url("../img/home/home-bg.png");
   min-height: 490px;
+}
+.home-header-block .header .navbar-nav > li a,
+.home-header-block .header .navbar-nav > li a:hover {
+  color: #c3cbda;
 }
 .home-bottom-block {
   background-image: url("../img/dotted-bg.png");
