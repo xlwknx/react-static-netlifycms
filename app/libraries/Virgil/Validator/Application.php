@@ -72,15 +72,16 @@ class Application {
     /**
      * Validate Application key
      *
-     * @param $service
-     * @param $appKey
+     * @param $serviceId
+     * @param $appToken
+     * @param $resource
      * @return array
      * @throws \Virgil\Exception\Validator
      */
-    public static function validateKey($service, $appKey) {
+    public static function validateToken($serviceId, $resource, $appToken) {
 
-        $application = \Application::getApplicationByKey(
-            $appKey
+        $application = \Application::getApplicationByToken(
+            $appToken
         );
 
         if(!$application) {
@@ -89,32 +90,10 @@ class Application {
             );
         }
 
-        $service = \AllowedService::getServiceByName(
-            $service
-        );
-
-        if(!$service) {
-            throw new ValidatorException(
-                ErrorCode::APPLICATION_SERVICE_NOT_RECOGNIZED
-            );
-        }
-
-        /*
-        $count = \ApplicationStatistic::getServiceLimit(
-            $application,
-            $service
-        );
-
-        if(++$count > $application->account->type->{'limit_' . $service->service}) {
-            throw new ValidatorException(
-                ErrorCode::APPLICATION_CALL_LIMIT_EXCEEDED
-            );
-        }
-        */
-
         return array(
             'application' => $application,
-            'service' => $service
+            'service_id' => $serviceId,
+            'resource' => $resource
         );
     }
 } 

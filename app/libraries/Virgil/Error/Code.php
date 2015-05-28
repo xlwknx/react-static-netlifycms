@@ -35,7 +35,4 @@ class Code {
     const APPLICATION_NOT_FOUND                         = 50004;
     const APPLICATION_LIMIT_EXCEEDED                    = 50005;
     const APPLICATION_KEY_NOT_FOUND                     = 50006;
-    const APPLICATION_SERVICE_NOT_RECOGNIZED            = 50007;
-    const APPLICATION_CALL_LIMIT_EXCEEDED               = 50008;
-
 }

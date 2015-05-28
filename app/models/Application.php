@@ -7,7 +7,7 @@ class Application extends Eloquent implements JsonSerializable {
      *
      * @var string
      */
-    protected $table = 'service_application';
+    protected $table = 'service_account_application';
 
     /**
      * Get Application list by account
@@ -23,15 +23,15 @@ class Application extends Eloquent implements JsonSerializable {
     }
 
     /**
-     * Get Application instance by Application key
+     * Get Application instance by Application token
      *
-     * @param $key
+     * @param $token
      * @return mixed
      */
-    public static function getApplicationByKey($key) {
+    public static function getApplicationByToken($token) {
 
-        return \Application::whereKey(
-            $key
+        return \Application::whereToken(
+            $token
         )->first();
     }
 
