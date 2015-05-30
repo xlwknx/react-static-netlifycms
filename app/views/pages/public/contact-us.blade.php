@@ -10,7 +10,7 @@
             <p>Looking for help or have a comment?</p>
         </section>
 
-        <section class="contact-contacts container">
+        <section class="container contact-contacts">
             <div class="row">
                 <div class="col-sm-16 col-xs-24 contact-contacts-item">
                     <img src="/img/contacts/contact-phone.png"/>
@@ -39,7 +39,7 @@
             </div>
         </section>
 
-        <form class="contact-form container">
+        <form class="container contact-form">
             <div class="row">
                 <div class="col-xs-44 col-xs-offset-2 col-sm-21 form-item">
                     <div class="col-xs-48 form-item">

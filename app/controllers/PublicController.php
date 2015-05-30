@@ -1,38 +1,73 @@
 <?php
 
 
-class PublicController extends AbstractController {
+class PublicController extends AbstractController
+{
 
     /**
      * The layout that should be used for responses.
      */
     protected $layout = 'layouts.public';
 
-    public function aboutUs() {
+    public function aboutUs()
+    {
 
         $this->layout->content = View::make(
             'pages.public.about-us'
         );
     }
 
-    public function contactUs() {
+    public function contactUs()
+    {
 
         $this->layout->content = View::make(
             'pages.public.contact-us'
         );
     }
 
-    public function downloads() {
+    public function downloads()
+    {
 
         $this->layout->content = View::make(
             'pages.public.downloads'
         );
     }
 
-    public function documents() {
+    public function documents()
+    {
 
         $this->layout->content = View::make(
             'pages.public.documents'
+        );
+    }
+
+    public function signin()
+    {
+
+        $this->layout->content = View::make(
+            'pages.public.signin'
+        );
+    }
+
+    public function signup()
+    {
+
+        $this->layout->content = View::make(
+            'pages.public.signup'
+        );
+    }
+
+    public function signout()
+    {
+
+        // TODO: signout logic here
+    }
+
+    public function reset()
+    {
+
+        $this->layout->content = View::make(
+            'pages.public.reset'
         );
     }
 }

@@ -7534,5 +7534,164 @@ code * {
 .downloads .downloads-developers .downloads-develoeprs-keys {
   background: #006f65;
 }
-/*@require "signin"*/
-/*@require "./highlight-js-rainbow.css"*/
+.page.signin,
+.page.signup,
+.page.reset {
+  font-size: 16px;
+  color: #8382a3;
+}
+.page.signin a,
+.page.signup a,
+.page.reset a {
+  color: #83eaff;
+}
+.page.signin h2,
+.page.signup h2,
+.page.reset h2 {
+  font-family: "PT Sans";
+  font-size: 32px;
+  font-weight: 700;
+}
+.page.signin .auth-alert,
+.page.signup .auth-alert,
+.page.reset .auth-alert {
+  color: #5a3b5d;
+  background: #a36da8;
+  line-height: 40px;
+  height: 40px;
+  text-align: center;
+}
+.page.signin .form-footer,
+.page.signup .form-footer,
+.page.reset .form-footer {
+  padding: 20px 0;
+}
+.page.signin .form-submit,
+.page.signup .form-submit,
+.page.reset .form-submit {
+  padding: 10px 50px;
+}
+.page.signin .check-email,
+.page.signup .check-email,
+.page.reset .check-email {
+  color: #8382a3;
+  text-align: center;
+  margin-top: 80px;
+  font-size: 20px;
+  margin-bottom: 80px;
+}
+/*
+
+Style with support for rainbow parens
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #1d1b38;
+  color: #d1d9e1;
+  -webkit-text-size-adjust: none;
+}
+
+.hljs * {
+  /*font-family: monospace;*/
+}
+
+.hljs-body,
+.hljs-collection {
+  color: #d1d9e1;
+}
+
+.hljs-comment,
+.diff .hljs-header,
+.hljs-doctype,
+.lisp .hljs-string,
+.hljs-javadoc {
+  color: #969896;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.clojure .hljs-attribute,
+.hljs-winutils,
+.javascript .hljs-title,
+.hljs-addition,
+.css .hljs-tag {
+  color: #c9c;
+}
+
+.hljs-number {
+  color: #f99157;
+}
+
+.hljs-command,
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-phpdoc,
+.hljs-dartdoc,
+.tex .hljs-formula,
+.hljs-regexp,
+.hljs-hexcolor {
+  color: #8abeb7;
+}
+
+.hljs-title,
+.hljs-localvars,
+.hljs-function .hljs-title,
+.hljs-chunk,
+.hljs-decorator,
+.hljs-built_in,
+.hljs-identifier {
+  color: #b5bd68;
+}
+
+.hljs-class .hljs-keyword {
+  color: #f2777a;
+}
+
+.hljs-variable,
+.smalltalk .hljs-number,
+.hljs-constant,
+.hljs-class .hljs-title,
+.hljs-parent,
+.haskell .hljs-label,
+.hljs-id,
+.hljs-name {
+  color: #fc6;
+}
+
+.hljs-tag .hljs-title,
+.hljs-rule .hljs-property,
+.django .hljs-tag .hljs-keyword {
+  font-weight: bold;
+}
+
+.hljs-attribute {
+  color: #81a2be;
+}
+
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-pi,
+.hljs-shebang,
+.hljs-symbol,
+.hljs-symbol .hljs-string,
+.diff .hljs-change,
+.hljs-special,
+.hljs-attr_selector,
+.hljs-important,
+.hljs-subst,
+.hljs-cdata {
+  color: #f99157;
+}
+
+.hljs-deletion {
+  color: #dc322f;
+}
+
+.tex .hljs-formula {
+  background: #eee8d5;
+}
+

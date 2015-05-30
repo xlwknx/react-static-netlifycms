@@ -257,10 +257,10 @@ button.btn-virgil {
   margin-top: -10px;
 }
 .header .navbar-header .navbar-toggle {
-  border-color: #c3cbda;
+  border-color: #8382a3;
 }
 .header .navbar-header .navbar-toggle .icon-bar {
-  background-color: #c3cbda;
+  background-color: #8382a3;
 }
 .header .navbar-nav {
   margin: 0;
@@ -268,7 +268,7 @@ button.btn-virgil {
 .header .navbar-nav > li a,
 .header .navbar-nav > li a:hover {
   background: transparent !important;
-  color: #c3cbda;
+  color: #8382a3;
   font-size: 14px;
 }
 @media (max-width: $screen-xs-max) {
@@ -295,7 +295,7 @@ button.btn-virgil {
   .header .navbar-nav > li a,
   .header .navbar-nav > li a:hover {
     background: transparent !important;
-    color: #c3cbda;
+    color: #8382a3;
     font-size: 12px;
   }
 }

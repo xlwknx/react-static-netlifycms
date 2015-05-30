@@ -41,7 +41,6 @@ Route::post('application/validate-key', array(
 ));
 
 
-
 /*
 |--------------------------------------------------------------------------
 | Application Route Filters
@@ -50,8 +49,7 @@ Route::post('application/validate-key', array(
 | Apply Auth verification for some protected methods.
 |
 */
-Route::group(array('before' => 'authVerification'), function()
-{
+Route::group(array('before' => 'authVerification'), function () {
 
     Route::get('application/get/{application}', array(
         'uses' => 'ApplicationController@getOne'
@@ -104,23 +102,37 @@ Route::get('documents', array(
     'uses' => 'PublicController@documents'
 ));
 
-
-
-Route::get('signup', array(
-    'uses' => 'DashboardController@index'
+Route::get('signin', array(
+    'uses' => 'PublicController@signin'
 ));
 
-Route::get('signin', array(
-    'uses' => 'DashboardController@index'
+Route::get('signup', array(
+    'uses' => 'PublicController@signup'
 ));
 
 Route::get('signout', array(
-    'uses' => 'DashboardController@index'
+    'uses' => 'PublicController@signout'
 ));
 
 Route::get('reset', array(
-    'uses' => 'DashboardController@index'
+    'uses' => 'PublicController@reset'
 ));
+
+//Route::get('signup', array(
+//    'uses' => 'DashboardController@index'
+//));
+
+//Route::get('signin', array(
+//    'uses' => 'DashboardController@index'
+//));
+
+//Route::get('signout', array(
+//    'uses' => 'DashboardController@index'
+//));
+
+//Route::get('reset', array(
+//    'uses' => 'DashboardController@index'
+//));
 
 Route::get('dashboard', array(
     'uses' => 'DashboardController@index'
