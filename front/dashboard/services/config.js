@@ -11,6 +11,7 @@ angular.module('app.services').factory('config', [function () {
 	return conf;
 
 	function isPublicPageUrl (url) {
+		return false; // FIXME since SPA only serves internal app it will always be false
 		var result = false;
 
 		for (var i in conf.publicPages) {

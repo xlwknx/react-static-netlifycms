@@ -7,6 +7,7 @@ angular.module('app').
 
 		// Check if current route is internal page
 		$scope.isInternalPageAllowed = function isInternalPageAllowed () {
+			return true; // FIXME
 			return auth.isAuthenticated() && ['/signup', '/signin', '/reset'].indexOf($location.path()) === -1;
 		};
 

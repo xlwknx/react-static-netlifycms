@@ -17,6 +17,7 @@ angular.module('app.services').factory('auth',
 			},
 
 			isAuthenticated: function isAuthenticated () {
+				return true; // FIXME SPA always been auth
 				return !!auth.getUser();
 			},
 

@@ -9,7 +9,7 @@ angular.module('app', ['ngRoute', 'app.services', 'app.resources', 'app.template
 	['$httpProvider',
 	function($httpProvider) {
 		$httpProvider.interceptors.push(
-			'authInterceptor',
+			//'authInterceptor', FIXME remove if don't need token headers any more
 			'validationInterceptor',
 			'errorInterceptor',
 			'progressInterceptor'
@@ -24,8 +24,8 @@ angular.module('app', ['ngRoute', 'app.services', 'app.resources', 'app.template
 
 		// Prevent logged in user from signin, signup, reset password pages
 		$rootScope.$on('$locationChangeStart', function (ev, next) {
-			var isPublic = config.isPublicPageUrl(next);
-			var isAuthenticated = auth.isAuthenticated();
+			var isPublic = config.isPublicPageUrl(next); // FIXME remove in future
+			var isAuthenticated = auth.isAuthenticated(); // FIXME remove since SPA serves only internal pages and always got auth
 
 			if (isAuthenticated && isPublic) {
 				$location.path(config.urls.home);

@@ -37549,7 +37549,7 @@ angular.module('app', ['ngRoute', 'app.services', 'app.resources', 'app.template
 	['$httpProvider',
 	function($httpProvider) {
 		$httpProvider.interceptors.push(
-			'authInterceptor',
+			//'authInterceptor', FIXME remove if don't need token headers any more
 			'validationInterceptor',
 			'errorInterceptor',
 			'progressInterceptor'
@@ -37564,8 +37564,8 @@ angular.module('app', ['ngRoute', 'app.services', 'app.resources', 'app.template
 
 		// Prevent logged in user from signin, signup, reset password pages
 		$rootScope.$on('$locationChangeStart', function (ev, next) {
-			var isPublic = config.isPublicPageUrl(next);
-			var isAuthenticated = auth.isAuthenticated();
+			var isPublic = config.isPublicPageUrl(next); // FIXME remove in future
+			var isAuthenticated = auth.isAuthenticated(); // FIXME remove since SPA serves only internal pages and always got auth
 
 			if (isAuthenticated && isPublic) {
 				$location.path(config.urls.home);
@@ -37860,6 +37860,7 @@ angular.module('app').
 
 		// Check if current route is internal page
 		$scope.isInternalPageAllowed = function isInternalPageAllowed () {
+			return true; // FIXME
 			return auth.isAuthenticated() && ['/signup', '/signin', '/reset'].indexOf($location.path()) === -1;
 		};
 
@@ -37899,6 +37900,7 @@ angular.module('app.services').factory('auth',
 			},
 
 			isAuthenticated: function isAuthenticated () {
+				return true; // FIXME SPA always been auth
 				return !!auth.getUser();
 			},
 
@@ -37928,6 +37930,7 @@ angular.module('app.services').factory('config', [function () {
 	return conf;
 
 	function isPublicPageUrl (url) {
+		return false; // FIXME since SPA only serves internal app it will always be false
 		var result = false;
 
 		for (var i in conf.publicPages) {
