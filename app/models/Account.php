@@ -26,7 +26,6 @@ class Account extends Eloquent {
         $account = new Account();
         $account->email     = $data['email'];
         $account->password  = md5($data['password']);
-        $account->type_id   = 1; //$data['type'];
         $account->confirmed = self::ACCOUNT_CONFIRMED;
 
         $account->save();
@@ -65,15 +64,5 @@ class Account extends Eloquent {
     public function isConfirmed() {
 
         return $this->confirmed == self::ACCOUNT_CONFIRMED ? true : false;
-    }
-
-    /**
-     * Get AccountType relation instance
-     *
-     * @return mixed
-     */
-    public function type() {
-
-        return $this->belongsTo('AccountType');
     }
 }

@@ -18,17 +18,8 @@ class CreateServiceAccountTable extends Migration {
             $table->bigIncrements('id')->unsigned();
             $table->string('email', 36)->unique();
             $table->string('password', 36);
-            $table->bigInteger('type_id')->unsigned();
             $table->smallInteger('confirmed')->unsigned();
             $table->timestamps();
-
-            $table->foreign('type_id')
-                ->references('id')
-                ->on('service_account_type')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
-            $table->index('type_id');
 
         });
 	}

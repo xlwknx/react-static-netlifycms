@@ -65,10 +65,10 @@ class ApplicationController extends AbstractController {
             $application
         );
 
-        $application->resetApplicationKey();
+        $application->resetApplicationToken();
 
         return \Response::json(array(
-            'key' => $application->key
+            'key' => $application->token
         ), HttpResponse::HTTP_OK);
     }
 
@@ -105,16 +105,18 @@ class ApplicationController extends AbstractController {
         );
     }
 
-    public static function validateKey() {
+    public static function validateToken() {
 
-        $data = ApplicationValidator::validateKey(
-            Input::json()->get('service', null) ,
-            Input::json()->get('app_key', null)
+        $data = ApplicationValidator::validateToken(
+            Input::json()->get('service_id', null),
+            Input::json()->get('resource', null),
+            Input::json()->get('app_token', null)
         );
 
-        ApplicationStatistic::log(
-            $data['application'],
-            $data['service']
+        ApplicationStats::log(
+            $data['service_id'],
+            $data['resource'],
+            $data['application']
         );
 
         return \Response::json(array(

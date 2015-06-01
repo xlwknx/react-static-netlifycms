@@ -36,8 +36,8 @@ Route::post('account/confirm/re-send', array(
 ));
 
 
-Route::post('application/validate-key', array(
-    'uses' => 'ApplicationController@validateKey'
+Route::post('application/validate-token', array(
+    'uses' => 'ApplicationController@validateToken'
 ));
 
 

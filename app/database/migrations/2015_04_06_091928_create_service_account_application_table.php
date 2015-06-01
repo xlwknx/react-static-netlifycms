@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateServiceApplicationTable extends Migration {
+class CreateServiceAccountApplicationTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,7 +11,7 @@ class CreateServiceApplicationTable extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('service_application', function($table)
+        Schema::create('service_account_application', function($table)
         {
             $table->engine = 'InnoDB';
 
@@ -20,7 +20,7 @@ class CreateServiceApplicationTable extends Migration {
             $table->string('name', 255);
             $table->string('description', 255);
             $table->string('url', 255)->nullable();
-            $table->string('key', 64);
+            $table->string('token', 64);
             $table->timestamps();
 
             $table->foreign('account_id')
@@ -41,7 +41,7 @@ class CreateServiceApplicationTable extends Migration {
 	 */
 	public function down()
 	{
-        Schema::drop('service_application');
+        Schema::drop('service_account_application');
 	}
 
 }
