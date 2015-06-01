@@ -8,7 +8,7 @@
             <h2>Sign In</h2>
         </section>
 
-        <form class="container">
+        <form class="container" action="/account/signin" method="post">
             <div class="row">
                 <div class="col-xs-44 col-xs-offset-2 col-sm-24 col-sm-offset-12">
                     <div class="row">

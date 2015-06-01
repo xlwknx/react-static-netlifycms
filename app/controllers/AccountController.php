@@ -10,8 +10,8 @@ class AccountController extends AbstractController {
     public function signin() {
 
         $account = AccountValidator::validateSignin(
-            Input::json()->get('email', null),
-            Input::json()->get('password', null)
+            Input::get('email', null),
+            Input::get('password', null)
         );
 
         $authToken = Authentication::getAuthToken(
@@ -24,9 +24,7 @@ class AccountController extends AbstractController {
             Authentication::AUTH_TOKEN_LIFETIME
         );
 
-        return \Response::json(array(
-            'auth_token' => $authToken
-        ), HttpResponse::HTTP_OK);
+        return Redirect::to('dashboard');
     }
 
     public function signout() {

@@ -11,7 +11,6 @@ class Code {
 
 
     // Account errors
-    const ACCOUNT_NOT_FOUND                             = 30001;
     const ACCOUNT_ALREADY_EXISTS                        = 30002;
     const ACCOUNT_USERNAME_NOT_PROVIDED                 = 30003;
     const ACCOUNT_PASSWORD_NOT_PROVIDED                 = 30004;

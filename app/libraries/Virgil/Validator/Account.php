@@ -3,7 +3,6 @@
 namespace Virgil\Validator;
 
 use Virgil\Error\Code as ErrorCode,
-    Virgil\Validator\AccountType as AccountTypeValidator,
     Virgil\Exception\Validator as ValidatorException;
 
 
@@ -24,12 +23,6 @@ class Account {
         )->wherePassword(
             md5($password)
         )->first();
-
-        if(!$account) {
-            throw new ValidatorException(
-                ErrorCode::ACCOUNT_NOT_FOUND
-            );
-        }
 
         return $account;
     }
