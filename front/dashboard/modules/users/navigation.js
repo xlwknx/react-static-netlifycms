@@ -16,14 +16,4 @@ angular.module('app').
 			return $location.path() == path;
 		};
 
-		$scope.signout = function signout () {
-			accounts.signout(auth.getUser()).$promise
-				.then(finalizeSignout);
-
-			function finalizeSignout () {
-				auth.destroySession();
-				$location.path(config.urls.signin);
-			}
-		}
-
 	}]);

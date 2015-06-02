@@ -16,7 +16,7 @@
 					<img src="/img/logo.png" class="logo" alt="Virgil" />
 				</a>
 
-				<a ng-click="signout()" class="block signout">
+				<a target="_self" href="/signout" class="block signout">
 					Sign Out
 				</a>
 			</header>
