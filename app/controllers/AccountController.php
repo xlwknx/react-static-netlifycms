@@ -14,6 +14,13 @@ class AccountController extends AbstractController {
             Input::get('password', null)
         );
 
+        if(!$account) {
+            return Redirect::to('/signin')->with(
+                'error',
+                'Account was not found.'
+            );
+        }
+
         $authToken = Authentication::getAuthToken(
             $account
         );
@@ -30,7 +37,9 @@ class AccountController extends AbstractController {
     public function signout() {
 
         $authentication = AuthenticationValidator::validateAuthToken(
-            Input::json()->get('auth_token', null)
+            Cookie::get(
+                'auth_token'
+            )
         );
 
         Authentication::clearAuthToken(
@@ -39,28 +48,39 @@ class AccountController extends AbstractController {
 
         Cookie::queue('auth_token', null, -1);
 
-        return \Response::json(
-            null,
-            HttpResponse::HTTP_OK
-        );
+        return Redirect::to('/');
     }
 
     public function signup() {
 
-        $account = Account::createAccount(
-            AccountValidator::validateSignup(
-                Input::json()->get('email', null),
-                Input::json()->get('password', null),
-                Input::json()->get('company_name', null)
+        $result = AccountValidator::validateSignup(
+            Input::get('email', null),
+            Input::get('password', null),
+            Input::get('company_name', null)
+        );
+
+        if(!$result['result']) {
+            return Redirect::to('/signup')->with(
+                'error',
+                $result['message']
+            );
+        }
+
+        $authToken = Authentication::getAuthToken(
+            Account::createAccount(
+                Input::get('email'),
+                Input::get('password'),
+                Input::get('company_name')
             )
         );
 
-        return \Response::json(array(
-            'id' => $account->id,
-            'type' => $account->type_id,
-            'email' => $account->email,
-            'confirmed' => $account->isConfirmed()
-        ), HttpResponse::HTTP_OK);
+        Cookie::queue(
+            'auth_token',
+            $authToken,
+            Authentication::AUTH_TOKEN_LIFETIME
+        );
+
+        return Redirect::to('dashboard');
     }
 
     public function confirm($code) {

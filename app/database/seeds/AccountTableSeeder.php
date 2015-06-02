@@ -10,6 +10,7 @@ class AccountTableSeeder extends Seeder {
 
         Account::create(array(
             'id' => self::VIRGIL_ACCOUNT_ID,
+            'company_name' => 'Virgil Security',
             'email' => 'support@virgilsecurity.com',
             'password' => md5('password'),
             'confirmed' => Account::ACCOUNT_CONFIRMED

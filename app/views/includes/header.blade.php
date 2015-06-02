@@ -33,7 +33,7 @@
                         </li>
                         <li>
                             @if (!is_null($auth_token))
-                                <a href="/signin" class="header-nav-link">DASHBOARD</a>
+                                <a href="/dashboard" class="header-nav-link">DASHBOARD</a>
                             @else
                                 <a href="/signin" class="header-nav-link">SIGN IN</a>
                             @endif

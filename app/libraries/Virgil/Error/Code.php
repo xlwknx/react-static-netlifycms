@@ -11,15 +11,10 @@ class Code {
 
 
     // Account errors
-    const ACCOUNT_ALREADY_EXISTS                        = 30002;
-    const ACCOUNT_USERNAME_NOT_PROVIDED                 = 30003;
-    const ACCOUNT_PASSWORD_NOT_PROVIDED                 = 30004;
-    const ACCOUNT_TYPE_NOT_PROVIDED                     = 30005;
-    const ACCOUNT_TYPE_NOT_FOUND                        = 30006;
-    const ACCOUNT_NOT_CONFIRMED                         = 30007;
-    const ACCOUNT_ALREADY_CONFIRMED                     = 30008;
-    const ACCOUNT_CONFIRMATION_NOT_FOUND                = 30009;
-    const ACCOUNT_CONFIRMATION_CODE_EXPIRED             = 30010;
+    const ACCOUNT_NOT_CONFIRMED                         = 30001;
+    const ACCOUNT_ALREADY_CONFIRMED                     = 30002;
+    const ACCOUNT_CONFIRMATION_NOT_FOUND                = 30003;
+    const ACCOUNT_CONFIRMATION_CODE_EXPIRED             = 30004;
 
 
     // Authentication errors

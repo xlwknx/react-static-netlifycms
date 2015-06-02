@@ -32,49 +32,39 @@ class Account {
      *
      * @param $email - account email
      * @param $password - account password
-     * @param $companyName - account name
      * @return mixed
      * @throws \Virgil\Exception\Validator
      */
-    public static function validateSignup($email, $password, $companyName) {
+    public static function validateSignup($email, $password) {
 
-        if(!isset($email)) {
-            throw new ValidatorException(
-                ErrorCode::ACCOUNT_USERNAME_NOT_PROVIDED
+        if(!$email) {
+            return array(
+                'result' => false,
+                'message' => 'Account email was not provided.'
             );
         }
 
-        if(!isset($password)) {
-            throw new ValidatorException(
-                ErrorCode::ACCOUNT_PASSWORD_NOT_PROVIDED
+        if(!$password) {
+            return array(
+                'result' => false,
+                'message' => 'Account password was not provided.'
             );
         }
 
-        /*
-        if(!isset($data['type'])) {
-            throw new ValidatorException(
-                ErrorCode::ACCOUNT_TYPE_NOT_PROVIDED
-            );
-        }
 
-        AccountTypeValidator::exists(
-            $data['type']
-        );
-        */
         $account = \Account::whereEmail(
             $email
         )->first();
 
         if($account) {
-            throw new ValidatorException(
-                ErrorCode::ACCOUNT_ALREADY_EXISTS
+            return array(
+                'result' => false,
+                'message' => 'Account already exists. Please specify another email.'
             );
         }
 
         return array(
-            'email' => $email,
-            'password' => $password,
-            'company_name' => $companyName
+            'result' => true,
         );
     }
 

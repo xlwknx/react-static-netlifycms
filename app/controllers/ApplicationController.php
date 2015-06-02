@@ -45,11 +45,6 @@ class ApplicationController extends AbstractController {
             $this->getCurrentAccount()
         );
 
-        /*
-        AccountValidator::validateLimit(
-            $this->getCurrentAccount()
-        );
-        */
         return \Response::json(
             Application::createApplication(
                 $this->getCurrentAccount(),

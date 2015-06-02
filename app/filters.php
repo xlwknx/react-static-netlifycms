@@ -36,6 +36,6 @@ App::after(function($request, $response)
 Route::filter('authVerification', function($route, $request)
 {
     Virgil\Validator\Authentication::validateAuthToken(
-        $request->header('x-auth-token')
+        Cookie::get('auth_token')
     );
 });

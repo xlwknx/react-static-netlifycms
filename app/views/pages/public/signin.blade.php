@@ -12,6 +12,11 @@
             <div class="row">
                 <div class="col-xs-44 col-xs-offset-2 col-sm-24 col-sm-offset-12">
                     <div class="row">
+                        @if(Session::has('error'))
+                        <div class="alert-box error">
+                            <h2>{{Session::get('error')}}</h2>
+                        </div>
+                        @endif
                         <div class="col-xs-48 form-item">
                             <input class="form-input expand" type="text" name="email" placeholder="Your Email Address"/>
                         </div>

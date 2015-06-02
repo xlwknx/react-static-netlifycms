@@ -15,7 +15,7 @@ Route::post('account/signin', array(
     'uses' => 'AccountController@signin'
 ));
 
-Route::post('account/signout', array(
+Route::get('account/signout', array(
     'uses' => 'AccountController@signout'
 ));
 
@@ -109,30 +109,9 @@ Route::get('signin', array(
 Route::get('signup', array(
     'uses' => 'PublicController@signup'
 ));
-
-Route::get('signout', array(
-    'uses' => 'PublicController@signout'
-));
-
 Route::get('reset', array(
     'uses' => 'PublicController@reset'
 ));
-
-//Route::get('signup', array(
-//    'uses' => 'DashboardController@index'
-//));
-
-//Route::get('signin', array(
-//    'uses' => 'DashboardController@index'
-//));
-
-//Route::get('signout', array(
-//    'uses' => 'DashboardController@index'
-//));
-
-//Route::get('reset', array(
-//    'uses' => 'DashboardController@index'
-//));
 
 Route::get('dashboard', array(
     'uses' => 'DashboardController@index'

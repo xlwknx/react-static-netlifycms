@@ -57,12 +57,6 @@ class PublicController extends AbstractController
         );
     }
 
-    public function signout()
-    {
-
-        // TODO: signout logic here
-    }
-
     public function reset()
     {
 
