@@ -13,9 +13,9 @@
                 <div class="col-xs-44 col-xs-offset-2 col-sm-24 col-sm-offset-12">
                     <div class="row">
                         @if(Session::has('error'))
-                        <div class="alert-box error">
-                            <h2>{{Session::get('error')}}</h2>
-                        </div>
+                            <div class="alert alert-danger">
+                                <h4>{{Session::get('error')}}</h4>
+                            </div>
                         @endif
                         <div class="col-xs-48 form-item">
                             <input class="form-input expand" type="text" name="email" placeholder="Your Email Address"/>
@@ -36,10 +36,6 @@
                 </div>
             </div>
         </form>
-
-        <section class="container check-email hide">
-            Please check your email address for confirmation.
-        </section>
 
         <section class="container text-center">
             By creating an account you agree to the Virgil Security<br/>
