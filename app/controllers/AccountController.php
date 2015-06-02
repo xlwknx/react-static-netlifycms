@@ -18,6 +18,8 @@ class AccountController extends AbstractController {
             return Redirect::to('/signin')->with(
                 'error',
                 'Account was not found.'
+            )->withInput(
+                Input::except('password')
             );
         }
 
@@ -63,6 +65,8 @@ class AccountController extends AbstractController {
             return Redirect::to('/signup')->with(
                 'error',
                 $result['message']
+            )->withInput(
+                Input::except('password')
             );
         }
 

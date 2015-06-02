@@ -18,13 +18,13 @@
                             </div>
                         @endif
                         <div class="col-xs-48 form-item">
-                            <input class="form-input expand" type="text" name="email" placeholder="Your Email Address"/>
+                            <input class="form-input expand" type="text" name="email" placeholder="Your Email Address" value="{{Input::old('email')}}"/>
                         </div>
                         <div class="col-xs-48 form-item">
                             <input class="form-input expand" type="password" name="password" placeholder="Your Password"/>
                         </div>
                         <div class="col-xs-48 form-item">
-                            <input class="form-input expand" type="text" name="company_name" placeholder="Company Name (optional)"/>
+                            <input class="form-input expand" type="text" name="company_name" placeholder="Company Name (optional)" value="{{Input::old('company_name')}}"/>
                         </div>
                     </div>
                 </div>
