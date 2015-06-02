@@ -3,6 +3,7 @@
 namespace Virgil\Validator;
 
 use Virgil\Error\Code as ErrorCode,
+    Virgil\Error\Message as ErrorMessage,
     Virgil\Exception\Validator as ValidatorException;
 
 
@@ -40,14 +41,14 @@ class Account {
         if(!$email) {
             return array(
                 'result' => false,
-                'message' => 'Account email was not provided.'
+                'message' => ErrorMessage::ACCOUNT_EMAIL_NOT_PROVIDED
             );
         }
 
         if(!$password) {
             return array(
                 'result' => false,
-                'message' => 'Account password was not provided.'
+                'message' => ErrorMessage::ACCOUNT_PASSWORD_NOT_PROVIDED
             );
         }
 
@@ -59,7 +60,7 @@ class Account {
         if($account) {
             return array(
                 'result' => false,
-                'message' => 'Account already exists. Please specify another email.'
+                'message' => ErrorMessage::ACCOUNT_ALREADY_EXISTS
             );
         }
 

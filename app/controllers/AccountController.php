@@ -3,6 +3,7 @@
 use Virgil\Validator\Account as AccountValidator,
     Virgil\Validator\Authentication as AuthenticationValidator,
     Virgil\Validator\Confirmation as ConfirmationValidator,
+    Virgil\Error\Message as ErrorMessage,
     Symfony\Component\HttpFoundation\Response as HttpResponse;
 
 class AccountController extends AbstractController {
@@ -17,7 +18,7 @@ class AccountController extends AbstractController {
         if(!$account) {
             return Redirect::to('/signin')->with(
                 'error',
-                'Account was not found.'
+                ErrorMessage::ACCOUNT_NOT_FOUND
             )->withInput(
                 Input::except('password')
             );
