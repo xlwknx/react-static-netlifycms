@@ -9,41 +9,53 @@
 
     .navbar-toggle
       border-color $color-header-text
-      
+
       .icon-bar
         background-color $color-header-text
 
   .navbar-nav
     margin 0
 
-    > li a,
-    > li a:hover
-      background transparent !important
-      color $color-header-text
-      font-size 14px
+    > li
+      a,
+      a:hover
+        background transparent !important
+        color $color-header-text
+        font-size 14px
 
-      &.social
-        @media (max-width: $screen-xs-max)
-          display inline-block
-          width 47px
-          height 47px
-          padding 13px 0 0 13px
+        &.active
+          color #fff
 
-          &.facebook
-            padding-left 19px
+        &.social
+          img
+            height 18px
 
-        img
-          height 18px
+      a:hover
+        background rgba(195, 203, 218, 0.1) !important
+        color #fff !important
 
-    > li a:hover
-      background rgba(195, 203, 218, 0.1) !important
+        &.social
+          font-size 12px !important
+
+          @media (max-width: $screen-xs-max)
+            display inline-block
+            width 47px
+            height 47px
+            padding 13px 0 0 13px
+
+            &.facebook
+              padding-left 19px
+
+          img
+            height 18px
 
     @media (min-width: $screen-xs-max)
       > li a,
       > li a:hover
         background transparent !important
         color $color-header-text
-        font-size 12px
+        font-size 14px
+        padding 37px 10px 17px
 
     &.navbar-right
       .social-xs

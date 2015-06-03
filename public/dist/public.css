@@ -6808,18 +6808,9 @@ ul.virgil-list li:before {
   color: #8382a3;
   font-size: 14px;
 }
-@media (max-width: 767px) {
-  .header .navbar-nav > li a.social,
-  .header .navbar-nav > li a:hover.social {
-    display: inline-block;
-    width: 47px;
-    height: 47px;
-    padding: 13px 0 0 13px;
-  }
-  .header .navbar-nav > li a.social.facebook,
-  .header .navbar-nav > li a:hover.social.facebook {
-    padding-left: 19px;
-  }
+.header .navbar-nav > li a.active,
+.header .navbar-nav > li a:hover.active {
+  color: #fff;
 }
 .header .navbar-nav > li a.social img,
 .header .navbar-nav > li a:hover.social img {
@@ -6827,13 +6818,32 @@ ul.virgil-list li:before {
 }
 .header .navbar-nav > li a:hover {
   background: rgba(195,203,218,0.1) !important;
+  color: #fff !important;
+}
+.header .navbar-nav > li a:hover.social {
+  font-size: 12px !important;
+}
+@media (max-width: 767px) {
+  .header .navbar-nav > li a:hover.social {
+    display: inline-block;
+    width: 47px;
+    height: 47px;
+    padding: 13px 0 0 13px;
+  }
+  .header .navbar-nav > li a:hover.social.facebook {
+    padding-left: 19px;
+  }
+}
+.header .navbar-nav > li a:hover.social img {
+  height: 18px;
 }
 @media (min-width: 767px) {
   .header .navbar-nav > li a,
   .header .navbar-nav > li a:hover {
     background: transparent !important;
     color: #8382a3;
-    font-size: 12px;
+    font-size: 14px;
+    padding: 37px 10px 17px;
   }
 }
 .header .navbar-nav.navbar-right .social-xs {

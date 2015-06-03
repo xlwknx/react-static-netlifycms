@@ -20,7 +20,7 @@
                 </div>
                 <div id="virgil-navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active">
+                        <li>
                             <a href="/contact-us" class="header-nav-link @if($page == 'contact-us') active @endif">CONTACT US</a>
                         </li>
                     </ul>
