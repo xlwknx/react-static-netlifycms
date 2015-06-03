@@ -6603,9 +6603,19 @@ h4,
 h5 {
   font-family: "PFCentroSlabPro-Medium";
 }
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
+  margin-bottom: 100px;
   background-image: url("../img/dotted-bg.png");
   background-repeat: repeat;
+}
+@media (max-width: 767px) {
+  body {
+    margin-bottom: 180px;
+  }
 }
 .alert {
   margin: 0;
@@ -6831,9 +6841,16 @@ ul.virgil-list li:before {
   border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 .footer {
-  height: 130px;
-  padding-top: 45px;
-  padding-bottom: 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+@media (max-width: 767px) {
+  .footer {
+    padding-bottom: 20px;
+  }
 }
 .footer .footer-copy {
   color: #6f6d8d;

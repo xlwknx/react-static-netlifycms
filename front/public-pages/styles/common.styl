@@ -41,9 +41,17 @@ placeholder-color(color)
 h1, h2, h3, h4, h5
   font-family "PFCentroSlabPro-Medium"
 
+html
+  position relative
+  min-height 100%
+
 body
+  margin-bottom 100px
   background-image url(../img/dotted-bg.png)
   background-repeat repeat
+
+  @media (max-width: $screen-xs-max)
+    margin-bottom 180px
 
 .alert
   margin 0
