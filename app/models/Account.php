@@ -26,18 +26,13 @@ class Account extends Eloquent {
     public static function createAccount($email, $password, $companyName) {
 
         $account = new Account();
-        $account->email     = $email;
-        $account->password  = md5($password);
+        $account->email        = $email;
+        $account->password     = md5($password);
         $account->company_name = $companyName;
-        $account->confirmed = self::ACCOUNT_CONFIRMED;
+        $account->confirmed    = self::ACCOUNT_CONFIRMED;
 
         $account->save();
 
-        /*
-        Confirmation::createConfirmation(
-            $account
-        );
-        */
         return $account;
     }
 
