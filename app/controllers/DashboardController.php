@@ -10,6 +10,7 @@ class DashboardController extends AbstractController {
 
     public function index() {
 
+        $this->setActivePage('dashboard');
         $this->layout->content = View::make(
             'pages.dashboard.index'
         );

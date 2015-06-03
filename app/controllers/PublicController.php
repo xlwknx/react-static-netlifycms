@@ -48,6 +48,7 @@ class PublicController extends AbstractController
     public function signin()
     {
 
+        $this->setActivePage('signin');
         $this->layout->content = View::make(
             'pages.public.signin'
         );
@@ -56,6 +57,7 @@ class PublicController extends AbstractController
     public function signup()
     {
 
+        $this->setActivePage('signup');
         $this->layout->content = View::make(
             'pages.public.signup'
         );
@@ -64,6 +66,7 @@ class PublicController extends AbstractController
     public function reset()
     {
 
+        $this->setActivePage('reset');
         $this->layout->content = View::make(
             'pages.public.reset'
         );

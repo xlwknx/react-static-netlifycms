@@ -33,9 +33,9 @@
                         </li>
                         <li>
                             @if(!is_null($auth_token))
-                                <a href="/dashboard" class="header-nav-link">DASHBOARD</a>
+                                <a href="/dashboard" class="header-nav-link @if($page == 'dashboard') active @endif">DASHBOARD</a>
                             @else
-                                <a href="/signin" class="header-nav-link">SIGN IN</a>
+                                <a href="/signin" class="header-nav-link @if($page == 'signin') active @endif">SIGN IN</a>
                             @endif
                         </li>
                         <li class="hidden-xs">

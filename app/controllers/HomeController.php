@@ -10,6 +10,7 @@ class HomeController extends AbstractController {
 
     public function index() {
 
+        $this->setActivePage('home');
         $this->layout->content = View::make(
             'pages.home.index'
         );
