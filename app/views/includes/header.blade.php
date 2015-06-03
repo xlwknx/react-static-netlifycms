@@ -21,18 +21,18 @@
                 <div id="virgil-navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active">
-                            <a href="/contact-us" class="header-nav-link">CONTACT US</a>
+                            <a href="/contact-us" class="header-nav-link @if($page == 'contact-us') active @endif">CONTACT US</a>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="/downloads" class="header-nav-link">DOWNLOADS</a>
+                            <a href="/downloads" class="header-nav-link @if($page == 'downloads') active @endif">DOWNLOADS</a>
                         </li>
                         <li>
-                            <a href="/documents" class="header-nav-link">DOCUMENTATION</a>
+                            <a href="/documents" class="header-nav-link @if($page == 'documents') active @endif">DOCUMENTATION</a>
                         </li>
                         <li>
-                            @if (!is_null($auth_token))
+                            @if(!is_null($auth_token))
                                 <a href="/dashboard" class="header-nav-link">DASHBOARD</a>
                             @else
                                 <a href="/signin" class="header-nav-link">SIGN IN</a>

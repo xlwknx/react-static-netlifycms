@@ -12,6 +12,7 @@ class PublicController extends AbstractController
     public function aboutUs()
     {
 
+        $this->setActivePage('about-us');
         $this->layout->content = View::make(
             'pages.public.about-us'
         );
@@ -20,6 +21,7 @@ class PublicController extends AbstractController
     public function contactUs()
     {
 
+        $this->setActivePage('contact-us');
         $this->layout->content = View::make(
             'pages.public.contact-us'
         );
@@ -28,6 +30,7 @@ class PublicController extends AbstractController
     public function downloads()
     {
 
+        $this->setActivePage('downloads');
         $this->layout->content = View::make(
             'pages.public.downloads'
         );
@@ -36,6 +39,7 @@ class PublicController extends AbstractController
     public function documents()
     {
 
+        $this->setActivePage('documents');
         $this->layout->content = View::make(
             'pages.public.documents'
         );
