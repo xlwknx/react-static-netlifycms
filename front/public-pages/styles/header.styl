@@ -33,12 +33,13 @@
         &.social-last
           padding-right 0
 
-      a:hover
-        background rgba(195, 203, 218, 0.1) !important
-        color #fff !important
 
+      a
         &.social
           font-size 12px !important
+
+          img
+            height 18px
 
           @media (max-width: $screen-xs-max)
             display inline-block
@@ -49,8 +50,9 @@
             &.facebook
               padding-left 19px
 
-          img
-            height 18px
+      a:hover
+        background rgba(195, 203, 218, 0.1) !important
+        color #fff !important
 
     @media (min-width: $screen-xs-max)
       > li a,
