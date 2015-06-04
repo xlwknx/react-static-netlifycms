@@ -4,7 +4,7 @@
 
 @section('slider')
     <div class="container">
-        <section class="home-slider">
+        <section class="home-slider" style="visibility: hidden;">
             <div class="home-slider-slide secure-the-future">
 
                 <div class="row">

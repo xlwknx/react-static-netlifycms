@@ -8,6 +8,7 @@ var slider = $('.home-slider').bxSlider({
 
 	onSliderLoad: function onSliderLoad () {
 		$('.home-slider-slide:not(.bx-clone)').removeClass('hide');
+		$('.home-slider').css('visibility', 'visible');
 	}
 });
 
