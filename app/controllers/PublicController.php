@@ -36,15 +36,6 @@ class PublicController extends AbstractController
         );
     }
 
-    public function documents()
-    {
-
-        $this->setActivePage('documents');
-        $this->layout->content = View::make(
-            'pages.public.documents'
-        );
-    }
-
     public function signin()
     {
 

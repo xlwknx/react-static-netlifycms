@@ -16,7 +16,7 @@
 					<img src="/img/logo.png" class="logo" alt="Virgil" />
 				</a>
 
-				<a target="_self" href="/account/signout" class="block signout">
+				<a target="_self" href="/session/signout" class="block signout">
 					Sign Out
 				</a>
 			</header>

@@ -11,17 +11,19 @@
 |
 */
 
-Route::post('account/signin', array(
-    'uses' => 'AccountController@signin'
+Route::post('session/signin', array(
+    'uses' => 'SessionController@signin'
 ));
 
-Route::get('account/signout', array(
-    'uses' => 'AccountController@signout'
+Route::get('session/signout', array(
+    'uses' => 'SessionController@signout'
 ));
 
-Route::post('account/signup', array(
-    'uses' => 'AccountController@signup'
+Route::post('session/signup', array(
+    'uses' => 'SessionController@signup'
 ));
+
+
 
 Route::get('account/confirm/{code}', array(
     'uses' => 'AccountController@confirm'
@@ -30,6 +32,7 @@ Route::get('account/confirm/{code}', array(
 Route::post('account/confirm/re-send', array(
     'uses' => 'AccountController@resendConfirm'
 ));
+
 
 
 Route::post('application/validate-token', array(
@@ -72,6 +75,7 @@ Route::group(array('before' => 'restAuthVerification'), function () {
     ));
 });
 
+
 Route::group(array('before' => 'webAuthVerification'), function () {
 
     Route::get('dashboard', array(
@@ -80,17 +84,21 @@ Route::group(array('before' => 'webAuthVerification'), function () {
 
 });
 
+/*
+|--------------------------------------------------------------------------
+| Home routes
+|--------------------------------------------------------------------------
+*/
+Route::get('/', array(
+    'uses' => 'HomeController@index'
+));
 
 
 /*
 |--------------------------------------------------------------------------
-| Public Frontend routes
+| Public routes
 |--------------------------------------------------------------------------
 */
-
-Route::get('/', array(
-    'uses' => 'HomeController@index'
-));
 
 Route::get('about-us', array(
     'uses' => 'PublicController@aboutUs'
@@ -104,10 +112,6 @@ Route::get('downloads', array(
     'uses' => 'PublicController@downloads'
 ));
 
-Route::get('documents', array(
-    'uses' => 'PublicController@documents'
-));
-
 Route::get('signin', array(
     'uses' => 'PublicController@signin'
 ));
@@ -119,10 +123,14 @@ Route::get('reset', array(
     'uses' => 'PublicController@reset'
 ));
 
-Route::get('dashboard', array(
+Route::get('apps/{application}', array(
     'uses' => 'DashboardController@index'
 ));
 
-Route::get('apps/{application}', array(
-    'uses' => 'DashboardController@index'
+Route::get('documents', array(
+    'uses' => 'DocumentsController@index'
+));
+
+Route::get('documents/{language}/{reference}', array(
+    'uses' => 'DocumentsController@reference'
 ));

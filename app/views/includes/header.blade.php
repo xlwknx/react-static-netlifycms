@@ -15,7 +15,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="/">
-                        <img src="img/logo.png" class="header-logo" alt="Virgil"/>
+                        <img src="/img/logo.png" class="header-logo" alt="Virgil"/>
                     </a>
                 </div>
                 <div id="virgil-navbar" class="navbar-collapse collapse">
