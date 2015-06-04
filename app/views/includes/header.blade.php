@@ -20,7 +20,7 @@
                 </div>
                 <div id="virgil-navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active">
+                        <li>
                             <a href="/contact-us" class="header-nav-link @if($page == 'contact-us') active @endif">CONTACT US</a>
                         </li>
                     </ul>
@@ -39,8 +39,8 @@
                             @endif
                         </li>
                         <li class="hidden-xs">
-                            <a href="https://www.linkedin.com/company/virgil-security-inc-" class="header-nav-link social">
-                                <img src="/img/social-linkedin.png" alt="linkedin"/>
+                            <a href="https://twitter.com/VirgilSecurity" target="_blank" class="header-nav-link social">
+                                <img src="/img/social-twitter.png" alt="twitter"/>
                             </a>
                         </li>
                         <li class="hidden-xs">
@@ -49,8 +49,8 @@
                             </a>
                         </li>
                         <li class="hidden-xs">
-                            <a href="https://twitter.com/VirgilSecurity" target="_blank" class="header-nav-link social">
-                                <img src="/img/social-twitter.png" alt="twitter"/>
+                            <a href="https://www.linkedin.com/company/virgil-security-inc-" class="header-nav-link social social-last">
+                                <img src="/img/social-linkedin.png" alt="linkedin"/>
                             </a>
                         </li>
                         <li class="visible-xs social-xs">

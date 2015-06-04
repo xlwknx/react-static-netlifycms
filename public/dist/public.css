@@ -6574,15 +6574,21 @@ a.list-group-item-danger.active:focus {
 }
 @font-face {
   font-family: "PFCentroSlabPro-Medium";
-  src: url("/fonts/PFCentroSlabPro-Medium.otf");
+  src: url("/fonts/PFCentroSlabPro-Medium.woff");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "PFCentroSlabPro-Bold";
-  src: url("/fonts/PFCentroSlabPro-Bold.otf");
+  src: url("/fonts/PFCentroSlabPro-Bold.woff");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "PFCentroSlabPro-Light";
-  src: url("/fonts/PFCentroSlabPro-Light.otf");
+  src: url("/fonts/PFCentroSlabPro-Light.woff");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "PT Mono";
@@ -6603,9 +6609,19 @@ h4,
 h5 {
   font-family: "PFCentroSlabPro-Medium";
 }
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
+  margin-bottom: 100px;
   background-image: url("../img/dotted-bg.png");
   background-repeat: repeat;
+}
+@media (max-width: 767px) {
+  body {
+    margin-bottom: 180px;
+  }
 }
 .alert {
   margin: 0;
@@ -6798,32 +6814,46 @@ ul.virgil-list li:before {
   color: #8382a3;
   font-size: 14px;
 }
+.header .navbar-nav > li a.active,
+.header .navbar-nav > li a:hover.active {
+  color: #fff;
+}
+.header .navbar-nav > li a.social img,
+.header .navbar-nav > li a:hover.social img {
+  height: 18px;
+}
+.header .navbar-nav > li a.social-last,
+.header .navbar-nav > li a:hover.social-last {
+  padding-right: 0;
+}
+.header .navbar-nav > li a:hover {
+  background: rgba(195,203,218,0.1) !important;
+  color: #fff !important;
+}
+.header .navbar-nav > li a:hover.social {
+  font-size: 12px !important;
+}
 @media (max-width: 767px) {
-  .header .navbar-nav > li a.social,
   .header .navbar-nav > li a:hover.social {
     display: inline-block;
     width: 47px;
     height: 47px;
     padding: 13px 0 0 13px;
   }
-  .header .navbar-nav > li a.social.facebook,
   .header .navbar-nav > li a:hover.social.facebook {
     padding-left: 19px;
   }
 }
-.header .navbar-nav > li a.social img,
 .header .navbar-nav > li a:hover.social img {
   height: 18px;
-}
-.header .navbar-nav > li a:hover {
-  background: rgba(195,203,218,0.1) !important;
 }
 @media (min-width: 767px) {
   .header .navbar-nav > li a,
   .header .navbar-nav > li a:hover {
     background: transparent !important;
     color: #8382a3;
-    font-size: 12px;
+    font-size: 14px;
+    padding: 37px 10px 17px;
   }
 }
 .header .navbar-nav.navbar-right .social-xs {
@@ -6831,9 +6861,16 @@ ul.virgil-list li:before {
   border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 .footer {
-  height: 130px;
-  padding-top: 45px;
-  padding-bottom: 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+@media (max-width: 767px) {
+  .footer {
+    padding-bottom: 20px;
+  }
 }
 .footer .footer-copy {
   color: #6f6d8d;

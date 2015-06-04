@@ -16,15 +16,21 @@ placeholder-color(color)
 
 @font-face
   font-family "PFCentroSlabPro-Medium"
-  src url(/fonts/PFCentroSlabPro-Medium.otf)
+  src url(/fonts/PFCentroSlabPro-Medium.woff)
+  font-weight normal
+  font-style normal
 
 @font-face
   font-family "PFCentroSlabPro-Bold"
-  src url(/fonts/PFCentroSlabPro-Bold.otf)
+  src url(/fonts/PFCentroSlabPro-Bold.woff)
+  font-weight normal
+  font-style normal
 
 @font-face
   font-family "PFCentroSlabPro-Light"
-  src url(/fonts/PFCentroSlabPro-Light.otf)
+  src url(/fonts/PFCentroSlabPro-Light.woff)
+  font-weight normal
+  font-style normal
 
 @font-face
   font-family "PT Mono"
@@ -41,9 +47,17 @@ placeholder-color(color)
 h1, h2, h3, h4, h5
   font-family "PFCentroSlabPro-Medium"
 
+html
+  position relative
+  min-height 100%
+
 body
+  margin-bottom 100px
   background-image url(../img/dotted-bg.png)
   background-repeat repeat
+
+  @media (max-width: $screen-xs-max)
+    margin-bottom 180px
 
 .alert
   margin 0
