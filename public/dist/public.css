@@ -6816,6 +6816,10 @@ ul.virgil-list li:before {
 .header .navbar-nav > li a:hover.social img {
   height: 18px;
 }
+.header .navbar-nav > li a.social-last,
+.header .navbar-nav > li a:hover.social-last {
+  padding-right: 0;
+}
 .header .navbar-nav > li a:hover {
   background: rgba(195,203,218,0.1) !important;
   color: #fff !important;
