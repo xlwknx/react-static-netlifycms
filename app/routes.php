@@ -23,10 +23,6 @@ Route::post('account/signup', array(
     'uses' => 'AccountController@signup'
 ));
 
-Route::get('account/type-list', array(
-    'uses' => 'AccountController@typeList'
-));
-
 Route::get('account/confirm/{code}', array(
     'uses' => 'AccountController@confirm'
 ));
@@ -88,7 +84,7 @@ Route::group(array('before' => 'webAuthVerification'), function () {
 
 /*
 |--------------------------------------------------------------------------
-| Frontend routes
+| Public Frontend routes
 |--------------------------------------------------------------------------
 */
 
