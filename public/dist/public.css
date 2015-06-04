@@ -6574,15 +6574,21 @@ a.list-group-item-danger.active:focus {
 }
 @font-face {
   font-family: "PFCentroSlabPro-Medium";
-  src: url("/fonts/PFCentroSlabPro-Medium.otf");
+  src: url("/fonts/PFCentroSlabPro-Medium.woff");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "PFCentroSlabPro-Bold";
-  src: url("/fonts/PFCentroSlabPro-Bold.otf");
+  src: url("/fonts/PFCentroSlabPro-Bold.woff");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "PFCentroSlabPro-Light";
-  src: url("/fonts/PFCentroSlabPro-Light.otf");
+  src: url("/fonts/PFCentroSlabPro-Light.woff");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "PT Mono";
