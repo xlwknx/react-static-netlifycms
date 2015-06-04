@@ -18,8 +18,8 @@ class SessionController extends AbstractController {
                 'error',
                 ErrorMessage::ACCOUNT_NOT_FOUND
             )->withInput(
-                    Input::except('password')
-                );
+                Input::except('password')
+            );
         }
 
         $authToken = Authentication::getAuthToken(
@@ -69,8 +69,8 @@ class SessionController extends AbstractController {
                 'error',
                 $result['message']
             )->withInput(
-                    Input::except('password')
-                );
+                Input::except('password')
+            );
         }
 
         $authToken = Authentication::getAuthToken(

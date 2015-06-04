@@ -35,6 +35,8 @@ class DocumentsController extends AbstractController
             $this->layout->content = View::make(
                 $view
             );
+        } else {
+            return Redirect::to('/documents');
         }
     }
 
