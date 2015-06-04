@@ -49,7 +49,7 @@ Route::post('application/validate-token', array(
 | Apply Auth verification for some protected methods.
 |
 */
-Route::group(array('before' => 'authVerification'), function () {
+Route::group(array('before' => 'restAuthVerification'), function () {
 
     Route::get('application/get/{application}', array(
         'uses' => 'ApplicationController@getOne'
@@ -75,6 +75,16 @@ Route::group(array('before' => 'authVerification'), function () {
         'uses' => 'ApplicationController@delete'
     ));
 });
+
+Route::group(array('before' => 'webAuthVerification'), function () {
+
+    Route::get('dashboard', array(
+        'uses' => 'DashboardController@index'
+    ));
+
+});
+
+
 
 /*
 |--------------------------------------------------------------------------

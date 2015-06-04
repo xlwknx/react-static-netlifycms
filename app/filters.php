@@ -33,9 +33,16 @@ App::after(function($request, $response)
 |
 */
 
-Route::filter('authVerification', function($route, $request)
+Route::filter('restAuthVerification', function($route, $request)
 {
     Virgil\Validator\Authentication::validateAuthToken(
         Cookie::get('auth_token')
     );
+});
+
+Route::filter('webAuthVerification', function($route, $request)
+{
+    if(!Cookie::get('auth_token')) {
+        return Redirect::to('/signin');
+    }
 });

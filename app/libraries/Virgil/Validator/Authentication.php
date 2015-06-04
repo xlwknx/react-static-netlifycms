@@ -3,7 +3,6 @@
 namespace Virgil\Validator;
 
 use Virgil\Error\Code as ErrorCode,
-    Virgil\Exception\Validator as ValidatorException,
     Virgil\Exception\Authentication as AuthenticationException;
 
 class Authentication {
