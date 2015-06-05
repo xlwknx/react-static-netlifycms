@@ -40,14 +40,14 @@
   <h1 class="text-center">Get started with Virgil Security</h1>
   <h3 class="text-center">Start building secure applications to your favorite language.</h3>
   <div class="dev-lng text-center">
-    <a href="/developers/csharp"><img src="/img/lng_csharp.png" /></a>
-    <a href="/developers/cpp"><img class="middle-possition" src="/img/lng_cpp.png" /></a>
-    <a href="/developers/php"><img src="/img/lng_php.png">
+    <a href="/documents/csharp/quickstart"><img src="/img/lng_csharp.png" /></a>
+    <a href="/documents/cpp/quickstart"><img class="middle-possition" src="/img/lng_cpp.png" /></a>
+    <a href="/documents/php/quickstart"><img src="/img/lng_php.png">
   </div>
   <div class="dev-lng text-center">
-    <a href="/developers/nodejs"><img src="/img/lng_nodejs.png" /></a>
-    <a href="/developers/possition"><img class="middle-possition" src="/img/lng_python.png" /></a>
-    <a href="/developers/ruby"><img src="/img/lng_ruby.png" /></a>
+    <a href="/documents/nodejs/quickstart"><img src="/img/lng_nodejs.png" /></a>
+    <a href="/documents/python/quickstart"><img class="middle-possition" src="/img/lng_python.png" /></a>
+    <a href="/documents/ruby/quickstart"><img src="/img/lng_ruby.png" /></a>
   </div>
 </div>
 
