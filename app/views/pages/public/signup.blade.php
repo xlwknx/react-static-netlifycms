@@ -39,8 +39,7 @@
 
         <section class="container text-center">
             By creating an account you agree to the Virgil Security<br/>
-            {{--<a href="/term-of-service">Terms of Service</a> & <a href="/privacy-policy">Privacy Policy</a>--}}
-            <a href="javascript: void(0);">Terms of Service</a> & <a href="javascript: void(0);">Privacy Policy</a>
+            <a href="/terms-of-service">Terms of Service</a>
         </section>
 
         <section class="container text-center">

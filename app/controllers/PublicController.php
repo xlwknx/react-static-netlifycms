@@ -62,4 +62,13 @@ class PublicController extends AbstractController
             'pages.public.reset'
         );
     }
+
+    public function termsOfService()
+    {
+
+        $this->setActivePage('terms-of-service');
+        $this->layout->content = View::make(
+            'pages.public.terms-of-service'
+        );
+    }
 }
