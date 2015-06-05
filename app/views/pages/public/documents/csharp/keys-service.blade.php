@@ -1,5 +1,5 @@
 @section('title')
-Virgil | Developers | C#/.NET | Quickstart
+Virgil | Developers | C#/.NET | Keys Service
 @show
 
 @section('content')
@@ -14,10 +14,10 @@ Virgil | Developers | C#/.NET | Quickstart
 			<div class="container">
 	    		<div class="collapse navbar-collapse">
 	     			<ul class="nav navbar-nav">
-	        			<li class="active" ><a href="/documents/csharp/quickstart">Quickstart</a></li>
+	        			<li><a href="/documents/csharp/quickstart">Quickstart</a></li>
 	        			<li><a href="/documents/csharp/crypto-lib" >Crypto Library</a></li>
 	        			<li><a href="/documents/csharp/sdk">SDK</a></li>
-	        			<li><a href="/documents/csharp/keys-service" >Keys Service</a></li>
+	        			<li class="active" ><a href="/documents/csharp/keys-service" >Keys Service</a></li>
 	        		</ul>
 	        	</div>
 	        </div>
@@ -25,10 +25,10 @@ Virgil | Developers | C#/.NET | Quickstart
     	<div class="dev-navbar-sm visible-xs">
 	    	<div class="container ">
 		    	<div class="list-group">
-					<a href="/documents/csharp/quickstart" class="list-group-item active">Quickstart</a>
+					<a href="/documents/csharp/quickstart" class="list-group-item">Quickstart</a>
 					<a href="/documents/csharp/crypto-lib" class="list-group-item">Crypto Library</a>
 					<a href="/documents/csharp/sdk" class="list-group-item">SDK</a>
-					<a href="/documents/csharp/keys-service" class="list-group-item">Keys Service</a>
+					<a href="/documents/csharp/keys-service" class="list-group-item active">Keys Service</a>
 				</div>
 			</div>
 		</div>
