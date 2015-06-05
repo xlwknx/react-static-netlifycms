@@ -3,6 +3,7 @@ Virgil | Developers | C#/.NET | SDK
 @show
 
 @section('content')
+<div class="dev">
 	<div class="dev-header">
 		<div class="container">
 			<div class="dev-header-title">
@@ -18,6 +19,7 @@ Virgil | Developers | C#/.NET | SDK
 	        			<li><a href="/documents/csharp/crypto-lib" >Crypto Library</a></li>
 	        			<li class="active"><a href="/documents/csharp/sdk">SDK</a></li>
 	        			<li><a href="/documents/csharp/keys-service" >Keys Service</a></li>
+	        			<li><a href="/documents/csharp/downloads" >Downloads</a></li>
 	        		</ul>
 	        	</div>
 	        </div>
@@ -29,8 +31,10 @@ Virgil | Developers | C#/.NET | SDK
 					<a href="/documents/csharp/crypto-lib" class="list-group-item">Crypto Library</a>
 					<a href="/documents/csharp/sdk" class="list-group-item active">SDK</a>
 					<a href="/documents/csharp/keys-service" class="list-group-item">Keys Service</a>
+					<a href="/documents/csharp/downloads" class="list-group-item">Downloads</a>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 @stop

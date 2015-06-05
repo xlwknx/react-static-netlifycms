@@ -114,45 +114,69 @@ code *
       color #a9a8cb
       line-height 26px
 
-.dev-container
-  margin-right 20px
-  margin-left 20px
-
-.dev-header-title
-  margin-right 20px
-  margin-left 20px
-  margin-bottom 30px
-
-.dev-navbar
-  background-color white
-  border 0px
-  border-radius 0
-  .nav li a
+.dev
+  p
     font-size 16px
+    color #a9a8cb
+  a
+    color white
+
+  .dev-container
+    margin-right 20px
+    margin-left 20px
+
+  .dev-content
     padding-left 20px
     padding-right 20px
+    
+  .dev-affix
+    background-color rgba(255,255,255,0.15)
+    padding 10px
+    margin-top 25px
 
-.dev-header
-  .list-group
+    li 
+      a
+        padding 5px 10px
+      :hover
+        background-color rgba(255,255,255,0.15)
+      
+
+  .dev-header-title
+    margin-right 20px
+    margin-left 20px
+    margin-bottom 30px
+
+  .dev-navbar
+    background-color white
+    border 0px
     border-radius 0
-    border-top 1px solid rgba(255,255,255,0.15)
-    border-bottom 1px solid rgba(255,255,255,0.15)
-    background-color transparent
-    .active
+    .nav li a
+      font-size 16px
+      padding-left 20px
+      padding-right 20px
+        
+
+  .dev-header
+    .list-group
+      border-radius 0
+      border-top 1px solid rgba(255,255,255,0.15)
+      border-bottom 1px solid rgba(255,255,255,0.15)
+      background-color transparent
+      .active
+        background-color rgba(255,255,255,0.15)
+        color white
+    .list-group-item
+      padding-left 20px
+      padding-right 20px
+      font-size 16px
+      border-width 0
+      background-color transparent
+      color #8382a3
+    .list-group-item:hover
+      border-radius 0
       background-color rgba(255,255,255,0.15)
       color white
-  .list-group-item
-    padding-left 20px
-    padding-right 20px
-    font-size 16px
-    border-width 0
-    background-color transparent
-    color #8382a3
-  .list-group-item:hover
-    border-radius 0
-    background-color rgba(255,255,255,0.15)
-    color white
-  .list-group-item:first-child
-    border-radius 0
-  .list-group-item:last-child
-    border-radius 0
+    .list-group-item:first-child
+      border-radius 0
+    .list-group-item:last-child
+      border-radius 0
