@@ -29,9 +29,12 @@ class DocumentsController extends AbstractController
             )
         );
 
-
         if (View::exists($view))
         {
+            View::share(
+                'reference',
+                $reference
+            );
             $this->layout->content = View::make(
                 $view
             );
