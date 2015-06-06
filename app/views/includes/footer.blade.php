@@ -49,4 +49,4 @@
             </a>
         </div>
     </div>
-@section('stop')
+@show

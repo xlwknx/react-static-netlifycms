@@ -77,4 +77,4 @@
             </div>
         </nav>
     </header>
-@section('stop')
+@show
