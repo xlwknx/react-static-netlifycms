@@ -119,8 +119,13 @@ Route::get('signin', array(
 Route::get('signup', array(
     'uses' => 'PublicController@signup'
 ));
+
 Route::get('reset', array(
     'uses' => 'PublicController@reset'
+));
+
+Route::get('terms-of-service', array(
+    'uses' => 'PublicController@termsOfService'
 ));
 
 Route::get('apps/{application}', array(
