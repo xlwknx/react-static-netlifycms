@@ -157,6 +157,7 @@ Source code example: <a href="https://github.com/VirgilSecurity/virgil-net/blob/
 			</div>
 			<div class="col-md-10">
 				<ul class="nav nav-pills nav-stacked dev-affix">
+					<li class="title" role="presentation">Quickstart</li>
 		            <li role="presentation"><a href="#introduction">Introduction</a></li>
 		            <li role="presentation"><a href="#obtaining-an-app-token">Obtaining an App Token</a></li>
 		            <li role="presentation"><a href="#install">Install</a></li>
