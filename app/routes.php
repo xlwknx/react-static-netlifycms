@@ -128,6 +128,10 @@ Route::get('terms-of-service', array(
     'uses' => 'PublicController@termsOfService'
 ));
 
+Route::get('privacy-policy', array(
+    'uses' => 'PublicController@privacyPolicy'
+));
+
 Route::get('apps/{application}', array(
     'uses' => 'DashboardController@index'
 ));

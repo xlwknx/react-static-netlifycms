@@ -71,4 +71,12 @@ class PublicController extends AbstractController
             'pages.public.terms-of-service'
         );
     }
+
+    public function privacyPolicy()
+    {
+        $this->setActivePage('privacy-policy');
+        $this->layout->content = View::make(
+            'pages.public.privacy-policy'
+        );
+    }
 }
