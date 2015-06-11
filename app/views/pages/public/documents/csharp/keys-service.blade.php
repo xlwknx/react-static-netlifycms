@@ -687,22 +687,565 @@ x-virgil-app-token     Header with application access token, see <a href="/docum
 					<tr><td>20214<td>UserData class specified is invalid
 					<tr><td>20300<td>User info data validation failed. Name is invalid
 				</table>
+				<h2>Private Keys RESTful API</h2>
+				<p>RESTful service for private keys managing</p>
+				<h2 id="authentication">Authentication</h2>
+				<p>
+					Service will create Authentication token that will be available during the 60 minutes after creation. During this time service will
+				 	automatically prolong life time of the token in case if Authentication token widely used so don't need to prolong it manually. 
+				 	In case when Authentication token is used after 60 minutes of life time, service will throw the appropriate error.
+				</p>
+				
+				<h4>Request Info</h4>
+				<pre><code class="html">HTTP Request method    POST
+Request URL            http://keyring.virgilsecurity.com/v1/authentication/get-token
+x-auth-token           Not required</code></pre>
+				<h4>cURL Example</h4>
+				<pre><code class="html">curl -v -X GET http://keyring.virgilsecurity.com/v1/authentication/get-token</code></pre>
+				
+				<h4>Fields</h4>
+				<table class="table">
+					<tr>
+						<th>Field&nbsp;Name</th>
+						<th>Description</th>
+						<th>Type</th>
+					</tr>
+					<tr>
+						<td>password</td>
+						<td>
+							The account password.</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>class</td>
+						<td>
+							Represents a user data class, which can be <b>user_id</b> or <b>user_info</b>.</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>type</td>
+						<td>This is user data type.</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>value</td>
+						<td>This is the value of user data</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>auth_token</td>
+						<td>This is the value of user data</td>
+						<td>string</td>
+					</tr>
+				</table>
+
+				<h4>Request Body</h4>
+				<pre><code class="langauge-json">{
+    "password": "password",
+    "user_data": {
+        "class": "user_id",
+        "type": "email",
+        "value": "mail@gmail.com"
+    }
+}</code></pre>
+				<h4>Response Body</h4>
+				<pre><code class="langauge-json">{
+    "auth_token": "dbbbe6a906aa4d567531827beb66a2aadbbbe6a906aa4d567531827beb66a2aa"
+}</code></pre>
+
+				<h2 id="private-keys">Private Keys</h2>
+				<p>
+					Private Key entity endpoints
+				</p>
+				<h3>Get an Private Key</h3>
+				<p>Retrieve Private Key information for requested account.</p>
+				<h4>Request Info</h4>
+				<pre><code class="html">HTTP Request method    GET
+Request URL            http://keyring.virgilsecurity.com/v1/private-key/account/{account-id}
+x-auth-token           Required, see <a href="#authentication">details.</a></code></pre>
+				<h4>cURL Example</h4>
+				<pre><code class="html">curl -v -X GET http://keyring.virgilsecurity.com/v1/private-key/account/6480ba7a-1b68-141e-b547-ef8d9adc3145</code></pre>
+				
+				<h4>Fields</h4>
+				<table class="table">
+					<tr>
+						<th>Field&nbsp;Name</th>
+						<th>Description</th>
+						<th>Type</th>
+					</tr>
+					<tr>
+						<td>account_id</td>
+						<td>
+							The Public Keys Service account identifier.</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>account_type</td>
+						<td>
+							Represents an account type, which can be <b>easy</b> and <b>normal</b>.</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>public_key_id</td>
+						<td>This is the Public Key identifier</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>private_key</td>
+						<td>encrypted private key</td>
+						<td>string</td>
+					</tr>
+				</table>
+				<h4>Response Body</h4>
+				<pre><code class="langauge-json">{
+    "account_id": "73d2288c-7c50-08d0-3526-4be366afef2a",
+    "account_type": "easy",
+    "data": [
+          {
+              "public_key_id": "837619cb-1709-8e1d-2324-12a29a3fd633",
+              "private_key": "BASE64-ENCODED-STRING"
+          },
+          {
+              "public_key_id": "837619cb-1709-8e1d-2324-12a29a3fd633",
+              "private_key": "BASE64-ENCODED-STRING"
+          }
+    ]
+}</code></pre>
+				<h3>Get an Private Key by Public Key Id</h3>
+				<p>Get Private Key data by public key.</p>
+				<h4>Request Info</h4>
+				<pre><code class="html">HTTP Request method    GET
+Request URL            http://keyring.virgilsecurity.com/v1/private-key/public-key/{public-key-id}
+x-auth-token           Required, see <a href="#authentication">details.</a></code></pre>
+				<h4>cURL Example</h4>
+				<pre><code class="html">curl -v -X GET http://keyring.virgilsecurity.com/v1/private-key/public-key-id/6480ba7a-1b68-141e-b547-ef8d9adc3145</code></pre>
+				
+				<h4>Fields</h4>
+				<table class="table">
+					<tr>
+						<th>Field&nbsp;Name</th>
+						<th>Description</th>
+						<th>Type</th>
+					</tr>
+					<tr>
+						<td>account_id</td>
+						<td>
+							The Public Keys Service account identifier.</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>public_key_id</td>
+						<td>This is the Public Key identifier</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>private_key</td>
+						<td>encrypted private key</td>
+						<td>string</td>
+					</tr>
+				</table>
+				<h4>Response Body</h4>
+				<pre><code class="langauge-json">{
+    "account_id": "73d2288c-7c50-08d0-3526-4be366afef2a",
+    "public_key_id": "837619cb-1709-8e1d-2324-12a29a3fd633",
+    "private_key": "BASE64-ENCODED-STRING"
+}</code></pre>
+				<h3>Add Private Key</h3>
+				<p>Store Private Key</p>
+				<h4>Request Info</h4>
+				<pre><code class="html">HTTP Request method    POST
+Request URL            http://keyring.virgilsecurity.com/v1/private-key
+x-auth-token           Required, see <a href="#authentication">details.</a></code></pre>
+				<h4>cURL Example</h4>
+				<pre><code class="html">curl -v -X POST http://keyring.virgilsecurity.com/v1/private-key -data {"account_id": "6F9619FF-8B86-D011-B42D-00CF4FC964F1","public_key_id": "6F34195F-9A86-B022-B65D-22CF4FC456F1","key": "BASE64-ENCODED-STRING", "sign": "BASE64-ENCODED-STRING"}</code></pre>
+				
+				<h4>Fields</h4>
+				<table class="table">
+					<tr>
+						<th>Field&nbsp;Name</th>
+						<th>Description</th>
+						<th>Type</th>
+					</tr>
+					<tr>
+						<td>account_id</td>
+						<td>
+							The Public Keys Service account identifier.</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>public_key_id</td>
+						<td>This is the Public Key identifier</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>sign</td>
+						<td>Signed public key ID in base64 format.</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>private_key</td>
+						<td>encrypted private key</td>
+						<td>string</td>
+					</tr>
+				</table>
+				<h4>Requiest Body</h4>
+				<pre><code class="langauge-json">{
+    "account_id": "73d2288c-7c50-08d0-3526-4be366afef2a",
+    "public_key_id": "837619cb-1709-8e1d-2324-12a29a3fd633",
+    "sign": "BASE64-ENCODED-STRING",
+    "private_key": "BASE64-ENCODED-STRING"
+}</code></pre>
+<h4>Response Body</h4>
+				<pre><code class="langauge-json">{
+    "account_id": "73d2288c-7c50-08d0-3526-4be366afef2a",
+    "public_key_id": "837619cb-1709-8e1d-2324-12a29a3fd633",
+    "private_key": "BASE64-ENCODED-STRING"
+}</code></pre>
+				<h3>Delete Private Key</h3>
+				<p>Delete Private Key from service storage by public key ID</p>
+				<h4>Request Info</h4>
+				<pre><code class="html">HTTP Request method    DELETE
+Request URL            http://keyring.virgilsecurity.com/v1/private-key
+x-auth-token           Required, see <a href="#authentication">details.</a></code></pre>
+				<h4>cURL Example</h4>
+				<pre><code class="html">curl -v -X DELETE http://keyring.virgilsecurity.com/v1/private-key --data '{"public_key_id": "837619cb-1709-8e1d-2324-12a29a3fd633", "digest": "BASE64-ENCODED-STRING"}'</code></pre>
+				
+				<h4>Fields</h4>
+				<table class="table">
+					<tr>
+						<th>Field&nbsp;Name</th>
+						<th>Description</th>
+						<th>Type</th>
+					</tr>
+					<tr>
+						<td>public_key_id</td>
+						<td>This is the Public Key identifier</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>sign</td>
+						<td>Signed public key ID in base64 format.</td>
+						<td>string</td>
+					</tr>
+				</table>
+				<h4>Requiest Body</h4>
+				<pre><code class="langauge-json">{
+    "public_key_id": "837619cb-1709-8e1d-2324-12a29a3fd633",
+    "sign": "BASE64-ENCODED-STRING"
+}</code></pre>
+				<h2>Accounts</h2>
+				<p>Account entity endpoints</p>
+				<h3>Create an Account</h3>
+				<p>Store Private Key</p>
+				<h4>Request Info</h4>
+				<pre><code class="html">HTTP Request method    POST
+Request URL            http://keyring.virgilsecurity.com/v1/account
+x-auth-token           Required, see <a href="#authentication">details.</a></code></pre>
+				<h4>cURL Example</h4>
+				<pre><code class="html">curl -v -X POST http://keyring.virgilsecurity.com/v1/account --data '{"account_id": "6F9619FF-8B86-D011-B42D-00CF4FC964F1", "account_type":"normal", "password": "password", "public_key_id": "837619cb-1709-8e1d-2324-12a29a3fd633", "sign": "BASE64-ENCODED-STRING"}'</code></pre>
+				
+				<h4>Fields</h4>
+				<table class="table">
+					<tr>
+						<th>Field&nbsp;Name</th>
+						<th>Description</th>
+						<th>Type</th>
+					</tr>
+					<tr>
+						<td>account_id</td>
+						<td>The Public Keys Service account identifier.</td>
+						<td>string</td>
+					</tr>	
+					<tr>
+						<td>account_type</td>
+						<td>Represents an account type, which can be easy and normal.</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>public_key_id</td>
+						<td>This is the Public Key identifier</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>sign</td>
+						<td>Signed public key ID in base64 format.</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>private_key</td>
+						<td>encrypted private key</td>
+						<td>string</td>
+					</tr>
+				</table>
+				<h4>Requiest Body</h4>
+				<p>Example 1: Create an easy account, all private keys encrypted with account password.</p>
+				<pre><code class="langauge-json">{
+    "account_id": "73d2288c-7c50-08d0-3526-4be366afef2a",
+    "account_type": "easy",
+    "public_key_id": "837619cb-1709-8e1d-2324-12a29a3fd633",
+    "sign": "BASE64-ENCODED-STRING",
+    "password": "password"
+}</code></pre>
+				<p>Example 2: Create a normal account, all private keys encrypted on the client side and server can't decrypt them.</p>
+				<pre><code class="langauge-json">{
+    "account_id": "73d2288c-7c50-08d0-3526-4be366afef2a",
+    "account_type": "normal",
+    "public_key_id": "837619cb-1709-8e1d-2324-12a29a3fd633",
+    "sign": "BASE64-ENCODED-STRING",
+    "password": "password",
+}</code></pre>
+<h4>Response Body</h4>
+				<pre><code class="langauge-json">{
+    "account_id": "73d2288c-7c50-08d0-3526-4be366afef2a",
+}</code></pre>
+
+				<!-- <h3>Update an Account</h3>
+				<p>Update account information</p>
+				<h4>Request Info</h4>
+				<pre><code class="html">HTTP Request method    PUT
+Request URL            http://keyring.virgilsecurity.com/v1/account
+x-auth-token           Required, see <a href="#authentication">details.</a></code></pre>
+				<h4>cURL Example</h4>
+				<pre><code class="html">curl -v -X PUT http://keyring.virgilsecurity.com/v1/account --data '{"account_id": "6F9619FF-8B86-D011-B42D-00CF4FC964F1", "account_type":"normal", "password": "password", "public_key_id": "837619cb-1709-8e1d-2324-12a29a3fd633", "sign": "BASE64-ENCODED-STRING"}'</code></pre>
+				
+				<h4>Fields</h4>
+				<table class="table">
+					<tr>
+						<th>Field&nbsp;Name</th>
+						<th>Description</th>
+						<th>Type</th>
+					</tr>
+					<tr>
+						<td>account_id</td>
+						<td>The Public Keys Service account identifier.</td>
+						<td>string</td>
+					</tr>	
+					<tr>
+						<td>account_type</td>
+						<td>Represents an account type, which can be easy and normal.</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>public_key_id</td>
+						<td>This is the Public Key identifier</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>sign</td>
+						<td>Signed public key ID in base64 format.</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>password</td>
+						<td>encrypted private key</td>
+						<td>string</td>
+					</tr>
+				</table>
+				<h4>Requiest Body</h4>
+				<p>Example 1: Create an easy account, all private keys encrypted with account password.</p>
+				<pre><code class="langauge-json">{
+    "account_id": "73d2288c-7c50-08d0-3526-4be366afef2a",
+    "account_type": "easy",
+    "public_key_id": "837619cb-1709-8e1d-2324-12a29a3fd633",
+    "sign": "BASE64-ENCODED-STRING",
+    "password": "password"
+}</code></pre>
+				<p>Example 2: Create a normal account, all private keys encrypted on the client side and server can't decrypt them.</p>
+				<pre><code class="langauge-json">{
+    "account_id": "73d2288c-7c50-08d0-3526-4be366afef2a",
+    "account_type": "normal",
+    "public_key_id": "837619cb-1709-8e1d-2324-12a29a3fd633",
+    "sign": "BASE64-ENCODED-STRING",
+    "password": "password",
+}</code></pre>
+<h4>Response Body</h4>
+				<pre><code class="langauge-json">{
+    "account_id": "73d2288c-7c50-08d0-3526-4be366afef2a",
+}</code></pre> -->
+
+				<h3>Reset Password</h3>
+				<p>Resets password</p>
+				<h4>Request Info</h4>
+				<pre><code class="html">HTTP Request method    PUT
+Request URL            http://keyring.virgilsecurity.com/v1/account/reset
+x-auth-token           Required, see <a href="#authentication">details.</a></code></pre>
+				<h4>cURL Example</h4>
+				<pre><code class="html">curl -v -X PUT http://keyring.virgilsecurity.com/v1/account/reset --data '{"user_data": {"class": "user_id", "type": "email", "value": "user_name@gmail.com"}, "password": "new_password"}'</code></pre>
+				
+				<h4>Fields</h4>
+				<table class="table">
+					<tr>
+						<th>Field&nbsp;Name</th>
+						<th>Description</th>
+						<th>Type</th>
+					</tr>
+					<tr>
+						<td>class</td>
+						<td>Represents a user data class, which can be <b>user_id</b> or <b>user_info</b>.</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>type</td>
+						<td>This is user data type.</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>value</td>
+						<td>This is the value of user data</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>new_password</td>
+						<td>New password</td>
+						<td>string</td>
+					</tr>	
+				</table>
+				<h4>Requiest Body</h4>
+				<pre><code class="langauge-json">{
+    "user_data": {
+        "class": "user_id",
+        "type": "email",
+        "value": "mail@gmail.com"
+    },
+    "new_password": "new_password"
+}</code></pre>
+                <h3>Verify Account change Password</h3>
+				<p>Resets password</p>
+				<h4>Request Info</h4>
+				<pre><code class="html">HTTP Request method    PUT
+Request URL            http://keyring.virgilsecurity.com/v1/account/reset
+x-auth-token           Required, see <a href="#authentication">details.</a></code></pre>
+				<h4>cURL Example</h4>
+				<pre><code class="html">curl -v -X PUT http://keyring.virgilsecurity.com/v1/account/reset --data '{"user_data": {"class": "user_id", "type": "email", "value": "user_name@gmail.com"}, "password": "new_password"}'</code></pre>
+				
+				<h4>Fields</h4>
+				<table class="table">
+					<tr>
+						<th>Field&nbsp;Name</th>
+						<th>Description</th>
+						<th>Type</th>
+					</tr>
+					<tr>
+						<td>class</td>
+						<td>Represents a user data class, which can be <b>user_id</b> or <b>user_info</b>.</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>type</td>
+						<td>This is user data type.</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>value</td>
+						<td>This is the value of user data</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>new_password</td>
+						<td>New password</td>
+						<td>string</td>
+					</tr>	
+				</table>
+				<h4>Requiest Body</h4>
+				<pre><code class="langauge-json">{
+    "user_data": {
+        "class": "user_id",
+        "type": "email",
+        "value": "mail@gmail.com"
+    },
+    "new_password": "new_password"
+}</code></pre>
+<h3 id="private-error-codes">Error Codes</h3>
+				<p>Application uses standard HTTP response codes:</p>
+				<table class="table">
+					<tr>
+						<th>Response&nbsp;Codes</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>200</td>
+						<td>Success</td>
+					</tr>					
+					<tr>
+						<td>400</td>
+						<td>Request error</td>
+					</tr>
+					<tr>
+						<td>401</td>
+						<td>Authorization error</td>
+					</tr>					
+					<tr>
+						<td>500</td>
+						<td>Server error</td>
+					</tr>
+				</table>
+				<p>Addititional information about the error is returned as JSON-object like:</p>
+				<pre><code class="langauge-json">{
+    "error": {
+        "code": {error-code}
+    }
+}</code></pre>
+				<p><b>HTTP 500. Server error</b> status is returned on internal application errors</p>
+				<table class="table">
+					<tr>
+						<th>Error&nbsp;Codes</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>10001</td>
+						<td>Internal application error. Route was not found.</td>
+					</tr>
+					<tr>
+						<td>10002</td>
+						<td>Internal application error. Route not allowed.</td>
+					</tr>
+				</table>
+
+				<p><b>HTTP 400. Request error</b> status is returned on request data validation errors</p>
+				<table class="table">
+					<tr>
+						<th>Error&nbsp;Codes</th>
+						<th>Description</th>
+					</tr>
+                    <tr><td>20001<td>Athentication password validation failed
+                    <tr><td>20002<td>Athentication user data validation failed
+                    <tr><td>20003<td>Athentication account was not found by provided user data
+                    <tr><td>20004<td>Athentication token validation failed
+                    <tr><td>20005<td>Athentication token not found
+                    <tr><td>20006<td>Athentication token has expired
+                    <tr><td>30001<td>Signed validation failed
+                    <tr><td>40001<td>Account validation failed
+                    <tr><td>40002<td>Account was not found
+                    <tr><td>40003<td>Account already exists
+                    <tr><td>40004<td>Account password was not specified
+                    <tr><td>40005<td>Account password validation failed
+                    <tr><td>40006<td>Account was not found in PKI service
+                    <tr><td>40007<td>Account type validation failed
+                    <tr><td>50001<td>Public Key validation failed
+                    <tr><td>50002<td>Public Key was not found
+                    <tr><td>50003<td>Public Key already exists
+                    <tr><td>50004<td>Public Key private key validation failed
+                    <tr><td>50005<td>Public Key private key base64 validation failed
+                    <tr><td>60001<td>Token was not found in request
+                    <tr><td>60002<td>User Data validation failed
+                    <tr><td>60003<td>Account was not found by user data
+                    <tr><td>60004<td>Verification token ash expired
+				</table>
 			</div>
 			<div class="col-md-10">
 					<ul class="nav nav-pills nav-stacked dev-affix">
 			            <li class="title" role="presentation">Public Keys RESTful API</li>
-			            <li role="presentation"><a href="#accounts">Accounts</a></li>
+			            <li role="presentation"><a href="#accounts">Authentication</a></li>
 			            <li role="presentation"><a href="#public-keys">Public Keys</a></li>
 			            <li role="presentation"><a href="#user-data">User Data</a></li>
 			            <li role="presentation"><a href="#signs">Signs</a></li>
 			            <li role="presentation"><a href="#search">Search</a></li>
 			            <li role="presentation"><a href="#error-codes">Error Codes</a></li>
 			            <li class="title" role="presentation">Private Keys RESTful API</li>
-			            <li role="presentation"><a href="#get-public-key">Get Public Key</a></li>
-			            <li role="presentation"><a href="#encrypt-data">Encrypt Data</a></li>
-			            <li role="presentation"><a href="#decrypt-data">Decrypt Data</a></li>
-			            <li role="presentation"><a href="#sign-data">Sign Data</a></li>
-			            <li role="presentation"><a href="#verify-data">Verify Data</a></li>
+			            <li role="presentation"><a href="#authentication">Authentication</a></li>
+			            <li role="presentation"><a href="#private-keys">Private Keys</a></li>
+			            <li role="presentation"><a href="#private-account">Account</a></li>
+			            <li role="presentation"><a href="#private-error-codes">Error Codes</a></li>
 					</ul>
 			</div>
 		</div>
