@@ -1,54 +1,145 @@
-  @section('title')
-      Virgil | Documents
-  @show
+@section('title')
+    Virgil | Documents
+@show
 
-  @section('content')
+@section('header-block')
+    <div class="dev-header-container">
+        <h1 class="text-center">Virgil Security for Developers</h1>
+        <h3 class="text-center">Start building secure applications to your favorite language</h3>
+        <div class="dev-header-empty-menu"></div>
+    </div>    
+@show
 
-<style type="text/css">
+@section('content')
 
-  h1{
-    color:white;
-  }
-
-  h3{
-    color:#9B9B9B;
-    margin-top: 10px;
-  }
-
-  .dev-lng {
-    margin-top:40px;
-  }
-
-  .dev-lng img {
-    width: 100px;
-  }
-
-  /*.dev-lng img.*/
-
-  .dev-lng img:hover {
-  }
+<div class="container dev">
     
-
-  .middle-possition{
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-
-</style>
-
-<div class="container">
-  <h1 class="text-center">Get started with Virgil Security</h1>
-  <h3 class="text-center">Start building secure applications to your favorite language.</h3>
-  <div class="dev-lng text-center">
-    <a href="/documents/csharp/quickstart"><img src="/img/lng_csharp.png" /></a>
-    <a href="/documents/cpp/quickstart"><img class="middle-possition" src="/img/lng_cpp.png" /></a>
-    <a href="/documents/php/quickstart"><img src="/img/lng_php.png">
-  </div>
-  <div class="dev-lng text-center">
-    <a href="/documents/nodejs/quickstart"><img src="/img/lng_nodejs.png" /></a>
-    <a href="/documents/python/quickstart"><img class="middle-possition" src="/img/lng_python.png" /></a>
-    <a href="/documents/ruby/quickstart"><img src="/img/lng_ruby.png" /></a>
-  </div>
+    <div class="lng-container">
+        <div class="row">
+            <div class="col-md-16">
+                <div class="lng-box csharp">
+                    <div class="lng-box-header">
+                        <span>.NET/C# Developers</span>
+                        <img align="right" src="/img/lng_csharp.png" />
+                    </div>
+                    <div class="lng-box-content">
+                        <div class="list-group">
+                          <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Qhickstrat</h4>
+                            <p class="list-group-item-text">Getting started with Virgil for .NET</p>
+                          </a>
+                          <a href="#" class="list-group-item">Keys Service</a>
+                          <a href="#" class="list-group-item">Crypto Library</a>
+                          <a href="#" class="list-group-item">SDK</a>
+                          <a href="#" class="list-group-item">Downloads</a>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+            <div class="col-md-16">
+                <div class="lng-box cpp">
+                    <div class="lng-box-header">
+                        <span>C/C++ Developers</span>
+                        <img align="right" src="/img/lng_cpp.png" />
+                    </div>
+                    <div class="lng-box-content">
+                        <div class="list-group">
+                          <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Qhickstrat</h4>
+                            <p class="list-group-item-text">Getting started with Virgil for .NET</p>
+                          </a>
+                          <a href="#" class="list-group-item">Keys Service</a>
+                          <a href="#" class="list-group-item">Crypto Library</a>
+                          <a href="#" class="list-group-item">SDK</a>
+                          <a href="#" class="list-group-item">Downloads</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-16">
+                <div class="lng-box php">
+                    <div class="lng-box-header">
+                        <span>PHP Developers</span>
+                        <img align="right" src="/img/lng_php.png" />
+                    </div>
+                    <div class="lng-box-content">
+                        <div class="list-group">
+                          <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Qhickstrat</h4>
+                            <p class="list-group-item-text">Getting started with Virgil for .NET</p>
+                          </a>
+                          <a href="#" class="list-group-item">Keys Service</a>
+                          <a href="#" class="list-group-item">Crypto Library</a>
+                          <a href="#" class="list-group-item">SDK</a>
+                          <a href="#" class="list-group-item">Downloads</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-16">
+                <div class="lng-box nodejs">
+                    <div class="lng-box-header">
+                        <span>Node.js Developers</span>
+                        <img align="right" src="/img/lng_nodejs.png" />
+                    </div>
+                    <div class="lng-box-content">
+                        <div class="list-group">
+                          <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Qhickstrat</h4>
+                            <p class="list-group-item-text">Getting started with Virgil for .NET</p>
+                          </a>
+                          <a href="#" class="list-group-item">Keys Service</a>
+                          <a href="#" class="list-group-item">Crypto Library</a>
+                          <a href="#" class="list-group-item">SDK</a>
+                          <a href="#" class="list-group-item">Downloads</a>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+            <div class="col-md-16">
+                <div class="lng-box python">
+                    <div class="lng-box-header">
+                        <span>Python Developers</span>
+                        <img align="right" src="/img/lng_python.png" />
+                    </div>
+                    <div class="lng-box-content">
+                        <div class="list-group">
+                          <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Qhickstrat</h4>
+                            <p class="list-group-item-text">Getting started with Virgil for .NET</p>
+                          </a>
+                          <a href="#" class="list-group-item">Keys Service</a>
+                          <a href="#" class="list-group-item">Crypto Library</a>
+                          <a href="#" class="list-group-item">SDK</a>
+                          <a href="#" class="list-group-item">Downloads</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-16">
+                <div class="lng-box ruby">
+                    <div class="lng-box-header">
+                        <span>Ruby Developers</span>
+                        <img align="right" src="/img/lng_ruby.png" />
+                    </div>
+                    <div class="lng-box-content">
+                        <div class="list-group">
+                          <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Qhickstrat</h4>
+                            <p class="list-group-item-text">Getting started with Virgil for .NET</p>
+                          </a>
+                          <a href="#" class="list-group-item">Keys Service</a>
+                          <a href="#" class="list-group-item">Crypto Library</a>
+                          <a href="#" class="list-group-item">SDK</a>
+                          <a href="#" class="list-group-item">Downloads</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-  @stop
+@stop

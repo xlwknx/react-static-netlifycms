@@ -313,20 +313,15 @@
             </div>
         </section>
 
+
+        <div class="container text-center">
+            <br />
+            <h1>Protect everything, everywhere, always.<br/>Use Virgil to get there.</h1>
+            <br />
+            <a href="/downloads" class="home-downloads-btn btn-virgil btn-transparent">DOWNLOADS</a>
+        </div>
+
         <div class="home-bottom-block">
-            <section class="home-downloads container">
-                <h3 class="home-downloads-title">
-                    Protect everything, everywhere, always.<br/>
-                    Use Virgil to get there.
-                </h3>
-
-                <div class="home-downloads-description">
-                    Check out our apps
-                </div>
-
-                <a href="/downloads" class="home-downloads-btn btn-virgil btn-transparent">DOWNLOADS</a>
-            </section>
-
             <section class="home-features-expanded container">
 
                 <div class="row">

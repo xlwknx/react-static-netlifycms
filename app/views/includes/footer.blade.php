@@ -7,8 +7,8 @@
 
             <div class="footer-links">
                 <a href="/contact-us" class="header-nav-link">CONTACT US</a>
-                <a href="/downloads">DOWNLOADS</a>
-                <a href="/documents">DOCUMENTATION</a>
+                <a href="/downloads">APPS</a>
+                <a href="/documents">DEVELOPERS</a>
             </div>
         </div>
         <div class="visible-xs col-xs-44 col-xs-offset-2">
@@ -18,8 +18,8 @@
                 </div>
                 <div class="row col-xs-48 footer-links">
                     <a href="/contact-us" class="header-nav-link">CONTACT US</a>
-                    <a href="/downloads">DOWNLOADS</a>
-                    <a href="/documents">DOCUMENTATION</a>
+                    <a href="/downloads">APPS</a>
+                    <a href="/documents">DEVELOPERS</a>
                 </div>
             </div>
         </div>

@@ -775,8 +775,8 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
 					</tr>
 					<tr>
 						<td>account_id</td>
-						<td>
-							The Public Keys Service account identifier.</td>
+						<td>This parameter identifies the ID of user account in the Public Keys Service. 
+							(see more details about Accounts of Public Keys API <a href="/documents/csharp/keys-service#accounts">here...</a>).</td>
 						<td>string</td>
 					</tr>
 					<tr>
@@ -787,12 +787,14 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
 					</tr>
 					<tr>
 						<td>public_key_id</td>
-						<td>This is the Public Key identifier</td>
+						<td>This parameter represents the ID of Virgil Public Key in Keys service (see more details about Public Keys API 
+						    <a href="/documents/csharp/keys-service#public-keys">here...</a>).</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>private_key</td>
-						<td>encrypted private key</td>
+						<td>This parameter represents the private key in base64 format. Attention: if you use "normal" 
+						    account type, you need to decrypt this it with password it was encrypted.</td>
 						<td>string</td>
 					</tr>
 				</table>
@@ -829,18 +831,20 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
 					</tr>
 					<tr>
 						<td>account_id</td>
-						<td>
-							The Public Keys Service account identifier.</td>
+						<td>This parameter identifies the ID of user account in the Public Keys Service. 
+							(see more details about Accounts of Public Keys API <a href="/documents/csharp/keys-service#accounts">here...</a>).</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>public_key_id</td>
-						<td>This is the Public Key identifier</td>
+						<td>This parameter represents the ID of Virgil Public Key in Keys service (see more details about Public Keys API 
+						    <a href="/documents/csharp/keys-service#public-keys">here...</a>).</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>private_key</td>
-						<td>encrypted private key</td>
+						<td>This parameter represents the private key in base64 format. Attention: if you use "normal" 
+						    account type, you need to decrypt this it with password it was encrypted.</td>
 						<td>string</td>
 					</tr>
 				</table>
@@ -868,23 +872,28 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
 					</tr>
 					<tr>
 						<td>account_id</td>
-						<td>
-							The Public Keys Service account identifier.</td>
+						<td>This parameter identifies the ID of user account in the Public Keys Service. 
+							(see more details about Accounts of Public Keys API <a href="/documents/csharp/keys-service#accounts">here...</a>).</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>public_key_id</td>
-						<td>This is the Public Key identifier</td>
+						<td>This parameter represents the ID of Virgil Public Key in Keys service (see more details about Public Keys API 
+						    <a href="/documents/csharp/keys-service#public-keys">here...</a>).</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>sign</td>
-						<td>Signed public key ID in base64 format.</td>
+						<td>This parameter contains digital signature of public key ID in base64 format. This signature confirmas that the client has a private key.
+							(see more details about siging data <a href="/documents/csharp/quickstart#sign-data">here...</a> )
+						    To pass this parameter sign the public key ID using Crypto Library and convert the result to base64 format.</a></td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>private_key</td>
-						<td>encrypted private key</td>
+						<td>This parameter represents the private key in base64 format. Attention: if you use "normal" 
+						    account type, the private key should be encrypted with additional password on the client 
+						    side and passed encrypted as well in base64 format.</td>
 						<td>string</td>
 					</tr>
 				</table>
@@ -919,12 +928,15 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
 					</tr>
 					<tr>
 						<td>public_key_id</td>
-						<td>This is the Public Key identifier</td>
+						<td>This parameter represents the ID of Virgil Public Key in Keys service (see more details about Public Keys API 
+						    <a href="/documents/csharp/keys-service#public-keys">here...</a>).</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>sign</td>
-						<td>Signed public key ID in base64 format.</td>
+						<td>This parameter contains digital signature of public key ID in base64 format. This signature confirmas that the client has a private key.
+							(see more details about siging data <a href="/documents/csharp/quickstart#sign-data">here...</a> )
+						    To pass this parameter sign the public key ID using Crypto Library and convert the result to base64 format.</a></td>
 						<td>string</td>
 					</tr>
 				</table>
@@ -933,7 +945,7 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
     "public_key_id": "837619cb-1709-8e1d-2324-12a29a3fd633",
     "sign": "BASE64-ENCODED-STRING"
 }</code></pre>
-				<h2>Accounts</h2>
+				<h2 id="private-accounts">Accounts</h2>
 				<p>Account entity endpoints</p>
 				<h3>Create an Account</h3>
 				<p>Store Private Key</p>
@@ -953,7 +965,8 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
 					</tr>
 					<tr>
 						<td>account_id</td>
-						<td>The Public Keys Service account identifier.</td>
+						<td>This parameter identifies the ID of user account in the Public Keys Service. 
+							(see more details about Accounts of Public Keys API <a href="/documents/csharp/keys-service#accounts">here...</a>).</td>
 						<td>string</td>
 					</tr>	
 					<tr>
@@ -963,17 +976,22 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
 					</tr>
 					<tr>
 						<td>public_key_id</td>
-						<td>This is the Public Key identifier</td>
+						<td>This parameter represents the ID of Virgil Public Key in Keys service (see more details about Public Keys API 
+						    <a href="/documents/csharp/keys-service#public-keys">here...</a>).</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>sign</td>
-						<td>Signed public key ID in base64 format.</td>
+						<td>This parameter contains digital signature of public key ID in base64 format. This signature confirmas that the client has a private key.
+							(see more details about siging data <a href="/documents/csharp/quickstart#sign-data">here...</a> )
+						    To pass this parameter sign the public key ID using Crypto Library and convert the result to base64 format.</a></td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>private_key</td>
-						<td>encrypted private key</td>
+						<td>This parameter represents the private key in base64 format. Attention: if you use "normal" 
+						    account type, the private key should be encrypted with additional password on the client 
+						    side and passed encrypted as well in base64 format.</td>
 						<td>string</td>
 					</tr>
 				</table>
@@ -1155,6 +1173,48 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
     },
     "new_password": "new_password"
 }</code></pre>
+                <h3>Delete Account</h3>
+				<p>Deletes accoount and all keys from service.</p>
+				<h4>Request Info</h4>
+				<pre><code class="html">HTTP Request method    DELETE
+Request URL            http://keyring.virgilsecurity.com/v1/account
+x-auth-token           Required, see <a href="#authentication">details.</a></code></pre>
+				<h4>cURL Example</h4>
+				<pre><code class="html">curl -v -X DELETE http://keyring.virgilsecurity.com/v1/account --data '{"account_id": "6480ba7a-1b68-141e-b547-ef8d9adc3145", "public_key_id": "837619cb-1709-8e1d-2324-12a29a3fd633", "sign": "BASE64-ENCODED-STRING"}'</code></pre>
+				
+				<h4>Fields</h4>
+				<table class="table">
+					<tr>
+						<th>Field&nbsp;Name</th>
+						<th>Description</th>
+						<th>Type</th>
+					</tr>
+					<tr>
+						<td>account_id</td>
+						<td>This parameter identifies the ID of user account in the Public Keys Service. 
+							(see more details about Accounts of Public Keys API <a href="/documents/csharp/keys-service#accounts">here...</a>).</td>
+						<td>string</td>
+					</tr>	
+					<tr>
+						<td>public_key_id</td>
+						<td>This parameter represents the ID of Virgil Public Key in Keys service (see more details about Public Keys API 
+						    <a href="/documents/csharp/keys-service#public-keys">here...</a>).</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>sign</td>
+						<td>This parameter contains digital signature of public key ID in base64 format. This signature confirmas that the client has a private key.
+							(see more details about siging data <a href="/documents/csharp/quickstart#sign-data">here...</a> )
+						    To pass this parameter sign the public key ID using Crypto Library and convert the result to base64 format.</a></td>
+						<td>string</td>
+					</tr>
+				</table>
+				<h4>Requiest Body</h4>
+				<pre><code class="langauge-json">{
+    "account_id": "6480ba7a-1b68-141e-b547-ef8d9adc3145",
+    "public_key_id": "837619cb-1709-8e1d-2324-12a29a3fd633",
+    "sign": "BASE64-ENCODED-STRING"
+}</code></pre>
 <h3 id="private-error-codes">Error Codes</h3>
 				<p>Application uses standard HTTP response codes:</p>
 				<table class="table">
@@ -1185,6 +1245,8 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
         "code": {error-code}
     }
 }</code></pre>
+				<h2 id="sign-example">Details of Signature </h2>
+				<p id="sign-example">The Sign parameter is calculated on client according next rules:</p>
 				<p><b>HTTP 500. Server error</b> status is returned on internal application errors</p>
 				<table class="table">
 					<tr>
@@ -1244,7 +1306,7 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
 			            <li class="title" role="presentation">Private Keys RESTful API</li>
 			            <li role="presentation"><a href="#authentication">Authentication</a></li>
 			            <li role="presentation"><a href="#private-keys">Private Keys</a></li>
-			            <li role="presentation"><a href="#private-account">Account</a></li>
+			            <li role="presentation"><a href="#private-accounts">Accounts</a></li>
 			            <li role="presentation"><a href="#private-error-codes">Error Codes</a></li>
 					</ul>
 			</div>

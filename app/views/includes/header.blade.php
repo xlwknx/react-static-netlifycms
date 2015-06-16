@@ -26,10 +26,10 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="/downloads" class="header-nav-link @if($page == 'downloads') active @endif">DOWNLOADS</a>
+                            <a href="/downloads" class="header-nav-link @if($page == 'downloads') active @endif">APPS</a>
                         </li>
                         <li>
-                            <a href="/documents" class="header-nav-link @if($page == 'documents') active @endif">DOCUMENTATION</a>
+                            <a href="/documents" class="header-nav-link @if($page == 'documents') active @endif">DEVELOPERS</a>
                         </li>
                         <li>
                             @if(!is_null($auth_token))
