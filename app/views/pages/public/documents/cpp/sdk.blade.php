@@ -1,5 +1,5 @@
 @section('title')
-Virgil | Developers | C#/.NET | SDK
+Virgil | Developers | C/C++ | SDK
 @show
 
 
@@ -10,7 +10,7 @@ Virgil | Developers | C#/.NET | SDK
             <h3 class="text-left">This describes usage of Virgil SDK for Public/Private keys management.</h3>        
         </div>        
     </div>    
-    @include('pages.public.documents.csharp.partial.header')
+    @include('pages.public.documents.cpp.partial.header')
 @show
 
 @section('content')

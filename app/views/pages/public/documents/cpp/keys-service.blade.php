@@ -1,5 +1,5 @@
 @section('title')
-Virgil | Developers | C#/.NET | Keys Services
+Virgil | Developers | C/C++ | Keys Services
 @show
 
 @section('header-block')
@@ -9,7 +9,7 @@ Virgil | Developers | C#/.NET | Keys Services
             <h3 class="text-left">This describes the resources that make up the official Virgil Services API's.</h3>        
         </div>        
     </div>    
-    @include('pages.public.documents.csharp.partial.header')
+    @include('pages.public.documents.cpp.partial.header')
 @show
 
 @section('content')
@@ -35,7 +35,7 @@ Virgil | Developers | C#/.NET | Keys Services
 				<h4>Request Info</h4>
 				<pre><code class="html">HTTP Request method    POST
 Request URL            https://pki.virgilsecurity.com/v1/public-key
-x-virgil-app-token     Header with application access token, see <a href="/documents/csharp/quickstart#obtaining-an-app-token">details.</a></code></pre>
+x-virgil-app-token     Header with application access token, see <a href="/documents/cpp/quickstart#obtaining-an-app-token">details.</a></code></pre>
 				<h4>cURL Example</h4>
 				<pre><code class="html">curl -v -X POST https://pki.virgilsecurity.com/v1/public-key --data '{"public_key" : "BASE64-ENCODED-STRING", "guid": "a53e98e4-0197-4513-be6d-49836e406aaa"}'</code></pre>
 				<h4>Permissions</h4>
@@ -52,7 +52,7 @@ x-virgil-app-token     Header with application access token, see <a href="/docum
 						<td>public_key</td>
 						<td>
 							A public key is created with Crypto Library and converted to Base64 format. Please see more details 
-							about public/private kay pair generation <a href="/documents/csharp/quickstart#generate-keys">here.</td>
+							about public/private kay pair generation <a href="/documents/cpp/quickstart#generate-keys">here.</td>
 						<td>string</td>
 					</tr>
 					<tr>
@@ -107,7 +107,7 @@ x-virgil-app-token     Header with application access token, see <a href="/docum
 				<h4>Request Info</h4>
 				<pre><code class="html">HTTP Request method    POST
 Request URL            https://pki.virgilsecurity.com/v1/public-key
-x-virgil-app-token     Header with application access token, see <a href="/documents/csharp/quickstart#obtaining-an-app-token">details.</a></code></pre>
+x-virgil-app-token     Header with application access token, see <a href="/documents/cpp/quickstart#obtaining-an-app-token">details.</a></code></pre>
 				<h4>cURL Example</h4>
 				<pre><code class="html">curl -v -X POST https://pki.virgilsecurity.com/v1/public-key --data '{"public_key" : "BASE64-ENCODED-STRING", "guid": "a53e98e4-0197-4513-be6d-49836e406aaa"}'</code></pre>
 				
@@ -131,7 +131,7 @@ x-virgil-app-token     Header with application access token, see <a href="/docum
 						<td>public_key</td>
 						<td>
 							A public key is created with Crypto Library and converted to Base64 format. Please see more details 
-							about public/private kay pair generation <a href="/documents/csharp/quickstart#generate-keys">here.</td>
+							about public/private kay pair generation <a href="/documents/cpp/quickstart#generate-keys">here.</td>
 						<td>string</td>
 					</tr>
 					<tr>
@@ -186,7 +186,7 @@ x-virgil-app-token     Header with application access token, see <a href="/docum
 				<h4>Request Info</h4>
 				<pre><code class="html">HTTP Request method    GET
 Request URL            https://pki.virgilsecurity.com/v1/public-key/{public-key-id}
-x-virgil-app-token     Header with application access token, see <a href="/documents/csharp/quickstart#obtaining-an-app-token">details.</a></code></pre>
+x-virgil-app-token     Header with application access token, see <a href="/documents/cpp/quickstart#obtaining-an-app-token">details.</a></code></pre>
 				<h4>cURL Example</h4>
 				<pre><code class="html">curl -v -X GET https://pki.virgilsecurity.com/v1/public-key/6480ba7a-1b68-141e-b547-ef8d9adc3145</code></pre>
 				
@@ -216,7 +216,7 @@ x-virgil-app-token     Header with application access token, see <a href="/docum
 						<td>public_key</td>
 						<td>
 							A public key is created with Crypto Library and converted to Base64 format. Please see more details 
-							about public/private kay pair generation <a href="/documents/csharp/quickstart#generate-keys">here.</td>
+							about public/private kay pair generation <a href="/documents/cpp/quickstart#generate-keys">here.</td>
 						<td>string</td>
 					</tr>
 					<tr>
@@ -298,7 +298,7 @@ x-virgil-app-token     Header with application access token, see <a href="/docum
 				<h4>Request Info</h4>
 				<pre><code class="html">HTTP Request method    POST
 Request URL            https://pki.virgilsecurity.com/v1/user-data
-x-virgil-app-token     Header with application access token, see <a href="/documents/csharp/quickstart#obtaining-an-app-token">details.</a></code></pre>
+x-virgil-app-token     Header with application access token, see <a href="/documents/cpp/quickstart#obtaining-an-app-token">details.</a></code></pre>
 				<h4>cURL Example</h4>
 				<pre><code class="html">curl -v -X POST https://pki.virgilsecurity.com/v1/user-data --data '{"public_key_id": "30a7e1b3-e763-4789-a54d-fcc53dcf973a", "class": "user_id", "type": "email", "value": "daniel.rehl@virgilsecurity.com", "guid": "a53e98e4-0197-4513-be6d-49836e406aaa"}'</code></pre>
 				
@@ -360,7 +360,7 @@ x-virgil-app-token     Header with application access token, see <a href="/docum
 				<h4>Request Info</h4>
 				<pre><code class="html">HTTP Request method    GET
 Request URL            https://pki.virgilsecurity.com/v1/user-data/{user-data-id}
-x-virgil-app-token     Header with application access token, see <a href="/documents/csharp/quickstart#obtaining-an-app-token">details.</a></code></pre>
+x-virgil-app-token     Header with application access token, see <a href="/documents/cpp/quickstart#obtaining-an-app-token">details.</a></code></pre>
 				<h4>cURL Example</h4>
 				<pre><code class="html">curl -v -X GET https://pki.virgilsecurity.com/v1/user-data/6480ba7a-1b68-141e-b547-ef8d9adc3145</code></pre>
 				
@@ -411,7 +411,7 @@ x-virgil-app-token     Header with application access token, see <a href="/docum
 				<h4>Request Info</h4>
 				<pre><code class="html">HTTP Request method    POST
 Request URL            https://pki.virgilsecurity.com/v1/user-data/{user-data-id}/actions/confirm
-x-virgil-app-token     Header with application access token, see <a href="/documents/csharp/quickstart#obtaining-an-app-token">details.</a></code></pre>
+x-virgil-app-token     Header with application access token, see <a href="/documents/cpp/quickstart#obtaining-an-app-token">details.</a></code></pre>
 				<h4>cURL Example</h4>
 				<pre><code class="html">curl -v -X POST https://pki.virgilsecurity.com/v1/user-data/6480ba7a-1b68-141e-b547-ef8d9adc3145/actions/confirm --data '{"guid": "a53e98e4-0197-4513-be6d-49836e406aaa", "code":"F9U0W9"}'</code></pre>
 				
@@ -444,7 +444,7 @@ x-virgil-app-token     Header with application access token, see <a href="/docum
 				<h4>Request Info</h4>
 				<pre><code class="html">HTTP Request method    POST
 Request URL            https://pki.virgilsecurity.com/v1/user-data/{user-data-id}/actions/resend-confirmation
-x-virgil-app-token     Header with application access token, see <a href="/documents/csharp/quickstart#obtaining-an-app-token">details.</a></code></pre>
+x-virgil-app-token     Header with application access token, see <a href="/documents/cpp/quickstart#obtaining-an-app-token">details.</a></code></pre>
 				<h4>cURL Example</h4>
 				<pre><code class="html">curl -v -X POST https://pki.virgilsecurity.com/v1/user-data/6480ba7a-1b68-141e-b547-ef8d9adc3145/actions/resend-confirmation --data '{"guid": "a53e98e4-0197-4513-be6d-49836e406aaa"}'</code></pre>
 				
@@ -463,7 +463,7 @@ x-virgil-app-token     Header with application access token, see <a href="/docum
 				<h4>Request Info</h4>
 				<pre><code class="html">HTTP Request method    POST
 Request URL            https://pki.virgilsecurity.com/v1/account/actions/search
-x-virgil-app-token     Header with application access token, see <a href="/documents/csharp/quickstart#obtaining-an-app-token">details.</a></code></pre>
+x-virgil-app-token     Header with application access token, see <a href="/documents/cpp/quickstart#obtaining-an-app-token">details.</a></code></pre>
 				<h4>cURL Example</h4>
 				<pre><code class="html">curl -v -X POST https://pki.virgilsecurity.com/v1/account/actions/search --data '{"email": "test@test.com"}'</code></pre>
 				
@@ -512,7 +512,7 @@ x-virgil-app-token     Header with application access token, see <a href="/docum
 				<h4>Request Info</h4>
 				<pre><code class="html">HTTP Request method    POST
 Request URL            https://pki.virgilsecurity.com/v1/user-data/actions/search
-x-virgil-app-token     Header with application access token, see <a href="/documents/csharp/quickstart#obtaining-an-app-token">details.</a></code></pre>
+x-virgil-app-token     Header with application access token, see <a href="/documents/cpp/quickstart#obtaining-an-app-token">details.</a></code></pre>
 				<h4>cURL Example</h4>
 				<pre><code class="html">curl -v -X POST https://pki.virgilsecurity.com/v1/user-data/actions/search\?expand\=public_key --data '{"email": "user@virgilsecurity.com"}'</code></pre>
 				
@@ -785,7 +785,7 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
 					<tr>
 						<td>account_id</td>
 						<td>This parameter identifies the ID of user account in the Public Keys Service. 
-							(see more details about Accounts of Public Keys API <a href="/documents/csharp/keys-service#accounts">here...</a>).</td>
+							(see more details about Accounts of Public Keys API <a href="/documents/cpp/keys-service#accounts">here...</a>).</td>
 						<td>string</td>
 					</tr>
 					<tr>
@@ -797,7 +797,7 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
 					<tr>
 						<td>public_key_id</td>
 						<td>This parameter represents the ID of Virgil Public Key in Keys service (see more details about Public Keys API 
-						    <a href="/documents/csharp/keys-service#public-keys">here...</a>).</td>
+						    <a href="/documents/cpp/keys-service#public-keys">here...</a>).</td>
 						<td>string</td>
 					</tr>
 					<tr>
@@ -841,13 +841,13 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
 					<tr>
 						<td>account_id</td>
 						<td>This parameter identifies the ID of user account in the Public Keys Service. 
-							(see more details about Accounts of Public Keys API <a href="/documents/csharp/keys-service#accounts">here...</a>).</td>
+							(see more details about Accounts of Public Keys API <a href="/documents/cpp/keys-service#accounts">here...</a>).</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>public_key_id</td>
 						<td>This parameter represents the ID of Virgil Public Key in Keys service (see more details about Public Keys API 
-						    <a href="/documents/csharp/keys-service#public-keys">here...</a>).</td>
+						    <a href="/documents/cpp/keys-service#public-keys">here...</a>).</td>
 						<td>string</td>
 					</tr>
 					<tr>
@@ -882,19 +882,19 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
 					<tr>
 						<td>account_id</td>
 						<td>This parameter identifies the ID of user account in the Public Keys Service. 
-							(see more details about Accounts of Public Keys API <a href="/documents/csharp/keys-service#accounts">here...</a>).</td>
+							(see more details about Accounts of Public Keys API <a href="/documents/cpp/keys-service#accounts">here...</a>).</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>public_key_id</td>
 						<td>This parameter represents the ID of Virgil Public Key in Keys service (see more details about Public Keys API 
-						    <a href="/documents/csharp/keys-service#public-keys">here...</a>).</td>
+						    <a href="/documents/cpp/keys-service#public-keys">here...</a>).</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>sign</td>
 						<td>This parameter contains digital signature of public key ID in base64 format. This signature confirmas that the client has a private key.
-							(see more details about siging data <a href="/documents/csharp/quickstart#sign-data">here...</a> )
+							(see more details about siging data <a href="/documents/cpp/quickstart#sign-data">here...</a> )
 						    To pass this parameter sign the public key ID using Crypto Library and convert the result to base64 format.</a></td>
 						<td>string</td>
 					</tr>
@@ -938,13 +938,13 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
 					<tr>
 						<td>public_key_id</td>
 						<td>This parameter represents the ID of Virgil Public Key in Keys service (see more details about Public Keys API 
-						    <a href="/documents/csharp/keys-service#public-keys">here...</a>).</td>
+						    <a href="/documents/cpp/keys-service#public-keys">here...</a>).</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>sign</td>
 						<td>This parameter contains digital signature of public key ID in base64 format. This signature confirmas that the client has a private key.
-							(see more details about siging data <a href="/documents/csharp/quickstart#sign-data">here...</a> )
+							(see more details about siging data <a href="/documents/cpp/quickstart#sign-data">here...</a> )
 						    To pass this parameter sign the public key ID using Crypto Library and convert the result to base64 format.</a></td>
 						<td>string</td>
 					</tr>
@@ -975,7 +975,7 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
 					<tr>
 						<td>account_id</td>
 						<td>This parameter identifies the ID of user account in the Public Keys Service. 
-							(see more details about Accounts of Public Keys API <a href="/documents/csharp/keys-service#accounts">here...</a>).</td>
+							(see more details about Accounts of Public Keys API <a href="/documents/cpp/keys-service#accounts">here...</a>).</td>
 						<td>string</td>
 					</tr>	
 					<tr>
@@ -986,13 +986,13 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
 					<tr>
 						<td>public_key_id</td>
 						<td>This parameter represents the ID of Virgil Public Key in Keys service (see more details about Public Keys API 
-						    <a href="/documents/csharp/keys-service#public-keys">here...</a>).</td>
+						    <a href="/documents/cpp/keys-service#public-keys">here...</a>).</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>sign</td>
 						<td>This parameter contains digital signature of public key ID in base64 format. This signature confirmas that the client has a private key.
-							(see more details about siging data <a href="/documents/csharp/quickstart#sign-data">here...</a> )
+							(see more details about siging data <a href="/documents/cpp/quickstart#sign-data">here...</a> )
 						    To pass this parameter sign the public key ID using Crypto Library and convert the result to base64 format.</a></td>
 						<td>string</td>
 					</tr>
@@ -1194,19 +1194,19 @@ x-auth-token           Required, see <a href="#authentication">details.</a></cod
 					<tr>
 						<td>account_id</td>
 						<td>This parameter identifies the ID of user account in the Public Keys Service. 
-							(see more details about Accounts of Public Keys API <a href="/documents/csharp/keys-service#accounts">here...</a>).</td>
+							(see more details about Accounts of Public Keys API <a href="/documents/cpp/keys-service#accounts">here...</a>).</td>
 						<td>string</td>
 					</tr>	
 					<tr>
 						<td>public_key_id</td>
 						<td>This parameter represents the ID of Virgil Public Key in Keys service (see more details about Public Keys API 
-						    <a href="/documents/csharp/keys-service#public-keys">here...</a>).</td>
+						    <a href="/documents/cpp/keys-service#public-keys">here...</a>).</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>sign</td>
 						<td>This parameter contains digital signature of public key ID in base64 format. This signature confirmas that the client has a private key.
-							(see more details about siging data <a href="/documents/csharp/quickstart#sign-data">here...</a> )
+							(see more details about siging data <a href="/documents/cpp/quickstart#sign-data">here...</a> )
 						    To pass this parameter sign the public key ID using Crypto Library and convert the result to base64 format.</a></td>
 						<td>string</td>
 					</tr>
