@@ -73,7 +73,7 @@ Virgil | Developers | C#/.NET | Quickstart
 		        <p>
 		            The following code example creates a new public/private key pair.
 		        </p>
-                    <pre><code class="language-csharp">usign Virgil.Crypto;
+                    <pre><code class="language-csharp">using Virgil.Crypto;
 using Virgil.SDK.Keys;
 
 ...

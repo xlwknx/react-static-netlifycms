@@ -4,8 +4,10 @@
 
 @section('header-block')
     <div class="dev-header-container">
-        <h1 class="text-center">Virgil Security for Developers</h1>
-        <h3 class="text-center">Start building secure applications to your favorite language</h3>        
+    	<div class="container">
+        	<h1 class="text-center">Virgil Security for Developers</h1>
+       		<h3 class="text-center">Start building secure applications to your favorite language</h3>    
+       	</div>    
     </div>  
     <div class="dev-header-empty-menu"></div>
 @show
@@ -25,7 +27,7 @@
                     <div class="lng-box-content">
                       <div class="lng-box-list-item">
                         <a href="/documents/csharp/quickstart">
-                          <h4>Qhickstrat</h4>
+                          <h4>Quickstart</h4>
                           <p>Getting started with Virgil for .NET</p>
                         </a>
                       </div>
@@ -65,7 +67,7 @@
                    <div class="lng-box-content">
                       <div class="lng-box-list-item">
                         <a href="/documents/cpp/quickstart">
-                          <h4>Qhickstrat</h4>
+                          <h4>Quickstart</h4>
                           <p>Getting started with Virgil for C/C++</p>
                         </a>
                       </div>
@@ -105,7 +107,7 @@
                     <div class="lng-box-content">
                       <div class="lng-box-list-item">
                         <a href="/documents/php/quickstart">
-                          <h4>Qhickstrat</h4>
+                          <h4>Quickstart</h4>
                           <p>Getting started with Virgil for PHP</p>
                         </a>
                       </div>
@@ -146,7 +148,7 @@
                     </div>
                     <div class="lng-box-content">
                         <div class="lng-box-list-empty">
-                          This language is not available yet. We are working very, very hard to satisfy Nodejs developers as soon as we can. 
+                          This language is coming soon. We are working hard to deliver Node.js support as quickly as we can. 
                         </div>
                     </div>
                 </div>        
@@ -159,7 +161,7 @@
                     </div>
                     <div class="lng-box-content">
                       <div class="lng-box-list-empty">
-                        This language is not available yet. We are working very, very hard to satisfy Python developers as soon as we can.   
+                        This language is coming soon. We are working hard to deliver Python support as quickly as we can.   
                       </div>
                     </div>
                 </div>
@@ -172,7 +174,7 @@
                     </div>
                     <div class="lng-box-content">
                       <div class="lng-box-list-empty">
-                        This language is not available yet. We are working very, very hard to satisfy Ruby developers as soon as we can.  
+                        This language is coming soon. We are working hard to deliver Ruby support as quickly as we can.  
                       </div>
                     </div>
                 </div>
