@@ -9,10 +9,10 @@ class AccountTableSeeder extends Seeder {
         DB::table('service_account')->delete();
 
         Account::create(array(
-            'id' => self::VIRGIL_ACCOUNT_ID,
-            'company_name' => 'Virgil Security',
-            'email' => 'support@virgilsecurity.com',
-            'password' => md5('password'),
+            'id'        => self::VIRGIL_ACCOUNT_ID,
+            'email'     => 'support@virgilsecurity.com',
+            'password'  => md5('password'),
+            'domain'    => 'com.virgilsecurity',
             'confirmed' => Account::ACCOUNT_CONFIRMED
         ));
     }

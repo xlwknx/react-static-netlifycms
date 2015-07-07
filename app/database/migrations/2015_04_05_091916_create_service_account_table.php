@@ -16,9 +16,9 @@ class CreateServiceAccountTable extends Migration {
             $table->engine = 'InnoDB';
 
             $table->bigIncrements('id')->unsigned();
-            $table->string('company_name', 255)->nullable();
             $table->string('email', 36)->unique();
             $table->string('password', 36);
+            $table->string('domain', 255);
             $table->smallInteger('confirmed')->unsigned();
             $table->timestamps();
         });

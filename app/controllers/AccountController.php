@@ -40,18 +40,4 @@ class AccountController extends AbstractController {
             HttpResponse::HTTP_OK
         );
     }
-
-    public function typeList() {
-
-        $list = \AccountType::all();
-
-        $data = array();
-        foreach($list as $type) {
-            $data[] = $type->jsonSerialize();
-        }
-
-        return \Response::json(
-            $data, HttpResponse::HTTP_OK
-        );
-    }
 } 

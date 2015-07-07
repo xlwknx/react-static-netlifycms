@@ -31,12 +31,12 @@ class Account {
     /**
      * Validate signup action
      *
-     * @param $email - account email
-     * @param $password - account password
-     * @return mixed
-     * @throws \Virgil\Exception\Validator
+     * @param $email
+     * @param $password
+     * @param $domain
+     * @return array
      */
-    public static function validateSignup($email, $password) {
+    public static function validateSignup($email, $password, $domain) {
 
         if(!$email) {
             return array(
@@ -52,6 +52,12 @@ class Account {
             );
         }
 
+        if(!$domain) {
+            return array(
+                'result' => false,
+                'message' => ErrorMessage::ACCOUNT_DOMAIN_NOT_PROVIDED
+            );
+        }
 
         $account = \Account::whereEmail(
             $email

@@ -66,9 +66,9 @@ class Application extends Eloquent implements JsonSerializable {
      */
     public function updateApplication($data) {
 
-        $this->name = $data['name'];
+        $this->name        = $data['name'];
         $this->description = $data['description'];
-        $this->url = $data['url'];
+        $this->url         = $data['url'];
 
         $this->save();
 
@@ -115,6 +115,19 @@ class Application extends Eloquent implements JsonSerializable {
     public function account() {
 
         return $this->belongsTo('Account');
+    }
+
+    /**
+     * Get Application identity like: com.virgilsecurity.pass
+     *
+     * @return string
+     */
+    public function getIdentity() {
+
+        return implode('.', array(
+            $this->account->domain,
+            $this->alias
+        ));
     }
 
 } 

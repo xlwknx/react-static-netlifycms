@@ -14,10 +14,11 @@ class Application {
      * @param $applicationName - application name
      * @param $applicationDescription - application description
      * @param $applicationUrl - application url
+     * @param $applicationAlias - application alias
      * @return array
      * @throws \Virgil\Exception\Validator
      */
-    public static function validate($applicationName, $applicationDescription, $applicationUrl) {
+    public static function validate($applicationName, $applicationDescription, $applicationUrl, $applicationAlias) {
 
         if(empty($applicationName)) {
             throw new ValidatorException(
@@ -37,10 +38,17 @@ class Application {
             );
         }
 
+        if(empty($applicationAlias)) {
+            throw new ValidatorException(
+                ErrorCode::APPLICATION_ALIAS_NOT_PROVIDED
+            );
+        }
+
         return array(
             'name' => $applicationName,
             'description' => $applicationDescription,
-            'url' => $applicationUrl
+            'url' => $applicationUrl,
+            'alias' => $applicationAlias
         );
     }
 
@@ -70,15 +78,13 @@ class Application {
     }
 
     /**
-     * Validate Application key
+     * Validate Application token
      *
-     * @param $serviceId
      * @param $appToken
-     * @param $resource
      * @return array
      * @throws \Virgil\Exception\Validator
      */
-    public static function validateToken($serviceId, $resource, $appToken) {
+    public static function validateToken($appToken) {
 
         $application = \Application::getApplicationByToken(
             $appToken
@@ -90,10 +96,6 @@ class Application {
             );
         }
 
-        return array(
-            'application' => $application,
-            'service_id' => $serviceId,
-            'resource' => $resource
-        );
+        return $application;
     }
 } 
