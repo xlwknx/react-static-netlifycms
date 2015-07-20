@@ -56,6 +56,13 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Keys (Control Panel, Windows)',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'panel'
+            ),
+            array(
+                'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
+                'name' => 'Virgil Private Keys',
+                'description' => 'Virgil Private Keys Service',
+                'url' => 'http://virgilsecurity.com',
+                'alias' => 'keyring'
             )
         );
 
