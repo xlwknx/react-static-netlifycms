@@ -2,6 +2,8 @@
 
 class ApplicationTableSeeder extends Seeder {
 
+    protected $env = 'production';
+
     public function run()
     {
 
@@ -67,9 +69,16 @@ class ApplicationTableSeeder extends Seeder {
         );
 
         foreach($applicationList as $application) {
+
+            array_push(
+                $application,
+                $this->env
+            );
+
             $application['token'] = md5(
                 implode(
-                    '', $application
+                    '',
+                    $application
                 )
             );
             Application::create(
