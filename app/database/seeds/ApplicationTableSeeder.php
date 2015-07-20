@@ -13,56 +13,81 @@ class ApplicationTableSeeder extends Seeder {
                 'name' => 'Virgil Mail (Outlook Add-In)',
                 'description' => 'Virgil Mail (Outlook Add-In)',
                 'url' => 'http://virgilsecurity.com',
-                'alias' => 'mail'
+                'alias' => 'mail',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
                 'name' => 'Virgil Sync',
                 'description' => 'Virgil Sync',
                 'url' => 'http://virgilsecurity.com',
-                'alias' => 'sync'
+                'alias' => 'sync',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
                 'name' => 'Virgil Pass (Chrome Extension)',
                 'description' => 'Virgil Pass (Chrome Extension)',
                 'url' => 'http://virgilsecurity.com',
-                'alias' => 'pass'
+                'alias' => 'pass',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
                 'name' => 'Virgil Pass (iOS)',
                 'description' => 'Virgil Pass (iOS)',
                 'url' => 'http://virgilsecurity.com',
-                'alias' => 'ios'
+                'alias' => 'ios',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
                 'name' => 'Virgil Pass (Android)',
                 'description' => 'Virgil Pass (Android)',
                 'url' => 'http://virgilsecurity.com',
-                'alias' => 'android'
+                'alias' => 'android',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
                 'name' => 'Virgil Pass (Windows Phone)',
                 'description' => 'Virgil Pass (Windows Phone)',
                 'url' => 'http://virgilsecurity.com',
-                'alias' => 'windows'
+                'alias' => 'windows',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
                 'name' => 'Virgil Keys (Control Panel, Windows)',
                 'description' => 'Virgil Keys (Control Panel, Windows)',
                 'url' => 'http://virgilsecurity.com',
-                'alias' => 'panel'
+                'alias' => 'panel',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
                 'name' => 'Virgil Private Keys',
                 'description' => 'Virgil Private Keys Service',
                 'url' => 'http://virgilsecurity.com',
-                'alias' => 'keyring'
+                'alias' => 'keyring',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ),
+            array(
+                'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
+                'name' => 'Virgil Public Keys',
+                'description' => 'Virgil Public Keys Service',
+                'url' => 'http://virgilsecurity.com',
+                'alias' => 'keys',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             )
         );
 
