@@ -74,6 +74,7 @@ class PublicController extends AbstractController
 
     public function privacyPolicy()
     {
+
         $this->setActivePage('privacy-policy');
         $this->layout->content = View::make(
             'pages.public.privacy-policy'

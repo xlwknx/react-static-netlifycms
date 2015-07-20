@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateServiceAccountApplicationStatsTable extends Migration {
+class CreateServiceAccountApplicationLogTable extends Migration {
 
     /**
 	 * Run the migrations.
@@ -11,7 +11,7 @@ class CreateServiceAccountApplicationStatsTable extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('service_account_application_stats', function($table)
+        Schema::create('service_account_application_log', function($table)
         {
             $table->engine = 'InnoDB';
 
@@ -47,6 +47,6 @@ class CreateServiceAccountApplicationStatsTable extends Migration {
 	 */
 	public function down()
 	{
-        Schema::drop('service_account_application_stats');
+        Schema::drop('service_account_application_log');
 	}
 }

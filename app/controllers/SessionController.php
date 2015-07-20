@@ -22,13 +22,11 @@ class SessionController extends AbstractController {
             );
         }
 
-        $authToken = Authentication::getAuthToken(
-            $account
-        );
-
         Cookie::queue(
             'auth_token',
-            $authToken,
+            Authentication::getAuthToken(
+                $account
+            ),
             Authentication::AUTH_TOKEN_LIFETIME
         );
 
@@ -37,14 +35,12 @@ class SessionController extends AbstractController {
 
     public function signout() {
 
-        $authentication = AuthenticationValidator::validateAuthToken(
-            Cookie::get(
-                'auth_token'
-            )
-        );
-
         Authentication::clearAuthToken(
-            $authentication
+            AuthenticationValidator::validateAuthToken(
+                Cookie::get(
+                    'auth_token'
+                )
+            )
         );
 
         Cookie::queue(
@@ -61,7 +57,7 @@ class SessionController extends AbstractController {
         $result = AccountValidator::validateSignup(
             Input::get('email', null),
             Input::get('password', null),
-            Input::get('company_name', null)
+            Input::get('domain', null)
         );
 
         if(!$result['result']) {
@@ -77,7 +73,7 @@ class SessionController extends AbstractController {
             Account::createAccount(
                 Input::get('email'),
                 Input::get('password'),
-                Input::get('company_name')
+                Input::get('domain')
             )
         );
 

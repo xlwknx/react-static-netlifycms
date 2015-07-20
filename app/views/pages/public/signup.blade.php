@@ -24,7 +24,7 @@
                             <input class="form-input expand" type="password" name="password" placeholder="Your Password"/>
                         </div>
                         <div class="col-xs-48 form-item">
-                            <input class="form-input expand" type="text" name="company_name" placeholder="Company Name (optional)" value="{{Input::old('company_name')}}"/>
+                            <input class="form-input expand" type="text" name="domain" placeholder="Company Domain" value="{{Input::old('domain')}}"/>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
 
         <section class="container text-center">
             By creating an account you agree to the Virgil Security<br/>
-            <a href="/terms-of-service">Terms of Service</a> | <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms-of-service">Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a>
         </section>
 
         <section class="container text-center">

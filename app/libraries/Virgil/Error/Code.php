@@ -29,4 +29,5 @@ class Code {
     const APPLICATION_NOT_FOUND                         = 50004;
     const APPLICATION_LIMIT_EXCEEDED                    = 50005;
     const APPLICATION_KEY_NOT_FOUND                     = 50006;
+    const APPLICATION_ALIAS_NOT_PROVIDED                = 50007;
 }

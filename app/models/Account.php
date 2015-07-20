@@ -20,15 +20,15 @@ class Account extends Eloquent {
      *
      * @param $email
      * @param $password
-     * @param $companyName
+     * @param $domain
      * @return Account
      */
-    public static function createAccount($email, $password, $companyName) {
+    public static function createAccount($email, $password, $domain) {
 
         $account = new Account();
         $account->email        = $email;
         $account->password     = md5($password);
-        $account->company_name = $companyName;
+        $account->domain       = $domain;
         $account->confirmed    = self::ACCOUNT_CONFIRMED;
 
         $account->save();

@@ -38,7 +38,8 @@ class ApplicationController extends AbstractController {
         $data = ApplicationValidator::validate(
             Input::json()->get('name', null),
             Input::json()->get('description', null),
-            Input::json()->get('url', null)
+            Input::json()->get('url', null),
+            Input::json()->get('alias', null)
         );
 
         AccountValidator::validateNotConfirmed(
@@ -79,7 +80,8 @@ class ApplicationController extends AbstractController {
                 ApplicationValidator::validate(
                     Input::json()->get('name', null),
                     Input::json()->get('description', null),
-                    Input::json()->get('url', null)
+                    Input::json()->get('url', null),
+                    $application->alias
                 )
             ), HttpResponse::HTTP_OK
         );
@@ -102,20 +104,22 @@ class ApplicationController extends AbstractController {
 
     public static function validateToken() {
 
-        $data = ApplicationValidator::validateToken(
-            Input::json()->get('service_id', null),
-            Input::json()->get('resource', null),
-            Input::json()->get('app_token', null)
+        $serviceId = Input::json()->get('service_id', null);
+        $resource  = Input::json()->get('resource', null);
+        $appToken  = Input::json()->get('app_token', null);
+
+        $application = ApplicationValidator::validateToken(
+            $appToken
         );
 
-        ApplicationStats::log(
-            $data['service_id'],
-            $data['resource'],
-            $data['application']
+        ApplicationLog::log(
+            $serviceId,
+            $resource,
+            $application
         );
 
         return \Response::json(array(
-            'result' => true
+            'identity' => $application->getIdentity()
         ), HttpResponse::HTTP_OK);
     }
 } 
