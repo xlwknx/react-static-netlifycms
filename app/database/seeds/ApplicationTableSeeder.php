@@ -95,15 +95,15 @@ class ApplicationTableSeeder extends Seeder {
 
         foreach($applicationList as $application) {
 
-            array_push(
-                $application,
-                $this->env
-            );
-
             $application['token'] = md5(
                 implode(
                     '',
-                    $application
+                    array_merge(
+                        array(
+                            $this->env
+                        ),
+                        $application
+                    )
                 )
             );
             Application::create(
