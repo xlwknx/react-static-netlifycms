@@ -91,6 +91,10 @@ class ApplicationTableSeeder extends Seeder {
                         array(
                             $this->env
                         ),
+                        array(
+                            'created_at' => '2015-07-20 20:06:17',
+                            'updated_at' => '2015-07-20 20:06:17'
+                        ),
                         $application
                     )
                 )
