@@ -16,8 +16,6 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Mail (Outlook Add-In)',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'mail',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
@@ -25,8 +23,6 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Sync',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'sync',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
@@ -34,8 +30,6 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Pass (Chrome Extension)',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'pass',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
@@ -43,8 +37,6 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Pass (iOS)',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'ios',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
@@ -52,8 +44,6 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Pass (Android)',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'android',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
@@ -61,8 +51,6 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Pass (Windows Phone)',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'windows',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
@@ -70,8 +58,6 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Keys (Control Panel, Windows)',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'panel',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
@@ -79,8 +65,6 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Private Keys Service',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'keyring',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
@@ -88,8 +72,13 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Public Keys Service',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'keys',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+            ),
+            array(
+                'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
+                'name' => 'Virgil Auth',
+                'description' => 'Virgil Auth Service',
+                'url' => 'http://virgilsecurity.com',
+                'alias' => 'auth',
             )
         );
 
