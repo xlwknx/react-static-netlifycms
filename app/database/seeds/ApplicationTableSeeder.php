@@ -16,6 +16,8 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Mail (Outlook Add-In)',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'mail',
+                'created_at' => '2015-07-20 20:06:17',
+                'updated_at' => '2015-07-20 20:06:17'
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
@@ -23,6 +25,8 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Sync',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'sync',
+                'created_at' => '2015-07-20 20:06:17',
+                'updated_at' => '2015-07-20 20:06:17'
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
@@ -30,6 +34,8 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Pass (Chrome Extension)',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'pass',
+                'created_at' => '2015-07-20 20:06:17',
+                'updated_at' => '2015-07-20 20:06:17'
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
@@ -37,6 +43,8 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Pass (iOS)',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'ios',
+                'created_at' => '2015-07-20 20:06:17',
+                'updated_at' => '2015-07-20 20:06:17'
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
@@ -44,6 +52,8 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Pass (Android)',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'android',
+                'created_at' => '2015-07-20 20:06:17',
+                'updated_at' => '2015-07-20 20:06:17'
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
@@ -58,6 +68,8 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Keys (Control Panel, Windows)',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'panel',
+                'created_at' => '2015-07-20 20:06:17',
+                'updated_at' => '2015-07-20 20:06:17'
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
@@ -65,6 +77,8 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Private Keys Service',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'keyring',
+                'created_at' => '2015-07-20 20:06:17',
+                'updated_at' => '2015-07-20 20:06:17'
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
@@ -72,6 +86,8 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Public Keys Service',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'keys',
+                'created_at' => '2015-07-20 20:06:17',
+                'updated_at' => '2015-07-20 20:06:17'
             ),
             array(
                 'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
@@ -79,6 +95,8 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Auth Service',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'auth',
+                'created_at' => '2015-07-20 20:06:17',
+                'updated_at' => '2015-07-20 20:06:17'
             )
         );
 
@@ -90,10 +108,6 @@ class ApplicationTableSeeder extends Seeder {
                     array_merge(
                         array(
                             $this->env
-                        ),
-                        array(
-                            'created_at' => '2015-07-20 20:06:17',
-                            'updated_at' => '2015-07-20 20:06:17'
                         ),
                         $application
                     )
