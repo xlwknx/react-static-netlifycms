@@ -88,6 +88,15 @@ class ApplicationTableSeeder extends Seeder {
                 'alias' => 'keys',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
+            ),
+            array(
+                'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
+                'name' => 'Virgil Auth',
+                'description' => 'Virgil Auth Service',
+                'url' => 'http://virgilsecurity.com',
+                'alias' => 'keys',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             )
         );
 
