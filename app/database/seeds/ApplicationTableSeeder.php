@@ -77,6 +77,13 @@ class ApplicationTableSeeder extends Seeder {
                 'description' => 'Virgil Auth Service',
                 'url' => 'http://virgilsecurity.com',
                 'alias' => 'auth',
+            ),
+            array(
+                'account_id' => AccountTableSeeder::VIRGIL_ACCOUNT_ID,
+                'name' => 'Virgil CLI',
+                'description' => 'Virgil CLI Application',
+                'url' => 'http://virgilsecurity.com',
+                'alias' => 'cli'
             )
         );
 
