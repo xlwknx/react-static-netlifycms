@@ -62,7 +62,7 @@ class Account {
         $account = \Account::where(
             'email',
             $email
-        )->where(
+        )->orWhere(
             'company',
             $company
         )->first();
