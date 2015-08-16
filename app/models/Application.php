@@ -56,8 +56,16 @@ class Application extends Eloquent implements JsonSerializable {
             '.',
             array(
                 'com',
-                strtolower($account->company),
-                strtolower($data['name'])
+                strtolower(
+                    $account->company
+                ),
+                preg_replace(
+                    '/\s+/',
+                    '-',
+                    strtolower(
+                        $data['name']
+                    )
+                )
             )
         );
 
