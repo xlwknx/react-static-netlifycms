@@ -10,6 +10,6 @@ class Message {
     const ACCOUNT_EMAIL_NOT_PROVIDED    = 'Account email was not provided.';
     const ACCOUNT_PASSWORD_NOT_PROVIDED = 'Account password was not provided.';
     const ACCOUNT_COMPANY_NOT_PROVIDED  = 'Account company was not provided.';
-    const ACCOUNT_ALREADY_EXISTS        = 'Account already exists. Please specify another email.';
+    const ACCOUNT_ALREADY_EXISTS        = 'Account already exists. Please specify another email and company name.';
 
 }
