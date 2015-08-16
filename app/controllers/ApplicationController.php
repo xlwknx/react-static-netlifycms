@@ -38,8 +38,7 @@ class ApplicationController extends AbstractController {
         $data = ApplicationValidator::validate(
             Input::json()->get('name', null),
             Input::json()->get('description', null),
-            Input::json()->get('url', null),
-            Input::json()->get('alias', null)
+            Input::json()->get('url', null)
         );
 
         AccountValidator::validateNotConfirmed(

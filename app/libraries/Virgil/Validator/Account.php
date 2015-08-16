@@ -33,10 +33,10 @@ class Account {
      *
      * @param $email
      * @param $password
-     * @param $domain
+     * @param $company
      * @return array
      */
-    public static function validateSignup($email, $password, $domain) {
+    public static function validateSignup($email, $password, $company) {
 
         if(!$email) {
             return array(
@@ -52,15 +52,19 @@ class Account {
             );
         }
 
-        if(!$domain) {
+        if(!$company) {
             return array(
                 'result' => false,
                 'message' => ErrorMessage::ACCOUNT_DOMAIN_NOT_PROVIDED
             );
         }
 
-        $account = \Account::whereEmail(
+        $account = \Account::where(
+            'email',
             $email
+        )->where(
+            'company',
+            $company
         )->first();
 
         if($account) {

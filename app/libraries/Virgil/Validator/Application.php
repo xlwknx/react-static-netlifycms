@@ -14,11 +14,10 @@ class Application {
      * @param $applicationName - application name
      * @param $applicationDescription - application description
      * @param $applicationUrl - application url
-     * @param $applicationAlias - application alias
      * @return array
      * @throws \Virgil\Exception\Validator
      */
-    public static function validate($applicationName, $applicationDescription, $applicationUrl, $applicationAlias) {
+    public static function validate($applicationName, $applicationDescription, $applicationUrl) {
 
         if(empty($applicationName)) {
             throw new ValidatorException(
@@ -38,17 +37,10 @@ class Application {
             );
         }
 
-        if(empty($applicationAlias)) {
-            throw new ValidatorException(
-                ErrorCode::APPLICATION_ALIAS_NOT_PROVIDED
-            );
-        }
-
         return array(
             'name' => $applicationName,
             'description' => $applicationDescription,
             'url' => $applicationUrl,
-            'alias' => $applicationAlias
         );
     }
 

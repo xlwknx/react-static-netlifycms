@@ -52,6 +52,14 @@ class Application extends Eloquent implements JsonSerializable {
         $application->token = md5(
             $account->id . $data['name'] . $data['description'] . $data['url'] . time()
         );
+        $application->alias  = implode(
+            '.',
+            array(
+                'com',
+                $account->company,
+                $data['name']
+            )
+        );
 
         $application->save();
 

@@ -24,7 +24,7 @@
                             <input class="form-input expand" type="password" name="password" placeholder="Your Password"/>
                         </div>
                         <div class="col-xs-48 form-item">
-                            <input class="form-input expand" type="text" name="domain" placeholder="Company Domain" value="{{Input::old('domain')}}"/>
+                            <input class="form-input expand" type="text" name="company" placeholder="Company Name" value="{{Input::old('company')}}"/>
                         </div>
                     </div>
                 </div>

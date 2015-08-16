@@ -57,7 +57,7 @@ class SessionController extends AbstractController {
         $result = AccountValidator::validateSignup(
             Input::get('email', null),
             Input::get('password', null),
-            Input::get('domain', null)
+            Input::get('company', null)
         );
 
         if(!$result['result']) {
@@ -73,7 +73,7 @@ class SessionController extends AbstractController {
             Account::createAccount(
                 Input::get('email'),
                 Input::get('password'),
-                Input::get('domain')
+                Input::get('company')
             )
         );
 
