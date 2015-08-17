@@ -134,7 +134,13 @@ class Application extends Eloquent implements JsonSerializable {
         return implode('.',
             array(
                 'com',
-                $this->account->company,
+                preg_replace(
+                    '/\s+/',
+                    '-',
+                    strtolower(
+                        $this->account->company
+                    )
+                ),
                 $this->alias
             )
         );
