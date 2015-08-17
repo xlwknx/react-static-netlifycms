@@ -52,24 +52,11 @@ class Application extends Eloquent implements JsonSerializable {
         $application->token = md5(
             $account->id . $data['name'] . $data['description'] . $data['url'] . time()
         );
-        $application->alias  = implode(
-            '.',
-            array(
-                'com',
-                preg_replace(
-                    '/\s+/',
-                    '-',
-                    strtolower(
-                        $account->company
-                    )
-                ),
-                preg_replace(
-                    '/\s+/',
-                    '-',
-                    strtolower(
-                        $data['name']
-                    )
-                )
+        $application->alias  = preg_replace(
+            '/\s+/',
+            '-',
+            strtolower(
+                $data['name']
             )
         );
 
@@ -144,10 +131,13 @@ class Application extends Eloquent implements JsonSerializable {
      */
     public function getIdentity() {
 
-        return implode('.', array(
-            $this->account->company,
-            $this->alias
-        ));
+        return implode('.',
+            array(
+                'com',
+                $this->account->company,
+                $this->alias
+            )
+        );
     }
 
 } 
