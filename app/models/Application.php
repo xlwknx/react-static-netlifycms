@@ -145,7 +145,7 @@ class Application extends Eloquent implements JsonSerializable {
     public function getIdentity() {
 
         return implode('.', array(
-            $this->account->domain,
+            $this->account->company,
             $this->alias
         ));
     }
