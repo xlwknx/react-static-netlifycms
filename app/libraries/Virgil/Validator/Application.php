@@ -25,6 +25,12 @@ class Application {
             );
         }
 
+        if(!preg_match('/^[a-z\s]{2,}$/i', $applicationName)) {
+            throw new ValidatorException(
+                ErrorCode::APPLICATION_NAME_VALIDATION_FAILED
+            );
+        }
+
         if(empty($applicationDescription)) {
             throw new ValidatorException(
                 ErrorCode::APPLICATION_DESCRIPTION_NOT_PROVIDED
@@ -38,9 +44,9 @@ class Application {
         }
 
         return array(
-            'name' => $applicationName,
-            'description' => $applicationDescription,
-            'url' => $applicationUrl,
+            'name' => trim($applicationName),
+            'description' => trim($applicationDescription),
+            'url' => trim($applicationUrl),
         );
     }
 

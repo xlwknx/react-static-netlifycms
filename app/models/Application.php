@@ -45,10 +45,10 @@ class Application extends Eloquent implements JsonSerializable {
     public static function createApplication(Account $account, $data) {
 
         $application = new Application();
-        $application->account_id = $account->id;
-        $application->name = $data['name'];
+        $application->account_id  = $account->id;
+        $application->name        = $data['name'];
         $application->description = $data['description'];
-        $application->url = $data['url'];
+        $application->url   = $data['url'];
         $application->token = md5(
             $account->id . $data['name'] . $data['description'] . $data['url'] . time()
         );

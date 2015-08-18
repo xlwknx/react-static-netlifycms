@@ -52,10 +52,18 @@ class Account {
             );
         }
 
+        $company = trim($company);
         if(!$company) {
             return array(
                 'result' => false,
-                'message' => ErrorMessage::ACCOUNT_DOMAIN_NOT_PROVIDED
+                'message' => ErrorMessage::ACCOUNT_COMPANY_NOT_PROVIDED
+            );
+        }
+
+        if(!preg_match('/^[a-z\s]{2,}$/i', $company)) {
+            return array(
+                'result' => false,
+                'message' => ErrorMessage::ACCOUNT_COMPANY_VALIDATION_FAILED
             );
         }
 
