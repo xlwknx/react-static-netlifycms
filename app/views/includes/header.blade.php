@@ -9,8 +9,8 @@
         <ul class="nav navbar-nav navbar-right">
             <li><a href="#">ABOUT VIRGIL</a></li>
             <li><a href="#">HOW IT WORKS</a></li>
-            <li><a href="#">APPS</a></li>
-            <li><a href="#">DEVELOPERS</a></li>
+            <li class="@if($page == 'downloads') active @endif"><a href="/downloads">APPS</a></li>
+            <li class="@if($page == 'documents') active @endif" ><a href="/documents/csharp/quickstart">DEVELOPERS</a></li>
             <li><a href="#">SIGN IN</a></li>
             <li><a href="#">SIGN UP</a></li>
         </ul>
