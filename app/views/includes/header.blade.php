@@ -6,6 +6,14 @@
                 <img alt="Brand" src="/img/logo.png">
             </a>
         </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">ABOUT VIRGIL</a></li>
+            <li><a href="#">HOW IT WORKS</a></li>
+            <li><a href="#">APPS</a></li>
+            <li><a href="#">DEVELOPERS</a></li>
+            <li><a href="#">SIGN IN</a></li>
+            <li><a href="#">SIGN UP</a></li>
+        </ul>
     </div>
 </nav>
 
