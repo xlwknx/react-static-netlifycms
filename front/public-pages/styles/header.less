@@ -1,62 +1,62 @@
-/* Red */
-@bgDefault      : #bf0000;
-@bgHighlight    : #cc3333;
-@colDefault     : #ffffff;
-@colHover       : #ffffff; 
-
-@navbar_height  : 62.5px;
-
-/* --- Style --- */
+@v_navbar_bg           : #bf0000;
+@v_navbar_bg_highlight : #cc3333;
+@v_navbar_color        : #ffffff;
+@v_navbar_color_hover  : #ffffff;
+@v_navbar_height       : 62.5px;
+@v_navbar_font_size    : 0.9em;
+@v_navbar_font_weight  : 900;
 
 .navbar-default {
-    background-color: @bgDefault;
-    border-color: @bgHighlight;
+    background-color: @v_navbar_bg;
+    border-color: @v_navbar_bg_highlight;
+    font-size: @v_navbar_font_size;
+    font-weight: @v_navbar_font_weight;
     .navbar-brand {
-        color: @colDefault;
-        line-height: @navbar_height;
-        height: @navbar_height;
+        color: @v_navbar_color;
+        line-height: @v_navbar_height;
+        height: @v_navbar_height;
         padding-top: 0;
         &:hover, &:focus {
-            color: @colHover; }}
+            color: @v_navbar_color_hover; }}
     .navbar-nav {
         > li {
             > a {
-                color: @colDefault;
-                line-height: @navbar_height;
-                height: @navbar_height;
+                color: @v_navbar_color;
+                line-height: @v_navbar_height;
+                height: @v_navbar_height;
                 padding-top: 0;
                 &:hover, &:focus {
-                    color: @colHover;   }}}
+                    color: @v_navbar_color_hover;   }}}
         .active {
             > a, > a:hover, > a:focus {
-                color: @colHover;
-                background-color: @bgHighlight; }}
+                color: @v_navbar_color_hover;
+                background-color: @v_navbar_bg_highlight; }}
         .open {
             > a, > a:hover, > a:focus {
-                color: @colHover;
-                background-color: @bgHighlight;
+                color: @v_navbar_color_hover;
+                background-color: @v_navbar_bg_highlight;
                 .caret {
-                    border-top-color: @colHover;
-                    border-bottom-color: @colHover; }}}
+                    border-top-color: @v_navbar_color_hover;
+                    border-bottom-color: @v_navbar_color_hover; }}}
         > .dropdown {
             > a {
                 .caret {
-                    border-top-color: @colDefault;
-                    border-bottom-color: @colDefault; }
+                    border-top-color: @v_navbar_color;
+                    border-bottom-color: @v_navbar_color; }
                 &:hover, &:focus {
                     .caret {
-                        border-top-color: @colHover;
-                        border-bottom-color: @colHover; }}}}}
+                        border-top-color: @v_navbar_color_hover;
+                        border-bottom-color: @v_navbar_color_hover; }}}}}
     .navbar-toggle {
-        border-color: @bgHighlight;
+        border-color: @v_navbar_bg_highlight;
         &:hover, &:focus {
-            background-color: @bgHighlight; }
+            background-color: @v_navbar_bg_highlight; }
         .icon-bar {
-            background-color: @colDefault; }}}
+            background-color: @v_navbar_color; }}}
 @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-        color: @colDefault;
+        color: @v_navbar_color;
         &:hover, &:focus {
-            color: @colHover;
-            background-color: @bgHighlight; }}
+            color: @v_navbar_color_hover;
+            background-color: @v_navbar_bg_highlight; }}
 }
