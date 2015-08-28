@@ -1,5 +1,6 @@
 var gulp = require('gulp');
-var stylus = require('gulp-stylus');
+var less = require('gulp-less');
+//var stylus = require('gulp-stylus');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-minify-css');
@@ -19,7 +20,8 @@ var helpers = {
   styles: function buildStylesTask(src, dist, dest) {
     return function() {
       return gulp.src(src)
-        .pipe(stylus({ 'include css': true }))
+        //.pipe(stylus({ 'include css': true }))
+        .pipe(less({  }))
         .pipe(concat(dist))
         .pipe(minifyCss({ noAdvanced: true }))
         .pipe(gulp.dest(dest));

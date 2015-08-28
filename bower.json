@@ -23,7 +23,7 @@
     "bxslider-4": "4.2.3",
     "highlightjs": "8.5.0",
     "hash-tabs": "*",
-    "bootstrap-stylus": "4.0.5"
+    "bootstrap-less": "3.3.4"
   },
   "resolutions": {
     "jquery": "2.1.4",
