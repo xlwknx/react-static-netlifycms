@@ -1,5 +1,5 @@
 @section('title')
-Virgil | Developers | C#/.NET | Keys Services
+Virgil | Developers | C/C++ | Keys Services
 @show
 
 @section('header-block')
@@ -9,7 +9,7 @@ Virgil | Developers | C#/.NET | Keys Services
             <h3 class="text-left">This describes the resources that make up the official Virgil Services API's.</h3>        
         </div>        
     </div>    
-    @include('pages.public.documents.csharp.partial.header')
+    @include('pages.public.documents.cpp.partial.header')
 @show
 
 @section('content')

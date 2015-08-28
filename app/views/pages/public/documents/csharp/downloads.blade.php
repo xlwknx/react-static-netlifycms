@@ -2,9 +2,18 @@
 Virgil | Developers | C#/.NET | Downloads
 @show
 
+@section('header-block')
+    <div class="dev-header-container">
+        <div class="container">
+            <h1 class="text-left">Downloads for .NET</h1>
+            <h3 class="text-left">Browse and download available libraries for .NET</h3>        
+        </div>        
+    </div>    
+    @include('pages.public.documents.csharp.partial.header')
+@show
+
 @section('content')
 <div class="dev">
-    @include('pages.public.documents.csharp.partial.header')
     <div class="container">
 		<div class="row">
 			<div class="col-md-38 dev-content">
@@ -19,8 +28,8 @@ Virgil | Developers | C#/.NET | Downloads
 						<td>Virgil Crypto Library</td>
 						<td class="text-left" >1.0.0</td>
 						<td class="text-left" >.NET 4.5</td>
-						<td class="text-left">SHA-1: 3028d14150b11bf5b4b7a049a68858c70e18cdbe</td>
-						<td class="text-right"><a href="#">Download</a></td>
+						<td class="text-left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td class="text-right">Coming soon...</td>
 					</tr>
 					<tr>
 						<td>Virgil SDK</td>
@@ -30,26 +39,12 @@ Virgil | Developers | C#/.NET | Downloads
 						<td class="text-right">Coming soon...</td>
 					</tr>
 				</table>
-				<h3>Mac OSX</h3>
-				<table class="table">
-					<tr>
-						<td>Virgil Crypto Library</td>
-						<td class="text-left" >1.0.0</td>
-						<td class="text-left" >.NET/Xamarin 4.5</td>
-						<td class="text-left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-						<td class="text-right">Coming soon...</td>
-					</tr>
-					<tr>
-						<td>Virgil SDK</td>
-						<td class="text-left" >1.0.0</td>
-						<td class="text-left" >.NET/Xamarin 4.5</td>
-						<td class="text-left"></td>
-						<td class="text-right">Coming soon...</td>
-					</tr>
-				</table>
+			</div>
+			<div class="col-md-10">
+				<ul class="nav nav-pills nav-stacked dev-affix">
+			        <li class="title" role="presentation">Downloads for .NET</li>
+			        <li role="presentation"><a href="#overview">Windows</a></li>
+				</ul>
 			</div>
 		</div>
 	</div>
