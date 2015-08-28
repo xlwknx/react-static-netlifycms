@@ -24,8 +24,8 @@ var config = {
 			p('../../bower_components/hash-tabs/dist/jquery.hash-tabs.js'),
 			p('../../bower_components/bxslider-4/dist/jquery.bxslider.js'),
 			p('../../bower_components/highlightjs/highlight.pack.js'),
-			p('../../bower_components/bootstrap-stylus/js/collapse.js'),
-			p('../../bower_components/bootstrap-stylus/js/transition.js'),
+			p('../../bower_components/bootstrap-less/js/collapse.js'),
+			p('../../bower_components/bootstrap-less/js/transition.js'),
 			p('./js/code-tabs.js'),
 			p('./js/home.js')
 		],
