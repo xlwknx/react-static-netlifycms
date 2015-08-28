@@ -1,7 +1,11 @@
 @section('header')
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-        
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img alt="Brand" src="/img/virgil-logo.svg">
+            </a>
+        </div>
     </div>
 </nav>
 
