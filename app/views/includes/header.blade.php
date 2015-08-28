@@ -1,5 +1,11 @@
 @section('header')
-    <header class="header container">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        
+    </div>
+</nav>
+
+    <!--<header class="header container">
         <nav class="navbar navbar-static-top">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -76,5 +82,5 @@
                 </div>
             </div>
         </nav>
-    </header>
+    </header>-->
 @show
