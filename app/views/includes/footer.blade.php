@@ -4,15 +4,9 @@
         <div class="col-md-3">
             <img class="footer-logo" src="/img/logo_red.png" />
         </div>
-        <div class="col-md-3">
-            <h5>APPLICATIONS</h5>
-        </div>
-        <div class="col-md-3">
-            <h5>DEVELOPERS</h5>     
-        </div>
-        <div class="col-md-3">
-            <h5>CONTACT AS</h5>   
-        </div>
+        <div class="col-md-3">APPLICATIONS</div>
+        <div class="col-md-3">DEVELOPERS</div>
+        <div class="col-md-3">CONTACT AS</div>
     </div>
     <div class="row">
         <div class="col-md-3">
