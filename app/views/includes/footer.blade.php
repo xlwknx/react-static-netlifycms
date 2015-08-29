@@ -14,8 +14,8 @@
             <h4>CONTACT AS</h4>
         </div>
     </div>
-    <div clas="row footer-brend">
-        &copy; Virgil Security, Inc. <?= date('Y'); ?>
+    <div class="row footer-brend">
+        <span>&copy; Virgil Security, Inc. <?= date('Y'); ?></span>
     </div>
 </div>
 
