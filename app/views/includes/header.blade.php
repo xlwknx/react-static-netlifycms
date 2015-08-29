@@ -3,7 +3,7 @@
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">
-                <img alt="Brand" class="logo" src="/img/logo.png">
+                <img alt="Brand" class="logo-img" src="/img/logo.png">
             </a>
         </div>
         <ul class="nav navbar-nav navbar-right">
