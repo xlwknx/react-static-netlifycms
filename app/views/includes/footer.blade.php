@@ -1,5 +1,25 @@
 @section('footer')
+<div class="container">
     <div class="row">
+        <div class="col-md-3">
+            <img class="footer-logo" src="/img/logo_red.png" />
+        </div>
+        <div class="col-md-3">
+            <h4>APPLICATIONS</h4>
+        </div>
+        <div class="col-md-3">
+            <h4>DEVELOPERS</h4>
+        </div>
+        <div class="col-md-3">
+            <h4>CONTACT AS</h4>
+        </div>
+    </div>
+    <div clas="row footer-brend">
+        &copy; Virgil Security, Inc. <?= date('Y'); ?>
+    </div>
+</div>
+
+    <!--<div class="row">
         <div class="hidden-xs col-md-38">
             <div class="footer-copy">
                 &copy; Virgil Security, Inc. <?= date('Y'); ?>
@@ -48,5 +68,5 @@
                 <img src="/img/social-linkedin.png" alt="twitter"/>
             </a>
         </div>
-    </div>
+    </div>-->
 @show
