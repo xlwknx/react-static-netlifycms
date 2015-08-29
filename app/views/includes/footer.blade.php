@@ -3,15 +3,30 @@
     <div class="row footer-info">
         <div class="col-md-3">
             <img class="footer-logo" src="/img/logo_red.png" />
+            <p><a href="/about-us">About Us</a></p>
+            <p><a href="/how-it-works">How it Works</a></p>
+            <p><a href="/team">Team</a></p>
         </div>
         <div class="col-md-3 text-center">
             <h5>APPLICATIONS</h5>
+            <p><a href="/apps">Virgil Pass</a></p>
+            <p><a href="/apps">Virgil Sync</a></p>
+            <p><a href="/apps">Virgil Mail</a></p>
+            <p><a href="/apps">Virgil Keys</a></p>
         </div>
         <div class="col-md-3 text-center">
             <h5>DEVELOPERS</h5>
+            <p><a href="/documents/csharp/quickstart">.NET/C#</a></p>
+            <p><a href="/documents/cpp/quickstart">C/C++</a></p>
+            <p><a href="/documents/php/quickstart">PHP</a></p>
+            <p><a href="/documents/nodejs/quickstart">Node.js</a></p>
+            <p><a href="/documents/python/quickstart">Python</a></p>
+            <p><a href="/documents/ruby/quickstart">Ruby</a></p>     
         </div>
         <div class="col-md-3 text-center">
             <h5>CONTACT AS</h5>
+            <p>+1-571-348-4601</p>
+            <p><a href="mailto:support@virgilsecurity.com">support@virgilsecurity.com</a></p>            
         </div>
     </div>
     <div class="row footer-brend">
