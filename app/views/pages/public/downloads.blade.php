@@ -4,7 +4,8 @@
 
 
 @section('content')
-    <div class="page downloads">
+    <h1>PAGE IS UNDERCONSTRUCTION</h1>
+    <!--<div class="page downloads">
         <section class="container downloads-title">
             <h2>Download Virgil Apps</h2>
         </section>
@@ -154,5 +155,5 @@
             </div>
 
         </div>
-    </div>
+    </div>-->
 @stop

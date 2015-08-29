@@ -108,8 +108,8 @@ Route::get('contact-us', array(
     'uses' => 'PublicController@contactUs'
 ));
 
-Route::get('downloads', array(
-    'uses' => 'PublicController@downloads'
+Route::get('apps', array(
+    'uses' => 'PublicController@apps'
 ));
 
 Route::get('signin', array(

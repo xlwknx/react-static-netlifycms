@@ -27,12 +27,12 @@ class PublicController extends AbstractController
         );
     }
 
-    public function downloads()
+    public function apps()
     {
 
-        $this->setActivePage('downloads');
+        $this->setActivePage('apps');
         $this->layout->content = View::make(
-            'pages.public.downloads'
+            'pages.public.apps'
         );
     }
 

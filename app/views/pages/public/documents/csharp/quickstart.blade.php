@@ -13,8 +13,7 @@ Virgil | Developers | C#/.NET | Quickstart
 @show
 
 @section('content')
-<div class="dev">
-    <div class="container">
+<div class="container">
 		<div class="row">
 			<div class="col-md-38 dev-content">
 				<h2>Introduction</h2>
@@ -183,5 +182,4 @@ virgilSign.FromAsn1(asn1Sign);</code></pre>
 			</div>
 		</div>
 	</div>
-</div>
 @stop
