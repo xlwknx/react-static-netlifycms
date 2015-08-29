@@ -4,7 +4,10 @@
 
 
 @section('content')
+<div class="container">
     <h1>PAGE IS UNDERCONSTRUCTION</h1>
+</div>        
+    
     <!--<div class="page downloads">
         <section class="container downloads-title">
             <h2>Download Virgil Apps</h2>
