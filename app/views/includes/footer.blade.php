@@ -39,7 +39,7 @@
         <div class="col-md-3">
             <p>+1-571-348-4601</p>
             <p><a href="mailto:support@virgilsecurity.com">support@virgilsecurity.com</a></p>         
-            <svg class="social-img" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            <svg class="social-img twitter" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
                 viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
                 <path id="twitter-4-icon" d="M256,50C142.229,50,50,142.229,50,256s92.229,206,206,206s206-92.229,206-206S369.771,50,256,50z
                     M359.599,220.506c3.021,67.199-47.096,142.124-135.802,142.124c-26.981,0-52.096-7.911-73.238-21.466
