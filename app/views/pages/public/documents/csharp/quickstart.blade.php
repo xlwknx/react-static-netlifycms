@@ -242,20 +242,22 @@ using (var cipher = new VirgilCipher())
 }</code></pre>
 
 			</div>
-			<div class="col-md-3" data-spy="affix" data-offset-top="60" data-offset-bottom="200" >
-				<ul class="nav nav-pills nav-stacked" >
-					<li class="title" role="presentation">Quickstart</li>
-		            <li role="presentation"><a href="#introduction">Introduction</a></li>
-		            <li role="presentation"><a href="#obtaining-an-app-token">Obtaining an App Token</a></li>
-		            <li role="presentation"><a href="#install">Install</a></li>
-		            <li role="presentation"><a href="#generate-keys">Generate Keys</a></li>
-		            <li role="presentation"><a href="#register-user">Register User</a></li>
-		            <li role="presentation"><a href="#get-public-key">Get Public Key</a></li>
-		            <li role="presentation"><a href="#encrypt-data">Encrypt Data</a></li>
-		            <li role="presentation"><a href="#decrypt-data">Decrypt Data</a></li>
-		            <li role="presentation"><a href="#sign-data">Sign Data</a></li>
-		            <li role="presentation"><a href="#verify-data">Verify Data</a></li>
-				</ul>
+			<div class="col-md-3">
+                <div class="affix-top">
+                    <ul class="nav nav-pills nav-stacked" >
+                        <li class="title" role="presentation">Quickstart</li>
+                        <li role="presentation"><a href="#introduction">Introduction</a></li>
+                        <li role="presentation"><a href="#obtaining-an-app-token">Obtaining an App Token</a></li>
+                        <li role="presentation"><a href="#install">Install</a></li>
+                        <li role="presentation"><a href="#generate-keys">Generate Keys</a></li>
+                        <li role="presentation"><a href="#register-user">Register User</a></li>
+                        <li role="presentation"><a href="#get-public-key">Get Public Key</a></li>
+                        <li role="presentation"><a href="#encrypt-data">Encrypt Data</a></li>
+                        <li role="presentation"><a href="#decrypt-data">Decrypt Data</a></li>
+                        <li role="presentation"><a href="#sign-data">Sign Data</a></li>
+                        <li role="presentation"><a href="#verify-data">Verify Data</a></li>
+                    </ul>
+                </div>
 			</div>
 		</div>
 	</div>
