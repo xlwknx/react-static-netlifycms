@@ -38,7 +38,10 @@
         </div>
         <div class="col-md-3">
             <p>+1-571-348-4601</p>
-            <p><a href="mailto:support@virgilsecurity.com">support@virgilsecurity.com</a></p>            
+            <p><a href="mailto:support@virgilsecurity.com">support@virgilsecurity.com</a></p>         
+            <img class="social-img" src="/img/social-twitter-icon.svg" /> 
+            <img class="social-img" src="/img/social-facebook-icon.svg" /> 
+            <img class="social-img" src="/img/social-linkedin-icon.svg" />   
         </div>
     </div>
     <div class="row footer-brend">
