@@ -22,14 +22,16 @@ body {
     color: #525d62;
     font-size: 16px;
   }
-  .social-img {
+  .social-link {
     svg {
       width: 32px;
       fill: #525d62;      
     }
-    .twitter :hover { fill: #55acee; }
-    .facebook :hover { fill: #3b5998; }
-    .linkedin :hover { fill: #0077b5; }
+    :hover {
+      svg.twitter { fill: #55acee; }
+      svg.facebook { fill: #3b5998; }
+      svg.linkedin { fill: #0077b5; }
+    }
   }
 }
 
