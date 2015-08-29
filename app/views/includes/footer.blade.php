@@ -4,14 +4,14 @@
         <div class="col-md-3">
             <img class="footer-logo" src="/img/logo_red.png" />
         </div>
-        <div class="col-md-3">
-            <h4>APPLICATIONS</h4>
+        <div class="col-md-3 text-center">
+            <h5>APPLICATIONS</h5>
         </div>
-        <div class="col-md-3">
-            <h4>DEVELOPERS</h4>
+        <div class="col-md-3 text-center">
+            <h5>DEVELOPERS</h5>
         </div>
-        <div class="col-md-3">
-            <h4>CONTACT AS</h4>
+        <div class="col-md-3 text-center">
+            <h5>CONTACT AS</h5>
         </div>
     </div>
     <div class="row footer-brend">
