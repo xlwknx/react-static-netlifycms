@@ -1,16 +1,16 @@
 @section('footer')
 <div class="container">
     <div class="row footer-title">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <img class="footer-logo" src="/img/logo_red.png" />
         </div>
         <div class="col-md-2">APPLICATIONS</div>
-        <div class="col-md-2">VIRGIL PASS PLUGINS</div>
+        <div class="col-md-3">VIRGIL PASS PLUGINS</div>
         <div class="col-md-2">DEVELOPERS</div>
         <div class="col-md-3">CONTACT AS</div>
     </div>
     <div class="row footer-body">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <p><a href="/about-us">About Us</a></p>
             <p><a href="/how-it-works">How it Works</a></p>
             <p><a href="/team">Team</a></p>
@@ -21,7 +21,7 @@
             <p><a href="/apps">Virgil Mail</a></p>
             <p><a href="/apps">Virgil Keys</a></p>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
             <p><a href="/apps">Wordpress</a></p>
             <p><a href="/apps">Joomla</a></p>
             <p><a href="/apps">Drupal</a></p>
