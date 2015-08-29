@@ -17,9 +17,7 @@
         @yield('content')
 
         <footer class="footer">
-            <div class="container">
-                @include('includes.footer')
-            </div>
+            @include('includes.footer')
         </footer>
 
         <script src="/dist/public.js"></script>
