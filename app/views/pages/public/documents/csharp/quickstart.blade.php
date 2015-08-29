@@ -13,10 +13,9 @@ Virgil | Developers | C#/.NET | Quickstart
 @show
 
 @section('content')
-<div class="dev">
     <div class="container">
 		<div class="row">
-			<div class="col-md-38 dev-content">
+			<div class="col-md-9">
 				<h2>Introduction</h2>
 				<p>
 					This guide will help you get started using the Crypto Library and Virgil Keys Service, for the most popular platforms and languages
@@ -243,7 +242,7 @@ using (var cipher = new VirgilCipher())
 }</code></pre>
 
 			</div>
-			<div class="col-md-10">
+			<div class="col-md-3">
 				<ul class="nav nav-pills nav-stacked dev-affix">
 					<li class="title" role="presentation">Quickstart</li>
 		            <li role="presentation"><a href="#introduction">Introduction</a></li>
@@ -260,5 +259,4 @@ using (var cipher = new VirgilCipher())
 			</div>
 		</div>
 	</div>
-</div>
 @stop

@@ -26,6 +26,7 @@ var config = {
 			//p('../../bower_components/highlightjs/highlight.pack.js'),
 			p('../../bower_components/bootstrap-less/js/collapse.js'),
 			p('../../bower_components/bootstrap-less/js/transition.js'),
+			p('../../bower_components/bootstrap-less/js/affix.js')
 			//p('./js/code-tabs.js'),
 			//p('./js/home.js')
 		],
