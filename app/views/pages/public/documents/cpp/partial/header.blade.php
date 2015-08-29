@@ -6,6 +6,7 @@
                 <ul class="nav navbar-nav">
                     <li class="@if($reference == 'quickstart') active @endif"><a href="/documents/cpp/quickstart">Quickstart</a></li>
                     <li class="@if($reference == 'keys-service') active @endif"><a href="/documents/cpp/keys-service" >Keys Services</a></li>
+                    <li class="@if($reference == 'keys-private-service') active @endif"><a href="/documents/cpp/keys-private-service" >Private Keys Service</a></li>
                     <li class="@if($reference == 'crypto-lib') active @endif"><a href="/documents/cpp/crypto-lib" >Crypto Library</a></li>
                     <!--<li class="@if($reference == 'sdk') active @endif"><a href="/documents/csharp/sdk">SDK</a></li>-->
                     <li class="@if($reference == 'downloads') active @endif"><a href="/documents/cpp/downloads" >Downloads</a></li>
@@ -18,6 +19,7 @@
             <div class="list-group">
                 <a href="/documents/cpp/quickstart" class="list-group-item @if($reference == 'quickstart') active @endif">Quickstart</a>
                 <a href="/documents/cpp/keys-service" class="list-group-item @if($reference == 'keys-service') active @endif">Keys Services</a>
+                <a href="/documents/cpp/keys-private-service" class="list-group-item @if($reference == 'keys-private-service') active @endif">Private Keys Service</a>
                 <a href="/documents/cpp/crypto-lib" class="list-group-item @if($reference == 'crypto-lib') active @endif">Crypto Library</a>
                 <!--<a href="/documents/csharp/sdk" class="list-group-item @if($reference == 'sdk') active @endif">SDK</a>-->
                 <a href="/documents/cpp/downloads" class="list-group-item @if($reference == 'downloads') active @endif">Downloads</a>

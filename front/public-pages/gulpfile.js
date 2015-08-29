@@ -21,13 +21,13 @@ var config = {
 	js: {
 		src: [
 			p('../../bower_components/jquery/dist/jquery.js'),
-			p('../../bower_components/hash-tabs/dist/jquery.hash-tabs.js'),
-			p('../../bower_components/bxslider-4/dist/jquery.bxslider.js'),
-			p('../../bower_components/highlightjs/highlight.pack.js'),
+			//p('../../bower_components/hash-tabs/dist/jquery.hash-tabs.js'),
+			//p('../../bower_components/bxslider-4/dist/jquery.bxslider.js'),
+			//p('../../bower_components/highlightjs/highlight.pack.js'),
 			p('../../bower_components/bootstrap-less/js/collapse.js'),
 			p('../../bower_components/bootstrap-less/js/transition.js'),
-			p('./js/code-tabs.js'),
-			p('./js/home.js')
+			//p('./js/code-tabs.js'),
+			//p('./js/home.js')
 		],
 
 		dist: 'public.js',

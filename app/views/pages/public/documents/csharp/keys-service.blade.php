@@ -13,5 +13,5 @@ Virgil | Developers | C#/.NET | Keys Services
 @show
 
 @section('content')
-	@include('pages.public.documents.keys-services')
+	@include('pages.public.documents.keys-service')
 @stop

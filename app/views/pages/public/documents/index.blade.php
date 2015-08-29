@@ -4,10 +4,10 @@
 
 @section('header-block')
     <div class="dev-header-container">
-      <div class="container">
-          <h1 class="text-center">Virgil Security for Developers</h1>
-          <h3 class="text-center">Start building secure applications to your favorite language</h3>    
-        </div>    
+    	<div class="container">
+        	<h1 class="text-center">Virgil Security for Developers</h1>
+       		<h3 class="text-center">Start building secure applications to your favorite language</h3>    
+       	</div>    
     </div>  
     <div class="dev-header-empty-menu"></div>
 @show
