@@ -20,11 +20,12 @@
             color: @v_navbar_color_hover; }}
     .navbar-nav {
         > li {
+            height: @v_navbar_height;
             > a {
                 color: @v_navbar_color;
                 line-height: @v_navbar_height;
-                height: @v_navbar_height;
-                padding-top: 0;
+                // height: @v_navbar_height;
+                padding: 10 5;
                 &:hover, &:focus {
                     color: @v_navbar_color_hover;   }}}
         .active {
