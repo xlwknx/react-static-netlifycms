@@ -12,7 +12,7 @@
                 <img alt="Brand" class="logo-img" src="/img/logo.png">
             </a>
         </div>
-        <div class="navbar-collapse collapse">
+        <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">ABOUT VIRGIL</a></li>
                 <li><a href="#">HOW IT WORKS</a></li>
