@@ -51,18 +51,18 @@
                         C377.035,205.355,368.935,213.771,359.599,220.506z"/>
                 </svg>
             </a> 
-            <a class="social-link" href="https://twitter.com/virgilsecurity">
+            <a class="social-link" href="https://www.facebook.com/VirgilSec">
                 <svg class="facebook" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"                
-                    width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">                
+                    viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">                
                     <path id="facebook-circle-icon" d="M256.417,50c-113.771,0-206,92.229-206,206s92.229,206,206,206s206-92.229,206-206                
                         S370.188,50,256.417,50z M317.385,171.192c0,0-20.604,0-28.789,0c-10.162,0-12.28,4.163-12.28,14.678c0,8.75,0,25.404,0,25.404                
                         h41.069l-3.951,44.596h-37.118v133.227h-53.2V256.435h-27.666v-45.16h27.666c0,0,0-6.493,0-35.565                
                         c0-33.379,17.849-50.807,57.437-50.807c6.484,0,36.833,0,36.833,0V171.192z"/>                
                 </svg>
             </a>  
-            <a class="social-link" href="https://twitter.com/virgilsecurity">
+            <a class="social-link" href="https://www.linkedin.com/company/virgil-security-inc-">
                 <svg class="linkedin" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"                
-                    width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">                
+                    viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">                
                     <path id="linkedin-circle-icon" d="M256.417,50c-113.771,0-206,92.229-206,206s92.229,206,206,206s206-92.229,206-206                
                         S370.188,50,256.417,50z M201.456,355.592h-45.229V209.469h45.229V355.592z M178.626,190.333c-14.771,0-26.746-12.072-26.746-26.963                
                         s11.975-26.963,26.746-26.963c14.77,0,26.745,12.072,26.745,26.963S193.396,190.333,178.626,190.333z M370.953,355.592h-45.01                
@@ -77,55 +77,4 @@
         <span>&copy; Virgil Security, Inc. <?= date('Y'); ?></span>
     </div>
 </div>
-
-    <!--<div class="row">
-        <div class="hidden-xs col-md-38">
-            <div class="footer-copy">
-                &copy; Virgil Security, Inc. <?= date('Y'); ?>
-            </div>
-
-            <div class="footer-links">
-                <a href="/contact-us" class="header-nav-link">CONTACT US</a>
-                <a href="/downloads">DOWNLOADS</a>
-                <a href="/documents">DOCUMENTATION</a>
-            </div>
-        </div>
-        <div class="visible-xs col-xs-44 col-xs-offset-2">
-            <div class="row">
-                <div class="row col-xs-48 footer-copy">
-                    &copy; Virgil Security, Inc. <?= date('Y'); ?>
-                </div>
-                <div class="row col-xs-48 footer-links">
-                    <a href="/contact-us" class="header-nav-link">CONTACT US</a>
-                    <a href="/downloads">DOWNLOADS</a>
-                    <a href="/documents">DOCUMENTATION</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="hidden-xs col-md-10">
-            <div class="footer-social">
-                <a href="https://twitter.com/VirgilSecurity" target="_blank">
-                    <img src="/img/social-twitter.png" alt="twitter"/>
-                </a>
-                <a href="https://www.facebook.com/VirgilSec" target="_blank">
-                    <img src="/img/social-facebook.png" alt="facebook"/>
-                </a>
-                <a href="https://www.linkedin.com/company/virgil-security-inc-" target="_blank">
-                    <img src="/img/social-linkedin.png" alt="twitter"/>
-                </a>
-            </div>
-        </div>
-        <div class="visible-xs col-xs-44 col-xs-offset-2 footer-social">
-            <a href="https://twitter.com/VirgilSecurity" target="_blank">
-                <img src="/img/social-twitter.png" alt="twitter"/>
-            </a>
-            <a href="https://www.facebook.com/VirgilSec" target="_blank">
-                <img src="/img/social-facebook.png" alt="facebook"/>
-            </a>
-            <a href="https://www.linkedin.com/company/virgil-security-inc-" target="_blank">
-                <img src="/img/social-linkedin.png" alt="twitter"/>
-            </a>
-        </div>
-    </div>-->
 @show
