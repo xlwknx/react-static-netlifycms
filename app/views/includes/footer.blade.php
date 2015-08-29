@@ -1,6 +1,6 @@
 @section('footer')
 <div class="container">
-    <div class="row">
+    <div class="row footer-info">
         <div class="col-md-3">
             <img class="footer-logo" src="/img/logo_red.png" />
         </div>
