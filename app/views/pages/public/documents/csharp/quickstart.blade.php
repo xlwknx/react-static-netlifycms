@@ -243,8 +243,8 @@ using (var cipher = new VirgilCipher())
 
 			</div>
 			<div class="col-md-3">
-                <div class="affix-top" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
-                    <ul class="nav nav-pills nav-stacked dev-sidenav" >
+                <div class="affix dev-sidenav" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+                    <ul class="nav nav-pills nav-stacked " >
                         <li role="presentation"><a href="#introduction">Introduction</a></li>
                         <li role="presentation"><a href="#obtaining-an-app-token">Obtaining an App Token</a></li>
                         <li role="presentation"><a href="#install">Install</a></li>
