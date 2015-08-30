@@ -13,7 +13,7 @@ Virgil | Developers | C#/.NET | Quickstart
 @show
 
 @section('content')
-<body data-spy="scroll" data-target=".scrollspy">
+<body style="position: relative;" data-spy="scroll" data-target=".scrollspy">
     <div class="container">
 		<div class="row">
 			<div class="col-md-9">
