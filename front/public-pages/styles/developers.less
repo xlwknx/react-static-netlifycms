@@ -1,12 +1,134 @@
 .dev-sidenav {
 	background-color: #fafafa;
 	border-radius: 5px;
-	li.active {
+	margin-top: 20px;
+	padding-bottom: 10px;
+	li {
 		a {
-			font-family: "";
-			color: #525d62;
-			background-color: transparent;
-			border-left: 2px solid #525d62;
-		}				
+			font-family: "MyriadPro-Regular";
+			font-size: 11pt;
+			padding: 7px 20px;
+		}
+		p {
+			font-family: @v_font_brend2_bold;
+			color: @v_color_brend5;
+			font-size: 12pt;
+			margin-left: 20px;
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
 	}
+}
+
+.dev-nav {
+	background-color: @v_color_brend2;
+	.navbar-default {
+		border-top: 1px solid @v_color_brend4;	
+		border-left: 0px solid transparent;		
+		border-bottom: 0px solid transparent;	
+		border-right: 0px solid transparent;		
+		margin: 0px;
+		.navbar-collapse {
+			padding: 0px;
+		}
+		li {
+			a {
+				color: @v_color_brend5;
+				font-family: "MyriadPro-Semibold";
+				font-size: 16px;
+			}
+		}
+		li.active {				
+			a {
+				color: @v_color_brend1;
+				border-bottom: 3px solid @v_color_brend1;
+				background-color: transparent;
+				&:hover {
+					color: @v_color_brend1;	
+					background-color: transparent;
+				}
+			}
+		}
+	}
+	.dev-lng {
+		border-radius: 10px;
+		height: 120px;
+		line-height: 120px;
+		display:block;
+		border: 2px solid @v_color_brend6;
+		margin: 20px 0px;			
+		text-align: center;	
+		background-color: lighten(@v_color_brend2, 1%);
+		font-size: 18px;
+		padding-top: 35px;		
+	    background-repeat: no-repeat;
+	    background-size: 40%;
+	    background-position: 50% 25%; 	    
+		&:hover {
+			background-color: @v_color_brend6;
+		}		
+	}
+	.dev-lng.small {
+	    height: 40px;
+		line-height: 40px;
+		font-size: 16px;
+		padding-top: 0px;		
+	}
+	.dev-lng.csharp {
+		background-image: url("/img/dev_csharp_logo.png");
+	}
+	.dev-lng.cpp {
+		background-image: url("/img/dev_cpp_logo.png");
+	}
+	.dev-lng.php {
+		background-image: url("/img/dev_php_logo.png");
+		background-size: 55%;
+	    background-position: 50% 30%; 
+	}
+	.dev-lng.nodejs {
+		background-size: 50%;
+		background-image: url("/img/dev_nodejs_logo.png");
+	}
+	.dev-lng.python {
+		background-image: url("/img/dev_python_logo.png");
+	}
+	.dev-lng.ruby {
+		background-image: url("/img/dev_ruby_logo.png");
+	}
+	.dev-lng.active {
+		background-color: @v_color_brend6;
+		text-decoration: none;
+		color: @v_color_brend5;
+	}
+	.dev-lng.disabled {
+		pointer-events: none;	
+		background-color: transparent;	
+		opacity: 0.5;
+	}
+}
+
+.list-group {
+	font-family: @v_font_brend1;
+	.list-group-item.active {
+		background-color: @v_color_brend6;
+		font-family: @v_font_brend1_bold;
+		border: 1px solid @v_color_brend6;
+		color: @v_color_brend5;
+		border: 1px solid #ddd;
+	}
+}
+
+
+
+pre {
+    display: block;
+    padding: 10px 15px;
+    margin: 0 0 10px;
+    font-size: 14px;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #333;
+    background-color: #f5f5f5;
+    border: 0px solid #ccc;
+    border-radius: 4px;
 }

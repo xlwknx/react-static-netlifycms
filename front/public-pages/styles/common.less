@@ -1,4 +1,17 @@
-@container_width : 1020px;
+@v_container_width   : 1020px;
+
+@v_font_brend1       : "ProximaNova-Regular";
+@v_font_brend1_bold  : "ProximaNova-Semibold";
+@v_font_brend2       : "MyriadPro-Regular";
+@v_font_brend2_bold  : "MyriadPro-Semibold";
+
+@v_color_brend1      : #bf0000;
+@v_color_brend2      : #fafafa;
+@v_color_brend3      : #525d62;
+@v_color_brend4      : #e8e8e9;
+@v_color_brend5      : #2a3e50;
+@v_color_brend6      : #eff0f2;
+@v_color_brend7      : #1d87dd;
 
 html {
   overflow-y: scroll;
@@ -6,47 +19,46 @@ html {
 
 @media (min-width: 1200px) {
   .container {
-    width: @container_width;
+    width: @v_container_width;
   }
+}
+
+a {
+  color: @v_color_brend7;
 }
 
 p {
   font-family: "MyriadPro-Regular";
-  color: #525d62;
+  color: @v_color_brend3;
   font-size: 16px;  
+}
+
+h2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+table {
+  font-family: @v_font_brend2;
+  th {
+    font-family: @v_font_brend2_bold;
+  }
+}
+
+ol,ul {
+  font-family: @v_font_brend2;
+  font-size: 16px;
+  color: @v_color_brend3;
 }
 
 // NAVIGATION
 
-.affix-top {
-  top: 100px;
-  width: 180px;
-}
-
-@media (min-width: 1200px) {
-  .affix-top {
-    width: 180px;
-  }         
-}
-
 .affix {
-  top: 40px;
-  width: 180px;
-}
-
-@media (min-width: 1200px) {
-  .affix {
-    width: 180px;
-  }         
-}
-
-.affix-bottom {
-  position: absolute;
-  width: 180px;
-}
-
-@media (min-width: 1200px) {
-  .affix-bottom {
-    width: 180px;
-  }
+  top: 30px;
+  width: 225px;
 }

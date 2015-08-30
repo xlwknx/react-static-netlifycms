@@ -1,8 +1,7 @@
 @section('keys-docs')
-<div class="dev">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-38 dev-content">
+			<div class="col-md-9">
 				<h2>Public Keys RESTful API</h2>
 				<p>
 					A public keys RESTful API allows users of the Internet and other public networks to engage in 
@@ -1083,9 +1082,9 @@ specified in X-VIRGIL-PUBLIC-KEY-ID HTTP header</p>
 }</code></pre>
 
 			</div>
-			<div class="col-md-10">
-					<ul class="nav nav-pills nav-stacked dev-affix">
-			            <li class="title" role="presentation">Public Keys RESTful API</li>
+			<div class="col-md-3 scrollspy">
+                    <ul class="nav hidden-xs hidden-sm dev-sidenav" data-spy="affix" data-offset-top="250" >                
+			            <li class="title" role="presentation"><p>Public Keys RESTful API</p></li>
 			            <li role="presentation"><a href="#create-public-key">Create Public Key</a></li>
 			            <li role="presentation"><a href="#get-public-key">Get Public Key</a></li>
 			            <li role="presentation"><a href="#update-public-key">Update Public Key</a></li>
@@ -1101,5 +1100,4 @@ specified in X-VIRGIL-PUBLIC-KEY-ID HTTP header</p>
 			</div>
 		</div>
 	</div>
-</div>
 @show

@@ -1,8 +1,7 @@
 @section('keys-private-docs')
-<div class="dev">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-38 dev-content">
+			<div class="col-md-9">
 
 				<h2>Private Keys RESTful API</h2>
 				<p>
@@ -816,9 +815,9 @@
 }</code></pre>
 
 			</div>
-			<div class="col-md-10">
-					<ul class="nav nav-pills nav-stacked dev-affix">
-			            <li class="title" role="presentation">Private Keys RESTful API</li>
+			<div class="col-md-3 scrollspy">
+                    <ul class="nav hidden-xs hidden-sm dev-sidenav" data-spy="affix" data-offset-top="250" >                
+			            <li class="title" role="presentation"><p>Private Keys RESTful API</p></li>
 			            <li role="presentation"><a href="#auth">Authenticate Session</a></li>
 			            <li role="presentation"><a href="#init-container">Container Initialization</a></li>
 			            <li role="presentation"><a href="#get-container">Get Container Details</a></li>

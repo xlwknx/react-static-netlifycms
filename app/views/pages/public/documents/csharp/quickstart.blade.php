@@ -2,18 +2,10 @@
 Virgil | Developers | C#/.NET | Quickstart
 @show
 
-@section('header-block')
-    <div class="dev-header-container">
-        <div class="container">
-            <h1 class="text-left">Getting started with Virgil and .NET/C#</h1>
-            <h3 class="text-left">Documentation for developing secure apps using Virgil services</h3>        
-        </div>        
-    </div>    
-    @include('pages.public.documents.csharp.partial.header')
-@show
-
 @section('content')
-<body style="position: relative;" data-spy="scroll" data-target=".scrollspy">
+    
+    @include('pages.public.documents.csharp.partial.header')
+
     <div class="container">
 		<div class="row">
 			<div class="col-md-9">
@@ -24,8 +16,8 @@ Virgil | Developers | C#/.NET | Quickstart
                     </p>
                     <h2 id="obtaining-an-app-token">Obtaining an Application Token</h2>
                     <p>
-                        First you must create a free Virgil Security developer account by signing up <a href="https://virgilsecurity.com/signup">here</a>.  
-                        Once you have your account you can <a href="https://virgilsecurity.com/signin">sign in</a> and generate an app token for your application.
+                        First you must create a free Virgil Security developer account by signing up <a href="/signup">here</a>.  
+                        Once you have your account you can <a href="/signin">sign in</a> and generate an app token for your application.
                     </p>
                     <p>
                         The app token provides authenticated secure access to Virgil’s Keys Service and is passed with each API call. 
@@ -104,7 +96,7 @@ using (var keyPair = new VirgilKeyPair())
         		<p>
            			This example shows how to upload a public key and register a new account on Virgil’s Keys Service.
         		</p>
-        		<p>Full source code examples are available on <a href="https://github.com/VirgilSecurity/virgil-net/blob/master/Samples/Examples/PublishKeysExample.cs">GitHub</a> in public access.</p>
+        		<p>Full source code examples are available on <a href="https://github.com/VirgilSecurity/virgil-net">GitHub</a> in public access.</p>
         		<pre><code class="language-csharp">var keysService = new PkiClient(new SDK.Keys.Http.Connection(Constants.ApplicationToken, 
 	new Uri(Constants.KeysServiceUrl)));
 
@@ -249,7 +241,8 @@ using (var cipher = new VirgilCipher())
 
 			</div>
 			<div class="col-md-3 scrollspy">
-                    <ul class="nav hidden-xs hidden-sm" data-spy="affix" >
+                    <ul class="nav hidden-xs hidden-sm dev-sidenav" data-spy="affix" data-offset-top="250" >                        
+                        <li><p>Quickstart</p></li>
                         <li><a href="#introduction">Introduction</a></li>
                         <li><a href="#obtaining-an-app-token">Obtaining an App Token</a></li>
                         <li><a href="#install">Install</a></li>
@@ -257,13 +250,12 @@ using (var cipher = new VirgilCipher())
                         <li><a href="#register-user">Register User</a></li>
                         <li><a href="#get-public-key">Get Public Key</a></li>
                         <li><a href="#encrypt-data">Encrypt Data</a></li>
-                        <li><a href="#decrypt-data">Decrypt Data</a></li>
                         <li><a href="#sign-data">Sign Data</a></li>
                         <li><a href="#verify-data">Verify Data</a></li>
+                        <li><a href="#decrypt-data">Decrypt Data</a></li>                                                
                     </ul>
                 </div>
 			</div>
 		</div>
 	</div>
-    </body>
 @stop

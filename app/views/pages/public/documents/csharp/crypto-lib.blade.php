@@ -2,21 +2,11 @@
 Virgil | Developers | C#/.NET | Crypto Library
 @show
 
-@section('header-block')
-    <div class="dev-header-container">
-        <div class="container">
-            <h1 class="text-left">Crypto Library</h1>
-            <h3 class="text-left">How to build and use the Virgil Crypto Library for the .NET platform</h3>        
-        </div>        
-    </div>    
-    @include('pages.public.documents.csharp.partial.header')
-@show
-
 @section('content')
-<div class="dev">
+	@include('pages.public.documents.csharp.partial.header')
 	<div class="container">
 		<div class="row">
-			<div class="col-md-38 dev-content">
+			<div class="col-md-9">
 				<h2>Crypto Library for .NET</h2>
 				<h3 id="overview">Overview</h3>
 				<p>
@@ -98,9 +88,9 @@ cd ../..</code></pre>
 					It will contain x64 and x86 versions of native DLL's and a C# wrapper DLL virgil.assembly.dll.
 				</p>
 			</div>
-			<div class="col-md-10">
-				<ul class="nav nav-pills nav-stacked dev-affix">
-			        <li class="title" role="presentation">Crypto Library for .NET</li>
+			<div class="col-md-3 scrollspy">
+                <ul class="nav hidden-xs hidden-sm dev-sidenav" data-spy="affix" data-offset-top="250" >       
+			        <li class="title" role="presentation"><p>Crypto Library for .NET</p></li>
 			        <li role="presentation"><a href="#overview">Overview</a></li>
 			        <li role="presentation"><a href="#supported-platforms">Supported Platforms</a></li>
 			        <li role="presentation"><a href="#nuget">NuGet</a></li>
@@ -109,5 +99,4 @@ cd ../..</code></pre>
 			</div>
 		</div>
 	</div>
-</div>
 @stop

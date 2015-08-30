@@ -1,34 +1,34 @@
 @section('footer')
 <div class="container">
     <div class="row footer-title">
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-3 col-xs-6">
             <img class="footer-logo" src="/img/logo_red.png" />
         </div>
-        <div class="col-md-2">APPLICATIONS</div>
-        <div class="col-md-2">VIRGIL PASS</div>
-        <div class="col-md-2">DEVELOPERS</div>
-        <div class="col-md-3">CONTACT AS</div>
+        <div class="col-md-2 col-sm-3 hidden-xs">APPLICATIONS</div>
+        <div class="col-md-2 hidden-sm hidden-xs">VIRGIL PASS</div>
+        <div class="col-md-2 col-sm-3 hidden-xs">DEVELOPERS</div>
+        <div class="col-md-3 col-sm-3 col-xs-6">CONTACT AS</div>
     </div>
     <div class="row footer-body">
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-3 col-xs-6">
             <p><a href="/about-us">About Us</a></p>
             <p><a href="/how-it-works">How it Works</a></p>
             <p><a href="/team">Team</a></p>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 col-sm-3 hidden-xs">
             <p><a href="/apps">Virgil Pass</a></p>
             <p><a href="/apps">Virgil Sync</a></p>
             <p><a href="/apps">Virgil Mail</a></p>
             <p><a href="/apps">Virgil Keys</a></p>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 hidden-sm hidden-xs">
             <p><a href="/apps">Wordpress</a></p>
             <p><a href="/apps">Joomla</a></p>
             <p><a href="/apps">Drupal</a></p>
             <p><a href="/apps">phpBB</a></p>
             <p><a href="/apps">Vanilla</a></p>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 col-sm-3 hidden-xs">
             <p><a href="/documents/csharp/quickstart">.NET/C#</a></p>
             <p><a href="/documents/cpp/quickstart">C/C++</a></p>
             <p><a href="/documents/php/quickstart">PHP</a></p>
@@ -36,8 +36,7 @@
             <p><a href="/documents/python/quickstart">Python</a></p>
             <p><a href="/documents/ruby/quickstart">Ruby</a></p>     
         </div>
-        <div class="col-md-3">
-            <p>+1-571-348-4601</p>
+        <div class="col-md-3 col-sm-3 col-xs-6">
             <p><a href="mailto:support@virgilsecurity.com">support@virgilsecurity.com</a></p>         
             <a class="social-link" href="https://twitter.com/virgilsecurity">
                 <svg class="twitter" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
