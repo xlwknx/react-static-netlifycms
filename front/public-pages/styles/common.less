@@ -4,6 +4,10 @@ html {
   overflow-y: scroll;
 }
 
+body {
+  position: relative;
+}
+
 @media (min-width: 1200px) {
   .container {
     width: @container_width;
@@ -12,5 +16,30 @@ html {
 
 p {
   font-family: "MyriadPro-Regular";
+  color: #525d62;
   font-size: 16px;  
+}
+
+// NAVIFATION
+
+.affix {
+  top: 20px;
+  width: 213px;
+}
+
+@media (min-width: 1200px) {
+  .affix {
+    width: 263px;
+  }         
+}
+
+.affix-bottom {
+  position: absolute;
+  width: 213px;
+}
+
+@media (min-width: 1200px) {
+  .affix-bottom {
+    width: 263px;
+  }
 }

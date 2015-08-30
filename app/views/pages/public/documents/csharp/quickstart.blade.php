@@ -242,19 +242,18 @@ using (var cipher = new VirgilCipher())
 }</code></pre>
 
 			</div>
-			<div class="col-md-3">
-                <div class="affix dev-sidenav" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
-                    <ul class="nav nav-pills nav-stacked " >
-                        <li role="presentation"><a href="#introduction">Introduction</a></li>
-                        <li role="presentation"><a href="#obtaining-an-app-token">Obtaining an App Token</a></li>
-                        <li role="presentation"><a href="#install">Install</a></li>
-                        <li role="presentation"><a href="#generate-keys">Generate Keys</a></li>
-                        <li role="presentation"><a href="#register-user">Register User</a></li>
-                        <li role="presentation"><a href="#get-public-key">Get Public Key</a></li>
-                        <li role="presentation"><a href="#encrypt-data">Encrypt Data</a></li>
-                        <li role="presentation"><a href="#decrypt-data">Decrypt Data</a></li>
-                        <li role="presentation"><a href="#sign-data">Sign Data</a></li>
-                        <li role="presentation"><a href="#verify-data">Verify Data</a></li>
+			<div class="col-md-3 scrollspy">
+                    <ul class="nav hidden-xs hidden-sm" data-spy="affix" >
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#obtaining-an-app-token">Obtaining an App Token</a></li>
+                        <li><a href="#install">Install</a></li>
+                        <li><a href="#generate-keys">Generate Keys</a></li>
+                        <li><a href="#register-user">Register User</a></li>
+                        <li><a href="#get-public-key">Get Public Key</a></li>
+                        <li><a href="#encrypt-data">Encrypt Data</a></li>
+                        <li><a href="#decrypt-data">Decrypt Data</a></li>
+                        <li><a href="#sign-data">Sign Data</a></li>
+                        <li><a href="#verify-data">Verify Data</a></li>
                     </ul>
                 </div>
 			</div>
