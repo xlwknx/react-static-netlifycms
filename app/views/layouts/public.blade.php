@@ -9,7 +9,7 @@
         </title>
         <link rel="stylesheet" href="/dist/public.css" type="text/css" media="screen" charset="utf-8">
     </head>
-    <body data-spy="scroll" data-target=".scrollspy">
+    <body>
         <section class="header-block">
             @include('includes.header')
         </section>

@@ -13,6 +13,7 @@ Virgil | Developers | C#/.NET | Quickstart
 @show
 
 @section('content')
+<body data-spy="scroll" data-target=".scrollspy">
     <div class="container">
 		<div class="row">
 			<div class="col-md-9">
@@ -259,4 +260,5 @@ using (var cipher = new VirgilCipher())
 			</div>
 		</div>
 	</div>
+    </body>
 @stop
