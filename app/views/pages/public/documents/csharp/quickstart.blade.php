@@ -17,67 +17,71 @@ Virgil | Developers | C#/.NET | Quickstart
     <div class="container">
 		<div class="row">
 			<div class="col-md-9">
-				<h2>Introduction</h2>
-				<p>
-					This guide will help you get started using the Crypto Library and Virgil Keys Service, for the most popular platforms and languages
-        		</p>
-        		<h2 id="obtaining-an-app-token">Obtaining an Application Token</h2>
-		        <p>
-		        	First you must create a free Virgil Security developer account by signing up <a href="https://virgilsecurity.com/signup">here</a>.  
-		        	Once you have your account you can <a href="https://virgilsecurity.com/signin">sign in</a> and generate an app token for your application.
-		        </p>
-		        <p>
-		        	The app token provides authenticated secure access to Virgil’s Keys Service and is passed with each API call. 
-		        	The app token also allows the API to associate your app’s requests with your Virgil Security developer account.
-		        </p>
-		        <p>
-		            Simply add your app token to the HTTP header for each request:
-		        </p>
-        		<pre><code>X-VIRGIL-APPLICATION-TOKEN: { YOUR_APPLICATION_TOKEN }</code></pre>
- 				<h2 id="install">Install</h2>
-		        <p>
-		            There are several ways to install and use the Crypto Library and Virgil’s SDK in your environment.
-		        </p>
-		        <ol>
-		            <li>Install with <a href="#package-management-system">Package Management System</a></li>
-		            <li><a href="/documents/csharp/downloads">Download</a> from our web site</li>
-		            <li><a href="/documents/csharp/crypto-lib#build">Build</a> by yourself</li>
-		        </ol>
-		        <h3 id="#package-management-system">Package Management Systems</h3>
-		        <p>
-		            <b>Virgil Security</b> supports most of popular package management systems. 
-		            You can easily add the Crypto Library dependency to your project, just follow the examples below.
-		        </p>
-
-                <pre><code>PM> Install-Package Virgil.Crypto</code></pre>
-                <p>
-		            Virgil Public Keys SDK:
-		        </p>
-				<pre><code>PM> Install-Package Virgil.SDK.Keys</code></pre>
-				<p>
-		            Virgil Private Keys SDK:
-		        </p>
-				<pre><code>PM> Install-Package Virgil.SDK.PrivateKeys</code></pre>
-
-				<h2 id="generate-keys">Generate Keys</h2>
-		        <p>
-		            Working with Virgil Security Services it is requires the creation of both a public key and a private key. 
-		            The public key can be made public to anyone using the Virgil Public Keys Service while the private key 
-		            must be known only to the party or parties who will decrypt the data encrypted with the public key.
-		        </p>
-		        <blockquote class="danger">
-		            Private keys should never be stored verbatim or in plain text on a local computer.
-		            <footer>
-		                If you need to store a private key, you should use a secure key container depending on your platform. 
-		                You also can use Virgil Keys Service to store and synchronize private keys. This will allows you to 
-		                easily synchronize private keys between clients’ devices and their applications. 
-		                Please read more about <a href="/documents/csharp/keys-private-service">Virgil Private Keys Service</a>.
-		            </footer>
-		        </blockquote>
-		        <p>
-		            The following code example creates a new public/private key pair.
-		        </p>
-                    <pre><code class="language-csharp">using Virgil.Crypto;
+                <section id="introduction">
+				    <h2>Introduction</h2>
+                    <p>
+                        This guide will help you get started using the Crypto Library and Virgil Keys Service, for the most popular platforms and languages
+                    </p>
+                    <h2 id="obtaining-an-app-token">Obtaining an Application Token</h2>
+                    <p>
+                        First you must create a free Virgil Security developer account by signing up <a href="https://virgilsecurity.com/signup">here</a>.  
+                        Once you have your account you can <a href="https://virgilsecurity.com/signin">sign in</a> and generate an app token for your application.
+                    </p>
+                    <p>
+                        The app token provides authenticated secure access to Virgil’s Keys Service and is passed with each API call. 
+                        The app token also allows the API to associate your app’s requests with your Virgil Security developer account.
+                    </p>
+                    <p>
+                        Simply add your app token to the HTTP header for each request:
+                    </p>
+                    <pre><code>X-VIRGIL-APPLICATION-TOKEN: { YOUR_APPLICATION_TOKEN }</code></pre>
+                </section>
+                <section id="install">
+                    <h2>Install</h2>
+                    <p>
+                        There are several ways to install and use the Crypto Library and Virgil’s SDK in your environment.
+                    </p>
+                    <ol>
+                        <li>Install with <a href="#package-management-system">Package Management System</a></li>
+                        <li><a href="/documents/csharp/downloads">Download</a> from our web site</li>
+                        <li><a href="/documents/csharp/crypto-lib#build">Build</a> by yourself</li>
+                    </ol>
+                    <h3 id="#package-management-system">Package Management Systems</h3>
+                    <p>
+                        <b>Virgil Security</b> supports most of popular package management systems. 
+                        You can easily add the Crypto Library dependency to your project, just follow the examples below.
+                    </p>
+    
+                    <pre><code>PM> Install-Package Virgil.Crypto</code></pre>
+                    <p>
+                        Virgil Public Keys SDK:
+                    </p>
+                    <pre><code>PM> Install-Package Virgil.SDK.Keys</code></pre>
+                    <p>
+                        Virgil Private Keys SDK:
+                    </p>
+                    <pre><code>PM> Install-Package Virgil.SDK.PrivateKeys</code></pre>
+                </section>
+                <section id="generate-keys">
+                    <h2>Generate Keys</h2>
+                    <p>
+                        Working with Virgil Security Services it is requires the creation of both a public key and a private key. 
+                        The public key can be made public to anyone using the Virgil Public Keys Service while the private key 
+                        must be known only to the party or parties who will decrypt the data encrypted with the public key.
+                    </p>
+                    <blockquote class="danger">
+                        Private keys should never be stored verbatim or in plain text on a local computer.
+                        <footer>
+                            If you need to store a private key, you should use a secure key container depending on your platform. 
+                            You also can use Virgil Keys Service to store and synchronize private keys. This will allows you to 
+                            easily synchronize private keys between clients’ devices and their applications. 
+                            Please read more about <a href="/documents/csharp/keys-private-service">Virgil Private Keys Service</a>.
+                        </footer>
+                    </blockquote>
+                    <p>
+                        The following code example creates a new public/private key pair.
+                    </p>
+                        <pre><code class="language-csharp">using Virgil.Crypto;
 using Virgil.SDK.Keys
 using Virgil.SDK.PrivateKeys                 
 ...
@@ -91,6 +95,7 @@ using (var keyPair = new VirgilKeyPair())
     privateKey = keyPair.PrivateKey();
 }
 </code></pre>
+                </section>
 				<h2 id="register-user">Register User</h2>
         		<p>
             		Once you've created a public key you may push it to Virgil’s Keys Service. 
