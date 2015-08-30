@@ -243,7 +243,7 @@ using (var cipher = new VirgilCipher())
 
 			</div>
 			<div class="col-md-3 scrollspy">
-                    <ul class="nav hidden-xs hidden-sm" data-spy="affix" >
+                    <ul class="nav hidden-xs hidden-sm affix-top" data-spy="affix" >
                         <li><a href="#introduction">Introduction</a></li>
                         <li><a href="#obtaining-an-app-token">Obtaining an App Token</a></li>
                         <li><a href="#install">Install</a></li>
