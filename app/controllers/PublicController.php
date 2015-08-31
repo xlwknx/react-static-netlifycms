@@ -27,24 +27,6 @@ class PublicController extends AbstractController
         );
     }
 
-    public function apps()
-    {
-
-        $this->setActivePage('apps');
-        $this->layout->content = View::make(
-            'pages.public.apps'
-        );
-    }
-
-    public function reset()
-    {
-
-        $this->setActivePage('reset');
-        $this->layout->content = View::make(
-            'pages.public.reset'
-        );
-    }
-
     public function termsOfService()
     {
 

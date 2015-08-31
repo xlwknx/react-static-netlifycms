@@ -1,6 +1,7 @@
 <?php
 
 use Authentication as AuthenticationModel,
+    Application as ApplicationModel,
     Account as AccountModel;
 
 class Account extends Eloquent {
@@ -75,5 +76,18 @@ class Account extends Eloquent {
     public function isConfirmed() {
 
         return $this->confirmed == self::ACCOUNT_CONFIRMED ? true : false;
+    }
+
+    /**
+     * Get Account Application list
+     *
+     * @return mixed
+     */
+    public function getApplicationList() {
+
+        return ApplicationModel::getAccountApplicationList(
+            $this
+        );
+
     }
 }

@@ -1,6 +1,5 @@
 <?php
 
-
 class DashboardController extends AbstractController {
 
     /**
@@ -12,7 +11,10 @@ class DashboardController extends AbstractController {
 
         $this->setActivePage('dashboard');
         $this->layout->content = View::make(
-            'pages.dashboard.index'
+            'pages.dashboard.index',
+            array(
+                'applicationList' => App::make('getCurrentAccount')->getApplicationList()
+            )
         );
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
-use Virgil\Validator\Account as AccountValidator;
+use \App,
+    Authentication as AuthenticationModel,
+    Virgil\Validator\Account as AccountValidator;
 
 class SessionController extends AbstractController {
 
@@ -21,9 +23,11 @@ class SessionController extends AbstractController {
                 return $result;
             }
 
+            $authToken = $result->getSessionToken();
+
             Cookie::queue(
                 'auth_token',
-                $result->getSessionToken(),
+                $authToken,
                 Authentication::AUTH_TOKEN_LIFETIME
             );
 
@@ -60,6 +64,8 @@ class SessionController extends AbstractController {
                 Authentication::AUTH_TOKEN_LIFETIME
             );
 
+
+
             return Redirect::to('dashboard');
         }
 
@@ -68,6 +74,15 @@ class SessionController extends AbstractController {
             'pages.session.signup'
         );
 
+    }
+
+    public function reset()
+    {
+
+        $this->setActivePage('reset');
+        $this->layout->content = View::make(
+            'pages.session.reset'
+        );
     }
 
     public function signout() {

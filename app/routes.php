@@ -27,9 +27,17 @@ Route::group(
     }
 );
 
-Route::get('dashboard', array(
-    'uses' => 'DashboardController@index'
-));
+Route::group(
+    array(
+        'before' => 'accountFilter'
+    ),
+    function() {
+
+        Route::get('dashboard', array(
+            'uses' => 'DashboardController@index'
+        ));
+    }
+);
 
 Route::post('signin', array(
     'uses' => 'SessionController@signin'

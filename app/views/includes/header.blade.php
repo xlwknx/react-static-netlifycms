@@ -21,6 +21,7 @@
                 <li class="@if($page == 'documents') active @endif" ><a href="/documents/csharp/quickstart">DEVELOPERS</a></li>
                 @if($page == 'dashboard')
                 <li class="@if($page == 'dashboard') active @endif" ><a href="/dashboard">DASHBOARD</a></li>
+                <li ><a href="/signout">SIGNOUT</a></li>
                 @else($page == 'signin')
                 <li class="@if($page == 'signin') active @endif" ><a href="/signin">SIGN IN</a></li>
                 @endif
