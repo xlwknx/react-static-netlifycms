@@ -48,7 +48,6 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 
 App::error(function(Exception $exception, $code)
 {
-    var_dump($exception); exit();
     if($code == 404 && BrowserDetect::isDesktop()) {
         return Redirect::to('/');
     }
