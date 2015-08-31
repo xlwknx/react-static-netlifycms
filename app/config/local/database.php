@@ -23,9 +23,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'virgil_api',
-			'username'  => 'root',
-			'password'  => '',
+			'database'  => 'api',
+			'username'  => 'api_usr',
+			'password'  => 'fs2sfdal232SF',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
