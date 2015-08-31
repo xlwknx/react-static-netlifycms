@@ -43,4 +43,44 @@
 	    font-size: 18px;
 	    color: @v_color_brend5;
 	}
+	.btn {
+		margin-top: 30px;
+		height: 52px;
+		line-height: 38px;
+		font-size: 16px;
+		font-family: @v_font_brend1_bold;
+		width: 100%;
+		border-width: 0px;
+	}
+	.btn-primary {		
+		background-color: @v_color_brend9;
+		&:hover {
+			background-color: lighten(@v_color_brend9, 10%);
+		}
+	}	
+	.btn-default {		
+		border: 1px solid @v_color_brend8; 
+		background-color: white;
+		&:hover {
+			background-color: @v_color_brend2;
+		}
+	}	
+
+	.container-fluid {
+		padding-left: 5px;
+		padding-right: 5px;
+		.col-md-6,.col-sm-6 {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	.form-footer{
+		margin-top: 30px;
+		text-align: center;
+		font-size: 16px;
+		p {
+			font-family: @v_font_brend1_bold;
+		}
+	}
 }

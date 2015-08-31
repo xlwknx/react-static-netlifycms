@@ -2,48 +2,49 @@
     Virgil | Sign Up
 @show
 
+
+
 @section('content')
-    <div class="page signup">
-        <section class="page-heading container">
-            <h2>Sign Up</h2>
-        </section>
-
-        <form class="container" action="/session/signup" method="post">
-            <div class="row">
-                <div class="col-xs-44 col-xs-offset-2 col-sm-24 col-sm-offset-12">
-                    <div class="row">
-                        @if(Session::has('error'))
-                            <div class="alert alert-danger">
-                                <h4>{{Session::get('error')}}</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+            <div class="form-default">           
+                <h2>Sign Up</h2>
+                @if(Session::has('error'))
+                    <div class="alert alert-danger">
+                        <h4>{{Session::get('error')}}</h4>
+                    </div>
+                @endif
+                <form action="/session/signup" method="post">
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Your Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                      <input type="text" name="email" class="form-control" placeholder="email@example.com" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Your Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                      <input type="password" name="password" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Confirm Password:</span>
+                      <input type="password" name="confirm_password" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>      
                             </div>
-                        @endif
-                        <div class="col-xs-48 form-item">
-                            <input class="form-input expand" type="text" name="email" placeholder="Your Email Address" value="{{Input::old('email')}}"/>
+                            <div class="col-md-6 col-sm-6">
+                                <a href="/signin" class="btn btn-default">Have an Account?</a>
+                            </div>
                         </div>
-                        <div class="col-xs-48 form-item">
-                            <input class="form-input expand" type="password" name="password" placeholder="Your Password"/>
-                        </div>
-                        <div class="col-xs-48 form-item">
-                            <input class="form-input expand" type="text" name="domain" placeholder="Company Domain" value="{{Input::old('domain')}}"/>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-48 form-footer text-center">
-                        <button class="btn-virgil btn-transparent form-submit">CREATE ACCOUNT</button>
-                    </div>
-                </div>
+                    </div>       
+                    <div class="form-footer">
+                        <p>By creating an account you agree to the Virgil Security
+                        <a href="/terms-of-service">Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a></p>
+                    </div>                         
+                </form>
             </div>
-        </form>
-
-        <section class="container text-center">
-            By creating an account you agree to the Virgil Security<br/>
-            <a href="/terms-of-service">Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a>
-        </section>
-
-        <section class="container text-center">
-            <p>Already have an account? <a href="/signin">Sign in</a></p>
-        </section>
+        </div>
     </div>
+</div>
 @stop

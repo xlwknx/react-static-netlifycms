@@ -3,37 +3,37 @@
 @show
 
 @section('content')
-    <div class="page reset">
-        <section class="page-heading container">
-            <h2>Reset Password</h2>
-
-            <h4>We'll send you and e-mail with instructions to reset your password.</h4>
-        </section>
-
-        <form class="container">
-            <div class="row">
-                <div class="col-xs-44 col-xs-offset-2 col-sm-24 col-sm-offset-12">
-                    <div class="row">
-                        <div class="col-xs-48 form-item">
-                            <input class="form-input expand" type="text" name="email" placeholder="Your Email Address"/>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+            <div class="form-default">           
+                <h2>Reset Password</h2>
+                @if(Session::has('error'))
+                    <div class="alert alert-danger">
+                        <h4>{{Session::get('error')}}</h4>
+                    </div>
+                @endif
+                <form action="/session/reset" method="post">
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">Your Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                      <input type="text" name="email" class="form-control" placeholder="email@example.com" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <button type="submit" class="btn btn-primary">Send</button>      
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <a href="/signin" class="btn btn-default">Remember it?</a>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-48 form-footer text-center">
-                        <button type="submit" class="btn-virgil btn-transparent form-submit">RESET PASSWORD</button>
-                    </div>
-                </div>
+                    </div>       
+                    <div class="form-footer">
+                       <p>I'm not a registered user <a class="text-center" href="/signup">Sign up for free</a></p>
+                    </div>                         
+                </form>
             </div>
-        </form>
-
-        <section class="container check-email hide">
-            Please check your inbox.
-        </section>
-
-        <section class="container text-center">
-            <p>I'm not a registered user. <a href="/signup">Sign up for free</a></p>
-        </section>
+        </div>
     </div>
+</div>
 @stop
