@@ -54,13 +54,6 @@ class Application extends Eloquent {
         $application->token = md5(
             $account->id . $data['name'] . $data['description'] . $data['url'] . time()
         );
-        $application->alias  = preg_replace(
-            '/\s+/',
-            '-',
-            strtolower(
-                $data['name']
-            )
-        );
 
         $application->save();
 
@@ -117,13 +110,7 @@ class Application extends Eloquent {
      */
     public function getIdentity() {
 
-        return implode('.',
-            array(
-                'com',
-                $this->account->id,
-                $this->alias
-            )
-        );
+        return $this->account->uuid;
     }
 
 } 
