@@ -1,5 +1,7 @@
 <?php
 
+use Authentication as AuthenticationModel;
+
 class Authentication extends Eloquent {
 
     /**
@@ -12,7 +14,7 @@ class Authentication extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'service_authentication';
+    protected $table = 'service_account_session';
 
     /**
      * Get Authentication token
@@ -20,21 +22,32 @@ class Authentication extends Eloquent {
      * @param Account $account
      * @return string
      */
-    public static function getAuthToken(Account $account) {
+    public static function getSessionToken(Account $account) {
 
-        // Clear old authentication token if it exists
-        \Authentication::whereAccountId(
-            $account->id
-        )->delete();
+        self::clearOldSession(
+            $account
+        );
 
         // Generate new one
-        $authentication = new Authentication();
+        $authentication = new AuthenticationModel();
         $authentication->account_id = $account->id;
-        $authentication->token = md5($account->id) . md5(time());
+        $authentication->token      = md5($account->id) . md5(time());
 
         $authentication->save();
 
         return $authentication->token;
+    }
+
+    /**
+     * Clear OLD Account session tokens
+     *
+     * @param Account $account
+     */
+    protected static function clearOldSession(Account $account) {
+
+        AuthenticationModel::whereAccountId(
+            $account->id
+        )->delete();
     }
 
     /**
@@ -43,9 +56,9 @@ class Authentication extends Eloquent {
      * @param Authentication $authentication
      * @return bool
      */
-    public static function clearAuthToken(Authentication $authentication) {
+    public static function clearSessionToken(Authentication $authentication) {
 
-        \Authentication::whereToken(
+        AuthenticationModel::whereToken(
             $authentication->token
         )->delete();
 
@@ -55,7 +68,7 @@ class Authentication extends Eloquent {
     /**
      * Update Authentication lifetime
      */
-    public function updateTokenTime() {
+    public function prolongSessionTime() {
 
         $this->created_at = date('Y-m-d H:i:s');
         $this->save();
@@ -67,6 +80,7 @@ class Authentication extends Eloquent {
      * @return mixed
      */
     public function account() {
+
         return $this->belongsTo('Account');
     }
 } 
