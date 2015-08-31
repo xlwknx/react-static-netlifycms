@@ -1,8 +1,6 @@
 <?php
 
-use \App,
-    Authentication as AuthenticationModel,
-    Virgil\Validator\Account as AccountValidator;
+use Virgil\Validator\Account as AccountValidator;
 
 class SessionController extends AbstractController {
 

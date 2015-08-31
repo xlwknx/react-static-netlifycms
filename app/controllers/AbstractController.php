@@ -19,7 +19,7 @@ class AbstractController extends Controller {
         }
 
         View::share(
-            'auth_token',
+            'authToken',
             Cookie::get('auth_token')
         );
     }
