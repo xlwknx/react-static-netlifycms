@@ -18,6 +18,15 @@ class PublicController extends AbstractController
         );
     }
 
+    public function apps()
+    {
+
+        $this->setActivePage('apps');
+        $this->layout->content = View::make(
+            'pages.public.apps'
+        );
+    }
+
     public function contactUs()
     {
 
