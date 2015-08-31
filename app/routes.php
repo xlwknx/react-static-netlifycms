@@ -51,6 +51,10 @@ Route::get('signout', array(
     'uses' => 'SessionController@signout'
 ));
 
+Route::post('application/validate-token', array(
+    'uses' => 'ApplicationController@validateToken'
+));
+
 /*
 |--------------------------------------------------------------------------
 | Home routes
