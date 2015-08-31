@@ -83,9 +83,20 @@ return array(
 	*/
 
 	'custom' => array(
-		'attribute-name' => array(
-			'rule-name' => 'custom-message',
+		'email' => array(
+			'required' => 'Email can\'t be empty.',
+            'email'    => 'Email validation failed.'
 		),
+        'password' => array(
+            'required' => 'Password can\'t be empty.'
+        ),
+        'confirm_password' => array(
+            'same' => 'Confirm Password and Password has to be the same.'
+        ),
+        'account' => array(
+            'exists' => 'Account already exists. Try with other password.',
+            'not_exists' => 'Account doesn\'t exist.'
+        )
 	),
 
 	/*

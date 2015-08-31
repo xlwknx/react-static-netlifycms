@@ -1,47 +1,76 @@
 <?php
 
-use Virgil\Validator\Authentication as AuthenticationValidator,
-    Virgil\Validator\Account as AccountValidator,
-    Virgil\Error\Message as ErrorMessage;
+use Virgil\Validator\Account as AccountValidator;
 
 class SessionController extends AbstractController {
 
+    /**
+     * The layout that should be used for responses.
+     */
+    protected $layout = 'layouts.public';
+
     public function signin() {
 
-        $account = AccountValidator::validateSignin(
-            Input::get('email', null),
-            Input::get('password', null)
-        );
+        if(Request::isMethod('post')) {
 
-        if(!$account) {
-            return Redirect::to('/signin')->with(
-                'error',
-                ErrorMessage::ACCOUNT_NOT_FOUND
-            )->withInput(
-                Input::except('password')
+            $result = AccountValidator::validateSignin(
+                Input::all()
             );
+
+            if($result instanceof Illuminate\Http\RedirectResponse) {
+                return $result;
+            }
+
+            Cookie::queue(
+                'auth_token',
+                $result->getSessionToken(),
+                Authentication::AUTH_TOKEN_LIFETIME
+            );
+
+            return Redirect::to('dashboard');
         }
 
-        Cookie::queue(
-            'auth_token',
-            Authentication::getAuthToken(
-                $account
-            ),
-            Authentication::AUTH_TOKEN_LIFETIME
+        $this->setActivePage('signin');
+        $this->layout->content = View::make(
+            'pages.session.signin'
         );
 
-        return Redirect::to('dashboard');
+    }
+
+    public function signup() {
+
+        if(Request::isMethod('post')) {
+
+            $result = AccountValidator::validateSignup(
+                Input::all()
+            );
+
+            if($result instanceof Illuminate\Http\RedirectResponse) {
+                return $result;
+            }
+
+            $account = Account::createAccount(
+                $result['email'],
+                $result['password']
+            );
+
+            Cookie::queue(
+                'auth_token',
+                $account->getSessionToken(),
+                Authentication::AUTH_TOKEN_LIFETIME
+            );
+
+            return Redirect::to('dashboard');
+        }
+
+        $this->setActivePage('signin');
+        $this->layout->content = View::make(
+            'pages.session.signup'
+        );
+
     }
 
     public function signout() {
-
-        Authentication::clearAuthToken(
-            AuthenticationValidator::validateAuthToken(
-                Cookie::get(
-                    'auth_token'
-                )
-            )
-        );
 
         Cookie::queue(
             'auth_token',
@@ -50,40 +79,6 @@ class SessionController extends AbstractController {
         );
 
         return Redirect::to('/');
-    }
-
-    public function signup() {
-
-        $result = AccountValidator::validateSignup(
-            Input::get('email', null),
-            Input::get('password', null),
-            Input::get('company', null)
-        );
-
-        if(!$result['result']) {
-            return Redirect::to('/signup')->with(
-                'error',
-                $result['message']
-            )->withInput(
-                Input::except('password')
-            );
-        }
-
-        $authToken = Authentication::getAuthToken(
-            Account::createAccount(
-                Input::get('email'),
-                Input::get('password'),
-                Input::get('company')
-            )
-        );
-
-        Cookie::queue(
-            'auth_token',
-            $authToken,
-            Authentication::AUTH_TOKEN_LIFETIME
-        );
-
-        return Redirect::to('dashboard');
     }
 
 } 

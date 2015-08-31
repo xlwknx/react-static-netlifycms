@@ -6,7 +6,7 @@ class DashboardController extends AbstractController {
     /**
      * The layout that should be used for responses.
      */
-    protected $layout = 'layouts.private';
+    protected $layout = 'layouts.public';
 
     public function index() {
 
