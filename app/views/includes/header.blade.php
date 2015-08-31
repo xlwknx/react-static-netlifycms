@@ -19,8 +19,7 @@
                 <li><a href="#">HOW IT WORKS</a></li>
                 <li class="@if($page == 'apps') active @endif"><a href="/apps">APPS</a></li>
                 <li class="@if($page == 'documents') active @endif" ><a href="/documents/csharp/quickstart">DEVELOPERS</a></li>
-                <li><a href="#">SIGN IN</a></li>
-                <li><a href="#">SIGN UP</a></li>
+                <li class="@if($page == 'signin') active @endif" ><a href="/signin">SIGN IN</a></li>
             </ul>
         </div>
     </div>
