@@ -2,8 +2,6 @@
     Virgil | Sign Up
 @show
 
-
-
 @section('content')
 <div class="container">
     <div class="row">
