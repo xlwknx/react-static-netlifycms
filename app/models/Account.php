@@ -2,7 +2,9 @@
 
 use Authentication as AuthenticationModel,
     Application as ApplicationModel,
-    Account as AccountModel;
+    Account as AccountModel,
+
+    Virgil\Helper\UUID;
 
 class Account extends Eloquent {
 
@@ -32,6 +34,7 @@ class Account extends Eloquent {
         $account->email        = $email;
         $account->password     = md5($password);
         $account->confirmed    = self::ACCOUNT_CONFIRMED;
+        $account->uuid         = UUID::generate();
 
         $account->save();
 
