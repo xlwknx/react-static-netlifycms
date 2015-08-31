@@ -1,6 +1,7 @@
 <?php
 
-use Application as ApplicationModel;
+use Application as ApplicationModel,
+    Virgil\Helper\UUID;
 
 class Application extends Eloquent {
 
@@ -54,6 +55,7 @@ class Application extends Eloquent {
         $application->token = md5(
             $account->id . $data['name'] . $data['description'] . $data['url'] . time()
         );
+        $application->uuid  = UUID::generate();
 
         $application->save();
 
@@ -110,7 +112,7 @@ class Application extends Eloquent {
      */
     public function getIdentity() {
 
-        return $this->account->uuid;
+        return $this->uuid;
     }
 
 } 
