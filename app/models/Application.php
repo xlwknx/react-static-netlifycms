@@ -1,6 +1,8 @@
 <?php
 
-class Application extends Eloquent implements JsonSerializable {
+use Application as ApplicationModel;
+
+class Application extends Eloquent {
 
     /**
      * The database table used by the model.
@@ -17,7 +19,7 @@ class Application extends Eloquent implements JsonSerializable {
      */
     public static function getAccountApplicationList(Account $account) {
 
-        return \Application::where(
+        return ApplicationModel::where(
             'account_id', '=', $account->id
         )->get();
     }
@@ -87,7 +89,7 @@ class Application extends Eloquent implements JsonSerializable {
      *
      * @return $this
      */
-    public function resetApplicationToken() {
+    public function resetToken() {
 
         $this->token = md5(
             $this->account_id . $this->name . $this->description . $this->url . time()
@@ -96,22 +98,6 @@ class Application extends Eloquent implements JsonSerializable {
         $this->save();
 
         return $this;
-    }
-
-    /**
-     * Serialize Application instance
-     *
-     * @return array|mixed
-     */
-    public function jsonSerialize() {
-
-        return array(
-            'id' => $this->id,
-            'name' => $this->name,
-            'description' => $this->description,
-            'url' => $this->url,
-            'key' => $this->token
-        );
     }
 
     /**
@@ -134,13 +120,7 @@ class Application extends Eloquent implements JsonSerializable {
         return implode('.',
             array(
                 'com',
-                preg_replace(
-                    '/\s+/',
-                    '-',
-                    strtolower(
-                        $this->account->company
-                    )
-                ),
+                $this->account->id,
                 $this->alias
             )
         );

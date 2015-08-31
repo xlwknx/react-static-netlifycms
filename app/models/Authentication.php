@@ -65,10 +65,18 @@ class Authentication extends Eloquent {
         return true;
     }
 
+    public static function getAccountByAuthToken($authToken) {
+
+        return AuthenticationModel::whereToken(
+            $authToken
+        )->first();
+
+    }
+
     /**
      * Update Authentication lifetime
      */
-    public function prolongSessionTime() {
+    public function prolongSessionToken() {
 
         $this->created_at = date('Y-m-d H:i:s');
         $this->save();
