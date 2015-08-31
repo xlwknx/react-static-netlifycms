@@ -16,7 +16,6 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">ABOUT VIRGIL</a></li>
-                <li><a href="#">HOW IT WORKS</a></li>
                 <li class="@if($page == 'apps') active @endif"><a href="/apps">APPS</a></li>
                 <li class="@if($page == 'documents') active @endif" ><a href="/documents/csharp/quickstart">DEVELOPERS</a></li>
                 @if($authToken)

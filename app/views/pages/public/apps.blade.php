@@ -5,7 +5,47 @@
 
 @section('content')
 <div class="container">
-    <h1>PAGE IS UNDERCONSTRUCTION</h1>
+    <div class="row">
+        <div class="col-md-12" >
+            <h2>PAGE IS UNDERCONSTRUCTION</h2>
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="media">
+              <div class="media-left media-top">
+                <a href="#">
+                  <img class="media-object" src="..." alt="...">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Virgil Pass</h4>
+                <p><b>Simple, secure passwordless authentication for websites and applications.</b></p>
+                The Virgil Pass extension provides passwordless authentication for any site that supports Virgil Pass.
+                Virgil Pass is a next-generation authentication, encryption, and verification system based on the Elliptic 
+                Curve Integrated Encryption Scheme (ECIES). Virgil Pass combines standards-based cryptography with an open, 
+                global key management system to make state-of-the-art privacy and security available to any application developer.
+              </div>
+            </div>            
+        </div>
+        <div class="col-md-6">
+            <div class="media-left media-top">
+                <a href="#">
+                  <img class="media-object" src="..." alt="...">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Virgil Sync</h4>
+                <p><b>Simple, end-to-end encrypted file sync for your documents, photos, videos and files.</b></p>
+                Virgil Security, Inc., provides easy-to-deploy and easy-to-use cryptographic software and services for use by 
+                developers and end-users. Virgil Security’s encryption libraries and services, along with an accompanying public 
+                key management infrastructure, ease the pain of developing, deploying, and using strong cryptography. Virgil 
+                Security enables a new generation of enhanced privacy and security for applications.
+              </div>
+            </div>    
+        </div>
+    </div>
+
 </div>        
     
     <!--<div class="page downloads">
