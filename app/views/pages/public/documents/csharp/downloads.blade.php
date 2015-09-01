@@ -2,21 +2,11 @@
 Virgil | Developers | C#/.NET | Downloads
 @show
 
-@section('header-block')
-    <div class="dev-header-container">
-        <div class="container">
-            <h1 class="text-left">Downloads for .NET</h1>
-            <h3 class="text-left">Browse and download available libraries for .NET</h3>        
-        </div>        
-    </div>    
-    @include('pages.public.documents.csharp.partial.header')
-@show
-
 @section('content')
-<div class="dev">
+	@include('pages.public.documents.csharp.partial.header')
     <div class="container">
 		<div class="row">
-			<div class="col-md-38 dev-content">
+			<div class="col-md-9">
 				<h2>Downloads for .NET</h2>
 				<p>
 					Here you can download the latest version of Crypto and SDK libraries for .NET and Xamarin platforms. 
@@ -40,13 +30,12 @@ Virgil | Developers | C#/.NET | Downloads
 					</tr>
 				</table>
 			</div>
-			<div class="col-md-10">
-				<ul class="nav nav-pills nav-stacked dev-affix">
-			        <li class="title" role="presentation">Downloads for .NET</li>
+			<div class="col-md-3 scrollspy">
+                    <ul class="nav hidden-xs hidden-sm dev-sidenav" data-spy="affix" data-offset-top="250" >        
+			        <li class="title" role="presentation"><p>Downloads for .NET</p></li>
 			        <li role="presentation"><a href="#overview">Windows</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
-<div>
 @stop

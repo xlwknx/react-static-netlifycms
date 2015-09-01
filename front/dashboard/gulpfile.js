@@ -9,7 +9,7 @@ function p (relative) {
 var config = {
 	styles: {
 		src: [
-			p('.//styles/main.styl')
+			p('.//styles/main.less')
 		],
 
 		dist: 'app.css',

@@ -18,48 +18,21 @@ class PublicController extends AbstractController
         );
     }
 
+    public function apps()
+    {
+
+        $this->setActivePage('apps');
+        $this->layout->content = View::make(
+            'pages.public.apps'
+        );
+    }
+
     public function contactUs()
     {
 
         $this->setActivePage('contact-us');
         $this->layout->content = View::make(
             'pages.public.contact-us'
-        );
-    }
-
-    public function downloads()
-    {
-
-        $this->setActivePage('downloads');
-        $this->layout->content = View::make(
-            'pages.public.downloads'
-        );
-    }
-
-    public function signin()
-    {
-
-        $this->setActivePage('signin');
-        $this->layout->content = View::make(
-            'pages.public.signin'
-        );
-    }
-
-    public function signup()
-    {
-
-        $this->setActivePage('signup');
-        $this->layout->content = View::make(
-            'pages.public.signup'
-        );
-    }
-
-    public function reset()
-    {
-
-        $this->setActivePage('reset');
-        $this->layout->content = View::make(
-            'pages.public.reset'
         );
     }
 

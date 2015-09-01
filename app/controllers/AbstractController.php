@@ -2,14 +2,8 @@
 
 class AbstractController extends Controller {
 
-    public function getCurrentAccount() {
-
-        return \Account::getAccountByAuthToken(
-            Cookie::get('auth_token')
-        );
-    }
-
     public function setActivePage($page) {
+
         View::share(
             'page',
             $page
@@ -25,7 +19,7 @@ class AbstractController extends Controller {
         }
 
         View::share(
-            'auth_token',
+            'authToken',
             Cookie::get('auth_token')
         );
     }

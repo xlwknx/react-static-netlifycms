@@ -1,22 +1,13 @@
 @section('title')
-Virgil | Developers | PHP | Downloads
+Virgil | Developers | C/C++ | Downloads
 @show
 
-@section('header-block')
-    <div class="dev-header-container">
-        <div class="container">
-            <h1 class="text-left">Downloads for C/C++</h1>
-            <h3 class="text-left">Browse and download available libraries for C/C++</h3>        
-        </div>        
-    </div>    
-    @include('pages.public.documents.cpp.partial.header')
-@show
 
 @section('content')
-<div class="dev">
+	@include('pages.public.documents.cpp.partial.header')
     <div class="container">
 		<div class="row">
-			<div class="col-md-38 dev-content">
+			<div class="col-md-9 dev-content">
 				<h2>Downloads for C/C++</h2>
 				<p>
 					Here you can download the latest version of Crypto and SDK libraries for C/C++. 
@@ -91,9 +82,9 @@ Virgil | Developers | PHP | Downloads
 					</tr>
 				</table>
 			</div>
-			<div class="col-md-10">
-				<ul class="nav nav-pills nav-stacked dev-affix">
-			        <li class="title" role="presentation">Downloads for C/C++</li>
+			<div class="col-md-3 scrollspy">
+                    <ul class="nav hidden-xs hidden-sm dev-sidenav" data-spy="affix" data-offset-top="250" >      
+			        <li class="title" role="presentation"><p>Downloads for C/C++</p></li>
 			        <li role="presentation"><a href="#macOS">Mac OS</a></li>
 			        <li role="presentation"><a href="#debian">Debian</a></li>
 			        <li role="presentation"><a href="#centOS">CentOS</a></li>
@@ -102,5 +93,4 @@ Virgil | Developers | PHP | Downloads
 			</div>
 		</div>
 	</div>
-<div>
 @stop

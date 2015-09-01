@@ -7,7 +7,6 @@
         <title>
             @section('title')@show
         </title>
-        <link href='//fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/dist/public.css" type="text/css" media="screen" charset="utf-8">
     </head>
     <body>
@@ -18,9 +17,7 @@
         @yield('content')
 
         <footer class="footer">
-            <div class="container">
-                @include('includes.footer')
-            </div>
+            @include('includes.footer')
         </footer>
 
         <script src="/dist/public.js"></script>

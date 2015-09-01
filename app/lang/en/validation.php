@@ -83,9 +83,33 @@ return array(
 	*/
 
 	'custom' => array(
-		'attribute-name' => array(
-			'rule-name' => 'custom-message',
+		'email' => array(
+			'required' => 'Email can\'t be empty.',
+            'email'    => 'Email validation failed.'
 		),
+        'password' => array(
+            'required' => 'Password can\'t be empty.'
+        ),
+        'confirm_password' => array(
+            'same' => 'Confirm Password and Password has to be the same.'
+        ),
+        'account' => array(
+            'exists' => 'Account already exists. Try with other password.',
+            'not_exists' => 'Account doesn\'t exist.',
+            'reset_in_progress' => 'Reset password action in progress. Please check your email box.',
+            'token_invalid' => 'Reset password token invalid.'
+        ),
+        'application_name' => array(
+            'required' => 'Application name required',
+            'max' => 'Application name length has to be less then 255 chars.'
+        ),
+        'application_description' => array(
+            'required' => 'Application description required',
+            'max' => 'Application description length has to be less then 255 chars.'
+        ),
+        'application_url' => array(
+            'url' => 'Provided url invalid.'
+        )
 	),
 
 	/*

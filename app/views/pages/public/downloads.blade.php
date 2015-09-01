@@ -90,9 +90,7 @@
                             </div>
 
                             <div class="download-label">
-                                Downloads <a target="_blank" href="https://chrome.google.com/webstore/detail/virgil-pass/djdkdiphpdjgeoehicikgpgbdhmhdcmp">
-                                    <img src="/img/home/chrome.png"/>
-                                </a>
+                                <div class="download-label">Coming soon...</div>
                             </div>
                         </div>
                         <div class="col-md-23 col-md-offset-2 downloads-develoeprs-sync block">
@@ -126,11 +124,7 @@
                                 clients that uses Virgil Keys.
                             </div>
 
-                            <div class="download-label">
-                                Downloads <a href="https://virgilsecurity.com/download/Virgil_Outlook_Add-In_0.4.259.654.exe">
-                                    <img src="/img/home/windows.png"/>
-                                </a>
-                            </div>
+                            <div class="download-label">Coming soon...</div>
                         </div>
                         <div class="col-md-23 col-md-offset-2 downloads-develoeprs-keys block">
                             <div class="headline">
@@ -143,11 +137,7 @@
                                 apps that use them.
                             </div>
 
-                            <div class="download-label">
-                                Downloads <a href="https://virgilsecurity.com/download/Virgil_KeyRing_0.5.240.688.exe">
-                                    <img src="/img/home/windows.png"/>
-                                </a>
-                            </div>
+                            <div class="download-label">Coming soon...</div>
                         </div>
                     </div>
                 </div>

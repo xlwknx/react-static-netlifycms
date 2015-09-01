@@ -1,6 +1,9 @@
 <?php
 
-class Application extends Eloquent implements JsonSerializable {
+use Application as ApplicationModel,
+    Virgil\Helper\UUID;
+
+class Application extends Eloquent {
 
     /**
      * The database table used by the model.
@@ -10,15 +13,31 @@ class Application extends Eloquent implements JsonSerializable {
     protected $table = 'service_account_application';
 
     /**
+     * Get Application by Application UUID
+     *
+     * @param Account $account
+     * @param $uuid
+     * @return mixed
+     */
+    public static function getApplication(Account $account, $uuid) {
+
+        return ApplicationModel::whereAccountId(
+            $account->id
+        )->whereUuid(
+            $uuid
+        )->first();
+    }
+
+    /**
      * Get Application list by account
      *
      * @param Account $account
      * @return mixed
      */
-    public static function getAccountApplicationList(Account $account) {
+    public static function getApplicationList(Account $account) {
 
-        return \Application::where(
-            'account_id', '=', $account->id
+        return ApplicationModel::whereAccountId(
+            $account->id
         )->get();
     }
 
@@ -45,13 +64,24 @@ class Application extends Eloquent implements JsonSerializable {
     public static function createApplication(Account $account, $data) {
 
         $application = new Application();
-        $application->account_id = $account->id;
-        $application->name = $data['name'];
-        $application->description = $data['description'];
-        $application->url = $data['url'];
-        $application->token = md5(
-            $account->id . $data['name'] . $data['description'] . $data['url'] . time()
+        $application->account_id  = $account->id;
+        $application->name        = $data['application_name'];
+        $application->description = $data['application_description'];
+        $application->url         = $data['application_url'];
+        $application->token       = md5(
+            implode(
+                '',
+                array(
+                    $account->id,
+                    $data['application_name'],
+                    $data['application_description'],
+                    $data['application_url'],
+                    time()
+                )
+            )
         );
+
+        $application->uuid  = UUID::generate();
 
         $application->save();
 
@@ -66,9 +96,9 @@ class Application extends Eloquent implements JsonSerializable {
      */
     public function updateApplication($data) {
 
-        $this->name        = $data['name'];
-        $this->description = $data['description'];
-        $this->url         = $data['url'];
+        $this->name        = $data['application_name'];
+        $this->description = $data['application_description'];
+        $this->url         = $data['application_url'];
 
         $this->save();
 
@@ -80,7 +110,7 @@ class Application extends Eloquent implements JsonSerializable {
      *
      * @return $this
      */
-    public function resetApplicationToken() {
+    public function resetToken() {
 
         $this->token = md5(
             $this->account_id . $this->name . $this->description . $this->url . time()
@@ -89,22 +119,6 @@ class Application extends Eloquent implements JsonSerializable {
         $this->save();
 
         return $this;
-    }
-
-    /**
-     * Serialize Application instance
-     *
-     * @return array|mixed
-     */
-    public function jsonSerialize() {
-
-        return array(
-            'id' => $this->id,
-            'name' => $this->name,
-            'description' => $this->description,
-            'url' => $this->url,
-            'key' => $this->token
-        );
     }
 
     /**
@@ -124,10 +138,7 @@ class Application extends Eloquent implements JsonSerializable {
      */
     public function getIdentity() {
 
-        return implode('.', array(
-            $this->account->domain,
-            $this->alias
-        ));
+        return $this->uuid;
     }
 
 } 

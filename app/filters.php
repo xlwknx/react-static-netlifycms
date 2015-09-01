@@ -1,48 +1,34 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application & Route Filters
-|--------------------------------------------------------------------------
-|
-| Below you will find the "before" and "after" events for the application
-| which may be used to do any work before or after a request into your
-| application. Here you may also register your custom route filters.
-|
-*/
+use Authentication as AuthenticationModel,
+    Virgil\Validator\Application as ApplicationValidator;
 
-App::before(function($request)
+Route::filter('sessionFilter', function($route, $request)
 {
+    $authToken = Cookie::get('auth_token');
+    if(!$authToken) {
+        return Redirect::to('/');
+    }
 
+    App::bind('getCurrentAccount', function($app) use ($authToken) {
+        return AuthenticationModel::getAccountByAuthToken(
+            $authToken
+        )->account;
+    });
+
+    if($authToken && ($route->getUri() == 'signup' || $route->getUri() == 'signin')) {
+        return Redirect::to('/dashboard');
+    }
 });
 
-
-App::after(function($request, $response)
+Route::filter('applicationExistFilter', function($route, $request)
 {
-    //
-});
-
-/*
-|--------------------------------------------------------------------------
-| Authentication Filters
-|--------------------------------------------------------------------------
-|
-| The following filters are used to verify that the user of the current
-| session is logged into this application. The "basic" filter easily
-| integrates HTTP Basic authentication for quick, simple checking.
-|
-*/
-
-Route::filter('restAuthVerification', function($route, $request)
-{
-    Virgil\Validator\Authentication::validateAuthToken(
-        Cookie::get('auth_token')
+    $result = ApplicationValidator::validateExists(
+        App::make('getCurrentAccount'),
+        $route->getParameter('uuid')
     );
-});
 
-Route::filter('webAuthVerification', function($route, $request)
-{
-    if(!Cookie::get('auth_token')) {
-        return Redirect::to('/signin');
+    if(!$result) {
+        App::abort(404);
     }
 });

@@ -1,5 +1,14 @@
 <?php
 
+use \Mail,
+
+    Authentication as AuthenticationModel,
+    Application as ApplicationModel,
+    Account as AccountModel,
+
+    Virgil\Helper\UUID,
+    Virgil\Helper\User;
+
 class Account extends Eloquent {
 
     /**
@@ -18,18 +27,17 @@ class Account extends Eloquent {
     /**
      * Create new Account instance
      *
-     * @param $email
-     * @param $password
-     * @param $domain
+     * @param $email - Account email
+     * @param $password - Account password
      * @return Account
      */
-    public static function createAccount($email, $password, $domain) {
+    public static function createAccount($email, $password) {
 
         $account = new Account();
         $account->email        = $email;
-        $account->password     = md5($password);
-        $account->domain       = $domain;
+        $account->password     = User::generateUserPassword($password);
         $account->confirmed    = self::ACCOUNT_CONFIRMED;
+        $account->uuid         = UUID::generate();
 
         $account->save();
 
@@ -37,22 +45,57 @@ class Account extends Eloquent {
     }
 
     /**
-     * Get Account instance by Authentication token
+     * Get Account by Account Email and Account Password
+     *
+     * @param $email
+     * @param $password
+     * @return Account
+     */
+    public static function getAccountByEmailAndPassword($email, $password) {
+
+        return AccountModel::whereEmail(
+            $email
+        )->wherePassword(
+            User::generateUserPassword($password)
+        )->first();
+    }
+
+    /**
+     * Get Account by Account Email
+     *
+     * @param $email
+     * @return Account
+     */
+    public static function getAccountByEmail($email) {
+
+        return AccountModel::whereEmail(
+            $email
+        )->first();
+    }
+
+    /**
+     * Get Account by Account Reset token
      *
      * @param $token
-     * @return bool
+     * @return mixed
      */
-    public static function getAccountByAuthToken($token) {
+    public static function getAccountByToken($token) {
 
-        $authentication = \Authentication::whereToken(
+        return AccountModel::whereToken(
             $token
         )->first();
+    }
 
-        if($authentication) {
-            return $authentication->account;
-        }
+    /**
+     * Get Account Session token
+     *
+     * @return string
+     */
+    public function getSessionToken() {
 
-        return false;
+        return AuthenticationModel::getSessionToken(
+            $this
+        );
     }
 
     /**
@@ -63,5 +106,97 @@ class Account extends Eloquent {
     public function isConfirmed() {
 
         return $this->confirmed == self::ACCOUNT_CONFIRMED ? true : false;
+    }
+
+    /**
+     * Is Reset Account password action is still in progress
+     *
+     * @return bool
+     */
+    public function isResetPasswordInProgress() {
+
+        return !empty($this->token) ? true : false;
+    }
+
+    /**
+     * Get Account Application list
+     *
+     * @return mixed
+     */
+    public function getApplicationList() {
+
+        return ApplicationModel::getApplicationList(
+            $this
+        );
+    }
+
+    /**
+     * Get Account Application
+     *
+     * @param $applicationId
+     * @return Application
+     */
+    public function getApplication($applicationId) {
+
+        return ApplicationModel::getApplication(
+            $this,
+            $applicationId
+        );
+    }
+
+    /**
+     * Create new Account Application
+     *
+     * @param $parameters
+     * @return mixed
+     */
+    public function createApplication($parameters) {
+
+        return ApplicationModel::createApplication(
+            $this,
+            $parameters
+        );
+    }
+
+    /**
+     * Reset Account password and send 'reset-password' email
+     *
+     * @return bool
+     */
+    public function resetPassword() {
+
+        $this->token = User::generateResetToken();
+        $this->save();
+
+        Mail::send(
+            'email.reset-password',
+            array('resetToken' => $this->token),
+            function($message) use ($this) {
+                $message->to(
+                    $this->email,
+                    $this->email
+                )->subject('Virgil Security KeyRing Reset Password');
+            }
+        );
+
+        return true;
+    }
+
+    /**
+     * Update Account with new password
+     *
+     * @param $password
+     * @return bool
+     */
+    public function updatePassword($password) {
+
+        $this->token    = null;
+        $this->password = User::generateUserPassword(
+            $password
+        );
+
+        $this->save();
+
+        return true;
     }
 }

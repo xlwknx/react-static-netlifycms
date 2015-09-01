@@ -11,26 +11,81 @@
 |
 */
 
-Route::post('session/signin', array(
-    'uses' => 'SessionController@signin'
+Route::group(
+    array(
+        'before' => 'sessionFilter'
+    ),
+    function() {
+
+        Route::get('dashboard', array(
+            'uses' => 'DashboardController@index'
+        ));
+
+        Route::get('dashboard/application/create', array(
+            'uses' => 'DashboardController@createApplication'
+        ));
+
+        Route::post('dashboard/application/create', array(
+            'uses' => 'DashboardController@createApplication'
+        ));
+
+        Route::group(
+            array(
+                'before' => 'applicationExistFilter'
+            ),
+            function() {
+
+                Route::get('dashboard/application/update/{uuid}', array(
+                    'uses' => 'DashboardController@updateApplication'
+                ));
+
+                Route::post('dashboard/application/update/{uuid}', array(
+                    'uses' => 'DashboardController@updateApplication'
+                ));
+
+                Route::post('dashboard/application/delete/{uuid}', array(
+                    'uses' => 'DashboardController@deleteApplication'
+                ));
+            }
+        );
+    }
+);
+
+Route::get('signin', array(
+    'uses' => 'AccountController@signin'
 ));
 
-Route::get('session/signout', array(
-    'uses' => 'SessionController@signout'
-));
-
-Route::post('session/signup', array(
-    'uses' => 'SessionController@signup'
+Route::post('signin', array(
+    'uses' => 'AccountController@signin'
 ));
 
 
 
-Route::get('account/confirm/{code}', array(
-    'uses' => 'AccountController@confirm'
+Route::get('signup', array(
+    'uses' => 'AccountController@signup'
 ));
 
-Route::post('account/confirm/re-send', array(
-    'uses' => 'AccountController@resendConfirm'
+Route::post('signup', array(
+    'uses' => 'AccountController@signup'
+));
+
+
+
+Route::get('signout', array(
+    'uses' => 'AccountController@signout'
+));
+
+
+Route::get('reset-password', array(
+    'uses' => 'AccountController@resetPassword'
+));
+
+Route::post('reset-password', array(
+    'uses' => 'AccountController@resetPassword'
+));
+
+Route::get('update-password/{token}', array(
+    'uses' => 'AccountController@updatePassword'
 ));
 
 
@@ -38,51 +93,6 @@ Route::post('account/confirm/re-send', array(
 Route::post('application/validate-token', array(
     'uses' => 'ApplicationController@validateToken'
 ));
-
-
-/*
-|--------------------------------------------------------------------------
-| Application Route Filters
-|--------------------------------------------------------------------------
-|
-| Apply Auth verification for some protected methods.
-|
-*/
-Route::group(array('before' => 'restAuthVerification'), function () {
-
-    Route::get('application/get/{application}', array(
-        'uses' => 'ApplicationController@getOne'
-    ));
-
-    Route::get('application/list', array(
-        'uses' => 'ApplicationController@getAll'
-    ));
-
-    Route::post('application/reset-key/{application}', array(
-        'uses' => 'ApplicationController@resetKey'
-    ));
-
-    Route::post('application', array(
-        'uses' => 'ApplicationController@create'
-    ));
-
-    Route::put('application/{application}', array(
-        'uses' => 'ApplicationController@update'
-    ));
-
-    Route::delete('application/{application}', array(
-        'uses' => 'ApplicationController@delete'
-    ));
-});
-
-
-Route::group(array('before' => 'webAuthVerification'), function () {
-
-    Route::get('dashboard', array(
-        'uses' => 'DashboardController@index'
-    ));
-
-});
 
 /*
 |--------------------------------------------------------------------------
@@ -108,20 +118,8 @@ Route::get('contact-us', array(
     'uses' => 'PublicController@contactUs'
 ));
 
-Route::get('downloads', array(
-    'uses' => 'PublicController@downloads'
-));
-
-Route::get('signin', array(
-    'uses' => 'PublicController@signin'
-));
-
-Route::get('signup', array(
-    'uses' => 'PublicController@signup'
-));
-
-Route::get('reset', array(
-    'uses' => 'PublicController@reset'
+Route::get('apps', array(
+    'uses' => 'PublicController@apps'
 ));
 
 Route::get('terms-of-service', array(
@@ -130,10 +128,6 @@ Route::get('terms-of-service', array(
 
 Route::get('privacy-policy', array(
     'uses' => 'PublicController@privacyPolicy'
-));
-
-Route::get('apps/{application}', array(
-    'uses' => 'DashboardController@index'
 ));
 
 Route::get('documents', array(

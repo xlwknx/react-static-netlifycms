@@ -9,14 +9,14 @@ Virgil | Developers | PHP | Crypto Library
             <h3 class="text-left">This describes how to build and use the Crypto Library for PHP platform</h3>        
         </div>        
     </div>    
-    @include('pages.public.documents.php.partial.header')
+    
 @show
 
 @section('content')
-<div class="dev">
+	@include('pages.public.documents.php.partial.header')
 	<div class="container">
 		<div class="row">
-			<div class="col-md-38 dev-content">
+			<div class="col-md-9">
 				<h2>Crypto Library for PHP</h2>
 				<h3 id="overview">Build</h3>
 				<p>
@@ -60,13 +60,12 @@ Virgil | Developers | PHP | Crypto Library
 				   8. Install library. <b>make install</b>
 				</p>				
 			</div>
-			<div class="col-md-10">
-				<ul class="nav nav-pills nav-stacked dev-affix">
-			        <li class="title" role="presentation">Crypto Library for PHP</li>
+			<div class="col-md-3 scrollspy">
+                    <ul class="nav hidden-xs hidden-sm dev-sidenav" data-spy="affix" data-offset-top="250" >          
+			        <li class="title" role="presentation"><p>Crypto Library for PHP</p></li>
 			        <li role="presentation"><a href="#overview">Build</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
-</div>
 @stop

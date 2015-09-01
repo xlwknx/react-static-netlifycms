@@ -2,54 +2,59 @@
 
 namespace Virgil\Validator;
 
-use Virgil\Exception\Validator as ValidatorException,
+use \Validator,
+    \Redirect,
+
+    \Application as ApplicationModel,
+    \Account as AccountModel,
+
+    Virgil\Exception\Validator as ValidatorException,
     Virgil\Error\Code as ErrorCode;
 
 
 class Application {
 
-    /**
-     * Validate Application data
-     *
-     * @param $applicationName - application name
-     * @param $applicationDescription - application description
-     * @param $applicationUrl - application url
-     * @param $applicationAlias - application alias
-     * @return array
-     * @throws \Virgil\Exception\Validator
-     */
-    public static function validate($applicationName, $applicationDescription, $applicationUrl, $applicationAlias) {
+    protected static $_validators = array(
+        'application_name'        => 'required|max:255',
+        'application_description' => 'required|max:255',
+        'application_url'         => 'url',
+    );
 
-        if(empty($applicationName)) {
-            throw new ValidatorException(
-                ErrorCode::APPLICATION_NAME_NOT_PROVIDED
-            );
-        }
+    public static function validateCreate($parameters) {
 
-        if(empty($applicationDescription)) {
-            throw new ValidatorException(
-                ErrorCode::APPLICATION_DESCRIPTION_NOT_PROVIDED
-            );
-        }
-
-        if(empty($applicationUrl)) {
-            throw new ValidatorException(
-                ErrorCode::APPLICATION_URL_NOT_PROVIDED
-            );
-        }
-
-        if(empty($applicationAlias)) {
-            throw new ValidatorException(
-                ErrorCode::APPLICATION_ALIAS_NOT_PROVIDED
-            );
-        }
-
-        return array(
-            'name' => $applicationName,
-            'description' => $applicationDescription,
-            'url' => $applicationUrl,
-            'alias' => $applicationAlias
+        $validator = Validator::make(
+            $parameters,
+            self::$_validators
         );
+
+        if($validator->fails()) {
+            return Redirect::to('/dashboard/application/create')->withInput()->withErrors(
+                $validator
+            );
+        }
+
+        return $parameters;
+    }
+
+    /**
+     * Validate Account Application existing
+     *
+     * @param \Account $account
+     * @param $uuid
+     * @return bool
+     */
+    public static function validateExists(AccountModel $account, $uuid) {
+
+        $application = ApplicationModel::getApplication(
+            $account,
+            $uuid
+        );
+
+        if(!$application) {
+            return false;
+        }
+
+        return true;
     }
 
     /**

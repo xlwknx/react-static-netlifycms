@@ -1,0 +1,59 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 370px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 340px;
+  background-color: #ffffff;
+  color: #525d62;
+  padding-top: 20px;
+  border-top: #f3f3f3 solid 2px;
+  a {
+    color: #525d62;
+    font-size: 16px;
+  }
+  .social-link {
+    &:hover { text-decoration: none; }
+    svg {
+      width: 32px;
+      fill: #525d62;      
+    }
+    svg.twitter:hover { fill: #55acee; }
+    svg.facebook:hover { fill: #3b5998; }
+    svg.linkedin:hover { fill: #0077b5; }
+  }
+}
+
+.footer-title {
+  height: 55px;
+  font-family: "ProximaNova-Semibold";
+  font-size: 16px;
+}
+
+.footer-body {
+  font-family: "MyriadPro-Regular";
+  font-size: 16px;
+  height: 200px;
+}
+
+.footer-logo {
+  height: 26pt;
+}
+
+.footer-brend {
+  border-top: #f3f3f3 solid 1px;
+  text-align: center;
+  font-family: "MyriadPro-Semibold";
+  font-size: 12pt;
+  padding-top: 14.5pt;
+}

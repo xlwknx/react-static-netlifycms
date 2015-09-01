@@ -2,26 +2,16 @@
 Virgil | Developers | C#/.NET | Crypto Library
 @show
 
-@section('header-block')
-    <div class="dev-header-container">
-        <div class="container">
-            <h1 class="text-left">Crypto Library</h1>
-            <h3 class="text-left">This describes how to build and use the Crypto Library for .NET platform</h3>        
-        </div>        
-    </div>    
-    @include('pages.public.documents.csharp.partial.header')
-@show
-
 @section('content')
-<div class="dev">
+	@include('pages.public.documents.csharp.partial.header')
 	<div class="container">
 		<div class="row">
-			<div class="col-md-38 dev-content">
+			<div class="col-md-9">
 				<h2>Crypto Library for .NET</h2>
 				<h3 id="overview">Overview</h3>
 				<p>
-				   The Virgil.Net allows you to encrypt, decrypt, sign, verify data from your Web, Desktop and Mobile applications. 
-				   The Virgil.Net should be straightforward to use if you are comfortable with C# development.
+				   Virgil.Crypto allows you to encrypt, decrypt, sign, and verify data from your Web, Desktop and Mobile applications. 
+				   The Virgil.Crypto should be straightforward to use if you are comfortable with C# development.
 				 </p>
 				<h3 id="supported-platforms" >Supported Platforms</h3>
 				<ul>
@@ -33,12 +23,12 @@ Virgil | Developers | C#/.NET | Crypto Library
 				</ul>		
 				<h3 id="nuget">NuGet</h3>
 				<p>
-				   The Virgil.Net is released as Nuget packages. Please see NuGet package for the latest stable and pre-release versions. 
-				   The Virgil.Net NuGet package contain everything you needed in your .NET application.
+				   Virgil.Crypto is released as NuGet packages. Please see the NuGet package for the latest stable and pre-release versions. 
+				   The Virgil.Crypto NuGet package contains everything you need for your .NET application.
 				</p>
-				<h3 id="build">Build</h3>
+				<h3 id="build">Build for Windows</h3>
 				<p>
-				   This section describes how to build Virgil.Net library yourself. To build library on a Windows machine you will need following tools:
+				   This section describes how to build the Virgil.Crypto library on a Windows machine. 
 				</p>
 				<h4>Requirements</h4>
 				<ul>
@@ -49,18 +39,17 @@ Virgil | Developers | C#/.NET | Crypto Library
 				   <li><a href="http://www.cmake.org/download/">CMake Minimum version: 2.8.</a></li>
 				</ul>	
 				<h4>Preparation</h4>
-				<p><b>python</b>, <b>swig</b> and <b>cmake</b> should be accessible through command line. Open a new terminal window and check each.</p>
+				<p><b>python</b>, <b>swig</b> and <b>cmake</b> should be accessible through the command line. Please open a new terminal window and check each ...</p>
 				<p>
-				   To add Python go to Advanced System Settings > Environment variables. Choose variable "Path", click Edit and prepend its value with 
-				   the path to python installation folder, in my case it will look like this : C:\Python34\;C:\ProgramData\Oracle\Jav...
+				   Click Edit and prepend its value with the path to python installation folder, in my case it will look like 
+				   this : C:\Python34\;C:\ProgramData\Oracle\Jav...
 				</p>
-				<p>Do same steps for cmake and swig.</p>
+				<p>Repeat these steps for both cmake and swig.</p>
 				<p>
-				   To check setup open new terminal window and type python, swig and cmake commands. None should return "* is not recognized as internal 
-				   or external command, operable program of batch file" error.
+				   To check setup open new terminal window and type python, swig and cmake commands to make sure they are present in the system. 
 				</p>
 				<h4>Compilation</h4>
-				<p>After you finished downloading sources, navigate to the projects folder. Open a new terminal window in this folder and execute this lists of commands:</p>
+				<p>After you finished downloading the sources, navigate to the projects folder. Open a new terminal window in this folder and execute this lists of commands:</p>
 				<pre><code>setlocal enabledelayedexpansion
 rmdir /s /q build 
 rmdir /s /q install
@@ -99,9 +88,9 @@ cd ../..</code></pre>
 					It will contain x64 and x86 versions of native DLL's and a C# wrapper DLL virgil.assembly.dll.
 				</p>
 			</div>
-			<div class="col-md-10">
-				<ul class="nav nav-pills nav-stacked dev-affix">
-			        <li class="title" role="presentation">Crypto Library for .NET</li>
+			<div class="col-md-3 scrollspy">
+                <ul class="nav hidden-xs hidden-sm dev-sidenav" data-spy="affix" data-offset-top="250" >       
+			        <li class="title" role="presentation"><p>Crypto Library for .NET</p></li>
 			        <li role="presentation"><a href="#overview">Overview</a></li>
 			        <li role="presentation"><a href="#supported-platforms">Supported Platforms</a></li>
 			        <li role="presentation"><a href="#nuget">NuGet</a></li>
@@ -110,5 +99,4 @@ cd ../..</code></pre>
 			</div>
 		</div>
 	</div>
-</div>
 @stop
