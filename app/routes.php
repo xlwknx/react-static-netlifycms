@@ -110,8 +110,8 @@ Route::get('/', array(
 |--------------------------------------------------------------------------
 */
 
-Route::get('about-us', array(
-    'uses' => 'PublicController@aboutUs'
+Route::get('about-virgil', array(
+    'uses' => 'PublicController@aboutVirgil'
 ));
 
 Route::get('contact-us', array(

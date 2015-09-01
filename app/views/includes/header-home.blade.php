@@ -1,6 +1,6 @@
 @section('header')
 
-<div class="container home-bg">
+<div class="home-bg">
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
@@ -16,7 +16,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">ABOUT VIRGIL</a></li>
+                    <li class="@if($page == 'about-virgil') active @endif"><a href="/about-virgil">ABOUT VIRGIL</a></li>
                     <li class="@if($page == 'apps') active @endif"><a href="/apps">APPS</a></li>
                     <li class="@if($page == 'documents') active @endif" ><a href="/documents/csharp/quickstart">DEVELOPERS</a></li>
                     @if($authToken)
@@ -30,6 +30,5 @@
         </div>
     </nav>
 </div>
-
 
 @show
