@@ -10,11 +10,9 @@
                 <h2>Sign In</h2>
                 @if(Session::has('error') || $errors->any())
                 <div class="alert alert-danger">
-                    <h4>
-                        {{Lang::get(Session::get('error'))}}
-                        <?=$errors->first('email'); ?>
-                        <?=$errors->first('password'); ?>
-                    </h4>
+                    {{Lang::get(Session::get('error'))}}
+                    <?=$errors->first('email'); ?>
+                    <?=$errors->first('password'); ?>
                 </div>
                 @endif
                 <form action="/signin" method="post">
