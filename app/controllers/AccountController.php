@@ -21,11 +21,9 @@ class AccountController extends AbstractController {
                 return $result;
             }
 
-            $authToken = $result->getSessionToken();
-
             Cookie::queue(
                 'auth_token',
-                $authToken,
+                $result->getSessionToken(),
                 Authentication::AUTH_TOKEN_LIFETIME
             );
 
@@ -34,7 +32,7 @@ class AccountController extends AbstractController {
 
         $this->setActivePage('signin');
         $this->layout->content = View::make(
-            'pages.session.signin'
+            'pages.account.signin'
         );
 
     }
@@ -62,24 +60,43 @@ class AccountController extends AbstractController {
                 Authentication::AUTH_TOKEN_LIFETIME
             );
 
-
-
             return Redirect::to('dashboard');
         }
 
         $this->setActivePage('signin');
         $this->layout->content = View::make(
-            'pages.session.signup'
+            'pages.account.signup'
         );
 
     }
 
-    public function reset()
+    public function resetPassword()
     {
+
+        $data = array(
+            'resetResult' => false
+        );
+
+        if(Request::isMethod('post')) {
+
+            $result = AccountValidator::validateReset(
+                Input::all()
+            );
+
+            if($result instanceof Illuminate\Http\RedirectResponse) {
+                return $result;
+            }
+
+            if($result->reset()) {
+                $data['resetResult'] = true;
+                $data['resetSuccessful'] = Lang::get('message.flash.reset-password');
+            }
+        }
 
         $this->setActivePage('reset');
         $this->layout->content = View::make(
-            'pages.session.reset'
+            'pages.account.reset',
+            $data
         );
     }
 
