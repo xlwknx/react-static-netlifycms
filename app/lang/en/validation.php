@@ -107,7 +107,7 @@ return array(
         ),
         'application_url' => array(
             'url' => 'Provided url invalid.'
-        ),
+        )
 	),
 
 	/*
