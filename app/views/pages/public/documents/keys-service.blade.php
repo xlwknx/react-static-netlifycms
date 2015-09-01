@@ -15,7 +15,7 @@
 					uploaded. The application can get the information about Public Keys
 					created only for current application. When application uploads new Public
 					Key and there is an Account created for another application with the
-					same UDID, the Public Key will be implicitly attached to the existing
+					same user identity, the Public Key will be implicitly attached to the existing
 					Account instance.
 				</p>
 
@@ -40,7 +40,8 @@
 					<tr>
 						<td style="white-space: nowrap" >X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							 Application token. This header is mandatory for all the requests to distinguish keep tracking different applications requests.
+                            Application token. This header is mandatory for all the requests to
+                            distinguish between different applications requests
 						</td>
 					</tr>
 					<tr>
@@ -48,7 +49,8 @@
 						<td>
 							The request body sign (base64 encoded representation) that used to make sure user is the holder of the private
 							key. This is the result of Virgil Crypto library sign process for the request
-							data using user’s private key.
+							data using user’s private key. The public key that wa specified in the request body will be
+                            used to verify the sign.
 						</td>
 					</tr>
 				</table>
@@ -64,13 +66,13 @@
 						<td>public_key</td>
 						<td>
 							A public key is generated with Crypto Library and converted to Base64 format. Please see more details 
-							about public/private kay pair generation <a href="/quickstart#generate-keys">here.</td>
+							about public/private kay pair generation <a href="quickstart#generate-keys">here.</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>user_data</td>
 						<td>
-							The list of user data items for the public key. It must contain at least one UDID entity</td>
+							The list of user data items for the public key. It must contain at least one user identity entity</td>
 						<td>object</td>
 					</tr>
 					<tr>
@@ -197,7 +199,8 @@
 					<tr>
 						<td style="white-space: nowrap" >X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							 Application token. This header is mandatory for all the requests to distinguish keep tracking different applications requests.
+                            Application token. This header is mandatory for all the requests to
+                            distinguish between different applications requests
 						</td>
 					</tr>
 				</table>
@@ -254,7 +257,8 @@
 					<tr>
 						<td >X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							 Application token. This header is mandatory for all the requests to distinguish keep tracking different applications requests.
+                            Application token. This header is mandatory for all the requests to
+                            distinguish between different applications requests
 						</td>
 					</tr>
 					<tr>
@@ -284,7 +288,7 @@
 						<td>public_key</td>
 						<td>
 							A public key is generated with Crypto Library and converted to Base64 format. Please see more details 
-							about public/private kay pair generation <a href="/quickstart#generate-keys">here.</td>
+							about public/private kay pair generation <a href="quickstart#generate-keys">here.</td>
 						<td>string</td>
 					</tr>
 					<tr>
@@ -340,11 +344,11 @@
 				</p>
 				<p>
 					If unsigned version of the endpoint is used the confirmation is required.
-					The endpoint will return action_token response object property and will
+					The endpoint will return <strong>action_token</strong> response object property and will
 					send confirmation tokens on all public key’s confirmed UDIDs. The list of
-					masked UDID’s will be returned in user_ids response object property. To
+					masked user identities will be returned in <strong>user_ids</strong> response object property. To
 					commit public key remove POST /v2/public_key{public_key_id}/persist
-					endpoint invocation needed with action_token value and the list of
+					endpoint invocation needed with <strong>action_token</strong> value and the list of
 					confirmation codes.
 				</p>
 				<h3>Request Info</h3>
@@ -368,8 +372,8 @@
 					<tr>
 						<td >X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							 Application token. This header is mandatory for all the requests to 
-							 distinguish between different applications requests.
+                            Application token. This header is mandatory for all the requests to
+                            distinguish between different applications requests
 						</td>
 					</tr>
 					<tr>
@@ -457,8 +461,8 @@
 					<tr>
 						<td style="white-space: nowrap" >X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							 Application token. This header is mandatory for all the requests to 
-							 distinguish between different applications requests.
+                            Application token. This header is mandatory for all the requests to
+                            distinguish between different applications requests
 						</td>
 					</tr>
 					<tr>
@@ -554,8 +558,8 @@
 					<tr>
 						<td style="white-space: nowrap" >X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							 Application token. This header is mandatory for all the requests to 
-							 distinguish between different applications requests.
+                            Application token. This header is mandatory for all the requests to
+                            distinguish between different applications requests
 						</td>
 					</tr>
 				</table>
@@ -611,11 +615,11 @@
 					The endpoint’s purpose is to search public keys by UDID values
 				</p>
 				<p>
-					If signed version of the /grab endpoint is used, the public key will be returned with 
+					If signed version of the endpoint is used, the public key will be returned with
 					all user_data items for this Public Key.
 				</p>
 				<p>
-					If signed version of the endpoint is used request value parameter is ignored 
+					If signed version of the endpoint is used request <strong>value</strong> parameter is ignored
 				</p>
 				<h3>Request Info</h3>
 				<table class="table">
@@ -638,7 +642,8 @@
 					<tr>
 						<td >X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							 Application token. This header is mandatory for all the requests to distinguish keep tracking different applications requests.
+                            Application token. This header is mandatory for all the requests to
+                            distinguish between different applications requests
 						</td>
 					</tr>
 					<tr>
@@ -711,7 +716,52 @@
      UhKOE1LbHMybFE4QTloY1VLbzFJdkxiYm5BMTVhUzNITmVMWHVtckM0aDEvQXdZCnBkQ0h4Y3 
      EvQ29rYWNNWlRld2pVcnNmdUhxREp2REtYY0d3aWZMWGdVenNmT1FaRTJlNkJhOFcySXZicHc 
      0Z0cKaHpjaWFRZkJJd0IvSkdtMEwxZz0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg",
-  "user_data": [ ... ]
+  "user_data":[
+    {
+        "id":{
+            "account_id":"e2cc7feb-8729-b77d-503f-b6c2652e60e4",
+            "public_key_id":"42c19fc7-72ff-a646-5f99-e505c9522e19",
+            "user_data_id":"eae1d29d-a81a-9d19-ba43-33d0ce320f54"
+        },
+        "class":"user_id",
+        "type":"email",
+        "value":"user@virgilsecurity.com",
+        "is_confirmed":true
+    },
+    {
+        "id":{
+            "account_id":"e2cc7feb-8729-b77d-503f-b6c2652e60e4",
+            "public_key_id":"42c19fc7-72ff-a646-5f99-e505c9522e19",
+            "user_data_id":"5be1a153-0787-3456-5faf-42c446c1140f"
+        },
+        "class":"user_id",
+        "type":"email",
+        "value":"user@gmail.com",
+        "is_confirmed":false
+    },
+    {
+        "id":{
+            "account_id":"e2cc7feb-8729-b77d-503f-b6c2652e60e4",
+            "public_key_id":"42c19fc7-72ff-a646-5f99-e505c9522e19",
+            "user_data_id":"3433be27-eb46-f935-57d6-4a5703da35ee"
+        },
+        "class":"user_info",
+        "type":"first_name",
+        "value":"Mark",
+        "is_confirmed":true
+    },
+    {
+        "id":{
+            "account_id":"e2cc7feb-8729-b77d-503f-b6c2652e60e4",
+            "public_key_id":"42c19fc7-72ff-a646-5f99-e505c9522e19",
+            "user_data_id":"3d7b8881-9273-58ec-8dcc-01737ecacb97"
+        },
+        "class":"user_info",
+        "type":"last_name",
+        "value":"Smith",
+        "is_confirmed":true
+    }
+]
 }</code></pre>
 
 				<h2 id="create-user-data">Create User Data</h2>
@@ -746,7 +796,8 @@
 					<tr>
 						<td >X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							 Application token. This header is mandatory for all the requests to distinguish keep tracking different applications requests.
+                            Application token. This header is mandatory for all the requests to
+                            distinguish between different applications requests
 						</td>
 					</tr>
 					<tr>
@@ -827,7 +878,7 @@ specified in X-VIRGIL-PUBLIC-KEY-ID HTTP header</p>
 
 				<h2 id="delete-user-data">Delete User Data</h2>
 				<p>
-					The endpoint’s purpose is to remove user data item from the public key. 
+					The endpoint’s purpose is to remove user data item from the public key.
 				</p>
 				<h3>Request Info</h3>
 				<table class="table">
@@ -850,7 +901,8 @@ specified in X-VIRGIL-PUBLIC-KEY-ID HTTP header</p>
 					<tr>
 						<td >X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							 Application token. This header is mandatory for all the requests to distinguish keep tracking different applications requests.
+                            Application token. This header is mandatory for all the requests to
+                            distinguish between different applications requests
 						</td>
 					</tr>
 					<tr>
@@ -916,7 +968,8 @@ specified in X-VIRGIL-PUBLIC-KEY-ID HTTP header</p>
 					<tr>
 						<td style="white-space: nowrap">X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							 Application token. This header is mandatory for all the requests to distinguish keep tracking different applications requests.
+                            Application token. This header is mandatory for all the requests to
+                            distinguish between different applications requests
 						</td>
 					</tr>
 				</table>
@@ -970,7 +1023,8 @@ specified in X-VIRGIL-PUBLIC-KEY-ID HTTP header</p>
 					<tr>
 						<td style="white-space: nowrap">X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							 Application token. This header is mandatory for all the requests to distinguish keep tracking different applications requests.
+                            Application token. This header is mandatory for all the requests to
+                            distinguish between different applications requests
 						</td>
 					</tr>
 					<tr>
