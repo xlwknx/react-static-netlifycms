@@ -95,9 +95,13 @@ class AccountController extends AbstractController {
 
         $this->setActivePage('reset');
         $this->layout->content = View::make(
-            'pages.account.reset',
+            'pages.account.reset-password',
             $data
         );
+    }
+
+    public function updatePassword() {
+
     }
 
     public function signout() {
