@@ -3,6 +3,18 @@
 @show
 
 @section('content')
+<div class="home-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="home-title">Secure the Future</h1>
+                <h2 class="home-sub-title">Passwordless Authentication, Data Encryption and Data Integrity for your apps.<br /> Add in minutes. Benefit forever. <a href="/documents/csharp/quickstart">Learn More -></a></h2>
+                  
+                <a class="btn btn-primary home-get-started-btn" href="/documents/csharp/quickstart" >GET STARTED</a>
+            </div>
+        </div>
+     </div>
+ </div>
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-center">
@@ -78,7 +90,7 @@
                 <h2 class="home-title1">Why Virgil Security?</h2>            
             </div>
         </div>
-         <div class="row">
+        <div class="row">
             <div class="col-md-6">
                 <div class="home-middle-section-item">
                     <div class="media">
@@ -230,8 +242,40 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="home-middle-section-item">
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <svg class="media-object" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 viewBox="89.5 106 68 68" style="enable-background:new 89.5 106 68 68;" xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path d="M136,138.6h-1.4v-2.7c0-3.6-3.2-6.6-6.9-6.6c-3.8,0-6.9,3.1-6.9,6.8v2.5h-1.4c-0.8,0-1.4,0.6-1.4,1.4v13.9
+                                            c0,0.8,0.6,1.4,1.4,1.4H136c0.8,0,1.4-0.6,1.4-1.4V140C137.4,139.2,136.8,138.6,136,138.6z M123.5,136.1c0-2.1,1.9-4,4.2-4
+                                            c2.3,0,4.2,1.8,4.2,3.9v2.7h-8.3V136.1z M134.6,152.5h-13.9v-11.1h13.9V152.5z M125.3,150.9c0.3,0.3,0.6,0.4,1,0.4
+                                            c0.3,0,0.7-0.1,0.9-0.4l5.8-5.5c0.6-0.5,0.6-1.4,0.1-2c-0.5-0.6-1.4-0.6-2-0.1l-4.8,4.6l-1.8-1.8c-0.5-0.5-1.4-0.5-2,0
+                                            c-0.5,0.5-0.5,1.4,0,2L125.3,150.9z M151.9,140.4c0-0.1,0-0.3,0-0.4c0-13.4-10.9-24.3-24.3-24.3c-10.6,0-19.8,6.7-23,16.7
+                                            c-8.4,0.4-15.1,7.5-15.1,15.9c0,8.8,7.2,15.9,16,15.9h38.9c7.3,0,13.2-5.9,13.2-13.2C157.5,146.9,155.4,142.9,151.9,140.4z
+                                             M144.3,160.1h-38.9c-6.5,0-11.8-5.3-11.8-11.8c0-6.5,5.4-11.7,12-11.7l0,0c0.1,0,0.3,0,0.4,0c1,0.1,1.9-0.6,2.1-1.6
+                                            c2.3-8.9,10.3-15.1,19.5-15.1c11.1,0,20.1,9,20.1,20.1c0,0.3,0,0.7-0.1,1.2l0,0.2c-0.1,0.8,0.4,1.6,1,1.9c2.9,1.6,4.6,4.5,4.6,7.8
+                                            C153.3,156.1,149.3,160.1,144.3,160.1z"/>
+                                    </g>
+                                </g>
+                            </svg>                         
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Cloud</h4>
+                            Secure your cloud applications with passwordless authentication and end-to-end encryption.
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="col-md-6">
+               
+            </div>
+        </div>
     </div>
 </div>
+
 @stop
-
-

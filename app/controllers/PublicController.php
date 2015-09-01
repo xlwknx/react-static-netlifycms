@@ -9,12 +9,12 @@ class PublicController extends AbstractController
      */
     protected $layout = 'layouts.public';
 
-    public function aboutUs()
+    public function aboutVirgil()
     {
 
-        $this->setActivePage('about-us');
+        $this->setActivePage('about-virgil');
         $this->layout->content = View::make(
-            'pages.public.about-us'
+            'pages.public.about-virgil'
         );
     }
 

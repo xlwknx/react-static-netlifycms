@@ -96,7 +96,18 @@ return array(
         'account' => array(
             'exists' => 'Account already exists. Try with other password.',
             'not_exists' => 'Account doesn\'t exist.'
-        )
+        ),
+        'application_name' => array(
+            'required' => 'Application name required',
+            'max' => 'Application name length has to be less then 255 chars.'
+        ),
+        'application_description' => array(
+            'required' => 'Application description required',
+            'max' => 'Application description length has to be less then 255 chars.'
+        ),
+        'application_url' => array(
+            'url' => 'Provided url invalid.'
+        ),
 	),
 
 	/*

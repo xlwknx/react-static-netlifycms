@@ -1,43 +1,97 @@
 <?php
 
-use Virgil\Validator\Account as AccountValidator,
-    Virgil\Validator\Confirmation as ConfirmationValidator,
-    Symfony\Component\HttpFoundation\Response as HttpResponse;
+use Virgil\Validator\Account as AccountValidator;
 
 class AccountController extends AbstractController {
 
-    public function confirm($code) {
+    /**
+     * The layout that should be used for responses.
+     */
+    protected $layout = 'layouts.public';
 
-        $confirmation = ConfirmationValidator::validateCode(
-            $code
+    public function signin() {
+
+        if(Request::isMethod('post')) {
+
+            $result = AccountValidator::validateSignin(
+                Input::all()
+            );
+
+            if($result instanceof Illuminate\Http\RedirectResponse) {
+                return $result;
+            }
+
+            $authToken = $result->getSessionToken();
+
+            Cookie::queue(
+                'auth_token',
+                $authToken,
+                Authentication::AUTH_TOKEN_LIFETIME
+            );
+
+            return Redirect::to('dashboard');
+        }
+
+        $this->setActivePage('signin');
+        $this->layout->content = View::make(
+            'pages.session.signin'
         );
 
-        $confirmation->confirmAccount();
+    }
 
-        return \Response::json(
-            null,
-            HttpResponse::HTTP_OK
+    public function signup() {
+
+        if(Request::isMethod('post')) {
+
+            $result = AccountValidator::validateSignup(
+                Input::all()
+            );
+
+            if($result instanceof Illuminate\Http\RedirectResponse) {
+                return $result;
+            }
+
+            $account = Account::createAccount(
+                $result['email'],
+                $result['password']
+            );
+
+            Cookie::queue(
+                'auth_token',
+                $account->getSessionToken(),
+                Authentication::AUTH_TOKEN_LIFETIME
+            );
+
+
+
+            return Redirect::to('dashboard');
+        }
+
+        $this->setActivePage('signin');
+        $this->layout->content = View::make(
+            'pages.session.signup'
+        );
+
+    }
+
+    public function reset()
+    {
+
+        $this->setActivePage('reset');
+        $this->layout->content = View::make(
+            'pages.session.reset'
         );
     }
 
-    public function resendConfirm() {
+    public function signout() {
 
-        $account = AccountValidator::validateSignin(
-            Input::json()->get('email', null),
-            Input::json()->get('password', null)
-        );
-
-        AccountValidator::validateConfirmed(
-            $account
-        );
-
-        Confirmation::createConfirmation(
-            $account
-        );
-
-        return \Response::json(
+        Cookie::queue(
+            'auth_token',
             null,
-            HttpResponse::HTTP_OK
+            -1
         );
+
+        return Redirect::to('/');
     }
+
 } 
