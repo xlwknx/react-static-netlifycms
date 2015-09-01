@@ -2,15 +2,6 @@
 Virgil | Developers | PHP | Crypto Library
 @show
 
-@section('header-block')
-    <div class="dev-header-container">
-        <div class="container">
-            <h1 class="text-left">Crypto Library</h1>
-            <h3 class="text-left">This describes how to build and use the Crypto Library for C/C++ platform</h3>        
-        </div>        
-    </div>    
-    
-@show
 
 @section('content')
 	@include('pages.public.documents.cpp.partial.header')

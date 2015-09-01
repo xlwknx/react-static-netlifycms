@@ -7,7 +7,7 @@ class DocumentsController extends AbstractController
     /**
      * The layout that should be used for responses.
      */
-    protected $layout = 'layouts.developers';
+    protected $layout = 'layouts.public';
 
     public function index()
     {
