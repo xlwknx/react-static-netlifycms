@@ -12,6 +12,7 @@ var config = {
 	styles: {
 		src: [
 			p('./styles/main.less')
+			// p('./styles/highlight-js-rainbow.css')
 		],
 
 		dist: 'public.css',

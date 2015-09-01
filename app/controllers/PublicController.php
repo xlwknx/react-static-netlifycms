@@ -18,15 +18,6 @@ class PublicController extends AbstractController
         );
     }
 
-    public function contactUs()
-    {
-
-        $this->setActivePage('contact-us');
-        $this->layout->content = View::make(
-            'pages.public.contact-us'
-        );
-    }
-
     public function apps()
     {
 
@@ -36,30 +27,12 @@ class PublicController extends AbstractController
         );
     }
 
-    public function signin()
+    public function contactUs()
     {
 
-        $this->setActivePage('signin');
+        $this->setActivePage('contact-us');
         $this->layout->content = View::make(
-            'pages.public.signin'
-        );
-    }
-
-    public function signup()
-    {
-
-        $this->setActivePage('signup');
-        $this->layout->content = View::make(
-            'pages.public.signup'
-        );
-    }
-
-    public function reset()
-    {
-
-        $this->setActivePage('reset');
-        $this->layout->content = View::make(
-            'pages.public.reset'
+            'pages.public.contact-us'
         );
     }
 

@@ -8,15 +8,19 @@
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
             <div class="form-default">           
                 <h2>Sign In</h2>
-                @if(Session::has('error'))
-                    <div class="alert alert-danger">
-                        <h4>{{Session::get('error')}}</h4>
-                    </div>
+                @if(Session::has('error') || $errors)
+                <div class="alert alert-danger">
+                    <h4>
+                        {{Lang::get(Session::get('error'))}}
+                        <?=$errors->first('email'); ?>
+                        <?=$errors->first('password'); ?>
+                    </h4>
+                </div>
                 @endif
-                <form action="/session/signin" method="post">
+                <form action="/signin" method="post">
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">Your Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                      <input type="text" name="email" class="form-control" placeholder="email@example.com" aria-describedby="basic-addon1">
+                      <input type="text" name="email" class="form-control" placeholder="email@example.com" aria-describedby="basic-addon1" value="<?=Input::old('email')?>">
                     </div>
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">Your Password:</span>

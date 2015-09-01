@@ -24,7 +24,7 @@
                                 <button type="submit" class="btn btn-primary">Send</button>      
                             </div>
                             <div class="col-md-6 col-sm-6">
-                                <a href="/signin" class="btn btn-default">Remember it?</a>
+                                <a href="/signin" class="btn btn-default">Sign In</a>
                             </div>
                         </div>
                     </div>       

@@ -4,7 +4,7 @@
 @v_navbar_color_hover: #ffffff;
 @v_navbar_height: 70px;
 @v_navbar_font_size: 14px;
-@v_navbar_font_family: "ProximaNova-Semibold";
+@v_navbar_font_family: @v_font_brend1; 
 
 .header-block {
     .navbar-default {
@@ -88,9 +88,16 @@
     }
 }
 
-.header-block {
-    .logo-img {
-        height: 40px;
-        margin-top: 11px;
+.header-home-block {
+    .navbar-default {
+        background-color: transparent;
     }
+    .home-bg {
+        background-image: url('/img/home.jpg');
+    }
+}
+
+.logo-img {
+    height: 40px;
+    margin-top: 11px;
 }

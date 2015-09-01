@@ -1,5 +1,11 @@
 <?php
 
+use Authentication as AuthenticationModel,
+    Application as ApplicationModel,
+    Account as AccountModel,
+
+    Virgil\Helper\UUID;
+
 class Account extends Eloquent {
 
     /**
@@ -18,18 +24,17 @@ class Account extends Eloquent {
     /**
      * Create new Account instance
      *
-     * @param $email
-     * @param $password
-     * @param $company
+     * @param $email - Account email
+     * @param $password - Account password
      * @return Account
      */
-    public static function createAccount($email, $password, $company) {
+    public static function createAccount($email, $password) {
 
         $account = new Account();
         $account->email        = $email;
         $account->password     = md5($password);
-        $account->company      = $company;
         $account->confirmed    = self::ACCOUNT_CONFIRMED;
+        $account->uuid         = UUID::generate();
 
         $account->save();
 
@@ -37,22 +42,33 @@ class Account extends Eloquent {
     }
 
     /**
-     * Get Account instance by Authentication token
+     * Get Account instance by Account Email and Account Password
      *
-     * @param $token
-     * @return bool
+     * @param $email
+     * @param $password
+     * @return Account
      */
-    public static function getAccountByAuthToken($token) {
+    public static function getAccountByEmailAndPassword($email, $password) {
 
-        $authentication = \Authentication::whereToken(
-            $token
+        return AccountModel::where(
+            'email',
+            $email
+        )->where(
+            'password',
+            md5($password)
         )->first();
+    }
 
-        if($authentication) {
-            return $authentication->account;
-        }
+    /**
+     * Get Account Session token
+     *
+     * @return string
+     */
+    public function getSessionToken() {
 
-        return false;
+        return AuthenticationModel::getSessionToken(
+            $this
+        );
     }
 
     /**
@@ -63,5 +79,18 @@ class Account extends Eloquent {
     public function isConfirmed() {
 
         return $this->confirmed == self::ACCOUNT_CONFIRMED ? true : false;
+    }
+
+    /**
+     * Get Account Application list
+     *
+     * @return mixed
+     */
+    public function getApplicationList() {
+
+        return ApplicationModel::getAccountApplicationList(
+            $this
+        );
+
     }
 }

@@ -11,78 +11,49 @@
 |
 */
 
-Route::post('session/signin', array(
+Route::group(
+    array(
+        'before' => 'sessionFilter'
+    ),
+    function() {
+
+        Route::get('signin', array(
+            'uses' => 'SessionController@signin'
+        ));
+
+        Route::get('signup', array(
+            'uses' => 'SessionController@signup'
+        ));
+    }
+);
+
+Route::group(
+    array(
+        'before' => 'accountFilter'
+    ),
+    function() {
+
+        Route::get('dashboard', array(
+            'uses' => 'DashboardController@index'
+        ));
+    }
+);
+
+Route::post('signin', array(
     'uses' => 'SessionController@signin'
 ));
 
-Route::get('session/signout', array(
-    'uses' => 'SessionController@signout'
-));
-
-Route::post('session/signup', array(
+Route::post('signup', array(
     'uses' => 'SessionController@signup'
 ));
 
-
-
-Route::get('account/confirm/{code}', array(
-    'uses' => 'AccountController@confirm'
+Route::get('signout', array(
+    'uses' => 'SessionController@signout'
 ));
-
-Route::post('account/confirm/re-send', array(
-    'uses' => 'AccountController@resendConfirm'
-));
-
-
 
 Route::post('application/validate-token', array(
     'uses' => 'ApplicationController@validateToken'
 ));
-
-
-/*
-|--------------------------------------------------------------------------
-| Application Route Filters
-|--------------------------------------------------------------------------
-|
-| Apply Auth verification for some protected methods.
-|
-*/
-Route::group(array('before' => 'restAuthVerification'), function () {
-
-    Route::get('application/get/{application}', array(
-        'uses' => 'ApplicationController@getOne'
-    ));
-
-    Route::get('application/list', array(
-        'uses' => 'ApplicationController@getAll'
-    ));
-
-    Route::post('application/reset-key/{application}', array(
-        'uses' => 'ApplicationController@resetKey'
-    ));
-
-    Route::post('application', array(
-        'uses' => 'ApplicationController@create'
-    ));
-
-    Route::put('application/{application}', array(
-        'uses' => 'ApplicationController@update'
-    ));
-
-    Route::delete('application/{application}', array(
-        'uses' => 'ApplicationController@delete'
-    ));
-});
-
-
-Route::group(array('before' => 'webAuthVerification'), function () {
-
-    Route::get('dashboard', array(
-        'uses' => 'DashboardController@index'
-    ));
-
-});
 
 /*
 |--------------------------------------------------------------------------
@@ -112,14 +83,6 @@ Route::get('apps', array(
     'uses' => 'PublicController@apps'
 ));
 
-Route::get('signin', array(
-    'uses' => 'PublicController@signin'
-));
-
-Route::get('signup', array(
-    'uses' => 'PublicController@signup'
-));
-
 Route::get('reset', array(
     'uses' => 'PublicController@reset'
 ));
@@ -130,10 +93,6 @@ Route::get('terms-of-service', array(
 
 Route::get('privacy-policy', array(
     'uses' => 'PublicController@privacyPolicy'
-));
-
-Route::get('apps/{application}', array(
-    'uses' => 'DashboardController@index'
 ));
 
 Route::get('documents', array(

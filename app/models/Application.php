@@ -1,6 +1,9 @@
 <?php
 
-class Application extends Eloquent implements JsonSerializable {
+use Application as ApplicationModel,
+    Virgil\Helper\UUID;
+
+class Application extends Eloquent {
 
     /**
      * The database table used by the model.
@@ -17,7 +20,7 @@ class Application extends Eloquent implements JsonSerializable {
      */
     public static function getAccountApplicationList(Account $account) {
 
-        return \Application::where(
+        return ApplicationModel::where(
             'account_id', '=', $account->id
         )->get();
     }
@@ -52,13 +55,7 @@ class Application extends Eloquent implements JsonSerializable {
         $application->token = md5(
             $account->id . $data['name'] . $data['description'] . $data['url'] . time()
         );
-        $application->alias  = preg_replace(
-            '/\s+/',
-            '-',
-            strtolower(
-                $data['name']
-            )
-        );
+        $application->uuid  = UUID::generate();
 
         $application->save();
 
@@ -87,7 +84,7 @@ class Application extends Eloquent implements JsonSerializable {
      *
      * @return $this
      */
-    public function resetApplicationToken() {
+    public function resetToken() {
 
         $this->token = md5(
             $this->account_id . $this->name . $this->description . $this->url . time()
@@ -96,22 +93,6 @@ class Application extends Eloquent implements JsonSerializable {
         $this->save();
 
         return $this;
-    }
-
-    /**
-     * Serialize Application instance
-     *
-     * @return array|mixed
-     */
-    public function jsonSerialize() {
-
-        return array(
-            'id' => $this->id,
-            'name' => $this->name,
-            'description' => $this->description,
-            'url' => $this->url,
-            'key' => $this->token
-        );
     }
 
     /**
@@ -131,19 +112,7 @@ class Application extends Eloquent implements JsonSerializable {
      */
     public function getIdentity() {
 
-        return implode('.',
-            array(
-                'com',
-                preg_replace(
-                    '/\s+/',
-                    '-',
-                    strtolower(
-                        $this->account->company
-                    )
-                ),
-                $this->alias
-            )
-        );
+        return $this->uuid;
     }
 
 } 
