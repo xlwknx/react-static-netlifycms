@@ -98,7 +98,7 @@ using (var keyPair = new VirgilKeyPair())
         		</p>
         		<p>Full source code examples are available on <a href="https://github.com/VirgilSecurity/virgil-net">GitHub</a> in public access.</p>
         		<pre><code class="language-csharp">var keysService = new PkiClient(new SDK.Keys.Http.Connection(Constants.ApplicationToken, 
-	new Uri(Constants.KeysServiceUrl)));
+    new Uri(Constants.KeysServiceUrl)));
 
 var userData = new UserData
 {
@@ -114,49 +114,55 @@ var vPublicKey = await keysService.PublicKeys.Create(publicKey, publicKey, userD
 </p>
 
 <pre><code class="language-csharp">var vUserData = vPublicKey.UserData.First();
-var confirmCode = ""; // Confirmation code you received on your email box.
+var confirmCode = "{YOUR_CODE}"; // Confirmation code you received on your email box.
 
-await keysService.UserData.Confirm(vUserData.UserDataId, confirmCode, vPublicKey.PublicKeyId, privateKey);</code></pre>
+await keysService.UserData.Confirm(vUserData.UserDataId, 
+    confirmCode, vPublicKey.PublicKeyId, privateKey);</code></pre>
 
-<h2 id="register-user">Store Private Key</h2>
+<h2 id="store-user">Store Private Key</h2>
 <p>
 	This example shows how to store private keys on Virgil Private Keys service using SDK, 
 	this step is optional and you can use your own secure storage. 
 </p>
 
-<pre><code class="language-csharp">var privateKeysClient = new KeyringClient(new SDK.PrivateKeys.Http.Connection(Constants.ApplicationToken, 
-	new Uri(Constants.PrivateKeysServiceUrl)));
+<pre><code class="language-csharp">var privateKeysClient = new KeyringClient(new SDK.PrivateKeys.Http.Connection(
+    Constants.ApplicationToken, new Uri(Constants.PrivateKeysServiceUrl)));
 
 var containerPassword = "12345678";
 
-// You can choose between few types of container. Easy and Normal
-//   Easy   - service keeps your private keys encrypted with container password, all keys should be sent 
-//            encrypted with container password, before sent to the service.
-//   Normal - responsibility for the security of the private keys at your own risk. 
+// You can choose between two types of container. Easy and Normal.
+
+// Easy   - Virgil’s Keys Service will keep your private keys encrypted with 
+//          a container password. All keys should be sent to the service 
+//          encrypted with this container password.
+// Normal - Storage of the private keys is your responsibility and security 
+//          of those passwords and data will be at your own risk.
 
 var containerType = ContainerType.Easy; // ContainerType.Normal
 
 // Initializes an container for private keys storage. 
 
 await privateKeysClient.Container.Initialize(containerType, vPublicKey.PublicKeyId, 
-	privateKey, containerPassword);
+    privateKey, containerPassword);
 
-// Authenticate requests to Virgil Private Keys service.
+// Authenticate requests to Virgil’s Private Keys service.
 
 privateKeysClient.Connection.SetCredentials(vUserData.Value, containerPassword);
 
-// Add your private key to Virgil Private Keys service.
+// Add your private key to Virgil's Private Keys service.
 
 if (containerType == ContainerType.Easy)
 {
-    // private key will be encrypted with container password, provided on authentication
+    // The private key will be encrypted with a container password, 
+    // provided upon authentication.
     await privateKeysClient.PrivateKeys.Add(vPublicKey.PublicKeyId, privateKey);
 }
 else
 {
     // use your own password to encrypt the private key.
     var privateKeyPassword = "47N6JwTGUmFvn4Eh";
-    await privateKeysClient.PrivateKeys.Add(vPublicKey.PublicKeyId, privateKey, privateKeyPassword);
+    await privateKeysClient.PrivateKeys.Add(vPublicKey.PublicKeyId, 
+        privateKey, privateKeyPassword);
 }</code></pre>
 
 		<h2 id="get-public-key">Get a Public Key</h2>

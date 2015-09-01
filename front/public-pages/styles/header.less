@@ -23,12 +23,15 @@
             }
         }
         .navbar-nav {
+            margin-right: 2px;
             > li {
                 > a {
                     color: @v_navbar_color;
                     line-height: @v_navbar_height;
                     height: @v_navbar_height;
                     padding-top: 0;
+                    font-family: @v_font_brend1;
+                    font-size: 14px;
                     &:hover, &:focus {
                         color: @v_navbar_color_hover;
                     }
@@ -91,9 +94,58 @@
 .header-home-block {
     .navbar-default {
         background-color: transparent;
+        margin-bottom: 0px;
+        border-width: 0;
+        font-family: @v_navbar_font_family;
+        font-size: @v_navbar_font_size;
+        .navbar-brand {
+            color: @v_navbar_color;
+            line-height: @v_navbar_height;
+            height: @v_navbar_height;
+            padding-top: 0;
+            &:hover, &:focus {
+                color: @v_navbar_color_hover;
+            }
+        }
+        .navbar-nav {
+            margin-right: 20px;
+            > li {
+                > a {
+                    color: white;
+                    line-height: @v_navbar_height;
+                    height: @v_navbar_height;
+                    padding-top: 0;
+                    font-family: @v_font_brend1;
+                    font-size: 14px;
+                    &:hover, &:focus {
+                        color: @v_navbar_color_hover;
+                    }
+                }
+            }
+            .active {
+                > a, > a:hover, > a:focus {
+                    color: @v_navbar_color_hover;
+                    background-color: @v_navbar_bg_highlight;
+                }
+            }
+        }
+        .navbar-toggle {
+            border-color: white;
+            margin-top: 17px;
+            &:hover, &:focus {
+                background-color: @v_navbar_bg_highlight;
+            }
+            .icon-bar {
+                background-color: @v_navbar_color;
+            }
+        }
     }
     .home-bg {
         background-image: url('/img/home.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: 50% 50%;
+        height: 450px;
     }
 }
 
