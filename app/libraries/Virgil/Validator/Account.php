@@ -6,10 +6,7 @@ use \Validator,
     \Redirect,
     \Input,
 
-    \Account as AccountModel,
-
-    Virgil\Error\Code as ErrorCode,
-    Virgil\Exception\Validator as ValidatorException;
+    \Account as AccountModel;
 
 
 class Account {
@@ -20,10 +17,10 @@ class Account {
     );
 
     /**
-     * Validate signin Account action
+     * Validate 'signin' request
      *
      * @param $parameters
-     * @return Account|Illuminate\Http\RedirectResponse
+     * @return \Account
      */
     public static function validateSignin($parameters) {
 
@@ -58,7 +55,12 @@ class Account {
         return $account;
     }
 
-
+    /**
+     * Validate 'signup' request
+     *
+     * @param $parameters
+     * @return array
+     */
     public static function validateSignup($parameters) {
 
         $validator = Validator::make(
@@ -76,8 +78,6 @@ class Account {
                 Input::except('password')
             )->withErrors(
                 $validator
-            )->withInput(
-                Input::except('password')
             );
         }
 
@@ -103,38 +103,38 @@ class Account {
     }
 
     /**
-     * Validate if Account not confirmed yet
+     * Validate 'reset-password' request
      *
-     * @param Account $account
-     * @return bool
-     * @throws \Virgil\Exception\Validator
+     * @param $parameters
+     * @return mixed
      */
-    public static function validateNotConfirmed(Account $account) {
+    public static function validateReset($parameters) {
 
-        if(!$account->isConfirmed()) {
-            throw new ValidatorException(
-                ErrorCode::ACCOUNT_NOT_CONFIRMED
+        $validator = Validator::make(
+            $parameters,
+            array(
+                'email' => 'required|email'
+            )
+        );
+
+        if($validator->fails()) {
+            return Redirect::to('/reset-password')->withInput()->withErrors(
+                $validator
             );
         }
 
-        return true;
-    }
+        $account = AccountModel::getAccountByEmail(
+            $parameters['email']
+        );
 
-    /**
-     * Validate if Account already confirmed
-     *
-     * @param Account $account
-     * @return bool
-     * @throws \Virgil\Exception\Validator
-     */
-    public static function validateConfirmed(Account $account) {
+        if(!$account) {
 
-        if($account->isConfirmed()) {
-            throw new ValidatorException(
-                ErrorCode::ACCOUNT_ALREADY_CONFIRMED
-            );
+            return Redirect::to('/reset-password')->with(
+                'error',
+                'validation.custom.account.not_exists'
+            )->withInput();
         }
 
-        return true;
+        return $account;
     }
 }

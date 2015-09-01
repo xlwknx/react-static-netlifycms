@@ -51,25 +51,40 @@ Route::group(
     }
 );
 
+Route::get('signin', array(
+    'uses' => 'AccountController@signin'
+));
+
 Route::post('signin', array(
     'uses' => 'AccountController@signin'
+));
+
+
+
+Route::get('signup', array(
+    'uses' => 'AccountController@signup'
 ));
 
 Route::post('signup', array(
     'uses' => 'AccountController@signup'
 ));
 
-Route::get('signin', array(
-    'uses' => 'AccountController@signin'
-));
 
-Route::get('signup', array(
-    'uses' => 'AccountController@signup'
-));
 
 Route::get('signout', array(
     'uses' => 'AccountController@signout'
 ));
+
+
+Route::get('reset-password', array(
+    'uses' => 'AccountController@resetPassword'
+));
+
+Route::post('reset-password', array(
+    'uses' => 'AccountController@resetPassword'
+));
+
+
 
 Route::post('application/validate-token', array(
     'uses' => 'ApplicationController@validateToken'
@@ -101,10 +116,6 @@ Route::get('contact-us', array(
 
 Route::get('apps', array(
     'uses' => 'PublicController@apps'
-));
-
-Route::get('reset', array(
-    'uses' => 'PublicController@reset'
 ));
 
 Route::get('terms-of-service', array(

@@ -50,12 +50,23 @@ class Account extends Eloquent {
      */
     public static function getAccountByEmailAndPassword($email, $password) {
 
-        return AccountModel::where(
-            'email',
+        return AccountModel::whereEmail(
             $email
-        )->where(
-            'password',
+        )->wherePassword(
             md5($password)
+        )->first();
+    }
+
+    /**
+     * Get Account instance by Account Email
+     *
+     * @param $email
+     * @return Account
+     */
+    public static function getAccountByEmail($email) {
+
+        return AccountModel::whereEmail(
+            $email
         )->first();
     }
 
@@ -119,5 +130,10 @@ class Account extends Eloquent {
             $this,
             $parameters
         );
+    }
+
+    public function reset() {
+
+        return true;
     }
 }
