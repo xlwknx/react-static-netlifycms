@@ -11,7 +11,7 @@ class CreateServiceAuthenticationTable extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('service_authentication', function($table)
+        Schema::create('service_account_session', function($table)
         {
             $table->engine = 'InnoDB';
 
@@ -37,7 +37,7 @@ class CreateServiceAuthenticationTable extends Migration {
 	 */
 	public function down()
 	{
-        Schema::drop('service_authentication');
+        Schema::drop('service_account_session');
 	}
 
 }
