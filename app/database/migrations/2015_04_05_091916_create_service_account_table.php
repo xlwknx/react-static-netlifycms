@@ -19,6 +19,7 @@ class CreateServiceAccountTable extends Migration {
             $table->string('email', 36)->unique();
             $table->string('password', 36);
             $table->smallInteger('confirmed')->unsigned();
+            $table->string('token')->nullable();
             $table->timestamps();
         });
 	}
