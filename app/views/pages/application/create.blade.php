@@ -1,14 +1,19 @@
 @section('content')
 
-    @if(Session::has('error') || $errors)
-    <div class="alert alert-danger">
-        <h4>
-            <?=$errors->first('application_name'); ?>
-            <?=$errors->first('application_description'); ?>
-            <?=$errors->first('application_url'); ?>
-        </h4>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Create Application</h1>
+                @if(Session::has('error') || $errors)
+                <div class="alert alert-danger">
+                    <?=$errors->first('application_name'); ?>
+                    <?=$errors->first('application_description'); ?>
+                    <?=$errors->first('application_url'); ?>
+                </div>
+                @endif
+            </div>
+        </div>
     </div>
-    @endif
 
     <form method="post" action="/dashboard/application/create">
         <input type="text" name="application_name" value="<?=Input::old('application_name')?>"/>
