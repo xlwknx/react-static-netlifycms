@@ -1,5 +1,6 @@
 @section('content')
 
+<<<<<<< HEAD
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -13,6 +14,15 @@
                 @endif
             </div>
         </div>
+=======
+    @if(Session::has('error') || $errors->any())
+    <div class="alert alert-danger">
+        <h4>
+            <?=$errors->first('application_name'); ?>
+            <?=$errors->first('application_description'); ?>
+            <?=$errors->first('application_url'); ?>
+        </h4>
+>>>>>>> 9add1b2b4276a5a042e713b165c2e1fb501fc45b
     </div>
 
     <form method="post" action="/dashboard/application/create">

@@ -1,6 +1,6 @@
 @section('content')
 
-@if(Session::has('error') || $errors)
+@if(Session::has('error') || $errors->any())
 <div class="alert alert-danger">
     <h4>
         <?=$errors->first('application_name'); ?>
