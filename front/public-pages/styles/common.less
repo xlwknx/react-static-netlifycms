@@ -69,32 +69,33 @@ ol,ul {
   color: @v_color_brend3;
 }
 
-.btn {
-  margin-top: 30px;
-  height: 52px;
-  line-height: 38px;
-  font-size: 16px;
-  font-family: @v_font_brend1_bold;
-  width: 100%;
-  border-width: 0px;
-}
-
-.btn-primary {    
-  background-color: @v_color_brend9;
-  &:hover {
-    background-color: lighten(@v_color_brend9, 10%);
-  }
-} 
-.btn-default {    
-  border: 1px solid @v_color_brend8; 
-  background-color: white;
-  &:hover,&:focus {
-    background-color: @v_color_brend2;
-  }
-} 
-
 body {
   // background-color: @v_color_brend2;
+}
+
+// BUTTONS
+
+.label-default {
+  background-color: @v_color_brend6;
+  color: @v_color_brend5;
+}
+
+.label {
+    display: inline;
+    padding: 5px 7px 3px 7px;
+    line-height: 1;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    font-family: @v_font_brend2;
+}
+
+.btn {
+  padding: 6px 12px 4px 12px;
+  font-family: @v_font_brend2;
 }
 
 .media-heading {
@@ -106,6 +107,10 @@ body {
   font-family: @v_font_brend2;
   color: @v_color_brend3;
   font-size: 16px;
+}
+
+.media-object {
+  width: 70px;
 }
 
 // NAVIGATION

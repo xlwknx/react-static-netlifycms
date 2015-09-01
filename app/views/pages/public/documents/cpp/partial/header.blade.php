@@ -11,11 +11,11 @@
         </div>
         <div class="row visible-xs visible-sm">
             <div class="col-sm-4 col-xs-4">
-                <a href="/documents/csharp/<?= $reference; ?>" class="dev-lng small active">.NET/C#</a>
+                <a href="/documents/csharp/<?= $reference; ?>" class="dev-lng small">.NET/C#</a>
                 <a href="/documents/nodejs/<?= $reference; ?>" class="dev-lng small disabled">Node.js</a>
             </div>
             <div class="col-sm-4 col-xs-4">
-                <a href="/documents/cpp/<?= $reference; ?>" class="dev-lng small">C/C++</a>
+                <a href="/documents/cpp/<?= $reference; ?>" class="dev-lng small active">C/C++</a>
                 <a href="/documents/python/<?= $reference; ?>" class="dev-lng small disabled">Python</a>
             </div>
             <div class="col-sm-4 col-xs-4">
