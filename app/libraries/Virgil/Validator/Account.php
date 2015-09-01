@@ -42,20 +42,20 @@ class Account {
             $parameters['password']
         );
 
-        if($account->isResetPasswordInProgress()) {
-            return Redirect::to('/signin')->with(
-                'error',
-                'validation.custom.account.reset_in_progress'
-            )->withInput(
-                Input::except('password')
-            );
-        }
-
         if(!$account) {
 
             return Redirect::to('/signin')->with(
                 'error',
                 'validation.custom.account.not_exists'
+            )->withInput(
+                Input::except('password')
+            );
+        }
+
+        if($account->isResetPasswordInProgress()) {
+            return Redirect::to('/signin')->with(
+                'error',
+                'validation.custom.account.reset_in_progress'
             )->withInput(
                 Input::except('password')
             );

@@ -69,7 +69,7 @@
                     Elliptic Curve Integrated Encryption Scheme (ECIES). Virgil Pass combines standards-based cryptography
                     with an open, global key management system to make state-of-the-art privacy and security available to 
                     any application developer.<br />
-                   <a class="btn btn-primary apps-donwload-btn" >Download</a>
+                   <a class="btn btn-default apps-donwload-btn" disabled="disabled" >Coming Soon...</a>
                   </div>
                 </div>  
             </div>          
