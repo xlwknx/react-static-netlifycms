@@ -91,6 +91,19 @@ class Account extends Eloquent {
         return ApplicationModel::getAccountApplicationList(
             $this
         );
+    }
 
+    /**
+     * Get Account Application
+     *
+     * @param $applicationId
+     * @return Application
+     */
+    public function getApplication($applicationId) {
+
+        return ApplicationModel::getAccountApplication(
+            $this,
+            $applicationId
+        );
     }
 }

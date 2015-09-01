@@ -13,6 +13,22 @@ class Application extends Eloquent {
     protected $table = 'service_account_application';
 
     /**
+     * Get Application by Application ID
+     *
+     * @param Account $account
+     * @param $applicationId
+     * @return mixed
+     */
+    public static function getAccountApplication(Account $account, $applicationId) {
+
+        return ApplicationModel::whereAccountId(
+            $account->id
+        )->whereId(
+            $applicationId
+        )->first();
+    }
+
+    /**
      * Get Application list by account
      *
      * @param Account $account
@@ -20,8 +36,8 @@ class Application extends Eloquent {
      */
     public static function getAccountApplicationList(Account $account) {
 
-        return ApplicationModel::where(
-            'account_id', '=', $account->id
+        return ApplicationModel::whereAccountId(
+            $account->id
         )->get();
     }
 

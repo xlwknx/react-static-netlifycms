@@ -24,17 +24,21 @@ Route::group(
         Route::get('signup', array(
             'uses' => 'SessionController@signup'
         ));
-    }
-);
-
-Route::group(
-    array(
-        'before' => 'accountFilter'
-    ),
-    function() {
 
         Route::get('dashboard', array(
             'uses' => 'DashboardController@index'
+        ));
+
+        Route::get('dashboard/application/create', array(
+            'uses' => 'DashboardController@createApplication'
+        ));
+
+        Route::get('dashboard/application/update/{applicationId}', array(
+            'uses' => 'DashboardController@updateApplication'
+        ));
+
+        Route::get('dashboard/application/delete', array(
+            'uses' => 'DashboardController@createApplication'
         ));
     }
 );
