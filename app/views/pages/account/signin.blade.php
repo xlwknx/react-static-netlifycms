@@ -35,7 +35,7 @@
                         </div>
                     </div>       
                     <div class="form-footer">
-                        <a class="text-center" href="/reset">Can't access your account?</a>  
+                        <a class="text-center" href="/reset-password">Can't access your account?</a>  
                     </div>                         
                 </form>
             </div>

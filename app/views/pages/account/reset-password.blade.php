@@ -10,18 +10,14 @@
                 <h2>Reset Password</h2>
                 @if($resetResult)
                 <div class="alert alert-success">
-                    <h4>
-                        {{$resetMessage}}
-                    </h4>
+                    {{$resetMessage}}
                 </div>
                 @endif
 
                 @if(Session::has('error') || $errors->any())
                 <div class="alert alert-danger">
-                    <h4>
-                        {{Lang::get(Session::get('error'))}}
-                        <?=$errors->first('email'); ?>
-                    </h4>
+                    {{Lang::get(Session::get('error'))}}
+                    <?=$errors->first('email'); ?>
                 </div>
                 @endif
 

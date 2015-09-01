@@ -28,31 +28,20 @@ Virgil | Developers | C/C++ | Quickstart
                     </p>
                     <pre><code>X-VIRGIL-APPLICATION-TOKEN: { YOUR_APPLICATION_TOKEN }</code></pre>
                 </section>
-                <section id="install">
-                    <h2>Install</h2>
+                <section id="usage-examples">
+                    <h2>Usage Examples</h2>
                     <p>
-                        There are several ways to install and use the Crypto Library and Virgil’s SDK in your environment.
+                        This section describes common case library usage scenarios, like
                     </p>
-                    <ol>
-                        <li>Install with <a href="#package-management-system">Package Management System</a></li>
-                        <li><a href="/documents/csharp/downloads">Download</a> from our web site</li>
-                        <li><a href="/documents/csharp/crypto-lib#build">Build</a> by yourself</li>
-                    </ol>
-                    <h3 id="#package-management-system">Package Management Systems</h3>
-                    <p>
-                        <b>Virgil Security</b> supports most of popular package management systems. 
-                        You can easily add the Crypto Library dependency to your project, just follow the examples below.
-                    </p>
-    
-                    <pre><code>PM> Install-Package Virgil.Crypto</code></pre>
-                    <p>
-                        Virgil Public Keys SDK:
-                    </p>
-                    <pre><code>PM> Install-Package Virgil.SDK.Keys</code></pre>
-                    <p>
-                        Virgil Private Keys SDK:
-                    </p>
-                    <pre><code>PM> Install-Package Virgil.SDK.PrivateKeys</code></pre>
+                    <ul>
+                        <li>generate new keys;</li>
+                        <li>register user's public key on the Virgil PKI service;</li>
+                        <li>encrypt data for user identified by email, phone, etc;</li>
+                        <li>decrypt data with private key;</li>
+                        <li>sign data with private key;</li>
+                        <li>verify data with signer identified by email, phone, etc.</li>
+                    </ul>
+                    <p>Full source code examples are available on <a href="https://github.com/VirgilSecurity/virgil-cpp/tree/master/examples">GitHub</a> in public access.</p>
                 </section>
                 <section id="generate-keys">
                     <h2>Generate Keys</h2>
@@ -73,19 +62,11 @@ Virgil | Developers | C/C++ | Quickstart
                     <p>
                         The following code example creates a new public/private key pair.
                     </p>
-                        <pre><code class="language-csharp">using Virgil.Crypto;
-using Virgil.SDK.Keys
-using Virgil.SDK.PrivateKeys                 
-...
+                        <pre><code class="language-cpp">// Specify password in the constructor to store private key encrypted.
+VirgilKeyPair newKeyPair; 
 
-byte[] publicKey;
-byte[] privateKey;
-
-using (var keyPair = new VirgilKeyPair())
-{
-    publicKey = keyPair.PublicKey();
-    privateKey = keyPair.PrivateKey();
-}
+VirgilByteArray publicKey = newKeyPair.publicKey();
+VirgilByteArray privateKey = newKeyPair.privateKey();
 </code></pre>
                 </section>
                 <h2 id="register-user">Register User</h2>
@@ -97,73 +78,27 @@ using (var keyPair = new VirgilKeyPair())
                     This example shows how to upload a public key and register a new account on Virgil’s Keys Service.
                 </p>
                 <p>Full source code examples are available on <a href="https://github.com/VirgilSecurity/virgil-net">GitHub</a> in public access.</p>
-                <pre><code class="language-csharp">var keysService = new PkiClient(new SDK.Keys.Http.Connection(Constants.ApplicationToken, 
-    new Uri(Constants.KeysServiceUrl)));
-
-var userData = new UserData
-{
-    Class = UserDataClass.UserId,
-    Type = UserDataType.EmailId,
-    Value = "your.email@server.hz"
-};
-            
-var vPublicKey = await keysService.PublicKeys.Create(publicKey, publicKey, userData);</code></pre>
+                <pre><code class="language-cpp">Credentials credentials(privateKey);
+std::string uuid = "{random generated UUID}";
+KeysClient keysClient("{Application Token}");
+UserData userData = UserData::email("mail@server.com");
+PublicKey virgilPublicKey = keysClient.publicKey().add(publicKey, {userData}, credentials, uuid);</code></pre>
 
 <p>
     Confirm <b>User Data</b> using your user data type (Currently supported only Email).
 </p>
 
-<pre><code class="language-csharp">var vUserData = vPublicKey.UserData.First();
-var confirmCode = ""; // Confirmation code you received on your email box.
+<pre><code class="language-csharp">auto userDataId = virgilPublicKey.userData().front().userDataId();
+auto confirmationCode = ""; // Confirmation code you received on your email box.
+KeysClient keysClient("{Application Token}");
+keysClient.userData().confirm(userDataId, confirmationCode);</code></pre>
 
-await keysService.UserData.Confirm(vUserData.UserDataId, confirmCode, vPublicKey.PublicKeyId, privateKey);</code></pre>
-
-<h2 id="register-user">Store Private Key</h2>
-<p>
-    This example shows how to store private keys on Virgil Private Keys service using SDK, 
-    this step is optional and you can use your own secure storage. 
-</p>
-
-<pre><code class="language-csharp">var privateKeysClient = new KeyringClient(new SDK.PrivateKeys.Http.Connection(Constants.ApplicationToken, 
-    new Uri(Constants.PrivateKeysServiceUrl)));
-
-var containerPassword = "12345678";
-
-// You can choose between few types of container. Easy and Normal
-//   Easy   - service keeps your private keys encrypted with container password, all keys should be sent 
-//            encrypted with container password, before sent to the service.
-//   Normal - responsibility for the security of the private keys at your own risk. 
-
-var containerType = ContainerType.Easy; // ContainerType.Normal
-
-// Initializes an container for private keys storage. 
-
-await privateKeysClient.Container.Initialize(containerType, vPublicKey.PublicKeyId, 
-    privateKey, containerPassword);
-
-// Authenticate requests to Virgil Private Keys service.
-
-privateKeysClient.Connection.SetCredentials(vUserData.Value, containerPassword);
-
-// Add your private key to Virgil Private Keys service.
-
-if (containerType == ContainerType.Easy)
-{
-    // private key will be encrypted with container password, provided on authentication
-    await privateKeysClient.PrivateKeys.Add(vPublicKey.PublicKeyId, privateKey);
-}
-else
-{
-    // use your own password to encrypt the private key.
-    var privateKeyPassword = "47N6JwTGUmFvn4Eh";
-    await privateKeysClient.PrivateKeys.Add(vPublicKey.PublicKeyId, privateKey, privateKeyPassword);
-}</code></pre>
-
-        <h2 id="get-public-key">Get a Public Key</h2>
+        <h2 id="get-public-key">Get a User's Public Key</h2>
         <p>
             Get public key from Public Keys Service.
         </p>
-        <pre><code class="language-csharp">var recepientPublicKey = await keysService.PublicKeys.Search("recepient.email@server.hz");</code></pre>
+        <pre><code class="language-cpp">KeysClient keysClient("{Application Token}");
+PublicKey publicKey = keysClient.publicKey().grab("mail@server.com");</code></pre>
 
 
         <h2 id="encrypt-data">Encrypt Data</h2>
@@ -176,16 +111,9 @@ else
         <p>
             In the example below, we encrypt data using a public key from Virgil’s Public Keys Service.
         </p>
-        <pre><code class="language-csharp">byte[] encryptedData;
-
-using (var cipher = new VirgilCipher())
-{
-    byte[] recepientId = Encoding.UTF8.GetBytes(recepientPublicKey.PublicKeyId.ToString());
-    byte[] data = Encoding.UTF8.GetBytes("Some data to be encrypted");
-
-    cipher.AddKeyRecipient(recepientId, data);
-    encryptedData = cipher.Encrypt(data, true);
-}</code></pre>
+        <pre><code class="language-cpp">VirgilCipher cipher;
+cipher.addKeyRecipient(virgil::crypto::str2bytes(publicKey.publicKeyId()), publicKey.key());
+VirgilByteArray encryptedData = cipher.encrypt(virgil::crypto::str2bytes("Data to be encrypted."), true);</code></pre>
 
         <h2 id="sign-data">Sign Data</h2>
         <p>
@@ -195,11 +123,9 @@ using (var cipher = new VirgilCipher())
         </p>
         <p>The following example applies a digital signature to a public key identifier.</p>
 
-        <pre><code class="language-csharp">byte[] sign;
-using (var signer = new VirgilSigner())
-{
-    sign = signer.Sign(encryptedData, privateKey);
-}</code></pre>
+        <pre><code class="language-csharp">VirgilSigner signer;
+VirgilByteArray data = virgil::crypto::str2bytes("some data");
+VirgilByteArray sign = signer.sign(data, privateKey);</code></pre>
 
 <h2 id="verify-data">Verify Data</h2>
         <p>
@@ -214,30 +140,14 @@ using (var signer = new VirgilSigner())
             The following example verifies a digital signature which was signed by the sender.
         </p>
 
-        <pre><code class="language-csharp">bool isValid;
-using (var signer = new VirgilSigner())
-{
-    isValid = signer.Verify(encryptedData, sign, publicKey);
-}</code></pre>
+        <pre><code class="language-csharp">bool verified = signer.verify(data, sign, publicKey.key());</code></pre>
 
         <h2 id="decrypt-data">Decrypt Data</h2>
         <p>
             The following example illustrates the decryption of encrypted data. 
         </p>
 
-        <pre><code class="language-csharp">var recepientContainerPassword = "UhFC36DAtrpKjPCE";
-
-var recepientPrivateKeysClient = new KeyringClient(new Connection(Constants.ApplicationToken));
-recepientPrivateKeysClient.Connection.SetCredentials(
-    new Credentials("recepient.email@server.hz", recepientContainerPassword));
-
-var recepientPrivateKey = await recepientPrivateKeysClient.PrivateKeys.Get(recepientPublicKey.PublicKeyId);
-
-byte[] decryptedDate;
-using (var cipher = new VirgilCipher())
-{
-    decryptedDate = cipher.DecryptWithKey(encryptedData, recepientId, recepientPrivateKey.Key);
-}</code></pre>
+        <pre><code class="language-csharp">VirgilByteArray decryptedData = cipher.decrypt(encryptedData, publicKey.publicKeyId(), privateKey);</code></pre>
 
             </div>
             <div class="col-md-3 scrollspy">
@@ -245,17 +155,19 @@ using (var cipher = new VirgilCipher())
                         <li><p>Quickstart</p></li>
                         <li><a href="#introduction">Introduction</a></li>
                         <li><a href="#obtaining-an-app-token">Obtaining an App Token</a></li>
-                        <li><a href="#install">Install</a></li>
-                        <li><a href="#generate-keys">Generate Keys</a></li>
-                        <li><a href="#register-user">Register User</a></li>
-                        <li><a href="#get-public-key">Get Public Key</a></li>
+                        <li><a href="#usage-examples">Usage examples</a></li>
+                        <li><a href="#generate-keys">Generate keys</a></li>
+                        <li><a href="#register-user">Add User's Public Key</a></li>
+                        <li><a href="#get-public-key">Get User's Public Key</a></li>
                         <li><a href="#encrypt-data">Encrypt Data</a></li>
                         <li><a href="#sign-data">Sign Data</a></li>
                         <li><a href="#verify-data">Verify Data</a></li>
-                        <li><a href="#decrypt-data">Decrypt Data</a></li>     
+                        <li><a href="#decrypt-data">Decrypt Data</a></li>    
+                        <li><a href="https://github.com/VirgilSecurity/virgil-cpp">GitHub Sources</a></li>     
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+
 @stop

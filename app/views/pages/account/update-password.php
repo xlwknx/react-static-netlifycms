@@ -10,17 +10,13 @@ Virgil | Reset Password
                 <h2>Update Password</h2>
                 @if($updateResult)
                 <div class="alert alert-success">
-                    <h4>
-                        {{$updateMessage}}
-                    </h4>
+                    {{$updateMessage}}
                 </div>
                 @endif
 
                 @if(Session::has('error') || $errors->any())
                 <div class="alert alert-danger">
-                    <h4>
-                        {{Lang::get(Session::get('error'))}}
-                    </h4>
+                    {{Lang::get(Session::get('error'))}}
                 </div>
                 @endif
 

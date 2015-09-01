@@ -119,7 +119,7 @@ var confirmCode = "{YOUR_CODE}"; // Confirmation code you received on your email
 await keysService.UserData.Confirm(vUserData.UserDataId, 
     confirmCode, vPublicKey.PublicKeyId, privateKey);</code></pre>
 
-<h2 id="store-user">Store Private Key</h2>
+<h2 id="store-private-key">Store Private Key</h2>
 <p>
 	This example shows how to store private keys on Virgil Private Keys service using SDK, 
 	this step is optional and you can use your own secure storage. 
@@ -165,7 +165,7 @@ else
         privateKey, privateKeyPassword);
 }</code></pre>
 
-		<h2 id="get-public-key">Get a Public Key</h2>
+		<h2 id="get-public-key">Get a Recepient's Public Key</h2>
         <p>
             Get public key from Public Keys Service.
         </p>
@@ -254,7 +254,8 @@ using (var cipher = new VirgilCipher())
                         <li><a href="#install">Install</a></li>
                         <li><a href="#generate-keys">Generate Keys</a></li>
                         <li><a href="#register-user">Register User</a></li>
-                        <li><a href="#get-public-key">Get Public Key</a></li>
+                        <li><a href="#store-private-key">Store Private Key</a></li>
+                        <li><a href="#get-public-key">Get a Public Key</a></li>
                         <li><a href="#encrypt-data">Encrypt Data</a></li>
                         <li><a href="#sign-data">Sign Data</a></li>
                         <li><a href="#verify-data">Verify Data</a></li>
