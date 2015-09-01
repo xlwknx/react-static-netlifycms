@@ -21,7 +21,6 @@ class CreateServiceAccountApplicationTable extends Migration {
             $table->string('description', 255);
             $table->string('url', 255)->nullable();
             $table->string('token', 64);
-            $table->string('alias', 255);
             $table->string('uuid', 36);
             $table->timestamps();
 
