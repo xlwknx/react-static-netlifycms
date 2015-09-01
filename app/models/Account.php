@@ -1,8 +1,6 @@
 <?php
 
-use \Mail,
-
-    Authentication as AuthenticationModel,
+use Authentication as AuthenticationModel,
     Application as ApplicationModel,
     Account as AccountModel,
 
@@ -165,16 +163,18 @@ class Account extends Eloquent {
      */
     public function resetPassword() {
 
+
         $this->token = User::generateResetToken();
         $this->save();
 
+        $account = $this;
         Mail::send(
             'email.reset-password',
             array('resetToken' => $this->token),
-            function($message) use ($this) {
+            function($message) use ($account) {
                 $message->to(
-                    $this->email,
-                    $this->email
+                    $account->email,
+                    $account->email
                 )->subject('Virgil Security KeyRing Reset Password');
             }
         );
