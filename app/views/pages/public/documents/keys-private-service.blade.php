@@ -15,27 +15,54 @@
 					Virgil Security provides secure RESTful API for store client's private keys.
 				</p>
 
+				<h2 id="general-statements">General Statements</h2>
+
+				<ol>
+					<li>Make sure that you have registered and confirmed account under Public Key service.</li>
+					<li>Make sure that you have Public/Private Key pair and you have already uploaded Public Key to the Public Key service.</li>
+					<li>Make sure that you have Private Key under your local machine.</li>
+					<li>Make sure that you have registered Application under <a href="/signin">Virgil Security, Inc.</a> For more information check <a href="#appendix-b">Appendix B. X-VIRGIL-APPLICATION-TOKEN</a> section.</li>
+					<li>Use real Public Key ID for <span class="label label-default">X-VIRGIL-REQUEST-SIGN-PK-ID</span> header parameter from the Public Keys service.</li>
+					<li>Use Virgil Crypto Library to correctly generate value for <span class="label label-default">X-VIRGIL-REQUEST-SIGN</span> header parameter. For more information please check 
+					<a href="#appendix-d">Appendix D. X-VIRGIL-REQUEST-SIGN</a> section.</li>
+				</ol>
+				
+
 				<!-- AUTHENTICATION ===============================================================-->
 
 				<h2 id="auth">Authenticate Session</h2>
 
 				<p>
 					Service will create Authentication token that will be available during the 60 
-				    minutes after creation. During this time service will automatically prolong 
-				    life time of the token in case if Authentication token widely used so don't 
-				    need to prolong it manually. In case when Authentication token is used after 
-				    60 minutes of life time, service will throw the appropriate error.
+					minutes after creation. During this time service will automatically prolong life 
+					time of the token in case if Authentication token widely used so don't need to 
+					prolong it manually. In case when Authentication token is used after 60 minutes 
+					of life time, service will throw the appropriate error.
 				</p>
+
+				<blockquote class="danger">
+                    Note:
+                    <footer>
+                    	Before login make sure that you have already created <a href="#init-container">Container 
+                    	Object</a> under Private Key service. Use for user_data.value parameter the same value as 
+                    	you have registered under Public Keys service. This account has to be confirmed under 
+                    	Public Key service.
+                    </footer>
+                </blockquote>
 
 				<h3>Request Info</h3>
 				<table class="table">
+					<tr>
+						<th>Request&nbsp;Info</th>
+						<th>Value</th>
+					</tr>
 					<tr>
 						<td>HTTP Request method</td>
 						<td>POST</td>
 					</tr>
 					<tr>
 						<td style="white-space: nowrap;width: 210px" >Request URL</td>
-						<td>https://keyring.virgilsecurity.com/v2/authentication/get-token</td>
+						<td>https://keys-private.virgilsecurity.com/v2/authentication/get-token</td>
 					</tr>
 				</table>
 
@@ -96,12 +123,16 @@
 				<h3>Request Info</h3>
 				<table class="table">
 					<tr>
+						<th>Request&nbsp;Info</th>
+						<th>Value</th>
+					</tr>
+					<tr>
 						<td>HTTP Request method</td>
 						<td>POST</td>
 					</tr>
 					<tr>
 						<td style="white-space: nowrap;width: 210px" >Request URL</td>
-						<td>https://keyring.virgilsecurity.com/v2/container</td>
+						<td>https://keys-private.virgilsecurity.com/v2/container</td>
 					</tr>
 				</table>
 
@@ -135,7 +166,7 @@
 						</td>
 					</tr>
 				</table>
-												
+
 				<h3>Request Parameters</h3>
 				<table class="table">
 					<tr>
@@ -146,7 +177,9 @@
 					<tr>
 						<td>container_type</td>
 						<td>
-							Represents an container type, which can be <b>easy</b> and <b>normal</b>.</td>
+							can be 'normal' or 'easy'. In case of 'easy' mode you can reset Private Key 
+							password through the Private Key service, in case of 'normal' - you can't 
+							do that and you have to remember you password yourself.</td>
 						<td>string</td>
 					</tr>
 					<tr>
@@ -157,16 +190,24 @@
 						</td>
 						<td>object</td>
 					</tr>
+					<tr>
+						<td>request_sign_uuid</td>
+						<td>
+							request parameter that holds random uuid to guarantee the uniqueness of the request body. 
+						</td>
+						<td>object</td>
+					</tr>
 				</table>
 
 				<h4>Request Data Example (Easy)</h4>
 				<p>
 					Initializes an easy private keys container, all private keys encrypted with account 
-					password
+					password, and server can decrypt them in case you forget container password.
 				</p>
 				<pre><code class="langauge-json">{
   "container_type": "easy",
-  "password": "password"
+  "password": "password",
+  "request_sign_uuid": "57e0a766-28ef-355e-7ca2-d8a2dcf23fc4"
 }</code></pre>
 				<h4>Request Data Example (Normal)</h4>
 				<p>
@@ -175,7 +216,8 @@
 				</p>
 				<pre><code class="langauge-json">{
   "container_type": "normal",
-  "password": "password"
+  "password": "password",
+  "request_sign_uuid": "57e0a766-28ef-355e-7ca2-d8a2dcf23fc4"
 }</code></pre>
 				<h4>Response Data Example</h4>
 				<pre><code class="langauge-json">No response body</code></pre>
@@ -187,12 +229,16 @@
 				<h3>Request Info</h3>
 				<table class="table">
 					<tr>
+						<th>Request&nbsp;Info</th>
+						<th>Value</th>
+					</tr>
+					<tr>
 						<td>HTTP Request method</td>
 						<td>GET</td>
 					</tr>
 					<tr>
 						<td style="white-space: nowrap;width: 210px" >Request URL</td>
-						<td>https://keyring.virgilsecurity.com/v2/container/public-key-id/{public-key-id}</td>
+						<td>https://keys-private.virgilsecurity.com/v2/container/public-key-id/{public-key-id}</td>
 					</tr>
 				</table>
 
@@ -233,12 +279,16 @@
 				<h3>Request Info</h3>
 				<table class="table">
 					<tr>
+						<th>Request&nbsp;Info</th>
+						<th>Value</th>
+					</tr>
+					<tr>
 						<td>HTTP Request method</td>
 						<td>PUT</td>
 					</tr>
 					<tr>
 						<td style="white-space: nowrap;width: 210px" >Request URL</td>
-						<td>https://keyring.virgilsecurity.com/v2/container</td>
+						<td>https://keys-private.virgilsecurity.com/v2/container</td>
 					</tr>
 				</table>
 
@@ -295,14 +345,21 @@
 					<tr>
 						<td>password</td>
 						<td>Represents new container password</td>
-						<td>object</td>
+						<td>string</td>
 					</tr>
+					<tr>
+						<td>request_sign_uuid</td>
+						<td>request parameter that holds random uuid to guarantee the uniqueness of the request body. </td>
+						<td>uuid</td>
+					</tr>
+					
 				</table>
 									
 				<h4>Request Data Example</h4>
 				<pre><code class="langauge-json">{
   "container_type": "normal",
-  "password": "password"
+  "password": "password",
+  "request_sign_uuid": "57e0a766-28ef-355e-7ca2-d8a2dcf23fc4"
 }</code></pre>
 
 				<h4>Response Data Example</h4>
@@ -313,15 +370,28 @@
 
 				<h2 id="reset-container">Reset Container Password</h2>
 
+				<blockquote class="danger">
+                    Note:
+                    <footer>
+                        use <span class="label label-default">user_data.value</span> for this request parameter the same value as you have 
+                        registered under Public Keys service. This account has to be confirmed under 
+                        Public Key service.
+                    </footer>
+                </blockquote>
+
 				<h3>Request Info</h3>
 				<table class="table">
+					<tr>
+						<th>Request&nbsp;Info</th>
+						<th>Value</th>
+					</tr>
 					<tr>
 						<td>HTTP Request method</td>
 						<td>PUT</td>
 					</tr>
 					<tr>
 						<td style="white-space: nowrap;width: 210px" >Request URL</td>
-						<td>https://keyring.virgilsecurity.com/v2/container/actions/reset-password</td>
+						<td>https://keys-private.virgilsecurity.com/v2/container/actions/reset-password</td>
 					</tr>
 				</table>
 
@@ -376,15 +446,21 @@
 
 				<h2 id="persist-container">Persist Container Changes</h2>
 
+				<p>Confirm password token and re-encrypt Private Key data with the new password.</p>
+
 				<h3>Request Info</h3>
 				<table class="table">
+					<tr>
+						<th>Request&nbsp;Info</th>
+						<th>Value</th>
+					</tr>
 					<tr>
 						<td>HTTP Request method</td>
 						<td>POST</td>
 					</tr>
 					<tr>
 						<td style="white-space: nowrap;width: 210px" >Request URL</td>
-						<td>https://keyring.virgilsecurity.com/v2/container/actions/persist</td>
+						<td>https://keys-private.virgilsecurity.com/v2/container/actions/persist</td>
 					</tr>
 				</table>
 
@@ -437,12 +513,16 @@
 				<h3>Request Info</h3>
 				<table class="table">
 					<tr>
+						<th>Request&nbsp;Info</th>
+						<th>Value</th>
+					</tr>
+					<tr>
 						<td>HTTP Request method</td>
 						<td>DELETE</td>
 					</tr>
 					<tr>
 						<td style="white-space: nowrap;width: 210px" >Request URL</td>
-						<td>https://keyring.virgilsecurity.com/v2/container</td>
+						<td>https://keys-private.virgilsecurity.com/v2/container</td>
 					</tr>
 				</table>
 
@@ -513,12 +593,16 @@
 				<h3>Request Info</h3>
 				<table class="table">
 					<tr>
+						<th>Request&nbsp;Info</th>
+						<th>Value</th>
+					</tr>
+					<tr>
 						<td>HTTP Request method</td>
 						<td>POST</td>
 					</tr>
 					<tr>
 						<td style="white-space: nowrap;width: 210px" >Request URL</td>
-						<td>https://keyring.virgilsecurity.com/v2/private-key</td>
+						<td>https://keys-private.virgilsecurity.com/v2/private-key</td>
 					</tr>
 				</table>
 
@@ -569,7 +653,7 @@
 					</tr>
 					<tr>
 						<td>request_sign_uuid</td>
-						<td>Random UUID to guarantee the uniqueness of the request body</td>
+						<td>Request parameter that holds random uuid to guarantee the uniqueness of the request body.</td>
 						<td>uuid</td>
 					</tr>
 				</table>
@@ -586,7 +670,8 @@
      57RhyAySMzibibHsMTlFG6XRWEbKCEVUIj4zowleNMiIqvhB1CUaGRn4vLssftCmgWITjYqoQodDJ8
      Lezdx+beoCdfm7Z8XNsAWAlrizbuanJP1m8MyJWWWTwzVeCE3wvGfUKD0qgFeQedclvJVZUu37MBzj
      4pTb50FX0t0wluYn0LqWE9fZQnLpB/XDpUDZ+U39p6id3g4Qewb0oENMlfxYWWRgnkKv+Oyqce3noE
-     5JaM="
+     5JaM=",
+  "request_sign_uuid":"57e0a766-28ef-355e-7ca2-d8a2dcf23fc4"
 }</code></pre>
 
 				<h4>Response Data Example</h4>
@@ -599,12 +684,16 @@
 				<h3>Request Info</h3>
 				<table class="table">
 					<tr>
+						<th>Request&nbsp;Info</th>
+						<th>Value</th>
+					</tr>
+					<tr>
 						<td>HTTP Request method</td>
 						<td>GET</td>
 					</tr>
 					<tr>
 						<td style="white-space: nowrap;width: 210px" >Request URL</td>
-						<td>https://keyring.virgilsecurity.com/v2/private-key/public-key-id/{public-key-id}</td>
+						<td>https://keys-private.virgilsecurity.com/v2/private-key/public-key-id/{public-key-id}</td>
 					</tr>
 				</table>
 
@@ -656,12 +745,16 @@
 				<h3>Request Info</h3>
 				<table class="table">
 					<tr>
+						<th>Request&nbsp;Info</th>
+						<th>Value</th>
+					</tr>
+					<tr>
 						<td>HTTP Request method</td>
 						<td>DELETE</td>
 					</tr>
 					<tr>
 						<td style="white-space: nowrap;width: 210px" >Request URL</td>
-						<td>https://keyring.virgilsecurity.com/v2/private-key</td>
+						<td>https://keys-private.virgilsecurity.com/v2/private-key</td>
 					</tr>
 				</table>
 
@@ -807,6 +900,12 @@
 					<tr><td>70002<td>Application token service error
 				</table>	
 
+				<h3>Request Sign UUID Errors</h3>
+				<table class="table">
+					<tr><td>80001<td>Request parameter validation failed
+					<tr><td>80002<td>Has already used in another call. Please generate another one.
+				</table>	
+
 				<h4>Error Response Example</h4>
 				<pre><code class="langauge-json">{
   "error": {
@@ -818,6 +917,7 @@
 			<div class="col-md-3 scrollspy">
                     <ul class="nav hidden-xs hidden-sm dev-sidenav" data-spy="affix" data-offset-top="250" >                
 			            <li class="title" role="presentation"><p>Private Keys RESTful API</p></li>
+			            <li role="presentation"><a href="#general-statements">General Statements</a></li>
 			            <li role="presentation"><a href="#auth">Authenticate Session</a></li>
 			            <li role="presentation"><a href="#init-container">Container Initialization</a></li>
 			            <li role="presentation"><a href="#get-container">Get Container Details</a></li>
