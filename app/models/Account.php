@@ -1,10 +1,13 @@
 <?php
 
-use Authentication as AuthenticationModel,
+use \Mail,
+
+    Authentication as AuthenticationModel,
     Application as ApplicationModel,
     Account as AccountModel,
 
-    Virgil\Helper\UUID;
+    Virgil\Helper\UUID,
+    Virgil\Helper\User;
 
 class Account extends Eloquent {
 
@@ -32,7 +35,7 @@ class Account extends Eloquent {
 
         $account = new Account();
         $account->email        = $email;
-        $account->password     = md5($password);
+        $account->password     = User::generateUserPassword($password);
         $account->confirmed    = self::ACCOUNT_CONFIRMED;
         $account->uuid         = UUID::generate();
 
@@ -42,7 +45,7 @@ class Account extends Eloquent {
     }
 
     /**
-     * Get Account instance by Account Email and Account Password
+     * Get Account by Account Email and Account Password
      *
      * @param $email
      * @param $password
@@ -53,12 +56,12 @@ class Account extends Eloquent {
         return AccountModel::whereEmail(
             $email
         )->wherePassword(
-            md5($password)
+            User::generateUserPassword($password)
         )->first();
     }
 
     /**
-     * Get Account instance by Account Email
+     * Get Account by Account Email
      *
      * @param $email
      * @return Account
@@ -67,6 +70,19 @@ class Account extends Eloquent {
 
         return AccountModel::whereEmail(
             $email
+        )->first();
+    }
+
+    /**
+     * Get Account by Account Reset token
+     *
+     * @param $token
+     * @return mixed
+     */
+    public static function getAccountByToken($token) {
+
+        return AccountModel::whereToken(
+            $token
         )->first();
     }
 
@@ -90,6 +106,16 @@ class Account extends Eloquent {
     public function isConfirmed() {
 
         return $this->confirmed == self::ACCOUNT_CONFIRMED ? true : false;
+    }
+
+    /**
+     * Is Reset Account password action is still in progress
+     *
+     * @return bool
+     */
+    public function isResetPasswordInProgress() {
+
+        return !empty($this->token) ? true : false;
     }
 
     /**
@@ -132,7 +158,44 @@ class Account extends Eloquent {
         );
     }
 
-    public function reset() {
+    /**
+     * Reset Account password and send 'reset-password' email
+     *
+     * @return bool
+     */
+    public function resetPassword() {
+
+        $this->token = User::generateResetToken();
+        $this->save();
+
+        Mail::send(
+            'email.reset-password',
+            array('resetToken' => $this->token),
+            function($message) use ($this) {
+                $message->to(
+                    $this->email,
+                    $this->email
+                )->subject('Virgil Security KeyRing Reset Password');
+            }
+        );
+
+        return true;
+    }
+
+    /**
+     * Update Account with new password
+     *
+     * @param $password
+     * @return bool
+     */
+    public function updatePassword($password) {
+
+        $this->token    = null;
+        $this->password = User::generateUserPassword(
+            $password
+        );
+
+        $this->save();
 
         return true;
     }

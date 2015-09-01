@@ -2,6 +2,7 @@
 
 use Virgil\Validator\Account as AccountValidator;
 
+
 class AccountController extends AbstractController {
 
     /**
@@ -13,10 +14,9 @@ class AccountController extends AbstractController {
 
         if(Request::isMethod('post')) {
 
-            $result = AccountValidator::validateSignin(
+            $result = AccountValidator::validateSigninAction(
                 Input::all()
             );
-
             if($result instanceof Illuminate\Http\RedirectResponse) {
                 return $result;
             }
@@ -41,10 +41,9 @@ class AccountController extends AbstractController {
 
         if(Request::isMethod('post')) {
 
-            $result = AccountValidator::validateSignup(
+            $result = AccountValidator::validateSignupAction(
                 Input::all()
             );
-
             if($result instanceof Illuminate\Http\RedirectResponse) {
                 return $result;
             }
@@ -74,34 +73,69 @@ class AccountController extends AbstractController {
     {
 
         $data = array(
-            'resetResult' => false
+            'resetResult'     => false,
+            'resetSuccessful' => ''
         );
 
         if(Request::isMethod('post')) {
 
-            $result = AccountValidator::validateReset(
+            $result = AccountValidator::validateResetPasswordAction(
                 Input::all()
             );
-
             if($result instanceof Illuminate\Http\RedirectResponse) {
                 return $result;
             }
 
-            if($result->reset()) {
-                $data['resetResult'] = true;
-                $data['resetSuccessful'] = Lang::get('message.flash.reset-password');
+            if($result->resetPassword()) {
+                $data['resetResult']  = true;
+                $data['resetMessage'] = Lang::get('message.flash.reset-password');
             }
         }
 
-        $this->setActivePage('reset');
+        $this->setActivePage('reset-password');
         $this->layout->content = View::make(
             'pages.account.reset-password',
             $data
         );
     }
 
-    public function updatePassword() {
+    public function updatePassword($token) {
 
+        $account = AccountValidator::validateToken($token);
+        if($account instanceof Illuminate\Http\RedirectResponse) {
+            return $account;
+        }
+
+        $data = array(
+            'updateResult'  => false,
+            'updateMessage' => ''
+        );
+
+        if(Request::isMethod('post')) {
+
+            $password = AccountValidator::validatePassword(
+                Input::all()
+            );
+
+            if($password instanceof Illuminate\Http\RedirectResponse) {
+                return $password;
+            }
+
+            $account->updatePassword(
+                $password
+            );
+
+            $data = array(
+                'updateResult'  => true,
+                'updateMessage' => Lang::get('message.flash.update-password')
+            );
+        }
+
+        $this->setActivePage('update-password');
+        $this->layout->content = View::make(
+            'pages.account.reset-password',
+            $data
+        );
     }
 
     public function signout() {

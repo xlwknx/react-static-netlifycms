@@ -11,7 +11,7 @@
                 @if($resetResult)
                 <div class="alert alert-success">
                     <h4>
-                        {{$resetSuccessful}}
+                        {{$resetMessage}}
                     </h4>
                 </div>
                 @endif

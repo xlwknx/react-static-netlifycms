@@ -84,6 +84,10 @@ Route::post('reset-password', array(
     'uses' => 'AccountController@resetPassword'
 ));
 
+Route::get('update-password/{token}', array(
+    'uses' => 'AccountController@updatePassword'
+));
+
 
 
 Route::post('application/validate-token', array(

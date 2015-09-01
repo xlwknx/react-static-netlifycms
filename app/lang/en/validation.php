@@ -95,7 +95,9 @@ return array(
         ),
         'account' => array(
             'exists' => 'Account already exists. Try with other password.',
-            'not_exists' => 'Account doesn\'t exist.'
+            'not_exists' => 'Account doesn\'t exist.',
+            'reset_in_progress' => 'Reset password action in progress. Please check your email box.',
+            'token_invalid' => 'Reset password token invalid.'
         ),
         'application_name' => array(
             'required' => 'Application name required',

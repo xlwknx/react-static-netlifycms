@@ -22,7 +22,7 @@ class Account {
      * @param $parameters
      * @return \Account
      */
-    public static function validateSignin($parameters) {
+    public static function validateSigninAction($parameters) {
 
         $validator = Validator::make(
             $parameters,
@@ -41,6 +41,15 @@ class Account {
             $parameters['email'],
             $parameters['password']
         );
+
+        if($account->isResetPasswordInProgress()) {
+            return Redirect::to('/signin')->with(
+                'error',
+                'validation.custom.account.reset_in_progress'
+            )->withInput(
+                Input::except('password')
+            );
+        }
 
         if(!$account) {
 
@@ -61,7 +70,7 @@ class Account {
      * @param $parameters
      * @return array
      */
-    public static function validateSignup($parameters) {
+    public static function validateSignupAction($parameters) {
 
         $validator = Validator::make(
             $parameters,
@@ -97,7 +106,7 @@ class Account {
         }
 
         return array(
-            'email' => $parameters['email'],
+            'email'    => $parameters['email'],
             'password' => $parameters['password']
         );
     }
@@ -108,7 +117,7 @@ class Account {
      * @param $parameters
      * @return mixed
      */
-    public static function validateReset($parameters) {
+    public static function validateResetPasswordAction($parameters) {
 
         $validator = Validator::make(
             $parameters,
@@ -136,5 +145,50 @@ class Account {
         }
 
         return $account;
+    }
+
+    /**
+     * Validate Account by Account Reset token
+     *
+     * @param $token
+     * @return Account
+     */
+    public static function validateToken($token) {
+
+        $account = AccountModel::getAccountByToken($token);
+        if(!$account) {
+
+            return Redirect::to('/update-password')->with(
+                'error',
+                'validation.custom.account.token_invalid'
+            );
+        }
+
+        return $account;
+    }
+
+    /**
+     * Validate new Account password
+     *
+     * @param $parameters
+     * @return mixed
+     */
+    public static function validatePassword($parameters) {
+
+        $validator = Validator::make(
+            $parameters,
+            array(
+                'new_password' => 'required|min:5|max|255',
+                'confirm_password' => 'required|min:5|max:255'
+            )
+        );
+
+        if($validator->fails()) {
+            return Redirect::to('/update-password')->withErrors(
+                $validator
+            );
+        }
+
+        return $parameters['new_password'];
     }
 }

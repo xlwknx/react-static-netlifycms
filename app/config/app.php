@@ -3,7 +3,7 @@
 return array(
 
 	'debug' => false,
-	'url' => 'http://localhost',
+	'url' => 'http://api-stg.virgilsecurity.com',
 	'timezone' => 'UTC',
 	'locale' => 'en',
 	'fallback_locale' => 'en',
