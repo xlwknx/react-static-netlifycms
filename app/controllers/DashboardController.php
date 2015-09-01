@@ -1,6 +1,7 @@
 <?php
 
-use Application as ApplicationModel;
+use Virgil\Validator\Application as ApplicationValidator;
+
 
 class DashboardController extends AbstractController {
 
@@ -22,33 +23,68 @@ class DashboardController extends AbstractController {
 
     public function createApplication() {
 
+        if(Request::isMethod('post')) {
+
+            $result = ApplicationValidator::validateCreate(
+                Input::all()
+            );
+
+            if($result instanceof Illuminate\Http\RedirectResponse) {
+                return $result;
+            }
+
+            App::make('getCurrentAccount')->createApplication(
+                $result
+            );
+
+            return Redirect::to('/dashboard');
+        }
+
         $this->setActivePage('dashboard');
         $this->layout->content = View::make(
             'pages.application.create'
         );
     }
 
-    public function updateApplication($applicationId) {
+    public function updateApplication($uuid) {
+
+        if(Request::isMethod('post')) {
+
+            $result = ApplicationValidator::validateCreate(
+                Input::all()
+            );
+
+            if($result instanceof Illuminate\Http\RedirectResponse) {
+                return $result;
+            }
+
+            App::make('getCurrentAccount')->getApplication(
+                $uuid
+            )->updateApplication(
+                $result
+            );
+
+            return Redirect::to('/dashboard');
+        }
 
         $this->setActivePage('dashboard');
         $this->layout->content = View::make(
             'pages.application.update',
             array(
-                'application' => App::make('getCurrentAccount')->getApplication(
-                    $applicationId
-                )
+                'app' => App::make('getCurrentAccount')->getApplication(
+                    $uuid
+                ),
+                'uuid' => $uuid
             )
         );
     }
 
-    public function deleteApplication($applicationId) {
+    public function deleteApplication($uuid) {
 
         App::make('getCurrentAccount')->getApplication(
-            $applicationId
+            $uuid
         )->delete();
 
         return Redirect::to('/dashboard');
     }
-
-
 }

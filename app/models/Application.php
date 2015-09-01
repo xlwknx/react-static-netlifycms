@@ -13,18 +13,18 @@ class Application extends Eloquent {
     protected $table = 'service_account_application';
 
     /**
-     * Get Application by Application ID
+     * Get Application by Application UUID
      *
      * @param Account $account
-     * @param $applicationId
+     * @param $uuid
      * @return mixed
      */
-    public static function getAccountApplication(Account $account, $applicationId) {
+    public static function getApplication(Account $account, $uuid) {
 
         return ApplicationModel::whereAccountId(
             $account->id
-        )->whereId(
-            $applicationId
+        )->whereUuid(
+            $uuid
         )->first();
     }
 
@@ -34,7 +34,7 @@ class Application extends Eloquent {
      * @param Account $account
      * @return mixed
      */
-    public static function getAccountApplicationList(Account $account) {
+    public static function getApplicationList(Account $account) {
 
         return ApplicationModel::whereAccountId(
             $account->id
@@ -65,12 +65,22 @@ class Application extends Eloquent {
 
         $application = new Application();
         $application->account_id  = $account->id;
-        $application->name        = $data['name'];
-        $application->description = $data['description'];
-        $application->url   = $data['url'];
-        $application->token = md5(
-            $account->id . $data['name'] . $data['description'] . $data['url'] . time()
+        $application->name        = $data['application_name'];
+        $application->description = $data['application_description'];
+        $application->url         = $data['application_url'];
+        $application->token       = md5(
+            implode(
+                '',
+                array(
+                    $account->id,
+                    $data['application_name'],
+                    $data['application_description'],
+                    $data['application_url'],
+                    time()
+                )
+            )
         );
+
         $application->uuid  = UUID::generate();
 
         $application->save();
@@ -86,9 +96,9 @@ class Application extends Eloquent {
      */
     public function updateApplication($data) {
 
-        $this->name        = $data['name'];
-        $this->description = $data['description'];
-        $this->url         = $data['url'];
+        $this->name        = $data['application_name'];
+        $this->description = $data['application_description'];
+        $this->url         = $data['application_url'];
 
         $this->save();
 

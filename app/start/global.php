@@ -1,6 +1,6 @@
 <?php
 
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Response as HttpResponse;
 
 ClassLoader::addDirectories(array(
 
@@ -11,29 +11,24 @@ ClassLoader::addDirectories(array(
 
 ));
 
-Log::useFiles(storage_path().'/logs/laravel.log');
+Log::useFiles(
+    storage_path().'/logs/laravel.log'
+);
 
 App::error(function(Exception $exception, $code)
-{    
-    if($code == 404 && BrowserDetect::isDesktop()) {
-        return Redirect::to('/');
-    }
-
+{
     if($exception instanceof \Virgil\Exception\Validator) {
         return Response::json(array(
             'error' => array(
                 'code' => $exception->getCode()
             )
-        ), Response::HTTP_BAD_REQUEST);
+        ), HttpResponse::HTTP_BAD_REQUEST);
     }
 
     // Catch Method Not Allowed Exception
     if($exception instanceof \Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException) {
-        return Response::json(array(
-            'error' => array(
-                'code' => Virgil\Error\Code::ROUTE_NOT_ALLOWED
-            )
-        ), Response::HTTP_INTERNAL_SERVER_ERROR);
+
+        return Response::view('errors/missing', array(), 404);
 
         Log::error(
             'NotAllowedHttpException Route: ' . Request::url()
@@ -42,11 +37,8 @@ App::error(function(Exception $exception, $code)
 
     // Catch Route Not Found Exception
     if ($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
-        return Response::json(array(
-            'error' => array(
-                'code' => Virgil\Error\Code::ROUTE_WAS_NOT_FOUND
-            )
-        ), Response::HTTP_INTERNAL_SERVER_ERROR);
+
+        return Response::view('errors/missing', array(), 404);
 
         Log::error(
             'NotFoundHttpException Route: ' . Request::url()

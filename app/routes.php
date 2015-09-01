@@ -17,14 +17,6 @@ Route::group(
     ),
     function() {
 
-        Route::get('signin', array(
-            'uses' => 'SessionController@signin'
-        ));
-
-        Route::get('signup', array(
-            'uses' => 'SessionController@signup'
-        ));
-
         Route::get('dashboard', array(
             'uses' => 'DashboardController@index'
         ));
@@ -33,26 +25,50 @@ Route::group(
             'uses' => 'DashboardController@createApplication'
         ));
 
-        Route::get('dashboard/application/update/{applicationId}', array(
-            'uses' => 'DashboardController@updateApplication'
-        ));
-
-        Route::get('dashboard/application/delete', array(
+        Route::post('dashboard/application/create', array(
             'uses' => 'DashboardController@createApplication'
         ));
+
+        Route::group(
+            array(
+                'before' => 'applicationExistFilter'
+            ),
+            function() {
+
+                Route::get('dashboard/application/update/{uuid}', array(
+                    'uses' => 'DashboardController@updateApplication'
+                ));
+
+                Route::post('dashboard/application/update/{uuid}', array(
+                    'uses' => 'DashboardController@updateApplication'
+                ));
+
+                Route::post('dashboard/application/delete/{uuid}', array(
+                    'uses' => 'DashboardController@deleteApplication'
+                ));
+            }
+        );
     }
 );
 
 Route::post('signin', array(
-    'uses' => 'SessionController@signin'
+    'uses' => 'AccountController@signin'
 ));
 
 Route::post('signup', array(
-    'uses' => 'SessionController@signup'
+    'uses' => 'AccountController@signup'
+));
+
+Route::get('signin', array(
+    'uses' => 'AccountController@signin'
+));
+
+Route::get('signup', array(
+    'uses' => 'AccountController@signup'
 ));
 
 Route::get('signout', array(
-    'uses' => 'SessionController@signout'
+    'uses' => 'AccountController@signout'
 ));
 
 Route::post('application/validate-token', array(

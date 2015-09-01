@@ -15,7 +15,7 @@ use \Validator,
 class Account {
 
     protected static $_validators = array(
-        'email' => 'email|required',
+        'email'    => 'email|required',
         'password' => 'required'
     );
 
@@ -37,8 +37,6 @@ class Account {
                 Input::except('password')
             )->withErrors(
                 $validator
-            )->withInput(
-                Input::except('password')
             );
         }
 
@@ -107,11 +105,11 @@ class Account {
     /**
      * Validate if Account not confirmed yet
      *
-     * @param $account
+     * @param Account $account
      * @return bool
      * @throws \Virgil\Exception\Validator
      */
-    public static function validateNotConfirmed($account) {
+    public static function validateNotConfirmed(Account $account) {
 
         if(!$account->isConfirmed()) {
             throw new ValidatorException(
@@ -125,11 +123,11 @@ class Account {
     /**
      * Validate if Account already confirmed
      *
-     * @param $account
+     * @param Account $account
      * @return bool
      * @throws \Virgil\Exception\Validator
      */
-    public static function validateConfirmed($account) {
+    public static function validateConfirmed(Account $account) {
 
         if($account->isConfirmed()) {
             throw new ValidatorException(

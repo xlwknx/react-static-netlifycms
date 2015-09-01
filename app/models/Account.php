@@ -88,7 +88,7 @@ class Account extends Eloquent {
      */
     public function getApplicationList() {
 
-        return ApplicationModel::getAccountApplicationList(
+        return ApplicationModel::getApplicationList(
             $this
         );
     }
@@ -101,9 +101,23 @@ class Account extends Eloquent {
      */
     public function getApplication($applicationId) {
 
-        return ApplicationModel::getAccountApplication(
+        return ApplicationModel::getApplication(
             $this,
             $applicationId
+        );
+    }
+
+    /**
+     * Create new Account Application
+     *
+     * @param $parameters
+     * @return mixed
+     */
+    public function createApplication($parameters) {
+
+        return ApplicationModel::createApplication(
+            $this,
+            $parameters
         );
     }
 }
