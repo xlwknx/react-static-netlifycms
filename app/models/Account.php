@@ -4,7 +4,6 @@ use Authentication as AuthenticationModel,
     Application as ApplicationModel,
     Account as AccountModel,
 
-    Virgil\Helper\UUID,
     Virgil\Helper\User;
 
 class Account extends Eloquent {
@@ -93,6 +92,38 @@ class Account extends Eloquent {
         return AuthenticationModel::getSessionToken(
             $this
         );
+    }
+
+    /**
+     * Setup current User session
+     *
+     * @return mixed
+     */
+    public function setupSession() {
+
+        Cookie::queue(
+            'auth_token',
+            $this->getSessionToken(),
+            AuthenticationModel::AUTH_TOKEN_LIFETIME
+        );
+
+        return Redirect::to('dashboard');
+    }
+
+    /**
+     * Close current User session
+     *
+     * @return mixed
+     */
+    public function resetSession() {
+
+        Cookie::queue(
+            'auth_token',
+            null,
+            -1
+        );
+
+        return Redirect::to('/');
     }
 
     /**

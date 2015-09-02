@@ -8,7 +8,7 @@ Virgil | Reset Password
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
             <div class="form-default">
                 <h2>Update Password</h2>
-                @if($updateResult)
+                @if(!empty($updateMessage))
                 <div class="alert alert-success">
                     {{$updateMessage}}
                 </div>
@@ -20,8 +20,8 @@ Virgil | Reset Password
                 </div>
                 @endif
 
-                @if(!$updateResult)
-                <form action="/update-password" method="post">
+                @if(empty($updateMessage))
+                <form action="/update-password/{{$resetToken}}" method="post">
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Your Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                         <input type="password" name="password" class="form-control" placeholder="" aria-describedby="basic-addon1">

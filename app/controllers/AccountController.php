@@ -17,17 +17,12 @@ class AccountController extends AbstractController {
             $result = AccountValidator::validateSigninAction(
                 Input::all()
             );
+
             if($result instanceof Illuminate\Http\RedirectResponse) {
                 return $result;
             }
 
-            Cookie::queue(
-                'auth_token',
-                $result->getSessionToken(),
-                Authentication::AUTH_TOKEN_LIFETIME
-            );
-
-            return Redirect::to('dashboard');
+            return $result->setupSession();
         }
 
         $this->setActivePage('signin');
@@ -53,13 +48,7 @@ class AccountController extends AbstractController {
                 $result['password']
             );
 
-            Cookie::queue(
-                'auth_token',
-                $account->getSessionToken(),
-                Authentication::AUTH_TOKEN_LIFETIME
-            );
-
-            return Redirect::to('dashboard');
+            return $account->setupSession();
         }
 
         $this->setActivePage('signin');
@@ -107,8 +96,8 @@ class AccountController extends AbstractController {
         }
 
         $data = array(
-            'updateResult'  => false,
-            'updateMessage' => ''
+            'updateMessage' => '',
+            'resetToken'    => $token
         );
 
         if(Request::isMethod('post')) {
@@ -126,7 +115,6 @@ class AccountController extends AbstractController {
             );
 
             $data = array(
-                'updateResult'  => true,
                 'updateMessage' => Lang::get('message.flash.update-password')
             );
         }
@@ -140,13 +128,7 @@ class AccountController extends AbstractController {
 
     public function signout() {
 
-        Cookie::queue(
-            'auth_token',
-            null,
-            -1
-        );
-
-        return Redirect::to('/');
+        return App::make('getCurrentAccount')->closeSession();
     }
 
 } 
