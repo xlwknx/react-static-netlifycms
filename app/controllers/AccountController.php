@@ -133,7 +133,7 @@ class AccountController extends AbstractController {
 
         $this->setActivePage('update-password');
         $this->layout->content = View::make(
-            'pages.account.reset-password',
+            'pages.account.update-password',
             $data
         );
     }
