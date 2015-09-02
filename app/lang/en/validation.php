@@ -90,8 +90,12 @@ return array(
         'password' => array(
             'required' => 'Password can\'t be empty.'
         ),
+        'new_password' => array(
+            'required' => 'New password can\'t be empty'
+        ),
         'confirm_password' => array(
-            'same' => 'Confirm Password and Password has to be the same.'
+            'same' => 'Confirm Password and Password has to be the same.',
+            'required' => 'Confirm password can\'t be empty'
         ),
         'account' => array(
             'exists' => 'Account already exists. Try with other password.',

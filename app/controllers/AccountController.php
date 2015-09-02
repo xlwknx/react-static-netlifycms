@@ -90,33 +90,32 @@ class AccountController extends AbstractController {
 
     public function updatePassword($token) {
 
-        $account = AccountValidator::validateToken($token);
-        if($account instanceof Illuminate\Http\RedirectResponse) {
-            return $account;
-        }
-
         $data = array(
             'updateMessage' => '',
+            'errorMessage'  => '',
             'resetToken'    => $token
         );
 
-        if(Request::isMethod('post')) {
+        $account = AccountValidator::validateToken($token);
+        if($account instanceof Account) {
 
-            $password = AccountValidator::validatePassword(
-                Input::all()
-            );
+            if(Request::isMethod('post')) {
 
-            if($password instanceof Illuminate\Http\RedirectResponse) {
-                return $password;
+                $password = AccountValidator::validatePassword(
+                    Input::all(),
+                    $token
+                );
+
+                if($password instanceof Illuminate\Http\RedirectResponse) {
+                    return $password;
+                }
+
+                $data['updateMessage'] = $account->updatePassword(
+                    $password
+                );
             }
-
-            $account->updatePassword(
-                $password
-            );
-
-            $data = array(
-                'updateMessage' => Lang::get('message.flash.update-password')
-            );
+        } else {
+            $data['errorMessage'] = Lang::get('message.flash.update-password-token-not-found');
         }
 
         $this->setActivePage('update-password');

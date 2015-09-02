@@ -101,6 +101,7 @@ class Account extends Eloquent {
      */
     public function setupSession() {
 
+
         Cookie::queue(
             'auth_token',
             $this->getSessionToken(),
@@ -227,6 +228,6 @@ class Account extends Eloquent {
 
         $this->save();
 
-        return true;
+        return Lang::get('message.flash.update-password');
     }
 }

@@ -88,6 +88,10 @@ Route::get('update-password/{token}', array(
     'uses' => 'AccountController@updatePassword'
 ));
 
+Route::post('update-password/{token}', array(
+    'uses' => 'AccountController@updatePassword'
+));
+
 
 
 Route::post('application/validate-token', array(
