@@ -169,12 +169,12 @@ class Account extends Eloquent {
         $account = $this;
         Mail::send(
             'email.reset-password',
-            array('resetToken' => $this->token),
+            array('resetToken' => $account->token),
             function($message) use ($account) {
                 $message->to(
                     $account->email,
                     $account->email
-                )->subject('Virgil Security KeyRing Reset Password');
+                )->subject('Virgil Security Reset Password');
             }
         );
 
