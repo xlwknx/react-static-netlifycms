@@ -189,7 +189,7 @@ using (var cipher = new VirgilCipher())
     byte[] recepientId = Encoding.UTF8.GetBytes(recepientPublicKey.PublicKeyId.ToString());
     byte[] data = Encoding.UTF8.GetBytes("Some data to be encrypted");
 
-    cipher.AddKeyRecipient(recepientId, data);
+    cipher.AddKeyRecipient(recepientId, recepientPublicKey.Key);
     encryptedData = cipher.Encrypt(data, true);
 }</code></pre>
 
