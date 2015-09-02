@@ -7,7 +7,7 @@
         <div class="col-md-2 col-sm-3">APPLICATIONS</div>
         <div class="col-md-2 hidden-sm">VIRGIL PASS</div>
         <div class="col-md-2 col-sm-3">DEVELOPERS</div>
-        <div class="col-md-3 col-sm-3 col-xs-6">CONTACT AS</div>
+        <div class="col-md-3 col-sm-3 col-xs-6">CONTACT US</div>
     </div>
     <div class="row footer-body hidden-xs">
         <div class="col-md-3 col-sm-3 col-xs-6">
