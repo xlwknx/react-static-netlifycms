@@ -10,7 +10,7 @@ Virgil | Developers | PHP | Downloads
 				<h2>Downloads for PHP</h2>
 				<p>
 					Here you can download the latest version of Crypto and SDK libraries for PHP. 
-					If you didn't find your platform please let as know <a href="/contact-us">here</a> . 
+					If you didn't find your platform please let as know <a href="/">here</a> . 
 				</p>
 				<h3>Mac OS</h3>
 				<table class="table">

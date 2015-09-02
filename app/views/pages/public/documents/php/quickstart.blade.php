@@ -35,24 +35,36 @@ Virgil | Developers | PHP | Quickstart
                     </p>
                     <ol>
                         <li>Install with <a href="#package-management-system">Package Management System</a></li>
-                        <li><a href="/documents/csharp/downloads">Download</a> from our web site</li>
-                        <li><a href="/documents/csharp/crypto-lib#build">Build</a> by yourself</li>
+                        <li><a href="/documents/php/downloads">Download</a> from our web site</li>
+                        <li><a href="/documents/php/crypto-lib#build">Build</a> by yourself</li>
                     </ol>
-                    <h3 id="#package-management-system">Package Management Systems</h3>
+                    <h3 id="package-management-system">Package Management Systems</h3>
                     <p>
                         <b>Virgil Security</b> supports most of popular package management systems. 
                         You can easily add the Crypto Library dependency to your project, just follow the examples below.
                     </p>
-    
-                    <pre><code>PM> Install-Package Virgil.Crypto</code></pre>
+
                     <p>
-                        Virgil Public Keys SDK:
+                        Download latest composer PHP package manager into your project:
                     </p>
-                    <pre><code>PM> Install-Package Virgil.SDK.Keys</code></pre>
+                    <pre><code>curl -sS https://getcomposer.org/installer | php</code></pre>
                     <p>
-                        Virgil Private Keys SDK:
+                        Create empty composer.json file inside your project:
                     </p>
-                    <pre><code>PM> Install-Package Virgil.SDK.PrivateKeys</code></pre>
+                    <pre><code>touch composer.json</code></pre>
+                    <p>
+                        Add Virgil dependencies into composer.json file:
+                    </p>
+                    <pre><code>{
+    "require": {
+        "virgil/crypto": "dev-master",
+        "virgil/keys-sdk": "dev-master"
+     }
+}</code></pre>
+                    <p>
+                        Update composer dependencies:
+                    </p>
+                    <pre><code>php composer.phar update</code></pre>
                 </section>
                 <section id="generate-keys">
                     <h2>Generate Keys</h2>
@@ -67,25 +79,21 @@ Virgil | Developers | PHP | Quickstart
                             If you need to store a private key, you should use a secure key container depending on your platform. 
                             You also can use Virgil Keys Service to store and synchronize private keys. This will allows you to 
                             easily synchronize private keys between clients’ devices and their applications. 
-                            Please read more about <a href="/documents/csharp/keys-private-service">Virgil Private Keys Service</a>.
+                            Please read more about <a href="/documents/php/keys-private-service">Virgil Private Keys Service</a>.
                         </footer>
                     </blockquote>
                     <p>
                         The following code example creates a new public/private key pair.
                     </p>
-                        <pre><code class="language-csharp">using Virgil.Crypto;
-using Virgil.SDK.Keys
-using Virgil.SDK.PrivateKeys                 
-...
+                        <pre><code class="language-php">require_once './vendor/autoload.php';
 
-byte[] publicKey;
-byte[] privateKey;
+use Virgil\Crypto\VirgilKeyPair;
 
-using (var keyPair = new VirgilKeyPair())
-{
-    publicKey = keyPair.PublicKey();
-    privateKey = keyPair.PrivateKey();
-}
+$key = new VirgilKeyPair();
+
+file_get_contents('new_public.key', $key->publicKey());
+file_get_contents('new_private.key', $key->privateKey());
+
 </code></pre>
                 </section>
                 <h2 id="register-user">Register User</h2>
@@ -96,74 +104,165 @@ using (var keyPair = new VirgilKeyPair())
                 <p>
                     This example shows how to upload a public key and register a new account on Virgil’s Keys Service.
                 </p>
-                <p>Full source code examples are available on <a href="https://github.com/VirgilSecurity/virgil-net">GitHub</a> in public access.</p>
-                <pre><code class="language-csharp">var keysService = new PkiClient(new SDK.Keys.Http.Connection(Constants.ApplicationToken, 
-    new Uri(Constants.KeysServiceUrl)));
+                <p>Full source code examples are available on <a href="https://github.com/VirgilSecurity/virgil-php-keys/blob/master/docs/keys.md">GitHub</a> in public access.</p>
+                <pre><code class="language-php">require_once '../vendor/autoload.php';
 
-var userData = new UserData
-{
-    Class = UserDataClass.UserId,
-    Type = UserDataType.EmailId,
-    Value = "your.email@server.hz"
-};
-            
-var vPublicKey = await keysService.PublicKeys.Create(publicKey, publicKey, userData);</code></pre>
+use Virgil\SDK\Keys\Models\UserData,
+    Virgil\SDK\Keys\Models\UserDataCollection,
+    Virgil\SDK\Keys\Client as KeysClient;
+
+
+    const VIRGIL_APPLICATION_TOKEN      = '17da4b6d03fad06954b5dccd82439b10';
+    const VIRGIL_USER_DATA_CLASS        = 'user_id';
+    const VIRGIL_USER_DATA_TYPE         = 'email';
+    const VIRGIL_USER_DATA_VALUE        = 'example.email@gmail.com';
+
+    try {
+
+    $keysClient = new KeysClient(
+        VIRGIL_APPLICATION_TOKEN
+    );
+
+    $userData = new UserData();
+    $userData->class = VIRGIL_USER_DATA_CLASS;
+    $userData->type  = VIRGIL_USER_DATA_TYPE;
+    $userData->value = VIRGIL_USER_DATA_VALUE;
+
+    $userDataCollection = new UserDataCollection();
+    $userDataCollection->add(
+        $userData
+    );
+
+    $publicKey = file_get_contents(
+        'new_public.key'
+    );
+
+    $privateKey = file_get_contents(
+        'new_private.key'
+    );
+
+    $publicKey = $keysClient->getPublicKeysClient()->createKey(
+        $publicKey,
+        $userDataCollection,
+        $privateKey
+    );
+
+    } catch (Exception $e) {
+        echo 'Error:' . $e->getMessage();
+    }
+                    </code></pre>
 
 <p>
     Confirm <b>User Data</b> using your user data type (Currently supported only Email).
 </p>
 
-<pre><code class="language-csharp">var vUserData = vPublicKey.UserData.First();
-var confirmCode = ""; // Confirmation code you received on your email box.
+<pre><code class="language-php">require_once '../vendor/autoload.php';
 
-await keysService.UserData.Confirm(vUserData.UserDataId, confirmCode, vPublicKey.PublicKeyId, privateKey);</code></pre>
+use Virgil\SDK\Keys\Client as KeysClient;
 
-<h2 id="register-user">Store Private Key</h2>
+
+const VIRGIL_APPLICATION_TOKEN = '17da4b6d03fad06954b5dccd82439b10';
+const VIRGIL_CONFIRMATION_CODE = 'J9Y0D5';
+
+
+try {
+
+    $keysClient = new KeysClient(
+        VIRGIL_APPLICATION_TOKEN
+    );
+
+    $keysClient->getUserDataClient()->persistUserData(
+        $publicKey->userData->get(0)->id->userDataId,
+        VIRGIL_CONFIRMATION_CODE
+    );
+
+} catch (Exception $e) {
+    echo 'Error:' . $e->getMessage();
+}</code></pre>
+
+<h2 id="store-private-key">Store Private Key</h2>
 <p>
     This example shows how to store private keys on Virgil Private Keys service using SDK, 
     this step is optional and you can use your own secure storage. 
 </p>
 
-<pre><code class="language-csharp">var privateKeysClient = new KeyringClient(new SDK.PrivateKeys.Http.Connection(Constants.ApplicationToken, 
-    new Uri(Constants.PrivateKeysServiceUrl)));
+<pre><code class="language-php">require_once '../vendor/autoload.php';
 
-var containerPassword = "12345678";
+use Virgil\SDK\PrivateKeys\Client as PrivateKeysClient;
 
-// You can choose between few types of container. Easy and Normal
-//   Easy   - service keeps your private keys encrypted with container password, all keys should be sent 
-//            encrypted with container password, before sent to the service.
-//   Normal - responsibility for the security of the private keys at your own risk. 
+const VIRGIL_APPLICATION_TOKEN    = '17da4b6d03fad06954b5dccd82439b10';
 
-var containerType = ContainerType.Easy; // ContainerType.Normal
+const VIRGIL_CONTAINER_TYPE       = 'normal';
 
-// Initializes an container for private keys storage. 
+const VIRGIL_USER_NAME            = 'example.email@gmail.com';
+const VIRGIL_CONTAINER_PASSWORD   = 'password';
 
-await privateKeysClient.Container.Initialize(containerType, vPublicKey.PublicKeyId, 
-    privateKey, containerPassword);
 
-// Authenticate requests to Virgil Private Keys service.
+try {
 
-privateKeysClient.Connection.SetCredentials(vUserData.Value, containerPassword);
+    $privateKeysClient = new PrivateKeysClient(
+        VIRGIL_APPLICATION_TOKEN
+    );
 
-// Add your private key to Virgil Private Keys service.
+    $privateKeysClient->setHeaders(array(
+        'X-VIRGIL-REQUEST-SIGN-PK-ID' => $publicKey->publicKeyId
+    ));
 
-if (containerType == ContainerType.Easy)
-{
-    // private key will be encrypted with container password, provided on authentication
-    await privateKeysClient.PrivateKeys.Add(vPublicKey.PublicKeyId, privateKey);
+    $privateKey = file_get_contents(
+        'new_private.key'
+    );
+
+    $privateKeysClient->getContainerClient()->createContainer(
+        VIRGIL_CONTAINER_TYPE,
+        VIRGIL_CONTAINER_PASSWORD,
+        $privateKey
+    );
+
+    $privateKeysClient->setAuthCredentials(
+        VIRGIL_USER_NAME,
+        VIRGIL_CONTAINER_PASSWORD
+    );
+
+    $privateKeysClient->setHeaders(array(
+        'X-VIRGIL-REQUEST-SIGN-PK-ID' => $publicKey->publicKeyId
+    ));
+
+    $privateKeysClient->getPrivateKeysClient()->createPrivateKey(
+        $publicKey->publicKeyId,
+        $privateKey
+    );
+
+} catch (Exception $e) {
+    echo 'Error:' . $e->getMessage();
 }
-else
-{
-    // use your own password to encrypt the private key.
-    var privateKeyPassword = "47N6JwTGUmFvn4Eh";
-    await privateKeysClient.PrivateKeys.Add(vPublicKey.PublicKeyId, privateKey, privateKeyPassword);
-}</code></pre>
 
-        <h2 id="get-public-key">Get a Public Key</h2>
+</code></pre>
+
+        <h2 id="get-public-key">Get a Recepient's Public Key</h2>
         <p>
             Get public key from Public Keys Service.
         </p>
-        <pre><code class="language-csharp">var recepientPublicKey = await keysService.PublicKeys.Search("recepient.email@server.hz");</code></pre>
+        <pre><code class="language-php">require_once '../vendor/autoload.php';
+
+use Virgil\SDK\Keys\Client as KeysClient;
+
+const VIRGIL_APPLICATION_TOKEN  = '17da4b6d03fad06954b5dccd82439b10';
+const VIRGIL_USER_DATA_VALUE    = 'example.email@gmail.com';
+
+try {
+
+    $keysClient = new KeysClient(
+        VIRGIL_APPLICATION_TOKEN
+    );
+
+    $recipientPublicKey = $keysClient->getPublicKeysClient()->grabKey(
+        VIRGIL_USER_DATA_VALUE
+    );
+
+} catch (Exception $e) {
+    echo 'Error:' . $e->getMessage();
+}
+        </code></pre>
 
 
         <h2 id="encrypt-data">Encrypt Data</h2>
@@ -176,16 +275,23 @@ else
         <p>
             In the example below, we encrypt data using a public key from Virgil’s Public Keys Service.
         </p>
-        <pre><code class="language-csharp">byte[] encryptedData;
+        <pre><code class="language-php">require_once './vendor/autoload.php';
 
-using (var cipher = new VirgilCipher())
-{
-    byte[] recepientId = Encoding.UTF8.GetBytes(recepientPublicKey.PublicKeyId.ToString());
-    byte[] data = Encoding.UTF8.GetBytes("Some data to be encrypted");
+use Virgil\Crypto\VirgilCipher;
 
-    cipher.AddKeyRecipient(recepientId, data);
-    encryptedData = cipher.Encrypt(data, true);
-}</code></pre>
+$virgilCipher = new VirgilCipher()
+
+$cipher = new VirgilCipher();
+$cipher->addKeyRecipient(
+    $recipientPublicKey->publicKeyId,
+    $recipientPublicKey->publicKey
+);
+
+$encryptedData = $cipher->encrypt(
+    "Some data to be encrypted",
+    true
+);
+</code></pre>
 
         <h2 id="sign-data">Sign Data</h2>
         <p>
@@ -195,11 +301,16 @@ using (var cipher = new VirgilCipher())
         </p>
         <p>The following example applies a digital signature to a public key identifier.</p>
 
-        <pre><code class="language-csharp">byte[] sign;
-using (var signer = new VirgilSigner())
-{
-    sign = signer.Sign(encryptedData, privateKey);
-}</code></pre>
+        <pre><code class="language-php">require_once './vendor/autoload.php';
+
+use Virgil\Crypto\VirgilSigner;
+
+$virgilSigner = new VirgilSigner();
+$sign = $virgilSigner->sign(
+    $encryptedData,
+    $privateKey
+);
+</code></pre>
 
 <h2 id="verify-data">Verify Data</h2>
         <p>
@@ -214,30 +325,59 @@ using (var signer = new VirgilSigner())
             The following example verifies a digital signature which was signed by the sender.
         </p>
 
-        <pre><code class="language-csharp">bool isValid;
-using (var signer = new VirgilSigner())
-{
-    isValid = signer.Verify(encryptedData, sign, publicKey);
-}</code></pre>
+        <pre><code class="language-php">require_once './vendor/autoload.php';
+
+use Virgil\Crypto\VirgilSigner;
+
+$virgilSigner = new VirgilSigner();
+$isValid = $virgilSigner->verify(
+    $encryptedData,
+    $sign,
+    $publicKey
+);
+</code></pre>
 
         <h2 id="decrypt-data">Decrypt Data</h2>
         <p>
             The following example illustrates the decryption of encrypted data. 
         </p>
 
-        <pre><code class="language-csharp">var recepientContainerPassword = "UhFC36DAtrpKjPCE";
+        <pre><code class="language-php">require_once '../vendor/autoload.php';
 
-var recepientPrivateKeysClient = new KeyringClient(new Connection(Constants.ApplicationToken));
-recepientPrivateKeysClient.Connection.SetCredentials(
-    new Credentials("recepient.email@server.hz", recepientContainerPassword));
+use Virgil\SDK\PrivateKeys\Client as PrivateKeysClient,
+    Virgil\Crypto\VirgilCipher;
 
-var recepientPrivateKey = await recepientPrivateKeysClient.PrivateKeys.Get(recepientPublicKey.PublicKeyId);
+const VIRGIL_APPLICATION_TOKEN  = '17da4b6d03fad06954b5dccd82439b10';
+const VIRGIL_USER_NAME          = 'example.email@gmail.com';
+const VIRGIL_CONTAINER_PASSWORD = 'password';
 
-byte[] decryptedDate;
-using (var cipher = new VirgilCipher())
-{
-    decryptedDate = cipher.DecryptWithKey(encryptedData, recepientId, recepientPrivateKey.Key);
-}</code></pre>
+try {
+
+    // Create Keys Service HTTP Client
+    $privateKeysClient = new PrivateKeysClient(
+        VIRGIL_APPLICATION_TOKEN
+    );
+
+    $privateKeysClient->setAuthCredentials(
+        VIRGIL_USER_NAME,
+        VIRGIL_CONTAINER_PASSWORD
+    );
+
+    $privateKey = $privateKeysClient->getPrivateKeysClient()->getPrivateKey(
+        $recipientPublicKey->publicKeyId
+    );
+
+    $cipher = new VirgilCipher();
+    $decryptedMessage = $cipher->decryptWithKey(
+        $encryptedData,
+        $recipientPublicKey->publicKeyId,
+        $privateKey
+    );
+
+} catch (Exception $e) {
+    echo 'Error:' . $e->getMessage();
+}
+</code></pre>
 
             </div>
             <div class="col-md-3 scrollspy">
@@ -248,6 +388,7 @@ using (var cipher = new VirgilCipher())
                         <li><a href="#install">Install</a></li>
                         <li><a href="#generate-keys">Generate Keys</a></li>
                         <li><a href="#register-user">Register User</a></li>
+                        <li><a href="#store-private-key">Store Private Key</a></li>
                         <li><a href="#get-public-key">Get Public Key</a></li>
                         <li><a href="#encrypt-data">Encrypt Data</a></li>
                         <li><a href="#sign-data">Sign Data</a></li>
