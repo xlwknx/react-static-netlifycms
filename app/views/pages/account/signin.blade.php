@@ -8,13 +8,11 @@
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
             <div class="form-default">           
                 <h2>Sign In</h2>
-                @if(Session::has('error') || $errors)
+                @if(Session::has('error') || $errors->any())
                 <div class="alert alert-danger">
-                    <h4>
-                        {{Lang::get(Session::get('error'))}}
-                        <?=$errors->first('email'); ?>
-                        <?=$errors->first('password'); ?>
-                    </h4>
+                    {{Lang::get(Session::get('error'))}}
+                    <?=$errors->first('email'); ?>
+                    <?=$errors->first('password'); ?>
                 </div>
                 @endif
                 <form action="/signin" method="post">
@@ -37,7 +35,7 @@
                         </div>
                     </div>       
                     <div class="form-footer">
-                        <a class="text-center" href="/reset">Can't access your account?</a>  
+                        <a class="text-center" href="/reset-password">Can't access your account?</a>  
                     </div>                         
                 </form>
             </div>

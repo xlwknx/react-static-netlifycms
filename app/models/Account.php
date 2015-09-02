@@ -35,7 +35,6 @@ class Account extends Eloquent {
         $account->email        = $email;
         $account->password     = User::generateUserPassword($password);
         $account->confirmed    = self::ACCOUNT_CONFIRMED;
-        $account->uuid         = UUID::generate();
 
         $account->save();
 

@@ -5,7 +5,7 @@
             <h1>My Applications</h1>
         </div>
         <div class="col-md-3 text-right">
-            <a class="btn btn-primary" href="/create-app">Create new App</a>
+            <a class="btn btn-primary btn-block btn-virgil apps-create-button" href="/dashboard/application/create">CREATE APPLICATION</a>
         </div>
     </div>
     <div class="row">        
@@ -15,20 +15,16 @@
                     <tr>
                         <th>Name</th>
                         <th>Description</th>
-                        <th>Url</th>
                         <th>Token</th>
                         <th>Created</th>
                     </tr>
                     @foreach ($applicationList as $application)
                         <tr>
                             <td>
-                                {{$application->name}}
+                                <a href="/dashboard/application/update/{{$application->uuid}}">{{$application->name}}</a>                                
                             </td>
                             <td>
                                 {{$application->description}}
-                            </td>
-                            <td>
-                                {{$application->url}}
                             </td>
                             <td>
                                 {{$application->token}}

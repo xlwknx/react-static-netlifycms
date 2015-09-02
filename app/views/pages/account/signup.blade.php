@@ -8,14 +8,12 @@
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
             <div class="form-default">           
                 <h2>Sign Up</h2>
-                @if(Session::has('error') || $errors)
+                @if(Session::has('error') || $errors->any())
                     <div class="alert alert-danger">
-                        <h4>
-                            {{Lang::get(Session::get('error'))}}
-                            <?=$errors->first('email'); ?>
-                            <?=$errors->first('password'); ?>
-                            <?=$errors->first('confirm_password'); ?>
-                        </h4>
+                        {{Lang::get(Session::get('error'))}}
+                        <?=$errors->first('email'); ?>
+                        <?=$errors->first('password'); ?>
+                        <?=$errors->first('confirm_password'); ?>
                     </div>
                 @endif
                 <form action="/signup" method="post">

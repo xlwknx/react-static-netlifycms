@@ -32,9 +32,9 @@
             <p><a href="/documents/csharp/quickstart">.NET/C#</a></p>
             <p><a href="/documents/cpp/quickstart">C/C++</a></p>
             <p><a href="/documents/php/quickstart">PHP</a></p>
-            <p><a href="/documents/nodejs/quickstart">Node.js</a></p>
-            <p><a href="/documents/python/quickstart">Python</a></p>
-            <p><a href="/documents/ruby/quickstart">Ruby</a></p>     
+            <p><a href="#">Node.js</a></p>
+            <p><a href="#">Python</a></p>
+            <p><a href="#">Ruby</a></p>     
         </div>
         <div class="col-md-3 col-sm-3 col-xs-6">
             <p><a href="mailto:support@virgilsecurity.com">support@virgilsecurity.com</a></p>         
