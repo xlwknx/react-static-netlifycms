@@ -55,15 +55,12 @@ Virgil | Developers | PHP | Quickstart
                     <p>
                         Add Virgil dependencies into composer.json file:
                     </p>
-                    <pre><code>
-
-{
+                    <pre><code>{
     "require": {
         "virgil/crypto": "dev-master",
         "virgil/keys-sdk": "dev-master"
      }
-}
-                        </code></pre>
+}</code></pre>
                     <p>
                         Update composer dependencies:
                     </p>
@@ -88,8 +85,7 @@ Virgil | Developers | PHP | Quickstart
                     <p>
                         The following code example creates a new public/private key pair.
                     </p>
-                        <pre><code class="language-php">
-require_once './vendor/autoload.php';
+                        <pre><code class="language-php">require_once './vendor/autoload.php';
 
 use Virgil\Crypto\VirgilKeyPair;
 
@@ -109,8 +105,7 @@ file_get_contents('new_private.key', $key->privateKey());
                     This example shows how to upload a public key and register a new account on Virgil’s Keys Service.
                 </p>
                 <p>Full source code examples are available on <a href="https://github.com/VirgilSecurity/virgil-php-keys/blob/master/docs/keys.md">GitHub</a> in public access.</p>
-                <pre><code class="language-php">
-require_once '../vendor/autoload.php';
+                <pre><code class="language-php">require_once '../vendor/autoload.php';
 
 use Virgil\SDK\Keys\Models\UserData,
     Virgil\SDK\Keys\Models\UserDataCollection,
@@ -161,8 +156,7 @@ use Virgil\SDK\Keys\Models\UserData,
     Confirm <b>User Data</b> using your user data type (Currently supported only Email).
 </p>
 
-<pre><code class="language-php">
-require_once '../vendor/autoload.php';
+<pre><code class="language-php">require_once '../vendor/autoload.php';
 
 use Virgil\SDK\Keys\Client as KeysClient;
 
@@ -186,14 +180,13 @@ try {
     echo 'Error:' . $e->getMessage();
 }</code></pre>
 
-<h2 id="register-user">Store Private Key</h2>
+<h2 id="store-private-key">Store Private Key</h2>
 <p>
     This example shows how to store private keys on Virgil Private Keys service using SDK, 
     this step is optional and you can use your own secure storage. 
 </p>
 
-<pre><code class="language-php">
-require_once '../vendor/autoload.php';
+<pre><code class="language-php">require_once '../vendor/autoload.php';
 
 use Virgil\SDK\PrivateKeys\Client as PrivateKeysClient;
 
@@ -249,8 +242,7 @@ try {
         <p>
             Get public key from Public Keys Service.
         </p>
-        <pre><code class="language-php">
-require_once '../vendor/autoload.php';
+        <pre><code class="language-php">require_once '../vendor/autoload.php';
 
 use Virgil\SDK\Keys\Client as KeysClient;
 
@@ -283,8 +275,7 @@ try {
         <p>
             In the example below, we encrypt data using a public key from Virgil’s Public Keys Service.
         </p>
-        <pre><code class="language-php">
-require_once './vendor/autoload.php';
+        <pre><code class="language-php">require_once './vendor/autoload.php';
 
 use Virgil\Crypto\VirgilCipher;
 
@@ -310,8 +301,7 @@ $encryptedData = $cipher->encrypt(
         </p>
         <p>The following example applies a digital signature to a public key identifier.</p>
 
-        <pre><code class="language-php">
-require_once './vendor/autoload.php';
+        <pre><code class="language-php">require_once './vendor/autoload.php';
 
 use Virgil\Crypto\VirgilSigner;
 
@@ -335,8 +325,7 @@ $sign = $virgilSigner->sign(
             The following example verifies a digital signature which was signed by the sender.
         </p>
 
-        <pre><code class="language-php">
-require_once './vendor/autoload.php';
+        <pre><code class="language-php">require_once './vendor/autoload.php';
 
 use Virgil\Crypto\VirgilSigner;
 
@@ -353,8 +342,7 @@ $isValid = $virgilSigner->verify(
             The following example illustrates the decryption of encrypted data. 
         </p>
 
-        <pre><code class="language-php">
-require_once '../vendor/autoload.php';
+        <pre><code class="language-php">require_once '../vendor/autoload.php';
 
 use Virgil\SDK\PrivateKeys\Client as PrivateKeysClient,
     Virgil\Crypto\VirgilCipher;
@@ -400,6 +388,7 @@ try {
                         <li><a href="#install">Install</a></li>
                         <li><a href="#generate-keys">Generate Keys</a></li>
                         <li><a href="#register-user">Register User</a></li>
+                        <li><a href="#store-private-key">Store Private Key</a></li>
                         <li><a href="#get-public-key">Get Public Key</a></li>
                         <li><a href="#encrypt-data">Encrypt Data</a></li>
                         <li><a href="#sign-data">Sign Data</a></li>
