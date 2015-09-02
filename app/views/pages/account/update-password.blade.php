@@ -14,17 +14,19 @@ Virgil | Reset Password
                 </div>
                 @endif
 
-                @if(Session::has('error') || $errors->any())
+                @if($errorMessage || $errors->any())
                 <div class="alert alert-danger">
-                    {{Lang::get(Session::get('error'))}}
+                    {{$errorMessage}}
+                    {{$errors->first('new_password')}}
+                    {{$errors->first('confirm_password')}}
                 </div>
                 @endif
 
                 @if(empty($updateMessage))
                 <form action="/update-password/{{$resetToken}}" method="post">
                     <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1">Your Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        <input type="password" name="password" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                        <span class="input-group-addon" id="basic-addon1">New Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <input type="password" name="new_password" class="form-control" placeholder="" aria-describedby="basic-addon1">
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">Confirm Password:</span>

@@ -157,11 +157,7 @@ class Account {
 
         $account = AccountModel::getAccountByToken($token);
         if(!$account) {
-
-            return Redirect::to('/update-password')->with(
-                'error',
-                'validation.custom.account.token_invalid'
-            );
+            return false;
         }
 
         return $account;
@@ -170,21 +166,22 @@ class Account {
     /**
      * Validate new Account password
      *
-     * @param $parameters
+     * @param $parameters - Request parameters
+     * @param $token - reset token
      * @return mixed
      */
-    public static function validatePassword($parameters) {
+    public static function validatePassword($parameters, $token) {
 
         $validator = Validator::make(
             $parameters,
             array(
-                'new_password' => 'required|min:5|max|255',
-                'confirm_password' => 'required|min:5|max:255'
+                'new_password' => 'required|min:5|max:255',
+                'confirm_password' => 'required|min:5|max:255|same:new_password'
             )
         );
 
         if($validator->fails()) {
-            return Redirect::to('/update-password')->withErrors(
+            return Redirect::to('/update-password/'. $token)->withErrors(
                 $validator
             );
         }
