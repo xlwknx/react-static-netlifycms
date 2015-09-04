@@ -127,7 +127,13 @@ class AccountController extends AbstractController {
 
     public function signout() {
 
-        return App::make('getCurrentAccount')->closeSession();
+        Cookie::queue(
+            'auth_token',
+            null,
+            -1
+        );
+
+        return Redirect::to('/');
     }
 
 } 
