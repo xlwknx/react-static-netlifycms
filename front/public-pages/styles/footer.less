@@ -1,22 +1,20 @@
-/* Sticky footer styles
--------------------------------------------------- */
 html {
   position: relative;
   min-height: 100%;
 }
+
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 340px;
+  margin-bottom: 226px;
 }
+
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 340px;
+  height: 226px;
   background-color: #ffffff;
   color: #525d62;
-  padding-top: 20px;
+  padding-top: 50px;
   border-top: #f3f3f3 solid 2px;
   a {
     color: #525d62;
@@ -28,32 +26,48 @@ body {
       width: 32px;
       fill: #525d62;      
     }
-    svg.twitter:hover { fill: #55acee; }
+    svg.twitter:hover  { fill: #55acee; }
     svg.facebook:hover { fill: #3b5998; }
     svg.linkedin:hover { fill: #0077b5; }
   }
-}
 
-.footer-title {
-  height: 55px;
-  font-family: "ProximaNova-Semibold";
-  font-size: 16px;
-}
+  .footer-logo-small {
+    height: 40px;
+    margin-bottom: 30px;
+  }
 
-.footer-body {
-  font-family: "MyriadPro-Regular";
-  font-size: 16px;
-  height: 200px;
-}
+  .footer-brend-section {
+    padding-top: 15px;
+    img {
+      height: 50px;   
+      margin-top: -15px;
+    }
+    span {       
+      margin-left: 20px;
+      margin-right: 20px;
+      color: @v_color_brend1;
+      font-size: 24px;
+      border-left: 1px solid @v_color_brend1;
+      padding-left: 20px;
+      font-family: @v_font_brend2;
+    }
+    p {
+      color: @v_color_brend1;
+      font-family: @v_font_brend2;
+      font-size: 14px;
+      margin-top: 30px;
+    }
+  }
 
-.footer-logo {
-  height: 26pt;
-}
-
-.footer-brend {
-  border-top: #f3f3f3 solid 1px;
-  text-align: center;
-  font-family: "MyriadPro-Semibold";
-  font-size: 12pt;
-  padding-top: 14.5pt;
+  .footer-section {
+    h3 {
+      font-family: @v_font_brend1_bold;
+      font-size: 16px;
+      margin-top: 3px;
+      margin-bottom: 20px;
+    }    
+    p {
+      line-height: 36px;
+    }
+  }
 }

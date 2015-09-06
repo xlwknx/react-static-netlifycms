@@ -12,12 +12,12 @@ Virgil | Developers | C#/.NET | Quickstart
                 <section id="introduction">
 				    <h2>Introduction</h2>
                     <p>
-                        This guide will help you get started using the Crypto Library and Virgil Keys Service, for the most popular platforms and languages
+                        This guide will help you get started using the Crypto Library and Virgil Keys Service for  most popular platforms and languages.
                     </p>
                     <h2 id="obtaining-an-app-token">Obtaining an Application Token</h2>
                     <p>
-                        First you must create a free Virgil Security developer account by signing up <a href="/signup">here</a>.  
-                        Once you have your account you can <a href="/signin">sign in</a> and generate an app token for your application.
+                        First, create a free Virgil Security developer account by signing up <a href="/signup">here</a>. Once you have your account 
+                        you can <a href="/signin">sign in</a> and generate an app token for your application.
                     </p>
                     <p>
                         The app token provides authenticated secure access to Virgil’s Keys Service and is passed with each API call. 
@@ -40,8 +40,8 @@ Virgil | Developers | C#/.NET | Quickstart
                     </ol>
                     <h3 id="#package-management-system">Package Management Systems</h3>
                     <p>
-                        <b>Virgil Security</b> supports most of popular package management systems. 
-                        You can easily add the Crypto Library dependency to your project, just follow the examples below.
+                        <b>Virgil Security</b> supports most popular package management systems. 
+                        You can easily add the Crypto Library and SDK dependency to your project, just follow the examples below.
                     </p>
     
                     <pre><code>PM> Install-Package Virgil.Crypto</code></pre>
@@ -57,7 +57,7 @@ Virgil | Developers | C#/.NET | Quickstart
                 <section id="generate-keys">
                     <h2>Generate Keys</h2>
                     <p>
-                        Working with Virgil Security Services it is requires the creation of both a public key and a private key. 
+                        Working with Virgil Security Services requires the creation of both a public key and a private key. 
                         The public key can be made public to anyone using the Virgil Public Keys Service while the private key 
                         must be known only to the party or parties who will decrypt the data encrypted with the public key.
                     </p>
@@ -167,7 +167,7 @@ else
 
 		<h2 id="get-public-key">Get a Recepient's Public Key</h2>
         <p>
-            Get public key from Public Keys Service.
+            Get a public key from Public Keys Service.
         </p>
         <pre><code class="language-csharp">var recepientPublicKey = await keysService.PublicKeys.Search("recepient.email@server.hz");</code></pre>
 

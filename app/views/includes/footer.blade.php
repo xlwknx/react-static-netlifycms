@@ -1,43 +1,17 @@
 @section('footer')
 <div class="container">
-    <div class="row footer-title hidden-xs">
-        <div class="col-md-3 col-sm-3 col-xs-6">
-            <img class="footer-logo" src="/img/logo_red.png" />
-        </div>
-        <div class="col-md-2 col-sm-3">APPLICATIONS</div>
-        <div class="col-md-2 hidden-sm">VIRGIL PASS</div>
-        <div class="col-md-2 col-sm-3">DEVELOPERS</div>
-        <div class="col-md-3 col-sm-3 col-xs-6">CONTACT US</div>
-    </div>
     <div class="row footer-body hidden-xs">
-        <div class="col-md-3 col-sm-3 col-xs-6">
-            <p><a href="/about-virgil">About Virgil</a></p>
-            <p><a href="/documents/csharp/quickstart">Developers</a></p>
-            <p><a href="/apps">Applications</a></p>
+        <div class="col-md-6 col-sm-6 footer-brend-section">
+            <img class="footer-logo" src="/img/logo_red.png" />
+            <span class=>Secure the Future</span>
+            <p>© 2015 Virgil Security, Incorporated.</p>
         </div>
-        <div class="col-md-2 col-sm-3">
-            <p><a href="/apps">Virgil Pass</a></p>
-            <p><a href="/apps">Virgil Sync</a></p>
-            <p><a href="/apps">Virgil Mail</a></p>
-            <p><a href="/apps">Virgil Keys</a></p>
+        <div class="col-md-3 col-sm-3 footer-section">
+            <h3>CONTACT US</h3>
+            <p><a href="mailto:support@virgilsecurity.com">support@virgilsecurity.com</a></p>      
         </div>
-        <div class="col-md-2 hidden-sm">
-            <p><a href="/apps">Wordpress</a></p>
-            <p><a href="/apps">Joomla</a></p>
-            <p><a href="/apps">Drupal</a></p>
-            <p><a href="/apps">phpBB</a></p>
-            <p><a href="/apps">Vanilla</a></p>
-        </div>
-        <div class="col-md-2 col-sm-3">
-            <p><a href="/documents/csharp/quickstart">.NET/C#</a></p>
-            <p><a href="/documents/cpp/quickstart">C/C++</a></p>
-            <p><a href="/documents/php/quickstart">PHP</a></p>
-            <p><a href="#">Node.js</a></p>
-            <p><a href="#">Python</a></p>
-            <p><a href="#">Ruby</a></p>     
-        </div>
-        <div class="col-md-3 col-sm-3 col-xs-6">
-            <p><a href="mailto:support@virgilsecurity.com">support@virgilsecurity.com</a></p>         
+        <div class="col-md-3 col-sm-3 footer-section">              
+            <h3>FOLLOW US</h3>  
             <a class="social-link" href="https://twitter.com/virgilsecurity">
                 <svg class="twitter" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
                     viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
@@ -74,14 +48,8 @@
     </div>
     <div class="row visible-xs" >
         <div class="col-xs-12 text-center">
-            <img class="footer-logo" src="/img/logo_red.png" />
-            <br />
-            <br />
-            <p><a href="/about-virgil">About Virgil</a></p>
-            <p><a href="/documents/csharp/quickstart">Developers</a></p>
-            <p><a href="/apps">Applications</a></p>
-            <br />
-            <br />
+            <img class="footer-logo-small" src="/img/logo_red.png" />
+            <p>© 2015 Virgil Security, Incorporated.</p>
             <br />       
             <a class="social-link" href="https://twitter.com/virgilsecurity">
                 <svg class="twitter" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
@@ -116,9 +84,6 @@
                 </svg>
             </a>            
         </div>
-    </div>
-    <div class="row footer-brend">
-        <span>&copy; Virgil Security, Inc. <?= date('Y'); ?></span>
     </div>
 </div>
 @show
