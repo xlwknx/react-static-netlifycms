@@ -16,17 +16,10 @@ Virgil | Developers | C#/.NET | Downloads
 				<table class="table">
 					<tr>
 						<td>Virgil Crypto Library</td>
-						<td class="text-left" >1.0.0</td>
-						<td class="text-left" >.NET 4.5</td>
-						<td class="text-left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-						<td class="text-right">Coming soon...</td>
-					</tr>
-					<tr>
-						<td>Virgil SDK</td>
-						<td class="text-left" >1.0.0</td>
+						<td class="text-left" >1.0.1</td>
 						<td class="text-left" >.NET 4.5</td>
 						<td class="text-left"></td>
-						<td class="text-right">Coming soon...</td>
+						<td class="text-right"><a href="https://downloads.virgilsecurity.com/packages/crypto_lib_windows_csharp_1.0.1.zip">Download</a></td>
 					</tr>
 				</table>
 			</div>
