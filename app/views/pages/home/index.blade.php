@@ -57,7 +57,7 @@
             <div class="home-middle-section-item">
                 <div class="media">
                     <div class="media-left media-middle">
-                        <img class="media-object" src="/img/home_impl_security.png">
+                        <img class="media-object" src="/img/home_verify_identities.png">
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">Verify Identities.</h4>
@@ -70,11 +70,11 @@
             <div class="home-middle-section-item">
                 <div class="media">
                     <div class="media-left media-middle">
-                        <img class="media-object" src="/img/home_verify_identities.png">
+                        <img class="media-object" src="/img/home_impl_security.png">
                     </div>
                     <div class="media-body">
-                        <h4 class="media-heading">Implement security in minutes</h4>
-                        We support the platforms and languages you know and love.
+                        <h4 class="media-heading">Implement Security in Minutes</h4>
+                        We support the platforms and languages you love.
                     </div>
                 </div>  
             </div>

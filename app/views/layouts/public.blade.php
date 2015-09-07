@@ -23,5 +23,6 @@
         </footer>
 
         <script src="/dist/public.js"></script>
+        @section('scripts')@show
     </body>
 </html>
