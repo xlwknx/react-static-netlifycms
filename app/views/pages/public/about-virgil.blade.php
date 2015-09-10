@@ -71,6 +71,114 @@
                 </div>            
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="media about-media-dev-item">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="/img/about/denis_k.jpg" alt="Denis Kurilenko">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Denis<br/> Kurilenko</h4>
+                        <h5>Software Developer</h5>                        
+                    </div>
+                </div>  
+            </div>
+            <div class="col-md-3">
+                <div class="media about-media-dev-item">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="/img/about/dmitry_s.jpg" alt="Dmitry Suhinin">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Dmitry<br/> Suhinin</h4>
+                        <h5>Software Developer</h5>                        
+                    </div>
+                </div>  
+            </div>
+            <div class="col-md-3">
+                <div class="media about-media-dev-item">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="/img/about/sergey_s.jpg" alt="Sergey Seroshtan">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Sergey<br/> Seroshtan</h4>
+                        <h5>Software Developer</h5>                        
+                    </div>
+                </div>  
+            </div>
+            <div class="col-md-3">
+                <div class="media about-media-dev-item">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="/img/about/roman_k.jpg" alt="Roman Kutashenko">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Roman<br/> Kutashenko</h4>
+                        <h5>Software Developer</h5>                        
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="media about-media-dev-item">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="/img/about/alexander_m.jpg" alt="Alexander Meteiko">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Alexander<br/> Meteiko</h4>
+                        <h5>Software Developer</h5>                        
+                    </div>
+                </div>  
+            </div>
+            <div class="col-md-3">
+                <div class="media about-media-dev-item">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="/img/about/dmitry_k.jpg" alt="Dmitry Kushnir">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Dmitry<br/> Kushnir</h4>
+                        <h5>Software Developer</h5>                        
+                    </div>
+                </div>  
+            </div>
+            <div class="col-md-3">
+                <div class="media about-media-dev-item">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="/img/about/olga_c.jpg" alt="Olga Suhinina">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Olga<br/> Suhinina</h4>
+                        <h5>UX/UI Designer</h5>                        
+                    </div>
+                </div>  
+            </div>
+            <div class="col-md-3">
+                <div class="media about-media-dev-item">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="/img/about/vlad_e.jpg" alt="Vlad Evka">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Vlad<br/> Evka</h4>
+                        <h5>Intern</h5>                        
+                    </div>
+                </div>  
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5 col-xs-4 col-xs-offset-4">

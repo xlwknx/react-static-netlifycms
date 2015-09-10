@@ -10,7 +10,7 @@ Virgil | Developers | C#/.NET | Downloads
 				<h2>Downloads for .NET</h2>
 				<p>
 					Here you can download the latest version of Crypto and SDK libraries for .NET and Xamarin platforms. 
-					If you didn't find your platform please let as know <a href="/">here</a>. 
+					If you didn't find your platform please let as know <a href="mailto:support@virgilsecurity.com">here</a>. 
 				</p>
 				<h3>Windows</h3>
 				<table class="table">
