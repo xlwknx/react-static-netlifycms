@@ -7,7 +7,7 @@
                         <h1>My Applications</h1>
                     </div>
                     <div class="col-md-3 text-right">
-                        <a class="btn btn-primary btn-block btn-virgil apps-create-button" href="/dashboard/application/create">CREATE APPLICATION</a>
+                        <a class="btn btn-primary btn-block btn-virgil apps-create-button" href="/dashboard/application/create">REGISTER AN APPLICATION</a>
                     </div>
                 </div>
                 <div class="row">        
@@ -44,11 +44,11 @@
                 <div class="row">
                     <div class="col-md-12">
                         <img src="/img/app-icon.png">
-                        <h2>Welcome<br /></h2>
-                        <p>Tap button below to create your very first Viegil Security Application.</p>
+                        <h2>Welcome to Virgil Security!</h2>
+                        <p>Register your application and generate a token to get started. For additional help <br /> go to the <a href="/documents/csharp/quickstart">Developers page</a>, choose your language and follow the guides.</p>
                     </div>
                     <div class="col-md-12">
-                        <a class="btn btn-primary btn-virgil apps-create-button" href="/dashboard/application/create">CREATE APPLICATION</a>
+                        <a class="btn btn-primary btn-virgil apps-create-button" href="/dashboard/application/create">REGISTER AN APPLICATION</a>
                     </div>
                 </div>
             </div>
