@@ -8,11 +8,11 @@
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
             <div class="form-default">           
                 <h2>Sign In</h2>
-                @if(Session::has('error') || $errors->any())
+                @if($errors->any())
                 <div class="alert alert-danger">
-                    {{Lang::get(Session::get('error'))}}
-                    <?=$errors->first('email'); ?>
-                    <?=$errors->first('password'); ?>
+                    <?=$errors->first();?>
+                    <?=$errors->first('email');?>
+                    <?=$errors->first('password');?>
                 </div>
                 @endif
                 <form action="/signin" method="post">

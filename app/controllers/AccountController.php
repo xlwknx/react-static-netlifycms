@@ -14,15 +14,32 @@ class AccountController extends AbstractController {
 
         if(Request::isMethod('post')) {
 
-            $result = AccountValidator::validateSigninAction(
-                Input::all()
-            );
+            $rules = [
+                'email'    => 'email|required',
+                'password' => 'required'
+            ];
 
-            if($result instanceof Illuminate\Http\RedirectResponse) {
-                return $result;
+            $validator = Validator::make(Input::all(), $rules);
+            if($validator->fails()) {
+                return Redirect::to('/signin')->withInput(
+                    Input::except('password')
+                )->withErrors(
+                    $validator
+                );
             }
 
-            return $result->setupSession();
+            $userData = [
+                'email'     => Input::get('email'),
+                'password'  => Input::get('password')
+            ];
+
+            if (Auth::attempt($userData)) {
+                return Redirect::intended('dashboard');
+            } else {
+                return Redirect::back()->withErrors([
+                    Lang::get('validation.custom_messages.account.not_found')
+                ]);
+            }
         }
 
         $this->setActivePage('signin');
@@ -127,13 +144,8 @@ class AccountController extends AbstractController {
 
     public function signout() {
 
-        Cookie::queue(
-            'auth_token',
-            null,
-            -1
-        );
-
-        return Redirect::to('/');
+        Auth::logout();
+        return Redirect::to('signin');
     }
 
 } 

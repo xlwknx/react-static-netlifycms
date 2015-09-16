@@ -14,7 +14,7 @@ class Authentication extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'service_account_session';
+    protected $table = 'account_session';
 
     /**
      * Get Authentication token

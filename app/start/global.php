@@ -49,3 +49,4 @@ App::error(function(Exception $exception, $code)
 });
 
 require app_path().'/filters.php';
+require app_path().'/events.php';

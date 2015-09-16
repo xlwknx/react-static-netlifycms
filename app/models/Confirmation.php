@@ -17,7 +17,7 @@ class Confirmation extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'service_account_confirmation';
+    protected $table = 'account_confirmation';
 
     /**
      * Create new Confirmation instance

@@ -10,7 +10,7 @@ class Application extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'service_account_application';
+    protected $table = 'account_application';
 
     /**
      * Get Application by Application UUID

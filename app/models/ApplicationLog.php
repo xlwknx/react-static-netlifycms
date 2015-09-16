@@ -7,7 +7,7 @@ class ApplicationLog extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'service_account_application_log';
+    protected $table = 'application_log';
 
     /**
      * Log Application call

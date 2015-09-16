@@ -2,27 +2,25 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateServiceAuthenticationTable extends Migration {
+class CreateAccountApplicationTable extends Migration {
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
 	public function up()
 	{
-        Schema::create('service_account_session', function($table)
+        Schema::create('account_application', function($table)
         {
             $table->engine = 'InnoDB';
 
             $table->bigIncrements('id')->unsigned();
             $table->bigInteger('account_id')->unsigned();
-            $table->string('token', 64);
+            $table->string('uuid', 36);
+            $table->string('name', 255);
+            $table->string('description', 255);
+            $table->string('url', 255)->nullable();
             $table->timestamps();
 
             $table->foreign('account_id')
                 ->references('id')
-                ->on('service_account')
+                ->on('account')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
@@ -30,14 +28,9 @@ class CreateServiceAuthenticationTable extends Migration {
         });
 	}
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
 	public function down()
 	{
-        Schema::drop('service_account_session');
+        Schema::drop('account_application');
 	}
 
 }
