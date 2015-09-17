@@ -19,8 +19,6 @@ class CreateApplicationTokenTable extends Migration {
             $table->smallInteger('active')->default(
                 self::TOKEN_ACTIVE
             );
-            $table->timestamp('valid_through');
-            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('application_id')

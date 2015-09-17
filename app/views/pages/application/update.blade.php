@@ -15,7 +15,7 @@
                       </div>
                       <div class="form-group">
                         <label for="applicationDescriptionInput">Application Description</label>
-                        <input type="text" class="form-control" name="desc" id="applicationDescriptionInput" placeholder="Description" value="<?=(Input::old('desc') ? Input::old('desc') : $application->description )?>">
+                        <input type="text" class="form-control" name="description" id="applicationDescriptionInput" placeholder="Description" value="<?=(Input::old('description') ? Input::old('description') : $application->description )?>">
                       </div>
                       <div class="form-group">
                         <label for="applicationUrlInput">Application URL</label>

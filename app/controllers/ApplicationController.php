@@ -25,15 +25,9 @@ class ApplicationController extends AbstractController {
             }
 
             $application = Auth::user()->applications()->save(
-                new Application([
-                    'name' => Input::get('name'),
-                    'description' => Input::get('desc'),
-                    'url'  => Input::get('url')
-                ])
-            );
-
-            $application->tokens()->save(
-                new ApplicationToken()
+                new Application(
+                    Input::all()
+                )
             );
 
             return Redirect::to('/dashboard');
@@ -45,24 +39,27 @@ class ApplicationController extends AbstractController {
         );
     }
 
-    public function update($uuid) {
+    public function update() {
 
-        $validator = Validator::make(
-            ['uuid' => $uuid], ApplicationValidator::getApplicationUUIDValidatorRules()
-        );
-
-        if($validator->fails()) {
-            return Redirect::to('/dashboard');
-        }
-
-        $application = Auth::user()->applications()->where(
-            'uuid', '=', $uuid
-        )->first();
+        $application = App::make('getApplication');
 
         if(Request::isMethod('post')) {
 
+            $validator = Validator::make(
+                Input::all(), ApplicationValidator::getApplicationValidatorRules()
+            );
 
+            if($validator->fails()) {
+                return Redirect::to('/dashboard/application/update')->withInput()->withErrors(
+                    $validator
+                );
+            }
 
+            $application->update(
+                Input::all()
+            );
+
+            return Redirect::to('/dashboard');
         }
 
         $this->setActivePage('dashboard');

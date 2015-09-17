@@ -15,11 +15,18 @@ class Application extends Eloquent {
     /**
      * Override save method to automatically generate UUID
      * @param array $options
+     * @return $this
      */
     public function save(array $options = array()) {
 
         $this->attributes['uuid'] = UUID::make();
         parent::save($options);
+
+        if(!$this->tokens()->count()) {
+            $this->tokens()->save(
+                new ApplicationToken()
+            );
+        }
 
         return $this;
     }

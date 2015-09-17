@@ -13,9 +13,16 @@ Route::group(
             'uses' => 'ApplicationController@create'
         ]);
 
-        Route::match(['GET', 'POST'], 'dashboard/application/update/{uuid}', [
-            'uses' => 'ApplicationController@update'
-        ]);
+        Route::group(
+            array(
+                'before' => 'application'
+            ),
+            function() {
+                Route::match(['GET', 'POST'], 'dashboard/application/update/{uuid}', [
+                    'uses' => 'ApplicationController@update'
+                ]);
+            }
+        );
     }
 );
 

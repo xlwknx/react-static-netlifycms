@@ -15,7 +15,6 @@ class CreateAccountTable extends Migration {
             $table->string('password', 255);
             $table->string('confirmation_code', 6)->nullable();
             $table->timestamp('last_login');
-            $table->softDeletes();
             $table->timestamps();
         });
 	}

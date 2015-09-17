@@ -6,8 +6,8 @@ class Application {
 
     protected static $_applicationValidatorRules = [
         'name' => 'required|max:255',
-        'desc' => 'required|max:255',
-        'url'  => 'url',
+        'description' => 'required|max:255',
+        'url' => 'url',
     ];
 
     protected static $_applicationUUIDValidatorRules = [
