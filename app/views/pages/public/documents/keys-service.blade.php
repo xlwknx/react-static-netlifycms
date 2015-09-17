@@ -8,6 +8,19 @@
 					secure communication, data exchange and money exchange. This is done through public and private cryptographic 
 					key pairs provided by a virgil security crypto library.
 				</p>
+
+                <h2 id="application-token">Application Token</h2>
+                <p>
+                   The app token provides authenticated secure access to Virgil’s Keys Service and is passed with each API call. 
+                   The app token also allows the API to associate your app’s requests with your Virgil Security developer account.
+                </p>
+				<ol>
+                    <li><a href="/signup" >Create</a> a free <b>Virgil Security</b> account</li>
+                    <li><a href="/signin" >Sign in</a> and generate a token for your application</li>
+                    <li>Simply add your app token to the HTTP header for each request:</li>
+                </ol>
+                <pre><code>X-VIRGIL-APPLICATION-TOKEN: { YOUR_APPLICATION_TOKEN }</code></pre>
+
 				<h2 id="create-public-key">Create Public Key</h2>
 				<p>The endpoint’s purpose is to upload Public Keys for the application.</p>
 				<p>
@@ -1137,7 +1150,8 @@
 			</div>
 			<div class="col-md-3 scrollspy">
                     <ul class="nav hidden-xs hidden-sm dev-sidenav" data-spy="affix" data-offset-top="250" >                
-			            <li class="title" role="presentation"><p>Public Keys RESTful API</p></li>
+			            <li class="title" role="presentation"><p>Public Keys RESTful API</p></li>			            
+			            <li role="presentation"><a href="#application-token">Application Token</a></li>
 			            <li role="presentation"><a href="#create-public-key">Create Public Key</a></li>
 			            <li role="presentation"><a href="#get-public-key">Get a Public Key</a></li>
 			            <li role="presentation"><a href="#update-public-key">Update Public Key</a></li>
