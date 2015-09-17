@@ -24,8 +24,8 @@
                         <input type="text" class="form-control" name="application_description" id="applicationDescriptionInput" placeholder="Description" value="<?=(Input::old('application_description') ? Input::old('application_description') : $app->description )?>">
                       </div>
                       <div class="form-group">
-                        <label for="applicationUrlInput">Application URL</label>
-                        <input type="text" class="form-control" name="application_url" id="applicationUrlInput" placeholder="Url" value="<?=(Input::old('application_url') ? Input::old('application_url') : $app->url )?>">
+                        <label for="applicationUrlInput">Application Web Site URL</label>
+                        <input type="text" class="form-control" name="application_url" id="applicationUrlInput" placeholder="http://example.com" value="<?=(Input::old('application_url') ? Input::old('application_url') : $app->url )?>">
                       </div>
                     <input class="btn btn-primary btn-virgil" type="submit" value="UPDATE APPLICATION"/>
                 </form>

@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Create Application</h1>
+                <h1>Register your Application</h1>
                 @if(Session::has('error') || $errors->any())
                 <div class="alert alert-danger">
                     <?=$errors->first('application_name'); ?>
@@ -25,10 +25,10 @@
                         <input type="text" class="form-control" name="application_description" id="applicationDescriptionInput" placeholder="Description" value="<?=Input::old('application_description')?>">
                       </div>
                       <div class="form-group">
-                        <label for="applicationUrlInput">Application URL</label>
-                        <input type="text" class="form-control" name="application_url" id="applicationUrlInput" placeholder="Url" value="<?=Input::old('application_url')?>">
+                        <label for="applicationUrlInput">Application Web Site URL</label>
+                        <input type="text" class="form-control" name="application_url" id="applicationUrlInput" placeholder="http://example.com" value="<?=Input::old('application_url')?>">
                       </div>
-                    <input class="btn btn-primary btn-virgil" type="submit" value="CREATE APPLICATION"/>
+                    <input class="btn btn-primary btn-virgil" type="submit" value="REGISTER YOUR APPLICATION"/>
                 </form>
             </div>
         </div>

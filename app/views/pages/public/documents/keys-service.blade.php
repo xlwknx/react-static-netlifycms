@@ -174,7 +174,7 @@
   ]
 }</code></pre>
 				
-				<h2 id="get-public-key">Get Public Key</h2>
+				<h2 id="get-public-key">Get a Public Key</h2>
 				<p>
 					The endpoint’s purpose is to get Public Key’s data.
 				</p>
@@ -822,12 +822,6 @@
 						<th>Type</th>
 					</tr>
 					<tr>
-						<td>public_key_id</td>
-						<td>
-							Public Key UUID that will contain current user data</td>
-						<td>uuid</td>
-					</tr>
-					<tr>
 						<td>class</td>
 						<td> 
 						      User data class. Can be either <b>user_id</b> or <b>user_info</b>
@@ -838,6 +832,13 @@
 						<td>type</td>
 						<td> 
 						      User data type. Can be either <b>first_name</b>, <b>last_name</b> for <b>user_info</b> class, or email for <b>user_id</b> class
+						</td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td>value</td>
+						<td> 
+						      User data value. Represents the value of <b>User Data</b> type, for example: if the <b>User Data</b> type is 'email' the value will be 'user@virgilsecurity.com'
 						</td>
 						<td>string</td>
 					</tr>
@@ -871,9 +872,7 @@
   "is_confirmed": false
 }</code></pre>
 
-<p>Please be aware that user data item won’t be returned until it was
-confirmed. The user data item will be attached to the Public Key
-specified in X-VIRGIL-PUBLIC-KEY-ID HTTP header</p>
+<p>The user data must be confirmed before it will be associated with the Public Key specified in X-VIRGIL-REQUEST-SIGN-PK-ID HTTP header</p>
 
 
 				<h2 id="delete-user-data">Delete User Data</h2>
@@ -1140,7 +1139,7 @@ specified in X-VIRGIL-PUBLIC-KEY-ID HTTP header</p>
                     <ul class="nav hidden-xs hidden-sm dev-sidenav" data-spy="affix" data-offset-top="250" >                
 			            <li class="title" role="presentation"><p>Public Keys RESTful API</p></li>
 			            <li role="presentation"><a href="#create-public-key">Create Public Key</a></li>
-			            <li role="presentation"><a href="#get-public-key">Get Public Key</a></li>
+			            <li role="presentation"><a href="#get-public-key">Get a Public Key</a></li>
 			            <li role="presentation"><a href="#update-public-key">Update Public Key</a></li>
 			            <li role="presentation"><a href="#delete-public-key">Delete Public Key</a></li>
 			            <li role="presentation"><a href="#reset-public-key">Reset Public Key</a></li>
