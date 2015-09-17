@@ -11,6 +11,40 @@ class Account extends Eloquent implements UserInterface {
     protected $table = 'account';
 
     /**
+     * Create Account instance
+     * @param array $parameters
+     * @return Account
+     */
+    public static function create(array $parameters) {
+
+        $account = new Account();
+        $account->email = $parameters['email'];
+        $account->password = $parameters['password'];
+
+        $account->save();
+
+        return $account;
+    }
+
+    /**
+     * Account Password setter
+     * @param $password
+     */
+    public function setPasswordAttribute($password) {
+
+        $this->attributes['password'] = Hash::make($password);
+    }
+
+    /**
+     * One To Many relationship between Account and Application model
+     * @return mixed
+     */
+    public function applications() {
+
+        return $this->hasMany('Application');
+    }
+
+    /**
      * Get the unique identifier for the user.
      * @return mixed
      */

@@ -8,14 +8,7 @@
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
             <div class="form-default">           
                 <h2>Sign Up</h2>
-                @if(Session::has('error') || $errors->any())
-                    <div class="alert alert-danger">
-                        {{Lang::get(Session::get('error'))}}
-                        <?=$errors->first('email'); ?>
-                        <?=$errors->first('password'); ?>
-                        <?=$errors->first('confirm_password'); ?>
-                    </div>
-                @endif
+                @include('partial.error')
                 <form action="/signup" method="post">
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">Your Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -27,7 +20,7 @@
                     </div>
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">Confirm Password:</span>
-                      <input type="password" name="confirm_password" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                      <input type="password" name="confirm" class="form-control" placeholder="" aria-describedby="basic-addon1">
                     </div>
                     <div class="container-fluid">
                         <div class="row">

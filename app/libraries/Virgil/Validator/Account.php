@@ -2,190 +2,36 @@
 
 namespace Virgil\Validator;
 
-use \Validator,
-    \Redirect,
-    \Input,
-
-    \Account as AccountModel;
-
-
 class Account {
 
-    protected static $_validators = array(
-        'email'    => 'email|required',
+    protected static $_signinValidatorRules = [
+        'email'    => 'required|email',
         'password' => 'required'
-    );
+    ];
+
+    protected static $_signupValidatorRules = [
+        'email'    => 'required|email|unique:account',
+        'password' => 'required|min:5|max:255',
+        'confirm'  => 'required|min:5|max:255|same:password'
+    ];
 
     /**
-     * Validate 'signin' request
-     *
-     * @param $parameters
-     * @return \Account
-     */
-    public static function validateSigninAction($parameters) {
-
-        $validator = Validator::make(
-            $parameters,
-            self::$_validators
-        );
-
-        if($validator->fails()) {
-            return Redirect::to('/signin')->withInput(
-                Input::except('password')
-            )->withErrors(
-                $validator
-            );
-        }
-
-        $account = AccountModel::getAccountByEmailAndPassword(
-            $parameters['email'],
-            $parameters['password']
-        );
-
-        if(!$account) {
-
-            return Redirect::to('/signin')->with(
-                'error',
-                'validation.custom.account.not_exists'
-            )->withInput(
-                Input::except('password')
-            );
-        }
-
-        if($account->isResetPasswordInProgress()) {
-            return Redirect::to('/signin')->with(
-                'error',
-                'validation.custom.account.reset_in_progress'
-            )->withInput(
-                Input::except('password')
-            );
-        }
-
-        return $account;
-    }
-
-    /**
-     * Validate 'signup' request
-     *
-     * @param $parameters
+     * Get Validator rules for Signin action
      * @return array
      */
-    public static function validateSignupAction($parameters) {
+    public static function getSigninValidatorRules() {
 
-        $validator = Validator::make(
-            $parameters,
-            array_merge(
-                array(
-                    'confirm_password' => 'same:password'
-                ),
-                self::$_validators
-            )
-        );
-
-        if($validator->fails()) {
-            return Redirect::to('/signup')->withInput(
-                Input::except('password')
-            )->withErrors(
-                $validator
-            );
-        }
-
-        $account = AccountModel::getAccountByEmailAndPassword(
-            $parameters['email'],
-            $parameters['password']
-        );
-
-        if($account) {
-
-            return Redirect::to('/signup')->with(
-                'error',
-                'validation.custom.account.exists'
-            )->withInput(
-                Input::except('password')
-            );
-        }
-
-        return array(
-            'email'    => $parameters['email'],
-            'password' => $parameters['password']
-        );
+        return self::$_signinValidatorRules;
     }
 
     /**
-     * Validate 'reset-password' request
-     *
-     * @param $parameters
-     * @return mixed
+     * Get Validator rules for Signup action
+     * @return array
      */
-    public static function validateResetPasswordAction($parameters) {
+    public static function getSignupValidatorRules() {
 
-        $validator = Validator::make(
-            $parameters,
-            array(
-                'email' => 'required|email'
-            )
+        return array_merge(
+            self::$_signupValidatorRules
         );
-
-        if($validator->fails()) {
-            return Redirect::to('/reset-password')->withInput()->withErrors(
-                $validator
-            );
-        }
-
-        $account = AccountModel::getAccountByEmail(
-            $parameters['email']
-        );
-
-        if(!$account) {
-
-            return Redirect::to('/reset-password')->with(
-                'error',
-                'validation.custom.account.not_exists'
-            )->withInput();
-        }
-
-        return $account;
-    }
-
-    /**
-     * Validate Account by Account Reset token
-     *
-     * @param $token
-     * @return Account
-     */
-    public static function validateToken($token) {
-
-        $account = AccountModel::getAccountByToken($token);
-        if(!$account) {
-            return false;
-        }
-
-        return $account;
-    }
-
-    /**
-     * Validate new Account password
-     *
-     * @param $parameters - Request parameters
-     * @param $token - reset token
-     * @return mixed
-     */
-    public static function validatePassword($parameters, $token) {
-
-        $validator = Validator::make(
-            $parameters,
-            array(
-                'new_password' => 'required|min:5|max:255',
-                'confirm_password' => 'required|min:5|max:255|same:new_password'
-            )
-        );
-
-        if($validator->fails()) {
-            return Redirect::to('/update-password/'. $token)->withErrors(
-                $validator
-            );
-        }
-
-        return $parameters['new_password'];
     }
 }

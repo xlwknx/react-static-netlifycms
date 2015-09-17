@@ -14,12 +14,9 @@ class AccountController extends AbstractController {
 
         if(Request::isMethod('post')) {
 
-            $rules = [
-                'email'    => 'email|required',
-                'password' => 'required'
-            ];
-
-            $validator = Validator::make(Input::all(), $rules);
+            $validator = Validator::make(
+                Input::all(), AccountValidator::getSigninValidatorRules()
+            );
             if($validator->fails()) {
                 return Redirect::to('/signin')->withInput(
                     Input::except('password')
@@ -37,7 +34,7 @@ class AccountController extends AbstractController {
                 return Redirect::intended('dashboard');
             } else {
                 return Redirect::back()->withErrors([
-                    Lang::get('validation.custom_messages.account.not_found')
+                    Lang::get('validation.custom.account.not_found')
                 ]);
             }
         }
@@ -53,28 +50,52 @@ class AccountController extends AbstractController {
 
         if(Request::isMethod('post')) {
 
-            $result = AccountValidator::validateSignupAction(
-                Input::all()
+            $validator = Validator::make(
+                Input::all(), AccountValidator::getSignupValidatorRules()
             );
-            if($result instanceof Illuminate\Http\RedirectResponse) {
-                return $result;
+            if($validator->fails()) {
+                return Redirect::to('/signup')->withInput(
+                    Input::except(array('password', 'confirm'))
+                )->withErrors(
+                    $validator
+                );
             }
 
-            $account = Account::createAccount(
-                $result['email'],
-                $result['password']
+            $userData = [
+                'email' => Input::get('email'),
+                'password' => Input::get('password')
+            ];
+
+            if(Auth::validate($userData)) {
+                return Redirect::back()->withInput(
+                    Input::except(array('password', 'confirm'))
+                )->withErrors([
+                    Lang::get('validation.custom.account.already_exists')
+                ]);
+            }
+
+            $account = Account::create(
+                Input::all()
             );
 
-            return $account->setupSession();
+            Auth::login($account);
+
+            return Redirect::intended('dashboard');
         }
 
         $this->setActivePage('signin');
         $this->layout->content = View::make(
             'pages.account.signup'
         );
-
     }
 
+    public function signout() {
+
+        Auth::logout();
+        return Redirect::to('signin');
+    }
+
+    /*
     public function resetPassword()
     {
 
@@ -141,11 +162,5 @@ class AccountController extends AbstractController {
             $data
         );
     }
-
-    public function signout() {
-
-        Auth::logout();
-        return Redirect::to('signin');
-    }
-
-} 
+    */
+}

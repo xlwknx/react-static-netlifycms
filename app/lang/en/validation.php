@@ -82,10 +82,9 @@ return array(
 	|
 	*/
 
-	'custom_messages' => array(
+	'custom' => array(
 		'email' => array(
-			'required' => 'Email can\'t be empty.',
-            'email'    => 'Email validation failed.'
+			'email'    => 'Email validation failed.'
 		),
         'password' => array(
             'required' => 'Password can\'t be empty.'
@@ -99,6 +98,7 @@ return array(
         ),
         'account' => array(
             'not_found' => 'Account not found.',
+			'already_exists' => 'Account already exists.'
         )
 	),
 

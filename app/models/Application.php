@@ -1,129 +1,31 @@
 <?php
 
-use Application as ApplicationModel,
-    Virgil\Helper\UUID;
+use Virgil\Helper\UUID;
 
 class Application extends Eloquent {
 
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
     protected $table = 'account_application';
 
-    /**
-     * Get Application by Application UUID
-     *
-     * @param Account $account
-     * @param $uuid
-     * @return mixed
-     */
-    public static function getApplication(Account $account, $uuid) {
-
-        return ApplicationModel::whereAccountId(
-            $account->id
-        )->whereUuid(
-            $uuid
-        )->first();
-    }
+    protected $fillable = array(
+        'name',
+        'description',
+        'url'
+    );
 
     /**
-     * Get Application list by account
-     *
-     * @param Account $account
-     * @return mixed
+     * Override save method to automatically generate UUID
+     * @param array $options
      */
-    public static function getApplicationList(Account $account) {
+    public function save(array $options = array()) {
 
-        return ApplicationModel::whereAccountId(
-            $account->id
-        )->get();
-    }
-
-    /**
-     * Get Application instance by Application token
-     *
-     * @param $token
-     * @return mixed
-     */
-    public static function getApplicationByToken($token) {
-
-        return \Application::whereToken(
-            $token
-        )->first();
-    }
-
-    /**
-     * Create new Application instance
-     *
-     * @param Account $account
-     * @param $data
-     * @return Application
-     */
-    public static function createApplication(Account $account, $data) {
-
-        $application = new Application();
-        $application->account_id  = $account->id;
-        $application->name        = $data['application_name'];
-        $application->description = $data['application_description'];
-        $application->url         = $data['application_url'];
-        $application->token       = md5(
-            implode(
-                '',
-                array(
-                    $account->id,
-                    $data['application_name'],
-                    $data['application_description'],
-                    $data['application_url'],
-                    time()
-                )
-            )
-        );
-
-        $application->uuid  = UUID::generate();
-
-        $application->save();
-
-        return $application;
-    }
-
-    /**
-     * Update existing Application instance
-     *
-     * @param $data
-     * @return $this
-     */
-    public function updateApplication($data) {
-
-        $this->name        = $data['application_name'];
-        $this->description = $data['application_description'];
-        $this->url         = $data['application_url'];
-
-        $this->save();
+        $this->attributes['uuid'] = UUID::make();
+        parent::save($options);
 
         return $this;
     }
 
     /**
-     * Reset Application token
-     *
-     * @return $this
-     */
-    public function resetToken() {
-
-        $this->token = md5(
-            $this->account_id . $this->name . $this->description . $this->url . time()
-        );
-
-        $this->save();
-
-        return $this;
-    }
-
-    /**
-     * Get Account relation instance
-     *
+     * Many To One relationship between Application and Account model
      * @return mixed
      */
     public function account() {
@@ -132,13 +34,12 @@ class Application extends Eloquent {
     }
 
     /**
-     * Get Application identity like: com.virgilsecurity.pass
-     *
-     * @return string
+     * One To Many relationship between Application and Application Token model
+     * @return mixed
      */
-    public function getIdentity() {
+    public function tokens() {
 
-        return $this->uuid;
+        return $this->hasMany('ApplicationToken');
     }
 
-} 
+}

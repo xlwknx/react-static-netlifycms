@@ -18,7 +18,7 @@
                 <li class="@if($page == 'about-virgil') active @endif"><a href="/about-virgil">ABOUT US</a></li>
                 <li class="@if($page == 'apps') active @endif"><a href="/apps">APPS</a></li>
                 <li class="@if($page == 'documents') active @endif" ><a href="/documents/csharp/quickstart">DEVELOPERS</a></li>
-                @if($authToken)
+                @if(Auth::check())
                 <li class="@if($page == 'dashboard') active @endif" ><a href="/dashboard">DASHBOARD</a></li>
                 <li ><a href="/signout">SIGNOUT</a></li>
                 @else($page == 'signin')

@@ -1,7 +1,7 @@
 @section('content')
 <div class="container">
 
-            @if (count($applicationList))
+            @if (count(Auth::user()->applications))
                 <div class="row">
                     <div class="col-md-9">
                         <h1>My Applications</h1>
@@ -16,10 +16,10 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Description</th>
-                                <th>Token</th>
+                                <th>Token's</th>
                                 <th>Created</th>
                             </tr>
-                            @foreach ($applicationList as $application)
+                            @foreach (Auth::user()->applications as $application)
                                 <tr>
                                     <td>
                                         <a href="/dashboard/application/update/{{$application->uuid}}">{{$application->name}}</a>                                
@@ -28,7 +28,9 @@
                                         {{$application->description}}
                                     </td>
                                     <td>
-                                        {{$application->token}}
+                                        @foreach ($application->tokens as $token)
+                                        {{$token->token}} <br />
+                                        @endforeach
                                     </td>
                                     <td>
                                         {{$application->created_at}}

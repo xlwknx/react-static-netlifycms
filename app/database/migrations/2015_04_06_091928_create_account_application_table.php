@@ -4,6 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateAccountApplicationTable extends Migration {
 
+    const APPLICATION_INACTIVE = 0;
+    const APPLICATION_ACTIVE   = 1;
+
 	public function up()
 	{
         Schema::create('account_application', function($table)
@@ -16,6 +19,10 @@ class CreateAccountApplicationTable extends Migration {
             $table->string('name', 255);
             $table->string('description', 255);
             $table->string('url', 255)->nullable();
+            $table->smallInteger('active')->default(
+                self::APPLICATION_ACTIVE
+            );
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('account_id')

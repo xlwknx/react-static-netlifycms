@@ -5,7 +5,7 @@ namespace Virgil\Helper;
 
 class UUID {
 
-    public static function generate() {
+    public static function make() {
 
         $hash = strtolower(md5(uniqid(rand(), true)));
         $uuid = sprintf(

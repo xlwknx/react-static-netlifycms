@@ -8,13 +8,7 @@
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
             <div class="form-default">           
                 <h2>Sign In</h2>
-                @if($errors->any())
-                <div class="alert alert-danger">
-                    <?=$errors->first();?>
-                    <?=$errors->first('email');?>
-                    <?=$errors->first('password');?>
-                </div>
-                @endif
+                @include('partial.error')
                 <form action="/signin" method="post">
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">Your Email:</span>
