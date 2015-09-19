@@ -19,7 +19,7 @@ class Application extends Eloquent {
      */
     public function save(array $options = array()) {
 
-        $this->attributes['uuid'] = UUID::make();
+        $this->uuid = UUID::make();
         parent::save($options);
 
         if(!$this->tokens()->count()) {

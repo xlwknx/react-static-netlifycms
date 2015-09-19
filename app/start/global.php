@@ -28,21 +28,21 @@ App::error(function(Exception $exception, $code)
     // Catch Method Not Allowed Exception
     if($exception instanceof \Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException) {
 
-        return Response::view('errors/missing', array(), 404);
-
         Log::error(
             'NotAllowedHttpException Route: ' . Request::url()
         );
+
+        return Response::view('errors/missing', array(), 404);
     }
 
     // Catch Route Not Found Exception
     if ($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
 
-        return Response::view('errors/missing', array(), 404);
-
         Log::error(
             'NotFoundHttpException Route: ' . Request::url()
         );
+
+        return Response::view('errors/missing', array(), 404);
     }
 
     Log::error($exception);

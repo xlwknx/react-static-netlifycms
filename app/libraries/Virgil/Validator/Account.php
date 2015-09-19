@@ -15,6 +15,19 @@ class Account {
         'confirm'  => 'required|min:5|max:255|same:password'
     ];
 
+    protected static $_resetPasswordValidatorRules = [
+        'email' => 'required|email|exists:account,email',
+    ];
+
+    protected static $_confirmationCodeValidatorRules = [
+        'confirmation_code' => 'required|exists:account,confirmation_code'
+    ];
+
+    protected static $_updatePasswordValidatorRules = [
+        'password' => 'required|min:5|max:255',
+        'confirm'  => 'required|min:5|max:255|same:password'
+    ];
+
     /**
      * Get Validator rules for Signin action
      * @return array
@@ -30,8 +43,33 @@ class Account {
      */
     public static function getSignupValidatorRules() {
 
-        return array_merge(
-            self::$_signupValidatorRules
-        );
+        return self::$_signupValidatorRules;
+    }
+
+    /**
+     * Get Validator rules for Reset Password action
+     * @return array
+     */
+    public static function getResetPasswordValidatorRules() {
+
+        return self::$_resetPasswordValidatorRules;
+    }
+
+    /**
+     * Get Validator rules for Reset Password action
+     * @return array
+     */
+    public static function getConfirmationCodeValidatorRules() {
+
+        return self::$_confirmationCodeValidatorRules;
+    }
+
+    /**
+     * Get Validator rules for Reset Password action
+     * @return array
+     */
+    public static function getUpdatePasswordValidatorRules() {
+
+        return self::$_updatePasswordValidatorRules;
     }
 }

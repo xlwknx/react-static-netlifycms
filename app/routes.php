@@ -41,26 +41,25 @@ Route::group(
     }
 );
 
-Route::match(['GET', 'POST'], 'signin', [
+Route::match(['GET', 'POST'], 'account/signin', [
     'uses' => 'AccountController@signin'
 ]);
 
-Route::match(['GET', 'POST'], 'signup', [
+Route::match(['GET', 'POST'], 'account/signup', [
     'uses' => 'AccountController@signup'
 ]);
 
-Route::match(['GET', 'POST'], 'reset-password', [
-    'uses' => 'AccountController@resetPassword'
-]);
-
-Route::match(['GET', 'POST'], 'update-password/{token}', [
-    'uses' => 'AccountController@updatePassword'
-]);
-
-Route::get('signout', [
+Route::get('account/signout', [
     'uses' => 'AccountController@signout'
 ]);
 
+Route::match(['GET', 'POST'], 'account/password/reset', [
+    'uses' => 'AccountController@resetPassword'
+]);
+
+Route::match(['GET', 'POST'], 'account/password/update/{code}', [
+    'uses' => 'AccountController@updatePassword'
+]);
 
 Route::post('token/validate', array(
     'uses' => 'TokenController@validate'

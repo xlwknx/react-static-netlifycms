@@ -12,7 +12,7 @@ class ApplicationToken extends Eloquent {
      */
     public function save(array $options = array()) {
 
-        $this->attributes['token'] = Hash::make(
+        $this->token = Hash::makeApplicationToken(
             $this->application
         );
 
@@ -21,7 +21,7 @@ class ApplicationToken extends Eloquent {
 
     public function changeActiveState() {
 
-        $this->attributes['active'] = !$this->attributes['active'];
+        $this->active = !$this->active;
 
         parent::save();
     }

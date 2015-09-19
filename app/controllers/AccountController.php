@@ -1,6 +1,8 @@
 <?php
 
-use Virgil\Validator\Account as AccountValidator;
+use Virgil\Validator\Account as AccountValidator,
+
+    \Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 
 class AccountController extends AbstractController {
@@ -18,7 +20,7 @@ class AccountController extends AbstractController {
                 Input::all(), AccountValidator::getSigninValidatorRules()
             );
             if($validator->fails()) {
-                return Redirect::to('/signin')->withInput(
+                return Redirect::to('/account/signin')->withInput(
                     Input::except('password')
                 )->withErrors(
                     $validator
@@ -54,7 +56,7 @@ class AccountController extends AbstractController {
                 Input::all(), AccountValidator::getSignupValidatorRules()
             );
             if($validator->fails()) {
-                return Redirect::to('/signup')->withInput(
+                return Redirect::to('/account/signup')->withInput(
                     Input::except(array('password', 'confirm'))
                 )->withErrors(
                     $validator
@@ -92,75 +94,84 @@ class AccountController extends AbstractController {
     public function signout() {
 
         Auth::logout();
-        return Redirect::to('signin');
+        return Redirect::to('account/signin');
     }
 
-    /*
-    public function resetPassword()
-    {
-
-        $data = array(
-            'resetResult'     => false,
-            'resetSuccessful' => ''
-        );
+    public function resetPassword() {
 
         if(Request::isMethod('post')) {
 
-            $result = AccountValidator::validateResetPasswordAction(
-                Input::all()
+            $validator = Validator::make(
+                Input::all(), AccountValidator::getResetPasswordValidatorRules()
             );
-            if($result instanceof Illuminate\Http\RedirectResponse) {
-                return $result;
+            if($validator->fails()) {
+                return Redirect::to('/account/password/reset')->withInput()->withErrors(
+                    $validator
+                );
             }
 
-            if($result->resetPassword()) {
-                $data['resetResult']  = true;
-                $data['resetMessage'] = Lang::get('message.flash.reset-password');
-            }
+            $account = Account::whereEmail(
+                Input::get('email')
+            )->first();
+
+            Event::fire(
+                'auth.reset.password',
+                $account->createConfirmationCode()
+            );
+
+            return Redirect::to(
+                '/account/password/reset'
+            )->with(
+                'message', Lang::get('messages.flash.reset.password')
+            );
         }
 
         $this->setActivePage('reset-password');
         $this->layout->content = View::make(
             'pages.account.reset-password',
-            $data
+            array()
         );
     }
 
-    public function updatePassword($token) {
+    public function updatePassword($code) {
 
-        $data = array(
-            'updateMessage' => '',
-            'errorMessage'  => '',
-            'resetToken'    => $token
+        $validator = Validator::make(
+           ['confirmation_code' => $code], AccountValidator::getConfirmationCodeValidatorRules()
         );
+        if($validator->fails()) {
+            throw new NotFoundHttpException();
+        }
 
-        $account = AccountValidator::validateToken($token);
-        if($account instanceof Account) {
-
-            if(Request::isMethod('post')) {
-
-                $password = AccountValidator::validatePassword(
-                    Input::all(),
-                    $token
-                );
-
-                if($password instanceof Illuminate\Http\RedirectResponse) {
-                    return $password;
-                }
-
-                $data['updateMessage'] = $account->updatePassword(
-                    $password
+        if(Request::isMethod('post')) {
+            $validator = Validator::make(
+                Input::all(), AccountValidator::getUpdatePasswordValidatorRules()
+            );
+            if($validator->fails()) {
+                return Redirect::to('/account/password/update/' . $code)->withInput(
+                    Input::except(array('password', 'confirm'))
+                )->withErrors(
+                    $validator
                 );
             }
-        } else {
-            $data['errorMessage'] = Lang::get('message.flash.update-password-token-not-found');
+
+            Account::whereConfirmationCode(
+                $code
+            )->first()->updatePassword(
+                Input::get('password')
+            );
+
+            return Redirect::to('/account/signin')->with(
+                'message', Lang::get('messages.flash.update.password')
+            );
         }
 
         $this->setActivePage('update-password');
         $this->layout->content = View::make(
             'pages.account.update-password',
-            $data
+            array(
+                'code' => $code
+            )
         );
     }
-    */
+
 }

@@ -18,7 +18,7 @@
                             <td style="padding: 0px; margin: 0px; padding: 40px 50px 20px 50px; background-color: #ffffff; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; font-family: 'Arial'; color: #1e2834;" width="100%">
                                 <h1 style="padding: 0px; margin: 0px; font-size: 24px; color: #1e2834;">Welcome</h1>
                                 <h2 style="padding: 0px; margin: 0px; font-weight: normal; font-size: 18px; padding-top: 15px; color: #1e2834;">
-                                    Please visit reset password <a href="<?=Config::get('app.url')?>/update-password/<?=$resetToken?>">link</a>
+                                    Please visit reset password <a href="<?=Config::get('app.url')?>/account/password/update/<?=$code?>">link</a>
                                 </h2>
                                 <h3 style="padding: 0px; margin: 0px; color: #999999; padding-top: 70px; font-size: 14px; font-weight: normal;">
                                     &copy; <?php echo date('Y'); ?> Virgil Security, Inc

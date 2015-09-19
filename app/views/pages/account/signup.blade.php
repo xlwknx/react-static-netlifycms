@@ -9,7 +9,7 @@
             <div class="form-default">           
                 <h2>Sign Up</h2>
                 @include('partial.error')
-                <form action="/signup" method="post">
+                <form action="/account/signup" method="post">
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">Your Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                       <input type="text" name="email" class="form-control" placeholder="email@example.com" aria-describedby="basic-addon1" value="<?=Input::old('email')?>">
@@ -28,7 +28,7 @@
                                 <button type="submit" class="btn btn-primary">Sign Up</button>      
                             </div>
                             <div class="col-md-6 col-sm-6">
-                                <a href="/signin" class="btn btn-default">Have an Account?</a>
+                                <a href="/account/signin" class="btn btn-default">Have an Account?</a>
                             </div>
                         </div>
                     </div>       

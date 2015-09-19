@@ -1,6 +1,8 @@
 <?php
 
-use Illuminate\Auth\UserInterface;
+use Illuminate\Auth\UserInterface,
+
+    Virgil\Helper\Hash as HashHelper;
 
 class Account extends Eloquent implements UserInterface {
 
@@ -33,6 +35,33 @@ class Account extends Eloquent implements UserInterface {
     public function setPasswordAttribute($password) {
 
         $this->attributes['password'] = Hash::make($password);
+    }
+
+    /**
+     * Create Account Confirmation Code
+     * @return $this
+     */
+    public function createConfirmationCode() {
+
+        $this->confirmation_code = HashHelper::makeConfirmationCode();
+
+        parent::save();
+        return $this;
+    }
+
+    /**
+     * Update Account password
+     * @param $password
+     * @return $this
+     */
+    public function updatePassword($password) {
+
+        $this->password = $password;
+        $this->confirmation_code = null;
+
+        parent::save();
+
+        return $this;
     }
 
     /**
