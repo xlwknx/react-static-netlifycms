@@ -2,11 +2,11 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateApplicationLogTable extends Migration {
+class CreateApplicationTokenLogTable extends Migration {
 
     public function up()
 	{
-        Schema::create('application_log', function($table)
+        Schema::create('application_token_log', function($table)
         {
             $table->engine = 'InnoDB';
 
@@ -29,6 +29,6 @@ class CreateApplicationLogTable extends Migration {
 
 	public function down()
 	{
-        Schema::drop('application_log');
+        Schema::drop('application_token_log');
 	}
 }

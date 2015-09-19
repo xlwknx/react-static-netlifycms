@@ -8,7 +8,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <form method="post" action="/dashboard/application/update/{{$application->uuid}}">
+                <form method="post" action="/dashboard/application/{{$application->uuid}}/update">
                     <div class="form-group">
                         <label for="applicationNameInput">Application Name</label>
                         <input type="text" class="form-control" name="name" id="applicationNameInput" placeholder="Name" value="<?=(Input::old('name') ? Input::old('name') : $application->name )?>" >

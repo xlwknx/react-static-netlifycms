@@ -31,4 +31,4 @@ class Application {
 
         return self::$_applicationUUIDValidatorRules;
     }
-} 
+}

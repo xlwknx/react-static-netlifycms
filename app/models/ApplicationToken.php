@@ -19,6 +19,13 @@ class ApplicationToken extends Eloquent {
         parent::save($options);
     }
 
+    public function changeActiveState() {
+
+        $this->attributes['active'] = !$this->attributes['active'];
+
+        parent::save();
+    }
+
     /**
      * Many To One relationship between Application Token and Application model
      * @return mixed
@@ -28,4 +35,12 @@ class ApplicationToken extends Eloquent {
         return $this->belongsTo('Application');
     }
 
+    /**
+     * One To Many relationship between Application Token and Token Log model
+     * @return mixed
+     */
+    public function logs() {
+
+        return $this->hasMany('ApplicationTokenLog', 'token_id', 'id');
+    }
 }

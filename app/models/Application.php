@@ -49,4 +49,12 @@ class Application extends Eloquent {
         return $this->hasMany('ApplicationToken');
     }
 
+    /**
+     * Get Application unique Identity
+     * @return string
+     */
+    public function getIdentity() {
+
+        return $this->uuid;
+    }
 }

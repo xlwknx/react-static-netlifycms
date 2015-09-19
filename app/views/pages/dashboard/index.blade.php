@@ -22,7 +22,7 @@
                             @foreach (Auth::user()->applications as $application)
                                 <tr>
                                     <td>
-                                        <a href="/dashboard/application/update/{{$application->uuid}}">{{$application->name}}</a>                                
+                                        <a href="/dashboard/application/{{$application->uuid}}/update">{{$application->name}}</a>
                                     </td>
                                     <td>
                                         {{$application->description}}

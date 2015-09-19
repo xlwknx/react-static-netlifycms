@@ -18,9 +18,24 @@ Route::group(
                 'before' => 'application'
             ),
             function() {
-                Route::match(['GET', 'POST'], 'dashboard/application/update/{uuid}', [
+                Route::match(['GET', 'POST'], 'dashboard/application/{uuid}/update', [
                     'uses' => 'ApplicationController@update'
                 ]);
+
+                Route::match(['GET', 'POST'], 'dashboard/application/{uuid}/create-token', [
+                    'uses' => 'TokenController@createToken'
+                ]);
+
+                Route::group(
+                    array(
+                        'before' => 'token'
+                    ),
+                    function() {
+                        Route::match(['GET', 'POST'], 'dashboard/application/{uuid}/token/{token}/change-active-state', [
+                            'uses' => 'TokenController@changeActiveState'
+                        ]);
+                    }
+                );
             }
         );
     }
@@ -45,6 +60,15 @@ Route::match(['GET', 'POST'], 'update-password/{token}', [
 Route::get('signout', [
     'uses' => 'AccountController@signout'
 ]);
+
+
+Route::post('token/validate', array(
+    'uses' => 'TokenController@validate'
+));
+
+Route::post('application/validate-token', array(
+    'uses' => 'TokenController@validate'
+));
 
 
 /*

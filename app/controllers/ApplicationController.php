@@ -1,13 +1,9 @@
 <?php
 
-use Virgil\Validator\Application as ApplicationValidator,
-    Symfony\Component\HttpFoundation\Response as HttpResponse;
+use Virgil\Validator\Application as ApplicationValidator;
 
 class ApplicationController extends AbstractController {
 
-    /**
-     * The layout that should be used for responses.
-     */
     protected $layout = 'layouts.public';
 
     public function create() {
@@ -24,7 +20,7 @@ class ApplicationController extends AbstractController {
                 );
             }
 
-            $application = Auth::user()->applications()->save(
+            Auth::user()->applications()->save(
                 new Application(
                     Input::all()
                 )
@@ -68,26 +64,5 @@ class ApplicationController extends AbstractController {
                 'application' => $application
             ]
         );
-    }
-
-    public static function validateToken() {
-
-        $serviceId = Input::json()->get('service_id', null);
-        $resource  = Input::json()->get('resource', null);
-        $appToken  = Input::json()->get('app_token', null);
-
-        $application = ApplicationValidator::validateToken(
-            $appToken
-        );
-
-        ApplicationLog::log(
-            $serviceId,
-            $resource,
-            $application
-        );
-
-        return \Response::json(array(
-            'identity' => $application->getIdentity()
-        ), HttpResponse::HTTP_OK);
     }
 }
