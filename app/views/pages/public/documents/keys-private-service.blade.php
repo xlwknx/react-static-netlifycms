@@ -90,13 +90,13 @@
 					</tr>
 					<tr>
 						<td>user_data</td>
-						<td>The user data item of the public key</td>
+						<td>Represents the user data identity.</td>
 						<td>string</td>
 					</tr>
 					<tr>
-						<td>new_password</td>
-						<td>Represents new container password</td>
-						<td>object</td>
+						<td>password</td>
+						<td>Represents the container password</td>
+						<td>string</td>
 					</tr>
 				</table>
 									

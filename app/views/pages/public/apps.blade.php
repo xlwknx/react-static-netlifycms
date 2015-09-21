@@ -47,10 +47,10 @@
           <div class="caption">
             <h3>Virgil Mail</h3>
             <p>Click here and send secure emails today. Protect your communications with free, seamless end-to-end encryption using Virgil.</p>
-            Coming Soon...
+            Downloads
             <hr />
-            <a title="Outlook Extension for Windows" class="icon-link disabled"><img src="/img/icons/outlook.png" /></a>
-            <a title="Apple Mail Extension for Mac OS: Coming Soon..." class="icon-link disabled"><img src="/img/icons/apple.png" /></a>
+            <a id="outlookDownloadLink" title="Outlook Extension for Windows" class="icon-link" href="https://downloads.virgilsecurity.com/apps/virgil-mail/outlook/virgil_mail_outlook_1.0.0.3.exe" ><img src="/img/icons/outlook.png" /></a>
+            <a title="Apple Mail Extension for Mac OSX: Coming Soon..." class="icon-link disabled"><img src="/img/icons/apple.png" /></a>
             <a title="Thunderbird Extension for Windows: Coming Soon..." class="icon-link disabled"><img src="/img/icons/thunderbird.png" /></a>
           </div>
         </div>
@@ -70,3 +70,13 @@
     </div>
 </div>        
 @stop
+
+@section('scripts')
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $.getJSON( "https://downloads.virgilsecurity.com/apps/virgil-mail/outlook/updates/version.json", function(data) {
+        $("#outlookDownloadLink").attr("href", data.setup_url);
+      });  
+    });
+  </script>
+@show

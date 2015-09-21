@@ -77,7 +77,7 @@ VirgilByteArray privateKey = newKeyPair.privateKey();
                 <p>
                     This example shows how to upload a public key and register a new account on Virgil’s Keys Service.
                 </p>
-                <p>Full source code examples are available on <a href="https://github.com/VirgilSecurity/virgil-net">GitHub</a> in public access.</p>
+                <p>Full source code examples are available on <a href="https://github.com/unlim-it/virgil-cpp/tree/master/examples/src">GitHub</a> in public access.</p>
                 <pre><code class="language-cpp">Credentials credentials(privateKey);
 std::string uuid = "{random generated UUID}";
 KeysClient keysClient("{Application Token}");

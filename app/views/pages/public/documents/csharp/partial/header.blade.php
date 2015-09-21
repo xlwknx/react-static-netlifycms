@@ -2,25 +2,25 @@
 <div class="dev-nav">
     <div class="container">
         <div class="row visible-md visible-lg">
-            <div class="col-md-2"><a href="/documents/csharp/<?= $reference; ?>" class="dev-lng csharp active">.NET/C#</a></div>
-            <div class="col-md-2"><a href="/documents/cpp/<?= $reference; ?>" class="dev-lng cpp">C/C++</a></div>
-            <div class="col-md-2"><a href="/documents/php/<?= $reference; ?>" class="dev-lng php">PHP</a></div>
-            <div class="col-md-2"><a href="/documents/nodejs/<?= $reference; ?>" class="dev-lng nodejs disabled">Node.js</a></div>
-            <div class="col-md-2"><a href="/documents/python/<?= $reference; ?>" class="dev-lng python disabled">Python</a></div>
-            <div class="col-md-2"><a href="/documents/ruby/<?= $reference; ?>" class="dev-lng ruby disabled">Ruby</a></div>
+            <div class="col-md-2"><a href="/documents/csharp/quickstart" class="dev-lng csharp active">.NET/C#</a></div>
+            <div class="col-md-2"><a href="/documents/cpp/quickstart" class="dev-lng cpp">C/C++</a></div>
+            <div class="col-md-2"><a href="/documents/php/quickstart" class="dev-lng php">PHP</a></div>
+            <div class="col-md-2"><a href="/documents/nodejs/quickstart" class="dev-lng nodejs">Node.js</a></div>
+            <div class="col-md-2"><a href="/documents/python/quickstart" class="dev-lng python disabled">Python</a></div>
+            <div class="col-md-2"><a href="/documents/ruby/quickstart" class="dev-lng ruby disabled">Ruby</a></div>
         </div>
         <div class="row visible-xs visible-sm">
             <div class="col-sm-4 col-xs-4">
-                <a href="/documents/csharp/<?= $reference; ?>" class="dev-lng small active">.NET/C#</a>
-                <a href="/documents/nodejs/<?= $reference; ?>" class="dev-lng small disabled">Node.js</a>
+                <a href="/documents/csharp/quickstart" class="dev-lng small active">.NET/C#</a>
+                <a href="/documents/nodejs/quickstart" class="dev-lng small">Node.js</a>
             </div>
             <div class="col-sm-4 col-xs-4">
-                <a href="/documents/cpp/<?= $reference; ?>" class="dev-lng small">C/C++</a>
-                <a href="/documents/python/<?= $reference; ?>" class="dev-lng small disabled">Python</a>
+                <a href="/documents/cpp/quickstart" class="dev-lng small">C/C++</a>
+                <a href="/documents/python/quickstart" class="dev-lng small disabled">Python</a>
             </div>
             <div class="col-sm-4 col-xs-4">
-                <a href="/documents/php/<?= $reference; ?>" class="dev-lng small">PHP</a>
-                <a href="/documents/ruby/<?= $reference; ?>" class="dev-lng small disabled">Ruby</a>
+                <a href="/documents/php/quickstart" class="dev-lng small">PHP</a>
+                <a href="/documents/ruby/quickstart" class="dev-lng small disabled">Ruby</a>
             </div>
         </div>
     </div>

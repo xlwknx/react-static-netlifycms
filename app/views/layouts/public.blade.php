@@ -23,6 +23,7 @@
         </footer>
 
         <script src="/dist/public.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
         @section('scripts')@show
     </body>
 </html>
