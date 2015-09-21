@@ -11,7 +11,7 @@ class AccountTableSeeder extends Seeder {
         $account = new Account();
         $account->id = self::VIRGIL_ACCOUNT_ID;
         $account->email = 'support@virgilsecurity.com';
-        $account->password = 'RW0tOs638RT50PZ';
+        $account->password = 'password';
 
         $account->save();
     }
