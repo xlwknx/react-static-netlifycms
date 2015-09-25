@@ -1,6 +1,8 @@
 <?php
 
+
 use Virgil\Validator\Account as AccountValidator,
+    Virgil\Auth,
 
     \Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 

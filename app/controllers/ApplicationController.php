@@ -1,6 +1,7 @@
 <?php
 
-use Virgil\Validator\Application as ApplicationValidator;
+use Virgil\Validator\Application as ApplicationValidator,
+    Virgil\Auth;
 
 class ApplicationController extends AbstractController {
 

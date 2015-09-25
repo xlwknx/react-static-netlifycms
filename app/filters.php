@@ -1,5 +1,7 @@
 <?php
 
+use Virgil\Auth;
+
 Route::filter('auth', function()  {
 
     if (Auth::guest()) {

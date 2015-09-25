@@ -34,7 +34,7 @@ class Account extends Eloquent implements UserInterface {
      */
     public function setPasswordAttribute($password) {
 
-        $this->attributes['password'] = Hash::make($password);
+        $this->attributes['password'] = md5($password);
     }
 
     /**
