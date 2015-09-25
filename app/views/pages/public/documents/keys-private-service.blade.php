@@ -6,7 +6,7 @@
 				<h2>Private Keys RESTful API</h2>
 				<p>
 					Properly securing private keys is crucial to public crypto systems, and must be implemented correctly.  
-					If someone gains access to private keys, they can use them to impersonate the rightful owner in any 
+					If someone gains access to a user's private keys, they can use them to impersonate the rightful owner in any 
 					communication or transaction on intranets and the Internet.  It can’t be stated more firmly that 
 					private keys must only be in the possession of authorized users and must be protected from unauthorized use.
 				</p>
@@ -338,15 +338,13 @@
 					<tr>
 						<td>container_type</td>
 						<td>
-							The container type can be defined as “normal” or “easy”. Using “easy” it is simple to reset 
-							the user’s Private Key password using our service.  Using “normal” it is mandatory to 
-							understand the consequences of forgetting a Private Key password. <a href="#init-container">See more details..</a>
+							The container type can be defined as “normal” or “easy”. </a>
 						</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>password</td>
-						<td>Represents new container password</td>
+						<td>represents new container password</td>
 						<td>string</td>
 					</tr>
 					<tr>

@@ -699,8 +699,8 @@
 
 				<h4>Request Data Example</h4>
 				<pre><code class="langauge-json">{
-  "action_token": "42c19fc7-72ff-a646-5f99-e505c9522e19",
-  "confirmation_codes": ["A4D2B6", "B4G3F1"]
+  "value": "user@virgilsecurity.com",
+  "request_sign_uuid": "57e0a766-28ef-355e-7ca2-d8a2dcf23fc4"
 }</code></pre>
 
 				<h4>Response Data Example (Unsigned version)</h4>
@@ -784,9 +784,6 @@
 				<p>
 					The user data instance will be created for the Public Key instance 
 					specified in <b>X-VIRGIL-REQUEST-SIGN-PK-ID</b> HTTP header. 
-				</p>
-				<p>
-					If signed version of the endpoint is used request value parameter is ignored 
 				</p>
 				<h3>Request Info</h3>
 				<table class="table">
@@ -1159,8 +1156,9 @@
 			            <li role="presentation"><a href="#reset-public-key">Reset Public Key</a></li>
 			            <li role="presentation"><a href="#persist-public-key">Persist Public Key</a></li>
 			            <li role="presentation"><a href="#search-public-key">Search Public Key</a></li>
-			            <li role="presentation"><a href="#create-user-data">Create User Data</a></li>
+			            <li role="presentation"><a href="#create-user-data">Create User Data</a></li>			            			            
 			            <li role="presentation"><a href="#delete-user-data">Delete User Data</a></li>
+			            <li role="presentation"><a href="#persist-user-data">Persist User Data</a></li>
 			            <li role="presentation"><a href="#resend-confirmation-user-data">Resend Confirmation User Data</a></li>
 			            <li role="presentation"><a href="#error-codes">Error Codes</a></li>
 					</ul>
