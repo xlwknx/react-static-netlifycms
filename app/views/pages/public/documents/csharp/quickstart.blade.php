@@ -16,17 +16,14 @@ Virgil | Developers | C#/.NET | Quickstart
                     </p>
                     <h2 id="obtaining-an-app-token">Obtaining an Application Token</h2>
                     <p>
-                        First, create a free Virgil Security developer account by signing up <a href="/signup">here</a>. Once you have your account 
-                        you can <a href="/signin">sign in</a> and generate an app token for your application.
+                       The app token provides authenticated secure access to Virgil’s Keys Service and is passed with each API call. 
+                       The app token also allows the API to associate your app’s requests with your Virgil Security developer account.
                     </p>
-                    <p>
-                        The app token provides authenticated secure access to Virgil’s Keys Service and is passed with each API call. 
-                        The app token also allows the API to associate your app’s requests with your Virgil Security developer account.
-                    </p>
-                    <p>
-                        Simply add your app token to the HTTP header for each request:
-                    </p>
-                    <pre><code>X-VIRGIL-APPLICATION-TOKEN: { YOUR_APPLICATION_TOKEN }</code></pre>
+                    <ol>
+                        <li><a href="/signup" >Create</a> a free <b>Virgil Security</b> account.</li>
+                        <li><a href="/signin" >Sign in</a> and generate a token for your application.</li>
+                        <li>Use your app token to access services in our SDK Library.</li>
+                    </ol>
                 </section>
                 <section id="install">
                     <h2>Install</h2>

@@ -8,6 +8,19 @@
 					secure communication, data exchange and money exchange. This is done through public and private cryptographic 
 					key pairs provided by a virgil security crypto library.
 				</p>
+
+                <h2 id="application-token">Application Token</h2>
+                <p>
+                   The app token provides authenticated secure access to Virgil’s Keys Service and is passed with each API call. 
+                   The app token also allows the API to associate your app’s requests with your Virgil Security developer account.
+                </p>
+				<ol>
+                    <li><a href="/signup" >Create</a> a free <b>Virgil Security</b> account</li>
+                    <li><a href="/signin" >Sign in</a> and generate a token for your application</li>
+                    <li>Simply add your app token to the HTTP header for each request:</li>
+                </ol>
+                <pre><code>X-VIRGIL-APPLICATION-TOKEN: { YOUR_APPLICATION_TOKEN }</code></pre>
+
 				<h2 id="create-public-key">Create Public Key</h2>
 				<p>The endpoint’s purpose is to upload Public Keys for the application.</p>
 				<p>
@@ -686,8 +699,8 @@
 
 				<h4>Request Data Example</h4>
 				<pre><code class="langauge-json">{
-  "action_token": "42c19fc7-72ff-a646-5f99-e505c9522e19",
-  "confirmation_codes": ["A4D2B6", "B4G3F1"]
+  "value": "user@virgilsecurity.com",
+  "request_sign_uuid": "57e0a766-28ef-355e-7ca2-d8a2dcf23fc4"
 }</code></pre>
 
 				<h4>Response Data Example (Unsigned version)</h4>
@@ -771,9 +784,6 @@
 				<p>
 					The user data instance will be created for the Public Key instance 
 					specified in <b>X-VIRGIL-REQUEST-SIGN-PK-ID</b> HTTP header. 
-				</p>
-				<p>
-					If signed version of the endpoint is used request value parameter is ignored 
 				</p>
 				<h3>Request Info</h3>
 				<table class="table">
@@ -1137,7 +1147,8 @@
 			</div>
 			<div class="col-md-3 scrollspy">
                     <ul class="nav hidden-xs hidden-sm dev-sidenav" data-spy="affix" data-offset-top="250" >                
-			            <li class="title" role="presentation"><p>Public Keys RESTful API</p></li>
+			            <li class="title" role="presentation"><p>Public Keys RESTful API</p></li>			            
+			            <li role="presentation"><a href="#application-token">Application Token</a></li>
 			            <li role="presentation"><a href="#create-public-key">Create Public Key</a></li>
 			            <li role="presentation"><a href="#get-public-key">Get a Public Key</a></li>
 			            <li role="presentation"><a href="#update-public-key">Update Public Key</a></li>
@@ -1145,8 +1156,9 @@
 			            <li role="presentation"><a href="#reset-public-key">Reset Public Key</a></li>
 			            <li role="presentation"><a href="#persist-public-key">Persist Public Key</a></li>
 			            <li role="presentation"><a href="#search-public-key">Search Public Key</a></li>
-			            <li role="presentation"><a href="#create-user-data">Create User Data</a></li>
+			            <li role="presentation"><a href="#create-user-data">Create User Data</a></li>			            			            
 			            <li role="presentation"><a href="#delete-user-data">Delete User Data</a></li>
+			            <li role="presentation"><a href="#persist-user-data">Persist User Data</a></li>
 			            <li role="presentation"><a href="#resend-confirmation-user-data">Resend Confirmation User Data</a></li>
 			            <li role="presentation"><a href="#error-codes">Error Codes</a></li>
 					</ul>
