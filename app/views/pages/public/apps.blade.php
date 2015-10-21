@@ -50,7 +50,7 @@
             Downloads
             <hr />
             <a id="outlookDownloadLink" title="Outlook Extension for Windows" class="icon-link" href="https://downloads.virgilsecurity.com/apps/virgil-mail/outlook/virgil_mail_outlook_1.0.0.3.exe" ><img src="/img/icons/outlook.png" /></a>
-            <a title="Apple Mail Extension for Mac OSX: Coming Soon..." class="icon-link disabled"><img src="/img/icons/apple.png" /></a>
+            <a title="Apple Mail Extension for Mac OSX" class="icon-link" href="https://downloads.virgilsecurity.com/apps/virgil-mail/apple-mail/VirgilSecurityMail.dmg"><img src="/img/icons/apple.png" /></a>
             <a title="Thunderbird Extension for Windows: Coming Soon..." class="icon-link disabled"><img src="/img/icons/thunderbird.png" /></a>
           </div>
         </div>
