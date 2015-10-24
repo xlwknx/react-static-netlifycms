@@ -5,31 +5,48 @@
 
 				<h2>Private Keys RESTful API</h2>
 				<p>
-					Properly securing private keys is crucial to public crypto systems, and must be implemented correctly.  
-					If someone gains access to a user's private keys, they can use them to impersonate the rightful owner in any 
-					communication or transaction on intranets and the Internet.  It can’t be stated more firmly that 
-					private keys must only be in the possession of authorized users and must be protected from unauthorized use.
+					The security of private keys is crucial for public key cryptosystems. 
+					Anyone who can obtain a private key can use it to impersonate the rightful 
+					owner during all communications and transactions on intranets or on the 
+					Internet. Therefore, private keys must be in the possession only of 
+					authorized users, and they must be protected from unauthorized use.
 				</p>
 				<p>
 					Virgil Security provides secure RESTful API for store client's private keys.
 				</p>
 
+				<h2 id="general-statements">General Statements</h2>
+
+				<ol>
+					<li>Make sure that you have registered and confirmed account under Public Key service.</li>
+					<li>Make sure that you have Public/Private Key pair and you have already uploaded Public Key to the Public Key service.</li>
+					<li>Make sure that you have Private Key under your local machine.</li>
+					<li>Make sure that you have registered Application under <a href="/account/signin">Virgil Security, Inc.</a> For more information check <a href="#appendix-b">Appendix B. X-VIRGIL-APPLICATION-TOKEN</a> section.</li>
+					<li>Use real Public Key ID for <span class="label label-default">X-VIRGIL-REQUEST-SIGN-PK-ID</span> header parameter from the Public Keys service.</li>
+					<li>Use Virgil Crypto Library to correctly generate value for <span class="label label-default">X-VIRGIL-REQUEST-SIGN</span> header parameter. For more information please check 
+					<a href="#appendix-d">Appendix D. X-VIRGIL-REQUEST-SIGN</a> section.</li>
+				</ol>
+				
+
 				<!-- AUTHENTICATION ===============================================================-->
 
-				<h2 id="auth">Authenticate a Session</h2>
+				<h2 id="auth">Authenticate Session</h2>
 
 				<p>
-					Virgil’s Service will create an Authentication token that will be available for 60 minutes. 
-					If you work longer than 60 minutes, the token will automatically prolong itself.  Otherwise, 
-					the token will die and you will need to generate a new one.
+					Service will create Authentication token that will be available during the 60 
+					minutes after creation. During this time service will automatically prolong life 
+					time of the token in case if Authentication token widely used so don't need to 
+					prolong it manually. In case when Authentication token is used after 60 minutes 
+					of life time, service will throw the appropriate error.
 				</p>
 
 				<blockquote class="danger">
                     Note:
                     <footer>
-                    	Before logging in, make sure that you have already initialized the <a href="#init-container">Container 
-                    	</a> in Virgil's Private Key service. Use the same confirmed <b>User Data</b> identity parameter as you 
-                    	<a href="">registered in our Public Keys service</a>. 
+                    	Before login make sure that you have already created <a href="#init-container">Container 
+                    	Object</a> under Private Key service. Use for user_data.value parameter the same value as 
+                    	you have registered under Public Keys service. This account has to be confirmed under 
+                    	Public Key service.
                     </footer>
                 </blockquote>
 
@@ -58,8 +75,8 @@
 					<tr>
 						<td style="white-space: nowrap;width: 210px">X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							The application token header is mandatory in all app requests in order to access the public 
-							and private keys service in your app. <a href="keys-service#application-token">See more details...</a>
+							Application token. This header is mandatory for all the requests to 
+							distinguish keep tracking different applications requests.
 						</td>
 					</tr>
 				</table>
@@ -73,12 +90,12 @@
 					</tr>
 					<tr>
 						<td>user_data</td>
-						<td>represents the user data identity</td>
+						<td>Represents the user data identity.</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>password</td>
-						<td>the password set on <a href="#init-container">initializing the container</a></td>
+						<td>Represents the container password</td>
 						<td>string</td>
 					</tr>
 				</table>
@@ -102,26 +119,6 @@
 				<!-- CONTAINER INITIALIZATION =====================================================-->
 
 				<h2 id="init-container">Container Initialization</h2>
-				<p>
-				   <b>Virgil’s</b> Private Key storage provides users the container for private keys. 
-				   Every user in the public key service will have a container for storing their private keys.
-				</p>
-
-				<p>You can define the container-type in two ways: </p>
-
-                <p><b>EASY</b></p>
-                <p>
-                	If you define the container-type as “easy”, Virgil’s Keys Service will store the association 
-                	between keys and Virgil would be able to recover the private keys for you if container password 
-                	is forgotten.
-                </p>
-
-				<p><b>NORMAL</b></p>
-				<p>
-					If the user decides to define the container-type as “normal", the user is responsible for 
-					the security of the container. Virgil’s service will accept the private keys whether they 
-					are encrypted or not encrypted.
-				</p>
 
 				<h3>Request Info</h3>
 				<table class="table">
@@ -148,22 +145,24 @@
 					<tr>
 						<td>X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							The application token header is mandatory in all app requests in order to access the public 
-							and private keys service in your app. <a href="keys-service#application-token">See more details...</a>
+							 Application token. This header is mandatory for all the requests to 
+							 distinguish keep tracking different applications requests.
 						</td>
 					</tr>
 					<tr>
 						<td>X-VIRGIL-REQUEST-SIGN</td>
 						<td>
-							Represents the digital signature (in base64 encoded format) of the request body created by 
-							the user’s private key using Virgil’s Crypto Library.
+							The request body sign (base64 encoded representation) that used to make 
+							sure user is the holder of the private key. This is the result of Virgil 
+							Crypto library sign process for the request data using user’s private key.
 						</td>
 					</tr>
 					<tr>
 						<td style="white-space: nowrap;width: 210px">X-VIRGIL-REQUEST-SIGN-PK-ID</td>
 						<td>
-							The ID represents the public key on Virgil’s Public Keys service and is used to verify 
-							the signature in the X-VIRGIL-REQUEST-SIGN header.
+							The request body sign (base64 encoded representation) that used to make 
+							sure user is the holder of the private key. This is the result of Virgil 
+							Crypto library sign process for the request data using user’s private key.
 						</td>
 					</tr>
 				</table>
@@ -178,24 +177,25 @@
 					<tr>
 						<td>container_type</td>
 						<td>
-							The container type can be defined as “normal” or “easy”. Using “easy” it is simple to reset 
-							the user’s Private Key password using our service.  Using “normal” it is mandatory to 
-							understand the consequences of forgetting a Private Key password. <a href="#init-container">See more details..</a></td>
+							can be 'normal' or 'easy'. In case of 'easy' mode you can reset Private Key 
+							password through the Private Key service, in case of 'normal' - you can't 
+							do that and you have to remember you password yourself.</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>password</td>
 						<td>
-							represents the password of the container
+							The list of user data items for the public key. It must contain at 
+							least one UDID entity
 						</td>
-						<td>string</td>
+						<td>object</td>
 					</tr>
 					<tr>
 						<td>request_sign_uuid</td>
 						<td>
-							request parameter that holds a random uuid to guarantee the uniqueness of the request body. 
+							request parameter that holds random uuid to guarantee the uniqueness of the request body. 
 						</td>
-						<td>uuid</td>
+						<td>object</td>
 					</tr>
 				</table>
 
@@ -251,8 +251,8 @@
 					<tr>
 						<td>X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							The application token header is mandatory in all app requests in order to access the public 
-							and private keys service in your app. <a href="keys-service#application-token">See more details...</a>
+							Application token. This header is mandatory for all the requests to 
+							distinguish keep tracking different applications requests.
 						</td>
 					</tr>
 					<tr>
@@ -301,8 +301,8 @@
 					<tr>
 						<td>X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							The application token header is mandatory in all app requests in order to access the public 
-							and private keys service in your app. <a href="keys-service#application-token">See more details...</a>
+							Application token. This header is mandatory for all the requests to 
+							distinguish keep tracking different applications requests.
 						</td>
 					</tr>
 					<tr>
@@ -315,15 +315,17 @@
 					<tr>
 						<td>X-VIRGIL-REQUEST-SIGN</td>
 						<td>
-							Represents the digital signature (in base64 encoded format) of the request body created by 
-							the user’s private key using Virgil’s Crypto Library.
+							The request body sign (base64 encoded representation) that used to make 
+							sure user is the holder of the private key. This is the result of Virgil 
+							Crypto library sign process for the request data using user’s private key.
 						</td>
 					</tr>
 					<tr>
 						<td style="white-space: nowrap;width: 210px">X-VIRGIL-REQUEST-SIGN-PK-ID</td>
 						<td>
-							The ID represents the public key on Virgil’s Public Keys service and is used to verify 
-							the signature in the X-VIRGIL-REQUEST-SIGN header.
+							The request body sign (base64 encoded representation) that used to make 
+							sure user is the holder of the private key. This is the result of Virgil 
+							Crypto library sign process for the request data using user’s private key.
 						</td>
 					</tr>
 				</table>
@@ -337,19 +339,17 @@
 					</tr>
 					<tr>
 						<td>container_type</td>
-						<td>
-							The container type can be defined as “normal” or “easy”. </a>
-						</td>
+						<td>Represents a new container type</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>password</td>
-						<td>represents new container password</td>
+						<td>Represents new container password</td>
 						<td>string</td>
 					</tr>
 					<tr>
 						<td>request_sign_uuid</td>
-						<td>request parameter that holds random uuid to guarantee the uniqueness of the request body.</td>
+						<td>request parameter that holds random uuid to guarantee the uniqueness of the request body. </td>
 						<td>uuid</td>
 					</tr>
 					
@@ -404,8 +404,8 @@
 					<tr>
 						<td>X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							The application token header is mandatory in all app requests in order to access the public 
-							and private keys service in your app. <a href="keys-service#application-token">See more details...</a>
+							Application token. This header is mandatory for all the requests to 
+							distinguish keep tracking different applications requests.
 						</td>
 					</tr>
 				</table>
@@ -535,8 +535,8 @@
 					<tr>
 						<td>X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							The application token header is mandatory in all app requests in order to access the public 
-							and private keys service in your app. <a href="keys-service#application-token">See more details...</a>
+							Application token. This header is mandatory for all the requests to 
+							distinguish keep tracking different applications requests.
 						</td>
 					</tr>
 					<tr>
@@ -549,15 +549,17 @@
 					<tr>
 						<td>X-VIRGIL-REQUEST-SIGN</td>
 						<td>
-							Represents the digital signature (in base64 encoded format) of the request body created by 
-							the user’s private key using Virgil’s Crypto Library.
+							The request body sign (base64 encoded representation) that used to make 
+							sure user is the holder of the private key. This is the result of Virgil 
+							Crypto library sign process for the request data using user’s private key.
 						</td>
 					</tr>
 					<tr>
 						<td style="white-space: nowrap;width: 210px">X-VIRGIL-REQUEST-SIGN-PK-ID</td>
 						<td>
-							The ID represents the public key on Virgil’s Public Keys service and is used to verify 
-							the signature in the X-VIRGIL-REQUEST-SIGN header.
+							The request body sign (base64 encoded representation) that used to make 
+							sure user is the holder of the private key. This is the result of Virgil 
+							Crypto library sign process for the request data using user’s private key.
 						</td>
 					</tr>
 				</table>
@@ -613,8 +615,8 @@
 					<tr>
 						<td>X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							The application token header is mandatory in all app requests in order to access the public 
-							and private keys service in your app. <a href="keys-service#application-token">See more details...</a>
+							Application token. This header is mandatory for all the requests to 
+							distinguish keep tracking different applications requests.
 						</td>
 					</tr>
 					<tr>
@@ -627,15 +629,17 @@
 					<tr>
 						<td>X-VIRGIL-REQUEST-SIGN</td>
 						<td>
-							Represents the digital signature (in base64 encoded format) of the request body created by 
-							the user’s private key using Virgil’s Crypto Library.
+							The request body sign (base64 encoded representation) that used to make 
+							sure user is the holder of the private key. This is the result of Virgil 
+							Crypto library sign process for the request data using user’s private key.
 						</td>
 					</tr>
 					<tr>
 						<td style="white-space: nowrap;width: 210px">X-VIRGIL-REQUEST-SIGN-PK-ID</td>
 						<td>
-							The ID represents the public key on Virgil’s Public Keys service and is used to verify 
-							the signature in the X-VIRGIL-REQUEST-SIGN header.
+							The request body sign (base64 encoded representation) that used to make 
+							sure user is the holder of the private key. This is the result of Virgil 
+							Crypto library sign process for the request data using user’s private key.
 						</td>
 					</tr>
 				</table>
@@ -702,8 +706,8 @@
 					<tr>
 						<td>X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							The application token header is mandatory in all app requests in order to access the public 
-							and private keys service in your app. <a href="keys-service#application-token">See more details...</a>
+							Application token. This header is mandatory for all the requests to 
+							distinguish keep tracking different applications requests.
 						</td>
 					</tr>
 					<tr>
@@ -763,8 +767,8 @@
 					<tr>
 						<td>X-VIRGIL-APPLICATION-TOKEN</td>
 						<td>
-							The application token header is mandatory in all app requests in order to access the public 
-							and private keys service in your app. <a href="keys-service#application-token">See more details...</a>
+							Application token. This header is mandatory for all the requests to 
+							distinguish keep tracking different applications requests.
 						</td>
 					</tr>
 					<tr>
@@ -777,15 +781,17 @@
 					<tr>
 						<td>X-VIRGIL-REQUEST-SIGN</td>
 						<td>
-							Represents the digital signature (in base64 encoded format) of the request body created by 
-							the user’s private key using Virgil’s Crypto Library.
+							The request body sign (base64 encoded representation) that used to make 
+							sure user is the holder of the private key. This is the result of Virgil 
+							Crypto library sign process for the request data using user’s private key.
 						</td>
 					</tr>
 					<tr>
 						<td style="white-space: nowrap;width: 210px">X-VIRGIL-REQUEST-SIGN-PK-ID</td>
 						<td>
-							The ID represents the public key on Virgil’s Public Keys service and is used to verify 
-							the signature in the X-VIRGIL-REQUEST-SIGN header.
+							The request body sign (base64 encoded representation) that used to make 
+							sure user is the holder of the private key. This is the result of Virgil 
+							Crypto library sign process for the request data using user’s private key.
 						</td>
 					</tr>
 				</table>
@@ -911,7 +917,8 @@
 			<div class="col-md-3 scrollspy">
                     <ul class="nav hidden-xs hidden-sm dev-sidenav" data-spy="affix" data-offset-top="250" >                
 			            <li class="title" role="presentation"><p>Private Keys RESTful API</p></li>
-			            <li role="presentation"><a href="#auth">Authenticate a Session</a></li>
+			            <li role="presentation"><a href="#general-statements">General Statements</a></li>
+			            <li role="presentation"><a href="#auth">Authenticate Session</a></li>
 			            <li role="presentation"><a href="#init-container">Container Initialization</a></li>
 			            <li role="presentation"><a href="#get-container">Get Container Details</a></li>
 			            <li role="presentation"><a href="#update-container">Update Container Details</a></li>
