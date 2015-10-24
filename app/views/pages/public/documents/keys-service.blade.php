@@ -15,8 +15,8 @@
                    The app token also allows the API to associate your app’s requests with your Virgil Security developer account.
                 </p>
 				<ol>
-                    <li><a href="/signup" >Create</a> a free <b>Virgil Security</b> account</li>
-                    <li><a href="/signin" >Sign in</a> and generate a token for your application</li>
+                    <li><a href="/account/signup" >Create</a> a free <b>Virgil Security</b> account</li>
+                    <li><a href="/account/signin" >Sign in</a> and generate a token for your application</li>
                     <li>Simply add your app token to the HTTP header for each request:</li>
                 </ol>
                 <pre><code>X-VIRGIL-APPLICATION-TOKEN: { YOUR_APPLICATION_TOKEN }</code></pre>
