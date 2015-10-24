@@ -22,12 +22,12 @@
                                     <button type="submit" class="btn btn-primary">Send</button>
                                 </div>
                                 <div class="col-md-6 col-sm-6">
-                                    <a href="/signin" class="btn btn-default">Sign In</a>
+                                    <a href="/account/signin" class="btn btn-default">Sign In</a>
                                 </div>
                             </div>
                         </div>
                         <div class="form-footer">
-                           <p>I'm not a registered user <a class="text-center" href="/signup">Sign up for free</a></p>
+                           <p>I'm not a registered user <a class="text-center" href="/account/signup">Sign up for free</a></p>
                         </div>
                     </form>
                 @endif

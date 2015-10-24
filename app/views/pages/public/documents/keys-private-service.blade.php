@@ -21,7 +21,7 @@
 					<li>Make sure that you have registered and confirmed account under Public Key service.</li>
 					<li>Make sure that you have Public/Private Key pair and you have already uploaded Public Key to the Public Key service.</li>
 					<li>Make sure that you have Private Key under your local machine.</li>
-					<li>Make sure that you have registered Application under <a href="/signin">Virgil Security, Inc.</a> For more information check <a href="#appendix-b">Appendix B. X-VIRGIL-APPLICATION-TOKEN</a> section.</li>
+					<li>Make sure that you have registered Application under <a href="/account/signin">Virgil Security, Inc.</a> For more information check <a href="#appendix-b">Appendix B. X-VIRGIL-APPLICATION-TOKEN</a> section.</li>
 					<li>Use real Public Key ID for <span class="label label-default">X-VIRGIL-REQUEST-SIGN-PK-ID</span> header parameter from the Public Keys service.</li>
 					<li>Use Virgil Crypto Library to correctly generate value for <span class="label label-default">X-VIRGIL-REQUEST-SIGN</span> header parameter. For more information please check 
 					<a href="#appendix-d">Appendix D. X-VIRGIL-REQUEST-SIGN</a> section.</li>
