@@ -1,0 +1,11 @@
+<section class="docs-parts">
+  <div class="container menu">
+    <a class="item {{if active-doc-tab == 'quickstart'}}active{{/if}}" href="/developers/{{ active-language }}/quickstart">Quick Start</a>
+    <a class="item {{if active-doc-tab == 'keys-service'}}active{{/if}}" href="/developers/{{ active-language }}/keys-service">Keys Service</a>
+    <a class="item {{if active-doc-tab == 'private-keys-service'}}active{{/if}}" href="/developers/{{ active-language }}/private-keys-service">Private Keys Service</a>
+    <a class="item {{if active-doc-tab == 'crypto-library'}}active{{/if}}" href="/developers/{{ active-language }}/crypto-library">Crypto Library</a>
+    {{if active-language != 'node' && active-language != 'objective-c-swift' }}
+    <a class="item {{if active-doc-tab == 'downloads'}}active{{/if}}" href="/developers/{{ active-language }}/downloads">Downloads</a>
+    {{/if}}
+  </div>
+</section>

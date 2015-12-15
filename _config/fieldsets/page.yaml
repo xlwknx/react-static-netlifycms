@@ -1,0 +1,13 @@
+title: HTML Page
+
+fields:
+
+  tags:
+    display: Page Tags
+    type: tags
+
+  content:
+    display: Page Content
+    required: false
+    default:
+    type: ckeditor
