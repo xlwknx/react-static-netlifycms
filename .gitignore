@@ -12,6 +12,7 @@ vendor/*
 ehthumbs.db
 Thumbs.db
 
+
 # Statamic files #
 ######################
 _cache/*
