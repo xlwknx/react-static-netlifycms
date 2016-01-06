@@ -83,7 +83,7 @@ php composer.phar install
 2. Before running examples you have to install dependencies (run command ```composer install```)
 3. All results are stored in the "data" directory.
 4. Before using these examples, you must generate Public and Private Keys using the first Generate Keys example below.
-5. Go to [Virgil Security, Inc](https://virgilsecurity.com) sign in and generate a new Application Token. Please replace the example value of the `VIRGIL_APPLICATION_TOKEN` variable with your real Application token.
+5. Go to [Virgil Security, Inc](https://developer.virgilsecurity.com/account/signin) sign in and generate a new Application Token. Please replace the example value of the `VIRGIL_APPLICATION_TOKEN` variable with your real Application token.
 6. Replace the example value of `VIRGIL_USER_DATA_VALUE` with your real email address. It needs to confirm some data and invocation of some endpoints inside the Public Key service.
 7. Replace example value of `VIRGIL_PRIVATE_KEY_PASSWORD` to the value that you have used when generate Private Key. If you didn't specify it while you generated the Private Key, then just remove it from the method invocations.
 
