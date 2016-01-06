@@ -1,6 +1,6 @@
 ---
 _fieldset: post
-title: .NET/C# Quick Start
+title: C#/.NET Quick Start
 ---
 <div class="content">
 {{ theme:partial src="developers-docs-top-wrapper" active-language="dot-net-csharp" }}

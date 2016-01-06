@@ -1,6 +1,6 @@
 ---
 _fieldset: post
-title: '.NET/C# Keys Service'
+title: 'C#/.NET Keys Service'
 ---
 <div class="content">
 {{ theme:partial src="developers-docs-top-wrapper" active-language="dot-net-csharp" }}

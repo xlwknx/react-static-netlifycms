@@ -1,6 +1,6 @@
 ---
 _fieldset: post
-title: '.NET/C# Quick Start'
+title: 'C#/.NET Quick Start'
 ---
 <div class="content">
 

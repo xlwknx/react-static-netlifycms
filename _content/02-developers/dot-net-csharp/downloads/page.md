@@ -1,6 +1,6 @@
 ---
 _fieldset: post
-title: '.NET/C# Downloads'
+title: 'C#/.NET Downloads'
 ---
 <div class="content">
 
@@ -13,11 +13,13 @@ title: '.NET/C# Downloads'
 <div class="col-md-48 col-lg-34 docs-content" data-ui="affix-docs-trigger">
 
 <div markdown="1">
-- [Downloads for .NET/C#](#downloads-for-net-c#)
+- [Downloads for C#/.NET](#downloads-for-c#-net)
+
+## Downloads for C#/.NET
 
 | Build Type                        | Link                                                                             |
 | --------------------------------- |----------------------------------------------------------------------------------|
-| Virgil .NET/C# on GitHub | [GitHub](https://github.com/VirgilSecurity/virgil-sdk-net) |
+| Virgil C#/.NET on GitHub | [GitHub](https://github.com/VirgilSecurity/virgil-sdk-net) |
 | Virgil Crypto Library | [CDN / Download](https://cdn.virgilsecurity.com/packages/crypto_lib_windows_csharp_1.1.0.zip) |
 | Virgil.SDK.PrivateKeys Client | [NuGet](https://www.nuget.org/packages/Virgil.SDK.PrivateKeys/) |
 | Virgil.SDK.Keys Client | [NuGet](https://www.nuget.org/packages/Virgil.SDK.Keys/) |

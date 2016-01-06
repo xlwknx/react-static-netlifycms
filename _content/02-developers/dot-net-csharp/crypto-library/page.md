@@ -1,6 +1,6 @@
 ---
 _fieldset: post
-title: '.NET/C# Crypto Library'
+title: 'C#/.NET Crypto Library'
 ---
 <div class="content">
 {{ theme:partial src="developers-docs-top-wrapper" active-language="dot-net-csharp" }}

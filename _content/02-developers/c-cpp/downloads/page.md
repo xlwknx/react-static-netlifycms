@@ -13,7 +13,9 @@ title: C/C++ Downloads
 <div class="col-md-48 col-lg-34 docs-content" data-ui="affix-docs-trigger">
 
 <div markdown="1">
-- [Downloads for C/C++](#downloads-for-c-plus-plus)
+- [Downloads for C/C++](#downloads-for-cc++)
+
+## Downloads for C/C++
 
 | Build Type                        | Link                                                                             |
 | --------------------------------- |----------------------------------------------------------------------------------|
