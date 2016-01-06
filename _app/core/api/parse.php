@@ -57,7 +57,7 @@ class Parse
                 $parser->code_class_prefix = Config::get('markdown:code_class_prefix', '');
                 $parser->code_attr_on_pre  = Config::get('markdown:code_attr_on_pre', true);
                 $parser->header_id_func    = function ($header) {
-
+                    $header = preg_replace('/\(|\)/', '', $header);
                     $header = preg_replace('/\{|\}|\/|\./', '', strtolower($header));
                     $header = preg_replace('/\'/', '', $header);
                     $header = preg_replace('/\s/', '-', $header);
