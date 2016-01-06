@@ -49,7 +49,7 @@ This repository focuses on the JavaScript ([asm.js](http://asmjs.org/faq.html) s
 
 1. [nodejs](https://nodejs.org/) with [npm](https://www.npmjs.com/) or [bower](http://bower.io/)
 2. Modern browser which supports the [asm.js](http://asmjs.org/faq.html) subset of JavaScript
-  - [Google Chrome](http://www.google.by/chrome/) - tested in [Chrome 45.0](http://www.google.by/chrome/) 
+  - [Google Chrome](http://www.google.com/chrome/) - tested in [Chrome 45.0](http://www.google.com/chrome/) 
   - [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/) - tested in [Firefox 40.0.3](https://www.mozilla.org/en-US/firefox/new/) 
   - [Apple Safari](https://support.apple.com/downloads/safari) - tested in [Safari 7+](https://support.apple.com/downloads/safari)
   - [Microsoft Edge](https://www.microsoft.com/en-us/windows/microsoft-edge), for more information about [asm.js](http://asmjs.org/faq.html) support, please check the next link [https://blogs.windows.com/msedgedev/2015/05/07/bringing-asm-js-to-chakra-microsoft-edge/](https://blogs.windows.com/msedgedev/2015/05/07/bringing-asm-js-to-chakra-microsoft-edge/). Tested in Microsoft Internet Explorer 11 and latest version of [Microsoft Edge](https://www.microsoft.com/en-us/windows/microsoft-edge)  
