@@ -20,7 +20,7 @@ tags:
 # Quickstart C#/.NET
 
 - [Introduction](#introduction)
-- [Obtaining an App Token](#obtaining-an-app-token)
+- [Obtaining an Application Token](#obtaining-an-application-token)
 - [Install](#install)
     - [Generate Keys](#generate-keys)
     - [Register User](#register-user)

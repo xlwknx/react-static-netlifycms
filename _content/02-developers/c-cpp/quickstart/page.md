@@ -14,6 +14,7 @@ title: C++ Quick Start
 <div markdown="1">
 # Virgil Security C++ SDKs
 
+- [Introduction](#introduction)
 - [Obtain Application Token](#obtain-application-token)
 - [Usage examples](#usage-examples)
   - [Generate keys](#generate-keys)

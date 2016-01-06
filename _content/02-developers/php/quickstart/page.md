@@ -17,6 +17,7 @@ title: PHP Quick Start
 - [Introduction](#introduction)
 - [Obtaining an Application Token](#obtaining-an-application-token)
 - [Installation](#installation)
+- [Package Management Systems](#package-management-systems)
 - [Generate keys](#generate-keys)
 - [Register User](#register-user)
 - [Store Private Key](#store-private-key)
