@@ -37,7 +37,7 @@ Simply add your app token to the HTTP header for each request:
 X-VIRGIL-APPLICATION-TOKEN: <YOUR_APPLICATION_TOKEN>
 ```
 
-> Create an Application under [Virgil Security, Inc](https://virgilsecurity.com/dashboard).
+> Create an Application under [Virgil Security, Inc](https://developer.virgilsecurity.com).
 
 > Obtain the Virgil Security Application Token, please follow the [Obtaining an Application Token](#obtaining-an-application-token) section above.
 
