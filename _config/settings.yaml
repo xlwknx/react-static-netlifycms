@@ -30,7 +30,7 @@ _site_meta_tags: Virgil, Encryption, Decryption, Security, Authentication, Verif
 _content_root: _content
 
 # Used for permalinks
-_site_url: http://virgilsecurity.com
+_site_url: https://virgilsecurity.com
 
 # Folder name of your desired theme
 _theme: virgil
