@@ -12,296 +12,330 @@ title: JavaScript Crypto Library
 <div class="col-md-48 col-lg-34 docs-content" data-ui="affix-docs-trigger">
 
 <div markdown="1">
-# JavaScript Crypto Library
+# Tutorial JavaScript Crypto Library 
 
+- [Install](#install)
 - [Generate Keys](#generate-keys)
-- [Encrypt and Decrypt data using password](#encrypt-and-decrypt-data-using-password)
-- [Async (using web workers) Encrypt and Decrypt data using password](#async-using-web-workers-encrypt-and-decrypt-data-using-password)
-- [Encrypt and Decrypt data using Key](#encrypt-and-decrypt-data-using-key)
-  - [Encrypt and Decrypt data using Key with password](#encrypt-and-decrypt-data-using-key-with-password)
-  - [Encrypt and Decrypt data using Key with password for multiple recipients](#encrypt-and-decrypt-data-using-key-with-password-for-multiple-recipients)
-- [Async (using web workers) Encrypt and Decrypt data using Key with password](#async-using-web-workers-encrypt-and-decrypt-data-using-key-with-password)
-- [Async (using web workers) Encrypt and Decrypt data using Key with password for multiple recipients](#async-using-web-workers-encrypt-and-decrypt-data-using-key-with-password-for-multiple-recipients)
-  - [Encrypt and Decrypt data using Key without password](#encrypt-and-decrypt-data-using-key-without-password)
-- [Async (using web workers) Encrypt and Decrypt data using Key without password](#async-using-web-workers-encrypt-and-decrypt-data-using-key-without-password)
-- [Sign and Verify data using Key](#sign-and-verify-data-using-key)
-  - [Sign and Verify data using Key with password](#sign-and-verify-data-using-key-with-password)
-- [Async (using web workers) Sign and Verify data using Key with password](#async-using-web-workers-sign-and-verify-data-using-key-with-password)
-  - [Sign and Verify data using Key without password](#sign-and-verify-data-using-key-without-password)
-- [Async (using web workers) Sign and Verify data using Key without password](#async-using-web-workers-sign-and-verify-data-using-key-without-password)
+- [Encrypt/Decrypt Data](#encrypt-decrypt-data)
+    - [Using Password](#using-password)
+    - [Async (using web workers) Using Password](#async-using-web-workers-using-password)
+    - [Using Key](#using-key)
+    - [Using Key with Password](#using-key-with-password)
+    - [Using Key with Password for Multiple Recipients](#using-key-with-password-for-multiple-recipients)
+    - [Async (using web workers) Using Key with Password](#async-using-web-workers-using-key-with-password)
+    - [Async (using web workers) Using Key with Password for Multiple Recipients](#async-using-web-workers-using-key-with-password-for-multiple-recipients)
+    - [Using Key without Password](#using-key-without-password)
+    - [Async (using web workers) Using Key without Password](#async-using-web-workers-using-key-without-password)
+- [Sign and Verify Data Using Key](#sign-and-verify-data-using-key)
+    - [With Password](#with-password)
+    - [Async (using web workers) with Password](#async-using-web-workers-with-password)
+- [See Also](#see-also)
   
+## Install
+
+### NPM
+
+```sh
+npm install virgil-crypto
+```
+
+### Bower
+```sh
+bower install virgil-crypto
+```
+
+### CDN
+```html
+<script src="https://cdn.virgilsecurity.com/packages/javascript/crypto/latest/virgil-crypto.min.js"></script>
+```
+
 ## Generate Keys
 
+The following code example creates a new public/private key pair.
+
 ```javascript
-var VirgilSDK = window.VirgilSDK;
+var keyPair = virgilCrypto.generateKeyPair();
+console.log('Key pair without password: ', keyPair);
+```
 
-var virgilCrypto = new VirgilSDK.Crypto();
+You can also generate a key pair with an encrypted private key just using one of the overloaded constructors.
 
-var keys = virgilCrypto.generateKeys();
-
-console.log('Keys without password: ', keys);
+```javascript
+var keyPairRsa2048 = virgilCrypto.generateKeyPair(virgilCrypto.KeysTypesEnum.rsa2048);
+console.log('Key pair rsa2048 without password: ', keyPairRsa2048);
 
 var KEY_PASSWORD = 'password';
-var keysWithPassword = virgilCrypto.generateKeys(KEY_PASSWORD);
+var keyPairWithPassword = virgilCrypto.generateKeyPair(KEY_PASSWORD);
+console.log('Key pair with password: ', keyPairWithPassword);
 
-console.log('Keys with password: ', keysWithPassword);
+
+var KEY_PASSWORD = 'password';
+var keyPairWithPasswordAndSpecificType = virgilCrypto.generateKeyPair(KEY_PASSWORD, virgilCrypto.KeysTypesEnum.rsa2048);
+console.log('Key pair rsa2048 with password: ', keyPairWithPasswordAndSpecificType);
 ```
 
-## Encrypt and Decrypt data using password
+In the example below you can see a simply generated public/private keypair without a password.
 
-> Initial data must be passed in [Base64](https://en.wikipedia.org/wiki/Base64) format.
+```
+-----BEGIN PUBLIC KEY-----
+MIGbMBQGByqGSM49AgEGCSskAwMCCAEBDQOBggAEWIH2SohavmLdRwEJ/VWbFcWr
+rU+g7Z/BkI+E1L5JF7Jlvi1T1ed5P0/JCs+K0ZBM/0hip5ThhUBKK2IMbeFjS3Oz
+zEsWKgDn8j3WqTb8uaKIFWWG2jEEnU/8S81Bgpw6CyxbCTWoB+0+eDYO1pZesaIS
+Tv6dTclx3GljHpFRdZQ=
+-----END PUBLIC KEY-----
 
-> Encrypted data also will be returned in [Base64](https://en.wikipedia.org/wiki/Base64) format.
+-----BEGIN EC PRIVATE KEY-----
+MIHaAgEBBEAaKrInIcjTeBI6B0mX+W4gMpu84iJtlPxksCQ1Dv+8iM/lEwx3nWWf
+ol6OvLkmG/qP9RqyXkTSCW+QONiN9JCEoAsGCSskAwMCCAEBDaGBhQOBggAEWIH2
+SohavmLdRwEJ/VWbFcWrrU+g7Z/BkI+E1L5JF7Jlvi1T1ed5P0/JCs+K0ZBM/0hi
+p5ThhUBKK2IMbeFjS3OzzEsWKgDn8j3WqTb8uaKIFWWG2jEEnU/8S81Bgpw6Cyxb
+CTWoB+0+eDYO1pZesaISTv6dTclx3GljHpFRdZQ=
+-----END EC PRIVATE KEY-----
+```
+
+Here is what an encrypted private key looks like:
+
+```
+-----BEGIN ENCRYPTED PRIVATE KEY-----
+MIIBKTA0BgoqhkiG9w0BDAEDMCYEIJjDIF2KRj7u86Up1ZB4yHHKhqMg5C/OW2+F
+mG5gpI+3AgIgAASB8F39JXRBTK5hyqEHCLcCTbtLKijdNH3t+gtCrLyMlfSfK49N
+UTREjF/CcojkyDVs9M0y5K2rTKP0S/LwUWeNoO0zCT6L/zp/qIVy9wCSAr+Ptenz
+MR6TLtglpGqpG4bhjqLNR2I96IufFmK+ZrJvJeZkRiMXQSWbPavepnYRUAbXHXGB
+a8HWkrjKPHW6KQxKkotGRLcThbi9cDtH+Cc7FvwT80O7qMyIFQvk8OUJdY3sXWH4
+5tol7pMolbalqtaUc6dGOsw6a4UAIDaZhT6Pt+v65LQqA34PhgiCxQvJt2UOiPdi
+SFMQ8705Y2W1uTexqw==
+-----END ENCRYPTED PRIVATE KEY-----
+```
+
+## Encrypt/Decrypt data
+
+The procedure for encrypting and decrypting the data is simple. For example:
+
+If you want to encrypt the data to Bob, you encrypt it using Bob's public key (which you can get from the Public Keys Service), and Bob decrypts it with his private key. If Bob wants to encrypt some data to you, he encrypts it using your public key, and you decrypt it with your private key.
+
+Crypto Library allows to encrypt the data for several types of recipient's user data like public key and password. This means that you can encrypt the data with some password or with a public key generated with the Crypto Library.
+
+### Using Password
+
+> Initial data must be passed as a String or [Buffer](https://github.com/feross/buffer).
+
+> Encrypted data will be returned as a [Buffer](https://github.com/feross/buffer).
+
+> The [Buffer](https://github.com/feross/buffer) constructor is available by ```virgilCrypto.Buffer```
 
 ```javascript
-var VirgilSDK = window.VirgilSDK;
-
 var INITIAL_DATA = 'data to be encrypted';
-var INITIAL_DATA_BASE64 = btoa(INITIAL_DATA);
 var PASSWORD = 'password';
 
-var virgilCrypto = new VirgilSDK.Crypto();
-var encryptedData = virgilCrypto.encryptWithPassword(INITIAL_DATA_BASE64, PASSWORD);
-var decryptedData = virgilCrypto.decryptWithPassword(encryptedData, PASSWORD);
+var encryptedData = virgilCrypto.encrypt(INITIAL_DATA, PASSWORD);
+var decryptedData = virgilCrypto.decrypt(encryptedData, PASSWORD);
 
 console.log('Encrypted data: ' + encryptedData);
-console.log('Decrypted data: ' + decryptedData);
+console.log('Decrypted data: ' + decryptedData.toString());
 ```
 
-## Async (using web workers) Encrypt and Decrypt data using password
+### Async (using web workers) Using Password
+
+> Only for browsers.
 
 ```javascript
-var VirgilSDK = window.VirgilSDK;
-
 var INITIAL_DATA = 'data to be encrypted';
-var INITIAL_DATA_BASE64 = btoa(INITIAL_DATA);
 var PASSWORD = 'password';
 
-var virgilCrypto = new VirgilSDK.Crypto();
-
-virgilCrypto.encryptWithPasswordAsync(INITIAL_DATA_BASE64, PASSWORD)
+virgilCrypto.encryptAsync(INITIAL_DATA, PASSWORD)
   .then(function(encryptedData) {
     console.log('Encrypted data: ' + encryptedData);
 
-    virgilCrypto.decryptWithPassword(encryptedData, PASSWORD)
+    virgilCrypto.decryptAsync(encryptedData, PASSWORD)
       .then(function(decryptedData) {
-        console.log('Decrypted data: ' + decryptedData);
+        console.log('Decrypted data: ' + decryptedData.toString());
       });
   });
 ```
 
-## Encrypt and Decrypt data using Key
+### Using Key
 
-> Initial data must be passed in [Base64](https://en.wikipedia.org/wiki/Base64) format.
+> Initial data must be passed as a String or [Buffer](https://github.com/feross/buffer).
 
-> Encrypted data also will be returned in [Base64](https://en.wikipedia.org/wiki/Base64) format.
+> Encrypted data will be returned as a [Buffer](https://github.com/feross/buffer).
 
-### Encrypt and Decrypt data using Key with password
+> The [Buffer](https://github.com/feross/buffer) constructor is available by ```virgilCrypto.Buffer```
+
+### Using Key with Password
 
 ```javascript
-var VirgilSDK = window.VirgilSDK;
-
-var utils = VirgilSDK.Utils;
-
 var KEY_PASSWORD = 'password';
-
 var INITIAL_DATA = 'data to be encrypted';
-var INITIAL_DATA_BASE64 = btoa(INITIAL_DATA);
-var RECIPIENT_ID = utils.uuid();
+var RECIPIENT_ID = '<SOME_RECIPIENT_ID>';
 
-var virgilCrypto = new VirgilSDK.Crypto();
-var keys = virgilCrypto.generateKeys(KEY_PASSWORD);
-var encryptedData = virgilCrypto.encryptWithKey(INITIAL_DATA_BASE64, RECIPIENT_ID, keys.publicKey);
-var decryptedData = virgilCrypto.decryptWithKey(encryptedData, RECIPIENT_ID, btoa(keys.privateKey), KEY_PASSWORD);
+var keyPair = virgilCrypto.generateKeyPair(KEY_PASSWORD);
+var encryptedData = virgilCrypto.encrypt(INITIAL_DATA, RECIPIENT_ID, keyPair.publicKey);
+var decryptedData = virgilCrypto.decrypt(encryptedData, RECIPIENT_ID, keyPair.privateKey, KEY_PASSWORD);
 
 console.log('Encrypted data: ' + encryptedData);
-console.log('Decrypted data: ' + decryptedData);
+console.log('Decrypted data: ' + decryptedData.toString());
 ```
 
-### Encrypt and Decrypt data using Key with password for multiple recipients
+### Using Key with Password for Multiple Recipients
 
 ```javascript
-var VirgilSDK = window.VirgilSDK;
-
-var utils = VirgilSDK.Utils;
-
 var KEY_PASSWORD = 'password';
-
 var INITIAL_DATA = 'data to be encrypted';
-var INITIAL_DATA_BASE64 = btoa(INITIAL_DATA);
-var RECIPIENT_ID = utils.uuid();
+var RECIPIENT_ID = '<SOME_RECIPIENT_ID>';
 
-var virgilCrypto = new VirgilSDK.Crypto();
-var keys = virgilCrypto.generateKeys(KEY_PASSWORD);
-var recipientsList = [{ recipientId: RECIPIENT_ID, publicKey: keys.publicKey }];
-var encryptedData = virgilCrypto.encryptWithKeyMultiRecipients(INITIAL_DATA_BASE64, recipientsList);
-var decryptedData = virgilCrypto.decryptWithKey(encryptedData, RECIPIENT_ID, btoa(keys.privateKey), KEY_PASSWORD);
+var keyPair = virgilCrypto.generateKeyPair(KEY_PASSWORD);
+var recipientsList = [{ recipientId: RECIPIENT_ID, publicKey: keyPair.publicKey }];
+var encryptedData = virgilCrypto.encrypt(INITIAL_DATA, recipientsList);
+var decryptedData = virgilCrypto.decrypt(encryptedData, RECIPIENT_ID, keyPair.privateKey, KEY_PASSWORD);
 
 console.log('Encrypted data: ' + encryptedData);
-console.log('Decrypted data: ' + decryptedData);
+console.log('Decrypted data: ' + decryptedData.toString());
 ```
 
-## Async (using web workers) Encrypt and Decrypt data using Key with password
+### Async (using web workers) Using Key with Password
+
+> Only for browsers.
 
 ```javascript
-var VirgilSDK = window.VirgilSDK;
-
-var utils = VirgilSDK.Utils;
-
 var KEY_PASSWORD = 'password';
-
 var INITIAL_DATA = 'data to be encrypted';
-var INITIAL_DATA_BASE64 = btoa(INITIAL_DATA);
-var RECIPIENT_ID = utils.uuid();
+var RECIPIENT_ID = '<SOME_RECIPIENT_ID>';
 
-var virgilCrypto = new VirgilSDK.Crypto();
-
-virgilCrypto.generateKeysAsync(KEY_PASSWORD)
-  .then(function(keys) {
-    virgilCrypto.encryptWithKeyAsync(INITIAL_DATA_BASE64, RECIPIENT_ID, keys.publicKey)
+virgilCrypto.generateKeyPairAsync(KEY_PASSWORD)
+  .then(function(keyPair) {
+    virgilCrypto.encryptAsync(INITIAL_DATA, RECIPIENT_ID, keyPair.publicKey)
       .then(function(encryptedData) {
         console.log('Encrypted data: ' + encryptedData);
 
-        virgilCrypto.decryptWithKeyAsync(encryptedData, RECIPIENT_ID, btoa(keys.privateKey), KEY_PASSWORD)
+        virgilCrypto.decryptAsync(encryptedData, RECIPIENT_ID, keyPair.privateKey, KEY_PASSWORD)
           .then(function(decryptedData) {
-            console.log('Decrypted data: ' + decryptedData);
+            console.log('Decrypted data: ' + decryptedData.toString());
           });
       });
   });
 ```
 
-## Async (using web workers) Encrypt and Decrypt data using Key with password for multiple recipients
+### Async (using web workers) Using Key with Password for Multiple Recipients
+
+> Only for browsers.
 
 ```javascript
-var VirgilSDK = window.VirgilSDK;
-
-var utils = VirgilSDK.Utils;
-
 var KEY_PASSWORD = 'password';
-
 var INITIAL_DATA = 'data to be encrypted';
-var INITIAL_DATA_BASE64 = btoa(INITIAL_DATA);
-var RECIPIENT_ID = utils.uuid();
+var RECIPIENT_ID = '<SOME_RECIPIENT_ID>';
 
-var virgilCrypto = new VirgilSDK.Crypto();
-
-virgilCrypto.generateKeysAsync(KEY_PASSWORD)
-  .then(function(keys) {
-    var recipientsList = [{ recipientId: RECIPIENT_ID, publicKey: keys.publicKey }];
+virgilCrypto.generateKeyPairAsync(KEY_PASSWORD)
+  .then(function(keyPair) {
+    var recipientsList = [{ recipientId: RECIPIENT_ID, publicKey: keyPair.publicKey }];
     
-    virgilCrypto.encryptWithKeyMultiRecipientsAsync(INITIAL_DATA_BASE64, recipientsList)
+    virgilCrypto.encryptAsync(INITIAL_DATA, recipientsList)
       .then(function(encryptedData) {
         console.log('Encrypted data: ' + encryptedData);
 
-        virgilCrypto.decryptWithKeyAsync(encryptedData, RECIPIENT_ID, btoa(keys.privateKey), KEY_PASSWORD)
+        virgilCrypto.decryptAsync(encryptedData, RECIPIENT_ID, keyPair.privateKey, KEY_PASSWORD)
           .then(function(decryptedData) {
-            console.log('Decrypted data: ' + decryptedData);
+            console.log('Decrypted data: ' + decryptedData.toString());
           });
       });
   });
 ```
 
-### Encrypt and Decrypt data using Key without password
+### Using Key without Password
 
 ```javascript
-var VirgilSDK = window.VirgilSDK;
-
-var utils = VirgilSDK.Utils;
-
 var INITIAL_DATA = 'data to be encrypted';
-var INITIAL_DATA_BASE64 = btoa(INITIAL_DATA);
-var RECIPIENT_ID = utils.uuid();
+var RECIPIENT_ID = '<SOME_RECIPIENT_ID>';
 
-var virgilCrypto = new VirgilSDK.Crypto();
-var keys = virgilCrypto.generateKeys();
-var encryptedData = virgilCrypto.encryptWithKey(INITIAL_DATA_BASE64, RECIPIENT_ID, keys.publicKey);
-var decryptedData = virgilCrypto.decryptWithKey(encryptedData, RECIPIENT_ID, btoa(keys.privateKey));
+var keyPair = virgilCrypto.generateKeyPair();
+var encryptedData = virgilCrypto.encrypt(INITIAL_DATA, RECIPIENT_ID, keyPair.publicKey);
+var decryptedData = virgilCrypto.decrypt(encryptedData, RECIPIENT_ID, keyPair.privateKey);
 
 console.log('Encrypted data: ' + encryptedData);
-console.log('Decrypted data: ' + decryptedData);
+console.log('Decrypted data: ' + decryptedData.toString());
 ```
 
-## Async (using web workers) Encrypt and Decrypt data using Key without password
+### Async (using web workers) Using Key without Password
+
+> Only for browsers.
 
 ```javascript
-var VirgilSDK = window.VirgilSDK;
-
-var utils = VirgilSDK.Utils;
-
 var INITIAL_DATA = 'data to be encrypted';
-var INITIAL_DATA_BASE64 = btoa(INITIAL_DATA);
-var RECIPIENT_ID = utils.uuid();
+var RECIPIENT_ID = '<SOME_RECIPIENT_ID>';
 
-var virgilCrypto = new VirgilSDK.Crypto();
-
-virgilCrypto.generateKeysAsync()
-  .then(function(keys) {
-    virgilCrypto.encryptWithKeyAsync(INITIAL_DATA_BASE64, RECIPIENT_ID, keys.publicKey)
+virgilCrypto.generateKeyPairAsync()
+  .then(function(keyPair) {
+    virgilCrypto.encryptAsync(INITIAL_DATA, RECIPIENT_ID, keyPair.publicKey)
       .then(function(encryptedData) {
         console.log('Encrypted data: ' + encryptedData);
 
-        virgilCrypto.decryptWithKeyAsync(encryptedData, RECIPIENT_ID, btoa(keys.privateKey))
+        virgilCrypto.decryptAsync(encryptedData, RECIPIENT_ID, keyPair.privateKey)
           .then(function(decryptedData) {
-            console.log('Decrypted data: ' + decryptedData);
+            console.log('Decrypted data: ' + decryptedData.toString());
           });
       });
   });
 ```
 
-## Sign and Verify data using Key
+## Sign and Verify Data Using Key
 
-> Initial data must be passed in [Base64](https://en.wikipedia.org/wiki/Base64) format.
+Cryptographic digital signatures use public key algorithms to provide data integrity. When you sign the data with a digital signature, someone else can verify the signature and can prove that the data originated from you and was not altered after you had signed it.
 
-> Encrypted data also will be returned in [Base64](https://en.wikipedia.org/wiki/Base64) format.
+The following example applies a digital signature to a public key identifier.
 
-### Sign and Verify data using Key with password
+> Initial data must be passed as a String or [Buffer](https://github.com/feross/buffer).
+
+> Encrypted data will be returned as a [Buffer](https://github.com/feross/buffer).
+
+> The [Buffer](https://github.com/feross/buffer) constructor is available by ```virgilCrypto.Buffer```
+
+### With Password
 
 ```javascript
-var VirgilSDK = window.VirgilSDK;
-
-var utils = VirgilSDK.Utils;
-
 var KEY_PASSWORD = 'password';
 var INITIAL_DATA = 'data to be encrypted';
-var INITIAL_DATA_BASE64 = btoa(INITIAL_DATA);
-var RECIPIENT_ID = utils.uuid();
+var RECIPIENT_ID = '<SOME_RECIPIENT_ID>';
 
-var virgilCrypto = new VirgilSDK.Crypto();
-var keys = virgilCrypto.generateKeys(KEY_PASSWORD);
-var encryptedData = virgilCrypto.encryptWithKey(INITIAL_DATA_BASE64, RECIPIENT_ID, keys.publicKey);
-var sign = virgilCrypto.sign(encryptedData, btoa(keys.privateKey), KEY_PASSWORD);
-var isDataVerified = virgilCrypto.verify(encryptedData, keys.publicKey, sign);
+var keyPair = virgilCrypto.generateKeyPair(KEY_PASSWORD);
+var encryptedData = virgilCrypto.encrypt(INITIAL_DATA, RECIPIENT_ID, keyPair.publicKey);
+var sign = virgilCrypto.sign(encryptedData, keyPair.privateKey, KEY_PASSWORD);
+```
+
+To verify that the data was signed by a particular party, you need the following information:
+
+*   the public key of the party that signed the data;
+*   the digital signature;
+*   the data that was signed.
+
+The following example verifies a digital signature which was signed by the sender.
+
+```javascript
+var isDataVerified = virgilCrypto.verify(encryptedData, keyPair.publicKey, sign);
 
 console.log('Encrypted data: ' + encryptedData);
-console.log('Sign: ' + sign);
+console.log('Sign: ' + sign.toString('base64'));
 console.log('Is data verified: ' + isDataVerified);
 ```
 
-## Async (using web workers) Sign and Verify data using Key with password
+### Async (using web workers) With Password
+
+> Only for browsers.
 
 ```javascript
-var VirgilSDK = window.VirgilSDK;
-
-var utils = VirgilSDK.Utils;
-
 var KEY_PASSWORD = 'password';
 var INITIAL_DATA = 'data to be encrypted';
-var INITIAL_DATA_BASE64 = btoa(INITIAL_DATA);
-var RECIPIENT_ID = utils.uuid();
+var RECIPIENT_ID = '<SOME_RECIPIENT_ID>';
 
-var virgilCrypto = new VirgilSDK.Crypto();
-
-virgilCrypto.generateKeysAsync(KEY_PASSWORD)
-  .then(function(keys) {
-    virgilCrypto.encryptWithKeyAsync(INITIAL_DATA_BASE64, RECIPIENT_ID, keys.publicKey)
+virgilCrypto.generateKeyPairAsync(KEY_PASSWORD)
+  .then(function(keyPair) {
+    virgilCrypto.encryptAsync(INITIAL_DATA, RECIPIENT_ID, keyPair.publicKey)
       .then(function(encryptedData) {
         console.log('Encrypted data: ' + encryptedData);
 
-        virgilCrypto.signAsync(encryptedData, btoa(keys.privateKey), KEY_PASSWORD)
+        virgilCrypto.signAsync(encryptedData, keyPair.privateKey, KEY_PASSWORD)
           .then(function(sign) {
-            console.log('Sign: ' + sign);
+            console.log('Sign: ' + sign.toString('base64'));
 
-            virgilCrypto.verifyAsync(encryptedData, keys.publicKey, sign)
+            virgilCrypto.verifyAsync(encryptedData, keyPair.publicKey, sign)
               .then(function(isDataVerified) {
                 console.log('Is data verified: ' + isDataVerified);
               });
@@ -309,60 +343,10 @@ virgilCrypto.generateKeysAsync(KEY_PASSWORD)
       });
   });
 ```
+## See Also
 
-### Sign and Verify data using Key without password
-
-```javascript
-var VirgilSDK = window.VirgilSDK;
-
-var utils = VirgilSDK.Utils;
-
-var INITIAL_DATA = 'data to be encrypted';
-var INITIAL_DATA_BASE64 = btoa(INITIAL_DATA);
-var RECIPIENT_ID = utils.uuid();
-
-var virgilCrypto = new VirgilSDK.Crypto();
-var keys = virgilCrypto.generateKeys();
-var encryptedData = virgilCrypto.encryptWithKey(INITIAL_DATA_BASE64, RECIPIENT_ID, keys.publicKey);
-var sign = virgilCrypto.sign(encryptedData, btoa(keys.privateKey));
-var isDataVerified = virgilCrypto.verify(encryptedData, keys.publicKey, sign);
-
-console.log('Encrypted data: ' + encryptedData);
-console.log('Sign: ' + sign);
-console.log('Is data verified: ' + isDataVerified);
-```
-
-## Async (using web workers) Sign and Verify data using Key without password
-
-```javascript
-var VirgilSDK = window.VirgilSDK;
-
-var utils = VirgilSDK.Utils;
-
-var INITIAL_DATA = 'data to be encrypted';
-var INITIAL_DATA_BASE64 = btoa(INITIAL_DATA);
-var RECIPIENT_ID = utils.uuid();
-
-var virgilCrypto = new VirgilSDK.Crypto();
-
-virgilCrypto.generateKeysAsync()
-  .then(function(keys) {
-    virgilCrypto.encryptWithKey(INITIAL_DATA_BASE64, RECIPIENT_ID, keys.publicKey)
-      .then(function(encryptedData) {
-        console.log('Encrypted data: ' + encryptedData);
-        
-        virgilCrypto.sign(encryptedData, btoa(keys.privateKey))
-          .then(function(sign) {
-            console.log('Sign: ' + sign);
-            
-            virgilCrypto.verify(encryptedData, keys.publicKey, sign)
-              .then(function(isDataVerified) {
-                console.log('Is data verified: ' + isDataVerified);
-              });
-          });
-      });
-  });
-```
+* [Tutorial Crypto Library](https://virgilsecurity.com/developers/javascript/quickstart)
+* [Tutorial Keys SDK](https://virgilsecurity.com/developers/javascript/keys-sdk)
 </div>
 </div>
 

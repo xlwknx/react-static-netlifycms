@@ -2,6 +2,9 @@
 _fieldset: page
 title: About Virgil Security, Inc.
 _template: page
+tags:
+  - Virgil
+  - Security
 ---
 <div class="content">
 <section class="management-wrapper">

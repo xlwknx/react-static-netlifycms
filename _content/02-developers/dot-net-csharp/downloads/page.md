@@ -20,10 +20,7 @@ title: 'C#/.NET Downloads'
 | Build Type                        | Link                                                                             |
 | --------------------------------- |----------------------------------------------------------------------------------|
 | Virgil C#/.NET on GitHub | [GitHub](https://github.com/VirgilSecurity/virgil-sdk-net) |
-| Virgil Crypto Library | [CDN / Download](https://cdn.virgilsecurity.com/packages/crypto_lib_windows_csharp_1.1.0.zip) |
-| Virgil.SDK.PrivateKeys Client | [NuGet](https://www.nuget.org/packages/Virgil.SDK.PrivateKeys/) |
-| Virgil.SDK.Keys Client | [NuGet](https://www.nuget.org/packages/Virgil.SDK.Keys/) |
-| Virgil.Crypto | [NuGet](https://www.nuget.org/packages/Virgil.Crypto/) |
+| Virgil.Crypto | [NuGet / Download](https://downloads.virgilsecurity.com/packages/crypto_lib_windows_csharp_1.2.0.zip) |
 
 </div>
 </div>

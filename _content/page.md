@@ -3,6 +3,19 @@ title: Home
 _fieldset: page
 _template: page
 upload: ""
+tags:
+  - Virgil
+  - Encryption
+  - Security
+  - Authentication
+  - Verification
+  - Cryptography
+  - Elliptic
+  - Cross
+  - Platform
+  - ECIES
+  - End-to-End
+  - E2E
 ---
 <div class="content">
 <section class="promo-banner">
@@ -30,7 +43,7 @@ upload: ""
 			<td class="tip"><a href="http://www.whogotfunded.com/deals/368657-virgil-security"> </a></td>
 		</tr>
 		<tr>
-			<td class="feed-content"><a href="http://www.whogotfunded.com/deals/368657-virgil-security">Virgil Security raised $525,000 on September 2nd, 2015, from Inner Loop Capital, Nextgen, Angels, Panther, Nextgen, Angels, Panther, Nextgen, Angels, Panther, Nextgen, Angels, Panther </a></td>
+			<td class="feed-content"><a href="http://www.whogotfunded.com/deals/368657-virgil-security">Virgil Security raised $525,000 on September 2nd, 2015, from Inner Loop Capital, Nextgen, Angels, Panther Capital, Bloomberg Beta </a></td>
 		</tr>
 	</tbody>
 </table>

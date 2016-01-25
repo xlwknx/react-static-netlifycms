@@ -18,11 +18,11 @@ title: JavaScript Downloads
 
 | Build Type                        | Link                                                                             |
 | --------------------------------- |----------------------------------------------------------------------------------|
-| Virgil JavaScript on GitHub | [GitHub](https://github.com/VirgilSecurity/virgil-browsers/) |
-| JavaScript SDK | [CDN / Download](https://cdn.virgilsecurity.com/data/js/virgil-sdk-full/latest/virgil-sdk-full.min.js) |
-| JavaScript Crypto | [CDN / Download](https://cdn.virgilsecurity.com/data/js/virgil-crypto/latest/virgil-crypto.min.js) |
-| JavaScript Public Keys SDK | [CDN / Download](https://cdn.virgilsecurity.com/data/js/virgil-sdk-keys-public/latest/virgil-sdk-keys-public.min.js) |
-| JavaScript Private Keys SDK | [CDN / Download](https://cdn.virgilsecurity.com/data/js/virgil-sdk-keys-private/latest/virgil-sdk-keys-private.min.js) |
+| Virgil JavaScript on GitHub | [GitHub](https://github.com/VirgilSecurity/virgil-sdk-javascript) |
+| JavaScript SDK | [CDN / Download](https://cdn.virgilsecurity.com/packages/javascript/sdk/latest/virgil-sdk.min.js) |
+| JavaScript SDK | [GitHub / Download](https://github.com/VirgilSecurity/virgil-sdk-javascript/archive/master.zip) |
+| JavaScript Crypto | [CDN / Download](https://cdn.virgilsecurity.com/packages/javascript/crypto/latest/virgil-crypto.min.js) |
+| JavaScript Crypto | [GitHub / Download](https://github.com/VirgilSecurity/virgil-crypto-javascript/archive/master.zip) |
 
 </div>
 </div>
