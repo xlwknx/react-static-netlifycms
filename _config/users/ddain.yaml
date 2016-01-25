@@ -4,7 +4,7 @@ last_name: Dain
 roles:
   - admin
 email: ddain@virgilsecurity.com
-password: "BDw35YmrUjQ5gNp6"
+password: ""
 _uid: 7SLhmp55f83f9229ed88DDqwdw8
-password_hash:
+password_hash: $2a$08$UP0ZZFwy0oSRDppNjxF1OeKdg0Q42AVbqMZVzuABnwSVl2xq0Wzam
 ---

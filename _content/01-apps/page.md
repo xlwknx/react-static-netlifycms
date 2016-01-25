@@ -1,11 +1,17 @@
 ---
 _fieldset: page
-title: Apps
+title: Demos
 _template: page
+tags:
+  - Virgil
+  - Security
+  - Cryptography
+  - Cross
+  - Platform
 ---
 <div class="content">
 <section class="apps-wrapper">
-<h2 class="get-started-with-apps">Get Started with Virgil Apps</h2>
+<h2 class="get-started-with-apps">Get Started with Virgil Demos</h2>
 
 <div class="container">
 <div class="apps row">
@@ -48,13 +54,10 @@ _template: page
 <div class="desc">Click here and send secure emails today. Protect your communications with free, seamless end-to-end encryption using Virgil.</div>
 
 <div class="downloads">
-<div class="downloads-box">
-<h3 class="title">Downloads</h3>
+<div class="downloads-box coming-soon">
+<h3 class="title">Coming soon</h3>
 
-<div class="builds">
-  <a class="build-icon outlook col-xs-12 col-xs-offset-4 active" href="https://downloads.virgilsecurity.com/apps/virgil-mail/outlook/Virgil_Mail_Outlook_1.0.0.8.exe"> </a> 
-  <a class="build-icon macos col-xs-12 col-xs-offset-2 active" href="https://downloads.virgilsecurity.com/apps/virgil-mail/apple-mail/VirgilSecurityMail.dmg"> </a> 
-  <a class="build-icon thunderbird col-xs-12 col-xs-offset-2" href="javascript: void(0);"> </a></div>
+<div class="builds"><a class="build-icon outlook col-xs-12 col-xs-offset-4" href="javascipt:void(0);"> </a> <a class="build-icon macos col-xs-12 col-xs-offset-2" href="javascript::void(0);"> </a> <a class="build-icon thunderbird col-xs-12 col-xs-offset-2" href="javascript: void(0);"> </a></div>
 </div>
 </div>
 </div>

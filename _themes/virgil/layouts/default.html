@@ -15,7 +15,7 @@
     <title>
       {{ _site_name }}
       {{ if segment_1 }}
-      – {{ title }}
+        {{ title }}
       {{ endif }}
     </title>
 
@@ -52,6 +52,9 @@
                       </li>
                     {{endif}}
                   {{ /nav }}
+    		  <li>
+		    <a class="github-button" href="https://github.com/VirgilSecurity/virgil" data-style="mega" data-count-href="/VirgilSecurity/virgil/stargazers" data-count-api="/repos/VirgilSecurity/virgil#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star VirgilSecurity/virgil on GitHub">Star</a>
+            	  </li>
                 </ul>
               </div>
             </div>
@@ -92,7 +95,7 @@
           </div>
           <div class="col-xs-44 col-xs-offset-2 col-lg-6 col-lg-offset-1 menu-group applications">
             <h2 class="sub-menu-title">
-              Applications
+              Demos
             </h2>
             <ul class="sub-menu">
               <li class="item">
@@ -157,6 +160,8 @@
                   <a href="https://www.linkedin.com/company/virgil-security-inc-">&nbsp;</a>
                 </li>
               </ul>
+	      <!-- Place this tag where you want the button to render. -->
+	      <a class="github-button" href="https://github.com/VirgilSecurity/virgil" data-style="mega" data-count-href="/VirgilSecurity/virgil/stargazers" data-count-api="/repos/VirgilSecurity/virgil#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star VirgilSecurity/virgil on GitHub">Star</a>
             </div>
           </div>
           <div class="col-xs-44 col-xs-offset-2 hidden-lg menu-group copy">
@@ -174,5 +179,8 @@
     </footer>
 
     {{ theme:js tag="true" }}
+    
+    <!-- Place this tag right after the last button or just before your close body tag. -->
+    <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
   </body>
 </html>
