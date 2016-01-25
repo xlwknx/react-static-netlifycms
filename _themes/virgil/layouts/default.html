@@ -46,14 +46,17 @@
                   {{ nav from="/" }}
                     {{ if !hidden}}
                       <li>
-                        <a href="{{ if link }} {{ link }} {{ else }} {{ url }} {{ endif }}" {{ if is_current || is_parent }} class="active" {{ endif }} {{ if last}} class="btn sign-in" {{ endif }}>
+                        <a href="{{ url }}" {{ if is_current || is_parent }} class="active" {{ endif }}>
                           {{ title }}
                         </a>
                       </li>
                     {{endif}}
                   {{ /nav }}
-    		  <li>
-		    <a class="github-button" href="https://github.com/VirgilSecurity/virgil" data-style="mega" data-count-href="/VirgilSecurity/virgil/stargazers" data-count-api="/repos/VirgilSecurity/virgil#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star VirgilSecurity/virgil on GitHub">Star</a>
+                  <li>
+                    <a href="{{ _developer_base_url }}/account/signin" class="btn sign-in">Sign In</a>
+                  </li>
+                  <li>
+                    <a class="github-button" href="https://github.com/VirgilSecurity/virgil" data-style="mega" data-count-href="/VirgilSecurity/virgil/stargazers" data-count-api="/repos/VirgilSecurity/virgil#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star VirgilSecurity/virgil on GitHub">Star</a>
             	  </li>
                 </ul>
               </div>

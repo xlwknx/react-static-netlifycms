@@ -240,6 +240,9 @@ _mode: 0755
 
 _public_path:
 
+
+_developer_base_url: https://developer-stg.virgilsecurity.com
+
 ###########################################################################################
 #
 #  GIT REPOSITORY SETTINGS
