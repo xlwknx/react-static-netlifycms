@@ -17,11 +17,11 @@ title: 'C#/.NET Downloads'
 
 ## Downloads for C#/.NET
 
-| Build Type                        | Link                                                                             |
+| Build                         | Link                                                                             |
 | --------------------------------- |----------------------------------------------------------------------------------|
 | Virgil C#/.NET on GitHub | [GitHub](https://github.com/VirgilSecurity/virgil-sdk-net) |
-| Virgil.Crypto | [NuGet / Download](https://downloads.virgilsecurity.com/packages/crypto_lib_windows_csharp_1.2.0.zip) |
-
+| Virgil.Crypto | [NuGet](https://www.nuget.org/packages/Virgil.Crypto/) |
+| Virgil.SDK | [NuGet](https://www.nuget.org/packages/Virgil.SDK/) |
 </div>
 </div>
 

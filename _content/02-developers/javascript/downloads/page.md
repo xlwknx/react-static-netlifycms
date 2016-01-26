@@ -16,7 +16,7 @@ title: JavaScript Downloads
   
 ## Downloads for JavaScript
 
-| Build Type                        | Link                                                                             |
+| Build                        | Link                                                                             |
 | --------------------------------- |----------------------------------------------------------------------------------|
 | Virgil JavaScript on GitHub | [GitHub](https://github.com/VirgilSecurity/virgil-sdk-javascript) |
 | JavaScript SDK | [CDN / Download](https://cdn.virgilsecurity.com/packages/javascript/sdk/latest/virgil-sdk.min.js) |
