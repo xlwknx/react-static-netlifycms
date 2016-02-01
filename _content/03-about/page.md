@@ -1,6 +1,6 @@
 ---
 _fieldset: page
-title: About Virgil Security, Inc.
+title: About
 _template: page
 tags:
   - Virgil

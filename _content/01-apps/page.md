@@ -68,7 +68,7 @@ tags:
 
 <section class="about-apps-wrapper">
 <div class="container">
-<div class="about-apps"><strong>Virgil Security</strong> has developed an easy to deploy, next-generation authentication, encryption, and verification system based on the Elliptic Curve Integrated Scheme (ECIES). Our products provide enhanced security while protecting individual privacy across applications, cloud services and the Internet of Things. We use standards-based cryptography with an open, global key management system to make state-of-the-art privacy and security available to everyone. <strong>Virgil Security</strong>’s encryption libraries and services, along with the accompanying public key management infrastructure, are quick and easy to implement and they work seamlessly in the background</div>
+<div class="about-apps"><strong>Virgil Security</strong> has developed an easy to deploy, next-generation authentication, encryption, and verification system based on the Elliptic Curve Integrated Scheme (ECIES). Our products provide enhanced security while protecting individual privacy across applications, cloud services and the Internet of Things. We use standards-based cryptography with an open, global key management system to make state-of-the-art privacy and security available to everyone. <strong>Virgil Security</strong>’s encryption libraries and services, along with the accompanying public key management infrastructure, are quick and easy to implement and they work seamlessly in the background.</div>
 </div>
 </section>
 </div>

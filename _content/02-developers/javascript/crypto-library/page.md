@@ -14,9 +14,9 @@ title: JavaScript Crypto Library
 <div markdown="1">
 # Tutorial JavaScript Crypto Library 
 
-- [Install](#installation)
+- [Install](#install)
 - [Generate Keys](#generate-keys)
-- [Encrypt/Decrypt Data](#encryptdecrypt-data)
+- [Encrypt/Decrypt Data](#encrypt-decrypt-data)
     - [Using Password](#using-password)
     - [Async (using web workers) Using Password](#async-using-web-workers-using-password)
     - [Using Key](#using-key)
@@ -29,6 +29,7 @@ title: JavaScript Crypto Library
 - [Sign and Verify Data Using Key](#sign-and-verify-data-using-key)
     - [With Password](#with-password)
     - [Async (using web workers) with Password](#async-using-web-workers-with-password)
+- [See Also](#see-also)
   
 ## Install
 
