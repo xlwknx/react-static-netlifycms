@@ -1,0 +1,60 @@
+html,
+body {
+  background-color $color-body
+  background-image url($pathsImages + 'bg-main.jpg')
+  background-repeat no-repeat
+  background-position 50% 0
+  background-size auto 700px
+
+  @media (max-width $screen-md-min) {
+    background-position 50% 60px
+    background-size auto 350px
+  }
+
+  @media (min-width $screen-xlg) {
+    background-image url($pathsImages + 'bg-main-xlg.jpg')
+  }
+
+  &.internal {
+    background-image none
+  }
+}
+
+body {
+  @media (max-width $screen-md-min) {
+    padding-top 60px
+  }
+}
+
+.btn-big-orange {
+  display block
+  height 54px
+  padding 0 20px
+  text-transform uppercase
+  background-image linear-gradient(-180deg, #fbd47e 0%, #f6ad0c 100%)
+  box-shadow 0 1px 0 0 rgba(0, 0, 0, 0.38)
+  border-radius 5px
+  font-size 18px
+  color #1b2021
+  letter-spacing 1.5px
+  line-height 54px
+  font-weight $font-weight-bolder
+  border none
+
+  &:active {
+    background-image linear-gradient(-180deg, #f6ad0c 0%, #fbd47e 100%)
+  }
+}
+
+.container
+  container-fixed()
+
+  @media (min-width $screen-sm-min)
+    width 100%
+    max-width $container-sm
+  @media (min-width $screen-md-min)
+    width 100%
+    max-width $container-md
+  @media (min-width $screen-lg-min)
+    width 100%
+    max-width $container-lg

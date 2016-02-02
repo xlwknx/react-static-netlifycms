@@ -1,0 +1,1796 @@
+body {
+  white-content-block-title = @block {
+    position relative
+    max-width 165px
+    height 54px
+    margin 65px auto 35px
+    font-size 18px
+    color #da322c
+    letter-spacing 1.5px
+    line-height 22px
+    text-align center
+    text-transform uppercase
+    font-weight $font-weight-bolder
+
+    &:after {
+      content ' '
+      display block
+      position absolute
+      left 20%
+      right 20%
+      bottom 0
+      border-bottom 2px solid rgba(30, 54, 61, 0.26)
+    }
+
+    @media (max-width $screen-md-min) {
+      font-size 14px
+      margin 26px auto 10px
+      height auto
+
+      &:after {
+        content ''
+        border none
+      }
+    }
+  }
+
+  white-content-block-desc = @block {
+    max-width 632px
+    margin 30px auto 0
+    font-size 36px
+    color #1b2021
+    line-height 50px
+    font-weight $font-weight-normal
+    text-align center
+
+    @media (max-width $screen-md-min) {
+      margin-top 0
+      padding 0 5%
+      font-size 22px
+      line-height 32px
+    }
+  }
+
+  .content {
+    .promo-banner {
+      height 620px
+
+      @media (max-width $screen-md-min) {
+        height 350px
+      }
+
+      .secure-the-future {
+        text-transform uppercase
+        font-weight $font-weight-normal
+        font-size 60px
+        color $color-white
+        line-height 72px
+        padding-top 150px
+        text-align center
+        margin 0
+
+        @media (max-width $screen-md-min) {
+          padding-top 40px
+          font-size 31px
+          line-height 37px
+        }
+      }
+
+      .secure-the-future-desc {
+        max-width 650px
+        font-weight $font-weight-normal
+        font-size 24px
+        color $color-white
+        line-height 40px
+        margin 50px auto 0
+        text-align center
+
+        @media (max-width $screen-md-min) {
+          width auto
+          margin-top 18px
+          padding 0 5%
+          font-weight $font-weight-bold
+          font-size 16px
+          line-height 27px
+        }
+      }
+
+      .btn-get-started {
+        margin 75px auto 0
+        width 288px
+        font-size 18px
+
+        @media (max-width $screen-md-min) {
+          font-weight $font-weight-bolder
+          margin 35px auto 0
+        }
+      }
+    }
+
+    .feed {
+      $feed-height = 70px
+
+      height 70px
+      background #2c302e
+
+      @media (max-width $screen-lg-min) {
+        height auto
+      }
+
+      .feed-item {
+        width 100%
+
+        a {
+          display block
+          color $color-white
+        }
+
+        .tip {
+          width 26px
+          height $feed-height
+          background transparent url($pathsImages + 'bubble-feed.svg') 0 50% no-repeat
+
+          @media (max-width $screen-lg-min) {
+            background-position 50% 50%
+          }
+        }
+
+        .delimiter {
+          padding 0 20px
+          color #9b9b9b
+        }
+
+        .feed-content {
+          max-width 855px
+          color $color-white
+          font-size 18px
+
+          @media (max-width $screen-lg-min) {
+            text-align center
+            font-size 16px
+            padding 0 5% 20px
+          }
+
+          > a {
+            @extend .text-ellipsis;
+
+            @media (max-width $screen-lg-min) {
+              text-overflow none
+              overflow visible
+              white-space normal
+            }
+          }
+        }
+
+        .go {
+          width 36px
+          height $feed-height
+          background transparent url($pathsImages + 'arrow-feed.svg') 100% 50% no-repeat
+        }
+      }
+    }
+
+    .what-we-offer {
+      padding-bottom 80px
+
+      @media (max-width $screen-md-min) {
+        padding-bottom 40px
+      }
+
+      h3.title {
+        {white-content-block-title}
+      }
+
+      h4.description {
+        {white-content-block-desc}
+      }
+
+      .shields {
+        margin-top 66px
+
+        @media (max-width $screen-md-min) {
+          margin-top 40px
+        }
+
+        .shield-item {
+          padding 0 20px
+
+          @media (max-width $screen-lg-min) {
+            padding-bottom 40px
+
+            &:last-child {
+              padding-bottom 0
+            }
+          }
+
+          .shield-icon {
+            height 144px
+
+            @media (max-width $screen-md-min) {
+              height 100px
+            }
+
+            &.step1 {
+              background transparent url($pathsImages + 'next-gen.svg')
+              background-position 50% 50%
+
+              @media (min-width $screen-sm-min) and (max-width $screen-md-min) {
+                background-position 50% 50%
+              }
+            }
+
+            &.step2 {
+              background transparent url($pathsImages + 'encrypt.svg')
+              background-position 15px 50%
+
+              @media (min-width $screen-sm-min) and (max-width $screen-lg-min) {
+                background-position 50% 50%
+              }
+            }
+
+            &.step3 {
+              background transparent url($pathsImages + 'identities.svg')
+              background-position 22px 50%
+
+              @media (min-width $screen-sm-min) and (max-width $screen-lg-min) {
+                background-position 50% 50%
+              }
+            }
+
+            &.step4 {
+              background transparent url($pathsImages + 'platforms.svg')
+              background-position 20px 50%
+
+              @media (min-width $screen-sm-min) and (max-width $screen-lg-min) {
+                background-position 50% 50%
+              }
+            }
+
+            &.step1,
+            &.step2,
+            &.step3,
+            &.step4 {
+              background-repeat no-repeat
+              background-size auto 100%
+
+              @media (max-width $screen-md-min) {
+                background-position 50% 50%
+              }
+            }
+          }
+
+          .shield-title {
+            margin-top 24px
+            font-size 20px
+            color #1f363d
+            line-height 28px
+            font-weight $font-weight-bolder
+            text-align center
+
+            @media (max-width $screen-md-min) {
+              font-size 20px
+              line-height 28px
+            }
+          }
+
+          .shield-desc {
+            margin-top 21px
+            font-size 16px
+            color #525d62
+            line-height 26px
+            font-weight $font-weight-normal
+            text-align center
+
+            @media (max-width $screen-md-min) {
+              font-size 16px
+              line-height 26px
+            }
+          }
+        }
+      }
+
+      .btn-download-apps {
+        margin 80px auto 0
+        width 288px
+
+        @media (max-width $screen-lg-min) {
+          margin-top 50px
+        }
+      }
+    }
+
+    .our-partners {
+      background #f0f0f0
+
+      .title {
+        margin-top 0
+        padding-top 40px
+        font-size 18px
+        color #888888
+        letter-spacing 1.5px
+        line-height 22px
+        text-align center
+        text-transform uppercase
+        font-weight $font-weight-bolder
+      }
+
+      .logos {
+        padding 20px 0 40px
+
+        @media (max-width $screen-md-min) {
+          padding-top 20px
+        }
+
+        .logo {
+          min-height 64px
+
+          &.bloomberg {
+            background-color transparent
+            background-image url($pathsImages + 'Bloomberg_logo.svg')
+            background-position 50% 50%
+            background-repeat no-repeat
+            background-size 100% auto
+          }
+        }
+      }
+    }
+
+    .advantages {
+      padding-bottom 80px
+
+      @media (max-width $screen-md-min) {
+        padding-bottom 40px
+      }
+
+      h3.title {
+        {white-content-block-title}
+      }
+
+      h4.description {
+        {white-content-block-desc}
+      }
+
+      .slides {
+        margin-top 70px
+
+        @media (max-width $screen-md-min) {
+          margin-top 10px
+        }
+
+        .carousel {
+          max-height 590px
+          padding-bottom 70px
+
+          .carousel-control {
+            width 5%
+
+            @media (max-width $screen-lg-min) {
+              width 8%
+            }
+
+            &.left {
+              opacity 1
+              background transparent url($pathsImages + 'arrow-left.svg') 50% 28% no-repeat
+            }
+
+            &.right {
+              opacity 1
+              background transparent url($pathsImages + 'arrow-right.svg') 50% 28% no-repeat
+            }
+
+            @media (max-width $screen-md-min) {
+              &.left,
+              &.right {
+                display none
+              }
+            }
+          }
+
+          .carousel-inner {
+            .item {
+              min-height 520px
+
+              @media (max-width $screen-sm-min) {
+                min-height 380px
+              }
+
+              @media (min-width $screen-xs-min) and (max-width $screen-sm-min) {
+                min-height 365px
+              }
+
+              @media (min-width $screen-sm-min) and (max-width $screen-md-min) {
+                min-height 405px
+              }
+
+              @media (min-width $screen-md-min) and (max-width $screen-lg-min) {
+                min-height 450px
+              }
+
+              .item-content {
+                width 70%
+                margin 40px auto
+
+                @media (max-width $screen-md-min) {
+                  margin-top 10px
+                }
+
+                .item-title {
+                  padding-bottom 20px
+                  font-size 30px
+                  color #1f363d
+                  line-height 36px
+                  font-weight $font-weight-bolder
+                  text-align center
+
+                  @media (max-width $screen-md-min) {
+                    font-size 20px
+                    line-height 24px
+                  }
+                }
+
+                .item-desc {
+                  font-size 20px
+                  color #525d62
+                  line-height 31px
+                  font-weight $font-weight-normal
+                  text-align center
+
+                  @media (max-width $screen-md-min) {
+                    font-size 15px
+                    line-height 26px
+                  }
+                }
+              }
+
+              .item-img {
+                width 90%
+                min-height 350px
+                margin 0 auto
+                background-color transparent
+                background-position 50% 50%
+                background-repeat no-repeat
+                background-size 60% auto
+
+                @media (max-width $screen-sm-min) {
+                  min-height 160px
+                  background-size 80% auto
+                }
+
+                @media (min-width $screen-xs-min) and (max-width $screen-sm-min) {
+                  min-height 160px
+                  background-size 80% auto
+                }
+
+                @media (min-width $screen-sm-min) and (max-width $screen-md-min) {
+                  min-height 220px
+                }
+
+                @media (min-width $screen-md-min) and (max-width $screen-lg-min) {
+                  min-height 260px
+                }
+              }
+
+              &.developers {
+                .item-img {
+                  background-image url($pathsImages + 'slide-developers.svg')
+                }
+
+                @media (max-width $screen-md-min) {
+
+                }
+              }
+
+              &.enterprise {
+                .item-img {
+                  background-image url($pathsImages + 'slide-enterprise.svg')
+                }
+
+                @media (max-width $screen-md-min) {
+
+                }
+              }
+
+              &.cloud {
+                .item-img {
+                  background-image url($pathsImages + 'slide-cloud.svg')
+                }
+
+                @media (max-width $screen-md-min) {
+
+                }
+              }
+
+              &.secure-internet {
+                .item-img {
+                  background-image url($pathsImages + 'slide-secure-internet.svg')
+                }
+
+                @media (max-width $screen-md-min) {
+
+                }
+              }
+
+              &.identity {
+                .item-img {
+                  background-image url($pathsImages + 'slide-identity.svg')
+                }
+
+                @media (max-width $screen-md-min) {
+
+                }
+              }
+            }
+          }
+        }
+
+        .slides-menu {
+          position absolute
+          bottom 0
+          left 0
+          width 100%
+          margin 0
+          text-align center
+
+          @media (max-width $screen-md-min) {
+            width 90%
+            left 50%
+            margin-left: -45%
+          }
+
+          a {
+            display inline-block
+            margin 0
+            width auto
+            height auto
+            padding-left 37px
+            padding-right 37px
+            border none
+            border-radius 0
+            border-left 2px solid #c4c4c4
+            font-size 20px
+            line-height 10px
+            color #888888
+            letter-spacing 1px
+            text-transform uppercase
+            font-weight $font-weight-bolder
+            text-indent 0
+
+            @media (max-width $screen-md-min) {
+              display block
+              border none
+              padding 0
+              text-align center
+              font-size 20px
+              line-height 20px
+            }
+
+            @media (min-width $screen-md-min) and (max-width $screen-lg-min) {
+              font-size 14px
+              line-height 8px
+              padding-left 24px
+              padding-right 24px
+            }
+
+            &:first-child {
+              padding-left 0
+              border none
+            }
+
+            &:last-child {
+              padding-right 0
+            }
+
+            &.active {
+              color #da322c
+            }
+          }
+        }
+      }
+    }
+
+    .what-our-customers-say {
+      background #f0f0f0
+
+      .title {
+        margin-top 0
+        margin-bottom 0
+        padding-top 40px
+        font-size 18px
+        color #888888
+        letter-spacing 1.5px
+        line-height 22px
+        text-align center
+        text-transform uppercase
+        font-weight $font-weight-bolder
+
+        @media (max-width $screen-lg-min) {
+          padding-top 30px
+        }
+      }
+
+      .cards {
+        padding 60px 0 115px
+
+        @media (max-width $screen-lg-min) {
+          padding 0 20px 44px
+        }
+
+        .card {
+          margin-top 25px
+
+          @media (min-width $screen-lg-min) {
+            margin-top 40px
+          }
+
+          td {
+            vertical-align top
+            width 1%
+
+            &.sign {
+              width 99%
+            }
+          }
+
+          .avatar {
+            display block
+            border-radius 50%
+          }
+
+          .tip {
+            position relative
+            height 111px
+            background transparent url($pathsImages + 'bubble.png') 0 0 no-repeat
+            background-size 100% 100%
+            font-size 16px
+            color #525d62
+            line-height 24px
+
+            .tip-content {
+              position absolute
+              top 0
+              right 0
+              bottom 0
+              left 7%
+              margin 7px
+              overflow hidden
+            }
+          }
+
+          .name,
+          .position {
+            padding-left 7%
+          }
+
+          .name {
+            padding-top 10px
+            font-size 16px
+            color #da322c
+            line-height 22.39px
+            font-weight $font-weight-bold
+          }
+
+          .position {
+            font-size 14px
+            color #252525
+          }
+        }
+      }
+    }
+
+    .not-found-404 {
+      padding-top 348px
+      min-height 770px
+      background-image url($pathsImages + '404.svg')
+      background-color #f6f6f6
+      background-position 50% 155px
+      background-repeat no-repeat
+      background-size 350px 155px
+
+      .title {
+        padding 0 10px
+        text-align center
+        font-size 36px
+        color #1f363d
+        line-height 50px
+      }
+
+      .desc {
+        padding 0 10px
+        text-align center
+        font-size 20px
+        color #525d62
+        line-height 31px
+
+        a {
+          color #da322c
+        }
+      }
+    }
+
+    .auth-wrapper {
+      background-color #f6f6f6
+      border-top 1px solid #bec4c6
+      border-bottom 1px solid #bec4c6
+
+      .auth {
+        width 500px
+        margin 100px auto
+
+        .form-wrapper {
+          width 400px
+          margin 0 auto
+
+          form {
+            $form-error-color = #bb241d
+
+            padding-top 20px
+
+            &.has-errors {
+              label {
+                color $form-error-color !important
+              }
+            }
+
+            .errors {
+              color $form-error-color
+              font-size 12px
+              padding-bottom 20px
+            }
+
+            .form-group {
+              margin 0
+              padding-bottom 4px
+
+              &.email-group,
+              &.password-group {
+                margin-bottom 30px
+                border-bottom 1px solid #bec4c6
+              }
+
+              label {
+                font-size 12px
+                color #1f363d
+                letter-spacing 1px
+                line-height 14px
+                text-transform uppercase
+                font-weight $font-weight-bolder
+                text-align left
+                margin 0
+                padding 0
+              }
+
+              input[type="text"],
+              input[type="password"] {
+                $input-text-color = #c5cbcd;
+
+                border none
+                box-shadow none
+                margin 0
+                padding 0
+                font-size 14px
+                line-height 14px
+                color #2c302e
+                height 14px
+
+                &::-webkit-input-placeholder {
+                  color $input-text-color
+                }
+
+                &:-moz-placeholder {
+                  color $input-text-color
+                }
+
+                &::-moz-placeholder {
+                  color $input-text-color
+                }
+
+                &:-ms-input-placeholder {
+                  color $input-text-color
+                }
+              }
+            }
+          }
+        }
+
+        .top {
+          background-color $color-white
+          padding 34px 0
+
+          .title {
+            margin 0
+            padding 0 0 10px
+            font-size 36px
+            color #1f363d
+            line-height 36px
+            text-align center
+          }
+
+          .cant-access {
+            text-align center
+            padding 5px 0 0
+
+            a {
+              font-size 12px
+              color #da322c
+              line-height 22px
+            }
+          }
+
+          .terms-agreement {
+            text-align center
+            font-size 10px
+            line-height 16px
+            padding-top 30px
+
+            a {
+              color #da322c
+              line-height 22px
+            }
+          }
+
+          .desc {
+            width 279px
+            margin 0 auto
+            text-align center
+            font-size 14px
+            color #2c302e
+            line-height 22px
+          }
+        }
+
+        .bottom {
+          background-color #e8e8e8
+          padding 30px 0
+
+          .create-account {
+            display block
+            width 280px
+            height 40px
+            margin 0 auto
+            background $color-white
+            border-radius 4px
+            border none
+            font-size 12px
+            font-weight $font-weight-bolder
+            color #1b2021
+            letter-spacing 1px
+            line-height 14px
+          }
+        }
+
+        .btn-auth-orange {
+          @extend .btn-big-orange;
+          width 80%
+          margin 0 auto
+          height 40px
+          font-size 15px
+          font-weight $font-weight-bolder
+          line-height 40px
+          color #1b2021
+          letter-spacing 1.25px
+        }
+      }
+    }
+
+    .terms-of-service-wrapper {
+      background-color #f6f6f6
+      border-top 1px solid #bec4c6
+      border-bottom 1px solid #bec4c6
+
+      .terms-of-service {
+        {white-content-block-desc}
+        margin-bottom 18px
+      }
+
+      .desc {
+        color #525d62
+        font-weight 400
+        padding-bottom 30px
+      }
+    }
+    .privacy-policy-wrapper {
+      background-color #f6f6f6
+      border-top 1px solid #bec4c6
+      border-bottom 1px solid #bec4c6
+
+      .privacy-policy {
+        {white-content-block-desc}
+        margin-bottom 18px
+      }
+
+      .desc {
+        color #525d62
+        font-weight 400
+        padding-bottom 30px
+      }
+    }
+
+    .dashboard-wrapper {
+      background-color $color-white
+      border-top 1px solid #bec4c6
+      border-bottom 1px solid #bec4c6
+
+      .dashboard-header {
+        padding-top 90px
+        padding-bottom 30px
+
+        h1 {
+          font-size 30px
+          line-height 40px
+          color #1f363d
+          margin 0
+        }
+
+        .register-app {
+          @extend .btn-big-orange
+          font-size 15px
+          width 280px
+          height 40px
+          line-height 40px
+          float right
+        }
+      }
+
+      .dashboard-content {
+        padding-bottom 60px
+
+        table {
+          thead {
+            border-top 1px solid #da322c
+
+            tr {
+              th {
+                padding 13px
+                color #424b54
+                font-weight $font-weight-bolder
+                text-transform uppercase
+                border-bottom none
+              }
+            }
+          }
+
+          tbody {
+            tr {
+              td {
+                padding 13px
+                font-size 16px
+
+                .app-name {
+                  color #da322c
+                }
+
+                .desc {
+                  color #525d62
+                }
+
+                .token,
+                .date {
+                  color #1b2021
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .dashboard-form-wrapper {
+      background-color #f6f6f6
+      border-top 1px solid #bec4c6
+      border-bottom 1px solid #bec4c6
+
+      .dashboard-form {
+        width 500px
+        margin 100px auto
+
+        form {
+          $form-error-color = #bb241d
+
+          padding-top 20px
+
+          &.has-errors {
+            label {
+              color $form-error-color !important
+            }
+          }
+
+          .errors {
+            color $form-error-color
+            font-size 12px
+            padding-bottom 20px
+          }
+
+          .form-group {
+            margin 0
+            padding-bottom 4px
+            margin-bottom 30px
+            border-bottom 1px solid #bec4c6
+
+            &:last-child {
+              margin-bottom 0
+            }
+
+            label {
+              font-size 12px
+              color #1f363d
+              letter-spacing 1px
+              line-height 14px
+              text-transform uppercase
+              font-weight $font-weight-bolder
+              text-align left
+              margin 0
+              padding 0
+            }
+
+            input[type="text"],
+            input[type="password"] {
+              $input-text-color = #c5cbcd;
+
+              border none
+              box-shadow none
+              margin 0
+              padding 0
+              font-size 14px
+              line-height 14px
+              color #2c302e
+              height 14px
+
+              &::-webkit-input-placeholder {
+                color $input-text-color
+              }
+
+              &:-moz-placeholder {
+                color $input-text-color
+              }
+
+              &::-moz-placeholder {
+                color $input-text-color
+              }
+
+              &:-ms-input-placeholder {
+                color $input-text-color
+              }
+            }
+          }
+        }
+
+        .form-wrapper {
+          width 400px
+          margin 0 auto
+        }
+
+        .top {
+          background-color $color-white
+          padding 34px 0
+
+          .title {
+            margin 0
+            padding 0 0 30px
+            font-size 36px
+            color #1f363d
+            line-height 36px
+            text-align center
+          }
+        }
+
+        .bottom {
+          background-color $color-white
+          padding 0 0 30px
+
+          .create-app {
+            @extend .btn-big-orange;
+            width 280px
+            margin 0 auto
+            height 40px
+            font-size 15px
+            font-weight $font-weight-bolder
+            line-height 40px
+            color #1b2021
+            letter-spacing 1.25px
+          }
+        }
+      }
+    }
+  }
+
+  &.internal {
+    .content {
+      .top-wrapper {
+        padding-bottom 88px
+        background-color #f6f6f6
+        border-top 1px solid #bec4c6
+        border-bottom 1px solid #bec4c6
+
+        .getting-started {
+          {white-content-block-title}
+          max-width 185px
+        }
+
+        &.developers-top-wrapper {
+          padding-bottom 40px
+          border-top none
+        }
+
+        .documentation-for-developers {
+          margin 0
+          padding-top 46px
+          text-align center
+          text-transform uppercase
+          font-size 18px
+          color #da322c
+          letter-spacing 1.5px
+          line-height 22px
+          font-weight $font-weight-bolder
+        }
+
+        .language-shields {
+          @extend .clearfix
+
+          .shield {
+            display inline-block
+            padding-top 30px
+            text-align center
+
+            .shield-link {
+              color #1f363d
+              font-size 16px
+              font-weight $font-weight-bolder
+            }
+
+            .icon {
+              display block
+              width 60px
+              height 76.2px
+              margin 0 auto
+              background-color transparent
+              background-position 0 50%
+              background-repeat no-repeat
+              background-size auto 100%
+            }
+
+            .title {
+              display block
+              padding-top 20px
+              line-height 28px
+            }
+
+            &.c-sharp {
+              .icon {
+                background-image url($pathsImages + 'C-sharp-off.svg')
+              }
+
+              &.active {
+                .icon {
+                  background-image url($pathsImages + 'С-sharp-on.svg')
+                }
+              }
+            }
+
+            &.cpp {
+              .icon {
+                background-image url($pathsImages + 'Cpp-off.svg')
+              }
+
+              &.active {
+                .icon {
+                  background-image url($pathsImages + 'Cpp-on.svg')
+                }
+              }
+            }
+
+            &.swift {
+              .icon {
+                background-image url($pathsImages + 'obj-off.svg')
+              }
+
+              &.active {
+                .icon {
+                  background-image url($pathsImages + 'obj-on.svg')
+                }
+              }
+            }
+
+            &.php {
+              .icon {
+                background-image url($pathsImages + 'PHP-off.svg')
+              }
+
+              &.active {
+                .icon {
+                  background-image url($pathsImages + 'PHP-on.svg')
+                }
+              }
+            }
+
+            &.node-js {
+              .icon {
+                background-image url($pathsImages + 'Node-off.svg')
+              }
+
+              &.active {
+                .icon {
+                  background-image url($pathsImages + 'Node-on.svg')
+                }
+              }
+            }
+
+            &.js {
+              .icon {
+                background-image url($pathsImages + 'js-off.svg')
+              }
+
+              &.active {
+                .icon {
+                  background-image url($pathsImages + 'js-on.svg')
+                }
+              }
+            }
+
+            &.python {
+              .icon {
+                background-image url($pathsImages + 'pyth-off.svg')
+              }
+
+              &.active {
+                .icon {
+                  background-image url($pathsImages + 'pyth-on.svg')
+                }
+              }
+            }
+
+            &.ruby {
+              .icon {
+                background-image url($pathsImages + 'ruby-off.svg')
+              }
+
+              &.active {
+                .icon {
+                  background-image url($pathsImages + 'ruby-on.svg')
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .docs-parts {
+        background-color $color-white
+
+        .menu {
+          border-bottom 1px solid #bec4c6
+
+          @media (min-width 860px) and (max-width $screen-lg) {
+            padding 0 14px
+          }
+
+          .item {
+            display inline-block
+            padding 0 7.5px
+            margin 0 25px 0 0
+            line-height 57px
+            letter-spacing 1.16px
+            font-size 14px
+            color #888888
+            text-transform uppercase
+            font-weight $font-weight-bolder
+
+            &.active {
+              border-top 3px solid #da322c
+            }
+
+            @media (max-width 860px) {
+              margin 0
+
+              &.active {
+                border-top none
+                border-bottom 3px solid #da322c
+              }
+            }
+
+            @media (max-width 860px) {
+              width 100%
+              text-align center
+              border-bottom 1px solid #d6d6d6
+            }
+          }
+        }
+      }
+
+      .docs-content-wrapper {
+        background-color $color-white
+        padding 55px 0
+        overflow hidden
+
+        .docs-content {
+          @media (max-width $screen-lg) {
+            padding 0 14px
+          }
+        }
+
+        .docs-menu {
+          .title {
+            padding 0 0 10px 10px
+            font-size 12px
+            color #d8d8d8
+            letter-spacing 1px
+            line-height 12px
+            text-transform uppercase
+            font-weight $font-weight-bolder
+          }
+
+          .menu-items-wrapper {
+            @media (max-width $screen-lg) {
+              padding-right 14px
+            }
+
+            $menu-item-active-hover-diff = 1px;
+            $menu-item-border-color = #da322c;
+
+            $menu-item-active-padding-left = 10px;
+            $menu-item-active-border-width = 2px;
+            $menu-item-active-border-style = solid;
+            $menu-item-active-border-color = $menu-item-border-color;
+
+            $menu-item-hover-padding-left = $menu-item-active-padding-left + $menu-item-active-hover-diff;
+            $menu-item-hover-border-width = $menu-item-active-border-width - $menu-item-active-hover-diff;
+            $menu-item-hover-border-style = solid;
+            $menu-item-hover-border-color = $menu-item-border-color;
+
+            menu-items = @block {
+
+            }
+
+            menu-item = @block {
+              &:last-child {
+                border-bottom none
+              }
+
+              a {
+                display inline-block
+                font-size 16px
+                color #414b4f
+                line-height 30px
+                font-weight $font-weight-normal
+                padding-left $menu-item-active-padding-left
+                border-left-width $menu-item-active-border-width
+                border-left-style $menu-item-active-border-style
+                border-left-color transparent
+
+                &:hover {
+                  color #da322c
+                  padding-left $menu-item-hover-padding-left
+                  border-left-width $menu-item-hover-border-width
+                  border-left-style $menu-item-hover-border-style
+                  border-left-color $menu-item-hover-border-color
+                }
+              }
+
+              &.active > a {
+                color #da322c
+                border-left-width $menu-item-active-border-width
+                border-left-style $menu-item-active-border-style
+                border-left-color $menu-item-active-border-color
+
+                &:hover {
+                  padding-left $menu-item-active-padding-left
+                }
+              }
+            }
+
+            .menu-items {
+              {menu-items}
+              .menu-item {
+                {menu-item}
+              }
+            }
+
+            // apply styles to the github menu structure
+            ul {
+              {menu-items}
+              > li {
+                {menu-item}
+                > ul {
+                  {menu-items}
+                  border none
+                  > li {
+                    {menu-item}
+                    $menu-item-active-padding-left = $menu-item-active-padding-left * 2;
+
+                    a {
+                      padding-left $menu-item-active-padding-left
+                      color #888888
+                      font-size 15px
+
+                      &:hover {
+                        padding-left ($menu-item-hover-padding-left * 2) - $menu-item-active-hover-diff
+                      }
+                    }
+
+                    &.active > a {
+                      &:hover {
+                        padding-left $menu-item-active-padding-left
+                      }
+                    }
+
+                    > ul {
+                      {menu-items}
+                      border none
+                      > li {
+                        {menu-item}
+                        $menu-item-active-padding-left = $menu-item-active-padding-left * 3;
+
+                        a {
+                          padding-left $menu-item-active-padding-left
+
+                          &:hover {
+                            padding-left ($menu-item-hover-padding-left * 3) - $menu-item-active-hover-diff
+                          }
+                        }
+
+                        &.active > a {
+                          &:hover {
+                            padding-left $menu-item-active-padding-left
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          &.affix {
+            position fixed !important
+            top 20px
+            width 240px
+          }
+        }
+      }
+
+      .management-wrapper {
+        padding-bottom 88px
+        background-color #f6f6f6
+        border-top 1px solid #bec4c6
+        border-bottom 1px solid #bec4c6
+
+        @media (max-width $screen-md) {
+          padding-bottom 0
+        }
+
+        .the-security-detail {
+          {white-content-block-desc}
+          margin 55px auto 0
+
+          @media (max-width $screen-md) {
+            margin 35px auto 0
+          }
+        }
+
+        .management {
+          padding-top 40px
+
+          .manager {
+            padding 0 25px
+
+            @media (max-width $screen-md) {
+              padding 20px 25px
+
+              &:first-child {
+                padding-top 0
+              }
+            }
+
+            .avatar {
+              display block
+              width 145px
+              margin 0 auto
+              border-radius 50%
+            }
+
+            .name {
+              text-align center
+              font-size 22px
+              font-weight $font-weight-bold
+              color #1f363d
+              line-height 26px
+              padding-top 20px
+            }
+
+            .position {
+              position relative
+              text-align center
+              font-size 12px
+              font-weight $font-weight-bolder
+              text-transform uppercase
+              color #da322c
+              letter-spacing 1px
+              line-height 12px
+              padding-top 10px
+              padding-bottom 20px
+
+              &:after {
+                content ' '
+                display block
+                position absolute
+                width 16%
+                left 50%
+                bottom 0
+                margin-top 0
+                margin-left -8%
+                border-bottom 2px solid #bec4c6
+              }
+            }
+
+            .desc {
+              font-size 14px
+              color #525d62
+              line-height 22px
+              padding-top 20px
+            }
+          }
+        }
+      }
+
+      .developers-wrapper {
+        padding 65px 0 0 0
+
+        .developers {
+          .developer {
+            padding-bottom 65px
+
+            .avatar {
+              display block
+              width 100px
+              margin 0 auto
+              border-radius 50%
+            }
+
+            .name {
+              padding-top 20px
+              text-align center
+              font-size 18px
+              font-weight $font-weight-bolder
+              color #1f363d
+              line-height 18px
+            }
+
+            .position {
+              padding-top 12px
+              text-align center
+              font-size 12px
+              text-transform uppercase
+              font-weight $font-weight-bolder
+              color #da322c
+              letter-spacing 1px
+              line-height 12px
+            }
+          }
+        }
+      }
+
+      .press-list-wrapper {
+        padding-bottom 80px
+        background-color #f6f6f6
+        border-top 1px solid #bec4c6
+        border-bottom 1px solid #bec4c6
+
+        @media (max-width $screen-md) {
+          padding-bottom 30px
+        }
+
+        .virgil-press {
+          {white-content-block-desc}
+          margin 55px auto 0
+
+          @media (max-width $screen-md) {
+            margin 35px auto 0
+          }
+        }
+
+        .press-list {
+          .press-item {
+            display block
+            padding-top 25px
+            min-height 115px
+
+            @media (max-width $screen-lg) {
+              padding 25px 20px 0
+              min-height 40px
+            }
+
+            &:hover {
+              .title {
+                text-decoration underline
+              }
+            }
+
+            .date {
+              display block
+              font-size 12px
+              text-transform uppercase
+              color #da322c
+              font-weight $font-weight-bolder
+              letter-spacing 1px
+              line-height 14px
+            }
+
+            .cont {
+              display block
+
+              .title {
+                display block
+                font-size 16px
+                color #525d62
+                font-weight $font-weight-bold
+                line-height 25px
+              }
+
+              .arrow {
+                display inline-block
+                font-size 18px
+                color #da322c
+                line-height 25px
+                padding-left 4px
+              }
+            }
+          }
+        }
+      }
+
+      .apps-wrapper {
+        background-color #f6f6f6
+        border-top 1px solid #bec4c6
+        border-bottom 1px solid #bec4c6
+        padding-bottom 65px
+
+        .get-started-with-apps {
+          {white-content-block-desc}
+          margin 0 auto
+          padding 60px 0 0
+
+          @media (max-width $screen-lg) {
+            padding 60px 0 0
+          }
+        }
+
+        .apps {
+          .app {
+            text-align center
+            padding-top 45px
+
+            .app-box {
+              width 80%
+              margin 0 auto
+              padding 20px
+              background-color $color-white
+              border 1px solid #e8e8e8
+
+              > .title {
+                position relative
+                margin 0
+                font-size 20px
+                color #1f363d
+                line-height 20px
+                font-weight $font-weight-bolder
+                padding 12px 0 20px
+
+                &:after {
+                  content ' '
+                  display block
+                  position absolute
+                  width 16%
+                  left 50%
+                  bottom 0
+                  margin-top 0
+                  margin-left -8%
+                  border-bottom 2px solid #bec4c6
+                }
+              }
+
+              .desc {
+                padding-top 20px
+                font-size 14px
+                color #525d62
+                line-height 22px
+                min-height 135px
+              }
+
+              .downloads {
+                position relative
+                min-height 105px
+
+                .downloads-box {
+                  position absolute
+                  left 0
+                  right 0
+                  bottom 0
+
+                  > .title {
+                    font-size 12px
+                    color #da322c
+                    letter-spacing 1px
+                    line-height 14px
+                    font-weight $font-weight-bolder
+                    text-transform uppercase
+                  }
+
+                  &.coming-soon {
+                    .title {
+                      color #c5cbcd
+                    }
+                  }
+
+                  .builds {
+                    padding-top 21px
+                    text-align center
+
+                    .build-icon {
+                      min-width 35px
+                      min-height 35px
+                      background-color transparent
+                      background-position 50% 0
+                      background-repeat no-repeat
+                      background-size auto 100%
+                      cursor default
+
+                      &.chrome {
+                        background-image url($pathsImages + 'apps-virgil-chrome.svg')
+                      }
+
+                      &.firefox {
+                        background-image url($pathsImages + 'apps-virgil-firefox.svg')
+                      }
+
+                      &.ios {
+                        background-image url($pathsImages + 'apps-virgil-ios.svg')
+                      }
+
+                      &.android {
+                        background-image url($pathsImages + 'apps-virgil-android.svg')
+                      }
+
+                      &.windows {
+                        background-image url($pathsImages + 'apps-virgil-windows.svg')
+                      }
+
+                      &.macos {
+                        background-image url($pathsImages + 'apps-virgil-macos.svg')
+
+                        &.active {
+                          background-image url($pathsImages + 'apps-virgil-macos-active.svg')
+                        }
+                      }
+
+                      &.outlook {
+                        background-image url($pathsImages + 'apps-virgil-outlook.svg')
+                      }
+
+                      &.thunderbird {
+                        background-image url($pathsImages + 'apps-virgil-thunderbird.svg')
+                      }
+
+                      &.active {
+                        cursor pointer
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .about-apps-wrapper {
+        padding 37px 0 80px 0
+        background-color $color-white
+
+        @media (max-width $screen-lg) {
+          padding-left 20px
+          padding-right 20px
+        }
+      }
+    }
+  }
+}
