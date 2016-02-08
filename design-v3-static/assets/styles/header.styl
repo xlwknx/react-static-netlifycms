@@ -1,6 +1,5 @@
 body {
   header {
-    background-color transparent
     border-top 2px solid #bb241d
 
     @media (max-width $screen-md-min) {
@@ -12,7 +11,6 @@ body {
     }
 
     .navbar-wrapper {
-      border-bottom 1px solid #6b7679
       height $navbar-wrapper-lg-height
 
       > .container {
@@ -115,12 +113,33 @@ body {
                   &.active {
                     color #facb63
                   }
+                }
+                iframe {
+                  margin-top 16px
+                  margin-left 30px
+                }
+                &:last-of-type {
+                  position relative
+                  margin-left 10px
+                  &:before {
+                    content ' '
+                    position absolute
+                    top 50%
+                    tranform translateY(-50%)
+                    height 10px
+                    border-left 1px solid #9B9B9B
 
-                  &.sign-in {
-                    border 1px solid #6b7679
-                    line-height 30px
-                    margin-top 14px
-                    margin-left 20px
+                  }
+                }
+                @media (max-width $screen-md-min) {
+                  &:last-of-type {
+                    margin-left 0
+                    &:before {
+                      content none
+                    }
+                  }
+                  iframe {
+                    margin-left 0
                   }
                 }
               }
@@ -138,14 +157,6 @@ body {
                   a {
                     line-height 40px
                     font-weight $font-weight-bolder
-
-                    &.sign-in {
-                      display inline-block
-                      border-color $color-white
-                      min-width 90px
-                      margin-bottom 30px
-                      margin-left 0
-                    }
                   }
                 }
               }
@@ -184,6 +195,7 @@ body {
       margin 60px auto 0
       width 288px
     }
+
   }
 
   &.internal {
@@ -221,18 +233,6 @@ body {
                     &.active {
                       @media (min-width $screen-md-min) {
                         color #da322c
-                      }
-                    }
-
-                    &.sign-in {
-                      @media (min-width $screen-md-min) {
-                        border 1px solid #424b54
-
-                        &:hover {
-                          border-color #da322c
-                          background-color #da322c
-                          color $color-white
-                        }
                       }
                     }
                   }

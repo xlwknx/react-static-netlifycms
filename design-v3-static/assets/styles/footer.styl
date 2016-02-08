@@ -2,7 +2,7 @@ footer {
   background: #2c302e;
 
   .menu {
-    padding-top 40px
+    padding-top 50px
     padding-bottom 90px
 
     @media (max-width $screen-lg-min) {
@@ -14,8 +14,9 @@ footer {
       .sub-menu-title {
         position relative
         font-family Arial
-        font-size 15px
-        line-height 14px
+        font-size 14px
+        line-height 17px
+        letter-spacing 1.33px
         color #888888
         text-transform uppercase
         font-weight $font-weight-bolder
@@ -25,7 +26,7 @@ footer {
         &:before {
           content ' '
           position absolute
-          top 0
+          top 2px
           left 0
           height 12px
           border-left 2px solid #da322c
@@ -49,10 +50,10 @@ footer {
           }
 
           a {
-            font-size 15px
-            line-height 18px
+            font-size 14px
+            line-height 17px
             color #ffffff
-            font-weight $font-weight-bolder
+            font-weight $font-weight-normal
 
             &.active,
             &:active,
@@ -95,7 +96,7 @@ footer {
           font-size 12px
           line-height 18px
           color #888888
-          font-weight $font-weight-bolder
+          font-weight $font-weight-normal
         }
 
         .desc {
@@ -159,6 +160,10 @@ footer {
               }
             }
           }
+
+        }
+        iframe {
+          margin-left 12px
         }
       }
     }

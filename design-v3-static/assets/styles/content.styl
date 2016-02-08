@@ -3,11 +3,11 @@ body {
     position relative
     max-width 165px
     height 54px
-    margin 65px auto 35px
-    font-size 18px
+    margin 50px auto 20px
+    font-size 16px
     color #da322c
-    letter-spacing 1.5px
-    line-height 22px
+    letter-spacing 1.33px
+    line-height 19px
     text-align center
     text-transform uppercase
     font-weight $font-weight-bolder
@@ -16,8 +16,8 @@ body {
       content ' '
       display block
       position absolute
-      left 20%
-      right 20%
+      left 33%
+      right 33%
       bottom 0
       border-bottom 2px solid rgba(30, 54, 61, 0.26)
     }
@@ -36,10 +36,10 @@ body {
 
   white-content-block-desc = @block {
     max-width 632px
-    margin 30px auto 0
-    font-size 36px
+    margin 0 auto
+    font-size 32px
     color #1b2021
-    line-height 50px
+    line-height 44px
     font-weight $font-weight-normal
     text-align center
 
@@ -53,24 +53,38 @@ body {
 
   .content {
     .promo-banner {
-      height 620px
+      height 640px
+      background-image url($pathsImages + 'bg-main.svg')
+      background-repeat no-repeat
+      background-position right 30px top 70px
+
 
       @media (max-width $screen-md-min) {
-        height 350px
+        height 320px
+        background-position 100% 30px
+        background-size auto 280px
+      }
+
+      @media (max-width $screen-lg-min) and (min-width $screen-md-min) {
+        background-position right 20px top 70px
+        background-size auto 320px
+      }
+
+      @media (min-width $screen-xlg) {
+        background-position right 100px top 90px
       }
 
       .secure-the-future {
         text-transform uppercase
-        font-weight $font-weight-normal
-        font-size 60px
+        font-weight $font-weight-light
+        font-size 50px
         color $color-white
-        line-height 72px
-        padding-top 150px
-        text-align center
+        line-height 61px
+        padding-top 140px
         margin 0
 
         @media (max-width $screen-md-min) {
-          padding-top 40px
+          padding 40px 5% 0 5%
           font-size 31px
           line-height 37px
         }
@@ -79,30 +93,29 @@ body {
       .secure-the-future-desc {
         max-width 650px
         font-weight $font-weight-normal
-        font-size 24px
+        font-size 20px
         color $color-white
-        line-height 40px
-        margin 50px auto 0
-        text-align center
+        line-height 36px
+        margin-top 40px
 
         @media (max-width $screen-md-min) {
           width auto
           margin-top 18px
           padding 0 5%
           font-weight $font-weight-bold
-          font-size 16px
-          line-height 27px
+          font-size 14px
+          line-height 25px
         }
       }
 
       .btn-get-started {
-        margin 75px auto 0
+        margin 50px 0 0
         width 288px
-        font-size 18px
+        font-size 16px
 
         @media (max-width $screen-md-min) {
           font-weight $font-weight-bolder
-          margin 35px auto 0
+          margin 35px 5% 0 5%
         }
       }
     }
@@ -143,11 +156,10 @@ body {
         .feed-content {
           max-width 855px
           color $color-white
-          font-size 18px
+          font-size 16px
 
           @media (max-width $screen-lg-min) {
             text-align center
-            font-size 16px
             padding 0 5% 20px
           }
 
@@ -189,7 +201,7 @@ body {
         margin-top 66px
 
         @media (max-width $screen-md-min) {
-          margin-top 40px
+          margin-top 60px
         }
 
         .shield-item {
@@ -204,10 +216,10 @@ body {
           }
 
           .shield-icon {
-            height 144px
+            height 107px
 
             @media (max-width $screen-md-min) {
-              height 100px
+              height 90px
             }
 
             &.step1 {
@@ -221,7 +233,7 @@ body {
 
             &.step2 {
               background transparent url($pathsImages + 'encrypt.svg')
-              background-position 15px 50%
+              background-position 33px 50%
 
               @media (min-width $screen-sm-min) and (max-width $screen-lg-min) {
                 background-position 50% 50%
@@ -230,7 +242,7 @@ body {
 
             &.step3 {
               background transparent url($pathsImages + 'identities.svg')
-              background-position 22px 50%
+              background-position 40px 50%
 
               @media (min-width $screen-sm-min) and (max-width $screen-lg-min) {
                 background-position 50% 50%
@@ -239,7 +251,7 @@ body {
 
             &.step4 {
               background transparent url($pathsImages + 'platforms.svg')
-              background-position 20px 50%
+              background-position 38px 50%
 
               @media (min-width $screen-sm-min) and (max-width $screen-lg-min) {
                 background-position 50% 50%
@@ -261,36 +273,26 @@ body {
 
           .shield-title {
             margin-top 24px
-            font-size 20px
+            font-size 18px
             color #1f363d
-            line-height 28px
+            line-height 24px
             font-weight $font-weight-bolder
             text-align center
-
-            @media (max-width $screen-md-min) {
-              font-size 20px
-              line-height 28px
-            }
           }
 
           .shield-desc {
-            margin-top 21px
+            margin-top 20px
             font-size 16px
-            color #525d62
-            line-height 26px
+            color #414b4f
+            line-height 23px
             font-weight $font-weight-normal
             text-align center
-
-            @media (max-width $screen-md-min) {
-              font-size 16px
-              line-height 26px
-            }
           }
         }
       }
 
       .btn-download-apps {
-        margin 80px auto 0
+        margin 70px auto 0
         width 288px
 
         @media (max-width $screen-lg-min) {
@@ -304,11 +306,11 @@ body {
 
       .title {
         margin-top 0
-        padding-top 40px
-        font-size 18px
+        padding-top 50px
+        font-size 16px
         color #888888
-        letter-spacing 1.5px
-        line-height 22px
+        letter-spacing 1.33px
+        line-height 19px
         text-align center
         text-transform uppercase
         font-weight $font-weight-bolder
@@ -316,20 +318,57 @@ body {
 
       .logos {
         padding 20px 0 40px
+        text-align center
 
         @media (max-width $screen-md-min) {
           padding-top 20px
         }
 
         .logo {
-          min-height 64px
+          display inline-block
+          min-height 46px
+          background-color transparent
+          background-position 50% 50%
+          background-repeat no-repeat
+          background-size 100% auto
+          margin 5px 30px
+
+          &:first-child {
+            margin-left 0
+          }
+
+          &:last-child {
+            margin-right 0
+          }
+
+          &.jquery {
+            width 180px
+            background-image url($pathsImages + 'jquery_logo.svg')
+          }
 
           &.bloomberg {
-            background-color transparent
+            width 220px
             background-image url($pathsImages + 'Bloomberg_logo.svg')
-            background-position 50% 50%
-            background-repeat no-repeat
-            background-size 100% auto
+          }
+
+          &.google {
+            width 138px
+            background-image url($pathsImages + 'google_logo.svg')
+          }
+
+          &.evernote {
+            width 182px
+            background-image url($pathsImages + 'evernote_logo.svg')
+          }
+
+          @media (max-width 920px) {
+            max-width 160px
+            margin 5px 20px
+          }
+
+          @media (max-width $screen-md-min) {
+            max-width 120px
+            margin 5px 10px
           }
         }
       }
@@ -359,7 +398,11 @@ body {
 
         .carousel {
           max-height 590px
-          padding-bottom 70px
+          padding-bottom 20px
+
+          @media (max-width $screen-md-min) {
+            padding-bottom 50px
+          }
 
           .carousel-control {
             width 5%
@@ -388,22 +431,22 @@ body {
 
           .carousel-inner {
             .item {
-              min-height 520px
+              min-height 480px
 
               @media (max-width $screen-sm-min) {
-                min-height 380px
+                min-height 360px
               }
 
               @media (min-width $screen-xs-min) and (max-width $screen-sm-min) {
-                min-height 365px
+                min-height 340px
               }
 
               @media (min-width $screen-sm-min) and (max-width $screen-md-min) {
-                min-height 405px
+                min-height 380px
               }
 
               @media (min-width $screen-md-min) and (max-width $screen-lg-min) {
-                min-height 450px
+                min-height 440px
               }
 
               .item-content {
@@ -415,36 +458,36 @@ body {
                 }
 
                 .item-title {
-                  padding-bottom 20px
-                  font-size 30px
+                  padding-bottom 18px
+                  font-size 26px
                   color #1f363d
-                  line-height 36px
+                  line-height 31px
                   font-weight $font-weight-bolder
                   text-align center
 
                   @media (max-width $screen-md-min) {
-                    font-size 20px
-                    line-height 24px
+                    font-size 18px
+                    line-height 22px
                   }
                 }
 
                 .item-desc {
-                  font-size 20px
+                  font-size 16px
                   color #525d62
-                  line-height 31px
+                  line-height 26px
                   font-weight $font-weight-normal
                   text-align center
 
                   @media (max-width $screen-md-min) {
-                    font-size 15px
-                    line-height 26px
+                    font-size 14px
+                    line-height 24px
                   }
                 }
               }
 
               .item-img {
                 width 90%
-                min-height 350px
+                min-height 312px
                 margin 0 auto
                 background-color transparent
                 background-position 50% 50%
@@ -452,21 +495,21 @@ body {
                 background-size 60% auto
 
                 @media (max-width $screen-sm-min) {
-                  min-height 160px
+                  min-height 168px
                   background-size 80% auto
                 }
 
                 @media (min-width $screen-xs-min) and (max-width $screen-sm-min) {
-                  min-height 160px
+                  min-height 168px
                   background-size 80% auto
                 }
 
                 @media (min-width $screen-sm-min) and (max-width $screen-md-min) {
-                  min-height 220px
+                  min-height 232px
                 }
 
                 @media (min-width $screen-md-min) and (max-width $screen-lg-min) {
-                  min-height 260px
+                  min-height 288px
                 }
               }
 
@@ -547,10 +590,10 @@ body {
             border none
             border-radius 0
             border-left 2px solid #c4c4c4
-            font-size 20px
-            line-height 10px
+            font-size 16px
+            line-height 19px
             color #888888
-            letter-spacing 1px
+            letter-spacing 1.33px
             text-transform uppercase
             font-weight $font-weight-bolder
             text-indent 0
@@ -560,8 +603,8 @@ body {
               border none
               padding 0
               text-align center
-              font-size 20px
-              line-height 20px
+              font-size 16px
+              line-height 19px
             }
 
             @media (min-width $screen-md-min) and (max-width $screen-lg-min) {
