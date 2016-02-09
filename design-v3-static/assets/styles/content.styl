@@ -1137,160 +1137,250 @@ body {
 
   &.internal {
     .content {
-      .top-wrapper {
-        padding-bottom 88px
-        background-color #f6f6f6
-        border-top 1px solid #bec4c6
-        border-bottom 1px solid #bec4c6
 
-        .getting-started {
-          {white-content-block-title}
-          max-width 185px
+      .wrapper {
+        text-align center
+        padding-top 30px
+        padding-bottom 30px
+        background white
+        border-top 1px solid #D8D8D8
+
+        &:nth-child(odd) {
+          background #f6f6f6
         }
 
-        &.developers-top-wrapper {
-          padding-bottom 40px
-          border-top none
+        .title {
+          {white-content-block-desc}
         }
 
-        .documentation-for-developers {
-          margin 0
-          padding-top 46px
-          text-align center
-          text-transform uppercase
-          font-size 18px
-          color #da322c
-          letter-spacing 1.5px
-          line-height 22px
-          font-weight $font-weight-bolder
+        figure {
+          padding 30px 30px 0 30px
+
+          img {
+            max-width 72px
+            min-height 48px
+          }
+
+          figcaption {
+            font-size 16px
+            line-height 24px
+            font-weight $font-weight-bolder
+            color #1f363d
+            margin-top 20px
+          }
+
+          .fig-description {
+            margin-top 20px
+            font-size 13px
+            line-height 21px
+            font-weight $font-weight-normal
+            color #414b4f
+          }
         }
 
-        .language-shields {
-          @extend .clearfix
+        @media (min-width $screen-md-min) {
+          padding-top 50px
+          padding-bottom 50px
 
-          .shield {
-            display inline-block
-            padding-top 30px
-            text-align center
+          figure {
 
-            .shield-link {
-              color #1f363d
-              font-size 16px
-              font-weight $font-weight-bolder
-            }
-
-            .icon {
-              display block
-              width 60px
-              height 76.2px
-              margin 0 auto
-              background-color transparent
-              background-position 0 50%
-              background-repeat no-repeat
-              background-size auto 100%
-            }
-
-            .title {
-              display block
-              padding-top 20px
+            figcaption {
+              font-size 20px
               line-height 28px
             }
 
-            &.c-sharp {
-              .icon {
-                background-image url($pathsImages + 'C-sharp-off.svg')
-              }
+            .fig-description {
+              font-size 14px
+              line-height 22px
+            }
+          }
+        }
+      }
 
-              &.active {
-                .icon {
-                  background-image url($pathsImages + 'С-sharp-on.svg')
-                }
-              }
+      .api-documentations {
+        @media (min-width $screen-md-min) {
+          .column {
+            position relative
+            &:not(:first-child):before {
+              content ''
+              position absolute
+              top 70px
+              left 0
+              height 50%
+              border-left 1px solid #dbdedf
+            }
+          }
+          figure {
+            padding-left 80px
+            padding-right 80px
+
+            img {
+              max-width 124px
             }
 
-            &.cpp {
-              .icon {
-                background-image url($pathsImages + 'Cpp-off.svg')
-              }
-
-              &.active {
-                .icon {
-                  background-image url($pathsImages + 'Cpp-on.svg')
-                }
-              }
-            }
-
-            &.swift {
-              .icon {
-                background-image url($pathsImages + 'obj-off.svg')
-              }
-
-              &.active {
-                .icon {
-                  background-image url($pathsImages + 'obj-on.svg')
-                }
+            figcaption {
+              position relative
+              padding-bottom 20px
+              &:after {
+                content ''
+                position absolute
+                left 43%
+                right 43%
+                bottom 0
+                border 1px solid rgba(30, 54, 61, 0.26)
               }
             }
+          }
+        }
+      }
 
-            &.php {
-              .icon {
-                background-image url($pathsImages + 'PHP-off.svg')
-              }
+      .documentations {
+        .shield {
+          display inline-block
+          padding-top 50px
+          text-align center
 
-              &.active {
-                .icon {
-                  background-image url($pathsImages + 'PHP-on.svg')
-                }
-              }
+          .shield-link {
+            color #1f363d
+            font-size 16px
+            line-height 24px
+            font-weight $font-weight-bolder
+
+            @media (min-width $screen-md-min) {
+              font-size 20px
+              line-height 28px
+            }
+          }
+
+          .icon {
+            display block
+            width 60px
+            height 76.2px
+            margin 0 auto
+            background-color transparent
+            background-position 0 50%
+            background-repeat no-repeat
+            background-size auto 100%
+          }
+
+          .link-text {
+            display block
+            padding-top 20px
+          }
+
+          &.c-sharp {
+            .icon {
+              background-image url($pathsImages + 'C-sharp-off.svg')
             }
 
-            &.node-js {
+            &.active, &:hover {
               .icon {
-                background-image url($pathsImages + 'Node-off.svg')
-              }
-
-              &.active {
-                .icon {
-                  background-image url($pathsImages + 'Node-on.svg')
-                }
+                background-image url($pathsImages + 'С-sharp-on.svg')
               }
             }
+          }
 
-            &.js {
-              .icon {
-                background-image url($pathsImages + 'js-off.svg')
-              }
-
-              &.active {
-                .icon {
-                  background-image url($pathsImages + 'js-on.svg')
-                }
-              }
+          &.cpp {
+            .icon {
+              background-image url($pathsImages + 'Cpp-off.svg')
             }
 
-            &.python {
+            &.active, &:hover {
               .icon {
-                background-image url($pathsImages + 'pyth-off.svg')
-              }
-
-              &.active {
-                .icon {
-                  background-image url($pathsImages + 'pyth-on.svg')
-                }
+                background-image url($pathsImages + 'Cpp-on.svg')
               }
             }
+          }
 
-            &.ruby {
+          &.swift {
+            .icon {
+              background-image url($pathsImages + 'obj-off.svg')
+            }
+
+            &.active, &:hover {
               .icon {
-                background-image url($pathsImages + 'ruby-off.svg')
-              }
-
-              &.active {
-                .icon {
-                  background-image url($pathsImages + 'ruby-on.svg')
-                }
+                background-image url($pathsImages + 'obj-on.svg')
               }
             }
+          }
+
+          &.php {
+            .icon {
+              background-image url($pathsImages + 'PHP-off.svg')
+            }
+
+            &.active, &:hover {
+              .icon {
+                background-image url($pathsImages + 'PHP-on.svg')
+              }
+            }
+          }
+
+          &.js {
+            .icon {
+              background-image url($pathsImages + 'js-off.svg')
+            }
+
+            &.active, &:hover {
+              .icon {
+                background-image url($pathsImages + 'js-on.svg')
+              }
+            }
+          }
+
+          &.python {
+            .icon {
+              background-image url($pathsImages + 'python-off.svg')
+            }
+
+            &.active, &:hover {
+              .icon {
+                background-image url($pathsImages + 'python-on.svg')
+              }
+            }
+          }
+
+          &.ruby {
+            .icon {
+              background-image url($pathsImages + 'ruby-off.svg')
+            }
+
+            &.active, &:hover {
+              .icon {
+                background-image url($pathsImages + 'ruby-on.svg')
+              }
+            }
+          }
+        }
+      }
+
+
+      .use-cases {
+        .use-case {
+          display flex
+          flex-direction column
+          justify-content  center
+          margin 20px 11px 0 11px
+          border 1px solid #D8D8D8
+          padding 24px 32px
+          text-align center
+          min-height 208px
+
+          .use-case-title {
+            color #1f363d
+            font-size 18px
+            font-weight $font-weight-bolder
+            line-height 22px
+          }
+
+          .use-case-desc {
+            color #414b4f
+            font-size 12px
+            line-height 18px
+          }
+
+          @media (max-width $screen-md-min) {
+            min-height 0
           }
         }
       }
