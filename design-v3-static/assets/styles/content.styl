@@ -56,22 +56,21 @@ body {
       height 640px
       background-image url($pathsImages + 'bg-main.svg')
       background-repeat no-repeat
-      background-position right 30px top 70px
+      background-position right 0px top 70px
 
 
       @media (max-width $screen-md-min) {
         height 320px
-        background-position 100% 30px
+        background-position right 0 top 30px
         background-size auto 280px
       }
 
-      @media (max-width $screen-lg-min) and (min-width $screen-md-min) {
-        background-position right 20px top 70px
-        background-size auto 320px
+      @media (max-width $screen-xlg) and (min-width $screen-lg-min) {
+        background-position right 80px top 70px
       }
 
       @media (min-width $screen-xlg) {
-        background-position right 100px top 90px
+        background-position right 200px top 70px
       }
 
       .secure-the-future {
