@@ -1,0 +1,28 @@
+/* Use system font available */
+body {
+  font $font-size-base/$line-height-base 'ProximaNova'
+  -webkit-font-smoothing antialiased
+  text-rendering optimizeLegibility
+}
+
+/* Font weights */
+.font-weight-light {
+  font-weight $font-weight-light
+}
+
+.font-weight-normal {
+  font-weight $font-weight-normal
+}
+
+.font-weight-bold {
+  font-weight $font-weight-bold
+}
+
+a {
+  &:hover,
+  &:focus,
+  &:active {
+    outline none
+    text-decoration none
+  }
+}

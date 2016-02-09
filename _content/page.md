@@ -19,10 +19,13 @@ tags:
 ---
 <div class="content">
 <section class="promo-banner">
+<div class="container">
 <h1 class="secure-the-future">Secure The Future</h1>
 
-<h5 class="secure-the-future-desc">Passwordless Authentication, Data Encryption, & Data Integrity  for your Apps. Add in Minutes. Benefit Forever.</h5>
-<a class="btn btn-big-orange btn-get-started" href="/developers">Get started </a></section>
+<h5 class="secure-the-future-desc">Passwordless Authentication, Data Encryption &<br> Data Integrity  for your Apps. Add in Minutes. Benefit Forever.</h5>
+<a class="btn btn-big-orange btn-get-started" href="/developers">Get started </a>
+</div>
+</section>
 
 <section class="feed">
 <div class="container">
@@ -115,7 +118,19 @@ languages you love.</div>
 </section>
 -->
 
-<section class="advantages" style="border-top: 1px solid #BEC4C6;">
+<section class="our-partners">
+    <div class="container">
+        <h3 class="title">Our Partners</h3>
+        <ul class="logos">
+            <li class="logo jquery"></li>
+            <li class="logo bloomberg"></li>
+            <li class="logo google"></li>
+            <li class="logo evernote"></li>
+        </ul>
+    </div>
+</section>
+
+<section class="advantages">
 <div class="container">
 <h3 class="title">Advantages</h3>
 
