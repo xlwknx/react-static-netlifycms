@@ -9341,6 +9341,79 @@ body.internal .content .wrapper figure .fig-description {
   font-weight: 400;
   color: #414b4f;
 }
+body.internal .content .wrapper .diagram-wrapper {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding: 0 30px;
+}
+body.internal .content .wrapper .diagram-wrapper img {
+  max-width: 100%;
+}
+body.internal .content .wrapper .column-wrapper {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+body.internal .content .wrapper .feature-list {
+  list-style-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjExcHgiIGhlaWdodD0iMTJweCIgdmlld0JveD0iMCAwIDExIDEyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy41LjEgKDI1MjM0KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT7in7Y8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4KICAgICAgICA8ZyBpZD0iVmlyZ2lsU2VjdXJpdHktLS1XaGF0LWlzLVZpcmdpbCIgc2tldGNoOnR5cGU9Ik1TQXJ0Ym9hcmRHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI2MC4wMDAwMDAsIC03MDYuMDAwMDAwKSIgZmlsbD0iI0RBMzIyQyI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC04IiBza2V0Y2g6dHlwZT0iTVNMYXllckdyb3VwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNjAuMDAwMDAwLCA1NDYuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMC40MDg4NjE2NTQsMTY1LjAwNzY1NCBMNy45ODUxNDIzLDE2NS4wMDc2NTQgTDUuMDc3Mzc0MjUsMTYxLjMxMjYzIEw1LjgyNjUzNzIsMTYwLjYxNDI1OCBMMTAuODE2NzI0MywxNjUuNDUyMDczIEwxMC44MTY3MjQzLDE2Ni4yNjQ3MjQgTDUuODI2NTM3MiwxNzEuMTAyNTM5IEw1LjA3NzM3NDI1LDE3MC40MDQxNjcgTDcuOTg1MTQyMywxNjYuNjk2NDQ1IEwwLjQwODg2MTY1NCwxNjYuNjk2NDQ1IEwwLjQwODg2MTY1NCwxNjUuMDA3NjU0IFoiIGlkPSLin7YiIHNrZXRjaDp0eXBlPSJNU1NoYXBlR3JvdXAiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+);
+  padding-left: 20px;
+}
+body.internal .content .wrapper .feature-list .feature-item {
+  color: #414b4f;
+  font-size: 16px;
+  line-height: 26px;
+  padding-left: 20px;
+  margin-bottom: 26px;
+}
+body.internal .content .wrapper .feature-list .feature-item a {
+  color: #e03727;
+}
+body.internal .content .wrapper .feature-list .feature-item:last-child {
+  margin-bottom: 0;
+}
+body.internal .content .wrapper .text-content-header {
+  color: #1f363d;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  margin-top: 20px;
+}
+body.internal .content .wrapper .text-content {
+  color: #414b4f;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+}
+body.internal .content .wrapper .text-content a {
+  color: #e03727;
+}
+body.internal .content .wrapper .table-content {
+  margin-top: 20px;
+}
+body.internal .content .wrapper .table-content tr:first-child td {
+  border-top: 1px solid #da322c;
+}
+body.internal .content .wrapper .table-content tr:last-child td {
+  border-bottom: 1px solid #ddd;
+}
+body.internal .content .wrapper .table-content .term {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  color: #4b555f;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  vertical-align: top;
+  padding-top: 1em;
+  padding-left: 2em;
+}
+body.internal .content .wrapper .table-content .value {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #df3a32;
+  vertical-align: middle;
+  width: 50%;
+}
 @media (min-width: 720px) {
   body.internal .content .wrapper {
     padding-top: 50px;
@@ -9354,6 +9427,9 @@ body.internal .content .wrapper figure .fig-description {
     font-size: 14px;
     line-height: 22px;
   }
+}
+body.internal .content #what-virgil-uses {
+  padding-top: 50px;
 }
 @media (min-width: 720px) {
   body.internal .content .api-documentations .column {

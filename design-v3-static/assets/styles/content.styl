@@ -1188,6 +1188,99 @@ body {
           }
         }
 
+        .diagram-wrapper {
+          margin-top 50px
+          margin-bottom 20px
+          padding 0 30px
+
+          img {
+            max-width 100%
+          }
+        }
+
+        .column-wrapper {
+          padding-left 24px
+          padding-right 24px
+        }
+
+        .feature-list {
+          list-style-image url($pathsImages + 'list-item-arrow.svg')
+          padding-left 20px
+
+          .feature-item {
+            color #414b4f
+            font-size 16px
+            line-height 26px
+            padding-left 20px
+            margin-bottom 26px
+
+            a {
+              color #E03727
+            }
+
+            &:last-child {
+              margin-bottom 0
+            }
+          }
+        }
+
+        .text-content-header {
+          color #1f363d
+          font-size 20px
+          font-weight $font-weight-bolder
+          line-height 28px
+          margin-top 20px
+        }
+
+        .text-content {
+          color #414b4f
+          font-size 16px
+          line-height 26px
+          font-weight $font-weight-normal
+
+          a {
+            color #E03727
+          }
+        }
+
+        .table-content {
+          margin-top 20px
+
+          tr:first-child {
+            td {
+              border-top 1px solid #DA322C
+            }
+          }
+
+          tr:last-child {
+            td {
+              border-bottom 1px solid #ddd
+            }
+          }
+
+          .term {
+            font-size 12px
+            font-weight $font-weight-bolder
+            line-height 14px
+            color #4B555F
+            text-transform uppercase
+            letter-spacing 1px
+            vertical-align top
+            padding-top 1em
+            padding-left 2em
+          }
+
+          .value {
+            font-size 16px
+            font-weight $font-weight-normal
+            line-height 19px
+            color #DF3A32
+            vertical-align middle
+            width 50%
+          }
+        }
+
+
         @media (min-width $screen-md-min) {
           padding-top 50px
           padding-bottom 50px
@@ -1205,6 +1298,10 @@ body {
             }
           }
         }
+      }
+
+      #what-virgil-uses {
+        padding-top 50px
       }
 
       .api-documentations {
@@ -1363,7 +1460,6 @@ body {
           }
         }
       }
-
 
       .use-cases {
         .use-case {
