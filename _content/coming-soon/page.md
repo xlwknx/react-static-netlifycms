@@ -4,7 +4,7 @@ title: "Coming Soon"
 ---
 
 <div class="content">
-    <section class="coming-soon">
+    <section class="under-construction">
         <h1 class="title">
           We are working hard to Secure the Future.
         </h1>
