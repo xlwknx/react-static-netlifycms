@@ -719,10 +719,9 @@ body {
       }
     }
 
-    .not-found-404 {
+    .not-found-404, .coming-soon {
       padding-top 348px
       min-height 770px
-      background-image url($pathsImages + '404.svg')
       background-color #f6f6f6
       background-position 50% 155px
       background-repeat no-repeat
@@ -731,22 +730,33 @@ body {
       .title {
         padding 0 10px
         text-align center
-        font-size 36px
+        font-size 32px
         color #1f363d
-        line-height 50px
+        line-height 36px
+        font-weight $font-weight-normal
       }
 
       .desc {
+        max-width 450px
+        margin 20px auto 0
         padding 0 10px
         text-align center
-        font-size 20px
-        color #525d62
-        line-height 31px
+        font-size 14px
+        color #5C686D
+        line-height 22px
 
         a {
           color #da322c
         }
       }
+    }
+
+    .not-found-404 {
+      background-image url($pathsImages + '404.svg')
+    }
+
+    .coming-soon {
+      background-image url($pathsImages + 'coming-soon.svg')
     }
 
     .auth-wrapper {

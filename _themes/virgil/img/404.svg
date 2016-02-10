@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="350px" height="142px" viewBox="0 0 350 142" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
-    <title>Shape + Group + C# Copy + 4 + 4 copy</title>
+<svg width="274px" height="113px" viewBox="0 0 274 113" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5.1 (25234) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="VirgilSecurity---404" sketch:type="MSArtboardGroup" transform="translate(-545.000000, -235.000000)">
-            <g id="Shape-+-Group-+-C#-Copy-+-4-+-4-copy" sketch:type="MSLayerGroup" transform="translate(545.000000, 235.000000)">
-                <g id="Shape-+-Group-+-C#-Copy" transform="translate(120.000000, 0.000000)" stroke-width="8" stroke="#888888" sketch:type="MSShapeGroup">
-                    <g id="Shape-+-Group">
-                        <path d="M54.7780143,0.617384058 L54.7780143,0.617384058 L55.4949832,0.485328907 L56.2119566,0.617359295 L107.25294,10.0165371 L110.5,10.6144819 L110.5,13.9206877 L110.5,87.2498453 C110.5,93.8787495 107.631932,100.779341 102.1257,107.82363 C97.4486551,113.797639 90.9225845,119.827428 82.7158597,125.784093 C74.3785321,131.82242 65.3770142,137.037512 57.2522186,141.061171 L55.493532,141.932129 L53.7354439,141.059961 C45.5943465,137.021248 36.614351,131.817422 28.2751238,125.780628 C20.0638912,119.814974 13.5340691,113.786516 8.8600047,107.821618 C3.36546598,100.794106 0.5,93.8827938 0.5,87.2498453 L0.5,13.9206877 L0.5,10.6145979 L3.74692556,10.0165618 L54.7780143,0.617384058 Z" id="Path"></path>
-                    </g>
+    <defs>
+        <path id="path-1" d="M42.4420156,0.66468633 L42.4420156,0.66468633 L42.9961228,0.562727915 L43.5502335,0.664667211 L82.9970997,7.92167501 L85.50658,8.38334205 L85.50658,10.9360293 L85.50658,67.5527122 C85.50658,72.6708205 83.2900028,77.9986954 79.0345278,83.4375182 C75.4198885,88.0499886 70.376235,92.7055262 64.0336931,97.3046055 C57.5902152,101.966736 50.6334199,105.993254 44.3541967,109.09988 L42.9950012,109.772337 L41.6362682,109.098945 C35.3444463,105.980697 28.4042846,101.962877 21.9593386,97.3019308 C15.6133128,92.6959105 10.56676,88.0414006 6.95442377,83.4359649 C2.7079865,78.0100958 0.493419969,72.6739431 0.493419969,67.5527122 L0.493419969,10.9360293 L0.493419969,8.38343156 L3.00279636,7.92169413 L42.4420156,0.66468633 Z"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="VirgilSecurity---404" sketch:type="MSArtboardGroup" transform="translate(-584.000000, -235.000000)">
+            <g id="Group-4" sketch:type="MSLayerGroup" transform="translate(581.000000, 204.000000)">
+                <text id="4" sketch:type="MSTextLayer" font-family="Proxima Nova" font-size="145" font-weight="bold" sketch:alignment="middle" fill="#BEC4C6">
+                    <tspan x="0.2175" y="144">4</tspan>
+                </text>
+                <text id="4" sketch:type="MSTextLayer" font-family="Proxima Nova" font-size="145" font-weight="bold" sketch:alignment="middle" fill="#BEC4C6">
+                    <tspan x="194.2175" y="144">4</tspan>
+                </text>
+                <g id="virgil-pass" transform="translate(99.000000, 31.000000)">
+                    <mask id="mask-2" sketch:name="Mask" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" stroke="#424B54" stroke-width="7" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
                 </g>
-                <path d="M82.9390299,125.79264 L82.9390299,101.214852 L98.2556222,101.214852 L98.2556222,78.9523636 L82.9390299,78.9523636 L82.9390299,7 L48.0314476,7 L0.834971514,81.2676624 L0.834971514,101.214852 L57.6488427,101.214852 L57.6488427,125.79264 L82.9390299,125.79264 Z M57.6488427,78.9523636 L25.590859,78.9523636 L57.6488427,29.4405886 L57.6488427,78.9523636 Z" id="4" fill="#888888" sketch:type="MSShapeGroup"></path>
-                <path d="M333.93903,125.79264 L333.93903,101.214852 L349.255622,101.214852 L349.255622,78.9523636 L333.93903,78.9523636 L333.93903,7 L299.031448,7 L251.834972,81.2676624 L251.834972,101.214852 L308.648843,101.214852 L308.648843,125.79264 L333.93903,125.79264 Z M308.648843,78.9523636 L276.590859,78.9523636 L308.648843,29.4405886 L308.648843,78.9523636 Z" id="4" fill="#888888" sketch:type="MSShapeGroup"></path>
             </g>
         </g>
     </g>
