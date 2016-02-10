@@ -1,6 +1,6 @@
 ---
 _fieldset: post
-title: Documentations
+title: API Docs
 tags:
   - Virgil
   - Encryption
