@@ -1,6 +1,6 @@
 ---
 _fieldset: page
-title: About Virgil
+title: About
 _template: page
 tags:
   - Virgil
