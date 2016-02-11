@@ -15,15 +15,15 @@ _template: page
                 <div class="column-wrapper col-xs-40 col-xs-offset-4 col-md-24 col-md-offset-0">
                     <ul class="feature-list">
                         <li class="feature-item">Everything you need to deploy end to end security in your application. </li>
-                        <li class="feature-item">Open Source, modern, transparent cryptography with support from Virgil and ARM. </li>
-                        <li class="feature-item">Support for most modern development languages  and platforms.</li>
+                        <li class="feature-item">Open Source, modern, transparent cryptography with support from Virgil and ARM.  </li>
+                        <li class="feature-item">Continuous support for the most modern development  languages and platforms.</li>
                     </ul>
                 </div>
                 <div class="column-wrapper col-xs-40 col-xs-offset-4 col-md-24 col-md-offset-0">
                     <ul class="feature-list">
-                        <li class="feature-item">Embedded applications support: ARM Cortex M0 and other deeply embedded systems. </li>
-                        <li class="feature-item">Global, verifiable, flexible key infrastructure.</li>
-                        <li class="feature-item">World’s most agile security engine with per datagram crypto agility.</li>
+                        <li class="feature-item">World’s most agile security engine with per datagram  crypto agility. </li>
+                        <li class="feature-item">Embedded applications support: ARM Cortex M0 and  other deeply embedded systems.</li>
+                        <li class="feature-item">Global, verifiable, flexible key infrastructure in the core  of the ecosystem.</li>
                     </ul>
                 </div>
             </div>

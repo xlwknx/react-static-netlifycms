@@ -38,7 +38,7 @@
                                 </g>
                                 <path d="M56.6995211,89.1173443 L56.6995211,84.2698978 L53.7866123,84.2698978 C52.1359639,84.2698978 50.7766065,82.8009747 50.7766065,80.6955182 L50.7766065,72.2736921 C50.7766065,70.2171997 50.1454762,68.5524201 48.5433764,67.8669226 C50.1454762,67.1814251 50.7766065,65.5166456 50.7766065,63.4601531 L50.7766065,55.038327 C50.7766065,52.8349423 52.1359639,51.4639474 53.7866123,51.4639474 L56.6995211,51.4639474 L56.6995211,46.6165009 L53.7866123,46.6165009 C49.4657975,46.6165009 45.5333706,49.7991678 45.5333706,55.038327 L45.5333706,62.6277633 C45.5333706,64.4394352 44.7080464,65.8593943 43.0088496,65.8593943 L43.0088496,69.8744509 C44.7080464,69.8744509 45.5333706,71.29441 45.5333706,73.1060819 L45.5333706,80.7444823 C45.5333706,85.9836415 49.4657975,89.1173443 53.7866123,89.1173443 L56.6995211,89.1173443 Z M70.7785805,89.1173443 L73.6914894,89.1173443 C78.0123041,89.1173443 81.9447311,85.9836415 81.9447311,80.7444823 L81.9447311,73.1060819 C81.9447311,71.29441 82.7700552,69.8744509 84.4692521,69.8744509 L84.4692521,65.8593943 C82.7700552,65.8593943 81.9447311,64.4394352 81.9447311,62.6277633 L81.9447311,55.038327 C81.9447311,49.7991678 78.0123041,46.6165009 73.6914894,46.6165009 L70.7785805,46.6165009 L70.7785805,51.4639474 L73.6914894,51.4639474 C75.3421377,51.4639474 76.7014952,52.8349423 76.7014952,55.038327 L76.7014952,63.4601531 C76.7014952,65.5166456 77.3326254,67.1814251 78.9347253,67.8669226 C77.3326254,68.5524201 76.7014952,70.2171997 76.7014952,72.2736921 L76.7014952,80.6955182 C76.7014952,82.8009747 75.3421377,84.2698978 73.6914894,84.2698978 L70.7785805,84.2698978 L70.7785805,89.1173443 Z" id="{-}" stroke="#2C302E" stroke-width="2.4" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
                             </g>
-                            <text id="Virgil-Keys-API" sketch:type="MSTextLayer" font-family="Proxima Nova" font-size="20" font-weight="bold" sketch:alignment="middle" line-spacing="28" fill="#1F363D">
+                            <text id="Virgil-Keys-API" sketch:type="MSTextLayer" font-family="Proxima Nova, sans-serif" font-size="20" font-weight="bold" sketch:alignment="middle" line-spacing="28" fill="#1F363D">
                                 <tspan x="45.76" y="138">Virgil Keys</tspan>
                                 <tspan x="78.17" y="166">API</tspan>
                             </text>
@@ -56,7 +56,7 @@
                                     </g>
                                 </g>
                             </g>
-                            <text id="Virgil-Crypto-Librar" sketch:type="MSTextLayer" font-family="Proxima Nova" font-size="20" font-weight="bold" sketch:alignment="middle" line-spacing="28" fill="#1F363D">
+                            <text id="Virgil-Crypto-Librar" sketch:type="MSTextLayer" font-family="Proxima Nova, sans-serif" font-size="20" font-weight="bold" sketch:alignment="middle" line-spacing="28" fill="#1F363D">
                                 <tspan x="0.49" y="138">Virgil Crypto</tspan>
                                 <tspan x="26.2" y="166">Library</tspan>
                             </text>
@@ -96,7 +96,7 @@
                                     <path d="M70.8545918,11.647541 L46.0394294,11.647541" id="Line" stroke-width="0.8" stroke-linecap="square"></path>
                                 </g>
                             </g>
-                            <text id="Virgil-Keys-Services" sketch:type="MSTextLayer" font-family="Proxima Nova" font-size="20" font-weight="bold" sketch:alignment="middle" line-spacing="28" fill="#1F363D">
+                            <text id="Virgil-Keys-Services" sketch:type="MSTextLayer" font-family="Proxima Nova, sans-serif" font-size="20" font-weight="bold" sketch:alignment="middle" line-spacing="28" fill="#1F363D">
                                 <tspan x="22.26" y="138">Virgil Keys </tspan>
                                 <tspan x="32.42" y="166">Services</tspan>
                             </text>
@@ -104,7 +104,7 @@
                     </g>
                 </g>
                 <g id="Group-7" transform="translate(0.000000, 169.000000)">
-                    <text id="Virgil-Security-Stac" sketch:type="MSTextLayer" font-family="Proxima Nova" font-size="20" font-weight="bold" sketch:alignment="middle" line-spacing="28" fill="#DA322C">
+                    <text id="Virgil-Security-Stac" sketch:type="MSTextLayer" font-family="Proxima Nova, sans-serif" font-size="20" font-weight="bold" sketch:alignment="middle" line-spacing="28" fill="#DA322C">
                         <tspan x="240.87" y="105">Virgil Security Stack</tspan>
                     </text>
                     <path d="M330.585105,0.443936946 C336.499716,0.443936946 340.347176,27.7864323 409.338993,27.7864323 C478.330811,27.7864323 421.032962,27.7864323 612.172711,27.7864323 C611.14641,27.1950676 660.223808,27.7864326 662.954935,69.317446" id="Path-5-Copy" stroke="#DA322C" stroke-width="2" sketch:type="MSShapeGroup" transform="translate(496.770020, 34.880691) scale(1, -1) translate(-496.770020, -34.880691) "></path>
