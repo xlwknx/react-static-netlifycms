@@ -119,15 +119,6 @@ languages you love.</div>
 -->
 
 <section class="our-partners">
-    <div class="container">
-        <h3 class="title">Our Partners</h3>
-        <ul class="logos">
-            <li class="logo jquery"></li>
-            <li class="logo bloomberg"></li>
-            <li class="logo google"></li>
-            <li class="logo evernote"></li>
-        </ul>
-    </div>
 </section>
 
 <section class="advantages">

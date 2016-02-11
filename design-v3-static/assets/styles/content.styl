@@ -2,7 +2,7 @@ body {
   white-content-block-title = @block {
     position relative
     max-width 165px
-    height 54px
+    height 44px
     margin 50px auto 20px
     font-size 16px
     color #da322c
@@ -16,8 +16,8 @@ body {
       content ' '
       display block
       position absolute
-      left 33%
-      right 33%
+      left 35%
+      right 35%
       bottom 0
       border-bottom 2px solid rgba(30, 54, 61, 0.26)
     }
@@ -35,7 +35,7 @@ body {
   }
 
   white-content-block-desc = @block {
-    max-width 632px
+    max-width 620px
     margin 0 auto
     font-size 32px
     color #1b2021
@@ -53,10 +53,10 @@ body {
 
   .content {
     .promo-banner {
-      height 640px
+      height 560px
       background-image url($pathsImages + 'bg-main.svg')
       background-repeat no-repeat
-      background-position right 0px top 70px
+      background-position right 0px top 50px
 
 
       @media (max-width $screen-md-min) {
@@ -66,11 +66,11 @@ body {
       }
 
       @media (max-width $screen-xlg) and (min-width $screen-lg-min) {
-        background-position right 80px top 70px
+        background-position right 130px top 50px
       }
 
       @media (min-width $screen-xlg) {
-        background-position right 200px top 70px
+        background-position right 230px top 50px
       }
 
       .secure-the-future {
@@ -79,7 +79,7 @@ body {
         font-size 50px
         color $color-white
         line-height 61px
-        padding-top 140px
+        padding-top 126px
         margin 0
 
         @media (max-width $screen-md-min) {
@@ -95,7 +95,7 @@ body {
         font-size 20px
         color $color-white
         line-height 36px
-        margin-top 40px
+        margin-top 30px
 
         @media (max-width $screen-md-min) {
           width auto
@@ -108,7 +108,7 @@ body {
       }
 
       .btn-get-started {
-        margin 50px 0 0
+        margin 65px 0 0
         width 288px
         font-size 16px
 
@@ -120,9 +120,9 @@ body {
     }
 
     .feed {
-      $feed-height = 70px
+      $feed-height = 60px
 
-      height 70px
+      height $feed-height
       background #2c302e
 
       @media (max-width $screen-lg-min) {
@@ -141,6 +141,7 @@ body {
           width 26px
           height $feed-height
           background transparent url($pathsImages + 'bubble-feed.svg') 0 50% no-repeat
+          background-size contain
 
           @media (max-width $screen-lg-min) {
             background-position 50% 50%
@@ -197,14 +198,22 @@ body {
       }
 
       .shields {
-        margin-top 66px
+        margin-top 64px
 
         @media (max-width $screen-md-min) {
           margin-top 60px
         }
 
         .shield-item {
-          padding 0 20px
+          padding 0 22px
+
+          &:first-child {
+            padding-left 0
+          }
+
+          &:last-child {
+            padding-right 0
+          }
 
           @media (max-width $screen-lg-min) {
             padding-bottom 40px
@@ -215,7 +224,7 @@ body {
           }
 
           .shield-icon {
-            height 107px
+            height 115px
 
             @media (max-width $screen-md-min) {
               height 90px
@@ -232,7 +241,7 @@ body {
 
             &.step2 {
               background transparent url($pathsImages + 'encrypt.svg')
-              background-position 33px 50%
+              background-position 30px 50%
 
               @media (min-width $screen-sm-min) and (max-width $screen-lg-min) {
                 background-position 50% 50%
@@ -271,7 +280,7 @@ body {
           }
 
           .shield-title {
-            margin-top 24px
+            margin-top 28px
             font-size 18px
             color #1f363d
             line-height 24px
@@ -301,7 +310,7 @@ body {
     }
 
     .our-partners {
-      background #f0f0f0
+      border-top 1px solid #f0f0f0
 
       .title {
         margin-top 0
@@ -313,63 +322,6 @@ body {
         text-align center
         text-transform uppercase
         font-weight $font-weight-bolder
-      }
-
-      .logos {
-        padding 20px 0 40px
-        text-align center
-
-        @media (max-width $screen-md-min) {
-          padding-top 20px
-        }
-
-        .logo {
-          display inline-block
-          min-height 46px
-          background-color transparent
-          background-position 50% 50%
-          background-repeat no-repeat
-          background-size 100% auto
-          margin 5px 30px
-
-          &:first-child {
-            margin-left 0
-          }
-
-          &:last-child {
-            margin-right 0
-          }
-
-          &.jquery {
-            width 180px
-            background-image url($pathsImages + 'jquery_logo.svg')
-          }
-
-          &.bloomberg {
-            width 220px
-            background-image url($pathsImages + 'Bloomberg_logo.svg')
-          }
-
-          &.google {
-            width 138px
-            background-image url($pathsImages + 'google_logo.svg')
-          }
-
-          &.evernote {
-            width 182px
-            background-image url($pathsImages + 'evernote_logo.svg')
-          }
-
-          @media (max-width 920px) {
-            max-width 160px
-            margin 5px 20px
-          }
-
-          @media (max-width $screen-md-min) {
-            max-width 120px
-            margin 5px 10px
-          }
-        }
       }
     }
 
@@ -389,14 +341,13 @@ body {
       }
 
       .slides {
-        margin-top 70px
+        margin-top 60px
 
         @media (max-width $screen-md-min) {
           margin-top 10px
         }
 
         .carousel {
-          max-height 590px
           padding-bottom 20px
 
           @media (max-width $screen-md-min) {
@@ -430,7 +381,6 @@ body {
 
           .carousel-inner {
             .item {
-              min-height 480px
 
               @media (max-width $screen-sm-min) {
                 min-height 360px
@@ -457,6 +407,7 @@ body {
                 }
 
                 .item-title {
+                  padding-top 10px
                   padding-bottom 18px
                   font-size 26px
                   color #1f363d
@@ -474,6 +425,7 @@ body {
                   font-size 16px
                   color #525d62
                   line-height 26px
+                  min-height 78px
                   font-weight $font-weight-normal
                   text-align center
 
@@ -485,30 +437,16 @@ body {
               }
 
               .item-img {
-                width 90%
-                min-height 312px
+                width 100%
+                min-height 251px
                 margin 0 auto
                 background-color transparent
                 background-position 50% 50%
                 background-repeat no-repeat
-                background-size 60% auto
+                background-size contain
 
-                @media (max-width $screen-sm-min) {
+                @media (max-width $screen-md-min) {
                   min-height 168px
-                  background-size 80% auto
-                }
-
-                @media (min-width $screen-xs-min) and (max-width $screen-sm-min) {
-                  min-height 168px
-                  background-size 80% auto
-                }
-
-                @media (min-width $screen-sm-min) and (max-width $screen-md-min) {
-                  min-height 232px
-                }
-
-                @media (min-width $screen-md-min) and (max-width $screen-lg-min) {
-                  min-height 288px
                 }
               }
 
@@ -516,19 +454,11 @@ body {
                 .item-img {
                   background-image url($pathsImages + 'slide-developers.svg')
                 }
-
-                @media (max-width $screen-md-min) {
-
-                }
               }
 
               &.enterprise {
                 .item-img {
                   background-image url($pathsImages + 'slide-enterprise.svg')
-                }
-
-                @media (max-width $screen-md-min) {
-
                 }
               }
 
@@ -536,29 +466,18 @@ body {
                 .item-img {
                   background-image url($pathsImages + 'slide-cloud.svg')
                 }
-
-                @media (max-width $screen-md-min) {
-
-                }
               }
 
               &.secure-internet {
                 .item-img {
                   background-image url($pathsImages + 'slide-secure-internet.svg')
-                }
-
-                @media (max-width $screen-md-min) {
-
+                  background-size 60% auto
                 }
               }
 
               &.identity {
                 .item-img {
                   background-image url($pathsImages + 'slide-identity.svg')
-                }
-
-                @media (max-width $screen-md-min) {
-
                 }
               }
             }
@@ -584,8 +503,8 @@ body {
             margin 0
             width auto
             height auto
-            padding-left 37px
-            padding-right 37px
+            padding-left 48px
+            padding-right 48px
             border none
             border-radius 0
             border-left 2px solid #c4c4c4
@@ -595,7 +514,6 @@ body {
             letter-spacing 1.33px
             text-transform uppercase
             font-weight $font-weight-bolder
-            text-indent 0
 
             @media (max-width $screen-md-min) {
               display block
