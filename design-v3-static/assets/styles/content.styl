@@ -1082,10 +1082,10 @@ body {
         }
 
         figure {
-          padding 30px 30px 0 30px
+          padding-top 30px
 
           img {
-            max-width 72px
+            max-width 90px
             min-height 48px
           }
 
@@ -1094,7 +1094,7 @@ body {
             line-height 24px
             font-weight $font-weight-bolder
             color #1f363d
-            margin-top 20px
+            margin-top 12px
           }
 
           .fig-description {
@@ -1117,8 +1117,16 @@ body {
         }
 
         .column-wrapper {
-          padding-left 24px
-          padding-right 24px
+          padding-left 26px
+          padding-right 26px
+
+          &:first-child {
+            padding-left 0
+          }
+
+          &:last-child {
+            padding-right 0
+          }
         }
 
         .feature-list {
@@ -1226,13 +1234,14 @@ body {
         @media (min-width $screen-md-min) {
           .column {
             position relative
+
             &:not(:first-child):before {
               content ''
               position absolute
               top 70px
               left 0
-              height 50%
-              border-left 1px solid #dbdedf
+              height 60%
+              border-left 1px solid #DBDEDF
             }
           }
           figure {
@@ -1262,8 +1271,10 @@ body {
       .documentations {
         .shield {
           display inline-block
-          padding-top 50px
+          padding-top 45px
           text-align center
+          padding-left 12px
+          padding-right 12px
 
           .shield-link {
             color #1f363d
@@ -1279,8 +1290,8 @@ body {
 
           .icon {
             display block
-            width 60px
-            height 76.2px
+            width 72px
+            height 93px
             margin 0 auto
             background-color transparent
             background-position 0 50%
@@ -1365,14 +1376,14 @@ body {
             }
           }
 
-          &.ruby {
+          &.java-android {
             .icon {
-              background-image url($pathsImages + 'ruby-off.svg')
+              background-image url($pathsImages + 'java-android-off.svg')
             }
 
             &.active, &:hover {
               .icon {
-                background-image url($pathsImages + 'ruby-on.svg')
+                background-image url($pathsImages + 'java-android-on.svg')
               }
             }
           }
@@ -1389,6 +1400,11 @@ body {
           padding 24px 32px
           text-align center
           min-height 208px
+
+          &:hover {
+            background #f6f6f6
+            border-color #DA322C
+          }
 
           .use-case-title {
             color #1f363d

@@ -12,23 +12,29 @@ tags:
 ---
 
 <div class="content">
+    {{ theme:partial src="developers-docs-top-wrapper" }}
+    
     <section class="api-documentations wrapper">
         <div class="container">
             <h3 class="title">API Documentations</h3>
             <div class="row">
                 <div class="column col-xs-40 col-xs-offset-4 col-md-24 col-md-offset-0">
-                    <figure>
-                        <img src="{{ theme:img src='crypto-lib-logo.png' }}" alt="Crypto Library logo"/>
-                        <figcaption>Crypto library</figcaption>
-                        <p class="fig-description">Virgil is a stack of security libraries (ECIES with Crypto Agility wrapped in Virgil Cryptogram) and all the necessary infrastructure to enable seamless, end-to-end encryption for any application, platform or device.</p>
-                    </figure>
+                    <a href="#">
+                        <figure>
+                            <img src="{{ theme:img src='crypto-lib-logo.png' }}" alt="Crypto Library logo"/>
+                            <figcaption>Crypto library</figcaption>
+                            <p class="fig-description">Virgil is a stack of security libraries (ECIES with Crypto Agility wrapped in Virgil Cryptogram) and all the necessary infrastructure to enable seamless, end-to-end encryption for any application, platform or device.</p>
+                        </figure>
+                    </a>
                 </div>
                 <div class="column col-xs-40 col-xs-offset-4 col-md-24 col-md-offset-0">
-                    <figure>
-                        <img src="{{ theme:img src='keys-services-logo.png' }}" alt="Keys Services logo"/>
-                        <figcaption>Keys Services</figcaption>
-                        <p class="fig-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consectetur ac neque eget convallis. Morbi imperdiet a eros non laoreet. Sed ac arcu vel quam mollis aliquam ac ac eros.  Morbi imperdiet a eros non laoreet.</p>
-                    </figure>
+                    <a href="#">
+                        <figure>
+                            <img src="{{ theme:img src='keys-services-logo.png' }}" alt="Keys Services logo"/>
+                            <figcaption>Keys Services</figcaption>
+                            <p class="fig-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consectetur ac neque eget convallis. Morbi imperdiet a eros non laoreet. Sed ac arcu vel quam mollis aliquam ac ac eros.  Morbi imperdiet a eros non laoreet.</p>
+                        </figure>
+                    </a>
                 </div>
             </div>
         </div>
@@ -38,32 +44,36 @@ tags:
         <div class="container">
             <h3 class="title">Services</h3>
             <div class="row">
-                <div class="column col-xs-48 col-md-16">
-                    <figure>
-                        <img src="{{ theme:img src='public-key.svg' }}" alt="Public Key" />
-                        <figcaption>Public Keys</figcaption>
-                        <p class="fig-description">Virgil is a stack of security libraries (ECIES with Crypto Agility wrapped in Virgil Cryptogram) and all the necessary infrastructure.</p>
-                    </figure>
+                <div class="column-wrapper col-xs-48 col-md-16">
+                    <a href="#">
+                        <figure>
+                            <img src="{{ theme:img src='public-key.svg' }}" alt="Public Key" />
+                            <figcaption>Public Keys</figcaption>
+                            <!-- <p class="fig-description">Virgil is a stack of security libraries (ECIES with Crypto Agility wrapped in Virgil Cryptogram) and all the necessary infrastructure.</p> -->
+                        </figure>
+                    </a>
                 </div>
-                <div class="column col-xs-48 col-md-16">
-                    <figure>
-                        <img src="{{ theme:img src='private-key.svg' }}" alt="Private Key" />
-                        <figcaption>Private Keys</figcaption>
-                        <p class="fig-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consectetur ac neque eget convallis.</p>
-                    </figure>
+                <div class="column-wrapper col-xs-48 col-md-16">
+                    <a href="#">
+                        <figure>
+                            <img src="{{ theme:img src='private-key.svg' }}" alt="Private Key" />
+                            <figcaption>Private Keys</figcaption>
+                            <!-- <p class="fig-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consectetur ac neque eget convallis.</p> -->
+                        </figure>
+                    </a>
                 </div>
-                <div class="column col-xs-48 col-md-16">
-                    <figure>
-                        <img src="{{ theme:img src='identity.svg' }}" alt="Identity" />
-                        <figcaption>Identity</figcaption>
-                        <p class="fig-description">Virgil is a stack of security libraries (ECIES with Crypto Agility wrapped in Virgil Cryptogram) and all the necessary infrastructure.</p>
-                    </figure>
+                <div class="column-wrapper col-xs-48 col-md-16">
+                    <a href="#">
+                        <figure>
+                            <img src="{{ theme:img src='identity.svg' }}" alt="Identity" />
+                            <figcaption>Identity</figcaption>
+                            <!-- <p class="fig-description">Virgil is a stack of security libraries (ECIES with Crypto Agility wrapped in Virgil Cryptogram) and all the necessary infrastructure.</p> -->
+                        </figure>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-
-    {{ theme:partial src="developers-docs-top-wrapper" }}
 
     <section class="use-cases wrapper">
         <div class="container">

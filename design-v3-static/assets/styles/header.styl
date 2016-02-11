@@ -1,6 +1,6 @@
 body {
   header {
-    border-top 3px solid #bb241d
+    border-top 2px solid #bb241d
 
     @media (max-width $screen-md-min) {
       position fixed
@@ -52,7 +52,7 @@ body {
 
             .navbar-logo-bg {
               position absolute
-              top -3px
+              top 0
               left 0
               height 101px
               width 80px
@@ -209,12 +209,12 @@ body {
             .navbar-header {
               .navbar-logo-bg {
                 .navbar-logo {
-                  top 13px
+                  top 15px
+                  left 10px
                   background url($pathsImages + 'logo-internal.svg') 0 0 no-repeat
 
                   @media (max-width $screen-md-min) {
-                    top 10px
-                    left 15px
+                    top 5px
                     background url($pathsImages + 'logo-sm.svg') 0 0 no-repeat
                   }
                 }
@@ -226,14 +226,12 @@ body {
                 li {
                   a {
                     @media (min-width $screen-md-min) {
-                      color #424b54
-                    }
+                      color #888
 
-                    &:hover,
-                    &:active,
-                    &.active {
-                      @media (min-width $screen-md-min) {
-                        color #da322c
+                      &:hover,
+                      &:active,
+                      &.active {
+                          color #424b54
                       }
                     }
                   }
