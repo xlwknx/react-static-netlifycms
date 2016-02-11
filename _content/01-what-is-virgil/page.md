@@ -8,9 +8,22 @@ _template: page
     <section class="what-is-virgil wrapper">
         <div class="container">
             <h3 class="title">What is Virgil</h3>
-            <div class="diagram-wrapper">
-                <img src="{{ theme:img src='virgil-stack.svg' }}" alt="Virgil Security Stack" />
+            <div id="virgil-stack-diagram">
+                <figure class="virgil-stack-component">
+                    <img src="{{ theme:img src='keys-services-logo.svg' }}" alt="Virgil Keys Services"/>
+                    <figcaption>Virgil Keys Services</figcaption>
+                </figure>
+                <figure class="virgil-stack-component">
+                    <img src="{{ theme:img src='keys-api-logo.svg' }}" alt="Virgil Keys API" />
+                    <figcaption>Virgil Keys API</figcaption>
+                </figure>
+                <figure class="virgil-stack-component">
+                    <img src="{{ theme:img src='crypto-library-logo.svg' }}" alt="Virgil Crypto Library" />
+                    <figcaption>Virgil Crypto Library</figcaption>
+                </figure>
+                
             </div>
+            <div id="virgil-stack-caption">Virgil Security Stack</div>
             <div class="text-left row">
                 <div class="column-wrapper col-xs-40 col-xs-offset-4 col-md-24 col-md-offset-0">
                     <ul class="feature-list">

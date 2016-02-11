@@ -21,7 +21,7 @@ tags:
                 <div class="column col-xs-40 col-xs-offset-4 col-md-24 col-md-offset-0">
                     <a href="#">
                         <figure>
-                            <img src="{{ theme:img src='crypto-lib-logo.png' }}" alt="Crypto Library logo"/>
+                            <img src="{{ theme:img src='crypto-library-logo.svg' }}" alt="Crypto Library logo"/>
                             <figcaption>Crypto library</figcaption>
                             <p class="fig-description">Virgil is a stack of security libraries (ECIES with Crypto Agility wrapped in Virgil Cryptogram) and all the necessary infrastructure to enable seamless, end-to-end encryption for any application, platform or device.</p>
                         </figure>
@@ -30,7 +30,7 @@ tags:
                 <div class="column col-xs-40 col-xs-offset-4 col-md-24 col-md-offset-0">
                     <a href="#">
                         <figure>
-                            <img src="{{ theme:img src='keys-services-logo.png' }}" alt="Keys Services logo"/>
+                            <img src="{{ theme:img src='keys-services-logo.svg' }}" alt="Keys Services logo"/>
                             <figcaption>Keys Services</figcaption>
                             <p class="fig-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consectetur ac neque eget convallis. Morbi imperdiet a eros non laoreet. Sed ac arcu vel quam mollis aliquam ac ac eros.  Morbi imperdiet a eros non laoreet.</p>
                         </figure>

@@ -1106,13 +1106,13 @@ body {
           }
         }
 
+
         .diagram-wrapper {
-          margin-top 50px
+          margin-top 30px
           margin-bottom 20px
-          padding 0 30px
 
           img {
-            max-width 100%
+            width 100%
           }
         }
 
@@ -1131,14 +1131,15 @@ body {
 
         .feature-list {
           list-style-image url($pathsImages + 'list-item-arrow.svg')
-          padding-left 20px
+          padding-left 18px
+          padding-right 12px
 
           .feature-item {
             color #414b4f
             font-size 16px
-            line-height 26px
-            padding-left 20px
-            margin-bottom 26px
+            line-height 24px
+            padding-left 16px
+            margin-bottom 24px
 
             a {
               color #E03727
@@ -1207,6 +1208,54 @@ body {
         }
 
 
+        #virgil-stack-diagram {
+          display table
+          max-width 100%
+          margin 50px auto 0
+
+          .virgil-stack-component {
+            display table-cell
+            width 33.3%
+            position relative
+            padding 0 24px
+
+            img {
+              height 104px
+              max-width 100%
+            }
+
+            &:after {
+              content ''
+              position absolute
+              top 50%
+              right 0
+              height 28px
+              width 28px
+              margin-top -28px
+              margin-right -14px
+              background url($pathsImages + 'plus.svg') no-repeat center
+            }
+
+            &:last-child:after {
+              content none
+            }
+          }
+        }
+
+        #virgil-stack-caption {
+          color #DA322C
+          font-size 20px
+          font-weight $font-weight-bolder
+          line-height 28px
+          background url($pathsImages + 'closing-brace-horizontal.svg') no-repeat center top
+          background-size contain
+          width 664px
+          max-width 100%
+          margin 0 auto 2em
+          padding-top 90px
+          text-align center
+        }
+
         @media (min-width $screen-md-min) {
           padding-top 50px
           padding-bottom 50px
@@ -1228,6 +1277,10 @@ body {
 
       #what-virgil-uses {
         padding-top 50px
+
+        .title {
+          margin-bottom 20px
+        }
       }
 
       .api-documentations {
