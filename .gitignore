@@ -11,3 +11,9 @@ node_modules
 .template-cache
 *.log
 app/storage/views/
+
+# compiled output
+dist
+
+# IDEs and editors
+/.idea

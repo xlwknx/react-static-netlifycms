@@ -1,0 +1,27 @@
+[class^="button-"] + [class^="button-raised"] {
+  margin-left: 15px;
+}
+
+.button-raised {
+  @include button-raised;
+}
+
+.button-raisedWhite {
+  @include button-raisedWhite;
+}
+
+.button-raisedStatic {
+  @include button-raisedStatic;
+}
+
+.button-raisedGithub {
+  @include button-raisedGithub;
+}
+
+.button-flat {
+  @include button-flat;
+}
+
+.button-flatWhite {
+  @include button-flatWhite;
+}

@@ -1,0 +1,244 @@
+.homepage {
+  .intro {
+    display: flex;
+    flex-direction: column;
+    background: url("../../assets/images/bg/home/intro-bg.png") right top no-repeat;
+
+    .introContentBlock {
+      flex: 2 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 920px;
+    }
+
+    .introMsg {
+      margin-bottom: 325px;
+      color: $vs-color-white;
+
+      &-headline {
+        @include hp-blockMsg-headline;
+        line-height: 1.5;
+      }
+
+      &-links {
+        display: flex;
+        margin-top: 40px;
+
+        a + a {
+          margin-left: 30px;
+        }
+      }
+    }
+
+    .introLangs {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      margin-bottom: 45px;
+
+      li {
+        opacity: 0.5;
+        transition: 0.5s opacity;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        & + li {
+          margin-left: 38px;
+        }
+
+        a {
+          display: block;
+        }
+
+        img {
+          display: block;
+          height: 40px;
+        }
+      }
+    }
+  }
+
+  .useCases {
+    &-caption {
+      position: absolute;
+    }
+
+    .useCasesMsg {
+      width: 715px;
+      margin: 0 auto;
+      padding: 130px 0 80px;
+      text-align: center;
+
+      &-headline {
+        @include hp-blockMsg-headline;
+      }
+
+      &-text {
+        @include hp-blockMsg-text();
+      }
+
+      &-links {
+        margin-top: 55px;
+      }
+    }
+  }
+
+  .clients {
+    background: $vs-color-lightGrey1;
+
+    &-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      height: 160px;
+      transition: 0.5s padding;
+
+      &:hover {
+        padding: 0 10px;
+
+        .clients-linkImage {
+          filter: blur(5px);
+        }
+
+        .clients-linkButton {
+          opacity: 1;
+        }
+      }
+    }
+
+    &-linkImage {
+      max-width: 100%;
+      transition: 0.5s filter;
+    }
+
+    &-linkButton {
+      position: absolute;
+      opacity: 0;
+      transition: 0.5s opacity;
+    }
+  }
+
+  .services {
+    .servicesContentBlock {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 150px 0;
+    }
+
+    &-caption {
+      position: absolute;
+    }
+
+    .servicesMsg {
+      flex: 0 1 495px;
+
+      &-headline {
+        @include hp-blockMsg-headline;
+      }
+
+      &-text {
+        @include hp-blockMsg-text;
+      }
+    }
+
+    .servicesList {
+      flex: 0 1 495px;
+    }
+  }
+
+  .usage {
+    padding: 140px 0 135px;
+    background: url("../../assets/images/bg/home/usage-bg.png") 0 0 no-repeat;
+
+    .usageDetails {
+      height: 475px;
+      margin-top: 85px;
+    }
+
+    .usageMsg {
+      width: 70%;
+      color: $vs-color-white;
+
+      &-headline {
+        @include hp-blockMsg-headline;
+      }
+
+      &-text {
+        @include hp-blockMsg-text();
+      }
+    }
+
+    .usageBenefits {
+      margin-top: 85px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .usageBenefit {
+      display: flex;
+      align-items: center;
+      flex: 0 1 24%;
+
+      &-image {
+        flex: 0 1 78px;
+
+        img {
+          display: block;
+          max-width: 100%;
+        }
+      }
+
+      &-msg {
+        flex: 1 1;
+        margin-left: 25px;
+      }
+
+      &-headline {
+        @include font-muller;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 1.5;
+      }
+
+      &-text {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .conclusion {
+    position: relative;
+    z-index: 2;
+    margin-bottom: -145px;
+    background: url("../../assets/images/bg/home/conclusion-bg.png") 20% 100% no-repeat;
+
+    .conclusionContentBlock {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      min-height: 575px;
+      border-top: 1px solid $vs-color-lightGrey3;
+    }
+
+    .conclusionMsg {
+      width: 50%;
+
+      &-headline {
+        @include hp-blockMsg-headline;
+      }
+
+      &-text {
+        @include hp-blockMsg-text(22px);
+      }
+
+      &-links {
+        margin-top: 50px;
+      }
+    }
+  }
+}

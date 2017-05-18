@@ -1,0 +1,135 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 20px 30px;
+
+  &-logo {
+    a, img {
+      display: block;
+    }
+  }
+
+  .headerNav {
+    margin-top: -20px;
+  }
+
+  .firstLevel {
+    &-list {
+      display: flex;
+    }
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin: 0 15px 0;
+      padding: 0 5px;
+      border-top: 3px solid;
+      border-color: transparent;
+      transition: 0.5s border-color;
+
+      &:hover, &.active {
+        border-color: $vs-color-white;
+      }
+
+      &:hover {
+        & > .secondLevel-list {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+
+    &-itemLink {
+      @include font-muller;
+      display: inline-block;
+      margin: 30px 0 15px;
+      color: $vs-color-white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  }
+
+  .secondLevel {
+    &-list {
+      visibility: hidden;
+      position: absolute;
+      top: 100%;
+      border-radius: 5px;
+      background: $vs-color-white;
+      opacity: 0;
+      transition: 0.5s opacity;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: -16px;
+        left: 50%;
+        transform: translate(-50%);
+        width: 0;
+        height: 0;
+        border: 9px solid transparent;
+        border-bottom-color: $vs-color-white;
+        border-bottom-width: 7px;
+      }
+    }
+
+    &-item {
+      margin: 20px 30px;
+
+      &:last-child {
+        margin: 0;
+        border-radius: 0 0 5px 5px;
+        padding: 20px 30px;
+        background: $vs-color-lightRed;
+      }
+    }
+
+    &-itemLink {
+      @include font-muller;
+      display: inline-block;
+      font-size: 14px;
+      white-space: nowrap;
+      color: $vs-color-darkRed;
+    }
+  }
+
+  .thirdLevel {
+    &-caption {
+      @include font-muller;
+      color: $vs-color-lightGrey4;
+      font-weight: bold;
+      font-size: 10px;
+    }
+
+    &-list {
+      font-size: 14px;
+    }
+
+    &-item {
+      margin-top: 15px;
+
+      a {
+        color: $vs-color-grey;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .headerAuth {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 14px;
+
+    a + a {
+      margin-left: 15px;
+    }
+  }
+}

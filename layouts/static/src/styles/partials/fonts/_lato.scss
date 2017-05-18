@@ -1,0 +1,17 @@
+$font-path-lato: "./assets/fonts/Lato";
+$font-name-latoRegular: "Lato-Regular";
+$font-name-latoBold: "Lato-Black";
+
+@font-face {
+  font-family: "Lato";
+  src: url("#{$font-path-lato}/#{$font-name-latoRegular}.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("#{$font-path-lato}/#{$font-name-latoBold}.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
