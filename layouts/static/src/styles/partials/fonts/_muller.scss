@@ -1,17 +1,35 @@
-//$font-path-muller: "./assets/fonts/Muller";
-//$font-name-muller: "MullerMedium";
-//$font-name-mullerBold: "MullerBold";
-//
+$font-path-muller: "./assets/fonts/Muller";
+$font-name-muller: "MullerMedium";
+$font-name-mullerBold: "MullerBold";
+
+// "Muller-Medium"
+@font-face {
+  font-family: "Muller";
+  font-weight: normal;
+  src: url("#{$font-path-muller}/33C152_1_0.eot");
+  src: url("#{$font-path-muller}/33C152_1_0.eot?#iefix") format("embedded-opentype"),
+    url("#{$font-path-muller}/33C152_1_0.woff2") format("woff2"),
+    url("#{$font-path-muller}/33C152_1_0.woff") format("woff"),
+    url("#{$font-path-muller}/33C152_1_0.ttf") format("truetype");
+}
+
+// "Muller-Bold"
+@font-face {
+  font-family: "Muller";
+  font-weight: bold;
+  src: url("#{$font-path-muller}/33C152_0_0.eot");
+  src: url("#{$font-path-muller}/33C152_0_0.eot?#iefix") format("embedded-opentype"),
+  url("#{$font-path-muller}/33C152_0_0.woff2") format("woff2"),
+  url("#{$font-path-muller}/33C152_0_0.woff") format("woff"),
+  url("#{$font-path-muller}/33C152_0_0.ttf") format("truetype");
+}
+
+//// "Muller-Regular"
 //@font-face {
-//  font-family: "Muller";
-//  src: url("#{$font-path-muller}/#{$font-name-muller}.otf");
-//  font-weight: normal;
-//  font-style: normal;
-//}
-//
-//@font-face {
-//  font-family: "Muller";
-//  src: url("#{$font-path-muller}/#{$font-name-mullerBold}.otf");
-//  font-weight: bold;
-//  font-style: normal;
+//  font-family: "Muller-Regular";
+//  src: url("#{$font-path-muller}/33C152_2_0.eot");
+//  src: url("#{$font-path-muller}/33C152_2_0.eot?#iefix") format("embedded-opentype"),
+//    url("#{$font-path-muller}/33C152_2_0.woff2") format("woff2"),
+//    url("#{$font-path-muller}/33C152_2_0.woff") format("woff"),
+//    url("#{$font-path-muller}/33C152_2_0.ttf") format("truetype");
 //}

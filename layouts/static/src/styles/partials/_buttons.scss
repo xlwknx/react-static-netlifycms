@@ -2,26 +2,30 @@
   margin-left: 15px;
 }
 
-.button-raised {
-  @include button-raised;
+.button-raisedRed {
+  @include button-raisedRed();
+}
+
+.button-raised-redStatic {
+  @include button-raisedRed-static();
+}
+
+.button-raisedWhiteBorder {
+  @include button-raisedWhiteBorder();
 }
 
 .button-raisedWhite {
-  @include button-raisedWhite;
+  @include button-raisedWhite();
 }
 
-.button-raisedStatic {
-  @include button-raisedStatic;
-}
-
-.button-raisedGithub {
-  @include button-raisedGithub;
+.button-raisedWhite-static {
+  @include button-raisedWhite-static();
 }
 
 .button-flat {
-  @include button-flat;
+  @include button-flat();
 }
 
 .button-flatWhite {
-  @include button-flatWhite;
+  @include button-flatWhite();
 }

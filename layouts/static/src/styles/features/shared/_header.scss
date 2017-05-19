@@ -9,6 +9,8 @@
   padding: 20px 30px;
 
   &-logo {
+    flex-basis: 350px;
+
     a, img {
       display: block;
     }
@@ -96,7 +98,7 @@
       display: inline-block;
       font-size: 14px;
       white-space: nowrap;
-      color: $vs-color-darkRed;
+      color: $vs-color-darkRed1;
     }
   }
 
@@ -123,8 +125,9 @@
   }
 
   .headerAuth {
+    flex-basis: 350px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
     font-size: 14px;
 

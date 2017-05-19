@@ -1,6 +1,6 @@
 // Private
 @mixin _button-base() {
-  @include font-muller;
+  @include font-muller();
   display: inline-block;
   align-items: center;
   height: 40px;
@@ -10,72 +10,81 @@
 }
 
 @mixin _button-baseRaised() {
-  @include _button-base;
+  @include _button-base();
   padding: 0 30px;
 }
 
 @mixin _button-baseFlat() {
-  @include _button-base;
+  @include _button-base();
   margin: 0 30px;
 }
 
-// Public
-@mixin button-raised {
-  @include _button-baseRaised;
-  background: $vs-color-darkRed;
+@mixin _button-baseRaised-red() {
+  @include _button-baseRaised();
+  background: $vs-color-darkRed1;
   color: $vs-color-white;
-  box-shadow: 0 4px 12px -3px rgba($vs-color-darkRed, 0.5);
-  transition: 0.5s box-shadow, 0.5s background;
-
-  &:hover {
-    background: $vs-color-red;
-    box-shadow: 0 10px 15px -8px rgba($vs-color-darkRed, 0.8)
-  }
+  box-shadow: 0 4px 12px -3px rgba($vs-color-darkRed1, 0.5);
 }
 
-@mixin button-raisedStatic {
-  @include _button-baseRaised;
-  background: $vs-color-darkRed;
-  color: $vs-color-white;
-  box-shadow: 0 4px 12px -3px rgba($vs-color-darkRed, 0.5);
-}
-
-@mixin button-raisedWhite {
-  @include _button-baseRaised;
-  border: 2px solid $vs-color-white;
-  color: $vs-color-white;
-  transition: 0.5s background, 0.5s border-color, 0.5s box-shadow;
-
-  &:hover {
-    background: $vs-color-darkRed;
-    border-color: transparent;
-    box-shadow: 0 4px 12px -3px rgba($vs-color-darkRed, 0.5);
-  }
-}
-
-@mixin button-raisedGithub {
-  @include _button-baseRaised;
+@mixin _button-baseRaised-white() {
+  @include _button-baseRaised();
   background: $vs-color-white;
   color: $vs-color-black;
   box-shadow: 0 4px 12px -3px rgba($vs-color-white, 0.5);
-  transition: 0.5s box-shadow;
 
   i {
     margin-right: 5px;
     font-size: 25px;
     vertical-align: middle;
   }
+}
+
+// Public
+@mixin button-raisedRed {
+  @include _button-baseRaised-red();
+  transition: 0.5s box-shadow, 0.5s background;
+
+  &:hover {
+    background: $vs-color-red1;
+    box-shadow: 0 10px 15px -8px rgba($vs-color-darkRed1, 0.8)
+  }
+}
+
+@mixin button-raisedRed-static {
+  @include _button-baseRaised-red();
+}
+
+@mixin button-raisedWhiteBorder {
+  @include _button-baseRaised;
+  border: 2px solid $vs-color-white;
+  color: $vs-color-white;
+  transition: 0.5s background, 0.5s border-color, 0.5s box-shadow;
+
+  &:hover {
+    background: $vs-color-darkRed1;
+    border-color: transparent;
+    box-shadow: 0 4px 12px -3px rgba($vs-color-darkRed1, 0.5);
+  }
+}
+
+@mixin button-raisedWhite {
+  @include _button-baseRaised-white();
+  transition: 0.5s box-shadow;
 
   &:hover {
     box-shadow: 0 10px 15px -8px rgba($vs-color-white, 0.5)
   }
 }
 
+@mixin button-raisedWhite-static {
+  @include _button-baseRaised-white();
+}
+
 @mixin button-flat {
   @include _button-baseFlat;
 
   &:hover {
-    color: $vs-color-darkRed;
+    color: $vs-color-darkRed1;
   }
 }
 

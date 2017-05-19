@@ -155,11 +155,6 @@
     padding: 140px 0 135px;
     background: url("../../assets/images/bg/home/usage-bg.png") 0 0 no-repeat;
 
-    .usageDetails {
-      height: 475px;
-      margin-top: 85px;
-    }
-
     .usageMsg {
       width: 70%;
       color: $vs-color-white;
@@ -170,6 +165,166 @@
 
       &-text {
         @include hp-blockMsg-text();
+      }
+    }
+
+    .usageDetails {
+      margin-top: 85px;
+      border-radius: 3px;
+      background: $vs-color-white;
+    }
+
+    .usageSteps {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+      margin: 0 50px;
+      padding: 40px 0;
+
+      &:before {
+        content: '';
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin: -1px 0 0;
+        background: $vs-color-lightGrey6;
+      }
+
+      &-item {
+        @include font-muller;
+        position: relative;
+        z-index: 2;
+        padding: 0 15px;
+        background: $vs-color-white;
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+
+        &:first-child {
+          text-align: left;
+        }
+
+        &:last-child {
+          text-align: right;
+        }
+
+        i {
+          display: inline-block;
+          width: 2em;
+          height: 2em;
+          border-radius: 4em;
+          background: $vs-color-lightGrey6;
+          font-style: normal;
+          text-align: center;
+          line-height: 2em;
+          transition: 0.5s color, 0.5s background;
+        }
+
+        span {
+          transition: 0.5s color;
+        }
+
+        i + span {
+          margin-left: 5px;
+        }
+
+        &.active {
+          i {
+            background: $vs-color-darkRed3;
+            color: $vs-color-white;
+          }
+
+          span {
+            color: $vs-color-darkRed2;
+          }
+        }
+
+        &:hover {
+          i {
+            background: $vs-color-red2;
+            color: $vs-color-white;
+          }
+
+          span {
+            color: $vs-color-red1;
+          }
+        }
+      }
+    }
+
+    .usageExample {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 455px;
+      border-radius: 0 0 3px 3px;;
+      padding: 65px 95px;
+      background: $vs-color-lightGrey5;
+
+      &-previous,
+      &-next {
+        width: 19px;
+        height: 34px;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+
+      &-previous {
+        background-image: url("../../assets/images/ui/home-slider-arrowLeft.png");
+      }
+
+      &-next {
+        background-image: url("../../assets/images/ui/home-slider-arrowRight.png");
+      }
+
+      &-list {
+
+      }
+
+      &-item {
+        display: none;
+        background: $vs-color-darkBlue3;
+
+        &:first-child {
+          display: block;
+        }
+      }
+
+      &-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 930px;
+        height: 325px;
+        transition: 0.5s padding;
+
+        &:hover {
+          padding: 0 10px;
+
+          .usageExample-linkImage {
+            filter: blur(5px);
+          }
+
+          .usageExample-linkButton {
+            opacity: 1;
+          }
+        }
+      }
+
+      &-linkImage {
+        max-width: 100%;
+        transition: 0.5s filter;
+      }
+
+      &-linkButton {
+        position: absolute;
+        opacity: 0;
+        transition: 0.5s opacity;
       }
     }
 
