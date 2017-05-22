@@ -1,0 +1,35 @@
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 22px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &-book {
+    background-image: url("../assets/images/ui/icons/icon-book.png");
+  }
+
+  &-bookmark {
+    background-image: url("../assets/images/ui/icons/icon-bookmark.png");
+  }
+
+  &-shield {
+    background-image: url("../assets/images/ui/icons/icon-shield.png");
+  }
+
+  &-case {
+    background-image: url("../assets/images/ui/icons/icon-case.png");
+  }
+
+  &-medium {
+    background-image: url("../assets/images/ui/icons/icon-medium.png");
+  }
+
+  &-arrowRight {
+    width: 15px;
+    height: 10px;
+    background-image: url("../assets/images/ui/icons/icon-arrowRight.png");
+    vertical-align: baseline;
+  }
+}

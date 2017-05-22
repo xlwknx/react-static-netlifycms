@@ -13,3 +13,11 @@
   font-size: 18px;
   line-height: 1.65;
 }
+
+@mixin hp-contentBlock-caption() {
+  @include font-muller();
+  font-size: 120px;
+  font-weight: bold;
+  color: $vs-color-lightGrey7;
+  z-index: -1;
+}

@@ -17,7 +17,7 @@
       color: $vs-color-white;
 
       &-headline {
-        @include hp-blockMsg-headline;
+        @include hp-blockMsg-headline();
         line-height: 1.5;
       }
 
@@ -62,18 +62,25 @@
   }
 
   .useCases {
-    &-caption {
-      position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .useCasesContentBlock {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
     }
 
     .useCasesMsg {
       width: 715px;
-      margin: 0 auto;
       padding: 130px 0 80px;
       text-align: center;
 
       &-headline {
-        @include hp-blockMsg-headline;
+        @include hp-blockMsg-headline();
       }
 
       &-text {
@@ -82,6 +89,25 @@
 
       &-links {
         margin-top: 55px;
+      }
+    }
+
+    &-caption {
+      @include hp-contentBlock-caption();
+      align-self: flex-end;
+      position: absolute;
+      left: 10%;
+      margin-top: 1em;
+    }
+
+    .useCaseList {
+      padding: 40px 0;
+
+      &-image {
+        img {
+          display: block;
+          max-width: 100%;
+        }
       }
     }
   }
@@ -124,6 +150,7 @@
 
   .services {
     .servicesContentBlock {
+      position: relative;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -131,23 +158,96 @@
     }
 
     &-caption {
+      @include hp-contentBlock-caption();
+      align-self: flex-start;
       position: absolute;
+      left: 10%;
     }
 
     .servicesMsg {
       flex: 0 1 495px;
 
       &-headline {
-        @include hp-blockMsg-headline;
+        @include hp-blockMsg-headline();
       }
 
       &-text {
-        @include hp-blockMsg-text;
+        @include hp-blockMsg-text();
       }
     }
 
-    .servicesList {
-      flex: 0 1 495px;
+    .serviceList {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      flex: 0 1 485px;
+      height: 600px;
+    }
+
+    .serviceItem {
+      margin-top: 80px;
+      align-self: flex-start;
+
+      &:first-child {
+        margin-top: 50px;
+      }
+
+      &:nth-child(3) {
+        margin-top: 0;
+        align-self: flex-end;
+      }
+
+      &:nth-child(4) {
+        align-self: flex-end;
+      }
+
+      &-link {
+        @include font-muller();
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 205px;
+        height: 225px;
+        border-radius: 3px;
+        padding: 45px 35px 30px ;
+        background: $vs-color-darkRed1;
+        background: linear-gradient(to right, $vs-color-red1 0%, $vs-color-darkRed1 100%);
+        font-size: 14px;
+        text-align: center;
+        color: $vs-color-white;
+        box-shadow: 0 10px 20px -6px rgba($vs-color-darkRed2, 0.4);
+        transition: 0.5s box-shadow;
+
+        &:hover {
+          box-shadow: 0 13px 20px -6px rgba($vs-color-darkRed2, 0.4);
+
+          .serviceItem-linkText {
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+          }
+
+          .serviceItem-linkHoverText {
+            height: auto;
+            margin-bottom: 1.3em;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+
+      &-linkText {
+        height: auto;
+        transition: 0.5s opacity, 0.5s hidden;
+      }
+
+      &-linkHoverText {
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s opacity, 0.5s hidden;
+      }
     }
   }
 
@@ -160,7 +260,7 @@
       color: $vs-color-white;
 
       &-headline {
-        @include hp-blockMsg-headline;
+        @include hp-blockMsg-headline();
       }
 
       &-text {
@@ -172,6 +272,7 @@
       margin-top: 85px;
       border-radius: 3px;
       background: $vs-color-white;
+      box-shadow: 0 4px 15px 0 rgba($vs-color-darkBlue4, 0.1);
     }
 
     .usageSteps {
@@ -194,7 +295,7 @@
       }
 
       &-item {
-        @include font-muller;
+        @include font-muller();
         position: relative;
         z-index: 2;
         padding: 0 15px;
@@ -288,6 +389,7 @@
       &-item {
         display: none;
         background: $vs-color-darkBlue3;
+        box-shadow: 0 4px 15px 0 rgba($vs-color-darkBlue4, 0.2);
 
         &:first-child {
           display: block;
@@ -354,7 +456,7 @@
       }
 
       &-headline {
-        @include font-muller;
+        @include font-muller();
         font-size: 12px;
         font-weight: bold;
         line-height: 1.5;
@@ -384,7 +486,7 @@
       width: 50%;
 
       &-headline {
-        @include hp-blockMsg-headline;
+        @include hp-blockMsg-headline();
       }
 
       &-text {
