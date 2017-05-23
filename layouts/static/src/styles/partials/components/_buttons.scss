@@ -14,6 +14,14 @@
   @include button-raisedWhiteBorder();
 }
 
+.button-raisedWhiteBorder-static {
+  @include button-raisedWhiteBorder-static();
+}
+
+.button-raisedRedBorder-static {
+  @include button-raisedRedBorder-static();
+}
+
 .button-raisedWhite {
   @include button-raisedWhite();
 }

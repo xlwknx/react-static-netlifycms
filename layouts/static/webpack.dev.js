@@ -30,9 +30,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      hash: true,
-      filename: 'index.html',
-      template: __dirname + '/src/index.html'
+      // hash: true,
+      // filename: 'index.html',
+      // template: __dirname + '/src/index.html'
+      template: 'src/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'pricing.html',
+      template: 'src/templates/pricing.html'
     }),
     new ExtractTextPlugin({
       filename: '[name].bundle.css',

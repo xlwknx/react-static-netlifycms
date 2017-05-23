@@ -1,23 +1,8 @@
-@mixin hp-blockMsg-headline {
-  @include font-muller;
-  font-size: 34px;
-
-  mark {
-    color: $vs-color-darkRed1;
-  }
-}
-
-@mixin hp-blockMsg-text($top:15px) {
-  margin: $top 0 0;
-  font-family: Lato, sans-serif;
-  font-size: 18px;
-  line-height: 1.65;
-}
-
 @mixin hp-contentBlock-caption() {
   @include font-muller();
+  position: absolute;
+  z-index: -1;
   font-size: 120px;
   font-weight: bold;
   color: $vs-color-lightGrey7;
-  z-index: -1;
 }

@@ -1,0 +1,307 @@
+.pricing {
+  .intro {
+    background: url("../../assets/images/bg/pricing/pricing-intro-bg.png") center bottom no-repeat;
+
+    .introContentBlock {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 460px;
+    }
+
+    .introMsg {
+      width: 715px;
+      text-align: center;
+      color: $vs-color-white;
+
+      &-headline {
+        @include blockMsg-headline();
+        line-height: 1.5;
+      }
+
+      &-text {
+        @include blockMsg-text();
+      }
+    }
+  }
+
+  .pricingPlans {
+    .pricingPlansContentBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 115px 0 120px;
+    }
+
+    .pricingPlansMsg {
+      width: 400px;
+      text-align: center;
+
+      p {
+        @include blockMsg-text();
+        margin: 0;
+      }
+    }
+
+    .pricingPlanList {
+      margin-top: 55px;
+    }
+
+    .pricingPlanItem {
+      &-price {
+        margin-top: 30px;
+        font-size: 35px;
+
+        sup {
+          font-size: 25px;
+        }
+
+        mark {
+          font-size: 44px;
+        }
+
+        sub {
+          font-size: 20px;
+          bottom: 0;
+        }
+      }
+
+      &-features {
+        margin-top: 30px;
+        font-size: 14px;
+
+        li + li:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          width: 150px;
+          height: 1px;
+          margin: 0 auto;
+          background: $vs-color-lightGrey3;
+        }
+      }
+
+      &-feature {
+        position: relative;
+        padding: 25px 0;
+
+        mark {
+          font-weight: bold;
+        }
+
+        &--disabled {
+          color: $vs-color-lightGrey3;
+        }
+      }
+
+      &-link {
+        margin-top: 35px;
+      }
+
+      &--highlight {
+        .pricingPlanItem-price {
+          color: $vs-color-lightRed2;
+
+          mark {
+            color: $vs-color-white;
+          }
+        }
+
+        .pricingPlanItem-features {
+          li + li:before {
+            background: $vs-color-lightRed3;
+          }
+
+          .pricingPlanItem-feature--disabled {
+            color: $vs-color-lightRed3;
+          }
+        }
+      }
+    }
+  }
+
+  .enterprise {
+    .enterpriseContentBlock {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 100px;
+      background: $vs-color-white;
+      box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
+    }
+
+    .enterpriseOffer {
+      flex: 0 1 75%;
+      display: flex;
+      flex-wrap: wrap;
+
+      &-image {
+        flex: 0 1 80px;
+
+        img {
+          display: block;
+          max-width: 100%;
+          box-shadow: 0 10px 15px -5px rgba($vs-color-darkRed2, 0.5);
+        }
+      }
+
+      &-msg {
+        flex: 1 1 50%;
+        margin-left: 30px;
+        padding: 10px 0;
+      }
+
+      &-headline {
+        @include font-muller();
+      }
+
+      &-text {
+        @include blockMsg-text(0);
+      }
+
+      &-list {
+        @include font-muller();
+        flex: 1 1 50%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        font-size: 14px;
+
+        li {
+          flex: 0 1 35%;
+          margin-top: 10px;
+        }
+
+        .fa {
+          font-size: 25px;
+          vertical-align: middle;
+          color: $vs-color-darkRed1;
+        }
+
+        i + span {
+          margin-left: 15px;
+        }
+
+        mark {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .includes {
+    position: relative;
+    z-index: -1;
+    margin: -90px 0 -250px;
+    padding: 90px 0 270px;
+    background: $vs-color-lightGrey1;
+
+    .includesContentBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 190px 0;
+    }
+
+    .includesMsg {
+      width: 710px;
+      text-align: center;
+
+      &-headline {
+        @include blockMsg-headline();
+      }
+
+      &-text {
+        @include blockMsg-text();
+      }
+    }
+
+    .includesList {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 95px;
+    }
+
+    .includesItem {
+      flex: 0 1 360px;
+      align-self: flex-start;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 35px;
+      font-size: 14px;
+      text-align: center;
+
+      &-image {
+        flex: 0 1 80px;
+
+        img {
+          display: block;
+          max-width: 100%;
+          box-shadow: 0 10px 15px -5px rgba($vs-color-darkRed2, 0.5);
+        }
+      }
+
+      &-headline {
+        @include font-muller();
+        margin-top: 20px;
+        font-size: inherit;
+        font-weight: bold;
+      }
+
+      &-text {
+        @include blockMsg-text(10px);
+      }
+    }
+  }
+
+  .conclusion {
+    .conclusionContentBlock {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .conclusionMsg {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 850px;
+      border-radius: 3px;
+      padding: 85px 150px;
+      text-align: center;
+      background: $vs-color-darkRed1;
+      background: linear-gradient(to right, $vs-color-red1 0%, $vs-color-darkRed1 100%);
+      box-shadow: 0 25px 20px -20px rgba($vs-color-darkRed2, 0.5);
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url("../../assets/images/bg/pricing/pricing-conclusion-bg.png") center 0 no-repeat;
+      }
+
+      * {
+        z-index: 1;
+      }
+
+      &-headline {
+        @include blockMsg-headline();
+        font-size: 28px;
+        color: $vs-color-white;
+      }
+
+      &-links {
+        margin-top: 55px;
+      }
+    }
+  }
+}

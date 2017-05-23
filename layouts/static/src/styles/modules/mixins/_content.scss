@@ -1,0 +1,14 @@
+@mixin blockMsg-headline() {
+  @include font-muller();
+  font-size: 34px;
+
+  mark {
+    color: $vs-color-darkRed1;
+  }
+}
+
+@mixin blockMsg-text($top:15px) {
+  margin: $top 0 0;
+  font-family: Lato, sans-serif;
+  line-height: 1.65;
+}
