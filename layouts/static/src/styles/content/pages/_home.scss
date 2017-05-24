@@ -165,6 +165,7 @@
 
     .servicesMsg {
       flex: 0 1 495px;
+      width: 495px;
 
       &-headline {
         @include blockMsg-headline();
@@ -180,6 +181,7 @@
       flex-direction: column;
       flex-wrap: wrap;
       flex: 0 1 485px;
+      width: 485px;
       height: 600px;
     }
 
@@ -473,7 +475,6 @@
   .conclusion {
     position: relative;
     z-index: 2;
-    margin-bottom: -145px;
     background: url("../../assets/images/bg/home/home-conclusion-bg.png") 20% 100% no-repeat;
 
     .conclusionContentBlock {

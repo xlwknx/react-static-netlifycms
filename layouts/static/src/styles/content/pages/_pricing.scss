@@ -124,6 +124,9 @@
   }
 
   .enterprise {
+    position: relative;
+    z-index: 2;
+
     .enterpriseContentBlock {
       display: flex;
       justify-content: space-between;
@@ -194,7 +197,7 @@
 
   .includes {
     position: relative;
-    z-index: -1;
+    z-index: 1;
     margin: -90px 0 -250px;
     padding: 90px 0 270px;
     background: $vs-color-lightGrey1;
@@ -232,6 +235,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 360px;
       padding: 0 35px;
       font-size: 14px;
       text-align: center;
@@ -265,6 +269,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding-bottom: 155px;
     }
 
     .conclusionMsg {
@@ -273,6 +278,7 @@
       justify-content: center;
       align-items: center;
       position: relative;
+      z-index: 2;
       width: 850px;
       border-radius: 3px;
       padding: 85px 150px;
@@ -284,13 +290,14 @@
       &:before {
         content: '';
         position: absolute;
+        z-index: 1;
         width: 100%;
         height: 100%;
         background: url("../../assets/images/bg/pricing/pricing-conclusion-bg.png") center 0 no-repeat;
       }
 
       * {
-        z-index: 1;
+        z-index: 2;
       }
 
       &-headline {

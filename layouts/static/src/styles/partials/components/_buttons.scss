@@ -6,7 +6,7 @@
   @include button-raisedRed();
 }
 
-.button-raised-redStatic {
+.button-raisedRed-static {
   @include button-raisedRed-static();
 }
 
@@ -16,6 +16,10 @@
 
 .button-raisedWhiteBorder-static {
   @include button-raisedWhiteBorder-static();
+}
+
+.button-raisedRedBorder {
+  @include button-raisedRedBorder();
 }
 
 .button-raisedRedBorder-static {

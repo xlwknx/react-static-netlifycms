@@ -1,0 +1,40 @@
+.form {}
+
+.formFields {
+  @include font-muller();
+}
+
+.formField {
+  display: flex;
+  margin-top: 32px;
+}
+
+.formFieldText {
+  flex-direction: column;
+
+  &-label {
+    margin-bottom: 10px;
+    font-size: 10px;
+    cursor: pointer;
+  }
+
+  &-input {
+    padding: 12px 15px;
+    border: 1px solid $vs-color-lightGrey3;
+    font-size: 14px;
+
+    &::placeholder {
+      font-size: 14px;
+      color: $vs-color-lightGrey4;
+    }
+  }
+
+  textarea {
+    resize: none;
+  }
+}
+
+.formActions {
+  margin-top: 40px;
+  text-align: right;
+}
