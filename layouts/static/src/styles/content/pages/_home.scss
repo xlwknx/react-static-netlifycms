@@ -93,9 +93,10 @@
     }
 
     &-caption {
-      @include hp-contentBlock-caption();
+      @include contentBlock-caption();
       align-self: flex-end;
-
+      position: absolute;
+      z-index: -1;
       left: 10%;
       margin-top: 1em;
     }
@@ -158,8 +159,10 @@
     }
 
     &-caption {
-      @include hp-contentBlock-caption();
+      @include contentBlock-caption();
       align-self: flex-start;
+      position: absolute;
+      z-index: -1;
       left: 10%;
     }
 

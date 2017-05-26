@@ -60,7 +60,7 @@
       align-items: center;
       min-height: 760px;
       border-top: 1px solid $vs-color-grey;
-      padding: 135px 0;
+      padding-top: 135px;
     }
 
     .cryptogramMsg {
@@ -94,6 +94,250 @@
         .fa {
           font-size: 25px;
           opacity: 0.25;
+        }
+      }
+    }
+  }
+
+  .components {
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    padding: 300px 0 280px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      bottom: 0;
+      width: 1010px;
+      height: 990px;
+      max-width: 50%;
+      background: url("../../assets/images/bg/features/features-components-bg.png") left bottom no-repeat;;
+    }
+
+    .componentsContentBlock {
+      position: relative;
+      z-index: 1;
+      margin-right: 50px;
+      border-radius: 0 3px 3px 0;
+      background: $vs-color-darkBlue5;
+      color: $vs-color-white;
+      box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
+
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 100%;
+        width: 2000px;
+        height: 100%;
+        background: $vs-color-darkBlue5;
+        box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.1);
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -50px;
+        right: -50px;
+        height: 100%;
+        width: 75%;
+        background: $vs-color-darkRed1;
+        background: linear-gradient(to bottom, $vs-color-red1 0%, $vs-color-darkRed1 100%);
+        border-radius: 3px;
+      }
+    }
+
+    .componentsOverview {
+      position: relative;
+      z-index: 2;
+      border-radius: 0 3px 3px 0;
+      padding: 85px 375px 95px 100px;
+      background: $vs-color-darkBlue5;
+    }
+
+    .componentsMsg {
+      &-headline {
+        @include blockMsg-headline();
+        font-size: 42px;
+        line-height: 1.4;
+      }
+    }
+
+    .componentList {
+      width: 520px;
+      margin-top: 105px;
+
+      li + li {
+        margin-top: 70px;
+      }
+    }
+
+    .componentItem {
+      display: flex;
+
+      &-image {
+        flex: 0 1 75px;
+      }
+
+      &-info {
+        flex: 1 1;
+        margin-left: 30px;
+      }
+
+      &-headline {
+        @include blockMsg-headline();
+        font-size: 20px;
+      }
+
+      &-text {
+        @include blockMsg-text(10px);
+        font-size: 16px;
+        line-height: 1.9;
+        color: $vs-color-lightGrey4;
+      }
+    }
+
+    .componentLinks {
+      margin-top: 90px;
+    }
+  }
+
+  .languages {
+    background: $vs-color-lightGrey1;
+
+    .languagesContentBlock {
+      padding: 150px 0;
+    }
+
+    &-image {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  .faq {
+    overflow: hidden;
+
+    .faqContentBlock {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 105px 0 140px;
+    }
+
+    &-caption {
+      @include contentBlock-caption();
+      flex: 1 1 100%;
+      margin-bottom: 35px;
+    }
+
+    .faqList {
+      flex: 1 1 690px;
+      margin-top: 45px;
+      padding-right: 50px;
+
+      li + li {
+        margin-top: 65px;
+      }
+    }
+
+    .faqItem {
+      &-count {
+        @include font-muller();
+        font-size: 28px;
+        color: $vs-color-darkRed1;
+
+        &:before {
+          content: '\2014';
+          padding-right: 10px;
+        }
+      }
+
+      &-text {
+        margin-top: 20px;
+        font-size: 16px;
+        line-height: 1.9;
+
+        p + p {
+          margin-top: 30px;
+        }
+
+        mark {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .faqContents {
+      flex: 1 1 505px;
+      align-self: flex-start;
+      display: flex;
+      position: relative;
+      z-index: 1;
+      border-radius: 3px 0 0 3px;
+      background: $vs-color-darkBlue5;
+      box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
+
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: 100%;
+        top: 0;
+        height: 100%;
+        width: 2000px;
+        background: $vs-color-darkBlue5;
+        box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -50px;
+        left: 50px;
+        width: 50%;
+        height: 100%;
+        border-radius: 3px;
+        background: $vs-color-darkRed1;
+        background: linear-gradient(to bottom, $vs-color-red1 0%, $vs-color-darkRed1 100%);
+      }
+    }
+
+    .faqContentList {
+      position: relative;
+      z-index: 2;
+      border-radius: 3px 0 0 3px;
+      padding: 50px;
+      background: $vs-color-darkBlue5;
+
+      li + li {
+        margin-top: 35px;
+      }
+    }
+
+    .faqContentItem {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.9;
+
+      &:not(.active) {
+        opacity: 0.5;
+      }
+
+      &-link {
+        display: flex;
+        color: $vs-color-white;
+      }
+
+      &-linkCount {
+        &:after {
+          content: '\2014';
+          padding: 0 10px;
         }
       }
     }

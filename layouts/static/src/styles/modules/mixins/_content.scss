@@ -1,3 +1,10 @@
+@mixin contentBlock-caption() {
+  @include font-muller();
+  font-size: 120px;
+  font-weight: bold;
+  color: $vs-color-lightGrey7;
+}
+
 @mixin blockMsg-headline() {
   @include font-muller();
   font-size: 34px;

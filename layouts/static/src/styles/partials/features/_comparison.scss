@@ -1,6 +1,6 @@
 .comparisonBlock {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .comparisonItem {
@@ -14,8 +14,13 @@
   background: $vs-color-white;
   box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
 
+  &:not(.comparisonItem--highlight) {
+    margin: 30px 0;
+  }
+
   &--highlight {
     padding: 80px 20px;
+    background: $vs-color-darkRed1;
     background: linear-gradient(to bottom, $vs-color-red1 0%, $vs-color-darkRed1 100%);
     box-shadow: 0 5px 15px 0 rgba($vs-color-darkRed2, 0.5);
     color: $vs-color-white;
