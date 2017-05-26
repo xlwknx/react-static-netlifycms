@@ -40,8 +40,7 @@
                         </div>
                         <div class="componentItem-info">
                             <h3 class="componentItem-headline">Virgil Keys Service</h3>
-                            <p class="componentItem-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo
-                                eiusmod tempor incididunt ut labore et dolore magna utenim ad minim veniam</p>
+                            <p class="componentItem-text">Virgil Services is a group of cryptographic services that make up the Virgil Security infrastructure</p>
                         </div>
                     </li>
                     <li class="componentItem">
@@ -50,8 +49,7 @@
                         </div>
                         <div class="componentItem-info">
                             <h3 class="componentItem-headline">Virgil Keys API</h3>
-                            <p class="componentItem-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo
-                                eiusmod tempor incididunt ut labore et dolore magna utenim ad minim veniam</p>
+                            <p class="componentItem-text">Use the Virgil API to easily develop a programs by providing all building blocks and communicate with Virgil Services</p>
                         </div>
                     </li>
                     <li class="componentItem">
@@ -60,13 +58,12 @@
                         </div>
                         <div class="componentItem-info">
                             <h3 class="componentItem-headline">Virgil Crypto Libary</h3>
-                            <p class="componentItem-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo
-                                eiusmod tempor incididunt ut labore et dolore magna utenim ad minim veniam</p>
+                            <p class="componentItem-text">Virgil is a stack of security libraries and all the necessary infrastructure to enable seamless, end-to-end encryption for any application, platform or device</p>
                         </div>
                     </li>
                 </ul>
                 <div class="componentLinks">
-                    <a href="" class="button-raisedWhiteBorder-static">
+                    <a href="https://developer.virgilsecurity.com/docs" class="button-raisedWhiteBorder-static">
                         <i class="icon icon-book-white"></i>
                         <span>Documentation</span>
                     </a>
