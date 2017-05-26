@@ -1,0 +1,10 @@
+@import "~font-awesome/scss/font-awesome";
+
+.fa {
+  vertical-align: middle;
+
+  + span {
+    margin-left: 0.5em;
+    vertical-align: middle;
+  }
+}

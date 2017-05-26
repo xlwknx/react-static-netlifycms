@@ -4,6 +4,11 @@
   background-repeat: no-repeat;
   background-position: center center;
 
+  + span {
+    margin-left: 0.5em;
+    vertical-align: middle;
+  }
+
   &-book {
     width: 22px;
     height: 18px;

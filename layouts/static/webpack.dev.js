@@ -43,6 +43,14 @@ module.exports = {
       filename: 'contacts.html',
       template: 'src/templates/contacts.html'
     }),
+    new HtmlWebpackPlugin({
+      filename: 'features.html',
+      template: 'src/templates/features.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'about.html',
+      template: 'src/templates/about.html'
+    }),
     new ExtractTextPlugin({
       filename: '[name].bundle.css',
       allChunks: true

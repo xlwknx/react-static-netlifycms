@@ -93,10 +93,6 @@
         padding: 20px 30px;
         background: $vs-color-lightRed1;
       }
-
-      .icon {
-        margin-right: 8px;
-      }
     }
 
     &-itemLink {
@@ -158,6 +154,25 @@
 
       &-itemLink {
         color: inherit;
+      }
+    }
+
+    .headerAuth {
+      .button-flatWhite {
+        color: initial;
+
+        &:hover {
+          color: $vs-color-darkRed1;
+        }
+      }
+
+      .button-raisedWhiteBorder {
+        border-color: $vs-color-darkRed1;
+        color: $vs-color-darkRed1;
+
+        &:hover {
+          color: $vs-color-white;
+        }
       }
     }
   }

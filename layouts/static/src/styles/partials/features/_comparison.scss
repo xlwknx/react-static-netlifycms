@@ -5,10 +5,12 @@
 
 .comparisonItem {
   @include font-muller();
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 400px;
   border-radius: 3px;
   padding: 40px 20px;
-  text-align: center;
   background: $vs-color-white;
   box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
 

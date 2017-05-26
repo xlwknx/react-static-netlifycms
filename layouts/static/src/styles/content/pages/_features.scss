@@ -1,0 +1,101 @@
+.features {
+  .intro {
+    background: $vs-color-darkBlue5 url("../../assets/images/bg/features/features-intro-bg.png") center top no-repeat;
+
+    .introContentBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 830px;
+      padding: 185px 0 90px;
+    }
+
+    .introMsg {
+      width: 720px;
+      text-align: center;
+      color: $vs-color-white;
+
+      &-headline {
+        @include blockMsg-headline();
+        line-height: 1.5;
+      }
+
+      &-text {
+        @include blockMsg-text();
+      }
+    }
+
+    .introFeatures {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 185px;
+    }
+
+    .introFeature {
+      flex: 0 1 30%;
+      display: flex;
+      margin-bottom: 50px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: $vs-color-white;
+
+      &-image {
+        flex: 0 1 65px;
+      }
+
+      &-text {
+        flex: 1 1;
+        margin-left: 25px;
+      }
+    }
+  }
+
+  .cryptogram {
+    background: url("../../assets/images/bg/features/features-cryptogram-bg.png") center top no-repeat;
+
+    .cryptogramContentBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 760px;
+      border-top: 1px solid $vs-color-grey;
+      padding: 135px 0;
+    }
+
+    .cryptogramMsg {
+      width: 720px;
+      text-align: center;
+      color: $vs-color-white;
+
+      &-headline {
+        @include blockMsg-headline();
+        line-height: 1.5;
+      }
+    }
+
+    .cryptogramList {
+      margin-top: 75px;
+    }
+
+    .cryptogramItem {
+      &-features {
+        margin-top: 55px;
+        font-size: 14px;
+
+        li + li {
+          margin-top: 15px;
+        }
+      }
+
+      &-feature {
+        margin: 10px 0;
+
+        .fa {
+          font-size: 25px;
+          opacity: 0.25;
+        }
+      }
+    }
+  }
+}

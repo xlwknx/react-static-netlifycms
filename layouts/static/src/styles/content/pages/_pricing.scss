@@ -11,7 +11,7 @@
     }
 
     .introMsg {
-      width: 715px;
+      width: 720px;
       text-align: center;
       color: $vs-color-white;
 
@@ -49,6 +49,8 @@
     }
 
     .pricingPlanItem {
+      text-align: center;
+
       &-price {
         margin-top: 30px;
         font-size: 35px;
@@ -182,10 +184,6 @@
           font-size: 25px;
           vertical-align: middle;
           color: $vs-color-darkRed1;
-        }
-
-        i + span {
-          margin-left: 15px;
         }
 
         mark {

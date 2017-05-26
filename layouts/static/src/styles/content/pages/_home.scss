@@ -238,6 +238,10 @@
         }
       }
 
+      &-image {
+        max-width: 100%;
+      }
+
       &-linkText {
         height: auto;
         transition: 0.5s opacity, 0.5s hidden;
