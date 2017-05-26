@@ -160,6 +160,7 @@ if (!function_exists('virgilsecurity_setup')) :
                 'hp-intro-area-links'         => get_starter_content("widgets", "hp", "intro_area_links"),
                 'hp-intro-langs'              => get_starter_content("widgets", "hp", "intro_langs"),
                 'hp-use-case-content'         => get_starter_content("widgets", "hp", "use_case_content"),
+                'hp-use-cases-list'           => get_starter_content("widgets", "hp", "use_case_list"),
                 'hp-client-content'           => get_starter_content("widgets", "hp", "client_content"),
                 'hp-services-content-block'   => get_starter_content("widgets", "hp", "services_content"),
                 'hp-usage-content-block'      => get_starter_content("widgets", "hp", "usage_content"),
@@ -485,6 +486,15 @@ if (!function_exists('virgilsecurity_setup')) :
             [
                 'name'          => __('Use Case Content', 'virgilsecurity'),
                 'id'            => 'hp-use-case-content',
+                'before_widget' => __return_empty_string(),
+                'after_widget'  => __return_empty_string(),
+            ]
+        );
+
+        register_sidebar(
+            [
+                'name'          => __('Use Case List', 'virgilsecurity'),
+                'id'            => 'hp-use-cases-list',
                 'before_widget' => __return_empty_string(),
                 'after_widget'  => __return_empty_string(),
             ]

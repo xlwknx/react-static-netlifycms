@@ -18,22 +18,22 @@
     <div class="useCases">
         <div class="wrapper">
             <div class="useCasesContentBlock">
-                <?php dynamic_sidebar('use-case-content'); ?>
+                <?php dynamic_sidebar('hp-use-case-content'); ?>
             </div>
         </div>
         <div class="useCaseList">
-            <?php dynamic_sidebar('use-cases-list'); ?>
+            <?php dynamic_sidebar('hp-use-cases-list'); ?>
         </div>
     </div>
     <div class="clients">
         <div class="wrapper">
-            <?php dynamic_sidebar('client-content'); ?>
+            <?php dynamic_sidebar('hp-client-content'); ?>
         </div>
     </div>
     <div class="services">
         <div class="wrapper">
             <div class="servicesContentBlock">
-                <?php dynamic_sidebar('services-content-block'); ?>
+                <?php dynamic_sidebar('hp-services-content-block'); ?>
             </div>
         </div>
     </div>
