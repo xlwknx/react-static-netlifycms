@@ -1,7 +1,4 @@
 <?php
-
-//TODO: Scripts placeholder
-//TODO: update design
 if (!function_exists('virgilsecurity_setup')) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
