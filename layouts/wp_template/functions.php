@@ -1,9 +1,7 @@
 <?php
 
 //TODO: update design
-
 if (!function_exists('virgilsecurity_setup')) :
-
     /**
      * Sets up theme defaults and registers support for various WordPress features.
      *
@@ -59,6 +57,7 @@ if (!function_exists('virgilsecurity_setup')) :
 
 
         add_shortcode('current_year', 'virgilsecurity_current_year');
+        add_shortcode('github_starz_count', 'get_github_stars');
 
         add_shortcode('header_nav_open', 'virgilsecurity_header_nav_open');
         add_shortcode('header_nav_close', 'virgilsecurity_header_nav_close');
@@ -112,6 +111,8 @@ if (!function_exists('virgilsecurity_setup')) :
         //add_filter( 'black_studio_tinymce_hide_empty', '__return_true' );
 
         add_editor_style('editor-style.css');
+
+        store_github_stars();
     }
 
     function get_global_block_class()
@@ -467,6 +468,76 @@ if (!function_exists('virgilsecurity_setup')) :
     function virgilsecurity_enqueue_script()
     {
         wp_enqueue_script('core', get_theme_file_uri('main.bundle.js'), false);
+    }
+
+    function get_github_stars()
+    {
+        $input = file_get_contents(get_theme_file_path('storage/github.json'));
+
+        $inputData = json_decode($input, true);
+
+        if (array_key_exists('data', $inputData)) {
+
+            return $inputData['data']['stargazers_count'];
+        }
+
+        return 0;
+    }
+
+    function store_github_stars()
+    {
+        store_github_stars_to_file(get_theme_file_path('storage/github.json'));
+    }
+
+    function store_github_stars_to_file($pathToFile, $minutes = 60)
+    {
+        $updatedAt = 0;
+
+        $input = file_get_contents($pathToFile);
+
+        $inputData = json_decode($input, true);
+
+
+        if (array_key_exists('updated_at', $inputData)) {
+            $updatedAt = $inputData['updated_at'];
+        }
+
+        //update once of $minutes
+        if ((time() - $updatedAt) < $minutes * 60) {
+            return;
+        }
+
+
+        $output = ['updated_at' => time()];
+
+        $ch = curl_init('https://api.github.com/repos/VirgilSecurity/virgil');
+
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        curl_setopt(
+            $ch,
+            CURLOPT_HTTPHEADER,
+            [
+                'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36',
+                'Content-Type: application/json',
+            ]
+        );
+
+        $result = curl_exec($ch);
+
+        if ($result == false) {
+            curl_close($ch);
+
+            return;
+        }
+
+        if (curl_getinfo($ch, CURLINFO_HTTP_CODE) == 200) {
+            $output['data'] = json_decode($result, true);
+
+            file_put_contents($pathToFile, json_encode($output));
+        }
+
+        curl_close($ch);
     }
 
     function virgilsecurity_widgets_init()
