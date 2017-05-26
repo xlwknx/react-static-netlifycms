@@ -3310,6 +3310,15 @@ template {
   clip: auto;
 }
 
+.fa {
+  vertical-align: middle;
+}
+
+.fa + span {
+  margin-left: 0.5em;
+  vertical-align: middle;
+}
+
 @font-face {
   font-family: "Lato";
   src: url(assets/Lato-Regular.ttf);
@@ -3644,6 +3653,11 @@ a {
   background-position: center center;
 }
 
+.icon + span {
+  margin-left: 0.5em;
+  vertical-align: middle;
+}
+
 .icon-book {
   width: 22px;
   height: 18px;
@@ -3757,10 +3771,12 @@ a {
   line-height: 1.3;
   letter-spacing: 1px;
   text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 400px;
   border-radius: 3px;
   padding: 40px 20px;
-  text-align: center;
   background: #fff;
   box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.1);
 }
@@ -3870,10 +3886,6 @@ a {
   background: #fff2f2;
 }
 
-.header .secondLevel-item .icon {
-  margin-right: 8px;
-}
-
 .header .secondLevel-itemLink {
   font-family: "Muller", sans-serif;
   line-height: 1.3;
@@ -3936,6 +3948,23 @@ a {
 
 .header--dark .firstLevel-itemLink {
   color: inherit;
+}
+
+.header--dark .headerAuth .button-flatWhite {
+  color: initial;
+}
+
+.header--dark .headerAuth .button-flatWhite:hover {
+  color: #bb241d;
+}
+
+.header--dark .headerAuth .button-raisedWhiteBorder {
+  border-color: #bb241d;
+  color: #bb241d;
+}
+
+.header--dark .headerAuth .button-raisedWhiteBorder:hover {
+  color: #fff;
 }
 
 .footer {
@@ -4346,6 +4375,10 @@ a {
   visibility: visible;
 }
 
+.homepage .services .serviceItem-image {
+  max-width: 100%;
+}
+
 .homepage .services .serviceItem-linkText {
   height: auto;
   transition: 0.5s opacity, 0.5s hidden;
@@ -4639,7 +4672,7 @@ a {
 }
 
 .pricing .intro .introMsg {
-  width: 715px;
+  width: 720px;
   text-align: center;
   color: #fff;
 }
@@ -4684,6 +4717,10 @@ a {
 
 .pricing .pricingPlans .pricingPlanList {
   margin-top: 55px;
+}
+
+.pricing .pricingPlans .pricingPlanItem {
+  text-align: center;
 }
 
 .pricing .pricingPlans .pricingPlanItem-price {
@@ -4824,10 +4861,6 @@ a {
   font-size: 25px;
   vertical-align: middle;
   color: #bb241d;
-}
-
-.pricing .enterprise .enterpriseOffer-list i + span {
-  margin-left: 15px;
 }
 
 .pricing .enterprise .enterpriseOffer-list mark {
@@ -5214,4 +5247,120 @@ a {
   color: #fff;
   line-height: 1.7;
   box-shadow: 0 25px 20px -20px rgba(158, 54, 33, 0.5);
+}
+
+.features .intro {
+  background: #23232b url(assets/features-intro-bg.png) center top no-repeat;
+}
+
+.features .intro .introContentBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 830px;
+  padding: 185px 0 90px;
+}
+
+.features .intro .introMsg {
+  width: 720px;
+  text-align: center;
+  color: #fff;
+}
+
+.features .intro .introMsg-headline {
+  font-family: "Muller", sans-serif;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 34px;
+  line-height: 1.5;
+}
+
+.features .intro .introMsg-headline mark {
+  color: #bb241d;
+}
+
+.features .intro .introMsg-text {
+  margin: 15px 0 0;
+  font-family: Lato, sans-serif;
+  line-height: 1.65;
+}
+
+.features .intro .introFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 185px;
+}
+
+.features .intro .introFeature {
+  flex: 0 1 30%;
+  display: flex;
+  margin-bottom: 50px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.features .intro .introFeature-image {
+  flex: 0 1 65px;
+}
+
+.features .intro .introFeature-text {
+  flex: 1 1;
+  margin-left: 25px;
+}
+
+.features .cryptogram {
+  background: url(assets/features-cryptogram-bg.png) center top no-repeat;
+}
+
+.features .cryptogram .cryptogramContentBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 760px;
+  border-top: 1px solid #333;
+  padding: 135px 0;
+}
+
+.features .cryptogram .cryptogramMsg {
+  width: 720px;
+  text-align: center;
+  color: #fff;
+}
+
+.features .cryptogram .cryptogramMsg-headline {
+  font-family: "Muller", sans-serif;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 34px;
+  line-height: 1.5;
+}
+
+.features .cryptogram .cryptogramMsg-headline mark {
+  color: #bb241d;
+}
+
+.features .cryptogram .cryptogramList {
+  margin-top: 75px;
+}
+
+.features .cryptogram .cryptogramItem-features {
+  margin-top: 55px;
+  font-size: 14px;
+}
+
+.features .cryptogram .cryptogramItem-features li + li {
+  margin-top: 15px;
+}
+
+.features .cryptogram .cryptogramItem-feature {
+  margin: 10px 0;
+}
+
+.features .cryptogram .cryptogramItem-feature .fa {
+  font-size: 25px;
+  opacity: 0.25;
 }

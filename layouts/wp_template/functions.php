@@ -186,6 +186,12 @@ if (!function_exists('virgilsecurity_setup')) :
                     "contact_partnership_contacts"
                 ),
                 'contact-map-address'          => get_starter_content("widgets", "contacts", "contact_map_address"),
+
+
+                'features-intro-msg'       => get_starter_content("widgets", "features", "features_intro_msg"),
+                'features-intro-feature'   => get_starter_content("widgets", "features", "features_intro_feature"),
+                'features-cryptogram-msg'  => get_starter_content("widgets", "features", "features_cryptogram_msg"),
+                'features-cryptogram-list' => get_starter_content("widgets", "features", "features_cryptogram_list"),
             ],
             'posts'   => [
                 'about_virgil' => [
@@ -676,6 +682,43 @@ if (!function_exists('virgilsecurity_setup')) :
             ]
         );
 
+
+        //Features
+        register_sidebar(
+            [
+                'name'          => __('Intro Msg', 'virgilsecurity'),
+                'id'            => 'features-intro-msg',
+                'before_widget' => __return_empty_string(),
+                'after_widget'  => __return_empty_string(),
+            ]
+        );
+
+        register_sidebar(
+            [
+                'name'          => __('Intro Features', 'virgilsecurity'),
+                'id'            => 'features-intro-feature',
+                'before_widget' => __return_empty_string(),
+                'after_widget'  => __return_empty_string(),
+            ]
+        );
+
+        register_sidebar(
+            [
+                'name'          => __('Intro Cryptogram Msg', 'virgilsecurity'),
+                'id'            => 'features-cryptogram-msg',
+                'before_widget' => __return_empty_string(),
+                'after_widget'  => __return_empty_string(),
+            ]
+        );
+
+        register_sidebar(
+            [
+                'name'          => __('Intro Cryptogram List', 'virgilsecurity'),
+                'id'            => 'features-cryptogram-list',
+                'before_widget' => __return_empty_string(),
+                'after_widget'  => __return_empty_string(),
+            ]
+        );
 
         //Footer
         register_sidebar(
