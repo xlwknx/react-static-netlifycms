@@ -1,5 +1,6 @@
 <?php
 
+//TODO: Scripts placeholder
 //TODO: update design
 if (!function_exists('virgilsecurity_setup')) :
     /**
