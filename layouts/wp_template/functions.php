@@ -1,5 +1,6 @@
 <?php
 
+//TODO: update design
 
 if (!function_exists('virgilsecurity_setup')) :
 
@@ -428,7 +429,7 @@ if (!function_exists('virgilsecurity_setup')) :
         $content = $label;
 
         if ($icon != '') {
-            $content = sprintf('<i class="icon icon-%s" aria-hidden="true"></i>%s', $icon, $content);
+            $content = sprintf('<i class="icon icon-%s" aria-hidden="true"></i><span>%s</span>', $icon, $content);
         }
 
 
