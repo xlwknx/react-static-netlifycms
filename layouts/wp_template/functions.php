@@ -117,6 +117,7 @@ if (!function_exists('virgilsecurity_setup')) :
     {
         $staticPageClasses = [
             ''             => 'homepage',
+            'homepage'     => 'homepage',
             'about-virgil' => 'about',
             'contacts'     => 'contacts',
             'features'     => 'features',
@@ -199,7 +200,7 @@ if (!function_exists('virgilsecurity_setup')) :
                 'features-cryptogram-list' => get_starter_content("widgets", "features", "features_cryptogram_list"),
                 'features-components'      => get_starter_content("widgets", "features", "features_components"),
                 'features-languages'       => get_starter_content("widgets", "features", "features_languages"),
-                'features-faq'              => get_starter_content("widgets", "features", "features_faq"),
+                'features-faq'             => get_starter_content("widgets", "features", "features_faq"),
 
                 'about-virgil-intro-msg'        => get_starter_content(
                     "widgets",
