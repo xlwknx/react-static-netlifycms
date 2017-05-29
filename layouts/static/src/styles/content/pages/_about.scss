@@ -63,6 +63,7 @@
   }
 
   .mission {
+    overflow: hidden;
     .missionContentBlock {
       display: flex;
       padding: 130px 0;
@@ -211,6 +212,7 @@
   }
 
   .highlights {
+    overflow: hidden;
     padding: 160px 0 150px;
     background: $vs-color-lightGrey1;
 
