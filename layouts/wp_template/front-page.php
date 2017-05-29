@@ -9,7 +9,7 @@
                         <?php dynamic_sidebar('hp-intro-area-links'); ?>
                     </div>
                 </div>
-                <ul class="introLangs">
+                <ul class="introLangList">
                     <?php dynamic_sidebar('hp-intro-langs'); ?>
                 </ul>
             </div>

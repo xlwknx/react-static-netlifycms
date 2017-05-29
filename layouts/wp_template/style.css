@@ -3646,6 +3646,12 @@ a {
   color: #fff;
 }
 
+.button-disabled {
+  opacity: 0.1;
+  cursor: default;
+  pointer-events: none;
+}
+
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -4144,31 +4150,31 @@ a {
   margin-left: 30px;
 }
 
-.homepage .intro .introLangs {
+.homepage .intro .introLangList {
   display: flex;
   justify-content: center;
   align-content: center;
   margin-bottom: 45px;
 }
 
-.homepage .intro .introLangs li {
+.homepage .intro .introLangList li {
   opacity: 0.5;
   transition: 0.5s opacity;
 }
 
-.homepage .intro .introLangs li:hover {
+.homepage .intro .introLangList li:hover {
   opacity: 1;
 }
 
-.homepage .intro .introLangs li + li {
+.homepage .intro .introLangList li + li {
   margin-left: 38px;
 }
 
-.homepage .intro .introLangs li a {
+.homepage .intro .introLangList li a {
   display: block;
 }
 
-.homepage .intro .introLangs li img {
+.homepage .intro .introLangList li img {
   display: block;
   height: 40px;
 }
@@ -4206,7 +4212,7 @@ a {
 }
 
 .homepage .useCases .useCasesMsg-text {
-  margin: 15px 0 0;
+  margin-top: 15px;
   font-family: Lato, sans-serif;
   line-height: 1.65;
 }
@@ -4315,7 +4321,7 @@ a {
 }
 
 .homepage .services .servicesMsg-text {
-  margin: 15px 0 0;
+  margin-top: 15px;
   font-family: Lato, sans-serif;
   line-height: 1.65;
 }
@@ -4428,7 +4434,7 @@ a {
 }
 
 .homepage .usage .usageMsg-text {
-  margin: 15px 0 0;
+  margin-top: 15px;
   font-family: Lato, sans-serif;
   line-height: 1.65;
 }
@@ -4661,7 +4667,7 @@ a {
 }
 
 .homepage .conclusion .conclusionMsg-text {
-  margin: 22px 0 0;
+  margin-top: 22px;
   font-family: Lato, sans-serif;
   line-height: 1.65;
 }
@@ -4671,15 +4677,15 @@ a {
 }
 
 .pricing .intro {
-  background: url(assets/pricing-intro-bg.png) center bottom no-repeat;
+  background: url(assets/pricing-intro-bg.png) center top no-repeat;
 }
 
 .pricing .intro .introContentBlock {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 460px;
+  padding: 185px 0 90px;
 }
 
 .pricing .intro .introMsg {
@@ -4702,7 +4708,7 @@ a {
 }
 
 .pricing .intro .introMsg-text {
-  margin: 15px 0 0;
+  margin-top: 15px;
   font-family: Lato, sans-serif;
   line-height: 1.65;
 }
@@ -4720,7 +4726,7 @@ a {
 }
 
 .pricing .pricingPlans .pricingPlansMsg p {
-  margin: 15px 0 0;
+  margin-top: 15px;
   font-family: Lato, sans-serif;
   line-height: 1.65;
   margin: 0;
@@ -4846,7 +4852,7 @@ a {
 }
 
 .pricing .enterprise .enterpriseOffer-text {
-  margin: 0 0 0;
+  margin-top: 0;
   font-family: Lato, sans-serif;
   line-height: 1.65;
 }
@@ -4911,7 +4917,7 @@ a {
 }
 
 .pricing .includes .includesMsg-text {
-  margin: 15px 0 0;
+  margin-top: 15px;
   font-family: Lato, sans-serif;
   line-height: 1.65;
 }
@@ -4956,7 +4962,7 @@ a {
 }
 
 .pricing .includes .includesItem-text {
-  margin: 10px 0 0;
+  margin-top: 10px;
   font-family: Lato, sans-serif;
   line-height: 1.65;
 }
@@ -5045,7 +5051,7 @@ a {
 }
 
 .contacts .contactUs .contactUsMsg-text {
-  margin: 15px 0 0;
+  margin-top: 15px;
   font-family: Lato, sans-serif;
   line-height: 1.65;
 }
@@ -5134,7 +5140,7 @@ a {
 }
 
 .contacts .contactUs .contactUsInfo-field p + p {
-  margin: 10px 0 0;
+  margin-top: 10px;
 }
 
 .contacts .contactUs .contactUsInfo-fieldText {
@@ -5186,7 +5192,7 @@ a {
 }
 
 .contacts .partnership .partnershipMsg-text {
-  margin: 15px 0 0;
+  margin-top: 15px;
   font-family: Lato, sans-serif;
   line-height: 1.65;
 }
@@ -5292,7 +5298,7 @@ a {
 }
 
 .features .intro .introMsg-text {
-  margin: 15px 0 0;
+  margin-top: 15px;
   font-family: Lato, sans-serif;
   line-height: 1.65;
 }
@@ -5363,7 +5369,7 @@ a {
   font-size: 14px;
 }
 
-.features .cryptogram .cryptogramItem-features li + li {
+.features .cryptogram .cryptogramItem-features > li + li {
   margin-top: 15px;
 }
 
@@ -5457,7 +5463,7 @@ a {
   margin-top: 105px;
 }
 
-.features .components .componentList li + li {
+.features .components .componentList > li + li {
   margin-top: 70px;
 }
 
@@ -5488,7 +5494,7 @@ a {
 }
 
 .features .components .componentItem-text {
-  margin: 10px 0 0;
+  margin-top: 10px;
   font-family: Lato, sans-serif;
   line-height: 1.65;
   font-size: 16px;
@@ -5541,7 +5547,7 @@ a {
   padding-right: 50px;
 }
 
-.features .faq .faqList li + li {
+.features .faq .faqList > li + li {
   margin-top: 65px;
 }
 
@@ -5617,7 +5623,7 @@ a {
   background: #23232b;
 }
 
-.features .faq .faqContentList li + li {
+.features .faq .faqContentList > li + li {
   margin-top: 35px;
 }
 
@@ -5639,4 +5645,350 @@ a {
 .features .faq .faqContentItem-linkCount:after {
   content: '\2014';
   padding: 0 10px;
+}
+
+.about .intro {
+  background: url(assets/about-intro-bg.png) center top no-repeat;
+}
+
+.about .intro .introContentBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 600px;
+  padding: 185px 0 90px;
+}
+
+.about .intro .introMsg {
+  width: 720px;
+  text-align: center;
+  color: #fff;
+}
+
+.about .intro .introMsg-headline {
+  font-family: "Muller", sans-serif;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 34px;
+  line-height: 1.5;
+}
+
+.about .intro .introMsg-headline mark {
+  color: #bb241d;
+}
+
+.about .intro .introMsg-text {
+  margin-top: 15px;
+  font-family: Lato, sans-serif;
+  line-height: 1.65;
+}
+
+.about .intro .introDataList {
+  display: flex;
+  justify-content: space-between;
+  width: 750px;
+  margin-top: 75px;
+}
+
+.about .intro .introDataItem {
+  font-family: "Muller", sans-serif;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.about .intro .introDataItem-image img {
+  display: block;
+  max-width: 100%;
+}
+
+.about .intro .introDataItem-info {
+  margin-left: 15px;
+}
+
+.about .intro .introDataItem-name {
+  font-size: 11px;
+  font-weight: bold;
+  color: #a6a6a6;
+}
+
+.about .intro .introDataItem-value {
+  margin-top: 5px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.about .mission .missionContentBlock {
+  display: flex;
+  padding: 130px 0;
+}
+
+.about .mission .missionMsg-headline {
+  font-family: "Muller", sans-serif;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 34px;
+}
+
+.about .mission .missionMsg-headline mark {
+  color: #bb241d;
+}
+
+.about .mission .missionMsg-text {
+  margin-top: 10px;
+  font-family: Lato, sans-serif;
+  line-height: 1.65;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.about .mission .whatWeDo {
+  flex: 1 1 50%;
+  padding-right: 80px;
+}
+
+.about .mission .ourMission {
+  flex: 0 1 45%;
+  margin: 55px 0 0 80px;
+  position: relative;
+  z-index: 1;
+  border-radius: 3px 0 0 3px;
+  background: #23232b;
+  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.1);
+}
+
+.about .mission .ourMission:before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  left: 100%;
+  top: 0;
+  height: 100%;
+  width: 2000px;
+  background: #23232b;
+  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.1);
+}
+
+.about .mission .ourMission:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -50px;
+  left: -50px;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  background: #bb241d;
+  background: linear-gradient(to bottom, #da322c 0%, #bb241d 100%);
+}
+
+.about .mission .ourMissionContent {
+  position: relative;
+  z-index: 2;
+  border-radius: 3px 0 0 3px;
+  padding: 50px;
+  background: #23232b;
+  color: #fff;
+}
+
+.about .leadership {
+  background: #f8fafd;
+}
+
+.about .leadership .leadershipContentBlock {
+  padding: 125px 0;
+}
+
+.about .leadership-caption {
+  font-family: "Muller", sans-serif;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 120px;
+  font-weight: bold;
+  color: #f2f2f2;
+  color: #edeff2;
+}
+
+.about .leadership .leadershipProfiles {
+  display: flex;
+}
+
+.about .leadership .leadershipProfiles > li + li {
+  margin-left: 100px;
+}
+
+.about .leadership .leadershipProfile {
+  flex: 0 1 510px;
+}
+
+.about .leadership .leadershipProfile-image {
+  margin-bottom: 50px;
+}
+
+.about .leadership .leadershipProfile-image img {
+  display: block;
+  max-width: 100%;
+}
+
+.about .leadership .leadershipProfile-name {
+  font-family: "Muller", sans-serif;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+.about .leadership .leadershipProfile-contacts {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 35px;
+}
+
+.about .leadership .leadershipProfile-contacts li {
+  display: inline-block;
+}
+
+.about .leadership .leadershipProfile-contacts li + li {
+  margin-left: 20px;
+}
+
+.about .leadership .leadershipProfile-contacts .fa {
+  font-size: 25px;
+  color: #bb241d;
+}
+
+.about .leadership .leadershipProfile-position {
+  font-family: "Muller", sans-serif;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #a6a6a6;
+}
+
+.about .leadership .leadershipProfile-text {
+  margin-top: 10px;
+  line-height: 1.75;
+}
+
+.about .leadership .leadershipProfile-text p + p {
+  margin-top: 10px;
+}
+
+.about .leadership .leadershipProfile-text mark {
+  color: #bb241d;
+}
+
+.about .highlights {
+  padding: 160px 0 150px;
+  background: #f8fafd;
+}
+
+.about .highlights .highlightsContentBlock {
+  flex: 0 1 45%;
+  margin-left: 20%;
+  position: relative;
+  z-index: 1;
+  border-radius: 3px 0 0 3px;
+  background: #23232b;
+  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.1);
+}
+
+.about .highlights .highlightsContentBlock:before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  left: 100%;
+  top: 0;
+  height: 100%;
+  width: 2000px;
+  background: #23232b;
+  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.1);
+}
+
+.about .highlights .highlightsContentBlock:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -50px;
+  left: -50px;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  background: #bb241d;
+  background: linear-gradient(to bottom, #da322c 0%, #bb241d 100%);
+}
+
+.about .highlights .highlightsOverview {
+  position: relative;
+  z-index: 2;
+  border-radius: 3px 0 0 3px;
+  padding: 50px;
+  background: #23232b;
+  color: #fff;
+}
+
+.about .awards {
+  background: #f8fafd;
+}
+
+.about .awards .awardsContentBlock {
+  padding: 75px 0;
+}
+
+.about .awards-caption {
+  font-family: "Muller", sans-serif;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 120px;
+  font-weight: bold;
+  color: #f2f2f2;
+  color: #edeff2;
+}
+
+.about .awards-image {
+  margin-top: 35px;
+}
+
+.about .awards-image img {
+  display: block;
+  max-width: 100%;
+}
+
+.about .investors {
+  background: #f8fafd;
+}
+
+.about .investors .investorsContentBlock {
+  padding: 60px 0 300px;
+}
+
+.about .investors-caption {
+  font-family: "Muller", sans-serif;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 120px;
+  font-weight: bold;
+  color: #f2f2f2;
+  text-align: right;
+  color: #edeff2;
+}
+
+.about .investors-image {
+  margin-top: 10px;
+}
+
+.about .investors-image img {
+  display: block;
+  max-width: 100%;
 }

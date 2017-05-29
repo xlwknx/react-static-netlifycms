@@ -5,4 +5,4 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div class="<?= get_global_block_class() ?>">
+<div class="<?= get_static_page_class() ?>">

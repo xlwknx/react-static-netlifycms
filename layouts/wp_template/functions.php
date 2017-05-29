@@ -113,13 +113,17 @@ if (!function_exists('virgilsecurity_setup')) :
         store_github_stars();
     }
 
-    function get_global_block_class()
+    function get_static_page_class()
     {
-        if (get_slug() == "") {
-            return "homepage";
-        } else {
-            return get_slug();
-        }
+        $staticPageClasses = [
+            ''             => 'homepage',
+            'about-virgil' => 'about',
+            'contacts'     => 'contacts',
+            'features'     => 'features',
+            'pricing'      => 'pricing',
+        ];
+
+        return $staticPageClasses[get_slug()];
     }
 
     function get_header_dark_class()
@@ -193,6 +197,15 @@ if (!function_exists('virgilsecurity_setup')) :
                 'features-intro-feature'   => get_starter_content("widgets", "features", "features_intro_feature"),
                 'features-cryptogram-msg'  => get_starter_content("widgets", "features", "features_cryptogram_msg"),
                 'features-cryptogram-list' => get_starter_content("widgets", "features", "features_cryptogram_list"),
+
+                'about-virgil-intro-msg'  => get_starter_content("widgets", "about-virgil", "about_virgil_intro_msg"),
+                'about-virgil-intro-list' => get_starter_content("widgets", "about-virgil", "about_virgil_intro_list"),
+                'about-virgil-mission'    => get_starter_content("widgets", "about-virgil", "about_virgil_mission"),
+                'about-virgil-leadership' => get_starter_content("widgets", "about-virgil", "about_virgil_leadership"),
+                'about-virgil-highlights-msg' => get_starter_content("widgets", "about-virgil", "about_virgil_highlights_msg"),
+                'about-virgil-highlights-items' => get_starter_content("widgets", "about-virgil", "about_virgil_highlights_items"),
+                'about-virgil-awards' => get_starter_content("widgets", "about-virgil", "about_virgil_awards"),
+                'about-virgil-investors' => get_starter_content("widgets", "about-virgil", "about_virgil_investors"),
             ],
             'posts'   => [
                 'about_virgil' => [
@@ -799,6 +812,80 @@ if (!function_exists('virgilsecurity_setup')) :
                 'after_widget'  => __return_empty_string(),
             ]
         );
+
+        //About Virgil
+        register_sidebar(
+            [
+                'name'          => __('About Virgil Intro Msg', 'virgilsecurity'),
+                'id'            => 'about-virgil-intro-msg',
+                'before_widget' => __return_empty_string(),
+                'after_widget'  => __return_empty_string(),
+            ]
+        );
+
+        register_sidebar(
+            [
+                'name'          => __('About Virgil Intro List', 'virgilsecurity'),
+                'id'            => 'about-virgil-intro-list',
+                'before_widget' => __return_empty_string(),
+                'after_widget'  => __return_empty_string(),
+            ]
+        );
+
+        register_sidebar(
+            [
+                'name'          => __('About Virgil Mission', 'virgilsecurity'),
+                'id'            => 'about-virgil-mission',
+                'before_widget' => __return_empty_string(),
+                'after_widget'  => __return_empty_string(),
+            ]
+        );
+
+        register_sidebar(
+            [
+                'name'          => __('About Virgil Leadership', 'virgilsecurity'),
+                'id'            => 'about-virgil-leadership',
+                'before_widget' => __return_empty_string(),
+                'after_widget'  => __return_empty_string(),
+            ]
+        );
+
+        register_sidebar(
+            [
+                'name'          => __('About Virgil Highlights Msg', 'virgilsecurity'),
+                'id'            => 'about-virgil-highlights-msg',
+                'before_widget' => __return_empty_string(),
+                'after_widget'  => __return_empty_string(),
+            ]
+        );
+
+        register_sidebar(
+            [
+                'name'          => __('About Virgil Highlights Items', 'virgilsecurity'),
+                'id'            => 'about-virgil-highlights-items',
+                'before_widget' => __return_empty_string(),
+                'after_widget'  => __return_empty_string(),
+            ]
+        );
+
+        register_sidebar(
+            [
+                'name'          => __('About Virgil Awards', 'virgilsecurity'),
+                'id'            => 'about-virgil-awards',
+                'before_widget' => __return_empty_string(),
+                'after_widget'  => __return_empty_string(),
+            ]
+        );
+
+        register_sidebar(
+            [
+                'name'          => __('About Virgil Investors', 'virgilsecurity'),
+                'id'            => 'about-virgil-investors',
+                'before_widget' => __return_empty_string(),
+                'after_widget'  => __return_empty_string(),
+            ]
+        );
+
 
         //Footer
         register_sidebar(
