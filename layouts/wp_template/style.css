@@ -3834,9 +3834,6 @@ a {
 }
 
 .header .firstLevel-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
   z-index: 3;
   margin: 0 15px 0;
@@ -3873,6 +3870,8 @@ a {
   visibility: hidden;
   position: absolute;
   top: 100%;
+  left: 50%;
+  transform: translate(-50%);
   border-radius: 5px;
   background: #fff;
   opacity: 0;
@@ -3982,6 +3981,10 @@ a {
 
 .header--dark .headerAuth .button-raisedWhiteBorder:hover {
   color: #fff;
+}
+
+.about .headerNav-about {
+  border-color: #fff;
 }
 
 .footer {
@@ -5721,6 +5724,10 @@ a {
   color: #fff;
 }
 
+.about .mission {
+  overflow: hidden;
+}
+
 .about .mission .missionContentBlock {
   display: flex;
   padding: 130px 0;
@@ -5888,6 +5895,7 @@ a {
 }
 
 .about .highlights {
+  overflow: hidden;
   padding: 160px 0 150px;
   background: #f8fafd;
 }
