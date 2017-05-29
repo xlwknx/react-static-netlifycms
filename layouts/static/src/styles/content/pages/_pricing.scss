@@ -1,13 +1,13 @@
 .pricing {
   .intro {
-    background: url("../../assets/images/bg/pricing/pricing-intro-bg.png") center bottom no-repeat;
+    background: url("../../assets/images/bg/pricing/pricing-intro-bg.png") center top no-repeat;
 
     .introContentBlock {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
       height: 460px;
+      padding: 185px 0 90px;
     }
 
     .introMsg {

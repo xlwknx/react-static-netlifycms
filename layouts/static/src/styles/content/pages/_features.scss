@@ -83,7 +83,7 @@
         margin-top: 55px;
         font-size: 14px;
 
-        li + li {
+        > li + li {
           margin-top: 15px;
         }
       }
@@ -172,7 +172,7 @@
       width: 520px;
       margin-top: 105px;
 
-      li + li {
+      > li + li {
         margin-top: 70px;
       }
     }
@@ -240,7 +240,7 @@
       margin-top: 45px;
       padding-right: 50px;
 
-      li + li {
+      > li + li {
         margin-top: 65px;
       }
     }
@@ -315,7 +315,7 @@
       padding: 50px;
       background: $vs-color-darkBlue5;
 
-      li + li {
+      > li + li {
         margin-top: 35px;
       }
     }
