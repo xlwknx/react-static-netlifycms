@@ -1,4 +1,4 @@
-.contacts {
+.contactsPage {
   .contactUs {
     background: $vs-color-lightGrey1;
 
@@ -10,16 +10,8 @@
       padding-top: (190px - 45px);
     }
 
-    .contactUsMsg {
+    .blockMsg {
       width: 700px;
-
-      &-headline {
-        @include blockMsg-headline();
-      }
-
-      &-text {
-        @include blockMsg-text();
-      }
     }
 
     .contactUsBlock {
@@ -135,16 +127,8 @@
       padding: 130px 0;
     }
 
-    .partnershipMsg {
+    .blockMsg {
       width: 840px;
-
-      &-headline {
-        @include blockMsg-headline();
-      }
-
-      &-text {
-        @include blockMsg-text();
-      }
     }
 
     .partnershipContacts {

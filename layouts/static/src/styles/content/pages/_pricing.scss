@@ -1,27 +1,18 @@
-.pricing {
+.pricingPage {
   .intro {
-    background: url("../../assets/images/bg/pricing/pricing-intro-bg.png") center top no-repeat;
+    background-image: url("../../assets/images/bg/pricing/pricing-intro-bg.png");
 
     .introContentBlock {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       height: 460px;
-      padding: 185px 0 90px;
     }
 
-    .introMsg {
+    .blockMsg {
       width: 720px;
       text-align: center;
       color: $vs-color-white;
 
       &-headline {
-        @include blockMsg-headline();
         line-height: 1.5;
-      }
-
-      &-text {
-        @include blockMsg-text();
       }
     }
   }
@@ -59,8 +50,9 @@
           font-size: 25px;
         }
 
-        mark {
+        strong {
           font-size: 44px;
+          font-weight: normal;
         }
 
         sub {
@@ -90,10 +82,6 @@
         position: relative;
         padding: 25px 0;
 
-        mark {
-          font-weight: bold;
-        }
-
         &--disabled {
           color: $vs-color-lightGrey3;
         }
@@ -107,7 +95,8 @@
         .pricingPlanItem-price {
           color: $vs-color-lightRed2;
 
-          mark {
+          strong {
+            font-weight: normal;
             color: $vs-color-white;
           }
         }
@@ -185,10 +174,6 @@
           vertical-align: middle;
           color: $vs-color-darkRed1;
         }
-
-        mark {
-          font-weight: bold;
-        }
       }
     }
   }
@@ -207,17 +192,9 @@
       padding: 190px 0;
     }
 
-    .includesMsg {
+    .blockMsg {
       width: 710px;
       text-align: center;
-
-      &-headline {
-        @include blockMsg-headline();
-      }
-
-      &-text {
-        @include blockMsg-text();
-      }
     }
 
     .includesList {
@@ -270,7 +247,7 @@
       padding-bottom: 155px;
     }
 
-    .conclusionMsg {
+    .blockMsg {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -291,7 +268,7 @@
         z-index: 1;
         width: 100%;
         height: 100%;
-        background: url("../../assets/images/bg/pricing/pricing-conclusion-bg.png") center 0 no-repeat;
+        background: url("../../assets/images/bg/pricing/pricing-conclusion-bg.png") center top no-repeat;
       }
 
       * {
@@ -299,7 +276,6 @@
       }
 
       &-headline {
-        @include blockMsg-headline();
         font-size: 28px;
         color: $vs-color-white;
       }

@@ -1,27 +1,19 @@
-.features {
+.featuresPage {
   .intro {
-    background: $vs-color-darkBlue5 url("../../assets/images/bg/features/features-intro-bg.png") center top no-repeat;
+    background-color: $vs-color-darkBlue5;
+    background-image: url("../../assets/images/bg/features/features-intro-bg.png");
 
     .introContentBlock {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       min-height: 830px;
-      padding: 185px 0 90px;
     }
 
-    .introMsg {
+    .blockMsg {
       width: 720px;
       text-align: center;
       color: $vs-color-white;
 
       &-headline {
-        @include blockMsg-headline();
         line-height: 1.5;
-      }
-
-      &-text {
-        @include blockMsg-text();
       }
     }
 
@@ -63,13 +55,12 @@
       padding-top: 135px;
     }
 
-    .cryptogramMsg {
+    .blockMsg {
       width: 720px;
       text-align: center;
       color: $vs-color-white;
 
       &-headline {
-        @include blockMsg-headline();
         line-height: 1.5;
       }
     }
@@ -114,55 +105,35 @@
       width: 1010px;
       height: 990px;
       max-width: 50%;
-      background: url("../../assets/images/bg/features/features-components-bg.png") left bottom no-repeat;;
+      background: url("../../assets/images/bg/features/features-components-bg.png") left bottom no-repeat;
     }
 
     .componentsContentBlock {
-      position: relative;
-      z-index: 1;
       margin-right: 50px;
       border-radius: 0 3px 3px 0;
-      background: $vs-color-darkBlue5;
       color: $vs-color-white;
-      box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
 
       &:before {
-        content: '';
-        position: absolute;
-        z-index: 1;
         top: 0;
         right: 100%;
-        width: 2000px;
-        height: 100%;
-        background: $vs-color-darkBlue5;
-        box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.1);
+        left: initial;
       }
 
       &:after {
-        content: '';
-        position: absolute;
-        z-index: 1;
         top: -50px;
         right: -50px;
-        height: 100%;
+        left: initial;
         width: 75%;
-        background: $vs-color-darkRed1;
-        background: linear-gradient(to bottom, $vs-color-red1 0%, $vs-color-darkRed1 100%);
-        border-radius: 3px;
       }
     }
 
     .componentsOverview {
-      position: relative;
-      z-index: 2;
       border-radius: 0 3px 3px 0;
       padding: 85px 375px 95px 100px;
-      background: $vs-color-darkBlue5;
     }
 
-    .componentsMsg {
+    .blockMsg {
       &-headline {
-        @include blockMsg-headline();
         font-size: 42px;
         line-height: 1.4;
       }
@@ -265,10 +236,6 @@
         p + p {
           margin-top: 30px;
         }
-
-        mark {
-          font-weight: bold;
-        }
       }
     }
 
@@ -276,45 +243,9 @@
       flex: 1 1 505px;
       align-self: flex-start;
       display: flex;
-      position: relative;
-      z-index: 1;
-      border-radius: 3px 0 0 3px;
-      background: $vs-color-darkBlue5;
-      box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
-
-      &:before {
-        content: '';
-        position: absolute;
-        z-index: 1;
-        left: 100%;
-        top: 0;
-        height: 100%;
-        width: 2000px;
-        background: $vs-color-darkBlue5;
-        box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
-      }
-
-      &:after {
-        content: '';
-        position: absolute;
-        z-index: 1;
-        top: -50px;
-        left: 50px;
-        width: 50%;
-        height: 100%;
-        border-radius: 3px;
-        background: $vs-color-darkRed1;
-        background: linear-gradient(to bottom, $vs-color-red1 0%, $vs-color-darkRed1 100%);
-      }
     }
 
     .faqContentList {
-      position: relative;
-      z-index: 2;
-      border-radius: 3px 0 0 3px;
-      padding: 50px;
-      background: $vs-color-darkBlue5;
-
       > li + li {
         margin-top: 35px;
       }

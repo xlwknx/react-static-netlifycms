@@ -1,23 +1,21 @@
-.homepage {
+.homePage {
   .intro {
     display: flex;
     flex-direction: column;
-    background: url("../../assets/images/bg/home/home-intro-bg.png") right bottom no-repeat;
+    background: url("../../assets/images/bg/home/home-intro-bg.png") center bottom no-repeat;
 
     .introContentBlock {
-      flex: 2 1;
-      display: flex;
-      flex-direction: column;
+      align-items: initial;
       justify-content: flex-end;
       height: 920px;
+      padding-bottom: 45px;
     }
 
-    .introMsg {
+    .blockMsg {
       margin-bottom: 325px;
       color: $vs-color-white;
 
       &-headline {
-        @include blockMsg-headline();
         line-height: 1.5;
       }
 
@@ -35,7 +33,6 @@
       display: flex;
       justify-content: center;
       align-content: center;
-      margin-bottom: 45px;
 
       li {
         opacity: 0.5;
@@ -74,18 +71,10 @@
       position: relative;
     }
 
-    .useCasesMsg {
+    .blockMsg {
       width: 715px;
       padding: 130px 0 80px;
       text-align: center;
-
-      &-headline {
-        @include blockMsg-headline();
-      }
-
-      &-text {
-        @include blockMsg-text();
-      }
 
       &-links {
         margin-top: 55px;
@@ -166,17 +155,9 @@
       left: 10%;
     }
 
-    .servicesMsg {
+    .blockMsg {
       flex: 0 1 495px;
       width: 495px;
-
-      &-headline {
-        @include blockMsg-headline();
-      }
-
-      &-text {
-        @include blockMsg-text();
-      }
     }
 
     .serviceList {
@@ -260,23 +241,15 @@
   }
 
   .usage {
-    background: url("../../assets/images/bg/home/home-usage-bg.png") 0 0 no-repeat;
+    background: url("../../assets/images/bg/home/home-usage-bg.png") center top no-repeat;
 
     .usageContentBlock {
       padding: 140px 0 135px;
     }
 
-    .usageMsg {
+    .blockMsg {
       width: 70%;
       color: $vs-color-white;
-
-      &-headline {
-        @include blockMsg-headline();
-      }
-
-      &-text {
-        @include blockMsg-text();
-      }
     }
 
     .usageDetails {
@@ -492,15 +465,11 @@
       border-top: 1px solid $vs-color-lightGrey3;
     }
 
-    .conclusionMsg {
+    .blockMsg {
       width: 50%;
 
-      &-headline {
-        @include blockMsg-headline();
-      }
-
       &-text {
-        @include blockMsg-text(22px);
+        margin-top: 22px;
       }
 
       &-links {

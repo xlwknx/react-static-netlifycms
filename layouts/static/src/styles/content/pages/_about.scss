@@ -1,27 +1,18 @@
-.about {
+.aboutPage {
   .intro {
-    background: url("../../assets/images/bg/about/about-intro-bg.png") center top no-repeat;
+    background-image: url("../../assets/images/bg/about/about-intro-bg.png");
 
     .introContentBlock {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       height: 600px;
-      padding: 185px 0 90px;
     }
 
-    .introMsg {
+    .blockMsg {
       width: 720px;
       text-align: center;
       color: $vs-color-white;
 
       &-headline {
-        @include blockMsg-headline();
         line-height: 1.5;
-      }
-
-      &-text {
-        @include blockMsg-text();
       }
     }
 
@@ -64,18 +55,15 @@
 
   .mission {
     overflow: hidden;
+
     .missionContentBlock {
       display: flex;
       padding: 130px 0;
     }
 
-    .missionMsg {
-      &-headline {
-        @include blockMsg-headline();
-      }
-
+    .blockMsg {
       &-text {
-        @include blockMsg-text(10px);
+        margin-top: 10px;
         font-size: 16px;
         line-height: 1.9;
       }
@@ -89,44 +77,6 @@
     .ourMission {
       flex: 0 1 45%;
       margin: 55px 0 0 80px;
-      position: relative;
-      z-index: 1;
-      border-radius: 3px 0 0 3px;
-      background: $vs-color-darkBlue5;
-      box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
-
-      &:before {
-        content: '';
-        position: absolute;
-        z-index: 1;
-        left: 100%;
-        top: 0;
-        height: 100%;
-        width: 2000px;
-        background: $vs-color-darkBlue5;
-        box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
-      }
-
-      &:after {
-        content: '';
-        position: absolute;
-        z-index: 1;
-        top: -50px;
-        left: -50px;
-        width: 100%;
-        height: 100%;
-        border-radius: 3px;
-        background: $vs-color-darkRed1;
-        background: linear-gradient(to bottom, $vs-color-red1 0%, $vs-color-darkRed1 100%);
-      }
-    }
-
-    .ourMissionContent {
-      position: relative;
-      z-index: 2;
-      border-radius: 3px 0 0 3px;
-      padding: 50px;
-      background: $vs-color-darkBlue5;
       color: $vs-color-white;
     }
   }
@@ -204,7 +154,8 @@
           margin-top: 10px;
         }
 
-        mark {
+        strong {
+          font-weight: normal;
           color: $vs-color-darkRed1;
         }
       }
@@ -219,44 +170,6 @@
     .highlightsContentBlock {
       flex: 0 1 45%;
       margin-left: 20%;
-      position: relative;
-      z-index: 1;
-      border-radius: 3px 0 0 3px;
-      background: $vs-color-darkBlue5;
-      box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
-
-      &:before {
-        content: '';
-        position: absolute;
-        z-index: 1;
-        left: 100%;
-        top: 0;
-        height: 100%;
-        width: 2000px;
-        background: $vs-color-darkBlue5;
-        box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
-      }
-
-      &:after {
-        content: '';
-        position: absolute;
-        z-index: 1;
-        top: -50px;
-        left: -50px;
-        width: 100%;
-        height: 100%;
-        border-radius: 3px;
-        background: $vs-color-darkRed1;
-        background: linear-gradient(to bottom, $vs-color-red1 0%, $vs-color-darkRed1 100%);
-      }
-    }
-
-    .highlightsOverview {
-      position: relative;
-      z-index: 2;
-      border-radius: 3px 0 0 3px;
-      padding: 50px;
-      background: $vs-color-darkBlue5;
       color: $vs-color-white;
     }
   }

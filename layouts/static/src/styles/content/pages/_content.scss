@@ -1,0 +1,77 @@
+.contentPage {
+  .intro {
+    background-image: url("../../assets/images/bg/content/content-intro-bg.png");
+
+    .introContentBlock {
+      height: 460px;
+    }
+
+    .blockMsg {
+      color: $vs-color-white;
+    }
+
+    .introNav {
+      @include font-muller();
+      display: flex;
+      margin-top: 60px;
+      font-size: 14px;
+
+      li {
+        border-bottom: 2px solid transparent;
+        opacity: 0.5;
+        transition: 0.5s opacity, 0.5s border;
+
+        &:hover,
+        &.active {
+          border-color: $vs-color-white;
+          opacity: 1;
+        }
+
+        & + li {
+          margin-left: 35px;
+        }
+      }
+
+      a {
+        display: block;
+        padding: 5px;
+        color: $vs-color-white;
+      }
+    }
+  }
+
+  .article {
+    .articleContentBlock {
+      padding: 65px 190px 195px;
+    }
+
+    &-headline {
+      @include font-muller();
+      margin-bottom: 18px;
+      font-size: 28px;
+    }
+
+    .articleBlock {
+      font-size: 16px;
+      line-height: 1.9;
+
+      & + .articleBlock {
+        margin-top: 58px;
+      }
+
+      &-headline {
+        margin-bottom: 30px;
+        font-size: inherit;
+        font-weight: bold;
+      }
+
+      &-linkRed {
+        color: $vs-color-darkRed1;
+      }
+
+      p ~ p {
+        margin-top: 30px;
+      }
+    }
+  }
+}

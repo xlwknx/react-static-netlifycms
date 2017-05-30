@@ -1,18 +1,18 @@
 // Private
-@mixin _button-base() {
+@mixin _button-base($lineHeight: 40px) {
   @include font-muller();
   display: inline-block;
   align-items: center;
   height: 40px;
   border: 0;
   border-radius: 3px;
-  line-height: 40px;
+  line-height: $lineHeight;
   font-size: 14px;
   cursor: pointer;
 }
 
-@mixin _button-baseRaised() {
-  @include _button-base();
+@mixin _button-baseRaised($lineHeight: 40px) {
+  @include _button-base($lineHeight);
   padding: 0 30px;
 }
 
@@ -57,7 +57,7 @@
 }
 
 @mixin button-raisedWhiteBorder {
-  @include _button-baseRaised;
+  @include _button-baseRaised(38px);
   border: 2px solid $vs-color-white;
   color: $vs-color-white;
   transition: 0.5s background, 0.5s border-color, 0.5s box-shadow;
@@ -70,13 +70,13 @@
 }
 
 @mixin button-raisedWhiteBorder-static {
-  @include _button-baseRaised;
+  @include _button-baseRaised(38px);
   border: 2px solid $vs-color-white;
   color: $vs-color-white;
 }
 
 @mixin button-raisedRedBorder {
-  @include _button-baseRaised;
+  @include _button-baseRaised(38px);
   border: 2px solid $vs-color-darkRed1;
   color: $vs-color-darkRed1;
   transition: 0.5s background, 0.5s border-color, 0.5s box-shadow, 0.5s color;
@@ -90,7 +90,7 @@
 }
 
 @mixin button-raisedRedBorder-static {
-  @include _button-baseRaised;
+  @include _button-baseRaised(38px);
   border: 2px solid $vs-color-darkRed1;
   color: $vs-color-darkRed1;
 }
@@ -109,7 +109,7 @@
 }
 
 @mixin button-flat {
-  @include _button-baseFlat;
+  @include _button-baseFlat();
 
   &:hover {
     color: $vs-color-darkRed1;
@@ -117,6 +117,6 @@
 }
 
 @mixin button-flatWhite {
-  @include _button-baseFlat;
+  @include _button-baseFlat();
   color: $vs-color-white;
 }

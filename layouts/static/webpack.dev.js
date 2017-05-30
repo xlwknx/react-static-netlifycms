@@ -24,15 +24,11 @@ module.exports = {
       {
         test: /\.(otf|gif|jpe?g|png|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
         loader: ['file-loader?name=assets/[name].[ext]']
-        //loader: ['base64-inline-loader?limit=1000&name=assets/[name].[ext]']
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      // hash: true,
-      // filename: 'index.html',
-      // template: __dirname + '/src/index.html'
       template: 'src/index.html'
     }),
     new HtmlWebpackPlugin({
@@ -50,6 +46,18 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'about.html',
       template: 'src/templates/about.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'content.html',
+      template: 'src/templates/content/content.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'terms.html',
+      template: 'src/templates/content/terms.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'terms.html',
+      template: 'src/templates/content/policy.html'
     }),
     new ExtractTextPlugin({
       filename: '[name].bundle.css',

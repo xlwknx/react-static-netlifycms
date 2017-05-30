@@ -49,7 +49,7 @@
     &-itemLink {
       @include font-muller;
       display: inline-block;
-      margin: 30px 0 15px;
+      padding: 30px 0 15px;
       color: $vs-color-white;
       font-size: 14px;
       cursor: pointer;
@@ -131,10 +131,6 @@
     justify-content: flex-end;
     align-items: center;
     font-size: 14px;
-
-    a + a {
-      margin-left: 15px;
-    }
   }
 
   &--dark {
