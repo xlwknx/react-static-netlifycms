@@ -514,7 +514,7 @@ if (!function_exists('virgilsecurity_setup')) :
 
     function virgilsecurity_enqueue_script()
     {
-        wp_enqueue_script('core', get_theme_file_uri('main.bundle.js'), false);
+        wp_enqueue_script('core', get_theme_file_uri('main.bundle.js'), [], false, true);
     }
 
     function get_github_stars()
