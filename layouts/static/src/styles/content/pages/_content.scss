@@ -13,6 +13,7 @@
     .introNav {
       @include font-muller();
       display: flex;
+      align-items: center;
       margin-top: 60px;
       font-size: 14px;
 
@@ -43,6 +44,7 @@
   .article {
     .articleContentBlock {
       padding: 120px 190px 195px;
+      font-size: 16px;
     }
 
     &-headline {
@@ -51,27 +53,18 @@
       font-size: 28px;
     }
 
-    .articleBlock {
-      font-size: 16px;
+    &-linkRed {
+      color: $vs-color-darkRed1;
+    }
+
+    h3 {
+      margin: 65px 0 35px;
+      font-size: inherit;
+      font-weight: bold;
+    }
+
+    p {
       line-height: 1.9;
-
-      & + .articleBlock {
-        margin-top: 58px;
-      }
-
-      &-headline {
-        margin-bottom: 30px;
-        font-size: inherit;
-        font-weight: bold;
-      }
-
-      &-linkRed {
-        color: $vs-color-darkRed1;
-      }
-
-      p ~ p {
-        margin-top: 30px;
-      }
     }
   }
 }

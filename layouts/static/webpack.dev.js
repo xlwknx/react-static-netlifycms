@@ -55,10 +55,6 @@ module.exports = {
       filename: 'terms.html',
       template: 'src/templates/content/terms.html'
     }),
-    new HtmlWebpackPlugin({
-      filename: 'terms.html',
-      template: 'src/templates/content/policy.html'
-    }),
     new ExtractTextPlugin({
       filename: '[name].bundle.css',
       allChunks: true
