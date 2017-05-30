@@ -15,24 +15,56 @@ module.exports = {
     rules: [
       {
         test: /\.html$/,
-        loader: 'html-loader'
+        loader: 'html-loader?minimize=false'
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract(['css-loader', 'resolve-url-loader', 'sass-loader?sourceMap'])
+        loader: ExtractTextPlugin.extract(['css-loader', 'postcss-loader', 'resolve-url-loader', 'sass-loader?sourceMap'])
       },
       {
-        test: /\.(otf|gif|jpe?g|png|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        test: /\.(otf|ttf|eot|woff(2)?)(\?[a-z0-9=&.]+)?$/,
         loader: ['file-loader?name=assets/[name].[ext]']
-        //loader: ['base64-inline-loader?limit=1000&name=assets/[name].[ext]']
+      },
+      {
+        test: /\.(gif|jpe?g|png|svg)$/,
+        loader: ['file-loader?name=assets/[name].[ext]', 'img-loader']
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       hash: true,
-      filename: 'index.html',
-      template: __dirname + '/src/index.html'
+      template: 'src/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      filename: 'pricing.html',
+      template: 'src/templates/pricing.html'
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      filename: 'contacts.html',
+      template: 'src/templates/contacts.html'
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      filename: 'features.html',
+      template: 'src/templates/features.html'
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      filename: 'about.html',
+      template: 'src/templates/about.html'
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      filename: 'content.html',
+      template: 'src/templates/content/content.html'
+    }),
+    new HtmlWebpackPlugin({
+      hash: true,
+      filename: 'terms.html',
+      template: 'src/templates/content/terms.html'
     }),
     new ExtractTextPlugin({
       filename: '[name].bundle.css',

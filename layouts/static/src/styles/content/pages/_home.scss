@@ -2,7 +2,7 @@
   .intro {
     display: flex;
     flex-direction: column;
-    background: url("../../assets/images/bg/home/home-intro-bg.png") center bottom no-repeat;
+    background-url: url("../../assets/images/bg/home/home-intro-bg.png");
 
     .introContentBlock {
       align-items: initial;
