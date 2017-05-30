@@ -3,7 +3,7 @@
 <div class="contactUs">
     <div class="wrapper">
         <div class="contactUsContentBlock">
-            <div class="contactUsMsg">
+            <div class="blockMsg">
                 <?php dynamic_sidebar('contact-us-msg'); ?>
             </div>
             <div class="contactUsBlock">
@@ -15,7 +15,7 @@
 <div class="partnership">
     <div class="wrapper">
         <div class="partnershipContentBlock">
-            <div class="partnershipMsg">
+            <div class="blockMsg">
                 <?php dynamic_sidebar('contact-partnership-msg'); ?>
             </div>
             <div class="partnershipContacts">

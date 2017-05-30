@@ -106,6 +106,8 @@ if (!function_exists('virgilsecurity_setup')) :
             }
         );
 
+        remove_filter('the_content', 'wpautop');
+
         //add_filter( 'black_studio_tinymce_hide_empty', '__return_true' );
 
         add_editor_style('editor-style.css');
@@ -116,15 +118,16 @@ if (!function_exists('virgilsecurity_setup')) :
     function get_static_page_class()
     {
         $staticPageClasses = [
-            ''             => 'homepage',
-            'homepage'     => 'homepage',
-            'about-virgil' => 'about',
-            'contacts'     => 'contacts',
-            'features'     => 'features',
-            'pricing'      => 'pricing',
+            ''             => 'homePage',
+            'homepage'     => 'homePage',
+            'about-virgil' => 'aboutPage',
+            'contacts'     => 'contactsPage',
+            'features'     => 'featuresPage',
+            'pricing'      => 'pricingPage',
+            'terms-of-use-privacy-policy' => 'contentPage termsPage'
         ];
 
-        return $staticPageClasses[get_slug()];
+        return isset($staticPageClasses[get_slug()]) ? $staticPageClasses[get_slug()] : 'contentPage';
     }
 
     function get_header_dark_class()

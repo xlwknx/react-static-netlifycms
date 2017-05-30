@@ -3,7 +3,7 @@
 <div class="intro">
     <div class="wrapper">
         <div class="introContentBlock">
-            <div class="introMsg">
+            <div class="blockMsg">
                 <?php dynamic_sidebar('about-virgil-intro-msg'); ?>
             </div>
             <ul class="introDataList">
@@ -28,9 +28,9 @@
 </div>
 <div class="highlights">
     <div class="wrapper">
-        <div class="highlightsContentBlock">
-            <div class="highlightsOverview">
-                <div class="highlightsMsg">
+        <div class="highlightsContentBlock layeredBlock">
+            <div class="layeredBlockContent">
+                <div class="blockMsg">
                     <?php dynamic_sidebar('about-virgil-highlights-msg'); ?>
                 </div>
                 <div class="highlightsCarousel-controls">

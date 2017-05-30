@@ -3,7 +3,7 @@
 <div class="intro">
     <div class="wrapper">
         <div class="introContentBlock">
-            <div class="introMsg">
+            <div class="blockMsg">
                 <?php dynamic_sidebar('features-intro-msg'); ?>
             </div>
             <ul class="introFeatures">
@@ -15,7 +15,7 @@
 <div class="cryptogram">
     <div class="wrapper">
         <div class="cryptogramContentBlock">
-            <div class="cryptogramMsg">
+            <div class="blockMsg">
                 <?php dynamic_sidebar('features-cryptogram-msg'); ?>
             </div>
             <div class="comparisonBlock cryptogramList">
@@ -27,8 +27,8 @@
 
 <div class="components">
     <div class="wrapper">
-        <div class="componentsContentBlock">
-            <div class="componentsOverview">
+        <div class="componentsContentBlock layeredBlock">
+            <div class="componentsOverview layeredBlockContent">
                 <?php dynamic_sidebar('features-components'); ?>
             </div>
         </div>

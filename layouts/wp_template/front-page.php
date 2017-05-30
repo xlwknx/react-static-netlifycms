@@ -3,9 +3,9 @@
     <div class="intro">
         <div class="wrapper">
             <div class="introContentBlock">
-                <div class="introMsg">
+                <div class="blockMsg">
                     <?php dynamic_sidebar('hp-intro-area-headline'); ?>
-                    <div class="introMsg-links">
+                    <div class="blockMsg-links">
                         <?php dynamic_sidebar('hp-intro-area-links'); ?>
                     </div>
                 </div>

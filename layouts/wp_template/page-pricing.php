@@ -42,7 +42,7 @@
 <div class="includes">
     <div class="wrapper">
         <div class="includesContentBlock">
-            <div class="includesMsg">
+            <div class="blockMsg">
                 <?php dynamic_sidebar('pricing-includes-msg'); ?>
             </div>
             <ul class="includesList">
@@ -54,7 +54,7 @@
 <div class="conclusion">
     <div class="wrapper">
         <div class="conclusionContentBlock">
-            <div class="conclusionMsg">
+            <div class="blockMsg">
                 <?php dynamic_sidebar('pricing-conclusion-msg'); ?>
             </div>
         </div>
