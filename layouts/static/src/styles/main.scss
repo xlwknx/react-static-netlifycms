@@ -1,11 +1,7 @@
-// Vendor
 @import "vendor/all";
-
-// Modules
-@import "modules/all";
-
-// Partials
-@import "partials/all";
-
-// Features
-@import "content/all";
+@import "assets/fonts/all";
+@import "utils/all";
+@import "base/all";
+@import "components/all";
+@import "layout/all";
+@import "pages/all";

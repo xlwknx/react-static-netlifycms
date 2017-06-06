@@ -1,0 +1,6 @@
+loglevel: debug
+
+bootstrapVersion: 4
+
+scripts:
+  carousel: true

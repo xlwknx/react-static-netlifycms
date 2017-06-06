@@ -1,7 +1,7 @@
 .featuresPage {
   .intro {
     background-color: $vs-color-darkBlue5;
-    background-image: url("../../assets/images/bg/features/features-intro-bg.png");
+    background-image: url("../assets/images/bg/features/features-intro-bg.png");
 
     .introContentBlock {
       min-height: 830px;
@@ -44,7 +44,7 @@
   }
 
   .cryptogram {
-    background: url("../../assets/images/bg/features/features-cryptogram-bg.png") center top no-repeat;
+    background: url("../assets/images/bg/features/features-cryptogram-bg.png") center top no-repeat;
 
     .cryptogramContentBlock {
       display: flex;
@@ -105,7 +105,7 @@
       width: 1010px;
       height: 990px;
       max-width: 50%;
-      background: url("../../assets/images/bg/features/features-components-bg.png") left bottom no-repeat;
+      background: url("../assets/images/bg/features/features-components-bg.png") left bottom no-repeat;
     }
 
     .componentsContentBlock {

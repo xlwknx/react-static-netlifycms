@@ -2,7 +2,7 @@
   .intro {
     display: flex;
     flex-direction: column;
-    background-image: url("../../assets/images/bg/home/home-intro-bg.png");
+    background-image: url("../assets/images/bg/home/home-intro-bg.png");
 
     .introContentBlock {
       align-items: initial;
@@ -241,7 +241,7 @@
   }
 
   .usage {
-    background: url("../../assets/images/bg/home/home-usage-bg.png") center top no-repeat;
+    background: url("../assets/images/bg/home/home-usage-bg.png") center top no-repeat;
 
     .usageContentBlock {
       padding: 140px 0 135px;
@@ -351,12 +351,12 @@
 
       &-previous {
         margin-right: 15px;
-        background-image: url("../../assets/images/ui/carousel-arrowLeft-black.png");
+        background-image: url("../assets/images/ui/carousel-arrowLeft-black.png");
       }
 
       &-next {
         margin-left: 15px;
-        background-image: url("../../assets/images/ui/carousel-arrowRight-black.png");
+        background-image: url("../assets/images/ui/carousel-arrowRight-black.png");
       }
     }
 
@@ -454,7 +454,7 @@
   .conclusion {
     position: relative;
     z-index: 2;
-    background: url("../../assets/images/bg/home/home-conclusion-bg.png") 20% 100% no-repeat;
+    background: url("../assets/images/bg/home/home-conclusion-bg.png") 20% 100% no-repeat;
 
     .conclusionContentBlock {
       display: flex;

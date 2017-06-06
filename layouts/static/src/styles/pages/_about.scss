@@ -1,6 +1,6 @@
 .aboutPage {
   .intro {
-    background-image: url("../../assets/images/bg/about/about-intro-bg.png");
+    background-image: url("../assets/images/bg/about/about-intro-bg.png");
 
     .introContentBlock {
       height: 600px;
@@ -216,12 +216,12 @@
 
       &-previous {
         left: 0;
-        background-image: url("../../assets/images/ui/carousel-arrowLeft-white.png");
+        background-image: url("../assets/images/ui/carousel-arrowLeft-white.png");
       }
 
       &-next {
         right: 0;
-        background-image: url("../../assets/images/ui/carousel-arrowRight-white.png");
+        background-image: url("../assets/images/ui/carousel-arrowRight-white.png");
       }
     }
 
