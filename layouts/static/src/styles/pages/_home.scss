@@ -156,22 +156,25 @@
     }
 
     .blockMsg {
-      flex: 0 1 495px;
-      width: 495px;
+      flex: 0 1 45%;
+      max-width: 495px;
     }
 
     .serviceList {
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-      flex: 0 1 485px;
-      width: 485px;
+      flex: 0 1 45%;
+      max-width: 485px;
       height: 600px;
     }
 
     .serviceItem {
       margin-top: 80px;
       align-self: flex-start;
+      width: 205px;
+      max-width: 49%;
+      height: 225px;
 
       &:first-child {
         margin-top: 50px;
@@ -192,8 +195,7 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        width: 205px;
-        height: 225px;
+        height: 100%;
         border-radius: 3px;
         padding: 45px 35px 30px ;
         background: $vs-color-darkRed1;
@@ -341,7 +343,6 @@
 
       &-previous,
       &-next {
-
         width: 19px;
         height: 34px;
         background-position: 0 0;
@@ -454,18 +455,30 @@
   .conclusion {
     position: relative;
     z-index: 2;
-    background: url("../assets/images/bg/home/home-conclusion-bg.png") 20% 100% no-repeat;
+
+    @include media-breakpoint-up(xl) {
+      background: url("../assets/images/bg/home/home-conclusion-bg.png") 20% bottom no-repeat;
+    }
 
     .conclusionContentBlock {
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       align-items: center;
       min-height: 575px;
       border-top: 1px solid $vs-color-lightGrey3;
+
+      @include media-breakpoint-up(xl) {
+        justify-content: flex-end;
+      }
     }
 
     .blockMsg {
-      width: 50%;
+      text-align: center;
+
+      @include media-breakpoint-up(xl) {
+        width: 50%;
+        text-align: left;
+      }
 
       &-text {
         margin-top: 22px;
