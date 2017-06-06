@@ -167,10 +167,103 @@
     padding: 160px 0 150px;
     background: $vs-color-lightGrey1;
 
+    .layeredBlock {
+      &:after {
+        width: 105%;
+      }
+    }
+
     .highlightsContentBlock {
-      flex: 0 1 45%;
-      margin-left: 20%;
+      margin-left: 19%;
       color: $vs-color-white;
+    }
+
+    .highlightsCarousel {
+      padding: 75px 0 75px 45px;
+
+      &-controls {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      &-control {
+        margin-left: 20px;
+        cursor: pointer;
+
+        .fa {
+          font-size: 7px;
+          color: $vs-color-white;
+        }
+
+        &.active {
+          .fa {
+            color: $vs-color-lightGrey4;
+          }
+        }
+      }
+
+      &-previous,
+      &-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 19px;
+        height: 34px;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+
+      &-previous {
+        left: 0;
+        background-image: url("../../assets/images/ui/carousel-arrowLeft-white.png");
+      }
+
+      &-next {
+        right: 0;
+        background-image: url("../../assets/images/ui/carousel-arrowRight-white.png");
+      }
+    }
+
+    .blockMsg {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 80px 0 140px;
+    }
+
+    .highlightsOverview {
+      position: relative;
+      margin-top: 65px;
+      padding: 0 40px 0 140px;
+    }
+
+    .highlightItemGroup {
+      justify-content: space-between;
+    }
+
+    .highlightItem {
+      flex: 0 1 44%;
+
+      &-date {
+        @include font-muller();
+        font-size: 14px;
+        opacity: 0.2;
+      }
+
+      &-text {
+        margin-top: 5px;
+        line-height: 1.75;
+      }
+
+      &-image {
+        margin-top: 25px;
+
+        img {
+          display: block;
+          max-width: 100%;
+        }
+      }
     }
   }
 

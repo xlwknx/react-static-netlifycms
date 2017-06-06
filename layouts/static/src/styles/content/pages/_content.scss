@@ -20,7 +20,7 @@
       li {
         border-bottom: 2px solid transparent;
         opacity: 0.5;
-        transition: 0.5s opacity, 0.5s border;
+        transition: all 0.5s;
 
         &:hover,
         &.active {

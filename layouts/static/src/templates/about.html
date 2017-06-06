@@ -130,7 +130,7 @@
           <h2 class="blockMsg-headline">What we do</h2>
           <p class="blockMsg-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur.</p>
         </div>
-        <div class="blockMsg layeredBlock ourMission">
+        <div class="ourMission blockMsg layeredBlock">
           <div class="layeredBlockContent">
             <h2 class="blockMsg-headline">Our mission</h2>
             <p class="blockMsg-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur.</p>
@@ -179,30 +179,47 @@
   <div class="highlights">
     <div class="wrapper">
       <div class="highlightsContentBlock layeredBlock">
-        <div class="layeredBlockContent">
+        <div id="aboutHighlightsCarousel" class="highlightsCarousel layeredBlockContent carousel slide" data-ride="carousel" data-pause="hover">
           <div class="blockMsg">
             <h3 class="blockMsg-headline">Press highlights</h3>
+            <ul class="highlightsCarousel-controls carousel-indicators">
+              <li class="highlightsCarousel-control active" data-target="#aboutHighlightsCarousel" data-slide-to="0">
+                <span class="fa fa-circle"></span>
+              </li>
+              <li class="highlightsCarousel-control" data-target="#aboutHighlightsCarousel" data-slide-to="1">
+                <span class="fa fa-circle"></span>
+              </li>
+            </ul>
           </div>
-          <div class="highlightsCarousel-controls">
-            <div class="highlightsCarousel-control"></div>
-            <div class="highlightsCarousel-control"></div>
-            <div class="highlightsCarousel-control"></div>
-          </div>
-          <div class="highlightsCarousel">
-            <div class="highlightsCarousel-previous"></div>
-            <div class="highlightsList">
-              <div class="highlightItem">
-                <div class="highlightItem-date">May 3, 2016</div>
-                <p class="highlightItem-text">&#8220;Adding end-to-end encrypted messaging to your app just got a lot easier&#8221;</p>
-                <div class="highlightItem-image"><img src="../images/pages/about/highlights/about-highlights-eweek.png" alt=""></div>
-              </div>
-              <div class="highlightItem">
-                <div class="highlightItem-date">October 13, 2016</div>
-                <p class="highlightItem-text">&#8220;Virgil Security Raises $4M for Application Security&#8221;</p>
-                <div class="highlightItem-image"><img src="../images/pages/about/highlights/about-highlights-tcTechCrunch.png" alt=""></div>
-              </div>
-            </div>
-            <div class="highlightsCarousel-next"></div>
+          <div class="highlightsOverview">
+            <a href="#aboutHighlightsCarousel" class="highlightsCarousel-previous" data-slide="prev"></a>
+            <ul class="highlightList carousel-inner">
+              <li class="highlightItemGroup carousel-item active">
+                <div class="highlightItem">
+                  <div class="highlightItem-date">May 3, 2016</div>
+                  <p class="highlightItem-text">&#8220;Adding end-to-end encrypted messaging to your app just got a lot easier&#8221;</p>
+                  <div class="highlightItem-image"><img src="../images/pages/about/highlights/about-highlights-tcTechCrunch.png" alt=""></div>
+                </div>
+                <div class="highlightItem">
+                  <div class="highlightItem-date">October 13, 2016</div>
+                  <p class="highlightItem-text">&#8220;Virgil Security Raises $4M for Application Security&#8221;</p>
+                  <div class="highlightItem-image"><img src="../images/pages/about/highlights/about-highlights-eweek.png" alt=""></div>
+                </div>
+              </li>
+              <li class="highlightItemGroup carousel-item">
+                <div class="highlightItem">
+                  <div class="highlightItem-date">May 3, 2016</div>
+                  <p class="highlightItem-text">&#8220;Adding end-to-end encrypted messaging to your app just got a lot easier&#8221;</p>
+                  <div class="highlightItem-image"><img src="../images/pages/about/highlights/about-highlights-tcTechCrunch.png" alt=""></div>
+                </div>
+                <div class="highlightItem">
+                  <div class="highlightItem-date">October 13, 2016</div>
+                  <p class="highlightItem-text">&#8220;Virgil Security Raises $4M for Application Security&#8221;</p>
+                  <div class="highlightItem-image"><img src="../images/pages/about/highlights/about-highlights-eweek.png" alt=""></div>
+                </div>
+              </li>
+            </ul>
+            <a href="#aboutHighlightsCarousel" class="highlightsCarousel-next" data-slide="next"></a>
           </div>
         </div>
       </div>

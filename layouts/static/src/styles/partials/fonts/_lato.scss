@@ -4,7 +4,8 @@ $font-name-latoBold: "Lato-Bold";
 
 @font-face {
   font-family: "Lato";
-  src: url("#{$font-path-lato}/#{$font-name-latoRegular}.ttf");
+  //src: url("#{$font-path-lato}/#{$font-name-latoRegular}.ttf");
+  src: url("~../styles/assets/fonts/Lato/Lato-Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }

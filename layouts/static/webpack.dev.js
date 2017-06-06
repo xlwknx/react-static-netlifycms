@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -11,23 +12,46 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, "dist")
   },
+  resolve: {
+    modules: [
+      path.resolve('./src'),
+      path.resolve('./node_modules')
+    ]
+  },
   module: {
     rules: [
       {
         test: /\.html$/,
-        loader: 'html-loader'
+        loader: 'html-loader?minimize=false'
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract(['css-loader', 'resolve-url-loader', 'sass-loader?sourceMap'])
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader!resolve-url-loader!sass-loader?sourceMap'
+        })
       },
       {
-        test: /\.(otf|gif|jpe?g|png|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        test: /\.(otf|ttf|eot|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        loader: ['file-loader?name=assets/[name].[ext]']
+      },
+      {
+        test: /\.(gif|jpe?g|png|svg)$/,
         loader: ['file-loader?name=assets/[name].[ext]']
       }
     ]
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      Carousel: "exports-loader?Carousel!bootstrap/js/dist/carousel",
+      Util: "exports-loader?Util!bootstrap/js/dist/util"
+    }),
+    new ExtractTextPlugin({
+      filename: '[name].bundle.css',
+      allChunks: true
+    }),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
@@ -54,10 +78,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'terms.html',
       template: 'src/templates/content/terms.html'
-    }),
-    new ExtractTextPlugin({
-      filename: '[name].bundle.css',
-      allChunks: true
     })
   ]
 };

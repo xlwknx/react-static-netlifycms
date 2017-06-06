@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Virgil Security</title>
 </head>
 <body>
@@ -160,7 +161,7 @@
       <div class="clientsContentBlock">
         <a href="" class="clients-link">
           <img src="images/pages/home/clients/home-clients.png" alt="" class="clients-linkImage">
-          <span class="button-raisedRed-static clients-linkButton">see our clients</span>
+          <span class="clients-linkButton button-raisedRed-static">see our clients</span>
         </a>
       </div>
     </div>
@@ -174,7 +175,7 @@
           <p class="blockMsg-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur.</p>
         </div>
         <ul class="serviceList">
-          <li class="serviceItem">
+          <li class="serviceItem" data-tilt>
             <a href="" class="serviceItem-link">
               <img src="images/pages/home/services/home-service-serviceIcon1.png" alt="" class="serviceItem-image">
               <span class="serviceItem-linkText">Encrypted communication</span>
@@ -184,7 +185,7 @@
               </span>
             </a>
           </li>
-          <li class="serviceItem">
+          <li class="serviceItem" data-tilt>
             <a href="" class="serviceItem-link">
               <img src="images/pages/home/services/home-service-serviceIcon2.png" alt="" class="serviceItem-image">
               <span class="serviceItem-linkText">Encrypted communication</span>
@@ -194,7 +195,7 @@
               </span>
             </a>
           </li>
-          <li class="serviceItem">
+          <li class="serviceItem" data-tilt>
             <a href="" class="serviceItem-link">
               <img src="images/pages/home/services/home-service-serviceIcon3.png" alt="" class="serviceItem-image">
               <span class="serviceItem-linkText">Encrypted communication</span>
@@ -204,7 +205,7 @@
               </span>
             </a>
           </li>
-          <li class="serviceItem">
+          <li class="serviceItem" data-tilt>
             <a href="" class="serviceItem-link">
               <img src="images/pages/home/services/home-service-serviceIcon4.png" alt="" class="serviceItem-image">
               <span class="serviceItem-linkText">Encrypted communication</span>
@@ -225,60 +226,72 @@
           <h2 class="blockMsg-headline">Easy for developers</h2>
           <p class="blockMsg-text">We believe that security is a problem rooted in code. We obsessively seek out elegant, composable abstractions that enable robust, scalable, flexible integrations. We eliminate needless complexity and extraneous details, you can get up and running Virgil in just a couple of minutes.</p>
         </div>
-        <div class="usageDetails">
-          <div class="usageSteps">
-            <div class="usageSteps-item">
+        <div id="homeUsageStepsCarousel" class="usageStepsCarousel carousel slide" data-ride="false" data-wrap="false">
+          <ul class="usageStepsCarousel-controls carousel-indicators">
+            <li class="usageStepsCarousel-control active" data-target="#homeUsageStepsCarousel" data-slide-to="0">
               <i>1</i>
               <span>Encryption</span>
-            </div>
-            <div class="usageSteps-item">
+            </li>
+            <li class="usageStepsCarousel-control" data-target="#homeUsageStepsCarousel" data-slide-to="1">
               <i>2</i>
               <span>Decryption</span>
-            </div>
-            <div class="usageSteps-item">
+            </li>
+            <li class="usageStepsCarousel-control" data-target="#homeUsageStepsCarousel" data-slide-to="2">
               <i>3</i>
               <span>Create signature</span>
-            </div>
-            <div class="usageSteps-item">
+            </li>
+            <li class="usageStepsCarousel-control" data-target="#homeUsageStepsCarousel" data-slide-to="3">
               <i>4</i>
               <span>Verify signature</span>
-            </div>
-          </div>
-          <div class="usageExample">
-            <div class="usageExample-previous"></div>
-            <div class="usageExample-list">
-              <div class="usageExample-item">
-                <a href="" class="usageExample-link">
-                  <img src="images/pages/home/usage/home-usage-encryption.png" alt="" class="usageExample-linkImage">
-                  <span class="button-raisedWhite-static usageExample-linkButton">Documentation</span>
+            </li>
+          </ul>
+          <div class="usageSteps">
+            <a href="#homeUsageStepsCarousel" class="usageStepsCarousel-previous" data-slide="prev"></a>
+            <ul class="usageStepList carousel-inner">
+              <li class="usageStepItem carousel-item active">
+                <a href="" class="usageStepItem-link">
+                  <img src="images/pages/home/usage/home-usage-encryption.png" alt="" class="usageStepItem-linkImage">
+                  <span class="usageStepItem-linkButton button-raisedWhite-static">
+                    <i class="icon icon-book-black"></i>
+                    <span>Documentation</span>
+                  </span>
                 </a>
-              </div>
-              <div class="usageExample-item">
-                <a href="" class="usageExample-link">
-                  <img src="images/pages/home/usage/home-usage-decryption.png" alt="" class="usageExample-linkImage">
-                  <span class="button-raisedWhite-static usageExample-linkButton">Documentation</span>
+              </li>
+              <li class="usageStepItem carousel-item">
+                <a href="" class="usageStepItem-link">
+                  <img src="images/pages/home/usage/home-usage-decryption.png" alt="" class="usageStepItem-linkImage">
+                  <span class="usageStepItem-linkButton button-raisedWhite-static">
+                    <i class="icon icon-book-black"></i>
+                    <span>Documentation</span>
+                  </span>
                 </a>
-              </div>
-              <div class="usageExample-item">
-                <a href="" class="usageExample-link">
-                  <img src="images/pages/home/usage/home-usage-create.png" alt="" class="usageExample-linkImage">
-                  <span class="button-raisedWhite-static usageExample-linkButton">Documentation</span>
+              </li>
+              <li class="usageStepItem carousel-item">
+                <a href="" class="usageStepItem-link">
+                  <img src="images/pages/home/usage/home-usage-create.png" alt="" class="usageStepItem-linkImage">
+                  <span class="usageStepItem-linkButton button-raisedWhite-static">
+                    <i class="icon icon-book-black"></i>
+                    <span>Documentation</span>
+                  </span>
                 </a>
-              </div>
-              <div class="usageExample-item">
-                <a href="" class="usageExample-link">
-                  <img src="images/pages/home/usage/home-usage-verify.png" alt="" class="usageExample-linkImage">
-                  <span class="button-raisedWhite-static usageExample-linkButton">Documentation</span>
+              </li>
+              <li class="usageStepItem carousel-item">
+                <a href="" class="usageStepItem-link">
+                  <img src="images/pages/home/usage/home-usage-verify.png" alt="" class="usageStepItem-linkImage">
+                  <span class="usageStepItem-linkButton button-raisedWhite-static">
+                    <i class="icon icon-book-black"></i>
+                    <span>Documentation</span>
+                  </span>
                 </a>
-              </div>
-            </div>
-            <div class="usageExample-next"></div>
+              </li>
+            </ul>
+            <a href="#homeUsageStepsCarousel" class="usageStepsCarousel-next" data-slide="next"></a>
           </div>
         </div>
         <ul class="usageBenefits">
           <li class="usageBenefit">
             <div class="usageBenefit-image">
-              <img src="images/pages/home/benefits/home-benefit-icon-1.png" alt="">
+              <img src="images/pages/home/benefits/home-benefits-benefitIcon1.png" alt="">
             </div>
             <div class="usageBenefit-msg">
               <h4 class="usageBenefit-headline">Next Gen Security Everywhere</h4>
@@ -287,7 +300,7 @@
           </li>
           <li class="usageBenefit">
             <div class="usageBenefit-image">
-              <img src="images/pages/home/benefits/home-benefit-icon-2.png" alt="">
+              <img src="images/pages/home/benefits/home-benefits-benefitIcon2.png" alt="">
             </div>
             <div class="usageBenefit-msg">
               <h4 class="usageBenefit-headline">Encrypt Data at Rest & in Transit</h4>
@@ -296,7 +309,7 @@
           </li>
           <li class="usageBenefit">
             <div class="usageBenefit-image">
-              <img src="images/pages/home/benefits/home-benefit-icon-3.png" alt="">
+              <img src="images/pages/home/benefits/home-benefits-benefitIcon3.png" alt="">
             </div>
             <div class="usageBenefit-msg">
               <h4 class="usageBenefit-headline">Verify Identities</h4>
@@ -305,7 +318,7 @@
           </li>
           <li class="usageBenefit">
             <div class="usageBenefit-image">
-              <img src="images/pages/home/benefits/home-benefit-icon-4.png" alt="">
+              <img src="images/pages/home/benefits/home-benefits-benefitIcon4.png" alt="">
             </div>
             <div class="usageBenefit-msg">
               <h4 class="usageBenefit-headline">Implement Security in Minutes</h4>

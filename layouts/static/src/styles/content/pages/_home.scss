@@ -252,33 +252,33 @@
       color: $vs-color-white;
     }
 
-    .usageDetails {
+    .usageStepsCarousel {
       margin-top: 85px;
       border-radius: 3px;
       background: $vs-color-white;
       box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
-    }
 
-    .usageSteps {
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      z-index: 1;
-      margin: 0 50px;
-      padding: 40px 0;
+      &-controls {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+        margin: 0 50px;
+        padding: 40px 0;
 
-      &:before {
-        content: '';
-        width: 100%;
-        height: 1px;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        margin: -1px 0 0;
-        background: $vs-color-lightGrey6;
+        &:before {
+          content: '';
+          width: 100%;
+          height: 1px;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          margin: -1px 0 0;
+          background: $vs-color-lightGrey6;
+        }
       }
 
-      &-item {
+      &-control {
         @include font-muller();
         position: relative;
         z-index: 2;
@@ -305,7 +305,7 @@
           font-style: normal;
           text-align: center;
           line-height: 2em;
-          transition: 0.5s color, 0.5s background;
+          transition: all 0.5s;
         }
 
         span {
@@ -338,19 +338,10 @@
           }
         }
       }
-    }
-
-    .usageExample {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 455px;
-      border-radius: 0 0 3px 3px;;
-      padding: 65px 95px;
-      background: $vs-color-lightGrey5;
 
       &-previous,
       &-next {
+
         width: 19px;
         height: 34px;
         background-position: 0 0;
@@ -359,44 +350,52 @@
       }
 
       &-previous {
-        background-image: url("../../assets/images/ui/home-slider-arrowLeft.png");
+        margin-right: 15px;
+        background-image: url("../../assets/images/ui/carousel-arrowLeft-black.png");
       }
 
       &-next {
-        background-image: url("../../assets/images/ui/home-slider-arrowRight.png");
+        margin-left: 15px;
+        background-image: url("../../assets/images/ui/carousel-arrowRight-black.png");
       }
+    }
 
-      &-list {
+    .usageSteps {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 0 0 3px 3px;;
+      padding: 65px 95px;
+      background: $vs-color-lightGrey5;
+    }
 
-      }
+    .usageStepList {
+      flex: 1 1;
+      width: auto;
+      height: 325px;
+      max-width: 930px;
+      max-height: 325px;
+      border-radius: 3px;
+      background: $vs-color-darkBlue3;
+      box-shadow: 0 4px 15px 0 rgba($vs-color-darkBlue4, 0.2);
+    }
 
-      &-item {
-        display: none;
-        background: $vs-color-darkBlue3;
-        box-shadow: 0 4px 15px 0 rgba($vs-color-darkBlue4, 0.2);
-
-        &:first-child {
-          display: block;
-        }
-      }
-
+    .usageStepItem {
       &-link {
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
-        width: 930px;
-        height: 325px;
         transition: 0.5s padding;
 
         &:hover {
           padding: 0 10px;
 
-          .usageExample-linkImage {
+          .usageStepItem-linkImage {
             filter: blur(5px);
           }
 
-          .usageExample-linkButton {
+          .usageStepItem-linkButton {
             opacity: 1;
           }
         }
