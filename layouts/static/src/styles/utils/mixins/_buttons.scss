@@ -2,12 +2,12 @@
 @mixin _button-base($lineHeight: 40px) {
   @include font-muller();
   display: inline-block;
-  align-items: center;
   height: 40px;
   border: 0;
   border-radius: 3px;
   line-height: $lineHeight;
   font-size: 14px;
+  text-align: center;
   cursor: pointer;
 }
 

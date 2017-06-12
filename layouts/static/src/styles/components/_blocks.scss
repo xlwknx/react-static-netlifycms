@@ -7,7 +7,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 185px 0 90px;
+      padding: 100px 0 90px;
+
+      @media (min-width: $breakpoint-md) {
+        padding: 185px 0 90px;
+      }
     }
   }
 }

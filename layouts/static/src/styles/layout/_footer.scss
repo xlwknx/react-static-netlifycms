@@ -1,17 +1,26 @@
 .footer {
-  margin-top: -155px;
-  padding-top: 155px;
-  background: url("../assets/images/bg/shared/footer-bg.png") center bottom no-repeat;
   font-size: 14px;
   color: $vs-color-lightGrey2;
 
+  @media (min-width: $breakpoint-md) {
+    margin-top: -155px;
+    padding-top: 155px;
+    background: url("../assets/images/bg/shared/footer-bg.png") right top no-repeat;
+  }
+
   &-top {
-    padding: 70px 0 40px;
+    padding: 40px 0;
     background: $vs-color-darkBlue2;
 
+    @media (min-width: $breakpoint-md) {
+      padding-top: 70px;
+    }
+
     .wrapper {
-      display: flex;
-      justify-content: space-between;
+      @media (min-width: $breakpoint-md) {
+        display: flex;
+        justify-content: space-between;
+      }
     }
   }
 
@@ -31,27 +40,34 @@
 }
 
 .footerContacts {
-  flex-basis: 215px;
+  @media (min-width: $breakpoint-md) {
+    flex-basis: 215px;
+  }
 
   &-logo {
-    height: 40px;
-    width: 110px;
-
-    img {
+    a, img {
       display: block;
     }
   }
 
   &-hashtag {
-    margin-top: 25px;
+    margin-top: 20px;
     font-family: "Muller", sans-serif;
     color: $vs-color-white;
+    opacity: 0.5;
   }
 
   &-socials {
     display: flex;
-    justify-content: space-between;
     margin-top: 60px;
+
+    @media (min-width: $breakpoint-md) {
+      justify-content: space-between;
+    }
+
+    li + li {
+      margin-left: 25px;
+    }
 
     a {
       display: block;
@@ -86,11 +102,28 @@
 .footerNav {
   @include font-muller;
   display: flex;
-  justify-content: space-between;
-  flex-basis: 790px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 450px;
+  margin: 50px 0 0;
+
+  @media (min-width: $breakpoint-md) {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-basis: 790px;
+    max-height: none;
+    margin: 0 0 0 50px;
+  }
 
   .footerNavBlock {
     flex-basis: 25%;
+    margin-bottom: 30px;
+    padding-right: 20px;
+
+    @media (min-width: $breakpoint-md) {
+      margin-bottom: 0;
+    }
 
     &-caption {
       font-size: 10px;
@@ -98,8 +131,10 @@
     }
 
     ul {
-      display: flex;
-      flex-direction: column;
+      @media (min-width: $breakpoint-md) {
+        display: flex;
+        flex-direction: column;
+      }
     }
 
     li {
@@ -107,14 +142,16 @@
     }
 
     &-sources {
-      flex-basis: 45%;
+      @media (min-width: $breakpoint-md) {
+        flex-basis: 45%;
 
-      ul {
-        flex-flow: row wrap;
-      }
+        ul {
+          flex-flow: row wrap;
+        }
 
-      li {
-        flex-basis: 50%;
+        li {
+          flex-basis: 50%;
+        }
       }
     }
   }

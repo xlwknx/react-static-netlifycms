@@ -5,89 +5,155 @@
   <title>Virgil Security</title>
 </head>
 <body>
-<div class="page featuresPage">
+<div class="page featuresPage" data-page="features">
   <header class="header">
-    <div class="header-logo">
-      <a href="">
-        <img src="../images/shared/logo.png" alt="">
-      </a>
+    <div class="headerFull">
+      <div class="headerLogo">
+        <a href=""><img src="../images/shared/logo.png" alt=""></a>
+      </div>
+      <nav class="headerNav">
+        <ul class="firstLevel-list">
+          <li class="firstLevel-item headerNav-home">
+            <a class="firstLevel-itemLink">Home</a>
+          </li>
+          <li class="firstLevel-item headerNav-documentation">
+            <div class="firstLevel-itemLink">Developers</div>
+            <ul class="secondLevel-list">
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">
+                  <i class="icon icon-book" aria-hidden="true"></i>
+                  <span>Documentation</span>
+                </a>
+              </li>
+              <li class="secondLevel-item">
+                <div class="thirdLevel-caption">Get started</div>
+                <ul class="thirdLevel-list">
+                  <li class="thirdLevel-item">
+                    <a href="">Encrypted communication</a>
+                  </li>
+                  <li class="thirdLevel-item">
+                    <a href="">Encrypted storage</a>
+                  </li>
+                  <li class="thirdLevel-item">
+                    <a href="">Passwordless Authentication</a>
+                  </li>
+                  <li class="thirdLevel-item">
+                    <a href="">Data Integrity</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">
+                  <i class="icon icon-bookmark" aria-hidden="true"></i>
+                  <span>API references</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="firstLevel-item headerNav-about">
+            <div class="firstLevel-itemLink">Company</div>
+            <ul class="secondLevel-list">
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">
+                  <i class="icon icon-shield" aria-hidden="true"></i>
+                  <span>About Virgil</span>
+                </a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">
+                  <i class="icon icon-case" aria-hidden="true"></i>
+                  <span>Clients</span>
+                </a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">
+                  <i class="icon icon-medium" aria-hidden="true"></i>
+                  <span>Blog</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="firstLevel-item headerNav-features">
+            <a class="firstLevel-itemLink">Features</a>
+          </li>
+          <li class="firstLevel-item headerNav-pricing">
+            <a class="firstLevel-itemLink">Pricing</a>
+          </li>
+          <li class="firstLevel-item headerNav-contacts">
+            <a class="firstLevel-itemLink">Contacts</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="headerAuth">
+        <a href="" class="button-flatWhite">Login</a>
+        <a href="" class="button-raisedWhiteBorder">Get started</a>
+      </div>
+      <button data-vs-sideNav-open class="headerOpenButton">
+        <i class="icon icon-menu"></i>
+      </button>
     </div>
-    <nav class="headerNav">
-      <ul class="firstLevel-list">
-        <li class="firstLevel-item headerNav-home">
-          <a class="firstLevel-itemLink">Home</a>
-        </li>
-        <li class="firstLevel-item headerNav-documentation">
-          <a href="" class="firstLevel-itemLink">Developers</a>
-          <ul class="secondLevel-list">
-            <li class="secondLevel-item">
-              <a href="" class="secondLevel-itemLink">
-                <i class="icon icon-book" aria-hidden="true"></i>
-                <span>Documentation</span>
-              </a>
-            </li>
-            <li class="secondLevel-item">
-              <div class="thirdLevel-caption">Get started</div>
-              <ul class="thirdLevel-list">
-                <li class="thirdLevel-item">
-                  <a href="">Encrypted communication</a>
-                </li>
-                <li class="thirdLevel-item">
-                  <a href="">Encrypted storage</a>
-                </li>
-                <li class="thirdLevel-item">
-                  <a href="">Passwordless Authentication</a>
-                </li>
-                <li class="thirdLevel-item">
-                  <a href="">Data Integrity</a>
-                </li>
-              </ul>
-            </li>
-            <li class="secondLevel-item">
-              <a href="" class="secondLevel-itemLink">
-                <i class="icon icon-bookmark" aria-hidden="true"></i>
-                <span>API references</span>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="firstLevel-item headerNav-about">
-          <a class="firstLevel-itemLink">Company</a>
-          <ul class="secondLevel-list">
-            <li class="secondLevel-item">
-              <a href="" class="secondLevel-itemLink">
-                <i class="icon icon-shield" aria-hidden="true"></i>
-                <span>About Virgil</span>
-              </a>
-            </li>
-            <li class="secondLevel-item">
-              <a href="" class="secondLevel-itemLink">
-                <i class="icon icon-case" aria-hidden="true"></i>
-                <span>Clients</span>
-              </a>
-            </li>
-            <li class="secondLevel-item">
-              <a href="" class="secondLevel-itemLink">
-                <i class="icon icon-medium" aria-hidden="true"></i>
-                <span>Blog</span>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="firstLevel-item headerNav-features">
-          <a class="firstLevel-itemLink">Features</a>
-        </li>
-        <li class="firstLevel-item headerNav-pricing">
-          <a class="firstLevel-itemLink">Pricing</a>
-        </li>
-        <li class="firstLevel-item headerNav-contacts">
-          <a class="firstLevel-itemLink">Contacts</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="headerAuth">
-      <a href="" class="button-flatWhite">Login</a>
-      <a href="" class="button-raisedWhiteBorder">Get started</a>
+    <div class="headerSideBar" data-vs-sideNav-target>
+      <button class="headerCloseButton" data-vs-sideNav-close>
+        <i class="icon icon-close"></i>
+      </button>
+      <nav class="headerNav">
+        <ul class="firstLevel-list">
+          <li class="firstLevel-item">
+            <div class="firstLevel-itemLink">Get started</div>
+            <ul class="secondLevel-list">
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Encrypted communication</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Encrypted storage</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Passwordless Authentication</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Data Integrity</a>
+              </li>
+            </ul>
+          </li>
+          <li class="firstLevel-item">
+            <div class="firstLevel-itemLink">Developers</div>
+            <ul class="secondLevel-list">
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Documentation</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">API references</a>
+              </li>
+            </ul>
+          </li>
+          <li class="firstLevel-item">
+            <div class="firstLevel-itemLink">Company</div>
+            <ul class="secondLevel-list">
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink headerNav-about">About Virgil</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink headerNav-clients">Clients</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Blog</a>
+              </li>
+            </ul>
+          </li>
+          <li class="firstLevel-item">
+            <a class="firstLevel-itemLink">Features</a>
+          </li>
+          <li class="firstLevel-item">
+            <a class="firstLevel-itemLink">Pricing</a>
+          </li>
+          <li class="firstLevel-item">
+            <a class="firstLevel-itemLink">Contacts</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="headerAuth">
+        <a href="" class="headerAuth-link"><span>Login / Sign In</span></a>
+      </div>
     </div>
   </header>
   <div class="intro">
@@ -276,7 +342,7 @@
       <div class="faqContentBlock">
         <h2 class="faq-caption">FAQ</h2>
         <ul class="faqList">
-          <li class="faqItem">
+          <li id="faq-q1" data-faq-answer class="faqItem active">
             <div class="faqItem-count">01</div>
             <div class="faqItem-text">
               <p>Virgil consists of an open-source encryption library, which implements
@@ -289,7 +355,7 @@
                 languages are supported.</p>
             </div>
           </li>
-          <li class="faqItem">
+          <li id="faq-q2" data-faq-answer class="faqItem">
             <div class="faqItem-count">02</div>
             <div class="faqItem-text">
               <p>No. Only the AES encryption key used to secure the payload (default AES-256) will
@@ -300,14 +366,14 @@
         </ul>
         <div class="faqContents layeredBlock">
           <ul class="faqContentList layeredBlockContent">
-            <li class="faqContentItem active">
-              <a href="" class="faqContentItem-link">
+            <li class="faqContentItem">
+              <a href="#faq-q1" data-faq-question class="faqContentItem-link active">
                 <span class="faqContentItem-linkCount">01</span>
                 <span class="faqContentItem-linkText">If I send a message to a channel that contains many recipients does it mean that the message will be encrypted as many times as there are recipients in the channel?</span>
               </a>
             </li>
             <li class="faqContentItem">
-              <a href="" class="faqContentItem-link">
+              <a href="#faq-q2" data-faq-question class="faqContentItem-link">
                 <span class="faqContentItem-linkCount">02</span>
                 <span class="faqContentItem-linkText">If I send a message to a channel that contains many recipients does it mean that the message will be encrypted as many times as there are recipients in the channel?</span>
               </a>
@@ -322,7 +388,7 @@
       <div class="wrapper">
         <div class="footerContacts">
           <div class="footerContacts-logo">
-            <img src="../images/shared/logo.png" alt="">
+            <a href=""><img src="../images/shared/logo.png" alt=""></a>
           </div>
           <div class="footerContacts-hashtag">#EncryptEverything</div>
           <ul class="footerContacts-socials">
@@ -372,6 +438,7 @@
       </div>
     </div>
   </footer>
+  <div class="overlay" data-vs-sideNav-overlay></div>
 </div>
 </body>
 </html>

@@ -24,7 +24,7 @@
   &-book-black {
     width: 22px;
     height: 18px;
-    background-image: url("../assets/images/ui/icons/icon-book.png");
+    background-image: url("../assets/images/ui/icons/icon-book-black.png");
   }
 
   &-bookmark {
@@ -80,5 +80,17 @@
     width: 22px;
     height: 25px;
     background-image: url("../assets/images/ui/icons/icon-phone.png");
+  }
+
+  &-menu {
+    width: 20px;
+    height: 20px;
+    background-image: url("../assets/images/ui/icons/icon-menu.png");
+  }
+
+  &-close {
+    width: 20px;
+    height: 20px;
+    background-image: url("../assets/images/ui/icons/icon-close.png");
   }
 }

@@ -6,89 +6,155 @@
   <title>Virgil Security</title>
 </head>
 <body>
-<div class="page homePage">
+<div class="page homePage" data-vs-page="home">
   <header class="header">
-    <div class="header-logo">
-      <a href="">
-        <img src="images/shared/logo.png" alt="">
-      </a>
+    <div class="headerFull">
+      <div class="headerLogo">
+        <a href=""><img src="images/shared/logo.png" alt=""></a>
+      </div>
+      <nav class="headerNav">
+        <ul class="firstLevel-list">
+          <li class="firstLevel-item headerNav-home">
+            <a class="firstLevel-itemLink">Home</a>
+          </li>
+          <li class="firstLevel-item headerNav-documentation">
+            <div class="firstLevel-itemLink">Developers</div>
+            <ul class="secondLevel-list">
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">
+                  <i class="icon icon-book" aria-hidden="true"></i>
+                  <span>Documentation</span>
+                </a>
+              </li>
+              <li class="secondLevel-item">
+                <div class="thirdLevel-caption">Get started</div>
+                <ul class="thirdLevel-list">
+                  <li class="thirdLevel-item">
+                    <a href="">Encrypted communication</a>
+                  </li>
+                  <li class="thirdLevel-item">
+                    <a href="">Encrypted storage</a>
+                  </li>
+                  <li class="thirdLevel-item">
+                    <a href="">Passwordless Authentication</a>
+                  </li>
+                  <li class="thirdLevel-item">
+                    <a href="">Data Integrity</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">
+                  <i class="icon icon-bookmark" aria-hidden="true"></i>
+                  <span>API references</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="firstLevel-item headerNav-about">
+            <div class="firstLevel-itemLink">Company</div>
+            <ul class="secondLevel-list">
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">
+                  <i class="icon icon-shield" aria-hidden="true"></i>
+                  <span>About Virgil</span>
+                </a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">
+                  <i class="icon icon-case" aria-hidden="true"></i>
+                  <span>Clients</span>
+                </a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">
+                  <i class="icon icon-medium" aria-hidden="true"></i>
+                  <span>Blog</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="firstLevel-item headerNav-features">
+            <a class="firstLevel-itemLink">Features</a>
+          </li>
+          <li class="firstLevel-item headerNav-pricing">
+            <a class="firstLevel-itemLink">Pricing</a>
+          </li>
+          <li class="firstLevel-item headerNav-contacts">
+            <a class="firstLevel-itemLink">Contacts</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="headerAuth">
+        <a href="" class="button-flatWhite">Login</a>
+        <a href="" class="button-raisedWhiteBorder">Get started</a>
+      </div>
+      <button data-vs-sideNav-open class="headerOpenButton">
+        <i class="icon icon-menu"></i>
+      </button>
     </div>
-    <nav class="headerNav">
-      <ul class="firstLevel-list">
-        <li class="firstLevel-item headerNav-home">
-          <a class="firstLevel-itemLink">Home</a>
-        </li>
-        <li class="firstLevel-item headerNav-documentation">
-          <a href="" class="firstLevel-itemLink">Developers</a>
-          <ul class="secondLevel-list">
-            <li class="secondLevel-item">
-              <a href="" class="secondLevel-itemLink">
-                <i class="icon icon-book" aria-hidden="true"></i>
-                <span>Documentation</span>
-              </a>
-            </li>
-            <li class="secondLevel-item">
-              <div class="thirdLevel-caption">Get started</div>
-              <ul class="thirdLevel-list">
-                <li class="thirdLevel-item">
-                  <a href="">Encrypted communication</a>
-                </li>
-                <li class="thirdLevel-item">
-                  <a href="">Encrypted storage</a>
-                </li>
-                <li class="thirdLevel-item">
-                  <a href="">Passwordless Authentication</a>
-                </li>
-                <li class="thirdLevel-item">
-                  <a href="">Data Integrity</a>
-                </li>
-              </ul>
-            </li>
-            <li class="secondLevel-item">
-              <a href="" class="secondLevel-itemLink">
-                <i class="icon icon-bookmark" aria-hidden="true"></i>
-                <span>API references</span>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="firstLevel-item headerNav-about">
-          <a class="firstLevel-itemLink">Company</a>
-          <ul class="secondLevel-list">
-            <li class="secondLevel-item">
-              <a href="" class="secondLevel-itemLink">
-                <i class="icon icon-shield" aria-hidden="true"></i>
-                <span>About Virgil</span>
-              </a>
-            </li>
-            <li class="secondLevel-item">
-              <a href="" class="secondLevel-itemLink">
-                <i class="icon icon-case" aria-hidden="true"></i>
-                <span>Clients</span>
-              </a>
-            </li>
-            <li class="secondLevel-item">
-              <a href="" class="secondLevel-itemLink">
-                <i class="icon icon-medium" aria-hidden="true"></i>
-                <span>Blog</span>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="firstLevel-item headerNav-features">
-          <a class="firstLevel-itemLink">Features</a>
-        </li>
-        <li class="firstLevel-item headerNav-pricing">
-          <a class="firstLevel-itemLink">Pricing</a>
-        </li>
-        <li class="firstLevel-item headerNav-contacts">
-          <a class="firstLevel-itemLink">Contacts</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="headerAuth">
-      <a href="" class="button-flatWhite">Login</a>
-      <a href="" class="button-raisedWhiteBorder">Get started</a>
+    <div class="headerSideBar" data-vs-sideNav-target>
+      <button class="headerCloseButton" data-vs-sideNav-close>
+        <i class="icon icon-close"></i>
+      </button>
+      <nav class="headerNav">
+        <ul class="firstLevel-list">
+          <li class="firstLevel-item">
+            <div class="firstLevel-itemLink">Get started</div>
+            <ul class="secondLevel-list">
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Encrypted communication</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Encrypted storage</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Passwordless Authentication</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Data Integrity</a>
+              </li>
+            </ul>
+          </li>
+          <li class="firstLevel-item">
+            <div class="firstLevel-itemLink">Developers</div>
+            <ul class="secondLevel-list">
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Documentation</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">API references</a>
+              </li>
+            </ul>
+          </li>
+          <li class="firstLevel-item">
+            <div class="firstLevel-itemLink">Company</div>
+            <ul class="secondLevel-list">
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink headerNav-about">About Virgil</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink headerNav-clients">Clients</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Blog</a>
+              </li>
+            </ul>
+          </li>
+          <li class="firstLevel-item">
+            <a class="firstLevel-itemLink">Features</a>
+          </li>
+          <li class="firstLevel-item">
+            <a class="firstLevel-itemLink">Pricing</a>
+          </li>
+          <li class="firstLevel-item">
+            <a class="firstLevel-itemLink">Contacts</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="headerAuth">
+        <a href="" class="headerAuth-link"><span>Login / Sign In</span></a>
+      </div>
     </div>
   </header>
   <div class="intro">
@@ -106,31 +172,31 @@
         </div>
         <ul class="introLangList">
           <li>
-            <a href=""><img src="images/pages/home/intro/home-lang-obj-c.png" alt=""></a>
+            <a href=""><img src="images/pages/home/intro/langs/home-lang-obj-c.png" alt=""></a>
           </li>
           <li>
-            <a href=""><img src="images/pages/home/intro/home-lang-swift.png" alt=""></a>
+            <a href=""><img src="images/pages/home/intro/langs/home-lang-swift.png" alt=""></a>
           </li>
           <li>
-            <a href=""><img src="images/pages/home/intro/home-lang-ruby.png" alt=""></a>
+            <a href=""><img src="images/pages/home/intro/langs/home-lang-ruby.png" alt=""></a>
           </li>
           <li>
-            <a href=""><img src="images/pages/home/intro/home-lang-python.png" alt=""></a>
+            <a href=""><img src="images/pages/home/intro/langs/home-lang-python.png" alt=""></a>
           </li>
           <li>
-            <a href=""><img src="images/pages/home/intro/home-lang-dotnet.png" alt=""></a>
+            <a href=""><img src="images/pages/home/intro/langs/home-lang-windows.png" alt=""></a>
           </li>
           <li>
-            <a href=""><img src="images/pages/home/intro/home-lang-java.png" alt=""></a>
+            <a href=""><img src="images/pages/home/intro/langs/home-lang-java.png" alt=""></a>
           </li>
           <li>
-            <a href=""><img src="images/pages/home/intro/home-lang-js.png" alt=""></a>
+            <a href=""><img src="images/pages/home/intro/langs/home-lang-js.png" alt=""></a>
           </li>
           <li>
-            <a href=""><img src="images/pages/home/intro/home-lang-php.png" alt=""></a>
+            <a href=""><img src="images/pages/home/intro/langs/home-lang-php.png" alt=""></a>
           </li>
           <li>
-            <a href=""><img src="images/pages/home/intro/home-lang-go.png" alt=""></a>
+            <a href=""><img src="images/pages/home/intro/langs/home-lang-go.png" alt=""></a>
           </li>
         </ul>
       </div>
@@ -147,21 +213,25 @@
             <a href="" class="button-flat">About us</a>
           </div>
         </div>
-        <div class="useCases-caption">use cases</div>
       </div>
     </div>
     <div class="useCaseList">
-      <div class="useCaseList-image">
-        <img src="images/pages/home/useCases/home-useCases.png" alt="">
-      </div>
+      <div class="useCaseList-caption">use cases</div>
+      <div class="useCaseList-image"></div>
     </div>
   </div>
   <div class="clients">
     <div class="wrapper">
       <div class="clientsContentBlock">
-        <a href="" class="clients-link">
-          <img src="images/pages/home/clients/home-clients.png" alt="" class="clients-linkImage">
-          <span class="clients-linkButton button-raisedRed-static">see our clients</span>
+        <a href="" class="clientList">
+          <span class="clientList-item"><img src="images/pages/home/clients/home-clients-trustlook.png" class="clientList-itemImage" alt=""></span>
+          <span class="clientList-item"><img src="images/pages/home/clients/home-clients-soraa.png" class="clientList-itemImage" alt=""></span>
+          <span class="clientList-item"><img src="images/pages/home/clients/home-clients-atomicorp.png" class="clientList-itemImage" alt=""></span>
+          <span class="clientList-item"><img src="images/pages/home/clients/home-clients-twilio.png" class="clientList-itemImage" alt=""></span>
+          <span class="clientList-item"><img src="images/pages/home/clients/home-clients-sikka.png" class="clientList-itemImage" alt=""></span>
+          <span class="clientList-item"><img src="images/pages/home/clients/home-clients-dd.png" class="clientList-itemImage" alt=""></span>
+          <span class="clientList-item"><img src="images/pages/home/clients/home-clients-yubico.png" class="clientList-itemImage" alt=""></span>
+          <span class="clientList-button button-raisedRed-static">see our clients</span>
         </a>
       </div>
     </div>
@@ -226,7 +296,8 @@
           <h2 class="blockMsg-headline">Easy for developers</h2>
           <p class="blockMsg-text">We believe that security is a problem rooted in code. We obsessively seek out elegant, composable abstractions that enable robust, scalable, flexible integrations. We eliminate needless complexity and extraneous details, you can get up and running Virgil in just a couple of minutes.</p>
         </div>
-        <div id="homeUsageStepsCarousel" class="usageStepsCarousel carousel slide" data-ride="false" data-wrap="false">
+        <div id="homeUsageStepsCarousel" class="usageStepsCarousel carousel slide"
+             data-pause="hover" data-wrap="false">
           <ul class="usageStepsCarousel-controls carousel-indicators">
             <li class="usageStepsCarousel-control active" data-target="#homeUsageStepsCarousel" data-slide-to="0">
               <i>1</i>
@@ -288,41 +359,47 @@
             <a href="#homeUsageStepsCarousel" class="usageStepsCarousel-next" data-slide="next"></a>
           </div>
         </div>
-        <ul class="usageBenefits">
-          <li class="usageBenefit">
-            <div class="usageBenefit-image">
+      </div>
+    </div>
+  </div>
+  <div class="benefits">
+    <div class="wrapper">
+      <div class="benefitsContentBlock">
+        <ul class="benefitList">
+          <li class="benefitItem">
+            <div class="benefitItem-image">
               <img src="images/pages/home/benefits/home-benefits-benefitIcon1.png" alt="">
             </div>
-            <div class="usageBenefit-msg">
-              <h4 class="usageBenefit-headline">Next Gen Security Everywhere</h4>
-              <p class="usageBenefit-text">Add the security without being an expert yourself.</p>
+            <div class="benefitItem-msg">
+              <h4 class="benefitItem-headline">Next Gen Security Everywhere</h4>
+              <p class="benefitItem-text">Add the security without being an expert yourself.</p>
             </div>
           </li>
-          <li class="usageBenefit">
-            <div class="usageBenefit-image">
+          <li class="benefitItem">
+            <div class="benefitItem-image">
               <img src="images/pages/home/benefits/home-benefits-benefitIcon2.png" alt="">
             </div>
-            <div class="usageBenefit-msg">
-              <h4 class="usageBenefit-headline">Encrypt Data at Rest & in Transit</h4>
-              <p class="usageBenefit-text">All data should be secure all the time.</p>
+            <div class="benefitItem-msg">
+              <h4 class="benefitItem-headline">Encrypt Data at Rest & in Transit</h4>
+              <p class="benefitItem-text">All data should be secure all the time.</p>
             </div>
           </li>
-          <li class="usageBenefit">
-            <div class="usageBenefit-image">
+          <li class="benefitItem">
+            <div class="benefitItem-image">
               <img src="images/pages/home/benefits/home-benefits-benefitIcon3.png" alt="">
             </div>
-            <div class="usageBenefit-msg">
-              <h4 class="usageBenefit-headline">Verify Identities</h4>
-              <p class="usageBenefit-text">Identity made simple and without passwords.</p>
+            <div class="benefitItem-msg">
+              <h4 class="benefitItem-headline">Verify Identities</h4>
+              <p class="benefitItem-text">Identity made simple and without passwords.</p>
             </div>
           </li>
-          <li class="usageBenefit">
-            <div class="usageBenefit-image">
+          <li class="benefitItem">
+            <div class="benefitItem-image">
               <img src="images/pages/home/benefits/home-benefits-benefitIcon4.png" alt="">
             </div>
-            <div class="usageBenefit-msg">
-              <h4 class="usageBenefit-headline">Implement Security in Minutes</h4>
-              <p class="usageBenefit-text">We support the platforms & languages you love.</p>
+            <div class="benefitItem-msg">
+              <h4 class="benefitItem-headline">Implement Security in Minutes</h4>
+              <p class="benefitItem-text">We support the platforms & languages you love.</p>
             </div>
           </li>
         </ul>
@@ -347,7 +424,7 @@
       <div class="wrapper">
         <div class="footerContacts">
           <div class="footerContacts-logo">
-            <img src="images/shared/logo.png" alt="">
+            <a href=""><img src="images/shared/logo.png" alt=""></a>
           </div>
           <div class="footerContacts-hashtag">#EncryptEverything</div>
           <ul class="footerContacts-socials">
@@ -397,6 +474,7 @@
       </div>
     </div>
   </footer>
+  <div class="overlay" data-vs-sideNav-overlay></div>
 </div>
 </body>
 </html>

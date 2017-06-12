@@ -1,182 +1,356 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
-  padding: 20px 30px;
 
-  &-logo {
-    flex-basis: 350px;
-
+  .headerLogo {
     a, img {
       display: block;
     }
   }
 
-  .headerNav {
-    margin-top: -20px;
-  }
-
-  .firstLevel {
-    &-list {
-      display: flex;
-    }
-
-    &-item {
-      position: relative;
-      z-index: 3;
-      margin: 0 15px 0;
-      padding: 0 5px;
-      border-top: 3px solid;
-      border-color: transparent;
-      transition: 0.5s border-color;
-
-      &:hover, &.active {
-        border-color: $vs-color-white;
-      }
-
-      &:hover {
-        & > .secondLevel-list {
-          visibility: visible;
-          opacity: 1;
-        }
-      }
-    }
-
-    &-itemLink {
-      @include font-muller;
-      display: inline-block;
-      padding: 30px 0 15px;
-      color: $vs-color-white;
-      font-size: 14px;
-      cursor: pointer;
-      transition: 0.5s color;
-    }
-  }
-
-  .secondLevel {
-    &-list {
-      visibility: hidden;
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translate(-50%);
-      border-radius: 5px;
-      background: $vs-color-white;
-      opacity: 0;
-      transition: 0.5s opacity;
-
-      &:before {
-        content: '';
-        position: absolute;
-        top: -12px;
-        left: 50%;
-        transform: translate(-50%);
-        width: 0;
-        height: 0;
-        border: 7px solid transparent;
-        border-bottom-color: $vs-color-white;
-        border-bottom-width: 5px;
-      }
-    }
-
-    &-item {
-      margin: 20px 30px;
-
-      &:last-child {
-        margin: 0;
-        border-radius: 0 0 5px 5px;
-        padding: 20px 30px;
-        background: $vs-color-lightRed1;
-      }
-    }
-
-    &-itemLink {
-      @include font-muller;
-      display: inline-block;
-      font-size: 14px;
-      white-space: nowrap;
-      color: $vs-color-darkRed1;
-    }
-  }
-
-  .thirdLevel {
-    &-caption {
-      @include font-muller;
-      color: $vs-color-lightGrey4;
-      font-weight: bold;
-      font-size: 10px;
-    }
-
-    &-list {
-      font-size: 14px;
-    }
-
-    &-item {
-      margin-top: 15px;
-
-      a {
-        color: $vs-color-grey;
-        white-space: nowrap;
-      }
-    }
-  }
-
-  .headerAuth {
-    flex-basis: 350px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: 14px;
-  }
-
   &--dark {
-    color: inherit;
+    .headerFull {
+      color: inherit;
 
-    .firstLevel {
-      &-item {
-        &:hover, &.active {
-          border-color: $vs-color-darkRed2;
+      .firstLevel {
+        &-item {
+          &:hover, &.active {
+            border-color: $vs-color-darkRed2;
 
-          .firstLevel-itemLink {
-            color: $vs-color-darkRed2;
+            .firstLevel-itemLink {
+              color: $vs-color-darkRed2;
+            }
           }
         }
-      }
 
-      &-itemLink {
-        color: inherit;
-      }
-    }
-
-    .headerAuth {
-      .button-flatWhite {
-        color: initial;
-
-        &:hover {
-          color: $vs-color-darkRed1;
+        &-itemLink {
+          color: inherit;
         }
       }
 
-      .button-raisedWhiteBorder {
-        border-color: $vs-color-darkRed1;
-        color: $vs-color-darkRed1;
+      .headerAuth {
+        .button-flatWhite {
+          color: initial;
 
-        &:hover {
-          color: $vs-color-white;
+          &:hover {
+            color: $vs-color-darkRed1;
+          }
+        }
+
+        .button-raisedWhiteBorder {
+          border-color: $vs-color-darkRed1;
+          color: $vs-color-darkRed1;
+
+          &:hover {
+            color: $vs-color-white;
+          }
         }
       }
     }
   }
 }
 
-.about {
+.headerFull {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 20px 30px;
+  }
+
   .headerNav {
-    &-about {
-      border-color: $vs-color-white;
+    display: none;
+    margin-top: -20px;
+
+    @media (min-width: $breakpoint-lg) {
+      display: flex;
+    }
+  }
+
+    .firstLevel {
+      &-list {
+        display: flex;
+      }
+
+      &-item {
+        position: relative;
+        z-index: 3;
+        margin: 0 15px 0;
+        padding: 0 5px;
+        border-top: 3px solid;
+        border-color: transparent;
+        transition: 0.5s border-color;
+
+        &:hover, &.active {
+          border-color: $vs-color-white;
+        }
+
+        &:hover {
+          & > .secondLevel-list {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+
+      &-itemLink {
+        @include font-muller;
+        display: inline-block;
+        padding: 30px 0 15px;
+        color: $vs-color-white;
+        //font-size: 14px;
+        font-size: 0.77em;
+        cursor: pointer;
+      }
+    }
+
+    .secondLevel {
+      &-list {
+        visibility: hidden;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%);
+        border-radius: 3px;
+        background: $vs-color-white;
+        opacity: 0;
+        transition: 0.5s visibility, 0.5s opacity;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: -12px;
+          left: 50%;
+          transform: translate(-50%);
+          width: 0;
+          height: 0;
+          border: 7px solid transparent;
+          border-bottom-color: $vs-color-white;
+          border-bottom-width: 5px;
+        }
+      }
+
+      &-item {
+        margin: 20px 30px;
+
+        &:last-child {
+          margin: 0;
+          border-radius: 0 0 3px 3px;
+          padding: 20px 30px;
+          background: $vs-color-lightRed1;
+        }
+      }
+
+      &-itemLink {
+        @include font-muller;
+        display: inline-block;
+        //font-size: 14px;
+        font-size: 0.77em;
+        white-space: nowrap;
+        color: $vs-color-darkRed1;
+      }
+    }
+
+    .thirdLevel {
+      &-caption {
+        @include font-muller;
+        color: $vs-color-lightGrey4;
+        font-weight: bold;
+        //font-size: 10px;
+        font-size: 0.55em;
+      }
+
+      &-list {
+        //font-size: 14px;
+        font-size: 0.77em;
+      }
+
+      &-item {
+        margin-top: 15px;
+
+        a {
+          color: $vs-color-grey;
+          white-space: nowrap;
+        }
+      }
+    }
+
+  .headerAuth {
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    //font-size: 14px;
+    font-size: 0.77em;
+
+    @media (min-width: $breakpoint-lg) {
+      display: flex;
+    }
+
+    a + a {
+      margin-left: 0;
+    }
+  }
+
+  .headerOpenButton {
+    display: block;
+
+    @media (min-width: $breakpoint-lg) {
+      display: none;
+    }
+  }
+}
+
+.headerSideBar {
+  overflow-y: scroll;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  margin: 10px;
+  border-radius: 3px;
+  background: $vs-color-white;
+  transition: 0.5s visibility, 0.5s opacity;
+
+  &.expanded {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    width: calc(50% - 20px);
+  }
+
+  .headerCloseButton {
+    align-self: flex-end;
+    margin: 20px;
+  }
+
+  .headerNav {
+    flex: 1 1;
+    padding: 0 30px;
+  }
+    .firstLevel,
+    .secondLevel {
+      &-list {
+        li + li {
+          margin-top: 20px;
+        }
+      }
+
+      &-item {
+        line-height: 1;
+
+        &.active {
+          a {
+            border-left: 2px solid $vs-color-darkRed1;
+            padding-left: 10px;
+            color: $vs-color-darkRed1;
+          }
+        }
+
+        a {
+          display: inline-block;
+          vertical-align: middle;
+          //font-size: 14px;
+          font-size: 0.77em;
+          transition: 0.5s color;
+
+          &:hover {
+            color: $vs-color-darkRed1;
+          }
+        }
+      }
+
+      &-itemLink {
+        @include font-muller;
+      }
+    }
+
+    .firstLevel {
+      &-itemLink:not(a) {
+        color: $vs-color-lightGrey4;
+        //font-size: 12px;
+        font-size: 0.66em;
+        font-weight: bold;
+      }
+
+      &:not(:first-child) {
+        .firstLevel-itemLink:not(a) {
+          margin-top: 50px;
+        }
+      }
+    }
+
+    .secondLevel {
+      &-list {
+        margin: 20px 0 50px;
+      }
+    }
+
+  .headerAuth {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    &-link {
+      @include font-muller();
+      border-radius: 0 0 3px 3px;
+      padding: 30px;
+      background: $vs-color-lightRed1;
+      //font-size: 14px;
+      font-size: 0.77em;
+      color: $vs-color-darkRed1;
+      cursor: pointer;
+    }
+  }
+}
+
+.about {
+  .headerFull {
+    .headerNav {
+      &-about {
+        border-color: $vs-color-white;
+      }
+    }
+  }
+
+  .headerSideBar {
+    .headerNav {
+      &-about {
+        border-left: 2px solid $vs-color-darkRed1;
+        padding-left: 10px;
+        color: $vs-color-darkRed1;
+      }
+    }
+  }
+}
+
+.clients {
+  .headerFull {
+    .headerNav {
+      &-clients {
+        border-color: $vs-color-white;
+      }
+    }
+  }
+
+  .headerSideBar {
+    .headerNav {
+      &-clients {
+        border-left: 2px solid $vs-color-darkRed1;
+        padding-left: 10px;
+        color: $vs-color-darkRed1;
+      }
     }
   }
 }

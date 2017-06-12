@@ -209,7 +209,7 @@
     .faqList {
       flex: 1 1 690px;
       margin-top: 45px;
-      padding-right: 50px;
+      padding-right: 100px;
 
       > li + li {
         margin-top: 65px;
@@ -256,13 +256,13 @@
       font-weight: bold;
       line-height: 1.9;
 
-      &:not(.active) {
-        opacity: 0.5;
-      }
-
       &-link {
         display: flex;
         color: $vs-color-white;
+
+        &:not(.active) {
+          opacity: 0.5;
+        }
       }
 
       &-linkCount {

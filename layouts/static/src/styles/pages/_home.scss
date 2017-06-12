@@ -1,18 +1,23 @@
 .homePage {
   .intro {
-    display: flex;
-    flex-direction: column;
     background-image: url("../assets/images/bg/home/home-intro-bg.png");
 
     .introContentBlock {
-      align-items: initial;
-      justify-content: flex-end;
-      height: 920px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      min-height: 720px;
       padding-bottom: 45px;
+
+      @media (min-width: $breakpoint-md) {
+        min-height: 920px;
+      }
     }
 
     .blockMsg {
-      margin-bottom: 325px;
+      flex-basis: 100%;
+      margin-top: 40px;
       color: $vs-color-white;
 
       &-headline {
@@ -30,20 +35,18 @@
     }
 
     .introLangList {
+      align-self: flex-end;
       display: flex;
-      justify-content: center;
-      align-content: center;
+      flex-wrap: wrap;
+      margin: -20px;
 
       li {
-        opacity: 0.5;
+        margin: 20px;
+        opacity: 0.7;
         transition: 0.5s opacity;
 
         &:hover {
           opacity: 1;
-        }
-
-        & + li {
-          margin-left: 38px;
         }
 
         a {
@@ -65,15 +68,15 @@
     align-items: center;
 
     .useCasesContentBlock {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
+      padding: 130px 0 80px;
     }
 
     .blockMsg {
       width: 715px;
-      padding: 130px 0 80px;
       text-align: center;
 
       &-links {
@@ -81,22 +84,44 @@
       }
     }
 
-    &-caption {
-      @include contentBlock-caption();
-      align-self: flex-end;
-      position: absolute;
-      z-index: -1;
-      left: 10%;
-      margin-top: 1em;
-    }
-
     .useCaseList {
-      padding: 40px 0;
+      position: relative;
+      max-width: 100%;
+      padding: 160px 0 105px;
+
+      @media (min-width: $breakpoint-md) {
+        padding: 40px 0 45px;
+      }
+
+      &-caption {
+        @include contentBlock-caption();
+        position: absolute;
+        z-index: -1;
+        top: -10px;
+
+        @media (min-width: $breakpoint-md) {
+          padding: 0 15px;
+        }
+      }
 
       &-image {
-        img {
-          display: block;
-          max-width: 100%;
+        max-width: 100%;
+        width: 440px;
+        height: 1245px;
+        background-image: url("../assets/images/content/home/useCases/home-useCases-mobile.png");
+        background-repeat: no-repeat;
+        background-position: center top;
+
+        @media (min-width: $breakpoint-md) {
+          width: 960px;
+          height: 580px;
+          background-image: url("../assets/images/content/home/useCases/home-useCases-tablet.png");
+        }
+
+        @media (min-width: $breakpoint-md) {
+          width: 1420px;
+          height: 475px;
+          background-image: url("../assets/images/content/home/useCases/home-useCases-desktop.png");
         }
       }
     }
@@ -105,36 +130,48 @@
   .clients {
     background: $vs-color-lightGrey1;
 
-    &-link {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .clientList {
       position: relative;
-      height: 160px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      margin: 0 -20px;
+      padding: 40px 0;
       transition: 0.5s padding;
 
       &:hover {
-        padding: 0 10px;
+        @media (min-width: $breakpoint-lg) {
+          padding: 40px 10px;
+        }
 
-        .clients-linkImage {
+        .clientList-itemImage {
           filter: blur(5px);
         }
 
-        .clients-linkButton {
+        .clientList-button {
           opacity: 1;
         }
       }
-    }
 
-    &-linkImage {
-      max-width: 100%;
-      transition: 0.5s filter;
-    }
+      &-item {
+        margin: 15px;
+      }
 
-    &-linkButton {
-      position: absolute;
-      opacity: 0;
-      transition: 0.5s opacity;
+      &-itemImage {
+        display: block;
+        max-width: 100%;
+        transition: 0.5s filter;
+      }
+
+      &-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: 0.5s opacity;
+      }
     }
   }
 
@@ -142,139 +179,203 @@
     .servicesContentBlock {
       position: relative;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 150px 0;
+      flex-direction: column;
+      padding: 150px 0 130px;
+
+      @media (min-width: $breakpoint-md) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
 
     &-caption {
       @include contentBlock-caption();
-      align-self: flex-start;
       position: absolute;
+      top: 100px;
       z-index: -1;
-      left: 10%;
+      width: 100%;
+      font-size: 5em;
+      text-align: center;
+
+      @media (min-width: $breakpoint-md) {
+        padding: 0 20px;
+        font-size: 6.66em;
+        text-align: left;
+      }
+
+      @media (min-width: $breakpoint-lg) {
+        top: 145px;
+        padding: 0 225px;
+      }
     }
 
     .blockMsg {
-      flex: 0 1 45%;
-      max-width: 495px;
+      text-align: center;
+
+      @media (min-width: $breakpoint-md) {
+        width: 400px;
+        max-width: 45%;
+        text-align: left;
+      }
+
+      @media (min-width: $breakpoint-lg) {
+        width: 485px;
+      }
     }
 
     .serviceList {
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-      flex: 0 1 45%;
-      max-width: 485px;
+      align-items: center;
       height: 600px;
+      margin-top: 50px;
+
+      @media (min-width: $breakpoint-md) {
+        width: 465px;
+        max-width: 55%;
+        margin-top: 0;
+      }
+
+      @media (min-width: $breakpoint-lg) {
+        width: 485px;
+      }
     }
 
-    .serviceItem {
-      margin-top: 80px;
-      align-self: flex-start;
-      width: 205px;
-      max-width: 49%;
-      height: 225px;
+      .serviceItem {
+        margin-top: 70px;
+        width: 205px;
+        max-width: 49%;
+        height: 225px;
 
-      &:first-child {
-        margin-top: 50px;
-      }
+        @media (min-width: $breakpoint-md) {
+          align-self: flex-start;
+        }
 
-      &:nth-child(3) {
-        margin-top: 0;
-        align-self: flex-end;
-      }
+        @media (min-width: $breakpoint-lg) {
+          margin-top: 80px;
+        }
 
-      &:nth-child(4) {
-        align-self: flex-end;
-      }
+        &:first-child {
+          margin-top: 50px;
+        }
 
-      &-link {
-        @include font-muller();
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        height: 100%;
-        border-radius: 3px;
-        padding: 45px 35px 30px ;
-        background: $vs-color-darkRed1;
-        background: linear-gradient(to right, $vs-color-red1 0%, $vs-color-darkRed1 100%);
-        font-size: 14px;
-        text-align: center;
-        color: $vs-color-white;
-        box-shadow: 0 15px 20px -15px rgba($vs-color-darkRed2, 0.4);
-        transition: 0.5s box-shadow;
+        &:nth-child(3) {
+          margin-top: 0;
 
-        &:hover {
-          box-shadow: 0 20px 20px -15px rgba($vs-color-darkRed2, 0.4);
-
-          .serviceItem-linkText {
-            height: 0;
-            opacity: 0;
-            visibility: hidden;
-          }
-
-          .serviceItem-linkHoverText {
-            height: auto;
-            margin-bottom: 1.3em;
-            opacity: 1;
-            visibility: visible;
+          @media (min-width: $breakpoint-md) {
+            align-self: flex-end;
           }
         }
-      }
 
-      &-image {
-        max-width: 100%;
-      }
+        &:nth-child(4) {
+          @media (min-width: $breakpoint-md) {
+            align-self: flex-end;
+          }
+        }
 
-      &-linkText {
-        height: auto;
-        transition: 0.5s opacity, 0.5s hidden;
-      }
+        &-link {
+          @include font-muller();
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          height: 100%;
+          border-radius: 3px;
+          padding: 45px 35px 30px ;
+          background: $vs-color-darkRed1;
+          background: linear-gradient(to right, $vs-color-red1 0%, $vs-color-darkRed1 100%);
+          //font-size: 14px;
+          font-size: 0.77em;
+          text-align: center;
+          color: $vs-color-white;
+          box-shadow: 0 15px 20px -15px rgba($vs-color-darkRed2, 0.4);
+          transition: 0.5s box-shadow;
 
-      &-linkHoverText {
-        height: 0;
-        opacity: 0;
-        visibility: hidden;
-        transition: 0.5s opacity, 0.5s hidden;
+          &:hover {
+            box-shadow: 0 20px 20px -15px rgba($vs-color-darkRed2, 0.4);
+
+            .serviceItem-linkText {
+              height: 0;
+              opacity: 0;
+              visibility: hidden;
+            }
+
+            .serviceItem-linkHoverText {
+              height: auto;
+              margin-bottom: 1.3em;
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+
+        &-image {
+          max-width: 100%;
+        }
+
+        &-linkText {
+          height: auto;
+          transition: 0.5s opacity, 0.5s hidden;
+        }
+
+        &-linkHoverText {
+          height: 0;
+          opacity: 0;
+          visibility: hidden;
+          transition: 0.5s opacity, 0.5s hidden;
+        }
       }
-    }
   }
 
   .usage {
     background: url("../assets/images/bg/home/home-usage-bg.png") center top no-repeat;
 
     .usageContentBlock {
-      padding: 140px 0 135px;
+      padding: 140px 0;
+
+      @media (min-width: $breakpoint-lg) {
+        padding: 140px 0 0;
+      }
     }
 
     .blockMsg {
-      width: 70%;
+      text-align: center;
       color: $vs-color-white;
+
+      @media (min-width: $breakpoint-lg) {
+        width: 70%;
+        text-align: left;
+      }
     }
 
     .usageStepsCarousel {
+      display: none;
       margin-top: 85px;
       border-radius: 3px;
       background: $vs-color-white;
       box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
 
+      @media (min-width: $breakpoint-lg) {
+        display: block;
+      }
+
       &-controls {
-        display: flex;
-        justify-content: space-between;
         position: relative;
         z-index: 1;
+        display: flex;
+        justify-content: space-between;
         margin: 0 50px;
         padding: 40px 0;
 
         &:before {
           content: '';
-          width: 100%;
-          height: 1px;
           position: absolute;
           top: 50%;
           left: 0;
+          width: 100%;
+          height: 1px;
           margin: -1px 0 0;
           background: $vs-color-lightGrey6;
         }
@@ -286,7 +387,8 @@
         z-index: 2;
         padding: 0 15px;
         background: $vs-color-white;
-        font-size: 14px;
+        //font-size: 14px;
+        font-size: 0.77em;
         text-align: center;
         cursor: pointer;
 
@@ -361,127 +463,184 @@
       }
     }
 
-    .usageSteps {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-radius: 0 0 3px 3px;;
-      padding: 65px 95px;
-      background: $vs-color-lightGrey5;
-    }
-
-    .usageStepList {
-      flex: 1 1;
-      width: auto;
-      height: 325px;
-      max-width: 930px;
-      max-height: 325px;
-      border-radius: 3px;
-      background: $vs-color-darkBlue3;
-      box-shadow: 0 4px 15px 0 rgba($vs-color-darkBlue4, 0.2);
-    }
-
-    .usageStepItem {
-      &-link {
+      .usageSteps {
         display: flex;
-        justify-content: center;
         align-items: center;
-        position: relative;
-        transition: 0.5s padding;
-
-        &:hover {
-          padding: 0 10px;
-
-          .usageStepItem-linkImage {
-            filter: blur(5px);
-          }
-
-          .usageStepItem-linkButton {
-            opacity: 1;
-          }
-        }
+        justify-content: space-between;
+        border-radius: 0 0 3px 3px;;
+        padding: 65px 95px;
+        background: $vs-color-lightGrey5;
       }
 
-      &-linkImage {
-        max-width: 100%;
-        transition: 0.5s filter;
-      }
-
-      &-linkButton {
-        position: absolute;
-        opacity: 0;
-        transition: 0.5s opacity;
-      }
-    }
-
-    .usageBenefits {
-      margin-top: 85px;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .usageBenefit {
-      display: flex;
-      align-items: center;
-      flex: 0 1 24%;
-
-      &-image {
-        flex: 0 1 78px;
-
-        img {
-          display: block;
-          max-width: 100%;
-        }
-      }
-
-      &-msg {
+      .usageStepList {
         flex: 1 1;
-        margin-left: 25px;
+        width: auto;
+        //height: 305px;
+        max-width: 930px;
+        max-height: 325px;
+        border-radius: 3px;
+        background: $vs-color-darkBlue3;
+        box-shadow: 0 4px 15px 0 rgba($vs-color-darkBlue4, 0.2);
+
+        //@media (min-width: $breakpoint-lg-transition) {
+        //  height: 325px;
+        //}
       }
 
-      &-headline {
-        @include font-muller();
-        font-size: 12px;
-        font-weight: bold;
-        line-height: 1.5;
+      .usageStepItem {
+        &-link {
+          overflow: hidden;
+          position: relative;
+          max-width: 100%;
+          transition: 0.5s padding;
+
+          &:hover {
+            //padding: 0 10px;
+
+            .usageStepItem-linkImage {
+              filter: blur(5px);
+            }
+
+            .usageStepItem-linkButton {
+              opacity: 1;
+            }
+          }
+        }
+
+        &-linkImage {
+          display: block;
+          transition: 0.75s filter;
+        }
+
+        &-linkButton {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0;
+          transition: 0.5s opacity;
+        }
+      }
+  }
+
+  .benefits {
+    .benefitsContentBlock {
+      padding: 85px 0 135px;
+
+      @media (min-width: $breakpoint-md) {
+        padding-top: 115px;
       }
 
-      &-text {
-        font-size: 14px;
+      @media (min-width: $breakpoint-lg) {
+        padding-top: 85px;
       }
     }
+
+    .benefitList {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-bottom: -60px;
+
+      @media (min-width: $breakpoint-md) {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+    }
+
+      .benefitItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+        margin-bottom: 60px;
+
+        @media (min-width: $breakpoint-md) {
+          width: 20%;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+          flex-direction: row;
+        }
+
+        &-image {
+          flex: 0 1 78px;
+
+          img {
+            display: block;
+            max-width: 100%;
+          }
+        }
+
+        &-msg {
+          flex: 1 1;
+          margin: 20px 0 0;
+          text-align: center;
+
+          @media (min-width: $breakpoint-lg) {
+            margin: 0 0 0 25px;
+            text-align: left;
+          }
+        }
+
+        &-headline {
+          @include font-muller();
+          //font-size: 12px;
+          font-size: 0.66em;
+          font-weight: bold;
+          line-height: 1.5;
+        }
+
+        &-text {
+          margin-top: 10px;
+          //font-size: 14px;
+          font-size: 0.77em;
+        }
+      }
   }
 
   .conclusion {
     position: relative;
     z-index: 2;
 
-    @include media-breakpoint-up(xl) {
-      background: url("../assets/images/bg/home/home-conclusion-bg.png") 20% bottom no-repeat;
+    @media (min-width: $breakpoint-md) {
+      background-image: url("../assets/images/bg/home/home-conclusion-bg.png");
+      background-repeat: no-repeat;
+      background-position: -255px bottom;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      background-position: 5% bottom;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+      background-position: 20% bottom;
     }
 
     .conclusionContentBlock {
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 575px;
+      padding: 100px 0;
       border-top: 1px solid $vs-color-lightGrey3;
 
-      @include media-breakpoint-up(xl) {
+      @media (min-width: $breakpoint-md) {
         justify-content: flex-end;
+        min-height: 575px;
       }
     }
 
     .blockMsg {
       text-align: center;
 
-      @include media-breakpoint-up(xl) {
-        width: 50%;
+      @media (min-width: $breakpoint-md) {
+        width: 65%;
         text-align: left;
       }
 
-      &-text {
-        margin-top: 22px;
+      @media (min-width: $breakpoint-lg) {
+        width: 50%;
+        text-align: left;
       }
 
       &-links {

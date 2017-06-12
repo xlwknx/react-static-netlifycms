@@ -27,10 +27,10 @@
           border-color: $vs-color-white;
           opacity: 1;
         }
+      }
 
-        & + li {
-          margin-left: 35px;
-        }
+      li + li {
+        margin-left: 35px;
       }
 
       a {
@@ -46,7 +46,7 @@
       padding: 120px 0 195px;
       font-size: 16px;
 
-      @include media-breakpoint-up(lg) {
+      @media (min-width: $breakpoint-lg) {
         padding: 120px 190px 195px;
       }
     }

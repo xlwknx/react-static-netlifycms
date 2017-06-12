@@ -279,8 +279,15 @@
       color: $vs-color-lightGrey8;
     }
 
-    &-image {
+    .awardList {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       margin-top: 35px;
+
+      li + li {
+        margin-left: 30px;
+      }
 
       img {
         display: block;
@@ -302,8 +309,15 @@
       color: $vs-color-lightGrey8;
     }
 
-    &-image {
-      margin-top: 10px;
+    .investorList {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 35px;
+
+      li + li {
+        margin-left: 30px;
+      }
 
       img {
         display: block;
