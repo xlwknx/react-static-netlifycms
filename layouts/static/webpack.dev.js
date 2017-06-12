@@ -20,6 +20,7 @@ module.exports = {
       path.resolve('./node_modules')
     ]
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {

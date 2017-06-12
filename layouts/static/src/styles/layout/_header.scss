@@ -93,6 +93,7 @@
           & > .secondLevel-list {
             visibility: visible;
             opacity: 1;
+            height: auto;
           }
         }
       }
@@ -115,6 +116,7 @@
         top: 100%;
         left: 50%;
         transform: translate(-50%);
+        height: 0;
         border-radius: 3px;
         background: $vs-color-white;
         opacity: 0;
@@ -215,7 +217,7 @@
   display: flex;
   flex-direction: column;
   width: calc(100% - 20px);
-  height: calc(100% - 20px);
+  height: 0;
   margin: 10px;
   border-radius: 3px;
   background: $vs-color-white;
@@ -224,10 +226,11 @@
   &.expanded {
     visibility: visible;
     opacity: 1;
-  }
+    height: calc(100% - 20px);
 
-  @media (min-width: $breakpoint-md) {
-    width: calc(50% - 20px);
+    @media (min-width: $breakpoint-md) {
+      width: calc(50% - 20px);
+    }
   }
 
   .headerCloseButton {

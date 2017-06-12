@@ -197,7 +197,7 @@
     .faqContentBlock {
       display: flex;
       flex-wrap: wrap;
-      padding: 105px 0 140px;
+      padding: 105px 0 205px;
     }
 
     &-caption {
@@ -210,13 +210,31 @@
       flex: 1 1 690px;
       margin-top: 45px;
       padding-right: 100px;
-
-      > li + li {
-        margin-top: 65px;
-      }
     }
 
     .faqItem {
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
+      transition: 0.5s all;
+      //display: none;
+
+      &.active {
+        &,
+        & + li,
+        & + li + li {
+          visibility: visible;
+          opacity: 1;
+          height: auto;
+          //display: block;
+        }
+
+        & + li,
+        & + li + li {
+          margin-top: 65px;
+        }
+      }
+
       &-count {
         @include font-muller();
         font-size: 28px;
