@@ -4,13 +4,17 @@
     background-image: url("../assets/images/bg/features/features-intro-bg.png");
 
     .introContentBlock {
+      justify-content: space-between;
       min-height: 830px;
     }
 
     .blockMsg {
-      width: 720px;
       text-align: center;
       color: $vs-color-white;
+
+      @media (min-width: $breakpoint-md) {
+        width: 720px;
+      }
 
       &-headline {
         line-height: 1.5;
@@ -20,27 +24,40 @@
     .introFeatures {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
-      margin-top: 185px;
-    }
+      justify-content: space-around;
 
-    .introFeature {
-      flex: 0 1 30%;
-      display: flex;
-      margin-bottom: 50px;
-      font-size: 16px;
-      line-height: 1.5;
-      color: $vs-color-white;
-
-      &-image {
-        flex: 0 1 65px;
-      }
-
-      &-text {
-        flex: 1 1;
-        margin-left: 25px;
+      @media (min-width: $breakpoint-md) {
+        justify-content: space-between;
       }
     }
+
+      .introFeature {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+        font-size: 16px;
+        line-height: 1.5;
+        color: $vs-color-white;
+
+        @media (min-width: $breakpoint-md) {
+          flex-direction: row;
+          width: 30%;
+        }
+
+        &-image {
+          width: 65px;
+        }
+
+        &-text {
+          margin: 10px 0 0;
+
+          @media (min-width: $breakpoint-md) {
+            margin: 0 0 0 25px;
+          }
+        }
+      }
   }
 
   .cryptogram {
@@ -52,7 +69,7 @@
       align-items: center;
       min-height: 760px;
       border-top: 1px solid $vs-color-grey;
-      padding-top: 135px;
+      padding: 135px 0;
     }
 
     .blockMsg {
@@ -69,35 +86,39 @@
       margin-top: 75px;
     }
 
-    .cryptogramItem {
-      &-features {
-        margin-top: 55px;
-        font-size: 14px;
+      .cryptogramItem {
+        &-features {
+          margin-top: 55px;
+          font-size: 14px;
 
-        > li + li {
-          margin-top: 15px;
+          > li + li {
+            margin-top: 15px;
+          }
+        }
+
+        &-feature {
+          margin: 10px 0;
+
+          .fa {
+            font-size: 25px;
+            opacity: 0.25;
+          }
         }
       }
-
-      &-feature {
-        margin: 10px 0;
-
-        .fa {
-          font-size: 25px;
-          opacity: 0.25;
-        }
-      }
-    }
   }
 
   .components {
     overflow: hidden;
     position: relative;
     z-index: 2;
-    padding: 300px 0 280px;
+
+    @media (min-width: $breakpoint-md) {
+      padding: 115px 0 280px;
+    }
 
     &:after {
       content: '';
+      display: none;
       position: absolute;
       z-index: 2;
       right: 0;
@@ -106,88 +127,127 @@
       height: 990px;
       max-width: 50%;
       background: url("../assets/images/bg/features/features-components-bg.png") left bottom no-repeat;
+
+      @media (min-width: $breakpoint-md) {
+        display: block;
+      }
     }
 
     .componentsContentBlock {
-      margin-right: 50px;
       border-radius: 0 3px 3px 0;
       color: $vs-color-white;
-
-      &:before {
-        top: 0;
-        right: 100%;
-        left: initial;
-      }
-
-      &:after {
-        top: -50px;
-        right: -50px;
-        left: initial;
-        width: 75%;
-      }
     }
 
     .componentsOverview {
       border-radius: 0 3px 3px 0;
-      padding: 85px 375px 95px 100px;
+
+      @media (min-width: $breakpoint-md) {
+        padding: 85px 100px 95px;
+      }
+
+      @media (min-width: $breakpoint-lg) {
+        padding-right: 375px;
+      }
     }
 
     .blockMsg {
       &-headline {
-        font-size: 42px;
-        line-height: 1.4;
+        @media (min-width: $breakpoint-md) {
+          font-size: 42px;
+          line-height: 1.4;
+        }
       }
     }
 
     .componentList {
-      width: 520px;
       margin-top: 105px;
+
+      @media (min-width: $breakpoint-md) {
+        width: 520px;
+      }
 
       > li + li {
         margin-top: 70px;
       }
     }
 
-    .componentItem {
-      display: flex;
+      .componentItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-      &-image {
-        flex: 0 1 75px;
-      }
+        @media (min-width: $breakpoint-md) {
+          flex-direction: row;
+        }
 
-      &-info {
-        flex: 1 1;
-        margin-left: 30px;
-      }
+        &-image {
+          width: 75px;
 
-      &-headline {
-        @include blockMsg-headline();
-        font-size: 20px;
-      }
+          @media (min-width: $breakpoint-md) {
+            flex: 0 1 75px;
+          }
+        }
 
-      &-text {
-        @include blockMsg-text(10px);
-        font-size: 16px;
-        line-height: 1.9;
-        color: $vs-color-lightGrey4;
+        &-info {
+          flex: 1 1;
+          margin: 30px 0 0;
+          text-align: center;
+
+          @media (min-width: $breakpoint-md) {
+            margin: 0 0 0 30px;
+            text-align: left;
+          }
+        }
+
+        &-headline {
+          @include blockMsg-headline();
+          font-size: 20px;
+        }
+
+        &-text {
+          @include blockMsg-text(10px);
+          font-size: 16px;
+          line-height: 1.9;
+          color: $vs-color-lightGrey4;
+        }
       }
-    }
 
     .componentLinks {
       margin-top: 90px;
+      text-align: center;
+
+      @media (min-width: $breakpoint-md) {
+        text-align: left;
+      }
     }
   }
 
-  .languages {
+  .features {
     background: $vs-color-lightGrey1;
 
-    .languagesContentBlock {
+    .featuresContentBlock {
       padding: 150px 0;
     }
 
-    &-image {
-      display: block;
-      max-width: 100%;
+    .featureList {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin: -30px -20px;
+
+      @media (min-width: $breakpoint-lg) {
+        margin: -30px -45px;
+      }
+
+      li {
+        margin: 30px 45px;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
     }
   }
 
@@ -196,8 +256,17 @@
 
     .faqContentBlock {
       display: flex;
-      flex-wrap: wrap;
-      padding: 105px 0 205px;
+      flex-direction: column;
+      padding: 105px 0;
+
+      @media (min-width: $breakpoint-md) {
+        padding-bottom: 205px;
+      }
+
+      @media (min-width: $breakpoint-lg) {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
     }
 
     &-caption {
@@ -207,60 +276,66 @@
     }
 
     .faqList {
-      flex: 1 1 690px;
+      order: 2;
       margin-top: 45px;
-      padding-right: 100px;
-    }
 
-    .faqItem {
-      visibility: hidden;
-      opacity: 0;
-      height: 0;
-      transition: 0.5s all;
-      //display: none;
-
-      &.active {
-        &,
-        & + li,
-        & + li + li {
-          visibility: visible;
-          opacity: 1;
-          height: auto;
-          //display: block;
-        }
-
-        & + li,
-        & + li + li {
-          margin-top: 65px;
-        }
-      }
-
-      &-count {
-        @include font-muller();
-        font-size: 28px;
-        color: $vs-color-darkRed1;
-
-        &:before {
-          content: '\2014';
-          padding-right: 10px;
-        }
-      }
-
-      &-text {
-        margin-top: 20px;
-        font-size: 16px;
-        line-height: 1.9;
-
-        p + p {
-          margin-top: 30px;
-        }
+      @media (min-width: $breakpoint-lg) {
+        flex: 1 1 50%;
+        order: initial;
+        padding-right: 100px;
       }
     }
+
+      .faqItem {
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        transition: 0.5s all;
+
+        &.active {
+          &,
+          & + li,
+          & + li + li {
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+          }
+
+          & + li,
+          & + li + li {
+            margin-top: 65px;
+          }
+        }
+
+        &-count {
+          @include font-muller();
+          font-size: 28px;
+          color: $vs-color-darkRed1;
+
+          &:before {
+            content: '\2014';
+            padding-right: 10px;
+          }
+        }
+
+        &-text {
+          margin-top: 20px;
+          font-size: 16px;
+          line-height: 1.9;
+
+          p + p {
+            margin-top: 30px;
+          }
+        }
+      }
 
     .faqContents {
-      flex: 1 1 505px;
       align-self: flex-start;
       display: flex;
+
+      @media (min-width: $breakpoint-lg) {
+        flex: 0 1 42%;
+      }
     }
 
     .faqContentList {
@@ -269,26 +344,26 @@
       }
     }
 
-    .faqContentItem {
-      font-size: 16px;
-      font-weight: bold;
-      line-height: 1.9;
+      .faqContentItem {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.9;
 
-      &-link {
-        display: flex;
-        color: $vs-color-white;
+        &-link {
+          display: flex;
+          color: $vs-color-white;
 
-        &:not(.active) {
-          opacity: 0.5;
+          &:not(.active) {
+            opacity: 0.5;
+          }
+        }
+
+        &-linkCount {
+          &:after {
+            content: '\2014';
+            padding: 0 10px;
+          }
         }
       }
-
-      &-linkCount {
-        &:after {
-          content: '\2014';
-          padding: 0 10px;
-        }
-      }
-    }
   }
 }

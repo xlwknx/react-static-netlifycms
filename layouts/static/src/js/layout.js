@@ -1,26 +1,28 @@
 'use strict';
 
 function initNavigation() {
-  const openButton = $('[data-vs-sideNav-open]');
-  const closeButton = $('[data-vs-sideNav-close]');
-  const target = $('[data-vs-sideNav-target]');
-  const overlay = $('[data-vs-sideNav-overlay]');
-  const body = $('body');
+  const navObj = {
+    $openButton: $('[data-vs-sideNav-open]'),
+    $closeButton: $('[data-vs-sideNav-close]'),
+    $target: $('[data-vs-sideNav-target]'),
+    $overlay: $('[data-vs-sideNav-overlay]'),
+    $body: $('body')
+  };
 
-  openButton.click(openNav);
-  closeButton.click(closeNav);
-  overlay.click(closeNav);
+  navObj.$openButton.click(openNav);
+  navObj.$closeButton.click(closeNav);
+  navObj.$overlay.click(closeNav);
 
   function openNav() {
-    body.css('overflow', 'hidden');
-    overlay.toggleClass('expanded');
-    target.toggleClass('expanded');
+    navObj.$body.css('overflow', 'hidden');
+    navObj.$overlay.toggleClass('expanded');
+    navObj.$target.toggleClass('expanded');
   }
 
   function closeNav() {
-    body.css('overflow', '');
-    target.toggleClass('expanded');
-    overlay.toggleClass('expanded');
+    navObj.$body.css('overflow', '');
+    navObj.$target.toggleClass('expanded');
+    navObj.$overlay.toggleClass('expanded');
   }
 }
 

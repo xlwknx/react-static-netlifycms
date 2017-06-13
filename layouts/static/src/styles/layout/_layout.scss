@@ -1,7 +1,7 @@
 .wrapper {
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 $wrapper-padding;
 
   @media (min-width: $breakpoint-lg) {
     max-width: 1200px;

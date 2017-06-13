@@ -1,39 +1,51 @@
 'use strict';
 
 function initFAQ() {
-  const questionList = $('[data-faq-question]');
-  const answerList = $('[data-faq-answer]');
+  const $questionList = $('[data-faq-question]');
+  const $answerList = $('[data-faq-answer]');
 
-  var activeQuestion = questionList.first();
+  var $activeQuestion = $questionList.first();
+  var $activeAnswer = $answerList.first();
 
-  if (answerList.filter(document.location.hash).length) {
-    activeQuestion = questionList.filter('[href$="' + document.location.hash + '"]');
+  if ($answerList.filter(location.hash).length) {
+    $activeQuestion = getLinkByHash(location.hash);
+    $activeAnswer = getTextByHash(location.hash);
   }
 
-  reset();
-  set(activeQuestion);
+  updateActive($activeQuestion, $activeAnswer);
 
   // Events
-  // $(window).on('hashchange', function() {
-  //
-  // });
-
-  questionList.click(function() {
-    const question = $(this);
-
-    reset();
-    set(question);
+  $(window).on('hashchange', function(event) {
+    //event.preventDefault();
+    updateActive(getLinkByHash(location.hash), getTextByHash(location.hash));
   });
 
   // Helpers
-  function reset() {
-    questionList.removeClass('active');
-    answerList.removeClass('active');
+  function updateActive($link, $text) {
+    if ($link.length && $text.length) {
+      resetActive();
+      setActive($link, $text);
+
+      //window.scrollTo(0, $text.offset().top);
+    }
   }
 
-  function set(question) {
-    question.addClass('active');
-    $(question.attr('href')).addClass('active');
+  function resetActive() {
+    $questionList.removeClass('active');
+    $answerList.removeClass('active');
+  }
+
+  function setActive($link, $text) {
+    $link.addClass('active');
+    $text.addClass('active');
+  }
+
+  function getLinkByHash(hash) {
+    return $questionList.filter('[href$="' + hash + '"]');
+  }
+
+  function getTextByHash(hash) {
+    return $answerList.filter(hash);
   }
 }
 

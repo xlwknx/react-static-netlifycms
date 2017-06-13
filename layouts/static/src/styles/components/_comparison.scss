@@ -1,7 +1,12 @@
 .comparisonBlock {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   max-width: 100%;
+
+  @media (min-width: $breakpoint-lg) {
+    flex-direction: row;
+  }
 }
 
 .comparisonItem {
@@ -20,10 +25,15 @@
   }
 
   &--highlight {
+    order: 3;
     padding: 80px 20px;
     background: $vs-color-darkRed1;
     background: linear-gradient(to bottom, $vs-color-red1 0%, $vs-color-darkRed1 100%);
     box-shadow: 0 5px 15px 0 rgba($vs-color-darkRed2, 0.5);
     color: $vs-color-white;
+
+    @media (min-width: $breakpoint-lg) {
+      order: initial;
+    }
   }
 }

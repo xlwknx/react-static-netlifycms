@@ -4,12 +4,6 @@
   top: 0;
   width: 100%;
 
-  .headerLogo {
-    a, img {
-      display: block;
-    }
-  }
-
   &--dark {
     .headerFull {
       color: inherit;
@@ -62,11 +56,24 @@
     padding: 20px 30px;
   }
 
+  .headerLogo {
+    flex: 1 0;
+
+    a {
+      display: inline-block;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
   .headerNav {
     display: none;
     margin-top: -20px;
 
     @media (min-width: $breakpoint-lg) {
+      flex: 0;
       display: flex;
     }
   }
@@ -183,13 +190,14 @@
 
   .headerAuth {
     display: none;
-    justify-content: flex-end;
-    align-items: center;
     //font-size: 14px;
     font-size: 0.77em;
 
     @media (min-width: $breakpoint-lg) {
+      flex: 1 0;
       display: flex;
+      justify-content: flex-end;
+      align-items: center;
     }
 
     a + a {
@@ -198,6 +206,7 @@
   }
 
   .headerOpenButton {
+    flex: 0;
     display: block;
 
     @media (min-width: $breakpoint-lg) {
