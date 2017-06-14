@@ -7,9 +7,12 @@
     }
 
     .blockMsg {
-      width: 720px;
       text-align: center;
       color: $vs-color-white;
+
+      @media (min-width: $breakpoint-md) {
+        width: 720px;
+      }
 
       &-headline {
         line-height: 1.5;
@@ -18,15 +21,27 @@
 
     .introDataList {
       display: flex;
-      justify-content: space-between;
-      width: 750px;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
       margin-top: 75px;
+
+      @media (min-width: $breakpoint-md) {
+        justify-content: space-between;
+        width: 750px;
+      }
     }
 
     .introDataItem {
       @include font-muller();
       display: flex;
+      flex-direction: column;
       align-items: center;
+      padding: 0 10px;
+
+      @media (min-width: $breakpoint-md) {
+        flex-direction: row;
+      }
 
       &-image {
         img {
@@ -36,7 +51,11 @@
       }
 
       &-info {
-        margin-left: 15px;
+        margin: 20px 0 0;
+
+        @media (min-width: $breakpoint-md) {
+          margin: 0 0 0 15px;
+        }
       }
 
       &-name {
@@ -54,11 +73,14 @@
   }
 
   .mission {
-    overflow: hidden;
-
     .missionContentBlock {
       display: flex;
+      flex-direction: column;
       padding: 130px 0;
+
+      @media (min-width: $breakpoint-md) {
+        flex-direction: row;
+      }
     }
 
     .blockMsg {
@@ -70,14 +92,20 @@
     }
 
     .whatWeDo {
-      flex: 1 1 50%;
       padding-right: 80px;
+
+      @media (min-width: $breakpoint-md) {
+        flex: 1 1 50%;
+      }
     }
 
     .ourMission {
-      flex: 0 1 45%;
-      margin: 55px 0 0 80px;
+      margin: 50px 0 0 50px;
       color: $vs-color-white;
+
+      @media (min-width: $breakpoint-md) {
+        flex: 0 1 45%;
+      }
     }
   }
 
@@ -85,81 +113,113 @@
     background: $vs-color-lightGrey1;
 
     .leadershipContentBlock {
-      padding: 125px 0;
+      padding: 125px 0 0;
+
+      @media (min-width: $breakpoint-md) {
+        padding-bottom: 125px;
+      }
     }
 
     &-caption {
       @include contentBlock-caption();
+      font-size: 60px;
       color: $vs-color-lightGrey8;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: 120px;
+      }
     }
 
     .leadershipProfiles {
       display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+
+      @media (min-width: $breakpoint-md) {
+        flex-direction: row;
+      }
 
       > li + li {
-        margin-left: 100px;
+        margin: 50px 0 0;
+
+        @media (min-width: $breakpoint-md) {
+          margin: 0 0 0 100px;
+        }
       }
     }
 
-    .leadershipProfile {
-      flex: 0 1 510px;
+      .leadershipProfile {
+        width: 510px;
+        max-width: 100%;
 
-      &-image {
-        margin-bottom: 50px;
+        &:nth-child(even) {
+          align-self: flex-end;
 
-        img {
-          display: block;
-          max-width: 100%;
+          @media (min-width: $breakpoint-md) {
+            align-self: initial;
+          }
         }
-      }
 
-      &-name {
-        @include font-muller();
-        display: inline-block;
-        vertical-align: middle;
-        font-size: 20px;
-      }
+        @media (min-width: $breakpoint-md) {
+          max-width: 45%;
+        }
 
-      &-contacts {
-        display: inline-block;
-        vertical-align: middle;
-        margin-left: 35px;
+        &-image {
+          margin-bottom: 50px;
 
-        li {
+          img {
+            display: block;
+            max-width: 100%;
+          }
+        }
+
+        &-name {
+          @include font-muller();
           display: inline-block;
+          vertical-align: middle;
+          font-size: 20px;
         }
 
-        li + li {
-          margin-left: 20px;
+        &-contacts {
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: 35px;
+
+          li {
+            display: inline-block;
+          }
+
+          li + li {
+            margin-left: 20px;
+          }
+
+          .fa {
+            font-size: 25px;
+            color: $vs-color-darkRed1;
+          }
         }
 
-        .fa {
-          font-size: 25px;
-          color: $vs-color-darkRed1;
-        }
-      }
-
-      &-position {
-        @include font-muller();
-        margin-top: 10px;
-        font-size: 14px;
-        color: $vs-color-lightGrey4;
-      }
-
-      &-text {
-        margin-top: 10px;
-        line-height: 1.75;
-
-        p + p {
+        &-position {
+          @include font-muller();
           margin-top: 10px;
+          font-size: 14px;
+          color: $vs-color-lightGrey4;
         }
 
-        strong {
-          font-weight: normal;
-          color: $vs-color-darkRed1;
+        &-text {
+          margin-top: 10px;
+          line-height: 1.75;
+
+          p + p {
+            margin-top: 10px;
+          }
+
+          strong {
+            font-weight: normal;
+            color: $vs-color-darkRed1;
+          }
         }
       }
-    }
   }
 
   .highlights {
@@ -174,33 +234,44 @@
     }
 
     .highlightsContentBlock {
-      margin-left: 19%;
       color: $vs-color-white;
+
+      @media (min-width: $breakpoint-md) {
+        margin-left: 19%;
+      }
     }
 
     .highlightsCarousel {
-      padding: 75px 0 75px 45px;
+      padding: 75px 45px;
+
+      @media (min-width: $breakpoint-md) {
+        padding: 75px 0 75px 45px;
+      }
 
       &-controls {
-        display: flex;
+        display: none;
         justify-content: flex-end;
+
+        @media (min-width: $breakpoint-md) {
+          display: flex;
+        }
       }
 
-      &-control {
-        margin-left: 20px;
-        cursor: pointer;
+        &-control {
+          margin-left: 20px;
+          cursor: pointer;
 
-        .fa {
-          font-size: 7px;
-          color: $vs-color-white;
-        }
-
-        &.active {
           .fa {
-            color: $vs-color-lightGrey4;
+            font-size: 7px;
+            color: $vs-color-white;
+          }
+
+          &.active {
+            .fa {
+              color: $vs-color-lightGrey4;
+            }
           }
         }
-      }
 
       &-previous,
       &-next {
@@ -229,42 +300,66 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 80px 0 140px;
+
+      @media (min-width: $breakpoint-md) {
+        padding: 0 75px;
+      }
+
+      @media (min-width: $breakpoint-lg) {
+        padding: 0 80px 0 140px;
+      }
     }
 
     .highlightsOverview {
       position: relative;
       margin-top: 65px;
-      padding: 0 40px 0 140px;
+      padding: 0 75px;
+
+      @media (min-width: $breakpoint-lg) {
+        padding: 0 40px 0 140px;
+      }
     }
 
     .highlightItemGroup {
+      flex-direction: column;
       justify-content: space-between;
+
+      @media (min-width: $breakpoint-md) {
+        flex-direction: row;
+      }
     }
 
-    .highlightItem {
-      flex: 0 1 44%;
+      .highlightItem {
+        flex: 0 1 44%;
 
-      &-date {
-        @include font-muller();
-        font-size: 14px;
-        opacity: 0.2;
-      }
+        &-date {
+          @include font-muller();
+          font-size: 14px;
+          opacity: 0.2;
+        }
 
-      &-text {
-        margin-top: 5px;
-        line-height: 1.75;
-      }
+        &-text {
+          margin-top: 5px;
+          line-height: 1.75;
+        }
 
-      &-image {
-        margin-top: 25px;
+        &-image {
+          margin-top: 25px;
 
-        img {
-          display: block;
-          max-width: 100%;
+          img {
+            display: block;
+            max-width: 100%;
+          }
         }
       }
-    }
+
+      .highlightItem + .highlightItem {
+        margin-top: 55px;
+
+        @media (min-width: $breakpoint-md) {
+          margin-top: 0;
+        }
+      }
   }
 
   .awards {
@@ -276,17 +371,24 @@
 
     &-caption {
       @include contentBlock-caption();
+      font-size: 60px;
       color: $vs-color-lightGrey8;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: 120px;
+      }
     }
 
     .awardList {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
+      margin: -15px;
       margin-top: 35px;
 
-      li + li {
-        margin-left: 30px;
+      li {
+        margin: 15px;
       }
 
       img {
@@ -305,18 +407,25 @@
 
     &-caption {
       @include contentBlock-caption();
+      font-size: 60px;
       text-align: right;
       color: $vs-color-lightGrey8;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: 120px;
+      }
     }
 
     .investorList {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
+      margin: -15px;
       margin-top: 35px;
 
-      li + li {
-        margin-left: 30px;
+      li {
+        margin: 15px;
       }
 
       img {

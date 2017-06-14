@@ -3,10 +3,6 @@
     background-image: url("../assets/images/bg/home/home-intro-bg.png");
 
     .introContentBlock {
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
       min-height: 720px;
       padding-bottom: 45px;
 
@@ -16,9 +12,13 @@
     }
 
     .blockMsg {
-      flex-basis: 100%;
-      margin-top: 40px;
+      align-self: flex-start;
+      margin-top: 55px;
       color: $vs-color-white;
+
+      @media (min-width: $breakpoint-lg) {
+        margin-top: 200px;
+      }
 
       &-headline {
         line-height: 1.5;
@@ -35,7 +35,6 @@
     }
 
     .introLangList {
-      align-self: flex-end;
       display: flex;
       flex-wrap: wrap;
       margin: -20px;
@@ -135,10 +134,14 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: space-around;
+      justify-content: flex-start;
       margin: 0 (-$wrapper-padding);
       padding: 40px 0;
       transition: 0.5s padding;
+
+      @media (min-width: $breakpoint-md) {
+        justify-content: space-between;
+      }
 
       // TODO: uncomment when clients page will be implemented
       //&:hover {
@@ -571,7 +574,7 @@
           width: 78px;
 
           @media (min-width: $breakpoint-md) {
-            flex: 0 1 78px;
+            flex: initial;
           }
 
           img {
@@ -581,7 +584,7 @@
         }
 
         &-msg {
-          flex: 1 1;
+          flex: 1;
           margin: 20px 0 0;
           text-align: center;
 
