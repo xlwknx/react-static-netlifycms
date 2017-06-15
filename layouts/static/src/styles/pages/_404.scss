@@ -1,0 +1,15 @@
+.notFoundPage {
+  .intro {
+    &-caption {
+      @include block-caption(170px, 240px);
+    }
+
+    .blockMsg {
+      text-align: center;
+
+      &-headline {
+        color: $vs-color-darkRed1;
+      }
+    }
+  }
+}

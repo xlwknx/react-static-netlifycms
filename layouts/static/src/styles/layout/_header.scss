@@ -50,10 +50,10 @@
 .headerFull {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px;
 
-  @media (min-width: $breakpoint-lg) {
+  @media (min-width: $vs-breakpoint-lg) {
     padding: 20px 30px;
   }
 
@@ -73,7 +73,7 @@
     display: none;
     margin-top: -20px;
 
-    @media (min-width: $breakpoint-lg) {
+    @media (min-width: $vs-breakpoint-lg) {
       flex: 0;
       display: flex;
     }
@@ -109,9 +109,8 @@
       &-itemLink {
         @include font-muller;
         display: inline-block;
-        padding: 30px 0 15px;
+        padding: 28px 0 15px;
         color: $vs-color-white;
-        //font-size: 14px;
         font-size: 0.77em;
         cursor: pointer;
       }
@@ -120,6 +119,7 @@
     .secondLevel {
       &-list {
         visibility: hidden;
+        opacity: 0;
         position: absolute;
         top: 100%;
         left: 50%;
@@ -127,7 +127,7 @@
         height: 0;
         border-radius: 3px;
         background: $vs-color-white;
-        opacity: 0;
+        box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
         transition: 0.5s visibility, 0.5s opacity;
 
         &:before {
@@ -158,7 +158,6 @@
       &-itemLink {
         @include font-muller;
         display: inline-block;
-        //font-size: 14px;
         font-size: 0.77em;
         white-space: nowrap;
         color: $vs-color-darkRed1;
@@ -170,12 +169,10 @@
         @include font-muller;
         color: $vs-color-lightGrey4;
         font-weight: bold;
-        //font-size: 10px;
         font-size: 0.55em;
       }
 
       &-list {
-        //font-size: 14px;
         font-size: 0.77em;
       }
 
@@ -191,10 +188,9 @@
 
   .headerAuth {
     display: none;
-    //font-size: 14px;
     font-size: 0.77em;
 
-    @media (min-width: $breakpoint-lg) {
+    @media (min-width: $vs-breakpoint-lg) {
       flex: 1 0;
       display: flex;
       justify-content: flex-end;
@@ -210,7 +206,7 @@
     flex: 0;
     display: block;
 
-    @media (min-width: $breakpoint-lg) {
+    @media (min-width: $vs-breakpoint-lg) {
       display: none;
     }
   }
@@ -238,7 +234,7 @@
     opacity: 1;
     height: calc(100% - 20px);
 
-    @media (min-width: $breakpoint-md) {
+    @media (min-width: $vs-breakpoint-md) {
       width: calc(50% - 20px);
     }
   }
@@ -274,7 +270,6 @@
         a {
           display: inline-block;
           vertical-align: middle;
-          //font-size: 14px;
           font-size: 0.77em;
           transition: 0.5s color;
 
@@ -292,7 +287,6 @@
     .firstLevel {
       &-itemLink:not(a) {
         color: $vs-color-lightGrey4;
-        //font-size: 12px;
         font-size: 0.66em;
         font-weight: bold;
       }
@@ -320,7 +314,6 @@
       border-radius: 0 0 3px 3px;
       padding: 30px;
       background: $vs-color-lightRed1;
-      //font-size: 14px;
       font-size: 0.77em;
       color: $vs-color-darkRed1;
       cursor: pointer;

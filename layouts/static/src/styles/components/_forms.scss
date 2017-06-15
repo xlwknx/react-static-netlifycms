@@ -14,17 +14,17 @@
 
   &-label {
     margin-bottom: 10px;
-    font-size: 10px;
+    font-size: 0.55rem;
     cursor: pointer;
   }
 
   &-input {
     padding: 12px 15px;
     border: 1px solid $vs-color-lightGrey3;
-    font-size: 14px;
+    font-size: 0.77rem;
 
     &::placeholder {
-      font-size: 14px;
+      font-size: 0.77rem;
       color: $vs-color-lightGrey4;
     }
   }

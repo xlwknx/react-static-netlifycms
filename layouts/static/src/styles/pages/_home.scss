@@ -6,7 +6,7 @@
       min-height: 720px;
       padding-bottom: 45px;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         min-height: 920px;
       }
     }
@@ -16,7 +16,7 @@
       margin-top: 55px;
       color: $vs-color-white;
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: $vs-breakpoint-lg) {
         margin-top: 200px;
       }
 
@@ -26,7 +26,6 @@
 
       &-links {
         display: flex;
-        margin-top: 40px;
 
         a + a {
           margin-left: 30px;
@@ -77,10 +76,6 @@
     .blockMsg {
       width: 715px;
       text-align: center;
-
-      &-links {
-        margin-top: 55px;
-      }
     }
 
     .useCaseList {
@@ -88,17 +83,17 @@
       max-width: 100%;
       padding: 160px 0 105px;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         padding: 40px 0 45px;
       }
 
       &-caption {
-        @include contentBlock-caption();
+        @include block-caption();
         position: absolute;
         z-index: -1;
         top: -10px;
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $vs-breakpoint-md) {
           padding: 0 15px;
         }
       }
@@ -111,13 +106,13 @@
         background-repeat: no-repeat;
         background-position: center top;
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $vs-breakpoint-md) {
           width: 960px;
           height: 580px;
           background-image: url("../assets/images/content/home/useCases/home-useCases-tablet.png");
         }
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $vs-breakpoint-md) {
           width: 1420px;
           height: 475px;
           background-image: url("../assets/images/content/home/useCases/home-useCases-desktop.png");
@@ -135,11 +130,11 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: flex-start;
-      margin: 0 (-$wrapper-padding);
+      margin: 0 (-$vs-wrapper-padding);
       padding: 40px 0;
       transition: 0.5s padding;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         justify-content: space-between;
       }
 
@@ -188,7 +183,7 @@
       flex-direction: column;
       padding: 150px 0 130px;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -196,21 +191,19 @@
     }
 
     &-caption {
-      @include contentBlock-caption();
+      @include block-caption(5em, 6.66em);
       position: absolute;
       top: 100px;
       z-index: -1;
       width: 100%;
-      font-size: 5em;
       text-align: center;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         padding: 0 20px;
-        font-size: 6.66em;
         text-align: left;
       }
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: $vs-breakpoint-lg) {
         top: 145px;
         padding: 0 225px;
       }
@@ -219,13 +212,13 @@
     .blockMsg {
       text-align: center;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         width: 400px;
         max-width: 45%;
         text-align: left;
       }
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: $vs-breakpoint-lg) {
         width: 485px;
       }
     }
@@ -238,13 +231,13 @@
       height: 600px;
       margin-top: 50px;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         width: 465px;
         max-width: 55%;
         margin-top: 0;
       }
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: $vs-breakpoint-lg) {
         width: 485px;
       }
     }
@@ -255,11 +248,11 @@
         max-width: 49%;
         height: 225px;
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $vs-breakpoint-md) {
           align-self: flex-start;
         }
 
-        @media (min-width: $breakpoint-lg) {
+        @media (min-width: $vs-breakpoint-lg) {
           margin-top: 80px;
         }
 
@@ -270,13 +263,13 @@
         &:nth-child(3) {
           margin-top: 0;
 
-          @media (min-width: $breakpoint-md) {
+          @media (min-width: $vs-breakpoint-md) {
             align-self: flex-end;
           }
         }
 
         &:nth-child(4) {
-          @media (min-width: $breakpoint-md) {
+          @media (min-width: $vs-breakpoint-md) {
             align-self: flex-end;
           }
         }
@@ -292,8 +285,7 @@
           padding: 45px 35px 30px ;
           background: $vs-color-darkRed1;
           background: linear-gradient(to right, $vs-color-red1 0%, $vs-color-darkRed1 100%);
-          //font-size: 14px;
-          font-size: 0.77em;
+          font-size: 0.77rem;
           text-align: center;
           color: $vs-color-white;
           box-shadow: 0 15px 20px -15px rgba($vs-color-darkRed2, 0.4);
@@ -310,7 +302,7 @@
 
             .serviceItem-linkHoverText {
               height: auto;
-              margin-bottom: 1.3em;
+              margin-bottom: 1.3rem;
               opacity: 1;
               visibility: visible;
             }
@@ -341,7 +333,7 @@
     .usageContentBlock {
       padding: 140px 0;
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: $vs-breakpoint-lg) {
         padding: 140px 0 0;
       }
     }
@@ -350,7 +342,7 @@
       text-align: center;
       color: $vs-color-white;
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: $vs-breakpoint-lg) {
         width: 70%;
         text-align: left;
       }
@@ -363,7 +355,7 @@
       background: $vs-color-white;
       box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: $vs-breakpoint-lg) {
         display: block;
       }
 
@@ -393,8 +385,7 @@
         z-index: 2;
         padding: 0 15px;
         background: $vs-color-white;
-        //font-size: 14px;
-        font-size: 0.77em;
+        font-size: 0.77rem;
         text-align: center;
         cursor: pointer;
 
@@ -408,13 +399,13 @@
 
         i {
           display: inline-block;
-          width: 2em;
-          height: 2em;
-          border-radius: 4em;
+          width: 2rem;
+          height: 2rem;
+          border-radius: 4rem;
           background: $vs-color-lightGrey6;
           font-style: normal;
           text-align: center;
-          line-height: 2em;
+          line-height: 2rem;
           transition: all 0.5s;
         }
 
@@ -533,11 +524,11 @@
     .benefitsContentBlock {
       padding: 85px 0 135px;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         padding-top: 115px;
       }
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: $vs-breakpoint-lg) {
         padding-top: 85px;
       }
     }
@@ -548,7 +539,7 @@
       justify-content: space-around;
       margin-bottom: -60px;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         flex-wrap: nowrap;
         justify-content: space-between;
       }
@@ -561,11 +552,11 @@
         width: 40%;
         margin-bottom: 60px;
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $vs-breakpoint-md) {
           width: 22%;
         }
 
-        @media (min-width: $breakpoint-lg) {
+        @media (min-width: $vs-breakpoint-lg) {
           flex-direction: row;
         }
 
@@ -573,7 +564,7 @@
           flex: 1;
           width: 78px;
 
-          @media (min-width: $breakpoint-md) {
+          @media (min-width: $vs-breakpoint-lg) {
             flex: initial;
           }
 
@@ -588,7 +579,7 @@
           margin: 20px 0 0;
           text-align: center;
 
-          @media (min-width: $breakpoint-lg) {
+          @media (min-width: $vs-breakpoint-lg) {
             margin: 0 0 0 25px;
             text-align: left;
           }
@@ -596,16 +587,14 @@
 
         &-headline {
           @include font-muller();
-          //font-size: 12px;
-          font-size: 0.66em;
+          font-size: 0.66rem;
           font-weight: bold;
           line-height: 1.5;
         }
 
         &-text {
           margin-top: 10px;
-          //font-size: 14px;
-          font-size: 0.77em;
+          font-size: 0.77rem;
         }
       }
   }
@@ -613,18 +602,19 @@
   .conclusion {
     position: relative;
     z-index: 2;
+    margin-bottom: -$vs-footer-padding;
 
-    @media (min-width: $breakpoint-md) {
+    @media (min-width: $vs-breakpoint-md) {
       background-image: url("../assets/images/bg/home/home-conclusion-bg.png");
       background-repeat: no-repeat;
       background-position: -255px bottom;
     }
 
-    @media (min-width: $breakpoint-lg) {
+    @media (min-width: $vs-breakpoint-lg) {
       background-position: 5% bottom;
     }
 
-    @media (min-width: $breakpoint-xl) {
+    @media (min-width: $vs-breakpoint-xl) {
       background-position: 20% bottom;
     }
 
@@ -635,7 +625,7 @@
       padding: 100px 0;
       border-top: 1px solid $vs-color-lightGrey3;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         justify-content: flex-end;
         min-height: 575px;
       }
@@ -644,18 +634,14 @@
     .blockMsg {
       text-align: center;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         width: 65%;
         text-align: left;
       }
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: $vs-breakpoint-lg) {
         width: 50%;
         text-align: left;
-      }
-
-      &-links {
-        margin-top: 50px;
       }
     }
   }

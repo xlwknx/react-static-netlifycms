@@ -4,7 +4,7 @@
   justify-content: center;
   max-width: 100%;
 
-  @media (min-width: $breakpoint-lg) {
+  @media (min-width: $vs-breakpoint-lg) {
     flex-direction: row;
   }
 }
@@ -15,6 +15,7 @@
   flex-direction: column;
   align-items: center;
   width: 400px;
+  max-width: 100%;
   border-radius: 3px;
   padding: 40px 20px;
   background: $vs-color-white;
@@ -32,7 +33,7 @@
     box-shadow: 0 5px 15px 0 rgba($vs-color-darkRed2, 0.5);
     color: $vs-color-white;
 
-    @media (min-width: $breakpoint-lg) {
+    @media (min-width: $vs-breakpoint-lg) {
       order: initial;
     }
   }

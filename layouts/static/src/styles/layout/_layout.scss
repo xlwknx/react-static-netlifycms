@@ -1,14 +1,31 @@
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.container {
+  overflow: hidden;
+  flex: 1;
+  padding-bottom: $vs-footer-padding;
+}
+
 .wrapper {
   width: 100%;
   margin: 0 auto;
-  padding: 0 $wrapper-padding;
+  padding: 0 $vs-wrapper-padding;
 
-  @media (min-width: $breakpoint-lg) {
+  @media (min-width: $vs-breakpoint-lg) {
     max-width: 1200px;
     padding: 0 30px;
   }
 
-  @media (min-width: $breakpoint-lg-transition) {
+  @media (min-width: $vs-breakpoint-lg-transition) {
     padding: 0;
   }
 }

@@ -1,0 +1,31 @@
+@mixin block-caption($font-size-sm: 6.66rem, $font-size-md: 6.66rem) {
+  @include font-muller();
+  font-size: $font-size-sm;
+  font-weight: bold;
+  letter-spacing: 3px;
+  line-height: 1;
+  color: $vs-color-lightGrey7;
+
+  @media (min-width: $vs-breakpoint-md) {
+    font-size: $font-size-md;
+  }
+}
+
+@mixin blockMsg-headline() {
+  @include font-muller();
+  font-size: 1.88rem;
+
+  strong {
+    font-weight: normal;
+    color: $vs-color-darkRed1;
+  }
+}
+
+@mixin blockMsg-text($top: 15px) {
+  margin-top: $top;
+  line-height: 1.65;
+}
+
+@mixin blockMsg-links($top: 55px) {
+  margin-top: $top;
+}

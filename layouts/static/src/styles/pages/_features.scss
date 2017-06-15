@@ -12,7 +12,7 @@
       text-align: center;
       color: $vs-color-white;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         width: 720px;
       }
 
@@ -24,10 +24,10 @@
     .introFeatures {
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-start;
+      justify-content: space-around;
       margin-top: 100px;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         justify-content: space-between;
       }
     }
@@ -38,20 +38,22 @@
         flex-direction: column;
         align-items: center;
         margin-bottom: 50px;
-        font-size: 16px;
+        font-size: 0.88rem;
         line-height: 1.5;
+        text-align: center;
         color: $vs-color-white;
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $vs-breakpoint-md) {
           flex-direction: row;
           width: 30%;
+          text-align: left;
         }
 
         &-image {
           flex: 1;
           width: 65px;
 
-          @media (min-width: $breakpoint-md) {
+          @media (min-width: $vs-breakpoint-md) {
             flex: initial;
           }
         }
@@ -60,7 +62,7 @@
           flex: 1;
           margin: 10px 0 0;
 
-          @media (min-width: $breakpoint-md) {
+          @media (min-width: $vs-breakpoint-md) {
             margin: 0 0 0 25px;
           }
         }
@@ -96,7 +98,7 @@
       .cryptogramItem {
         &-features {
           margin-top: 55px;
-          font-size: 14px;
+          font-size: 0.77rem;
 
           > li + li {
             margin-top: 15px;
@@ -107,7 +109,6 @@
           margin: 10px 0;
 
           .fa {
-            font-size: 25px;
             opacity: 0.25;
           }
         }
@@ -118,7 +119,7 @@
     position: relative;
     z-index: 2;
 
-    @media (min-width: $breakpoint-md) {
+    @media (min-width: $vs-breakpoint-md) {
       padding: 115px 0 280px;
     }
 
@@ -134,7 +135,7 @@
       max-width: 50%;
       background: url("../assets/images/bg/features/features-components-bg.png") left bottom no-repeat;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         display: block;
       }
     }
@@ -147,19 +148,19 @@
     .componentsOverview {
       border-radius: 0 3px 3px 0;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         padding: 85px 100px 95px;
       }
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: $vs-breakpoint-lg) {
         padding-right: 375px;
       }
     }
 
     .blockMsg {
       &-headline {
-        @media (min-width: $breakpoint-md) {
-          font-size: 42px;
+        @media (min-width: $vs-breakpoint-md) {
+          font-size: 2.33rem;
           line-height: 1.4;
         }
       }
@@ -168,7 +169,7 @@
     .componentList {
       margin-top: 105px;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         width: 520px;
       }
 
@@ -182,7 +183,7 @@
         flex-direction: column;
         align-items: center;
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $vs-breakpoint-md) {
           flex-direction: row;
         }
 
@@ -190,7 +191,7 @@
           flex: 1;
           width: 75px;
 
-          @media (min-width: $breakpoint-md) {
+          @media (min-width: $vs-breakpoint-md) {
             flex: initial;
           }
         }
@@ -200,7 +201,7 @@
           margin: 30px 0 0;
           text-align: center;
 
-          @media (min-width: $breakpoint-md) {
+          @media (min-width: $vs-breakpoint-md) {
             margin: 0 0 0 30px;
             text-align: left;
           }
@@ -208,12 +209,12 @@
 
         &-headline {
           @include blockMsg-headline();
-          font-size: 20px;
+          font-size: 1.11rem;
         }
 
         &-text {
           @include blockMsg-text(10px);
-          font-size: 16px;
+          font-size: 0.88rem;
           line-height: 1.9;
           color: $vs-color-lightGrey4;
         }
@@ -223,7 +224,7 @@
       margin-top: 90px;
       text-align: center;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         text-align: left;
       }
     }
@@ -240,10 +241,11 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       margin: -30px -20px;
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: $vs-breakpoint-lg) {
+        justify-content: space-between;
         margin: -30px -45px;
       }
 
@@ -262,20 +264,20 @@
     .faqContentBlock {
       display: flex;
       flex-direction: column;
-      padding: 105px 0;
+      padding-top: 105px;
 
-      @media (min-width: $breakpoint-md) {
-        padding-bottom: 205px;
+      @media (min-width: $vs-breakpoint-md) {
+        padding-bottom: (205px -$vs-footer-padding);
       }
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: $vs-breakpoint-lg) {
         flex-direction: row;
         flex-wrap: wrap;
       }
     }
 
     &-caption {
-      @include contentBlock-caption();
+      @include block-caption();
       flex: 1 1 100%;
       margin-bottom: 35px;
     }
@@ -284,7 +286,7 @@
       order: 2;
       margin-top: 45px;
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: $vs-breakpoint-lg) {
         flex: 1 1 50%;
         order: initial;
         padding-right: 100px;
@@ -314,7 +316,7 @@
 
         &-count {
           @include font-muller();
-          font-size: 28px;
+          font-size: 1.55rem;
           color: $vs-color-darkRed1;
 
           &:before {
@@ -325,7 +327,7 @@
 
         &-text {
           margin-top: 20px;
-          font-size: 16px;
+          font-size: 0.88rem;
           line-height: 1.9;
 
           p + p {
@@ -338,7 +340,7 @@
       align-self: flex-start;
       display: flex;
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: $vs-breakpoint-lg) {
         flex: 0 1 42%;
       }
     }
@@ -350,7 +352,7 @@
     }
 
       .faqContentItem {
-        font-size: 16px;
+        font-size: 0.88rem;
         font-weight: bold;
         line-height: 1.9;
 

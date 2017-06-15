@@ -10,7 +10,7 @@
       justify-content: space-between;
       padding: 135px 0 90px;
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: $vs-breakpoint-lg) {
         padding-top: 185px;
       }
     }
@@ -25,20 +25,20 @@
   &-text {
     @include blockMsg-text();
   }
+
+  &-links {
+    @include blockMsg-links();
+  }
 }
 
 // Layered block
-.layeredBlockParent {
-  overflow: hidden;
-}
-
 .layeredBlock {
   position: relative;
   z-index: 1;
-  margin: 0 (-$wrapper-padding);
+  margin: 0 (-$vs-wrapper-padding);
   background: $vs-color-darkBlue5;
 
-  @media (min-width: $breakpoint-md) {
+  @media (min-width: $vs-breakpoint-md) {
     border-radius: 3px 0 0 3px;
     box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
   }
@@ -71,13 +71,13 @@
     background: $vs-color-darkRed1;
     background: linear-gradient(to bottom, $vs-color-red1 0%, $vs-color-darkRed1 100%);
 
-    @media (min-width: $breakpoint-md) {
+    @media (min-width: $vs-breakpoint-md) {
       display: block;
     }
   }
 
   &--right {
-    @media (min-width: $breakpoint-md) {
+    @media (min-width: $vs-breakpoint-md) {
       margin: 50px 50px 0 0;
     }
 
@@ -92,7 +92,7 @@
   }
 
   &--top {
-    @media (min-width: $breakpoint-md) {
+    @media (min-width: $vs-breakpoint-md) {
       margin: 50px 0 0;
     }
 
@@ -107,7 +107,7 @@
   }
 
   &--left {
-    @media (min-width: $breakpoint-md) {
+    @media (min-width: $vs-breakpoint-md) {
       margin: 50px 0 0;
     }
 
@@ -119,17 +119,17 @@
       left: -50px;
     }
   }
-}
 
-.layeredBlockContent {
-  position: relative;
-  z-index: 2;
-  padding: 85px 50px 95px;
-  background: $vs-color-darkBlue5;
-  color: $vs-color-white;
+  .layeredBlockContent {
+    position: relative;
+    z-index: 2;
+    padding: 85px 50px 95px;
+    background: $vs-color-darkBlue5;
+    color: $vs-color-white;
 
-  @media (min-width: $breakpoint-md) {
-    border-radius: 3px 0 0 3px;
-    padding: 50px;
+    @media (min-width: $vs-breakpoint-md) {
+      border-radius: 3px 0 0 3px;
+      padding: 50px;
+    }
   }
 }

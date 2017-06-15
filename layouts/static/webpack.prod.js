@@ -99,6 +99,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'terms.html',
       template: 'src/templates/content/terms.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: '404.html',
+      template: 'src/templates/404.html'
     })
   ]
 };

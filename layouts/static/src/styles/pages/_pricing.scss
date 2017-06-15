@@ -10,7 +10,7 @@
       text-align: center;
       color: $vs-color-white;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         width: 720px;
       }
 
@@ -47,26 +47,26 @@
 
       &-price {
         margin-top: 30px;
-        font-size: 35px;
+        font-size: 1.94rem;
 
         sup {
-          font-size: 25px;
+          font-size: 1.38rem;
         }
 
         strong {
-          font-size: 44px;
+          font-size: 2.44rem;
           font-weight: normal;
         }
 
         sub {
-          font-size: 20px;
+          font-size: 1.11rem;
           bottom: 0;
         }
       }
 
       &-features {
         margin-top: 30px;
-        font-size: 14px;
+        font-size: 0.77rem;
 
         li + li:before {
           content: '';
@@ -128,7 +128,7 @@
       background: $vs-color-white;
       box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -141,7 +141,7 @@
       flex-wrap: wrap;
       align-items: center;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         flex: 0 1 75%;
       }
 
@@ -174,9 +174,9 @@
         display: flex;
         flex-direction: column;
         margin-top: 20px;
-        font-size: 14px;
+        font-size: 0.77rem;
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $vs-breakpoint-md) {
           flex: 1 1 50%;
           flex-direction: row;
           flex-wrap: wrap;
@@ -185,17 +185,16 @@
         li {
           margin-top: 10px;
 
-          @media (min-width: $breakpoint-md) {
+          @media (min-width: $vs-breakpoint-md) {
             width: 50%;
           }
 
-          @media (min-width: $breakpoint-lg) {
+          @media (min-width: $vs-breakpoint-lg) {
             width: 35%;
           }
         }
 
         .fa {
-          font-size: 25px;
           vertical-align: middle;
           color: $vs-color-darkRed1;
         }
@@ -205,14 +204,14 @@
     &-links {
       margin-top: 40px;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         margin-top: 0;
       }
 
       a {
         width: 100%;
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $vs-breakpoint-md) {
           width: auto;
         }
       }
@@ -232,7 +231,7 @@
       align-items: center;
       padding: 150px 0;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         padding: 190px 0;
       }
     }
@@ -240,7 +239,7 @@
     .blockMsg {
       text-align: center;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         width: 710px;
       }
     }
@@ -250,7 +249,7 @@
       flex-direction: column;
       margin-top: 95px;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
@@ -259,7 +258,7 @@
       li + li {
         margin-top: 50px;
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $vs-breakpoint-md) {
           margin-top: 0;
         }
       }
@@ -271,10 +270,10 @@
         flex-direction: column;
         align-items: center;
         padding: 0 35px;
-        font-size: 14px;
+        font-size: 0.77rem;
         text-align: center;
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $vs-breakpoint-md) {
           flex: 0 1 360px;
           width: 360px;
           max-width: 34%;
@@ -303,7 +302,7 @@
 
   .conclusion {
     margin-top: -250px;
-    padding-bottom: 250px;
+    padding-bottom: (250px - $vs-footer-padding);
 
     .conclusionContentBlock {
       display: flex;
@@ -326,7 +325,7 @@
       background: linear-gradient(to right, $vs-color-red1 0%, $vs-color-darkRed1 100%);
       box-shadow: 0 25px 20px -20px rgba($vs-color-darkRed2, 0.5);
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         width: 850px;
       }
 
@@ -344,12 +343,8 @@
       }
 
       &-headline {
-        font-size: 28px;
+        font-size: 1.55rem;
         color: $vs-color-white;
-      }
-
-      &-links {
-        margin-top: 55px;
       }
     }
   }

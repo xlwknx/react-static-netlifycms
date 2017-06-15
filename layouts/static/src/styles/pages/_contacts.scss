@@ -10,13 +10,13 @@
       flex-direction: column;
       padding-top: (145px - 45px);
       
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         padding-top: (190px - 45px);
       }
     }
 
     .blockMsg {
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         width: 700px;
       }
     }
@@ -28,7 +28,7 @@
       background: $vs-color-white;
       box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         flex-direction: row;
       }
     }
@@ -38,7 +38,7 @@
       padding: 35px 40px 50px;
       background: $vs-color-white;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         order: initial;
         flex: 0 1 840px;
         width: 840px;
@@ -48,14 +48,14 @@
         @include font-muller();
         display: flex;
         justify-content: space-between;
-        font-size: 20px;
+        font-size: 1.11rem;
       }
 
       &-fields {
         display: flex;
         flex-direction: column;
 
-        @media (min-width: $breakpoint-lg) {
+        @media (min-width: $vs-breakpoint-lg) {
           flex-direction: row;
           flex-wrap: wrap;
           justify-content: space-between;
@@ -67,7 +67,7 @@
       &-fieldTopic {
         width: 100%;
 
-        @media (min-width: $breakpoint-lg) {
+        @media (min-width: $vs-breakpoint-lg) {
           flex: 0 1 30%;
           width: auto;
         }
@@ -76,7 +76,7 @@
       &-fieldMsg {
         width: 100%;
 
-        @media (min-width: $breakpoint-lg) {
+        @media (min-width: $vs-breakpoint-lg) {
           flex: 1 1 100%;
         }
 
@@ -89,7 +89,7 @@
         button {
           width: 100%;
 
-          @media (min-width: $breakpoint-md) {
+          @media (min-width: $vs-breakpoint-md) {
             width: auto;
           }
         }
@@ -103,11 +103,11 @@
       padding: 35px 40px 50px;
       background: $vs-color-darkRed1;
       background: linear-gradient(to bottom, $vs-color-red1 0%, $vs-color-darkRed1 100%);
-      font-size: 12px;
+      font-size: 0.66rem;
       line-height: 1.5;
       color: $vs-color-white;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         flex: 1 1 360px;
         width: 360px;
       }
@@ -117,7 +117,7 @@
       }
 
       &-headline {
-        font-size: 20px;
+        font-size: 1.11rem;
       }
 
       &-fields {
@@ -146,7 +146,7 @@
         display: flex;
         margin: 75px -20px 0;
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $vs-breakpoint-md) {
           justify-content: space-between;
         }
 
@@ -162,10 +162,6 @@
             opacity: 1;
           }
         }
-
-        .fa {
-          font-size: 25px;
-        }
       }
     }
   }
@@ -173,7 +169,7 @@
   .partnership {
     padding-top: (100px + 45px);
 
-    @media (min-width: $breakpoint-md) {
+    @media (min-width: $vs-breakpoint-md) {
       padding-top: (200px + 45px);
     }
 
@@ -183,7 +179,7 @@
     }
 
     .blockMsg {
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         width: 840px;
       }
     }
@@ -191,31 +187,35 @@
     .partnershipContacts {
       margin-top: 65px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
+        flex-direction: row;
         justify-content: flex-start;
+      }
+
+      > li + li {
+        margin: 75px 0 0;
+
+        @media (min-width: $vs-breakpoint-md) {
+          margin: 0 0 0 100px;
+        }
       }
     }
 
       .partnershipContact {
         @include font-muller();
-        width: 45%;
         display: flex;
         flex-direction: column;
 
-        @media (min-width: $breakpoint-md) {
-          width: 35%;
-        }
-
         &-name {
           flex: 1;
-          font-size: 20px;
+          font-size: 1.11rem;
         }
 
         &-position {
           margin-top: 10px;
-          font-size: 14px;
+          font-size: 0.77rem;
           color: $vs-color-lightGrey4;
         }
 
@@ -240,14 +240,18 @@
 
           .fa {
             vertical-align: bottom;
-            font-size: 25px;
             color: $vs-color-darkRed1;
           }
         }
+
+          &-email {
+            font-size: 0.77rem;
+          }
       }
   }
 
   .map {
+    margin-bottom: -$vs-footer-padding;
     background: url("../assets/images/bg/contacts/contacts-map-bg.png") center top no-repeat;
 
     .mapContentBlock {

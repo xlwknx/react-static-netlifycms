@@ -1,23 +1,27 @@
 .footer {
-  font-size: 14px;
+  font-size: 0.77rem;
   color: $vs-color-lightGrey2;
 
-  @media (min-width: $breakpoint-md) {
+  @media (min-width: $vs-breakpoint-md) {
     margin-top: -155px;
     padding-top: 155px;
     background: url("../assets/images/bg/shared/footer-bg.png") right top no-repeat;
+  }
+
+  a {
+    color: $vs-color-white;
   }
 
   &-top {
     padding: 40px 0;
     background: $vs-color-darkBlue2;
 
-    @media (min-width: $breakpoint-md) {
+    @media (min-width: $vs-breakpoint-md) {
       padding-top: 70px;
     }
 
     .wrapper {
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         display: flex;
         justify-content: space-between;
       }
@@ -30,127 +34,126 @@
 
     .wrapper {
       display: flex;
-      justify-content: space-between;
     }
   }
 
-  a {
-    color: $vs-color-white;
-  }
-}
-
-.footerContacts {
-  @media (min-width: $breakpoint-md) {
-    flex-basis: 215px;
-  }
-
-  &-logo {
-    a, img {
-      display: block;
-    }
-  }
-
-  &-hashtag {
-    margin-top: 20px;
-    font-family: "Muller", sans-serif;
-    color: $vs-color-white;
-    opacity: 0.5;
-  }
-
-  &-socials {
-    display: flex;
-    margin-top: 60px;
-
-    @media (min-width: $breakpoint-md) {
-      justify-content: space-between;
+    &-copyright {
+      flex: 1;
     }
 
-    li + li {
-      margin-left: 25px;
+    &-email + &-policy {
+      margin-left: 60px;
     }
 
-    a {
-      display: block;
+  .footerContacts {
+    @media (min-width: $vs-breakpoint-md) {
+      flex-basis: 215px;
     }
 
-    .fa {
-      font-size: 25px;
-    }
-
-    .fa-facebook-official:hover {
-      color: $vs-socials-facebook;
-    }
-
-    .fa-github:hover {
-      color: $vs-socials-github;
-    }
-
-    .fa-twitter:hover {
-      color: $vs-socials-twitter;
-    }
-
-    .fa-linkedin-square:hover {
-      color: $vs-socials-in;
-    }
-
-    .fa-medium:hover {
-      color: $vs-socials-medium;
-    }
-  }
-}
-
-.footerNav {
-  @include font-muller;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  max-height: 450px;
-  margin: 50px 0 0;
-
-  @media (min-width: $breakpoint-md) {
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-basis: 790px;
-    max-height: none;
-    margin: 0 0 0 50px;
-  }
-
-  .footerNavBlock {
-    flex-basis: 25%;
-    margin-bottom: 30px;
-    padding-right: 20px;
-
-    @media (min-width: $breakpoint-md) {
-      margin-bottom: 0;
-    }
-
-    &-caption {
-      font-size: 10px;
-      font-weight: bold;
-    }
-
-    ul {
-      @media (min-width: $breakpoint-md) {
-        display: flex;
-        flex-direction: column;
+    &-logo {
+      a, img {
+        display: block;
       }
     }
 
-    li {
-      margin-top: 22px;
+    &-hashtag {
+      margin-top: 20px;
+      font-family: "Muller", sans-serif;
+      color: $vs-color-white;
+      opacity: 0.5;
     }
 
-    &-sources {
-      @media (min-width: $breakpoint-md) {
-        flex-basis: 45%;
+    &-socials {
+      display: flex;
+      margin-top: 60px;
 
-        ul {
-          flex-flow: row wrap;
+      @media (min-width: $vs-breakpoint-md) {
+        justify-content: space-between;
+      }
+
+      li + li {
+        margin-left: 25px;
+      }
+
+      a {
+        display: block;
+      }
+
+      .fa-facebook-official:hover {
+        color: $vs-socials-facebook;
+      }
+
+      .fa-github:hover {
+        color: $vs-socials-github;
+      }
+
+      .fa-twitter:hover {
+        color: $vs-socials-twitter;
+      }
+
+      .fa-linkedin-square:hover {
+        color: $vs-socials-in;
+      }
+
+      .fa-medium:hover {
+        color: $vs-socials-medium;
+      }
+    }
+  }
+
+  .footerNav {
+    @include font-muller;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 450px;
+    margin: 50px 0 0;
+
+    @media (min-width: $vs-breakpoint-md) {
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-basis: 790px;
+      max-height: none;
+      margin: 0 0 0 50px;
+    }
+
+    .footerNavBlock {
+      flex-basis: 25%;
+      margin-bottom: 30px;
+      padding-right: 20px;
+
+      @media (min-width: $vs-breakpoint-md) {
+        margin-bottom: 0;
+      }
+
+      &-caption {
+        font-size: 0.55rem;
+        font-weight: bold;
+      }
+
+      ul {
+        @media (min-width: $vs-breakpoint-md) {
+          display: flex;
+          flex-direction: column;
         }
+      }
 
-        li {
-          flex-basis: 50%;
+      li {
+        margin-top: 22px;
+      }
+
+      &-sources {
+        @media (min-width: $vs-breakpoint-md) {
+          flex-basis: 45%;
+
+          ul {
+            flex-flow: row wrap;
+          }
+
+          li {
+            flex-basis: 50%;
+          }
         }
       }
     }

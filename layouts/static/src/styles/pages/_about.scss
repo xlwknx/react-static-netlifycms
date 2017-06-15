@@ -10,7 +10,7 @@
       text-align: center;
       color: $vs-color-white;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         width: 720px;
       }
 
@@ -26,7 +26,7 @@
       width: 100%;
       margin-top: 75px;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         justify-content: space-between;
         width: 750px;
       }
@@ -39,7 +39,7 @@
       align-items: center;
       padding: 0 10px;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         flex-direction: row;
       }
 
@@ -53,20 +53,20 @@
       &-info {
         margin: 20px 0 0;
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $vs-breakpoint-md) {
           margin: 0 0 0 15px;
         }
       }
 
       &-name {
-        font-size: 11px;
+        font-size: 0.61rem;
         font-weight: bold;
         color: $vs-color-lightGrey4;
       }
 
       &-value {
         margin-top: 5px;
-        font-size: 20px;
+        font-size: 1.11rem;
         color: $vs-color-white;
       }
     }
@@ -78,7 +78,7 @@
       flex-direction: column;
       padding: 130px 0;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         flex-direction: row;
       }
     }
@@ -86,7 +86,7 @@
     .blockMsg {
       &-text {
         margin-top: 10px;
-        font-size: 16px;
+        font-size: 0.88rem;
         line-height: 1.9;
       }
     }
@@ -94,7 +94,7 @@
     .whatWeDo {
       padding-right: 80px;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         flex: 1 1 50%;
       }
     }
@@ -103,7 +103,7 @@
       margin: 50px 0 0 50px;
       color: $vs-color-white;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         flex: 0 1 45%;
       }
     }
@@ -115,19 +115,14 @@
     .leadershipContentBlock {
       padding: 125px 0 0;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         padding-bottom: 125px;
       }
     }
 
     &-caption {
-      @include contentBlock-caption();
-      font-size: 60px;
+      @include block-caption(60px, 120px);
       color: $vs-color-lightGrey8;
-
-      @media (min-width: $breakpoint-md) {
-        font-size: 120px;
-      }
     }
 
     .leadershipProfiles {
@@ -135,14 +130,14 @@
       flex-direction: column;
       margin-top: 20px;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         flex-direction: row;
       }
 
       > li + li {
         margin: 50px 0 0;
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $vs-breakpoint-md) {
           margin: 0 0 0 100px;
         }
       }
@@ -155,12 +150,12 @@
         &:nth-child(even) {
           align-self: flex-end;
 
-          @media (min-width: $breakpoint-md) {
+          @media (min-width: $vs-breakpoint-md) {
             align-self: initial;
           }
         }
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $vs-breakpoint-md) {
           max-width: 45%;
         }
 
@@ -177,7 +172,7 @@
           @include font-muller();
           display: inline-block;
           vertical-align: middle;
-          font-size: 20px;
+          font-size: 1.11rem;
         }
 
         &-contacts {
@@ -194,7 +189,6 @@
           }
 
           .fa {
-            font-size: 25px;
             color: $vs-color-darkRed1;
           }
         }
@@ -202,7 +196,7 @@
         &-position {
           @include font-muller();
           margin-top: 10px;
-          font-size: 14px;
+          font-size: 0.77rem;
           color: $vs-color-lightGrey4;
         }
 
@@ -236,7 +230,7 @@
     .highlightsContentBlock {
       color: $vs-color-white;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         margin-left: 19%;
       }
     }
@@ -244,7 +238,7 @@
     .highlightsCarousel {
       padding: 75px 45px;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         padding: 75px 0 75px 45px;
       }
 
@@ -252,7 +246,7 @@
         display: none;
         justify-content: flex-end;
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $vs-breakpoint-md) {
           display: flex;
         }
       }
@@ -262,7 +256,6 @@
           cursor: pointer;
 
           .fa {
-            font-size: 7px;
             color: $vs-color-white;
           }
 
@@ -301,11 +294,11 @@
       align-items: center;
       justify-content: space-between;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         padding: 0 75px;
       }
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: $vs-breakpoint-lg) {
         padding: 0 80px 0 140px;
       }
     }
@@ -315,7 +308,7 @@
       margin-top: 65px;
       padding: 0 75px;
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: $vs-breakpoint-lg) {
         padding: 0 40px 0 140px;
       }
     }
@@ -324,7 +317,7 @@
       flex-direction: column;
       justify-content: space-between;
 
-      @media (min-width: $breakpoint-md) {
+      @media (min-width: $vs-breakpoint-md) {
         flex-direction: row;
       }
     }
@@ -334,7 +327,7 @@
 
         &-date {
           @include font-muller();
-          font-size: 14px;
+          font-size: 0.77rem;
           opacity: 0.2;
         }
 
@@ -356,7 +349,7 @@
       .highlightItem + .highlightItem {
         margin-top: 55px;
 
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: $vs-breakpoint-md) {
           margin-top: 0;
         }
       }
@@ -370,13 +363,8 @@
     }
 
     &-caption {
-      @include contentBlock-caption();
-      font-size: 60px;
+      @include block-caption(60px, 120px);
       color: $vs-color-lightGrey8;
-
-      @media (min-width: $breakpoint-md) {
-        font-size: 120px;
-      }
     }
 
     .awardList {
@@ -399,6 +387,7 @@
   }
 
   .investors {
+    margin-bottom: -$vs-footer-padding;
     background: $vs-color-lightGrey1;
 
     .investorsContentBlock {
@@ -406,14 +395,9 @@
     }
 
     &-caption {
-      @include contentBlock-caption();
-      font-size: 60px;
+      @include block-caption(60px, 120px);
       text-align: right;
       color: $vs-color-lightGrey8;
-
-      @media (min-width: $breakpoint-md) {
-        font-size: 120px;
-      }
     }
 
     .investorList {
