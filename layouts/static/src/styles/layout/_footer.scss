@@ -41,8 +41,21 @@
       flex: 1;
     }
 
-    &-email + &-policy {
-      margin-left: 60px;
+    &-links {
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: $vs-breakpoint-md) {
+        flex-direction: row;
+      }
+
+      a + a {
+        margin: 10px 0 0;
+
+        @media (min-width: $vs-breakpoint-md) {
+          margin: 0 0 0 60px;
+        }
+      }
     }
 
   .footerContacts {
