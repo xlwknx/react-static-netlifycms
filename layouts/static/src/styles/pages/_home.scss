@@ -129,14 +129,10 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: space-around;
       margin: 0 (-$vs-wrapper-padding);
       padding: 40px 0;
       transition: 0.5s padding;
-
-      @media (min-width: $vs-breakpoint-md) {
-        justify-content: space-between;
-      }
 
       // TODO: uncomment when clients page will be implemented
       //&:hover {
