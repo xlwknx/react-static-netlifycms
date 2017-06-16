@@ -1,6 +1,7 @@
 'use strict';
 
 import Tilt from 'vanilla-tilt';
+
 import Layout from 'js/layout';
 import Features from 'js/features';
 

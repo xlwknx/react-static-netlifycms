@@ -1,5 +1,7 @@
 'use strict';
 
+import Tether from 'tether';
+
 function initNavigation() {
   const navObj = {
     $openButton: $('[data-vs-sideNav-open]'),
@@ -26,8 +28,27 @@ function initNavigation() {
   }
 }
 
+function initStickyHeader() {
+  const header = new Tether({
+    element: '.headerFull',
+    target: 'body',
+    attachment: 'top left',
+    targetAttachment: 'top left',
+    constraints: [
+      {
+        to: 'window',
+        pin: true,
+      }
+    ],
+    optimizations: {
+      gpu: false
+    }
+  });
+}
+
 function init() {
   initNavigation();
+  initStickyHeader();
 }
 
 export default {
