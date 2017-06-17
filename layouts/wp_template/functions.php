@@ -1,4 +1,12 @@
 <?php
+// TODO: rename all function with virgilsecurity prefix to aloid collision
+
+require get_parent_theme_file_path('/inc/customizer.php');
+
+require get_parent_theme_file_path('/inc/customizer_preview.php');
+
+require get_parent_theme_file_path('/inc/theme_mod_functions.php');
+
 if (!function_exists('virgilsecurity_setup')) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
@@ -118,13 +126,13 @@ if (!function_exists('virgilsecurity_setup')) :
     function get_static_page_class()
     {
         $staticPageClasses = [
-            ''             => 'homePage',
-            'homepage'     => 'homePage',
-            'about-virgil' => 'aboutPage',
-            'contacts'     => 'contactsPage',
-            'features'     => 'featuresPage',
-            'pricing'      => 'pricingPage',
-            'terms-of-use-privacy-policy' => 'contentPage termsPage'
+            ''                            => 'homePage',
+            'homepage'                    => 'homePage',
+            'about-virgil'                => 'aboutPage',
+            'contacts'                    => 'contactsPage',
+            'features'                    => 'featuresPage',
+            'pricing'                     => 'pricingPage',
+            'terms-of-use-privacy-policy' => 'contentPage termsPage',
         ];
 
         return isset($staticPageClasses[get_slug()]) ? $staticPageClasses[get_slug()] : 'contentPage';
@@ -153,6 +161,8 @@ if (!function_exists('virgilsecurity_setup')) :
 
     function setup_starter_content($content, $config)
     {
+        //set_theme_mod('hp_intro_area_github_text', 'Github s | [github_starz_count]');
+
         return [
             'options' => [
                 'show_on_front' => 'page',
@@ -976,3 +986,22 @@ if (!function_exists('virgilsecurity_setup')) :
 endif; // virgilsecurity_setup
 
 add_action('after_setup_theme', 'virgilsecurity_setup');
+
+spl_autoload_register(
+    function ($class) {
+
+        $parts = explode('\\', $class);
+
+        if (is_array($parts) && strtolower($parts[0]) == 'virgilsecurity') {
+
+            $parts = array_map(
+                function ($value) {
+                    return strtolower(preg_replace('/([a-z])([A-Z])/', '$1_$2', $value));
+                },
+                array_slice($parts, 1)
+            );
+
+            include 'inc' . DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, $parts) . '.php';
+        }
+    }
+);
