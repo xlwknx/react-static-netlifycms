@@ -2,32 +2,9 @@
 namespace VirgilSecurity\Customizer\Fields;
 
 
-use VirgilSecurity\Customizer\Src\BaseField;
+use VirgilSecurity\Customizer\Src\Field;
 
-class TextField extends BaseField
+class TextField extends Field
 {
     protected $type = 'text';
-
-    private $settings;
-
-    private $label;
-
-
-    public function __construct($settings, $label)
-    {
-        $this->settings = $settings;
-        $this->label = $label;
-    }
-
-
-    public function getSettings()
-    {
-        return $this->settings;
-    }
-
-
-    public function getLabel()
-    {
-        return $this->label;
-    }
 }

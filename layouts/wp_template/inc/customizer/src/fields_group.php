@@ -3,9 +3,11 @@
 namespace VirgilSecurity\Customizer\Src;
 
 
+use InvalidArgumentException;
+
 use Kirki;
 
-abstract class BaseFieldsGroup implements FieldsGroupInterface
+class FieldsGroup implements FieldsGroupInterface
 {
     protected $type = 'repeater';
 
@@ -19,11 +21,44 @@ abstract class BaseFieldsGroup implements FieldsGroupInterface
 
     protected $rowLabel = [];
 
+    protected $settings;
 
-    abstract public function getSettings();
+    protected $label;
+
+    /** @var ModificationInterface */
+    private $modification;
 
 
-    abstract public function getLabel();
+    public function __construct($settings = null, $label = null)
+    {
+        $this->settings = $settings;
+        $this->label = $label;
+    }
+
+
+    public static function createWithMod(ModificationInterface $modification)
+    {
+        $field = new static();
+        $field->setModification($modification);
+
+        return $field;
+    }
+
+
+    public function getLabel()
+    {
+        return $this->label;
+    }
+
+
+    public function getSettings()
+    {
+        if ($this->modification != null) {
+            return $this->modification->getName();
+        }
+
+        return $this->settings;
+    }
 
 
     public function getType()
@@ -40,17 +75,8 @@ abstract class BaseFieldsGroup implements FieldsGroupInterface
 
     public function getDefault()
     {
-        $file_path_parts = [
-            'customizer',
-            'default_content',
-        ];
-
-        $file_path = implode(DIRECTORY_SEPARATOR, $file_path_parts);
-
-        $file = get_theme_file_path($file_path . DIRECTORY_SEPARATOR . $this->getSettings() . '.php');
-
-        if (file_exists($file)) {
-            return include $file;
+        if ($this->modification != null) {
+            return $this->modification->getValue();
         }
 
         return $this->default;
@@ -59,6 +85,10 @@ abstract class BaseFieldsGroup implements FieldsGroupInterface
 
     public function registerField(SectionInterface $section)
     {
+        if (!$this->getSettings()) {
+            throw new InvalidArgumentException('Field must be bound to modification or specify the Settings value');
+        }
+
         Kirki::add_field($section->getConfigName(), $this->getKirkiArguments($section));
     }
 
@@ -89,6 +119,18 @@ abstract class BaseFieldsGroup implements FieldsGroupInterface
             'value' => $addMoreButtonText,
             'field' => $fieldId,
         ];
+    }
+
+
+    public function setModification(ModificationInterface $modification)
+    {
+        $this->modification = $modification;
+    }
+
+
+    public function getModification()
+    {
+        return $this->modification;
     }
 
 
