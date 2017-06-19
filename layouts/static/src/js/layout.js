@@ -29,21 +29,25 @@ function initNavigation() {
 }
 
 function initStickyHeader() {
-  const header = new Tether({
-    element: '.headerFull',
-    target: 'body',
-    attachment: 'top left',
-    targetAttachment: 'top left',
-    constraints: [
-      {
-        to: 'window',
-        pin: true,
+  const header = $('[data-vs-sticky-header]');
+
+  if (header.length) {
+    new Tether({
+      element: header,
+      target: 'body',
+      attachment: 'top left',
+      targetAttachment: 'top left',
+      constraints: [
+        {
+          to: 'window',
+          pin: true,
+        }
+      ],
+      optimizations: {
+        gpu: false
       }
-    ],
-    optimizations: {
-      gpu: false
-    }
-  });
+    });
+  }
 }
 
 function init() {
