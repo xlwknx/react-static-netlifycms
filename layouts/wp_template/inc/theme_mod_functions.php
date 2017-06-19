@@ -98,3 +98,23 @@ if (!function_exists('virgilsecurity_get_header_menu')) :
     }
 
 endif;
+
+if (!function_exists('virgilsecurity_get_hp_intro_langs')) :
+
+    /**
+     * Gets Intro Langs
+     *
+     * @return array
+     */
+    function virgilsecurity_get_hp_intro_langs()
+    {
+        global $virgilsecurity_section_mods;
+
+        return $virgilsecurity_section_mods->getHpSectionMods()
+                                           ->getIntroSectionMods()
+                                           ->getIntroLangsMod()
+                                           ->getValue()
+            ;
+    }
+
+endif;
