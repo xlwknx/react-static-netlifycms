@@ -1,4 +1,4 @@
-<? get_header('dark'); ?>
+<? get_header('contacts'); ?>
 
 <div class="contactUs">
     <div class="wrapper">

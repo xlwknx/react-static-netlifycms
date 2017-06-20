@@ -1,4 +1,4 @@
-<? get_header(); ?>
+<? get_header('pricing'); ?>
 
 <div class="intro">
     <div class="wrapper">

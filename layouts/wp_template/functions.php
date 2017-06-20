@@ -115,21 +115,6 @@ if (!function_exists('virgilsecurity_setup')) :
         store_github_stars();
     }
 
-    function get_static_page_class()
-    {
-        $staticPageClasses = [
-            ''             => 'homePage',
-            'homepage'     => 'homePage',
-            'about-virgil' => 'aboutPage',
-            'contacts'     => 'contactsPage',
-            'features'     => 'featuresPage',
-            'pricing'      => 'pricingPage',
-            'terms-of-use-privacy-policy' => 'contentPage termsPage'
-        ];
-
-        return isset($staticPageClasses[get_slug()]) ? $staticPageClasses[get_slug()] : 'contentPage';
-    }
-
     function get_header_dark_class()
     {
         if (get_slug() == "contacts") {

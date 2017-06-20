@@ -1,4 +1,4 @@
-<?php get_header() ?>
+<?php get_header('about-virgil') ?>
 
 <div class="intro">
     <div class="wrapper">

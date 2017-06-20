@@ -1,4 +1,4 @@
-<?php get_header() ?>
+<?php get_header('features') ?>
 
 <div class="intro">
     <div class="wrapper">
