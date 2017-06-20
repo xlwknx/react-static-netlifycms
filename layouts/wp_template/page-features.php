@@ -1,7 +1,6 @@
 <? get_template_part('header/features') ?>
 
 <div class="container">
-
     <div class="intro">
         <div class="wrapper">
             <div class="introContentBlock">
@@ -26,20 +25,21 @@
             </div>
         </div>
     </div>
-
     <div class="components">
         <div class="wrapper">
-            <div class="componentsContentBlock layeredBlock">
+            <div class="componentsContentBlock layeredBlock layeredBlock--right">
                 <div class="componentsOverview layeredBlockContent">
                     <?php dynamic_sidebar('features-components'); ?>
                 </div>
             </div>
         </div>
     </div>
-    <div class="languages">
+    <div class="features">
         <div class="wrapper">
-            <div class="languagesContentBlock">
-                <?php dynamic_sidebar('features-languages'); ?>
+            <div class="featuresContentBlock">
+                <ul class="featureList">
+                    <?php dynamic_sidebar('features-languages'); ?>
+                </ul>
             </div>
         </div>
     </div>
@@ -50,7 +50,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <?php get_footer() ?>
