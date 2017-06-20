@@ -1,4 +1,4 @@
-<?php get_header('features') ?>
+<? get_template_part('header/features') ?>
 
 <div class="intro">
     <div class="wrapper">

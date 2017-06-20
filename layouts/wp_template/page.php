@@ -1,4 +1,4 @@
-<?php get_header('page') ?>
+<? get_template_part('header/page') ?>
 
 <?php while (have_posts() && is_singular('page')) : the_post(); ?>
     <?php $postContentMenuItems = get_post_meta(get_the_ID(), 'content_menu_item'); ?>

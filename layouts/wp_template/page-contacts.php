@@ -1,4 +1,4 @@
-<? get_header('contacts'); ?>
+<? get_template_part('header/contacts') ?>
 
 <div class="contactUs">
     <div class="wrapper">

@@ -1,4 +1,4 @@
-<?php get_header('about-virgil') ?>
+<? get_template_part('header/about', 'virgil') ?>
 
 <div class="intro">
     <div class="wrapper">

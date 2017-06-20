@@ -1,4 +1,3 @@
-<?php require_once '_header.php' ?>
 <header class="header header--dark">
     <div class="header-logo">
         <a href="<?= home_url() ?>">

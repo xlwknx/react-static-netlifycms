@@ -1,4 +1,4 @@
-<? get_header('pricing'); ?>
+<? get_template_part('header/pricing') ?>
 
 <div class="intro">
     <div class="wrapper">

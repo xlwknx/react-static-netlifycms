@@ -1,4 +1,4 @@
-<?php get_header('front-page'); ?>
+<? get_template_part('header/front', 'page') ?>
 
     <div class="intro">
         <div class="wrapper">
