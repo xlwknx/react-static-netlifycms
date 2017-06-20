@@ -2,4 +2,4 @@
 
 <div class="page contentPage">
 
-<? get_template_part('content_parts/header', 'light') ?>
+<? get_template_part('header/content_parts/header', 'light') ?>
