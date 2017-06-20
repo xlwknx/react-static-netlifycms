@@ -12,7 +12,6 @@ use VirgilSecurity\Customizer\HeaderSection\Groups\AuthLinksGroup;
 use VirgilSecurity\Customizer\HeaderSection\HeaderSection;
 
 use VirgilSecurity\Customizer\Hp\IntroSection\Fields\IntroMsgField;
-use VirgilSecurity\Customizer\Hp\IntroSection\Groups\IntroLangsGroup;
 use VirgilSecurity\Customizer\Hp\IntroSection\IntroSection;
 use VirgilSecurity\Customizer\Hp\IntroSection\Groups\IntroLinksGroup;
 use VirgilSecurity\Customizer\Src\ConfigInterface;
@@ -93,14 +92,6 @@ class SectionCustomizer
                 $this->sectionModifications->getHpSectionMods()
                                            ->getIntroSectionMods()
                                            ->getIntroLinksMod()
-            )
-        );
-
-        $section->addField(
-            IntroLangsGroup::createWithMod(
-                $this->sectionModifications->getHpSectionMods()
-                                           ->getIntroSectionMods()
-                                           ->getIntroLangsMod()
             )
         );
 

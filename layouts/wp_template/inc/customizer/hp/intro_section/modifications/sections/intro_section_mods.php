@@ -2,7 +2,6 @@
 namespace VirgilSecurity\Customizer\Hp\IntroSection\Modifications\Sections;
 
 
-use VirgilSecurity\Customizer\Hp\IntroSection\Modifications\IntroLangsMod;
 use VirgilSecurity\Customizer\Hp\IntroSection\Modifications\IntroLinksMod;
 use VirgilSecurity\Customizer\Hp\IntroSection\Modifications\IntroMsgMod;
 use VirgilSecurity\Customizer\Src\BaseSectionMods;
@@ -11,7 +10,6 @@ class IntroSectionMods extends BaseSectionMods
 {
     protected $introLinksMod;
     protected $introMsgMod;
-    protected $introLangsMod;
 
 
     public function setupDefaults()
@@ -20,7 +18,6 @@ class IntroSectionMods extends BaseSectionMods
             [
                 $this->getIntroLinksMod(),
                 $this->getIntroMsgMod(),
-                $this->getIntroLangsMod()
             ]
         );
     }
@@ -43,16 +40,6 @@ class IntroSectionMods extends BaseSectionMods
         }
 
         return $this->introMsgMod;
-    }
-
-
-    public function getIntroLangsMod()
-    {
-        if ($this->introLangsMod == null) {
-            $this->introLangsMod = new IntroLangsMod();
-        }
-
-        return $this->introLangsMod;
     }
 
 }

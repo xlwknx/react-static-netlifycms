@@ -11,10 +11,10 @@
         });
     });
 
-    wp.customize('hp_intro_section', function (value) {
-        value.bind(function (to) {
-            $('.intro .introContentBlock .blockMsg .blockMsg-headline').text(to);
-        });
-    });
+    // wp.customize('header_menu', function (value) {
+    //     value.bind(function (to) {
+    //         $('.page .header .headerNav').text(to)
+    //     });
+    // });
 
 })(jQuery);
