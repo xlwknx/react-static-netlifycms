@@ -5,14 +5,14 @@ namespace VirgilSecurity\Customizer\Src;
 
 use Kirki;
 
+use VirgilSecurity\Customizer\Src\FieldInterface;
+
 abstract class BaseSection implements SectionInterface
 {
     /** @var FieldInterface[] */
     protected $fields = [];
 
     protected $priority = 10;
-
-    protected $active_callback = true;
 
     /** @var ConfigInterface */
     private $config;
@@ -56,23 +56,16 @@ abstract class BaseSection implements SectionInterface
         Kirki::add_section(
             $this->getSection(),
             [
-                'title'           => $this->getTitle(),
-                'description'     => $this->getDescription(),
-                'priority'        => $this->getPriority(),
-                'panel'           => $panel,
-                'active_callback' => [$this, 'getActiveCallback'],
+                'title'       => $this->getTitle(),
+                'description' => $this->getDescription(),
+                'priority'    => $this->getPriority(),
+                'panel'       => $panel,
             ]
         );
 
         foreach ($this->fields as $field) {
             $field->registerField($this);
         }
-    }
-
-
-    public function getActiveCallback()
-    {
-        return $this->active_callback;
     }
 
 

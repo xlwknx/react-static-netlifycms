@@ -6,7 +6,6 @@ namespace VirgilSecurity\Customizer\Src;
 use InvalidArgumentException;
 
 use Kirki;
-use VirgilSecurity\Customizer\Fields\SelectField;
 
 class FieldsGroup implements FieldsGroupInterface
 {
@@ -96,7 +95,12 @@ class FieldsGroup implements FieldsGroupInterface
 
     public function setField(FieldInterface $field)
     {
-        $this->fields[$field->getSettings()] = $this->getFieldSettings($field);
+        $this->fields[$field->getSettings()] = [
+            'type'              => $field->getType(),
+            'label'             => $field->getLabel(),
+            'sanitize_callback' => $field->getSanitizeCallback(),
+            'priority'          => $field->getPriority(),
+        ];
 
         return $field->getSettings();
     }
@@ -154,24 +158,5 @@ class FieldsGroup implements FieldsGroupInterface
     protected function getFields()
     {
         return $this->fields;
-    }
-
-
-    private function getFieldSettings(FieldInterface $field)
-    {
-        $fieldSettings = [
-            'type'              => $field->getType(),
-            'label'             => $field->getLabel(),
-            'sanitize_callback' => $field->getSanitizeCallback(),
-            'priority'          => $field->getPriority(),
-        ];
-
-        switch ($field->getType()) {
-            case 'select':
-                /** @var $field SelectField */
-                $fieldSettings['choices'] = $field->getChoices();
-        }
-
-        return $fieldSettings;
     }
 }

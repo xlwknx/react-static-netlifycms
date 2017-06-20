@@ -2,8 +2,6 @@
 namespace VirgilSecurity;
 
 
-use Kirki;
-use VirgilSecurity\Customizer\Fields\TextField;
 use VirgilSecurity\Customizer\HeaderSection\Fields\LogoImageField;
 use VirgilSecurity\Customizer\HeaderSection\Fields\MenuCodeField;
 
@@ -11,9 +9,6 @@ use VirgilSecurity\Customizer\HeaderSection\Groups\AuthLinksGroup;
 
 use VirgilSecurity\Customizer\HeaderSection\HeaderSection;
 
-use VirgilSecurity\Customizer\Hp\IntroSection\Fields\IntroMsgField;
-use VirgilSecurity\Customizer\Hp\IntroSection\IntroSection;
-use VirgilSecurity\Customizer\Hp\IntroSection\Groups\IntroLinksGroup;
 use VirgilSecurity\Customizer\Src\ConfigInterface;
 use VirgilSecurity\Customizer\Src\SectionInterface;
 
@@ -37,11 +32,7 @@ class SectionCustomizer
     public function registerDefaults()
     {
         $this->register(
-            [
-                $this->getHeaderSection(),
-
-                $this->getHpIntroSection(),
-            ]
+            [$this->getHeaderSection()]
         );
     }
 
@@ -68,30 +59,6 @@ class SectionCustomizer
             AuthLinksGroup::createWithMod(
                 $this->sectionModifications->getHeaderSectionMods()
                                            ->getAuthLinksMod()
-            )
-        );
-
-        return $section;
-    }
-
-
-    public function getHpIntroSection()
-    {
-        $section = new IntroSection($this->config);
-
-        $section->addField(
-            IntroMsgField::createWithMod(
-                $this->sectionModifications->getHpSectionMods()
-                                           ->getIntroSectionMods()
-                                           ->getIntroMsgMod()
-            )
-        );
-
-        $section->addField(
-            IntroLinksGroup::createWithMod(
-                $this->sectionModifications->getHpSectionMods()
-                                           ->getIntroSectionMods()
-                                           ->getIntroLinksMod()
             )
         );
 

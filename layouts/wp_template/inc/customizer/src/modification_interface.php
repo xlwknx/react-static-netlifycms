@@ -14,7 +14,4 @@ interface ModificationInterface
 
 
     public function getDefaultValue();
-
-
-    public function getFilters();
 }

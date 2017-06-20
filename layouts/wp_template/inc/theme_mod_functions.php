@@ -12,54 +12,7 @@ if (!function_exists('virgilsecurity_get_header_auth_links')) :
      */
     function virgilsecurity_get_header_auth_links()
     {
-        global $virgilsecurity_section_mods;
-
-        $values = $virgilsecurity_section_mods->getHeaderSectionMods()
-                                              ->getAuthLinksMod()
-                                              ->getValue()
-        ;
-
-
-        return is_array($values) ? $values : [];
-    }
-
-endif;
-
-if (!function_exists('virgilsecurity_get_hp_intro_msg_text')) :
-
-    /**
-     * Gets Intro Message for intro section
-     *
-     */
-    function virgilsecurity_get_hp_intro_msg_text()
-    {
-        global $virgilsecurity_section_mods;
-
-        return $values = $virgilsecurity_section_mods->getHpSectionMods()
-                                                     ->getIntroSectionMods()
-                                                     ->getIntroMsgMod()
-                                                     ->getValue()
-            ;
-    }
-
-endif;
-
-if (!function_exists('virgilsecurity_get_hp_intro_links')) :
-
-    /**
-     * Gets Intro Links for intro section
-     *
-     * @return array
-     */
-    function virgilsecurity_get_hp_intro_links()
-    {
-        global $virgilsecurity_section_mods;
-
-        $values = $virgilsecurity_section_mods->getHpSectionMods()
-                                              ->getIntroSectionMods()
-                                              ->getIntroLinksMod()
-                                              ->getValue()
-        ;
+        $values = get_theme_mod('header_auth_links');
 
         return is_array($values) ? $values : [];
     }
@@ -75,12 +28,7 @@ if (!function_exists('virgilsecurity_get_header_logo_image')) :
      */
     function virgilsecurity_get_header_logo_image()
     {
-        global $virgilsecurity_section_mods;
-
-        return $virgilsecurity_section_mods->getHeaderSectionMods()
-                                           ->getLogoImageMod()
-                                           ->getValue()
-            ;
+        return get_theme_mod('header_logo_image');
     }
 
 endif;
