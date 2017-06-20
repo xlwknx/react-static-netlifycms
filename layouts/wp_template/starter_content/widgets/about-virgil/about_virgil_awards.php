@@ -12,13 +12,13 @@ return [
         ],
     ],
 
-    'about_virgil_awards_image' => [
+    'about_virgil_awards_list' => [
         'wp_editor_widget',
         [
-            'title'        => 'Awards Image',
+            'title'        => 'Awards List',
             'output_title' => false,
             'content'      => file_get_contents(
-                __DIR__ . DIRECTORY_SEPARATOR . 'html' . DIRECTORY_SEPARATOR . 'about_virgil_awards_image.html'
+                __DIR__ . DIRECTORY_SEPARATOR . 'html' . DIRECTORY_SEPARATOR . 'about_virgil_awards_list.html'
             ),
         ],
     ],

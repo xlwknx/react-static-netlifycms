@@ -28,22 +28,25 @@
     </div>
     <div class="highlights">
         <div class="wrapper">
-            <div class="highlightsContentBlock layeredBlock">
-                <div class="layeredBlockContent">
+            <div class="highlightsContentBlock layeredBlock layeredBlock--left">
+                <div id="aboutHighlightsCarousel" class="highlightsCarousel layeredBlockContent carousel slide" data-ride="carousel" data-pause="hover">
                     <div class="blockMsg">
                         <?php dynamic_sidebar('about-virgil-highlights-msg'); ?>
+                        <ul class="highlightsCarousel-controls carousel-indicators">
+                            <li class="highlightsCarousel-control active" data-target="#aboutHighlightsCarousel" data-slide-to="0">
+                                <span class="fa fa-circle"></span>
+                            </li>
+                            <li class="highlightsCarousel-control" data-target="#aboutHighlightsCarousel" data-slide-to="1">
+                                <span class="fa fa-circle"></span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="highlightsCarousel-controls">
-                        <div class="highlightsCarousel-control"></div>
-                        <div class="highlightsCarousel-control"></div>
-                        <div class="highlightsCarousel-control"></div>
-                    </div>
-                    <div class="highlightsCarousel">
-                        <div class="highlightsCarousel-previous"></div>
-                        <div class="highlightsList">
+                    <div class="highlightsOverview">
+                        <a href="#aboutHighlightsCarousel" class="highlightsCarousel-previous" data-slide="prev"></a>
+                        <ul class="highlightList carousel-inner">
                             <?php dynamic_sidebar('about-virgil-highlights-items'); ?>
-                        </div>
-                        <div class="highlightsCarousel-next"></div>
+                        </ul>
+                        <a href="#aboutHighlightsCarousel" class="highlightsCarousel-next" data-slide="next"></a>
                     </div>
                 </div>
             </div>
@@ -63,7 +66,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <?php get_footer() ?>

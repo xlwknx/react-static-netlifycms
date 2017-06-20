@@ -12,13 +12,13 @@ return [
         ],
     ],
 
-    'about_virgil_investors_image' => [
+    'about_virgil_investors_list' => [
         'wp_editor_widget',
         [
-            'title'        => 'Investors Image',
+            'title'        => 'Investors List',
             'output_title' => false,
             'content'      => file_get_contents(
-                __DIR__ . DIRECTORY_SEPARATOR . 'html' . DIRECTORY_SEPARATOR . 'about_virgil_investors_image.html'
+                __DIR__ . DIRECTORY_SEPARATOR . 'html' . DIRECTORY_SEPARATOR . 'about_virgil_investors_list.html'
             ),
         ],
     ],
