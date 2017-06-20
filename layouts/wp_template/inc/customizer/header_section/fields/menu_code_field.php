@@ -10,6 +10,12 @@ class MenuCodeField extends CodeField
     protected $priority = 2;
 
 
+    public function getSettings()
+    {
+        return 'header_menu';
+    }
+
+
     public function getLabel()
     {
         return __('Menu');

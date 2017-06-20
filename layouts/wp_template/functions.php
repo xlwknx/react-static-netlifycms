@@ -1,6 +1,11 @@
 <?php
 // TODO: rename all function with virgilsecurity prefix to aloid collision
-require_once get_parent_theme_file_path('/inc/autoloader_register.php');
+
+require get_parent_theme_file_path('/inc/customizer.php');
+
+require get_parent_theme_file_path('/inc/customizer_preview.php');
+
+require get_parent_theme_file_path('/inc/theme_mod_functions.php');
 
 if (!function_exists('virgilsecurity_setup')) :
     /**
@@ -982,8 +987,21 @@ endif; // virgilsecurity_setup
 
 add_action('after_setup_theme', 'virgilsecurity_setup');
 
-require_once get_parent_theme_file_path('/inc/customizer_init.php');
+spl_autoload_register(
+    function ($class) {
 
-require_once get_parent_theme_file_path('/inc/customizer_preview.php');
+        $parts = explode('\\', $class);
 
-require_once get_parent_theme_file_path('/inc/theme_mod_functions.php');
+        if (is_array($parts) && strtolower($parts[0]) == 'virgilsecurity') {
+
+            $parts = array_map(
+                function ($value) {
+                    return strtolower(preg_replace('/([a-z])([A-Z])/', '$1_$2', $value));
+                },
+                array_slice($parts, 1)
+            );
+
+            include 'inc' . DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, $parts) . '.php';
+        }
+    }
+);

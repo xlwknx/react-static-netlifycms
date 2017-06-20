@@ -5,7 +5,7 @@ namespace VirgilSecurity\Customizer\HeaderSection\Groups;
 use VirgilSecurity\Customizer\Fields\LinkField;
 use VirgilSecurity\Customizer\Fields\TextField;
 
-use VirgilSecurity\Customizer\Src\FieldsGroup;
+use VirgilSecurity\Customizer\Groups\FieldsGroup;
 
 class AuthLinksGroup extends FieldsGroup
 {

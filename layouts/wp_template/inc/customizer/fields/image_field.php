@@ -2,11 +2,12 @@
 namespace VirgilSecurity\Customizer\Fields;
 
 
-use VirgilSecurity\Customizer\Src\Field;
+use VirgilSecurity\Customizer\Src\BaseField;
 
-class ImageField extends Field
+abstract class ImageField extends BaseField
 {
     protected $type = 'image';
 
     protected $sanitizeCallback = 'esc_url';
+
 }

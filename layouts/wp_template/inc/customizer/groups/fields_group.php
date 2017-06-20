@@ -1,15 +1,11 @@
 <?php
-namespace VirgilSecurity\Customizer\Fields;
+namespace VirgilSecurity\Customizer\Groups;
 
 
-use VirgilSecurity\Customizer\Src\BaseField;
+use VirgilSecurity\Customizer\Src\BaseFieldsGroup;
 
-class LinkField extends BaseField
+class FieldsGroup extends BaseFieldsGroup
 {
-    protected $type = 'text';
-
-    protected $sanitizeCallback = 'esc_url';
-
     private $settings;
 
     private $label;
