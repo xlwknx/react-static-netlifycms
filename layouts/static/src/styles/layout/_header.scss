@@ -10,7 +10,8 @@
   height: 70px;
   padding: 0 20px;
 
-  &.tether-pinned {
+  &.pinned {
+    position: fixed;
     background: $vs-color-white;
     box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
     transition: 0.5s background;
@@ -22,7 +23,7 @@
     }
   }
 
-  &.tether-pinned,
+  &.pinned,
   &.headerFull--dark {
     color: inherit;
 

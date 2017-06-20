@@ -1,7 +1,5 @@
 'use strict';
 
-import Tether from 'tether';
-
 function initNavigation() {
   const navObj = {
     $openButton: $('[data-vs-sideNav-open]'),
@@ -29,30 +27,44 @@ function initNavigation() {
 }
 
 function initStickyHeader() {
-  const header = $('[data-vs-sticky-header]');
+  const $header = $('[data-vs-sticky-header]');
+  const position = $header.height();
 
-  if (header.length) {
-    new Tether({
-      element: header,
-      target: 'body',
-      attachment: 'top left',
-      targetAttachment: 'top left',
-      constraints: [
-        {
-          to: 'window',
-          pin: true,
-        }
-      ],
-      optimizations: {
-        gpu: false
-      }
-    });
+  _initSticky($header, position);
+}
+
+function initStickyScrollToTop() {
+  const $scrollToTopBtn = $('[data-vs-sticky-scrollToTop]');
+  const position = $(document).height() / 10;
+
+  $scrollToTopBtn.on('click', scrollToTop);
+  _initSticky($scrollToTopBtn, position);
+
+  function scrollToTop(event) {
+    $(event.target).removeClass('pinned');
+    $('html, body').animate({scrollTop: 0}, 'fast');
+  }
+}
+
+function _initSticky($elem, position) {
+  toggle($elem, position);
+  $(window).on('scroll', toggle.bind(null, $elem, position));
+
+  function toggle($elem, position) {
+    const windowTop = $('body').scrollTop();
+
+    if (windowTop >= position) {
+      $elem.addClass('pinned');
+    } else {
+      $elem.removeClass('pinned');
+    }
   }
 }
 
 function init() {
   initNavigation();
   initStickyHeader();
+  initStickyScrollToTop();
 }
 
 export default {

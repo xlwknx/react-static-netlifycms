@@ -47,7 +47,6 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
-      Tether: "tether",
       Carousel: "exports-loader?Carousel!bootstrap/js/dist/carousel",
       Util: "exports-loader?Util!bootstrap/js/dist/util"
     }),

@@ -3,6 +3,7 @@
   vertical-align: middle;
   background-repeat: no-repeat;
   background-position: center center;
+  transition: all 0.25s;
 
   + span {
     margin-left: 0.5em;
@@ -45,19 +46,6 @@
     background-image: url("../assets/images/ui/icons/icon-case.png");
   }
 
-  &-medium {
-    width: 22px;
-    height: 18px;
-    background-image: url("../assets/images/ui/icons/icon-medium.png");
-  }
-
-  &-arrowRight {
-    width: 15px;
-    height: 10px;
-    background-image: url("../assets/images/ui/icons/icon-arrowRight.png");
-    vertical-align: baseline;
-  }
-
   &-mail {
     width: 30px;
     height: 20px;
@@ -82,21 +70,86 @@
     background-image: url("../assets/images/ui/icons/icon-phone.png");
   }
 
-  &-menu {
-    width: 20px;
-    height: 20px;
-    background-image: url("../assets/images/ui/icons/icon-menu.png");
-  }
-
   &-menu-red {
     width: 20px;
     height: 20px;
-    background-image: url("../assets/images/ui/icons/icon-menu-red.png");
+    background-image: url("../assets/images/ui/icons/icon-menu-red.svg");
   }
 
   &-close {
     width: 20px;
     height: 20px;
     background-image: url("../assets/images/ui/icons/icon-close.png");
+  }
+
+  // Arrows
+  &-arrowTop {
+    width: 20px;
+    height: 11px;
+    background-image: url("../assets/images/ui/icons/icon-arrowTop.svg");
+  }
+
+  &-arrowRight {
+    width: 15px;
+    height: 10px;
+    background-image: url("../assets/images/ui/icons/icon-arrowRight.png");
+    vertical-align: baseline;
+  }
+
+  // Socials
+  &-medium-red {
+    width: 22px;
+    height: 18px;
+    background-image: url("../assets/images/ui/icons/icon-medium-red.png");
+  }
+
+  &-facebook {
+    width: 22px;
+    height: 22px;
+    background-image: url("../assets/images/ui/icons/icon-facebook.svg");
+
+    &:hover {
+      background-image: url("../assets/images/ui/icons/icon-facebook-hover.svg");
+    }
+  }
+
+  &-github {
+    width: 25px;
+    height: 24px;
+    background-image: url("../assets/images/ui/icons/icon-github.svg");
+
+    &:hover {
+      background-image: url("../assets/images/ui/icons/icon-github-hover.svg");
+    }
+  }
+
+  &-linkedin {
+    width: 22px;
+    height: 22px;
+    background-image: url("../assets/images/ui/icons/icon-linkedin.svg");
+
+    &:hover {
+      background-image: url("../assets/images/ui/icons/icon-linkedin-hover.svg");
+    }
+  }
+
+  &-medium {
+    width: 27px;
+    height: 22px;
+    background-image: url("../assets/images/ui/icons/icon-medium.svg");
+
+    &:hover {
+      background-image: url("../assets/images/ui/icons/icon-medium-hover.svg");
+    }
+  }
+
+  &-twitter {
+    width: 23px;
+    height: 18px;
+    background-image: url("../assets/images/ui/icons/icon-twitter.svg");
+
+    &:hover {
+      background-image: url("../assets/images/ui/icons/icon-twitter-hover.svg");
+    }
   }
 }

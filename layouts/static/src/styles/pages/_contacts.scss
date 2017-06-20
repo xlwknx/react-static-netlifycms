@@ -34,7 +34,6 @@
     }
 
     .contactUsForm {
-      order: 2;
       padding: 35px 40px 50px;
       background: $vs-color-white;
 
@@ -86,12 +85,10 @@
       }
 
       &-actions {
-        button {
-          width: 100%;
+        text-align: left;
 
-          @media (min-width: $vs-breakpoint-md) {
-            width: auto;
-          }
+        @media (min-width: $vs-breakpoint-md) {
+          text-align: right;
         }
       }
     }
