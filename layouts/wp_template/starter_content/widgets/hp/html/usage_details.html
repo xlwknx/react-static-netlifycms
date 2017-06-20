@@ -1,55 +1,69 @@
-<!--TODO: why it is not working?-->
-<div class="usageDetails">
-    <div class="usageSteps">
-        <div class="usageSteps-item">
+<div id="homeUsageStepsCarousel" class="usageStepsCarousel carousel slide"
+     data-pause="hover" data-wrap="false">
+    <ul class="usageStepsCarousel-controls carousel-indicators">
+        <li class="usageStepsCarousel-control active" data-target="#homeUsageStepsCarousel" data-slide-to="0">
             <i>1</i>
             <span>Encryption</span>
-        </div>
-        <div class="usageSteps-item">
+        </li>
+        <li class="usageStepsCarousel-control" data-target="#homeUsageStepsCarousel" data-slide-to="1">
             <i>2</i>
             <span>Decryption</span>
-        </div>
-        <div class="usageSteps-item">
+        </li>
+        <li class="usageStepsCarousel-control" data-target="#homeUsageStepsCarousel" data-slide-to="2">
             <i>3</i>
             <span>Create signature</span>
-        </div>
-        <div class="usageSteps-item">
+        </li>
+        <li class="usageStepsCarousel-control" data-target="#homeUsageStepsCarousel" data-slide-to="3">
             <i>4</i>
             <span>Verify signature</span>
-        </div>
-    </div>
-    <div class="usageExample">
-        <div class="usageExample-previous"></div>
-        <div class="usageExample-list">
-            <div class="usageExample-item">
-                <a href="https://developer.virgilsecurity.com/docs" class="usageExample-link">
+        </li>
+    </ul>
+    <div class="usageSteps">
+        <a href="#homeUsageStepsCarousel" class="usageStepsCarousel-previous" data-slide="prev"></a>
+        <ul class="usageStepList carousel-inner">
+            <li class="usageStepItem carousel-item active">
+                <a href="https://developer.virgilsecurity.com/docs" class="usageStepItem-link">
                     <img src="/wp-content/themes/virgilsecurity/assets/home-usage-encryption.png" alt=""
-                         class="usageExample-linkImage">
-                    <span class="button-raisedWhite-static usageExample-linkButton">Documentation</span>
+                         class="usageStepItem-linkImage">
+                    <span class="usageStepItem-linkButton button-raisedWhite-static">
+                      <i class="icon icon-book-black"></i>
+                      <span>Documentation</span>
+                    </span>
                 </a>
-            </div>
-            <div class="usageExample-item">
-                <a href="https://developer.virgilsecurity.com/docs/overview/decryption" class="usageExample-link">
+            </li>
+            <li class="usageStepItem carousel-item">
+                <a href="https://developer.virgilsecurity.com/docs/overview/decryption" class="usageStepItem-link">
                     <img src="/wp-content/themes/virgilsecurity/assets/home-usage-decryption.png" alt=""
-                         class="usageExample-linkImage">
-                    <span class="button-raisedWhite-static usageExample-linkButton">Documentation</span>
+                         class="usageStepItem-linkImage">
+                    <span class="usageStepItem-linkButton button-raisedWhite-static">
+                      <i class="icon icon-book-black"></i>
+                      <span>Documentation</span>
+                    </span>
                 </a>
-            </div>
-            <div class="usageExample-item">
-                <a href="https://developer.virgilsecurity.com/docs/overview/creating-signature" class="usageExample-link">
+            </li>
+            <li class="usageStepItem carousel-item">
+                <a href="https://developer.virgilsecurity.com/docs/overview/creating-signature"
+                   class="usageStepItem-link">
                     <img src="/wp-content/themes/virgilsecurity/assets/home-usage-create.png" alt=""
-                         class="usageExample-linkImage">
-                    <span class="button-raisedWhite-static usageExample-linkButton">Documentation</span>
+                         class="usageStepItem-linkImage">
+                    <span class="usageStepItem-linkButton button-raisedWhite-static">
+                      <i class="icon icon-book-black"></i>
+                      <span>Documentation</span>
+                    </span>
                 </a>
-            </div>
-            <div class="usageExample-item">
-                <a href="https://developer.virgilsecurity.com/docs/overview/verifying-signature" class="usageExample-link">
+            </li>
+            <li class="usageStepItem carousel-item">
+                <a href="https://developer.virgilsecurity.com/docs/overview/verifying-signature"
+                   class="usageStepItem-link">
                     <img src="/wp-content/themes/virgilsecurity/assets/home-usage-verify.png" alt=""
-                         class="usageExample-linkImage">
-                    <span class="button-raisedWhite-static usageExample-linkButton">Documentation</span>
+                         class="usageStepItem-linkImage">
+                    <span class="usageStepItem-linkButton button-raisedWhite-static">
+                      <i class="icon icon-book-black"></i>
+                      <span>Documentation</span>
+                    </span>
                 </a>
-            </div>
-        </div>
-        <div class="usageExample-next"></div>
+            </li>
+        </ul>
+        <a href="#homeUsageStepsCarousel" class="usageStepsCarousel-next" data-slide="next"></a>
     </div>
 </div>

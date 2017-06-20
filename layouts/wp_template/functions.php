@@ -157,6 +157,7 @@ if (!function_exists('virgilsecurity_setup')) :
                 'hp-client-content'           => get_starter_content("widgets", "hp", "client_content"),
                 'hp-services-content-block'   => get_starter_content("widgets", "hp", "services_content"),
                 'hp-usage-content-block'      => get_starter_content("widgets", "hp", "usage_content"),
+                'hp-benefits-content-block'   => get_starter_content("widgets", "hp", "benefits_content"),
                 'hp-conclusion-content-block' => get_starter_content("widgets", "hp", "conclusion_content"),
 
 
@@ -232,41 +233,53 @@ if (!function_exists('virgilsecurity_setup')) :
                 ),
             ],
             'posts'   => [
-                'about_virgil' => [
+                'about_virgil'     => [
                     'post_type'    => 'page',
                     'post_name'    => 'about-virgil',
                     'post_title'   => __('About Virgil', 'virgilsecurity'),
                     'post_content' => __return_empty_string(),
                 ],
-                'clients'      => [
+                'clients'          => [
                     'post_type'    => 'page',
                     'post_name'    => 'clients',
                     'post_title'   => __('Clients', 'virgilsecurity'),
                     'post_content' => __return_empty_string(),
                 ],
-                'features'     => [
+                'features'         => [
                     'post_type'    => 'page',
                     'post_name'    => 'features',
                     'post_title'   => __('Features', 'virgilsecurity'),
                     'post_content' => __return_empty_string(),
                 ],
-                'pricing'      => [
+                'pricing'          => [
                     'post_type'    => 'page',
                     'post_name'    => 'pricing',
                     'post_title'   => __('Pricing', 'virgilsecurity'),
                     'post_content' => __return_empty_string(),
                 ],
-                'contacts'     => [
+                'contacts'         => [
                     'post_type'    => 'page',
                     'post_name'    => 'contacts',
                     'post_title'   => __('Contacts', 'virgilsecurity'),
                     'post_content' => __return_empty_string(),
                 ],
-                'homepage'     => [
+                'homepage'         => [
                     'post_type'    => 'page',
                     'post_name'    => 'homepage',
                     'post_title'   => __('Homepage', 'virgilsecurity'),
                     'post_content' => __return_empty_string(),
+                ],
+                'terms-of-service' => [
+                    'post_type'    => 'page',
+                    'post_name'    => 'terms-of-service',
+                    'post_title'   => __('Terms Of Service', 'virgilsecurity'),
+                    'post_content' => get_starter_content('pages', 'terms-of-service'),
+                ],
+                'privacy-policy'   => [
+                    'post_type'    => 'page',
+                    'post_name'    => 'privacy-policy',
+                    'post_title'   => __('Privacy Policy', 'virgilsecurity'),
+                    'post_content' => get_starter_content('pages', 'privacy-policy'),
                 ],
             ],
             //'nav_menus' => [
@@ -656,6 +669,15 @@ if (!function_exists('virgilsecurity_setup')) :
             [
                 'name'          => __('Usage Content Block', 'virgilsecurity'),
                 'id'            => 'hp-usage-content-block',
+                'before_widget' => __return_empty_string(),
+                'after_widget'  => __return_empty_string(),
+            ]
+        );
+
+        register_sidebar(
+            [
+                'name'          => __('Benefits Content Block', 'virgilsecurity'),
+                'id'            => 'hp-benefits-content-block',
                 'before_widget' => __return_empty_string(),
                 'after_widget'  => __return_empty_string(),
             ]

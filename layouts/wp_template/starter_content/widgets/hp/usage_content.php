@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'usage_msg'      => [
+    'usage_msg'     => [
         'wp_editor_widget',
         [
             'title'        => 'Usage Msg',
@@ -11,23 +11,13 @@ return [
             ),
         ],
     ],
-    'usage_details'  => [
+    'usage_details' => [
         'wp_editor_widget',
         [
             'title'        => 'Usage Details',
             'output_title' => false,
             'content'      => file_get_contents(
                 __DIR__ . DIRECTORY_SEPARATOR . 'html' . DIRECTORY_SEPARATOR . 'usage_details.html'
-            ),
-        ],
-    ],
-    'usage_benefits' => [
-        'wp_editor_widget',
-        [
-            'title'        => 'Usage Benefits',
-            'output_title' => false,
-            'content'      => file_get_contents(
-                __DIR__ . DIRECTORY_SEPARATOR . 'html' . DIRECTORY_SEPARATOR . 'usage_benefits.html'
             ),
         ],
     ],

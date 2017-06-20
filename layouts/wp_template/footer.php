@@ -10,6 +10,7 @@
         </div>
     </div>
 </footer>
+<div class="overlay" data-vs-sideNav-overlay></div>
 </div>
 <?php wp_footer(); ?>
 </body>
