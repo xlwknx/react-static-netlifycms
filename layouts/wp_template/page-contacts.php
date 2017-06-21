@@ -1,7 +1,6 @@
 <? get_template_part('header/contacts') ?>
 
 <div class="container">
-
     <div class="contactUs">
         <div class="wrapper">
             <div class="contactUsContentBlock">
@@ -20,9 +19,9 @@
                 <div class="blockMsg">
                     <?php dynamic_sidebar('contact-partnership-msg'); ?>
                 </div>
-                <div class="partnershipContacts">
+                <ul class="partnershipContacts">
                     <?php dynamic_sidebar('contact-partnership-contacts'); ?>
-                </div>
+                </ul>
             </div>
         </div>
     </div>
@@ -35,7 +34,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <? get_footer(); ?>
