@@ -1,7 +1,6 @@
 <? get_template_part('header/pricing') ?>
 
 <div class="container">
-
     <div class="intro">
         <div class="wrapper">
             <div class="introContentBlock">
@@ -62,7 +61,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <? get_footer(); ?>
