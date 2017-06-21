@@ -34,8 +34,12 @@
     }
 
     .contactUsForm {
-      padding: 35px 40px 50px;
+      padding: 35px 20px 50px;
       background: $vs-color-white;
+
+      @media (min-width: $vs-breakpoint-sm) {
+        padding: 35px 40px 50px;
+      }
 
       @media (min-width: $vs-breakpoint-md) {
         order: initial;
@@ -97,12 +101,16 @@
       @include font-muller();
       display: flex;
       flex-direction: column;
-      padding: 35px 40px 50px;
+      padding: 35px 20px 50px;
       background: $vs-color-darkRed1;
       background: linear-gradient(to bottom, $vs-color-red1 0%, $vs-color-darkRed1 100%);
       font-size: 0.66rem;
       line-height: 1.5;
       color: $vs-color-white;
+
+      @media (min-width: $vs-breakpoint-sm) {
+        padding: 35px 40px 50px;
+      }
 
       @media (min-width: $vs-breakpoint-md) {
         flex: 1 1 360px;

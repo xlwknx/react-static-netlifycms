@@ -18,6 +18,8 @@
 }
 
 .blockMsg {
+  max-width: 100%;
+
   &-headline {
     @include blockMsg-headline();
   }
@@ -123,9 +125,13 @@
   .layeredBlockContent {
     position: relative;
     z-index: 2;
-    padding: 85px 50px 95px;
+    padding: 85px 30px 95px;
     background: $vs-color-darkBlue5;
     color: $vs-color-white;
+
+    @media (min-width: $vs-breakpoint-sm) {
+      padding: 85px 50px 95px;
+    }
 
     @media (min-width: $vs-breakpoint-md) {
       border-radius: 3px 0 0 3px;

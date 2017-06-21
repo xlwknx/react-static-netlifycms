@@ -22,7 +22,7 @@ html, body {
 
   @media (min-width: $vs-breakpoint-lg) {
     max-width: 1200px;
-    padding: 0 30px;
+    padding: 0 $vs-wrapper-padding-lg;
   }
 
   @media (min-width: $vs-breakpoint-lg-transition) {

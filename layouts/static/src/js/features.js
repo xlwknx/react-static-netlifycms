@@ -1,13 +1,15 @@
 'use strict';
 
 function initFAQ() {
-  const $questionList = $('[data-faq-question]');
-  const $answerList = $('[data-faq-answer]');
+  const $questions = $('[data-vs-faq-question]');
+  const $answers = $('[data-vs-faq-answer]');
+  const $answerList = $('[data-vs-faq-answerList]');
+  const $header = $('[data-vs-sticky-header]');
 
-  var $activeQuestion = $questionList.first();
-  var $activeAnswer = $answerList.first();
+  var $activeQuestion = $questions.first();
+  var $activeAnswer = $answers.first();
 
-  if ($answerList.filter(location.hash).length) {
+  if ($answers.filter(location.hash).length) {
     $activeQuestion = getLinkByHash(location.hash);
     $activeAnswer = getTextByHash(location.hash);
   }
@@ -16,7 +18,6 @@ function initFAQ() {
 
   // Events
   $(window).on('hashchange', function(event) {
-    //event.preventDefault();
     updateActive(getLinkByHash(location.hash), getTextByHash(location.hash));
   });
 
@@ -25,14 +26,14 @@ function initFAQ() {
     if ($link.length && $text.length) {
       resetActive();
       setActive($link, $text);
-
-      //window.scrollTo(0, $text.offset().top);
     }
+
+    window.scrollTo(0, ($answerList.offset().top - $header.height()));
   }
 
   function resetActive() {
-    $questionList.removeClass('active');
-    $answerList.removeClass('active');
+    $questions.removeClass('active');
+    $answers.removeClass('active');
   }
 
   function setActive($link, $text) {
@@ -41,11 +42,11 @@ function initFAQ() {
   }
 
   function getLinkByHash(hash) {
-    return $questionList.filter('[href$="' + hash + '"]');
+    return $questions.filter('[href$="' + hash + '"]');
   }
 
   function getTextByHash(hash) {
-    return $answerList.filter(hash);
+    return $answers.filter(hash);
   }
 }
 

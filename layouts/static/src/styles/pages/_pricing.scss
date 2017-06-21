@@ -28,13 +28,12 @@
       padding: 115px 0 120px;
     }
 
-    .pricingPlansMsg {
+    .blockMsg {
       width: 400px;
       text-align: center;
 
-      p {
-        @include blockMsg-text();
-        margin: 0;
+      &-text {
+        @include blockMsg-text(0);
       }
     }
 
@@ -127,6 +126,10 @@
       padding: 50px;
       background: $vs-color-white;
       box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
+
+      @media (min-width: $vs-breakpoint-sm) {
+        padding: 50px 25px;
+      }
 
       @media (min-width: $vs-breakpoint-md) {
         flex-direction: row;

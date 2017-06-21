@@ -1,6 +1,11 @@
 .aboutPage {
   .intro {
+    background-color: $vs-color-darkBlue5;
     background-image: url("../assets/images/bg/about/about-intro-bg.png");
+
+    @media (min-width: $vs-breakpoint-md) {
+      background-color: initial;
+    }
 
     .introContentBlock {
       height: 600px;
@@ -21,10 +26,14 @@
 
     .introDataList {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
       width: 100%;
       margin-top: 75px;
+
+      @media (min-width: $vs-breakpoint-sm) {
+        justify-content: space-around;
+      }
 
       @media (min-width: $vs-breakpoint-md) {
         justify-content: space-between;
@@ -32,44 +41,46 @@
       }
     }
 
-    .introDataItem {
-      @include font-muller();
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0 10px;
-
-      @media (min-width: $vs-breakpoint-md) {
-        flex-direction: row;
-      }
-
-      &-image {
-        img {
-          display: block;
-          max-width: 100%;
-        }
-      }
-
-      &-info {
-        margin: 20px 0 0;
+      .introDataItem {
+        @include font-muller();
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
 
         @media (min-width: $vs-breakpoint-md) {
-          margin: 0 0 0 15px;
+          flex-direction: row;
+        }
+
+        &-image {
+          img {
+            display: block;
+            max-width: 100%;
+          }
+        }
+
+        &-info {
+          margin: 20px 0 0;
+          text-align: center;
+
+          @media (min-width: $vs-breakpoint-md) {
+            margin: 0 0 0 15px;
+            text-align: left;
+          }
+        }
+
+        &-name {
+          font-size: 0.61rem;
+          font-weight: bold;
+          color: $vs-color-lightGrey4;
+        }
+
+        &-value {
+          margin-top: 5px;
+          font-size: 1.11rem;
+          color: $vs-color-white;
         }
       }
-
-      &-name {
-        font-size: 0.61rem;
-        font-weight: bold;
-        color: $vs-color-lightGrey4;
-      }
-
-      &-value {
-        margin-top: 5px;
-        font-size: 1.11rem;
-        color: $vs-color-white;
-      }
-    }
   }
 
   .mission {
@@ -121,7 +132,7 @@
     }
 
     &-caption {
-      @include block-caption(60px, 120px);
+      @include block-caption(2.55rem, 3.33rem);
       color: $vs-color-lightGrey8;
     }
 
@@ -132,6 +143,7 @@
 
       @media (min-width: $vs-breakpoint-md) {
         flex-direction: row;
+        align-items: flex-start;
       }
 
       > li + li {
@@ -144,6 +156,10 @@
     }
 
       .leadershipProfile {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-end;
         width: 510px;
         max-width: 100%;
 
@@ -156,7 +172,12 @@
         }
 
         @media (min-width: $vs-breakpoint-md) {
+          justify-content: initial;
           max-width: 45%;
+        }
+
+        & > * {
+          width: 100%;
         }
 
         &-image {
@@ -169,16 +190,17 @@
         }
 
         &-name {
-          @include font-muller();
-          display: inline-block;
-          vertical-align: middle;
+          @include font-muller(1);
+          width: auto;
           font-size: 1.11rem;
         }
 
         &-contacts {
-          display: inline-block;
-          vertical-align: middle;
-          margin-left: 35px;
+          width: auto;
+
+          @media (min-width: $vs-breakpoint-md) {
+            margin-left: 35px;
+          }
 
           li {
             display: inline-block;
@@ -195,7 +217,7 @@
 
         &-position {
           @include font-muller();
-          margin-top: 10px;
+          margin-top: 15px;
           font-size: 0.77rem;
           color: $vs-color-lightGrey4;
         }
@@ -218,7 +240,7 @@
 
   .highlights {
     overflow: hidden;
-    padding: 160px 0 150px;
+    padding: 155px 0;
     background: $vs-color-lightGrey1;
 
     .layeredBlock {
@@ -236,8 +258,6 @@
     }
 
     .highlightsCarousel {
-      padding: 75px 45px;
-
       @media (min-width: $vs-breakpoint-md) {
         padding: 75px 0 75px 45px;
       }
@@ -306,8 +326,18 @@
 
     .highlightsOverview {
       position: relative;
-      margin-top: 65px;
-      padding: 0 75px;
+      margin: 65px -15px 0;
+      padding: 0 40px;
+
+      @media (min-width: $vs-breakpoint-sm) {
+        margin: 65px -35px 0;
+        padding: 0 55px;
+      }
+
+      @media (min-width: $vs-breakpoint-md) {
+        margin: 65px 0 0;
+        padding: 0 75px;
+      }
 
       @media (min-width: $vs-breakpoint-lg) {
         padding: 0 40px 0 140px;
@@ -364,7 +394,7 @@
     }
 
     &-caption {
-      @include block-caption(60px, 120px);
+      @include block-caption(2.55rem, 3.33rem);
       color: $vs-color-lightGrey8;
     }
 
@@ -392,11 +422,11 @@
     background: $vs-color-lightGrey1;
 
     .investorsContentBlock {
-      padding: 60px 0 300px;
+      padding: 75px 0 (75px + $vs-footer-padding);
     }
 
     &-caption {
-      @include block-caption(60px, 120px);
+      @include block-caption(2.55rem, 3.33rem);
       text-align: right;
       color: $vs-color-lightGrey8;
     }

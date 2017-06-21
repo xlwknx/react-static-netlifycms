@@ -1,7 +1,7 @@
 .notFoundPage {
   .intro {
     &-caption {
-      @include block-caption(170px, 240px);
+      @include block-caption(8.44rem, 9.44rem, 13.33rem);
     }
 
     .blockMsg {

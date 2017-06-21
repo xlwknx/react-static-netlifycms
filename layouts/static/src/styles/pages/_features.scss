@@ -25,6 +25,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
+      align-items: baseline;
       margin-top: 100px;
 
       @media (min-width: $vs-breakpoint-md) {
@@ -33,7 +34,7 @@
     }
 
       .introFeature {
-        width: 40%;
+        width: 45%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -50,12 +51,7 @@
         }
 
         &-image {
-          flex: 1;
           width: 65px;
-
-          @media (min-width: $vs-breakpoint-md) {
-            flex: initial;
-          }
         }
 
         &-text {
@@ -105,13 +101,14 @@
           }
         }
 
-        &-feature {
-          margin: 10px 0;
+          &-feature {
+            margin: 10px 0;
+            white-space: nowrap;
 
-          .fa {
-            opacity: 0.25;
+            .fa {
+              opacity: 0.25;
+            }
           }
-        }
       }
   }
 
@@ -188,12 +185,7 @@
         }
 
         &-image {
-          flex: 1;
           width: 75px;
-
-          @media (min-width: $vs-breakpoint-md) {
-            flex: initial;
-          }
         }
 
         &-info {
@@ -283,12 +275,12 @@
 
     .faqList {
       order: 2;
-      margin-top: 45px;
+      padding: 45px 0 0;
 
       @media (min-width: $vs-breakpoint-lg) {
         flex: 1 1 50%;
         order: initial;
-        padding-right: 100px;
+        padding: 45px 100px 0 0;
       }
     }
 
@@ -358,6 +350,11 @@
         &-link {
           display: flex;
           color: $vs-color-white;
+
+          &.active {
+            pointer-events: none;
+            cursor: default;
+          }
 
           &:not(.active) {
             opacity: 0.5;

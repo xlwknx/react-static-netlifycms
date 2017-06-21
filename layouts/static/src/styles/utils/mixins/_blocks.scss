@@ -1,10 +1,14 @@
-@mixin block-caption($font-size-sm: 6.66rem, $font-size-md: 6.66rem) {
+@mixin block-caption($font-size-xs: 6.66rem, $font-size-sm: 6.66rem, $font-size-md: 6.66rem) {
   @include font-muller();
-  font-size: $font-size-sm;
+  font-size: $font-size-xs;
   font-weight: bold;
   letter-spacing: 3px;
   line-height: 1;
   color: $vs-color-lightGrey7;
+
+  @media (min-width: $vs-breakpoint-sm) {
+    font-size: $font-size-sm;
+  }
 
   @media (min-width: $vs-breakpoint-md) {
     font-size: $font-size-md;
