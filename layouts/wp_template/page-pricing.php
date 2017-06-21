@@ -11,7 +11,7 @@
     <div class="pricingPlans">
         <div class="wrapper">
             <div class="pricingPlansContentBlock">
-                <div class="pricingPlansMsg">
+                <div class="blockMsg">
                     <?php dynamic_sidebar('pricing-plans-msg'); ?>
                 </div>
                 <div class="comparisonBlock pricingPlanList">
