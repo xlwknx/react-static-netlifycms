@@ -1,10 +1,8 @@
 <? get_template_part('header/page') ?>
 
 <div class="container">
-
     <?php while (have_posts() && is_singular('page')) : the_post(); ?>
         <?php $postContentMenuItems = get_post_meta(get_the_ID(), 'content_menu_item'); ?>
-
         <div class="intro">
             <div class="wrapper">
                 <div class="introContentBlock">
@@ -29,9 +27,7 @@
                 </div>
             </div>
         </div>
-
     <? endwhile; // End of the loop. ?>
-
 </div>
 
 <?php get_footer() ?>
