@@ -51,7 +51,7 @@
       }
     }
 
-    &-headline {
+    h2 {
       @include font-muller();
       margin-bottom: 18px;
       font-size: 1.55rem;
