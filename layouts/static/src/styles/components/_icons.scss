@@ -1,8 +1,11 @@
 .icon {
   display: inline-block;
   vertical-align: middle;
+  width: 22px;
+  height: 22px;
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: 22px 22px;
   transition: 0.25s background-image;
 
   + span {
@@ -11,98 +14,104 @@
   }
 
   &-book {
-    width: 22px;
-    height: 18px;
-    background-image: url("../assets/images/ui/icons/icon-book.png");
+    background-image: url("../assets/images/ui/icons/icon-book@2x.png");
+    background-size: 18px 16px;
   }
 
   &-book-white {
-    width: 22px;
-    height: 18px;
-    background-image: url("../assets/images/ui/icons/icon-book-white.png");
+    //width: 22px;
+    //height: 18px;
+    background-image: url("../assets/images/ui/icons/icon-book-white@2x.png");
+    background-size: 18px 16px;
   }
 
   &-book-black {
-    width: 22px;
-    height: 18px;
-    background-image: url("../assets/images/ui/icons/icon-book-black.png");
+    //width: 22px;
+    //height: 18px;
+    background-image: url("../assets/images/ui/icons/icon-book-black@2x.png");
+    background-size: 18px 16px;
   }
 
   &-bookmark {
-    width: 22px;
-    height: 18px;
-    background-image: url("../assets/images/ui/icons/icon-bookmark.png");
+    //width: 22px;
+    //height: 18px;
+    background-image: url("../assets/images/ui/icons/icon-bookmark@2x.png");
+    background-size: 14px 16px;
   }
 
   &-shield {
-    width: 22px;
-    height: 18px;
-    background-image: url("../assets/images/ui/icons/icon-shield.png");
+    //width: 22px;
+    //height: 18px;
+    background-image: url("../assets/images/ui/icons/icon-shield@2x.png");
+    background-size: 16px 18px;
   }
 
   &-case {
-    width: 22px;
-    height: 18px;
-    background-image: url("../assets/images/ui/icons/icon-case.png");
+    //width: 22px;
+    //height: 18px;
+    background-image: url("../assets/images/ui/icons/icon-case@2x.png");
+    background-size: 20px 17px;
+  }
+
+  &-medium-red {
+    //width: 22px;
+    //height: 18px;
+    background-image: url("../assets/images/ui/icons/icon-medium-red@2x.png");
+    background-size: 22px 18px;
   }
 
   &-mail {
     width: 30px;
-    height: 20px;
-    background-image: url("../assets/images/ui/icons/icon-mail.png");
+    background-image: url("../assets/images/ui/icons/icon-mail@2x.png");
+    background-size: 30px 20px;
   }
 
   &-geo {
-    width: 22px;
+    width: 18px;
     height: 29px;
-    background-image: url("../assets/images/ui/icons/icon-geo.png");
+    background-image: url("../assets/images/ui/icons/icon-geo@2x.png");
+    background-size: 18px 29px;
   }
 
   &-help {
-    width: 22px;
-    height: 22px;
-    background-image: url("../assets/images/ui/icons/icon-help.png");
+    background-image: url("../assets/images/ui/icons/icon-help@2x.png");
   }
 
   &-phone {
-    width: 22px;
     height: 25px;
-    background-image: url("../assets/images/ui/icons/icon-phone.png");
+    background-image: url("../assets/images/ui/icons/icon-phone@2x.png");
+    background-size: 16px 25px;
   }
 
   &-menu-red {
-    width: 20px;
-    height: 20px;
+    //width: 20px;
+    //height: 20px;
     background-image: url("../assets/images/ui/icons/icon-menu-red.svg");
+    background-size: 20px 20px;
   }
 
   &-close {
-    width: 20px;
-    height: 20px;
-    background-image: url("../assets/images/ui/icons/icon-close.png");
+    //width: 20px;
+    //height: 20px;
+    background-image: url("../assets/images/ui/icons/icon-close@2x.png");
+    background-size: 20px 20px;
   }
 
   // Arrows
   &-arrowTop {
-    width: 20px;
-    height: 11px;
+    height: 12px;
     background-image: url("../assets/images/ui/icons/icon-arrowTop.svg");
   }
 
   &-arrowRight {
-    width: 15px;
+    width: 7px;
     height: 10px;
-    background-image: url("../assets/images/ui/icons/icon-arrowRight.png");
+    background-image: url("../assets/images/ui/icons/icon-arrowRight-white.svg");
+    background-size: 7px 10px;
     vertical-align: baseline;
   }
 
   // Socials
-  &-medium-red {
-    width: 22px;
-    height: 18px;
-    background-image: url("../assets/images/ui/icons/icon-medium-red.png");
-  }
-
   &-facebook {
     width: 22px;
     height: 22px;

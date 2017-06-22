@@ -101,6 +101,10 @@ module.exports = {
       template: 'src/templates/content/terms.html'
     }),
     new HtmlWebpackPlugin({
+      filename: 'policy.html',
+      template: 'src/templates/content/policy.html'
+    }),
+    new HtmlWebpackPlugin({
       filename: '404.html',
       template: 'src/templates/404.html'
     })

@@ -1,6 +1,6 @@
 .contentPage {
   .intro {
-    background-image: url("../assets/images/bg/content/content-intro-bg.png");
+    background-image: url("../assets/images/bg/content/content-intro-bg.svg");
 
     .introContentBlock {
       height: 400px;
@@ -51,6 +51,12 @@
       }
     }
 
+    h3 {
+      margin: 65px 0 35px;
+      font-size: inherit;
+      font-weight: bold;
+    }
+
     h2 {
       @include font-muller();
       margin-bottom: 18px;
@@ -61,14 +67,17 @@
       color: $vs-color-darkRed1;
     }
 
-    h3 {
-      margin: 65px 0 35px;
-      font-size: inherit;
-      font-weight: bold;
-    }
-
     p {
       line-height: 1.9;
+    }
+
+    ul, ol {
+      padding: 0 1.5rem;
+      list-style: initial;
+    }
+
+    li {
+      margin: 0.5rem;
     }
   }
 }

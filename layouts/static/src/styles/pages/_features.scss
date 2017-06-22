@@ -66,7 +66,7 @@
   }
 
   .cryptogram {
-    background: url("../assets/images/bg/features/features-cryptogram-bg.png") center top no-repeat;
+    background: url("../assets/images/bg/features/features-cryptogram-bg.svg") center top no-repeat;
 
     .cryptogramContentBlock {
       display: flex;
@@ -131,7 +131,8 @@
       width: 1010px;
       height: 990px;
       max-width: 50%;
-      background: url("../assets/images/bg/features/features-components-bg.png") left bottom no-repeat;
+      background: url("../assets/images/bg/features/features-components-bg@2x.png") left bottom no-repeat;
+      background-size: 1011px 989px;
 
       @media (min-width: $vs-breakpoint-md) {
         display: block;

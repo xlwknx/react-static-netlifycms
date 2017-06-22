@@ -459,7 +459,7 @@
 
       &-previous,
       &-next {
-        width: 19px;
+        width: 22px;
         height: 34px;
         background-position: 0 0;
         background-repeat: no-repeat;
@@ -468,12 +468,12 @@
 
       &-previous {
         margin-right: 15px;
-        background-image: url("../assets/images/ui/carousel-arrowLeft-black.png");
+        background-image: url("../assets/images/ui/arrowLeft-black.svg");
       }
 
       &-next {
         margin-left: 15px;
-        background-image: url("../assets/images/ui/carousel-arrowRight-black.png");
+        background-image: url("../assets/images/ui/arrowRight-black.svg");
       }
     }
 
@@ -622,9 +622,10 @@
     margin-bottom: -$vs-footer-padding;
 
     @media (min-width: $vs-breakpoint-md) {
-      background-image: url("../assets/images/bg/home/home-conclusion-bg.png");
+      background-image: url("../assets/images/bg/home/home-conclusion-bg@2x.png");
       background-repeat: no-repeat;
       background-position: -255px bottom;
+      background-size: 849px 472px;
     }
 
     @media (min-width: $vs-breakpoint-lg) {
