@@ -191,11 +191,12 @@
 
         &-name {
           @include font-muller(1);
-          width: auto;
+          width: 50%;
           font-size: 1.11rem;
         }
 
         &-contacts {
+          align-self: center;
           width: auto;
 
           @media (min-width: $vs-breakpoint-md) {

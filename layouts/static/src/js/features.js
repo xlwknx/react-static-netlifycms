@@ -14,21 +14,23 @@ function initFAQ() {
     $activeAnswer = getTextByHash(location.hash);
   }
 
-  updateActive($activeQuestion, $activeAnswer);
+  init($activeQuestion, $activeAnswer);
 
   // Events
   $(window).on('hashchange', function(event) {
-    updateActive(getLinkByHash(location.hash), getTextByHash(location.hash));
+    init(getLinkByHash(location.hash), getTextByHash(location.hash));
   });
 
   // Helpers
-  function updateActive($link, $text) {
+  function init($link, $text) {
     if ($link.length && $text.length) {
       resetActive();
       setActive($link, $text);
-    }
 
-    window.scrollTo(0, ($answerList.offset().top - $header.height()));
+      if (location.hash) {
+        window.scrollTo(0, ($answerList.offset().top - $header.height()));
+      }
+    }
   }
 
   function resetActive() {

@@ -102,8 +102,9 @@
         }
 
           &-feature {
+            display: flex;
+            align-items: center;
             margin: 10px 0;
-            white-space: nowrap;
 
             .fa {
               opacity: 0.25;
