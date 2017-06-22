@@ -117,7 +117,7 @@ if (!function_exists('virgilsecurity_setup')) :
 
     function get_header_dark_class()
     {
-        if (get_slug() == "contacts") {
+        if (get_slug() == "contact") {
             return "header--dark";
         } else {
             return "";
@@ -257,10 +257,10 @@ if (!function_exists('virgilsecurity_setup')) :
                     'post_title'   => __('Pricing', 'virgilsecurity'),
                     'post_content' => __return_empty_string(),
                 ],
-                'contacts'         => [
+                'contact'         => [
                     'post_type'    => 'page',
-                    'post_name'    => 'contacts',
-                    'post_title'   => __('Contacts', 'virgilsecurity'),
+                    'post_name'    => 'contact',
+                    'post_title'   => __('Contact', 'virgilsecurity'),
                     'post_content' => __return_empty_string(),
                 ],
                 'homepage'         => [
