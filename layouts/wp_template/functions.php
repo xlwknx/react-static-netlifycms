@@ -144,9 +144,10 @@ if (!function_exists('virgilsecurity_setup')) :
                 'page_on_front' => '{{homepage}}',
             ],
             'widgets' => [
-                'top-menu'      => get_starter_content("widgets", "header", "top_menu"),
-                'footer-top'    => get_starter_content("widgets", "footer", "footer_top"),
-                'footer-bottom' => get_starter_content("widgets", "footer", "footer_bottom"),
+                'top-menu'        => get_starter_content("widgets", "header", "top_menu"),
+                'mobile-top-menu' => get_starter_content("widgets", "header", "mobile_top_menu"),
+                'footer-top'      => get_starter_content("widgets", "footer", "footer_top"),
+                'footer-bottom'   => get_starter_content("widgets", "footer", "footer_bottom"),
 
 
                 'hp-intro-area-headline'      => get_starter_content("widgets", "hp", "intro_area_headline"),
@@ -257,7 +258,7 @@ if (!function_exists('virgilsecurity_setup')) :
                     'post_title'   => __('Pricing', 'virgilsecurity'),
                     'post_content' => __return_empty_string(),
                 ],
-                'contact'         => [
+                'contact'          => [
                     'post_type'    => 'page',
                     'post_name'    => 'contact',
                     'post_title'   => __('Contact', 'virgilsecurity'),
@@ -596,6 +597,15 @@ if (!function_exists('virgilsecurity_setup')) :
             [
                 'name'          => __('Top Menu', 'virgilsecurity'),
                 'id'            => 'top-menu',
+                'before_widget' => __return_empty_string(),
+                'after_widget'  => __return_empty_string(),
+            ]
+        );
+
+        register_sidebar(
+            [
+                'name'          => __('Mobile Top Menu', 'virgilsecurity'),
+                'id'            => 'mobile-top-menu',
                 'before_widget' => __return_empty_string(),
                 'after_widget'  => __return_empty_string(),
             ]
