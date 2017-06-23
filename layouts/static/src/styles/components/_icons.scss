@@ -6,7 +6,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 22px 22px;
-  transition: 0.25s background-image;
+  transition: 0.25s background-image, 0.25s opacity;
 
   + span {
     margin-left: 0.5em;
@@ -83,6 +83,20 @@
     background-size: 16px 25px;
   }
 
+  /** ---------------------- Check ----------------------**/
+  &-check-red {
+    background-image: url("../assets/images/ui/icons/icon-check-red@2x.png");
+  }
+
+  &-check-grey {
+    background-image: url("../assets/images/ui/icons/icon-check-grey@2x.png");
+  }
+
+  &-check-white {
+    background-image: url("../assets/images/ui/icons/icon-check-white.png");
+  }
+
+  /** ---------------------- Actions ----------------------**/
   &-menu-red {
     //width: 20px;
     //height: 20px;
@@ -97,7 +111,7 @@
     background-size: 20px 20px;
   }
 
-  // Arrows
+  /** ---------------------- Arrows ----------------------**/
   &-arrowTop {
     height: 12px;
     background-image: url("../assets/images/ui/icons/icon-arrowTop.svg");
@@ -111,10 +125,9 @@
     vertical-align: baseline;
   }
 
-  // Socials
+
+  /** ---------------------- Socials:color ----------------------**/
   &-facebook {
-    width: 22px;
-    height: 22px;
     background-image: url("../assets/images/ui/icons/icon-facebook.svg");
 
     &:hover {
@@ -123,8 +136,6 @@
   }
 
   &-github {
-    width: 25px;
-    height: 24px;
     background-image: url("../assets/images/ui/icons/icon-github.svg");
 
     &:hover {
@@ -133,8 +144,6 @@
   }
 
   &-linkedin {
-    width: 22px;
-    height: 22px;
     background-image: url("../assets/images/ui/icons/icon-linkedin.svg");
 
     &:hover {
@@ -159,6 +168,80 @@
 
     &:hover {
       background-image: url("../assets/images/ui/icons/icon-twitter-hover.svg");
+    }
+  }
+
+  /** ---------------------- Socials:white ----------------------**/
+  &-facebook-white {
+    opacity: 0.5;
+    background-image: url("../assets/images/ui/icons/icon-facebook.svg");
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &-github-white {
+    opacity: 0.5;
+    background-image: url("../assets/images/ui/icons/icon-github.svg");
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &-linkedin-white {
+    opacity: 0.5;
+    background-image: url("../assets/images/ui/icons/icon-linkedin.svg");
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &-medium-white {
+    opacity: 0.5;
+    width: 27px;
+    height: 22px;
+    background-image: url("../assets/images/ui/icons/icon-medium.svg");
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &-twitter-white {
+    opacity: 0.5;
+    width: 23px;
+    height: 18px;
+    background-image: url("../assets/images/ui/icons/icon-twitter.svg");
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  /** ---------------------- Socials:black ----------------------**/
+  &-github-black {
+    background-image: url("../assets/images/ui/icons/icon-github-black.svg");
+  }
+
+  /** ---------------------- Socials:red ----------------------**/
+  &-linkedin-red {
+    background-image: url("../assets/images/ui/icons/icon-linkedin-red.svg");
+
+    &:hover {
+      background-image: url("../assets/images/ui/icons/icon-linkedin-red-hover.svg");
+    }
+  }
+
+  &-twitter-red {
+    width: 23px;
+    height: 18px;
+    background-image: url("../assets/images/ui/icons/icon-twitter-red.svg");
+
+    &:hover {
+      background-image: url("../assets/images/ui/icons/icon-twitter-red-hover.svg");
     }
   }
 }

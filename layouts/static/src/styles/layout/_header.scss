@@ -309,6 +309,12 @@
     }
 
     .firstLevel {
+      &-list {
+        > li + li {
+          margin-top: 50px;
+        }
+      }
+
       &-itemLink:not(a) {
         color: $vs-color-lightGrey4;
         font-size: 0.66em;
@@ -324,7 +330,7 @@
 
     .secondLevel {
       &-list {
-        margin: 20px 0 50px;
+        margin: 20px 0;
       }
     }
 
