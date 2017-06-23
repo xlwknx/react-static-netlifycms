@@ -146,7 +146,7 @@
     }
 
     .footerNavBlock {
-      flex-basis: 25%;
+      min-width: 25%;
       margin-bottom: 30px;
       padding-right: 20px;
 
@@ -172,7 +172,7 @@
 
       &-sources {
         @media (min-width: $vs-breakpoint-md) {
-          flex-basis: 45%;
+          min-width: 45%;
 
           ul {
             flex-flow: row wrap;
