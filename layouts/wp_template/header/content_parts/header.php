@@ -14,9 +14,11 @@ global $virgilSecurityHeaderThemeClass;
         </button>
     </div>
     <div class="headerSideBar" data-vs-sideNav-target>
-        <button class="headerCloseButton" data-vs-sideNav-close>
-            <i class="icon icon-close"></i>
-        </button>
+        <div class="headerCloseButton">
+            <button data-vs-sideNav-close>
+                <i class="icon icon-close"></i>
+            </button>
+        </div>
         <?php dynamic_sidebar('mobile-top-menu') ?>
     </div>
 </header>
