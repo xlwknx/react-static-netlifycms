@@ -440,7 +440,7 @@ if (!function_exists('virgilsecurity_setup')) :
 
     function virgilsecurity_header_nav_item($atts = [])
     {
-        $availableIcons = ['book', 'bookmark', 'shield', 'case', 'medium'];
+        $availableIcons = ['book', 'bookmark', 'shield', 'case', 'medium-red'];
 
         $icon = isset($atts['icon']) ? $atts['icon'] : '';
 
