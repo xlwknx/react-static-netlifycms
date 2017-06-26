@@ -13,73 +13,67 @@
     vertical-align: middle;
   }
 
-  &-book {
-    background-image: url("../assets/images/ui/icons/icon-book@2x.png");
+  &-book-red {
+    background-image: url("../assets/images/ui/icons/icon-book-red@2x.png");
     background-size: 18px 16px;
   }
 
   &-book-white {
-    //width: 22px;
-    //height: 18px;
     background-image: url("../assets/images/ui/icons/icon-book-white@2x.png");
     background-size: 18px 16px;
   }
 
   &-book-black {
-    //width: 22px;
-    //height: 18px;
     background-image: url("../assets/images/ui/icons/icon-book-black@2x.png");
     background-size: 18px 16px;
   }
 
-  &-bookmark {
-    //width: 22px;
-    //height: 18px;
-    background-image: url("../assets/images/ui/icons/icon-bookmark@2x.png");
+  &-bookmark-red {
+    background-image: url("../assets/images/ui/icons/icon-bookmark-red@2x.png");
     background-size: 14px 16px;
   }
 
-  &-shield {
-    //width: 22px;
-    //height: 18px;
-    background-image: url("../assets/images/ui/icons/icon-shield@2x.png");
+  &-shield-red {
+    background-image: url("../assets/images/ui/icons/icon-shield-red@2x.png");
     background-size: 16px 18px;
   }
 
-  &-case {
-    //width: 22px;
-    //height: 18px;
-    background-image: url("../assets/images/ui/icons/icon-case@2x.png");
+  &-case-red {
+    background-image: url("../assets/images/ui/icons/icon-case-red@2x.png");
     background-size: 20px 17px;
   }
 
   &-medium-red {
-    //width: 22px;
-    //height: 18px;
     background-image: url("../assets/images/ui/icons/icon-medium-red@2x.png");
     background-size: 22px 18px;
   }
 
-  &-mail {
+  &-warning-white {
+    height: 28px;
+    background-image: url("../assets/images/ui/icons/icon-warning-white.svg");
+    background-size: 60px 63px;
+  }
+
+  &-mail-red {
     width: 30px;
-    background-image: url("../assets/images/ui/icons/icon-mail@2x.png");
+    background-image: url("../assets/images/ui/icons/icon-mail-red@2x.png");
     background-size: 30px 20px;
   }
 
-  &-geo {
+  &-geo-white {
     width: 18px;
     height: 29px;
-    background-image: url("../assets/images/ui/icons/icon-geo@2x.png");
+    background-image: url("../assets/images/ui/icons/icon-geo-white@2x.png");
     background-size: 18px 29px;
   }
 
-  &-help {
-    background-image: url("../assets/images/ui/icons/icon-help@2x.png");
+  &-help-white {
+    background-image: url("../assets/images/ui/icons/icon-help-white@2x.png");
   }
 
-  &-phone {
+  &-phone-white {
     height: 25px;
-    background-image: url("../assets/images/ui/icons/icon-phone@2x.png");
+    background-image: url("../assets/images/ui/icons/icon-phone-white@2x.png");
     background-size: 16px 25px;
   }
 
@@ -93,38 +87,33 @@
   }
 
   &-check-white {
-    background-image: url("../assets/images/ui/icons/icon-check-white.png");
+    background-image: url("../assets/images/ui/icons/icon-check-white@2x.png");
   }
 
   /** ---------------------- Actions ----------------------**/
   &-menu-red {
-    //width: 20px;
-    //height: 20px;
     background-image: url("../assets/images/ui/icons/icon-menu-red.svg");
     background-size: 20px 20px;
   }
 
-  &-close {
-    //width: 20px;
-    //height: 20px;
-    background-image: url("../assets/images/ui/icons/icon-close@2x.png");
+  &-close-red {
+    background-image: url("../assets/images/ui/icons/icon-close-red@2x.png");
     background-size: 20px 20px;
   }
 
   /** ---------------------- Arrows ----------------------**/
-  &-arrowTop {
-    height: 12px;
-    background-image: url("../assets/images/ui/icons/icon-arrowTop.svg");
+  &-arrowTop-white {
+    height: 13px;
+    background-image: url("../assets/images/ui/icons/icon-arrowTop-white.svg");
   }
 
-  &-arrowRight {
+  &-arrowRight-white {
     width: 7px;
     height: 10px;
     background-image: url("../assets/images/ui/icons/icon-arrowRight-white.svg");
     background-size: 7px 10px;
     vertical-align: baseline;
   }
-
 
   /** ---------------------- Socials:color ----------------------**/
   &-facebook {

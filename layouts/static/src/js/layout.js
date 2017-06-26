@@ -28,7 +28,7 @@ function initNavigation() {
 
 function initStickyHeader() {
   const $header = $('[data-vs-sticky-header]');
-  const position = $header.height();
+  const position = $header.height() + 100;
 
   _initSticky($header, position);
 }

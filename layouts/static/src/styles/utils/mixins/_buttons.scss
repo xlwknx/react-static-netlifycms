@@ -1,8 +1,8 @@
 // Private
-@mixin _button-base($lineHeight: 40px) {
+@mixin _button-base($lineHeight: 42px) {
   @include font-muller();
   display: inline-block;
-  height: 40px;
+  height: 42px;
   border: 0;
   border-radius: 3px;
   line-height: $lineHeight;
@@ -13,7 +13,7 @@
   transition: all 0.5s;
 }
 
-@mixin _button-baseRaised($lineHeight: 40px) {
+@mixin _button-baseRaised($lineHeight: 42px) {
   @include _button-base($lineHeight);
   padding: 0 30px;
 }
@@ -57,7 +57,7 @@
 }
 
 @mixin button-raisedWhiteBorder {
-  @include _button-baseRaised(38px);
+  @include _button-baseRaised(40px);
   border: 2px solid $vs-color-white;
   color: $vs-color-white;
 
@@ -69,13 +69,13 @@
 }
 
 @mixin button-raisedWhiteBorder-static {
-  @include _button-baseRaised(38px);
+  @include _button-baseRaised(40px);
   border: 2px solid $vs-color-white;
   color: $vs-color-white;
 }
 
 @mixin button-raisedRedBorder {
-  @include _button-baseRaised(38px);
+  @include _button-baseRaised(40px);
   border: 2px solid $vs-color-darkRed1;
   color: $vs-color-darkRed1;
 
@@ -88,7 +88,7 @@
 }
 
 @mixin button-raisedRedBorder-static {
-  @include _button-baseRaised(38px);
+  @include _button-baseRaised(40px);
   border: 2px solid $vs-color-darkRed1;
   color: $vs-color-darkRed1;
 }

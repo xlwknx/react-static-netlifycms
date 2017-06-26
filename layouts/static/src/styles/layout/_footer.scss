@@ -3,9 +3,9 @@
   color: $vs-color-lightGrey2;
 
   @media (min-width: $vs-breakpoint-md) {
-    margin-top: -155px;
-    padding-top: 155px;
-    background: url("../assets/images/bg/shared/footer-bg.svg") right top no-repeat;
+    margin-top: -$vs-footer-padding;
+    padding-top: $vs-footer-padding;
+    background: url("../assets/images/bg/shared/footer-bg.svg") center top no-repeat;
   }
 
   a {
@@ -111,26 +111,27 @@
   .footerNav {
     @include font-muller;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-    max-height: 450px;
+    justify-content: space-between;
     margin: 50px 0 0;
 
     @media (min-width: $vs-breakpoint-md) {
-      flex-wrap: nowrap;
-      flex-direction: row;
-      justify-content: space-between;
       flex-basis: 790px;
-      max-height: none;
+      flex-wrap: nowrap;
       margin: 0 0 0 50px;
     }
 
     .footerNavBlock {
-      min-width: 25%;
+      min-width: 50%;
       margin-bottom: 30px;
       padding-right: 20px;
 
+      @media (min-width: $vs-breakpoint-sm) {
+        min-width: 33%;
+      }
+
       @media (min-width: $vs-breakpoint-md) {
+        min-width: 25%;
         margin-bottom: 0;
       }
 
@@ -152,7 +153,7 @@
 
       &-sources {
         @media (min-width: $vs-breakpoint-md) {
-          min-width: 45%;
+          max-width: 45%;
 
           ul {
             flex-flow: row wrap;

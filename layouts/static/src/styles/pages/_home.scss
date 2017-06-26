@@ -1,6 +1,7 @@
 .homePage {
   .intro {
-    background-image: url("../assets/images/bg/home/home-intro-bg.png");
+    background-image: url("../assets/images/bg/home/home-intro-bg@2x.png");
+    background-size: 2560px 920px;
 
     .introContentBlock {
       min-height: 920px;
@@ -122,20 +123,21 @@
         max-width: 100%;
         width: 440px;
         height: 1245px;
-        background-image: url("../assets/images/content/home/useCases/home-useCases-mobile.png");
-        background-repeat: no-repeat;
-        background-position: center top;
+        background: url("../assets/images/bg/home/home-useCases-mobile@2x.png") center top no-repeat;
+        background-size: 440px 1245px;
 
         @media (min-width: $vs-breakpoint-md) {
           width: 960px;
           height: 580px;
-          background-image: url("../assets/images/content/home/useCases/home-useCases-tablet.png");
+          background-image: url("../assets/images/bg/home/home-useCases-tablet@2x.png");
+          background-size: 960px 580px;
         }
 
         @media (min-width: $vs-breakpoint-md) {
           width: 1420px;
           height: 475px;
-          background-image: url("../assets/images/content/home/useCases/home-useCases-desktop.png");
+          background-image: url("../assets/images/bg/home/home-useCases-desktop@2x.png");
+          background-size: 1420px 475px;
         }
       }
     }
@@ -345,7 +347,8 @@
   }
 
   .usage {
-    background: url("../assets/images/bg/home/home-usage-bg.png") center top no-repeat;
+    background: url("../assets/images/bg/home/home-usage-bg@2x.png") center top no-repeat;
+    background-size: 2560px 760px;
 
     .usageContentBlock {
       padding: 140px 0;
@@ -622,9 +625,7 @@
     margin-bottom: -$vs-footer-padding;
 
     @media (min-width: $vs-breakpoint-md) {
-      background-image: url("../assets/images/bg/home/home-conclusion-bg@2x.png");
-      background-repeat: no-repeat;
-      background-position: -255px bottom;
+      background: url("../assets/images/bg/home/home-conclusion-bg@2x.png") -255px bottom no-repeat;
       background-size: 849px 472px;
     }
 

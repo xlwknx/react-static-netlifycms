@@ -1,7 +1,8 @@
 .aboutPage {
   .intro {
     background-color: $vs-color-darkBlue5;
-    background-image: url("../assets/images/bg/about/about-intro-bg.png");
+    background-image: url("../assets/images/bg/about/about-intro-bg@2x.png");
+    background-size: 2560px 600px;
 
     @media (min-width: $vs-breakpoint-md) {
       background-color: initial;

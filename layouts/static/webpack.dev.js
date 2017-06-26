@@ -55,57 +55,47 @@ module.exports = {
       filename: '[name].bundle.css',
       allChunks: true
     }),
-    new FaviconsWebpackPlugin({
-      logo: 'favicon.png',
-      prefix: 'favicons/',
-      emitStats: false,
-      persistentCache: false,
-      inject: true,
-      icons: {
-        android: false,
-        appleIcon: false,
-        appleStartup: false,
-        coast: false,
-        favicons: true,
-        firefox: false,
-        opengraph: false,
-        twitter: false,
-        yandex: false,
-        windows: false
-      }
-    }),
     new HtmlWebpackPlugin({
+      favicon: 'src/favicon.png',
       template: 'src/index.html'
     }),
     new HtmlWebpackPlugin({
+      favicon: 'src/favicon.png',
       filename: 'pricing.html',
       template: 'src/templates/pricing.html'
     }),
     new HtmlWebpackPlugin({
+      favicon: 'src/favicon.png',
       filename: 'contacts.html',
       template: 'src/templates/contacts.html'
     }),
     new HtmlWebpackPlugin({
+      favicon: 'src/favicon.png',
       filename: 'features.html',
       template: 'src/templates/features.html'
     }),
     new HtmlWebpackPlugin({
+      favicon: 'src/favicon.png',
       filename: 'about.html',
       template: 'src/templates/about.html'
     }),
     new HtmlWebpackPlugin({
+      favicon: 'src/favicon.png',
       filename: 'content.html',
       template: 'src/templates/content/content.html'
     }),
     new HtmlWebpackPlugin({
+      favicon: 'src/favicon.png',
       filename: 'terms.html',
       template: 'src/templates/content/terms.html'
     }),
     new HtmlWebpackPlugin({
+      favicon: 'src/favicon.png',
       filename: 'policy.html',
       template: 'src/templates/content/policy.html'
     }),
     new HtmlWebpackPlugin({
+      favicon: 'src/favicon.png',
       filename: '404.html',
       template: 'src/templates/404.html'
     })

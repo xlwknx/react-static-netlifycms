@@ -1,10 +1,8 @@
 .pricingPage {
   .intro {
-    background-image: url("../assets/images/bg/pricing/pricing-intro-bg.png");
-
-    .introContentBlock {
-      height: 460px;
-    }
+    min-height: 980px;
+    background-image: url("../assets/images/bg/pricing/pricing-intro-bg@2x.png");
+    background-size: 2560px 980px;
 
     .blockMsg {
       text-align: center;
@@ -25,20 +23,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 115px 0 120px;
-    }
-
-    .blockMsg {
-      width: 400px;
-      text-align: center;
-
-      &-text {
-        @include blockMsg-text(0);
-      }
-    }
-
-    .pricingPlanList {
-      margin-top: 55px;
+      padding: 50px 0;
     }
 
     .pricingPlanItem {
@@ -114,11 +99,30 @@
         }
       }
     }
+
+    .pricingPlansDisclaimer {
+      position: fixed;
+      z-index: 10;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%);
+
+      &-btn {
+        height: 70px;
+        line-height: 70px;
+        border-radius: 3px;
+        padding: 0 20px;
+        background: $vs-color-red1;
+        font-size: 16px;
+        color: $vs-color-white;
+      }
+    }
   }
 
   .enterprise {
     position: relative;
     z-index: 2;
+    margin-top: 60px;
 
     .enterpriseContentBlock {
       display: flex;
@@ -189,7 +193,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        margin-top: 20px;
+        margin-top: 15px;
         font-size: 0.77rem;
 
         @media (min-width: $vs-breakpoint-md) {
@@ -200,7 +204,7 @@
         li {
           display: flex;
           align-items: center;
-          margin-top: 10px;
+          margin-top: 15px;
 
           @media (min-width: $vs-breakpoint-md) {
             width: 50%;
@@ -339,21 +343,6 @@
 
       @media (min-width: $vs-breakpoint-md) {
         width: 850px;
-      }
-
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        width: 100%;
-        height: 100%;
-        background: url("../assets/images/bg/pricing/pricing-conclusion-bg.png") center top no-repeat;
-      }
-
-      * {
-        z-index: 2;
       }
 
       &-headline {
