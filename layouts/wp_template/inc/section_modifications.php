@@ -1,4 +1,5 @@
 <?php
+
 namespace VirgilSecurity;
 
 
@@ -7,6 +8,8 @@ use VirgilSecurity\Customizer\Hp\HpSectionMods;
 
 class SectionModifications
 {
+    const SECTIONS_INIT_MOD = 'is_sections_mod_init';
+
     /** @var  HeaderSectionMods */
     protected $headerSectionMods;
 
@@ -37,5 +40,13 @@ class SectionModifications
     {
         $this->headerSectionMods->setupDefaults();
         $this->hpSectionMods->setupDefaults();
+
+        set_theme_mod(self::SECTIONS_INIT_MOD, true);
+    }
+
+
+    public function isInitialized()
+    {
+        return get_theme_mod(self::SECTIONS_INIT_MOD, false);
     }
 }

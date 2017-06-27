@@ -4,8 +4,6 @@ use VirgilSecurity\SectionModifications;
 
 require_once get_parent_theme_file_path('/inc/autoloader_register.php');
 
-global $virgilsecurity_section_mods;
-
 $virgilsecurity_section_mods = new SectionModifications();
 
 
@@ -19,6 +17,8 @@ if (!function_exists('virgilsecurity_setup')) :
      */
     function virgilsecurity_setup()
     {
+        global $virgilsecurity_section_mods;
+
         /*
          * Let WordPress manage the document title.
          * By adding theme support, we declare that this theme does not use a
@@ -123,6 +123,10 @@ if (!function_exists('virgilsecurity_setup')) :
         add_editor_style('editor-style.css');
 
         store_github_stars();
+
+        if (!$virgilsecurity_section_mods->isInitialized()) {
+            $virgilsecurity_section_mods->setupDefaults();
+        }
     }
 
     function virgilsecurity_do_shortcode($value)

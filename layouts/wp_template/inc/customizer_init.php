@@ -12,8 +12,6 @@ call_user_func(
 
         //$virgilsecurity_section_mods->setupDefaults();
 
-        add_filter('get_theme_starter_content', [$virgilsecurity_section_mods, 'setupDefaults'], 10);
-
         if (!is_customize_preview()) {
             return;
         }
