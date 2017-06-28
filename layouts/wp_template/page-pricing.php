@@ -4,11 +4,7 @@
     <div class="intro pricingPlans">
         <div class="wrapper">
             <div class="introContentBlock">
-                <div class="blockMsg">
-                    <h1 class="blockMsg-headline">Pricing</h1>
-                    <p class="blockMsg-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur.</p>
-                </div>
+                <?php dynamic_sidebar('pricing-intro-block'); ?>
             </div>
             <div class="pricingPlansContentBlock">
                 <div class="pricingPlansDisclaimer">
