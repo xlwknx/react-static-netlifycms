@@ -1,17 +1,17 @@
 <? get_template_part('header/pricing') ?>
 
 <div class="container">
-    <div class="intro">
+    <div class="intro pricingPlans">
         <div class="wrapper">
             <div class="introContentBlock">
-                <?php dynamic_sidebar('pricing-intro-block'); ?>
-            </div>
-        </div>
-    </div>
-    <div class="pricingPlans">
-        <div class="wrapper">
-            <div class="pricingPlansContentBlock">
                 <div class="blockMsg">
+                    <h1 class="blockMsg-headline">Pricing</h1>
+                    <p class="blockMsg-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+            </div>
+            <div class="pricingPlansContentBlock">
+                <div class="pricingPlansDisclaimer">
                     <?php dynamic_sidebar('pricing-plans-msg'); ?>
                 </div>
                 <div class="comparisonBlock pricingPlanList">

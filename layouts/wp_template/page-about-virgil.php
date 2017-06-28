@@ -33,12 +33,8 @@
                     <div class="blockMsg">
                         <?php dynamic_sidebar('about-virgil-highlights-msg'); ?>
                         <ul class="highlightsCarousel-controls carousel-indicators">
-                            <li class="highlightsCarousel-control active" data-target="#aboutHighlightsCarousel" data-slide-to="0">
-                                <span class="fa fa-circle"></span>
-                            </li>
-                            <li class="highlightsCarousel-control" data-target="#aboutHighlightsCarousel" data-slide-to="1">
-                                <span class="fa fa-circle"></span>
-                            </li>
+                            <li class="highlightsCarousel-control active" data-target="#aboutHighlightsCarousel" data-slide-to="0"></li>
+                            <li class="highlightsCarousel-control" data-target="#aboutHighlightsCarousel" data-slide-to="1"></li>
                         </ul>
                     </div>
                     <div class="highlightsOverview">

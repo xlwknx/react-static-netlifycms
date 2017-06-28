@@ -11,7 +11,7 @@
     </div>
 </footer>
 <div class="scrollToTop" data-vs-sticky-scrollToTop>
-    <div class="scrollToTop-btn button-raisedRed"><i class="icon icon-arrowTop"></i></div>
+    <div class="scrollToTop-btn button-raisedRed"><i class="icon icon-arrowTop-white"></i></div>
 </div>
 <div class="overlay" data-vs-sideNav-overlay></div>
 </div>

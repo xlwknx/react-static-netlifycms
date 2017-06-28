@@ -440,13 +440,13 @@ if (!function_exists('virgilsecurity_setup')) :
 
     function virgilsecurity_header_nav_item($atts = [])
     {
-        $availableIcons = ['book', 'bookmark', 'shield', 'case', 'medium-red'];
+        //$availableIcons = ['book', 'bookmark', 'shield', 'case', 'medium-red'];
 
         $icon = isset($atts['icon']) ? $atts['icon'] : '';
 
-        if (!in_array($icon, $availableIcons)) {
-            $icon = '';
-        }
+        //if (!in_array($icon, $availableIcons)) {
+        //    $icon = '';
+        //}
 
         $availableLevels = ['first', 'second', 'third'];
 
@@ -462,7 +462,7 @@ if (!function_exists('virgilsecurity_setup')) :
         $post_id = isset($atts['post_id']) ? $atts['post_id'] : '';
         $label = isset($atts['label']) ? $atts['label'] : '';
 
-        if ($slug != '' && get_slug() == $slug || get_the_ID() == $post_id) {
+        if ($slug != '' && get_slug() == $slug || get_the_ID() !== false && get_the_ID() == $post_id) {
             $cssClass .= ' active';
         }
 

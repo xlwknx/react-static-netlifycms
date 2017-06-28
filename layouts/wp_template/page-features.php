@@ -1,7 +1,7 @@
 <? get_template_part('header/features') ?>
 
 <div class="container">
-    <div class="intro">
+    <div class="intro cryptogram">
         <div class="wrapper">
             <div class="introContentBlock">
                 <div class="blockMsg">
@@ -11,10 +11,6 @@
                     <?php dynamic_sidebar('features-intro-feature'); ?>
                 </ul>
             </div>
-        </div>
-    </div>
-    <div class="cryptogram">
-        <div class="wrapper">
             <div class="cryptogramContentBlock">
                 <div class="blockMsg">
                     <?php dynamic_sidebar('features-cryptogram-msg'); ?>
