@@ -1,4 +1,5 @@
 <?php
+
 namespace VirgilSecurity;
 
 
@@ -19,6 +20,7 @@ use VirgilSecurity\Customizer\Src\ConfigInterface;
 use VirgilSecurity\Customizer\Src\SectionInterface;
 
 use VirgilSecurity\Customizer\VirgilSecurityConfig;
+use WP_Customize_Manager;
 
 class SectionCustomizer
 {
@@ -35,22 +37,21 @@ class SectionCustomizer
     }
 
 
-    public function registerDefaults()
+    public function registerDefaults(WP_Customize_Manager $wpCustomizer)
     {
         $this->register(
             [
-                $this->getHeaderSection(),
-
-                $this->getHpIntroSection(),
+                $this->getHeaderSection($wpCustomizer),
+                $this->getHpIntroSection($wpCustomizer),
             ]
         );
     }
 
 
-    public function getHeaderSection()
+    public function getHeaderSection(WP_Customize_Manager $wpCustomizer)
     {
 
-        $section = new HeaderSection($this->config);
+        $section = new HeaderSection($this->config, $wpCustomizer);
 
         $section->addField(
             LogoImageField::createWithMod(
@@ -76,9 +77,9 @@ class SectionCustomizer
     }
 
 
-    public function getHpIntroSection()
+    public function getHpIntroSection(WP_Customize_Manager $wpCustomizer)
     {
-        $section = new IntroSection($this->config);
+        $section = new IntroSection($this->config, $wpCustomizer);
 
         $section->addField(
             IntroMsgField::createWithMod(

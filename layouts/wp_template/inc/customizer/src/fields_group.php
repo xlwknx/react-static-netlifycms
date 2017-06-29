@@ -3,94 +3,31 @@
 namespace VirgilSecurity\Customizer\Src;
 
 
-use InvalidArgumentException;
+use VirgilSecurity\Customizer\Fields\CheckboxField;
 
-use Kirki;
 use VirgilSecurity\Customizer\Fields\SelectField;
 
-class FieldsGroup implements FieldsGroupInterface
+class FieldsGroup extends BaseField implements FieldsGroupInterface
 {
     protected $type = 'repeater';
 
     protected $default = [];
 
-    protected $priority = 10;
-
-    protected $transport = 'refresh';
-
     protected $fields = [];
 
     protected $rowLabel = [];
 
-    protected $settings;
-
-    protected $label;
-
-    /** @var ModificationInterface */
-    private $modification;
-
 
     public function __construct($settings = null, $label = null)
     {
-        $this->settings = $settings;
-        $this->label = $label;
-    }
+        if ($this->optional) {
+            $optionalSwitchField = new CheckboxField('is_hidden', __('Hidden'));
+            $optionalSwitchField->setPriority(0);
 
-
-    public static function createWithMod(ModificationInterface $modification)
-    {
-        $field = new static();
-        $field->setModification($modification);
-
-        return $field;
-    }
-
-
-    public function getLabel()
-    {
-        return $this->label;
-    }
-
-
-    public function getSettings()
-    {
-        if ($this->modification != null) {
-            return $this->modification->getName();
+            $this->setField($optionalSwitchField);
         }
 
-        return $this->settings;
-    }
-
-
-    public function getType()
-    {
-        return $this->type;
-    }
-
-
-    public function getPriority()
-    {
-        return $this->priority;
-    }
-
-
-    public function getDefault()
-    {
-        if ($this->modification != null) {
-            return $this->modification->getValue();
-        }
-
-        return $this->default;
-    }
-
-
-    public function registerField(SectionInterface $section)
-    {
-        if (!$this->getSettings()) {
-            throw new InvalidArgumentException('Field must be bound to modification or specify the Settings value');
-        }
-
-        Kirki::add_field($section->getConfigName(), $this->getKirkiArguments($section));
+        parent::__construct($settings, $label);
     }
 
 
@@ -118,18 +55,6 @@ class FieldsGroup implements FieldsGroupInterface
     }
 
 
-    public function setModification(ModificationInterface $modification)
-    {
-        $this->modification = $modification;
-    }
-
-
-    public function getModification()
-    {
-        return $this->modification;
-    }
-
-
     protected function getKirkiArguments(SectionInterface $section)
     {
         return [
@@ -140,7 +65,7 @@ class FieldsGroup implements FieldsGroupInterface
             'priority'  => $this->getPriority(),
             'default'   => $this->getDefault(),
             'row_label' => $this->getRowLabel(),
-            'fields'    => $this->getFields(),
+            'fields'    => $this->getOrderedFields(),
         ];
     }
 
@@ -173,5 +98,25 @@ class FieldsGroup implements FieldsGroupInterface
         }
 
         return $fieldSettings;
+    }
+
+
+    private function getOrderedFields()
+    {
+        $fields = [];
+
+        foreach ($this->fields as $fieldName => $field) {
+            $fields[$field['priority']][$fieldName] = $field;
+        }
+
+        ksort($fields);
+
+        $sortedFields = [];
+
+        foreach ($fields as $sortedField) {
+            $sortedFields += $sortedField;
+        }
+
+        return $sortedFields;
     }
 }

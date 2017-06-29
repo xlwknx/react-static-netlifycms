@@ -1,6 +1,12 @@
 <?php get_header(); ?>
 
-    <?php get_template_part('template-sections/hp/intro_section'); ?>
+
+<? if (get_theme_mod('is_enabled_hp_intro_section') == "1") : ?>
+    <div class="intro">
+        <?php get_template_part('template-sections/hp/intro_section'); ?>
+    </div>
+<? endif; ?>
+
 
     <div class="useCases">
         <div class="wrapper">

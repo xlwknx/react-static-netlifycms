@@ -1,4 +1,5 @@
 <?php
+
 namespace VirgilSecurity\Customizer\Hp\IntroSection\Fields;
 
 
@@ -6,11 +7,11 @@ use VirgilSecurity\Customizer\Fields\TextField;
 
 class IntroMsgField extends TextField
 {
-    protected $priority = 1;
+    protected $optional = true;
 
 
     public function getLabel()
     {
-        return __("Intro mesage text");
+        return __("Intro message text");
     }
 }

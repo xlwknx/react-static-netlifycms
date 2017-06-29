@@ -1,4 +1,5 @@
 <?php
+
 namespace VirgilSecurity\Customizer\Hp\IntroSection\Groups;
 
 
@@ -9,7 +10,7 @@ use VirgilSecurity\Customizer\Src\FieldsGroup;
 
 class IntroLangsGroup extends FieldsGroup
 {
-    protected $priority = 3;
+    protected $optional = true;
 
 
     public function __construct()

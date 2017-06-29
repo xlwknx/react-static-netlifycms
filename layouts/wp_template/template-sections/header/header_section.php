@@ -1,15 +1,29 @@
 <?php
 global $links_group;
+
+$logoImageMod = virgilsecurity_get_header_logo_image();
+$authLinksMod = virgilsecurity_get_header_auth_links();
 ?>
-<div class="header-logo">
-    <a href="<?= home_url() ?>">
-        <img src="<?= virgilsecurity_get_header_logo_image() ?>" alt="">
-    </a>
-</div>
+
+<? if ($logoImageMod->isEnabled()): ?>
+    <div class="header-logo">
+        <a href="<?= home_url() ?>">
+            <img src="<?= $logoImageMod->getValue() ?>" alt="">
+        </a>
+    </div>
+
+<? endif; ?>
+
 <?= virgilsecurity_get_header_menu() ?>
-<div class="headerAuth">
-    <?php
-    $links_group = virgilsecurity_get_header_auth_links();
-    get_template_part('template-sections/_groups/_links_group');
-    ?>
-</div>
+
+<? if ($authLinksMod->isEnabled()): ?>
+
+    <div class="headerAuth">
+        <?php
+        $links_group = $authLinksMod->getValue();
+        
+        get_template_part('template-sections/_groups/_links_group');
+        ?>
+    </div>
+
+<? endif; ?>

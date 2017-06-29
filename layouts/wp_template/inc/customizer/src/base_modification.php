@@ -1,4 +1,5 @@
 <?php
+
 namespace VirgilSecurity\Customizer\Src;
 
 
@@ -64,5 +65,11 @@ abstract class BaseModification implements ModificationInterface
 
             return $defaultContent;
         }
+    }
+
+
+    public function isEnabled()
+    {
+        return get_theme_mod('is_enabled_' . $this->getName(), true);
     }
 }

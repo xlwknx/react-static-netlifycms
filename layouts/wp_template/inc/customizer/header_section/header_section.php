@@ -7,6 +7,8 @@ use VirgilSecurity\Customizer\Src\BaseSection;
 
 class HeaderSection extends BaseSection
 {
+    protected $optional = true;
+
     protected $priority = 25;
 
 
@@ -31,12 +33,10 @@ class HeaderSection extends BaseSection
     public function getPartialRefresh()
     {
         return [
-            'header_logo_image' => [
-                'selector'        => '.page .header',
-                'render_callback' => function () {
-                    get_template_part('template-sections/header/header_section');
-                },
-            ],
+            'selector'        => '.page .header',
+            'render_callback' => function () {
+                get_template_part('template-sections/header/header_section');
+            },
         ];
     }
 }

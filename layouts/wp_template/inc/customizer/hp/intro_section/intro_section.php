@@ -7,6 +7,8 @@ use VirgilSecurity\Customizer\Src\BaseSection;
 
 class IntroSection extends BaseSection
 {
+    protected $optional = true;
+
     protected $priority = 26;
 
 
@@ -31,12 +33,10 @@ class IntroSection extends BaseSection
     public function getPartialRefresh()
     {
         return [
-            'hp_intro_section' => [
-                'selector'        => '.page .intro',
-                'render_callback' => function () {
-                    get_template_part('template-sections/hp/intro_section');
-                },
-            ],
+            'selector'        => '.page .intro',
+            'render_callback' => function () {
+                get_template_part('template-sections/hp/intro_section');
+            },
         ];
     }
 

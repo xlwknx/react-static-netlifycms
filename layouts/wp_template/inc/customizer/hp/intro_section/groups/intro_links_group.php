@@ -1,4 +1,5 @@
 <?php
+
 namespace VirgilSecurity\Customizer\Hp\IntroSection\Groups;
 
 
@@ -6,8 +7,7 @@ use VirgilSecurity\Customizer\Groups\LinksGroup;
 
 class IntroLinksGroup extends LinksGroup
 {
-    protected $priority = 2;
-
+    protected $optional = true;
 
     public function __construct()
     {

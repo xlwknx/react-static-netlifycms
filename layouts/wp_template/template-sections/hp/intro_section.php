@@ -1,31 +1,40 @@
 <?php
 global $links_group;
-global $intro_langs_group;
+
+$intro_links = virgilsecurity_get_hp_intro_links();
+$msgTextMod = virgilsecurity_get_hp_intro_msg_text();
+$intro_langs = virgilsecurity_get_hp_intro_langs();
 ?>
-<div class="intro">
-    <div class="wrapper">
-        <div class="introContentBlock">
-            <div class="blockMsg">
+
+<div class="wrapper">
+    <div class="introContentBlock">
+        <div class="blockMsg">
+            <? if ($msgTextMod->isEnabled()) : ?>
                 <h1 class="blockMsg-headline">
-                    <?= virgilsecurity_get_hp_intro_msg_text() ?>
+                    <?= $msgTextMod->getValue() ?>
                 </h1>
+            <? endif; ?>
+            <? if ($intro_links->isEnabled()) : ?>
                 <div class="blockMsg-links">
                     <?php
-                    $links_group = virgilsecurity_get_hp_intro_links();
+                    $links_group = $intro_links->getValue();
+
                     get_template_part('template-sections/_groups/_links_group');
                     ?>
                 </div>
-            </div>
+            <? endif; ?>
+        </div>
+        <? if ($intro_langs->isEnabled()): ?>
             <ul class="introLangList">
                 <?php
-                $intro_langs_group = virgilsecurity_get_hp_intro_langs();
-
-                foreach ($intro_langs_group as $intro_lang): ?>
-                    <li>
-                        <a href="<?=$intro_lang['lang_url']?>"><img src="<?=$intro_lang['lang_image']?>" alt=""></a>
-                    </li>
-                <?endforeach; ?>
+                foreach ($intro_langs->getValue() as $intro_lang): ?>
+                    <? if (!$intro_lang['is_hidden']) : ?>
+                        <li>
+                            <a href="<?= $intro_lang['lang_url'] ?>"><img src="<?= $intro_lang['lang_image'] ?>" alt=""></a>
+                        </li>
+                    <? endif; ?>
+                <? endforeach; ?>
             </ul>
-        </div>
+        <? endif; ?>
     </div>
 </div>

@@ -24,4 +24,7 @@ interface SectionInterface
 
 
     public function getActiveCallback();
+
+
+    public function isOptional();
 }
