@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 
-<? if (get_theme_mod('is_enabled_hp_intro_section') == "1") : ?>
+<? if (get_theme_mod('is_enabled_hp_intro_section', true)) : ?>
     <div class="intro">
         <?php get_template_part('template-sections/hp/intro_section'); ?>
     </div>
