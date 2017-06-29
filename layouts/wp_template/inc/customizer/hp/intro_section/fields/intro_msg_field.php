@@ -3,9 +3,9 @@
 namespace VirgilSecurity\Customizer\Hp\IntroSection\Fields;
 
 
-use VirgilSecurity\Customizer\Fields\TextField;
+use VirgilSecurity\Customizer\Fields\TextareaField;
 
-class IntroMsgField extends TextField
+class IntroMsgField extends TextareaField
 {
     protected $optional = true;
 
