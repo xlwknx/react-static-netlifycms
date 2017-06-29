@@ -85,10 +85,11 @@
   }
 
   .mission {
+    padding: 130px 0;
+
     .missionContentBlock {
       display: flex;
       flex-direction: column;
-      padding: 130px 0;
 
       @media (min-width: $vs-breakpoint-md) {
         flex-direction: row;
@@ -122,14 +123,11 @@
   }
 
   .leadership {
+    padding: 125px 0 0;
     background: $vs-color-lightGrey1;
 
-    .leadershipContentBlock {
-      padding: 125px 0 0;
-
-      @media (min-width: $vs-breakpoint-md) {
-        padding-bottom: 125px;
-      }
+    @media (min-width: $vs-breakpoint-md) {
+      padding-bottom: 125px;
     }
 
     &-caption {
@@ -392,11 +390,8 @@
   }
 
   .awards {
+    padding: 75px 0;
     background: $vs-color-lightGrey1;
-
-    .awardsContentBlock {
-      padding: 75px 0;
-    }
 
     &-caption {
       @include block-caption(2.55rem, 3.33rem);
@@ -424,11 +419,8 @@
 
   .investors {
     margin-bottom: -$vs-footer-padding;
+    padding: 75px 0 (75px + $vs-footer-padding);
     background: $vs-color-lightGrey1;
-
-    .investorsContentBlock {
-      padding: 75px 0 (75px + $vs-footer-padding);
-    }
 
     &-caption {
       @include block-caption(2.55rem, 3.33rem);

@@ -1,18 +1,20 @@
+$vs-contacts-contactUs-shift: 45px;
+
 .contactsPage {
   .contactUs {
+    padding-top: (145px - $vs-contacts-contactUs-shift);
     background: $vs-color-lightGrey1;
+
+    @media (min-width: $vs-breakpoint-md) {
+      padding-top: (190px - $vs-contacts-contactUs-shift);
+    }
 
     .contactUsContentBlock {
       position: relative;
-      top: 45px;
+      top: $vs-contacts-contactUs-shift;
       z-index: 1;
       display: flex;
       flex-direction: column;
-      padding-top: (145px - 45px);
-      
-      @media (min-width: $vs-breakpoint-md) {
-        padding-top: (190px - 45px);
-      }
     }
 
     .blockMsg {
@@ -91,9 +93,9 @@
       &-actions {
         text-align: left;
 
-        @media (min-width: $vs-breakpoint-md) {
-          text-align: right;
-        }
+        //@media (min-width: $vs-breakpoint-md) {
+        //  text-align: right;
+        //}
       }
     }
 
@@ -130,57 +132,61 @@
         margin-top: 40px;
       }
 
-      &-field {
-        display: flex;
+        &-field {
+          display: flex;
 
-        & + .contactUsInfo-field {
-          margin-top: 45px;
-        }
+          & + .contactUsInfo-field {
+            margin-top: 45px;
+          }
 
-        p + p {
-          margin-top: 10px;
-        }
-      }
-
-      &-fieldText {
-        align-self: center;
-        margin-left: 30px;
-      }
-
-      &-socials {
-        display: flex;
-        margin: 75px -20px 0;
-
-        @media (min-width: $vs-breakpoint-md) {
-          justify-content: space-between;
-        }
-
-        li {
-          margin: 0 20px;
-        }
-
-        a {
-          display: block;
-          opacity: 0.5;
-
-          &:hover {
-            opacity: 1;
+          p + p {
+            margin-top: 10px;
           }
         }
-      }
+
+          &-fieldEmail {
+            text-transform: none;
+          }
+
+          &-fieldText {
+            align-self: center;
+            margin-left: 30px;
+          }
+
+          &-socials {
+            display: flex;
+            margin: 75px -20px 0;
+
+            @media (min-width: $vs-breakpoint-md) {
+              justify-content: space-between;
+            }
+
+            li {
+              margin: 0 20px;
+            }
+
+            a {
+              display: block;
+              opacity: 0.5;
+
+              &:hover {
+                opacity: 1;
+              }
+            }
+          }
     }
   }
 
   .partnership {
-    padding-top: (100px + 45px);
+    padding: (100px + $vs-contacts-contactUs-shift) 0 130px;
 
     @media (min-width: $vs-breakpoint-md) {
-      padding-top: (200px + 45px);
+      padding: (200px + $vs-contacts-contactUs-shift) 0 130px;
     }
 
     .partnershipContentBlock {
       border-top: 1px solid $vs-color-lightGrey3;
-      padding: 130px 0;
+      padding-top: 130px;
     }
 
     .blockMsg {

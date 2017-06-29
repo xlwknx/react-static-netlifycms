@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlStringReplace = require('html-string-replace-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -24,13 +25,17 @@ module.exports = {
     rules: [
       {
         test: /\.html$/,
-        loader: 'html-loader?minimize=false'
+        loader: 'html-loader',
+        options: {
+          minimize: false,
+          attrs: ['img:src', 'img:srcset']
+        }
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract({
+        use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader!resolve-url-loader!sass-loader?sourceMap'
+          loader: 'css-loader!resolve-url-loader!sass-loader?sourceMap'
         })
       },
       {
@@ -97,6 +102,17 @@ module.exports = {
       favicon: 'src/favicon.png',
       filename: '404.html',
       template: 'src/templates/404.html'
+    }),
+    new HtmlStringReplace({
+      enable: true,
+      patterns: [
+        {
+          match: /srcset\s*=\s*"([^"]+)/g,
+          replacement: function (match) {
+            return match + ' 2x';
+          }
+        },
+      ]
     })
   ]
 };

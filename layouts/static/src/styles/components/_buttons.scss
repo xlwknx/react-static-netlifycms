@@ -14,6 +14,10 @@
   @include button-raisedWhiteBorder();
 }
 
+.button-raisedWhiteBorder-black {
+  @include button-raisedWhiteBorder($vs-color-white, $vs-color-white, $vs-color-grey);
+}
+
 .button-raisedWhiteBorder-static {
   @include button-raisedWhiteBorder-static();
 }

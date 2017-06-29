@@ -1,5 +1,5 @@
 // Private
-@mixin _button-base($lineHeight: 42px) {
+@mixin _button-base($lineHeight: 44px) {
   @include font-muller();
   display: inline-block;
   height: 42px;
@@ -11,9 +11,13 @@
   white-space: nowrap;
   cursor: pointer;
   transition: all 0.5s;
+
+  .icon {
+    margin-top: -2px;
+  }
 }
 
-@mixin _button-baseRaised($lineHeight: 42px) {
+@mixin _button-baseRaised($lineHeight: 44px) {
   @include _button-base($lineHeight);
   padding: 0 30px;
 }
@@ -56,26 +60,31 @@
   @include _button-baseRaised-red();
 }
 
-@mixin button-raisedWhiteBorder {
-  @include _button-baseRaised(40px);
+@mixin button-raisedWhiteBorder($bg: $vs-color-darkRed1, $shadow: $vs-color-darkRed2, $color: $vs-color-white) {
+  @include _button-baseRaised(42px);
   border: 2px solid $vs-color-white;
   color: $vs-color-white;
 
   &:hover {
-    background: $vs-color-darkRed1;
+    background: $bg;
     border-color: transparent;
-    box-shadow: 0 18px 20px -15px rgba($vs-color-darkRed2, 0.5);
+    box-shadow: 0 18px 20px -15px rgba($shadow, 0.5);
+    color: $color;
+
+    .icon-book-white {
+      background-image: url("../../assets/images/ui/icons/icon-book-black.svg");
+    }
   }
 }
 
 @mixin button-raisedWhiteBorder-static {
-  @include _button-baseRaised(40px);
+  @include _button-baseRaised(42px);
   border: 2px solid $vs-color-white;
   color: $vs-color-white;
 }
 
 @mixin button-raisedRedBorder {
-  @include _button-baseRaised(40px);
+  @include _button-baseRaised(42px);
   border: 2px solid $vs-color-darkRed1;
   color: $vs-color-darkRed1;
 
@@ -88,7 +97,7 @@
 }
 
 @mixin button-raisedRedBorder-static {
-  @include _button-baseRaised(40px);
+  @include _button-baseRaised(42px);
   border: 2px solid $vs-color-darkRed1;
   color: $vs-color-darkRed1;
 }

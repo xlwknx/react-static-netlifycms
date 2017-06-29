@@ -5,7 +5,6 @@
   height: 22px;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 22px 22px;
   transition: 0.25s background-image, 0.25s opacity;
 
   + span {
@@ -14,28 +13,23 @@
   }
 
   &-book-red {
-    background-image: url("../assets/images/ui/icons/icon-book-red@2x.png");
-    background-size: 18px 16px;
+    background-image: url("../assets/images/ui/icons/icon-book-red.svg");
   }
 
   &-book-white {
-    background-image: url("../assets/images/ui/icons/icon-book-white@2x.png");
-    background-size: 18px 16px;
+    background-image: url("../assets/images/ui/icons/icon-book-white.svg");
   }
 
   &-book-black {
-    background-image: url("../assets/images/ui/icons/icon-book-black@2x.png");
-    background-size: 18px 16px;
+    background-image: url("../assets/images/ui/icons/icon-book-black.svg");
   }
 
   &-bookmark-red {
-    background-image: url("../assets/images/ui/icons/icon-bookmark-red@2x.png");
-    background-size: 14px 16px;
+    background-image: url("../assets/images/ui/icons/icon-bookmark-red.svg");
   }
 
   &-shield-red {
-    background-image: url("../assets/images/ui/icons/icon-shield-red@2x.png");
-    background-size: 16px 18px;
+    background-image: url("../assets/images/ui/icons/icon-shield-red.svg");
   }
 
   &-case-red {
@@ -56,8 +50,7 @@
 
   &-mail-red {
     width: 30px;
-    background-image: url("../assets/images/ui/icons/icon-mail-red@2x.png");
-    background-size: 30px 20px;
+    background-image: url("../assets/images/ui/icons/icon-mail-red.svg");
   }
 
   &-geo-white {
@@ -69,6 +62,7 @@
 
   &-help-white {
     background-image: url("../assets/images/ui/icons/icon-help-white@2x.png");
+    background-size: 22px 22px;
   }
 
   &-phone-white {
@@ -79,21 +73,26 @@
 
   /** ---------------------- Check ----------------------**/
   &-check-red {
-    background-image: url("../assets/images/ui/icons/icon-check-red@2x.png");
+    width: 25px;
+    height: 25px;
+    background-image: url("../assets/images/ui/icons/icon-check-red.svg");
   }
 
   &-check-grey {
-    background-image: url("../assets/images/ui/icons/icon-check-grey@2x.png");
+    width: 25px;
+    height: 25px;
+    background-image: url("../assets/images/ui/icons/icon-check-grey.svg");
   }
 
   &-check-white {
-    background-image: url("../assets/images/ui/icons/icon-check-white@2x.png");
+    width: 25px;
+    height: 25px;
+    background-image: url("../assets/images/ui/icons/icon-check-white.svg");
   }
 
   /** ---------------------- Actions ----------------------**/
   &-menu-red {
     background-image: url("../assets/images/ui/icons/icon-menu-red.svg");
-    background-size: 20px 20px;
   }
 
   &-close-red {
@@ -111,12 +110,13 @@
     width: 7px;
     height: 10px;
     background-image: url("../assets/images/ui/icons/icon-arrowRight-white.svg");
-    background-size: 7px 10px;
     vertical-align: baseline;
   }
 
   /** ---------------------- Socials:color ----------------------**/
   &-facebook {
+    width: 25px;
+    height: 25px;
     background-image: url("../assets/images/ui/icons/icon-facebook.svg");
 
     &:hover {
@@ -125,6 +125,8 @@
   }
 
   &-github {
+    width: 25px;
+    height: 25px;
     background-image: url("../assets/images/ui/icons/icon-github.svg");
 
     &:hover {
@@ -133,6 +135,8 @@
   }
 
   &-linkedin {
+    width: 25px;
+    height: 25px;
     background-image: url("../assets/images/ui/icons/icon-linkedin.svg");
 
     &:hover {
@@ -151,8 +155,8 @@
   }
 
   &-twitter {
-    width: 23px;
-    height: 18px;
+    width: 25px;
+    height: 25px;
     background-image: url("../assets/images/ui/icons/icon-twitter.svg");
 
     &:hover {
@@ -163,6 +167,8 @@
   /** ---------------------- Socials:white ----------------------**/
   &-facebook-white {
     opacity: 0.5;
+    width: 25px;
+    height: 25px;
     background-image: url("../assets/images/ui/icons/icon-facebook.svg");
 
     &:hover {
@@ -172,6 +178,8 @@
 
   &-github-white {
     opacity: 0.5;
+    width: 25px;
+    height: 25px;
     background-image: url("../assets/images/ui/icons/icon-github.svg");
 
     &:hover {
@@ -181,6 +189,8 @@
 
   &-linkedin-white {
     opacity: 0.5;
+    width: 25px;
+    height: 25px;
     background-image: url("../assets/images/ui/icons/icon-linkedin.svg");
 
     &:hover {
@@ -201,8 +211,8 @@
 
   &-twitter-white {
     opacity: 0.5;
-    width: 23px;
-    height: 18px;
+    width: 25px;
+    height: 25px;
     background-image: url("../assets/images/ui/icons/icon-twitter.svg");
 
     &:hover {
@@ -212,7 +222,10 @@
 
   /** ---------------------- Socials:black ----------------------**/
   &-github-black {
+    width: 22px;
+    height: 22px;
     background-image: url("../assets/images/ui/icons/icon-github-black.svg");
+    background-size: 100%;
   }
 
   /** ---------------------- Socials:red ----------------------**/
@@ -225,8 +238,6 @@
   }
 
   &-twitter-red {
-    width: 23px;
-    height: 18px;
     background-image: url("../assets/images/ui/icons/icon-twitter-red.svg");
 
     &:hover {

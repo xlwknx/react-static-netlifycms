@@ -213,6 +213,10 @@
           @media (min-width: $vs-breakpoint-lg) {
             width: 35%;
           }
+
+          span {
+            flex: 1;
+          }
         }
       }
     }
@@ -318,7 +322,6 @@
 
   .conclusion {
     margin-top: -250px;
-    padding-bottom: (250px - $vs-footer-padding);
 
     .conclusionContentBlock {
       display: flex;
