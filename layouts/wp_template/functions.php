@@ -164,7 +164,6 @@ if (!function_exists('virgilsecurity_setup')) :
 
                 'pricing-intro-block'            => get_starter_content("widgets", "pricing", "intro_block"),
                 'pricing-plans-list'             => get_starter_content("widgets", "pricing", "plans_list"),
-                'pricing-plans-msg'              => get_starter_content("widgets", "pricing", "plans_msg"),
                 'pricing-enterprise-offer-msg'   => get_starter_content("widgets", "pricing", "enterprise_offer_msg"),
                 'pricing-enterprise-offer-list'  => get_starter_content("widgets", "pricing", "enterprise_offer_list"),
                 'pricing-enterprise-offer-links' => get_starter_content("widgets", "pricing", "enterprise_offer_links"),
@@ -708,15 +707,6 @@ if (!function_exists('virgilsecurity_setup')) :
             [
                 'name'          => __('Intro Block', 'virgilsecurity'),
                 'id'            => 'pricing-intro-block',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Plans Msg', 'virgilsecurity'),
-                'id'            => 'pricing-plans-msg',
                 'before_widget' => __return_empty_string(),
                 'after_widget'  => __return_empty_string(),
             ]

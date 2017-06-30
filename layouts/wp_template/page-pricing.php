@@ -7,9 +7,6 @@
                 <?php dynamic_sidebar('pricing-intro-block'); ?>
             </div>
             <div class="pricingPlansContentBlock">
-                <div class="pricingPlansDisclaimer">
-                    <?php dynamic_sidebar('pricing-plans-msg'); ?>
-                </div>
                 <div class="comparisonBlock pricingPlanList">
                     <?php dynamic_sidebar('pricing-plans-list'); ?>
                 </div>
@@ -21,8 +18,9 @@
         <div class="wrapper">
             <div class="enterpriseContentBlock">
                 <div class="enterpriseOffer">
-                    <div class="enterpriseOffer-image"><img
-                                src="/wp-content/themes/virgilsecurity/assets/pricing-caseIcon.png" alt=""></div>
+                    <div class="enterpriseOffer-image">
+                        <img src="/wp-content/themes/virgilsecurity/assets/pricing-enterprise-case.svg" alt="">
+                    </div>
                     <div class="enterpriseOffer-msg">
                         <?php dynamic_sidebar('pricing-enterprise-offer-msg'); ?>
                     </div>
