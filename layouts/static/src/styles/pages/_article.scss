@@ -1,0 +1,145 @@
+.articleItemPage {
+  .intro {
+    @include block-bg($vs-color-black);
+    background-image: url("../assets/images/bg/article/article-intro-bg@2x.jpg");
+    background-size: 2560px 480px;
+
+    .introContentBlock {
+      height: 480px;
+    }
+
+    .blockMsg {
+      width: 680px;
+      max-width: 100%;
+      text-align: center;
+      color: $vs-color-white;
+
+      &-text {
+        margin-top: 30px;
+        font-size: 0.88rem;
+      }
+    }
+  }
+
+  .article {
+    padding-top: 40px;
+    font-size: 0.88rem;
+
+    .articleContentBlock {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+
+      @media (min-width: $vs-breakpoint-lg) {
+        padding: 0 100px;
+      }
+    }
+
+    .articleContent {
+      width: 675px;
+
+      h2 {
+        margin: 65px 0 35px;
+        font-size: inherit;
+        font-weight: bold;
+      }
+
+      a {
+        color: $vs-color-darkRed1;
+      }
+
+      p {
+        line-height: 1.9;
+
+        img {
+          display: block;
+          max-width: 100%;
+        }
+      }
+
+      * + p {
+        margin-top: 35px;
+      }
+
+      ul, ol {
+        padding: 0 1.5rem;
+        list-style: initial;
+      }
+
+      li {
+        margin: 0.5rem;
+      }
+    }
+
+    .articleSidebar {
+      width: 250px;
+      padding: 33px 25px;
+      background: $vs-color-lightGrey1;
+    }
+
+      .articleSidebarLinks {
+        & + .articleSidebarLinks {
+          margin-top: 45px;
+        }
+
+        &-headline {
+          @include font-muller();
+          font-size: 0.61rem;
+          color: $vs-color-lightGrey4;
+        }
+
+        &-list {
+          li {
+            margin-top: 20px;
+            line-height: 1;
+          }
+
+          a {
+            @include font-muller();
+            font-size: 0.61rem;
+
+            &:hover {
+              color: $vs-color-darkRed1;
+            }
+          }
+        }
+      }
+
+    .articleReferenceList {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-top: 100px;
+      border-top: 1px solid $vs-color-lightGrey3;
+      padding-top: 40px;
+    }
+
+      .articleReference {
+        &-label {
+          @include font-muller();
+          font-size: 0.61rem;
+          color: $vs-color-lightGrey4;
+        }
+
+        &-link {
+          @include font-muller();
+          display: block;
+          margin-top: 15px;
+          font-size: 0.77rem;
+          transition: 0.5s color;
+
+          &:hover {
+            color: $vs-color-darkRed1;
+          }
+        }
+
+        &-data {
+          margin-top: 5px;
+          font-size: 0.66rem;
+          color: $vs-color-lightGrey4;
+        }
+      }
+  }
+}

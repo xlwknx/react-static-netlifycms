@@ -112,6 +112,16 @@ module.exports = {
       filename: '404.html',
       template: 'src/templates/404.html'
     }),
+    new HtmlWebpackPlugin({
+      favicon: 'src/favicon.png',
+      filename: 'articles.html',
+      template: 'src/templates/blog/articles.html'
+    }),
+    new HtmlWebpackPlugin({
+      favicon: 'src/favicon.png',
+      filename: 'article.html',
+      template: 'src/templates/blog/article.html'
+    }),
     new HtmlStringReplace({
       enable: true,
       patterns: [

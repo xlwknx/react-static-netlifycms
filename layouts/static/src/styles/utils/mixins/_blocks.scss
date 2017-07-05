@@ -1,4 +1,4 @@
-@mixin block-bg($height, $color, $max-height: $height) {
+@mixin block-bg($color, $max-height: calc(100% - 18px), $max-width: 2560px) {
   overflow: hidden;
   position: relative;
 
@@ -6,10 +6,12 @@
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translate(-50%);
     z-index: -1;
     width: 100%;
-    height: $height;
+    height: calc(100% - 18px);
+    max-width: $max-width;
     max-height: $max-height;
     background-color: $color;
   }

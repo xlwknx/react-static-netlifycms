@@ -112,13 +112,13 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       favicon: 'src/favicon.png',
-      filename: 'blog-list.html',
-      template: 'src/templates/blog/blog-list.html'
+      filename: 'articles.html',
+      template: 'src/templates/blog/articles.html'
     }),
     new HtmlWebpackPlugin({
       favicon: 'src/favicon.png',
-      filename: 'blog-item.html',
-      template: 'src/templates/blog/blog-item.html'
+      filename: 'article.html',
+      template: 'src/templates/blog/article.html'
     }),
     new HtmlStringReplace({
       enable: true,

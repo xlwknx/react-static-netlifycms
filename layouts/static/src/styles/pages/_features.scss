@@ -67,7 +67,7 @@
   }
 
   .cryptogram {
-    @include block-bg(50%, $vs-color-darkBlue5, 580px);
+    @include block-bg($vs-color-darkBlue5, 580px);
     background: url("../assets/images/bg/features/features-cryptogram-bg@2x.jpg") center center no-repeat;
     background-size: 2560px 580px;
 

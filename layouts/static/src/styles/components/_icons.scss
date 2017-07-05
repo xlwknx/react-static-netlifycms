@@ -50,6 +50,10 @@
     background-size: 60px 63px;
   }
 
+  &-clock-grey {
+    background-image: url("../assets/images/ui/icons/icon-clock-grey.svg");
+  }
+
   &-mail-red {
     width: 30px;
     background-image: url("../assets/images/ui/icons/icon-mail-red.svg");
@@ -112,6 +116,13 @@
     width: 7px;
     height: 10px;
     background-image: url("../assets/images/ui/icons/icon-arrowRight-white.svg");
+    vertical-align: baseline;
+  }
+
+  &-arrowRight-black {
+    width: 7px;
+    height: 10px;
+    background-image: url("../assets/images/ui/icons/icon-arrowRight-black.svg");
     vertical-align: baseline;
   }
 

@@ -1,6 +1,6 @@
 .aboutPage {
   .intro {
-    background-color: $vs-color-darkBlue5;
+    @include block-bg($vs-color-darkBlue5);
     background-image: url("../assets/images/bg/about/about-intro-bg@2x.jpg");
     background-size: 2560px 600px;
 

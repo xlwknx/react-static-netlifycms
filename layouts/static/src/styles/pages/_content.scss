@@ -1,5 +1,6 @@
 .contentPage {
   .intro {
+    @include block-bg($vs-color-darkBlue5);
     background-image: url("../assets/images/bg/content/content-intro-bg.svg");
 
     .introContentBlock {
@@ -51,16 +52,16 @@
       }
     }
 
-    h3 {
-      margin: 65px 0 35px;
-      font-size: inherit;
-      font-weight: bold;
-    }
-
     h2 {
       @include font-muller();
       margin-bottom: 18px;
       font-size: 1.55rem;
+    }
+
+    h3 {
+      margin: 65px 0 35px;
+      font-size: inherit;
+      font-weight: bold;
     }
 
     a {
@@ -69,6 +70,10 @@
 
     p {
       line-height: 1.9;
+    }
+
+    * + p {
+      margin-top: 35px;
     }
 
     ul, ol {
