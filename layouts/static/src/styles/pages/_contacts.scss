@@ -259,7 +259,8 @@ $vs-contacts-contactUs-shift: 45px;
 
   .map {
     margin-bottom: -$vs-footer-padding;
-    background: url("../assets/images/bg/contacts/contacts-map-bg.png") center top no-repeat;
+    background: url("../assets/images/bg/contacts/contacts-map-bg@2x.jpg") center top no-repeat;
+    background-size: 1920px 700px;
 
     .mapContentBlock {
       display: flex;

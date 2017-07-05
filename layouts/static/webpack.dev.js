@@ -44,7 +44,14 @@ module.exports = {
       },
       {
         test: /\.(gif|jpe?g|png|svg)$/,
-        loader: ['file-loader?name=assets/[name].[ext]']
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/[name].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
@@ -102,6 +109,16 @@ module.exports = {
       favicon: 'src/favicon.png',
       filename: '404.html',
       template: 'src/templates/404.html'
+    }),
+    new HtmlWebpackPlugin({
+      favicon: 'src/favicon.png',
+      filename: 'blog-list.html',
+      template: 'src/templates/blog/blog-list.html'
+    }),
+    new HtmlWebpackPlugin({
+      favicon: 'src/favicon.png',
+      filename: 'blog-item.html',
+      template: 'src/templates/blog/blog-item.html'
     }),
     new HtmlStringReplace({
       enable: true,

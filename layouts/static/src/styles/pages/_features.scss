@@ -1,7 +1,8 @@
 .featuresPage {
   .intro {
-    background-image: url("../assets/images/bg/features/features-intro-bg@2x.png");
-    background-size: 2560px 1410px;
+    background-color: $vs-color-darkBlue5;
+    background-image: url("../assets/images/bg/features/features-intro-bg@2x.jpg");
+    background-size: 2560px 830px;
 
     .introContentBlock {
       justify-content: space-between;
@@ -66,6 +67,14 @@
   }
 
   .cryptogram {
+    @include block-bg(50%, $vs-color-darkBlue5, 580px);
+    background: url("../assets/images/bg/features/features-cryptogram-bg@2x.jpg") center center no-repeat;
+    background-size: 2560px 580px;
+
+    @media (min-width: $vs-breakpoint-lg) {
+      background-position: center top;
+    }
+
     .cryptogramContentBlock {
       display: flex;
       flex-direction: column;

@@ -1,3 +1,20 @@
+@mixin block-bg($height, $color, $max-height: $height) {
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: $height;
+    max-height: $max-height;
+    background-color: $color;
+  }
+}
+
 @mixin block-caption($font-size-xs: 6.66rem, $font-size-sm: 6.66rem, $font-size-md: 6.66rem) {
   @include font-muller();
   font-size: $font-size-xs;
