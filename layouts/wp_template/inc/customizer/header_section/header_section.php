@@ -4,12 +4,16 @@ namespace VirgilSecurity\Customizer\HeaderSection;
 
 
 use VirgilSecurity\Customizer\Src\BaseSection;
+use VirgilSecurity\Templates\Src\TemplateInterface;
+use VirgilSecurity\Templates\Base\HeaderSectionTemplate;
 
 class HeaderSection extends BaseSection
 {
     protected $optional = true;
 
     protected $priority = 25;
+
+    protected $selector = '.page .header';
 
 
     public function getSection()
@@ -30,13 +34,11 @@ class HeaderSection extends BaseSection
     }
 
 
-    public function getPartialRefresh()
+    /**
+     * @return TemplateInterface
+     */
+    public function getSectionTemplate()
     {
-        return [
-            'selector'        => '.page .header',
-            'render_callback' => function () {
-                get_template_part('template-sections/header/header_section');
-            },
-        ];
+        return new HeaderSectionTemplate();
     }
 }

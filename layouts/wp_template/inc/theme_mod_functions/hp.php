@@ -1,5 +1,7 @@
 <?php
 
+use VirgilSecurity\SectionModifications;
+
 if (!function_exists('virgilsecurity_get_hp_intro_msg_text')) :
 
     /**
@@ -8,11 +10,10 @@ if (!function_exists('virgilsecurity_get_hp_intro_msg_text')) :
      */
     function virgilsecurity_get_hp_intro_msg_text()
     {
-        global $virgilsecurity_section_mods;
-
-        return $values = $virgilsecurity_section_mods->getHpSectionMods()
-                                                     ->getIntroSectionMods()
-                                                     ->getIntroMsgMod()
+        return SectionModifications::getInstance()
+                                   ->getFrontPageSectionMods()
+                                   ->getIntroSectionMods()
+                                   ->getIntroMsgMod()
             ;
     }
 
@@ -26,11 +27,10 @@ if (!function_exists('virgilsecurity_get_hp_intro_links')) :
      */
     function virgilsecurity_get_hp_intro_links()
     {
-        global $virgilsecurity_section_mods;
-
-        return $virgilsecurity_section_mods->getHpSectionMods()
-                                           ->getIntroSectionMods()
-                                           ->getIntroLinksMod()
+        return SectionModifications::getInstance()
+                                   ->getFrontPageSectionMods()
+                                   ->getIntroSectionMods()
+                                   ->getIntroLinksMod()
             ;
     }
 
@@ -44,11 +44,10 @@ if (!function_exists('virgilsecurity_get_hp_intro_langs')) :
      */
     function virgilsecurity_get_hp_intro_langs()
     {
-        global $virgilsecurity_section_mods;
-
-        return $virgilsecurity_section_mods->getHpSectionMods()
-                                           ->getIntroSectionMods()
-                                           ->getIntroLangsMod()
+        return SectionModifications::getInstance()
+                                   ->getFrontPageSectionMods()
+                                   ->getIntroSectionMods()
+                                   ->getIntroLangsMod()
             ;
     }
 

@@ -1,0 +1,19 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+    <header class="header">
+        <div class="header-logo">
+            <a href="{{ header.logo.url }}">
+                <img src="{{ header.logo.image }}" alt="">
+            </a>
+        </div>
+
+        {{ header.header_menu }}
+
+        <div class="headerAuth">
+            {% for item in header.auth_links %}
+                {% include 'common/link_button/' ~ item.link_button_skin ~ '.twig' %}
+            {% endfor %}
+        </div>
+    </header>
+{% endblock %}

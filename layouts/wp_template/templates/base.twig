@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html {{ site.language_attributes }}>
+<head>
+    <meta charset="{{ site.charset }}"/>
+
+    {% include 'base/html_header/favicons.twig' with {'site': site, 'visible': not models.common.has_site_icon} only %}
+
+    {% block wp_head %}
+        {{ function('wp_head') }}
+    {% endblock %}
+</head>
+<body {{ body_class }}>
+<div class="{{ models.common.post.type }} {{ models.common.static_page_class }}">
+    {% include 'base/header_section.twig' with {'header': models.header_section, 'visible': models.header_section.is_show} only %}
+
+    {% block content %}{% endblock %}
+
+    {% include 'base/footer_section.twig' with {'footer': models.footer_section, 'visible': models.footer_section.is_show} only %}
+
+    {% block wp_footer %}
+        {{ function('wp_footer') }}
+    {% endblock %}
+</div>
+</body>
+</html>

@@ -4,23 +4,36 @@ namespace VirgilSecurity;
 
 
 use VirgilSecurity\Customizer\HeaderSection\Modifications\Sections\HeaderSectionMods;
-use VirgilSecurity\Customizer\Hp\HpSectionMods;
+
+use VirgilSecurity\Customizer\FrontPage\FrontPageSectionMods;
 
 class SectionModifications
 {
     const SECTIONS_INIT_MOD = 'is_sections_mod_init';
 
+    private static $instance;
+
     /** @var  HeaderSectionMods */
     protected $headerSectionMods;
 
-    /** @var HpSectionMods */
-    protected $hpSectionMods;
+    /** @var FrontPageSectionMods */
+    protected $frontPageSectionMods;
 
 
     public function __construct()
     {
         $this->headerSectionMods = new HeaderSectionMods();
-        $this->hpSectionMods = new HpSectionMods();
+        $this->frontPageSectionMods = new FrontPageSectionMods();
+    }
+
+
+    public static function getInstance()
+    {
+        if (!self::$instance) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
     }
 
 
@@ -30,16 +43,16 @@ class SectionModifications
     }
 
 
-    public function getHpSectionMods()
+    public function getFrontPageSectionMods()
     {
-        return $this->hpSectionMods;
+        return $this->frontPageSectionMods;
     }
 
 
     public function setupDefaults()
     {
         $this->headerSectionMods->setupDefaults();
-        $this->hpSectionMods->setupDefaults();
+        $this->frontPageSectionMods->setupDefaults();
 
         set_theme_mod(self::SECTIONS_INIT_MOD, true);
     }

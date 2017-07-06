@@ -3,8 +3,6 @@
 namespace VirgilSecurity;
 
 
-use Kirki;
-use VirgilSecurity\Customizer\Fields\TextField;
 use VirgilSecurity\Customizer\HeaderSection\Fields\LogoImageField;
 use VirgilSecurity\Customizer\HeaderSection\Fields\MenuCodeField;
 
@@ -12,14 +10,13 @@ use VirgilSecurity\Customizer\HeaderSection\Groups\AuthLinksGroup;
 
 use VirgilSecurity\Customizer\HeaderSection\HeaderSection;
 
-use VirgilSecurity\Customizer\Hp\IntroSection\Fields\IntroMsgField;
-use VirgilSecurity\Customizer\Hp\IntroSection\Groups\IntroLangsGroup;
-use VirgilSecurity\Customizer\Hp\IntroSection\IntroSection;
-use VirgilSecurity\Customizer\Hp\IntroSection\Groups\IntroLinksGroup;
+use VirgilSecurity\Customizer\FrontPage\IntroSection\Fields\IntroMsgField;
+use VirgilSecurity\Customizer\FrontPage\IntroSection\Groups\IntroLangsGroup;
+use VirgilSecurity\Customizer\FrontPage\IntroSection\IntroSection;
+use VirgilSecurity\Customizer\FrontPage\IntroSection\Groups\IntroLinksGroup;
 use VirgilSecurity\Customizer\Src\ConfigInterface;
 use VirgilSecurity\Customizer\Src\SectionInterface;
 
-use VirgilSecurity\Customizer\VirgilSecurityConfig;
 use WP_Customize_Manager;
 
 class SectionCustomizer
@@ -42,7 +39,7 @@ class SectionCustomizer
         $this->register(
             [
                 $this->getHeaderSection($wpCustomizer),
-                $this->getHpIntroSection($wpCustomizer),
+                $this->getFrontPageIntroSection($wpCustomizer),
             ]
         );
     }
@@ -77,13 +74,13 @@ class SectionCustomizer
     }
 
 
-    public function getHpIntroSection(WP_Customize_Manager $wpCustomizer)
+    public function getFrontPageIntroSection(WP_Customize_Manager $wpCustomizer)
     {
         $section = new IntroSection($this->config, $wpCustomizer);
 
         $section->addField(
             IntroMsgField::createWithMod(
-                $this->sectionModifications->getHpSectionMods()
+                $this->sectionModifications->getFrontPageSectionMods()
                                            ->getIntroSectionMods()
                                            ->getIntroMsgMod()
             )
@@ -91,7 +88,7 @@ class SectionCustomizer
 
         $section->addField(
             IntroLinksGroup::createWithMod(
-                $this->sectionModifications->getHpSectionMods()
+                $this->sectionModifications->getFrontPageSectionMods()
                                            ->getIntroSectionMods()
                                            ->getIntroLinksMod()
             )
@@ -99,7 +96,7 @@ class SectionCustomizer
 
         $section->addField(
             IntroLangsGroup::createWithMod(
-                $this->sectionModifications->getHpSectionMods()
+                $this->sectionModifications->getFrontPageSectionMods()
                                            ->getIntroSectionMods()
                                            ->getIntroLangsMod()
             )

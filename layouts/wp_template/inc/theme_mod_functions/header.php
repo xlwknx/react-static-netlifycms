@@ -1,5 +1,7 @@
 <?php
 
+use VirgilSecurity\SectionModifications;
+
 if (!function_exists('virgilsecurity_get_header_logo_image')) :
 
     /**
@@ -8,10 +10,9 @@ if (!function_exists('virgilsecurity_get_header_logo_image')) :
      */
     function virgilsecurity_get_header_logo_image()
     {
-        global $virgilsecurity_section_mods;
-
-        return $virgilsecurity_section_mods->getHeaderSectionMods()
-                                           ->getLogoImageMod()
+        return SectionModifications::getInstance()
+                                   ->getHeaderSectionMods()
+                                   ->getLogoImageMod()
             ;
     }
 
@@ -39,10 +40,9 @@ if (!function_exists('virgilsecurity_get_header_auth_links')) :
      */
     function virgilsecurity_get_header_auth_links()
     {
-        global $virgilsecurity_section_mods;
-
-        return $virgilsecurity_section_mods->getHeaderSectionMods()
-                                           ->getAuthLinksMod()
+        return SectionModifications::getInstance()
+                                   ->getHeaderSectionMods()
+                                   ->getAuthLinksMod()
             ;
     }
 

@@ -27,4 +27,7 @@ interface SectionInterface
 
 
     public function isOptional();
+
+
+    public function getSectionTemplate();
 }

@@ -21,6 +21,9 @@ abstract class BaseModification implements ModificationInterface
     abstract function getName();
 
 
+    /**
+     * @return mixed
+     */
     public function getValue()
     {
         return get_theme_mod($this->getName());

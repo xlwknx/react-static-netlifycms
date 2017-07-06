@@ -7,6 +7,7 @@ use Kirki;
 
 use VirgilSecurity\Customizer\Fields\SwitchField;
 
+use VirgilSecurity\Templates\Src\TemplateInterface;
 use WP_Customize_Manager;
 
 use VirgilSecurity\Customizer\Fields\ToggleField;
@@ -22,11 +23,13 @@ abstract class BaseSection implements SectionInterface
 
     protected $optional = false;
 
+    protected $selector;
+
     /** @var ConfigInterface */
-    private $config;
+    protected $config;
 
     /** @var WP_Customize_Manager */
-    private $wpCustomizer;
+    protected $wpCustomizer;
 
 
     public function __construct(ConfigInterface $config, WP_Customize_Manager $wpCustomizer)
@@ -108,13 +111,14 @@ abstract class BaseSection implements SectionInterface
 
         $partialRefresh = $this->getPartialRefresh();
 
-        if (!empty($partialRefresh)) {
+        if (!empty($partialRefresh) && $this->selector) {
             $this->wpCustomizer->selective_refresh->add_partial(
                 $this->getSection(),
                 [
-                    'selector'        => $partialRefresh['selector'],
-                    'settings'        => array_keys($this->fields),
-                    'render_callback' => $partialRefresh['render_callback'],
+                    'selector'            => $partialRefresh['selector'],
+                    'settings'            => array_keys($this->fields),
+                    'render_callback'     => $partialRefresh['render_callback'],
+                    'container_inclusive' => $partialRefresh['container_inclusive'],
                 ]
             );
         }
@@ -139,5 +143,20 @@ abstract class BaseSection implements SectionInterface
     }
 
 
-    abstract public function getPartialRefresh();
+    /**
+     * @return TemplateInterface
+     */
+    abstract public function getSectionTemplate();
+
+
+    public function getPartialRefresh()
+    {
+        $template = $this->getSectionTemplate();
+
+        return [
+            'selector'            => $this->selector,
+            'container_inclusive' => true,
+            'render_callback'     => [$template, 'render'],
+        ];
+    }
 }

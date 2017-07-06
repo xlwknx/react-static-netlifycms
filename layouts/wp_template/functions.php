@@ -4,7 +4,26 @@ use VirgilSecurity\SectionModifications;
 
 require_once get_parent_theme_file_path('/inc/autoloader_register.php');
 
-$virgilsecurity_section_mods = new SectionModifications();
+if (!class_exists('Timber')) {
+    add_action(
+        'admin_notices',
+        function () {
+            echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' .
+                 esc_url(admin_url('plugins.php#timber')) . '">' . esc_url(admin_url('plugins.php')) . '</a></p></div>';
+        }
+    );
+
+    add_filter(
+        'template_include',
+        function ($template) {
+            return get_stylesheet_directory() . '/static/no-timber.html';
+        }
+    );
+
+    return;
+}
+
+Timber::$dirname = ['templates'];
 
 
 if (!function_exists('virgilsecurity_setup')) :
@@ -17,8 +36,6 @@ if (!function_exists('virgilsecurity_setup')) :
      */
     function virgilsecurity_setup()
     {
-        global $virgilsecurity_section_mods;
-
         /*
          * Let WordPress manage the document title.
          * By adding theme support, we declare that this theme does not use a
@@ -123,6 +140,8 @@ if (!function_exists('virgilsecurity_setup')) :
         add_editor_style('editor-style.css');
 
         store_github_stars();
+
+        $virgilsecurity_section_mods = SectionModifications::getInstance();
 
         if (!$virgilsecurity_section_mods->isInitialized()) {
             $virgilsecurity_section_mods->setupDefaults();

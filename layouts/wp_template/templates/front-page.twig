@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    {% include 'front-page/intro_section.twig' with{ 'intro': models.intro_section, 'visible': models.intro_section.is_show } only %}
+
+    {#{% include 'front-page/use_cases.twig' with{ 'use_cases': use_cases_section } only %}#}
+
+    {#{% include 'front-page/clients.twig' with{ 'clients': clients_section } only %}#}
+
+    {#{% include 'front-page/services.twig' with{ 'intro': usage_section } only %}#}
+
+    {#{% include 'front-page/usage.twig' with{ 'intro': usage_section } only %}#}
+
+    {#{% include 'front-page/conclusion.twig' with{ 'intro': conclusion_section } only %}#}
+
+{% endblock %}
