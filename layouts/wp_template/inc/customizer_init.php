@@ -8,7 +8,9 @@ use VirgilSecurity\SectionModifications;
 
 call_user_func(
     function () {
-        //$virgilsecurity_section_mods->setupDefaults();
+
+        $section_mods = SectionModifications::getInstance();
+        //$section_mods->setupDefaults();
 
         if (!is_customize_preview()) {
             return;
@@ -17,7 +19,6 @@ call_user_func(
         if (class_exists('Kirki')) {
 
             $config = VirgilsecurityConfig::getInstance();
-            $section_mods = SectionModifications::getInstance();
 
             $section_customizer = new SectionCustomizer($config, $section_mods);
 

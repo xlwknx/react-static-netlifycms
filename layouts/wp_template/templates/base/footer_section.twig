@@ -4,7 +4,21 @@
     <footer class="footer">
         <div class="footer-top">
             <div class="wrapper">
-                {#<?php dynamic_sidebar('footer-top'); ?>#}
+                <div class="footerContacts">
+                    <div class="footerContacts-logo">
+                        <img src="{{ footer.logo.src }}" alt="{{ footer.logo.alt }}">
+                    </div>
+                    <div class="footerContacts-hashtag">{{ footer.description }}</div>
+                    <ul class="footerContacts-socials">
+                        {% for item in footer.social_links %}
+                            <li>
+                                <a href="{{ item.link_url }}">
+                                    <i class="fa {{ item.link_icon }}" aria-hidden="false"></i>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">

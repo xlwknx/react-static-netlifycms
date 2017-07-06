@@ -3,6 +3,7 @@
 namespace VirgilSecurity;
 
 
+use VirgilSecurity\Customizer\FooterSection\Modifications\Sections\FooterSectionMods;
 use VirgilSecurity\Customizer\HeaderSection\Modifications\Sections\HeaderSectionMods;
 
 use VirgilSecurity\Customizer\FrontPage\FrontPageSectionMods;
@@ -19,11 +20,15 @@ class SectionModifications
     /** @var FrontPageSectionMods */
     protected $frontPageSectionMods;
 
+    /** @var FooterSectionMods */
+    protected $footerSectionMods;
+
 
     public function __construct()
     {
         $this->headerSectionMods = new HeaderSectionMods();
         $this->frontPageSectionMods = new FrontPageSectionMods();
+        $this->footerSectionMods = new FooterSectionMods();
     }
 
 
@@ -49,10 +54,17 @@ class SectionModifications
     }
 
 
+    public function getFooterSectionMods()
+    {
+        return $this->footerSectionMods;
+    }
+
+
     public function setupDefaults()
     {
         $this->headerSectionMods->setupDefaults();
         $this->frontPageSectionMods->setupDefaults();
+        $this->footerSectionMods->setupDefaults();
 
         set_theme_mod(self::SECTIONS_INIT_MOD, true);
     }

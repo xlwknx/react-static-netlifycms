@@ -3,17 +3,11 @@
 namespace VirgilSecurity;
 
 
-use VirgilSecurity\Customizer\HeaderSection\Fields\LogoImageField;
-use VirgilSecurity\Customizer\HeaderSection\Fields\MenuCodeField;
+use VirgilSecurity\Customizer\FooterSection\FooterSectionCustomizer;
 
-use VirgilSecurity\Customizer\HeaderSection\Groups\AuthLinksGroup;
 
-use VirgilSecurity\Customizer\HeaderSection\HeaderSection;
-
-use VirgilSecurity\Customizer\FrontPage\IntroSection\Fields\IntroMsgField;
-use VirgilSecurity\Customizer\FrontPage\IntroSection\Groups\IntroLangsGroup;
-use VirgilSecurity\Customizer\FrontPage\IntroSection\IntroSection;
-use VirgilSecurity\Customizer\FrontPage\IntroSection\Groups\IntroLinksGroup;
+use VirgilSecurity\Customizer\FrontPage\IntroSection\IntroSectionCustomizer;
+use VirgilSecurity\Customizer\HeaderSection\HeaderSectionCustomizer;
 use VirgilSecurity\Customizer\Src\ConfigInterface;
 use VirgilSecurity\Customizer\Src\SectionInterface;
 
@@ -39,70 +33,37 @@ class SectionCustomizer
         $this->register(
             [
                 $this->getHeaderSection($wpCustomizer),
+                $this->getFooterSection($wpCustomizer),
                 $this->getFrontPageIntroSection($wpCustomizer),
             ]
         );
     }
 
 
+    public function getFooterSection(WP_Customize_Manager $wpCustomizer)
+    {
+        $footerSectionCustomizer = new FooterSectionCustomizer($this->config, $wpCustomizer);
+
+        return $footerSectionCustomizer->getSection($this->sectionModifications->getFooterSectionMods());
+    }
+
+
     public function getHeaderSection(WP_Customize_Manager $wpCustomizer)
     {
+        $headerSectionCustomizer = new HeaderSectionCustomizer($this->config, $wpCustomizer);
 
-        $section = new HeaderSection($this->config, $wpCustomizer);
-
-        $section->addField(
-            LogoImageField::createWithMod(
-                $this->sectionModifications->getHeaderSectionMods()
-                                           ->getLogoImageMod()
-            )
-        );
-
-        $section->addField(
-            MenuCodeField::createWithMod(
-                $this->sectionModifications->getHeaderSectionMods()
-                                           ->getMenuCodeMod()
-            )
-        );
-        $section->addField(
-            AuthLinksGroup::createWithMod(
-                $this->sectionModifications->getHeaderSectionMods()
-                                           ->getAuthLinksMod()
-            )
-        );
-
-        return $section;
+        return $headerSectionCustomizer->getSection($this->sectionModifications->getHeaderSectionMods());
     }
 
 
     public function getFrontPageIntroSection(WP_Customize_Manager $wpCustomizer)
     {
-        $section = new IntroSection($this->config, $wpCustomizer);
+        $introSectionCustomizer = new IntroSectionCustomizer($this->config, $wpCustomizer);
 
-        $section->addField(
-            IntroMsgField::createWithMod(
-                $this->sectionModifications->getFrontPageSectionMods()
-                                           ->getIntroSectionMods()
-                                           ->getIntroMsgMod()
-            )
+        return $introSectionCustomizer->getSection(
+            $this->sectionModifications->getFrontPageSectionMods()
+                                       ->getIntroSectionMods()
         );
-
-        $section->addField(
-            IntroLinksGroup::createWithMod(
-                $this->sectionModifications->getFrontPageSectionMods()
-                                           ->getIntroSectionMods()
-                                           ->getIntroLinksMod()
-            )
-        );
-
-        $section->addField(
-            IntroLangsGroup::createWithMod(
-                $this->sectionModifications->getFrontPageSectionMods()
-                                           ->getIntroSectionMods()
-                                           ->getIntroLangsMod()
-            )
-        );
-
-        return $section;
     }
 
 
