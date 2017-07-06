@@ -1028,5 +1028,3 @@ add_action('after_setup_theme', 'virgilsecurity_setup');
 require_once get_parent_theme_file_path('/inc/customizer_init.php');
 
 require_once get_parent_theme_file_path('/inc/customizer_preview.php');
-
-require_once get_parent_theme_file_path('/inc/theme_mod_functions.php');

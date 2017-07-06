@@ -3,20 +3,27 @@
 namespace VirgilSecurity\Models\FrontPage;
 
 
-use VirgilSecurity\Models\Src\BaseModel;
+use VirgilSecurity\Customizer\FrontPage\IntroSection\Modifications\Sections\IntroSectionMods;
 
-class IntroSectionModel extends BaseModel
+use VirgilSecurity\Models\Src\BaseSectionModel;
+
+class IntroSectionModel extends BaseSectionModel
 {
+    const SHOW_SECTION_MOD = 'is_enabled_hp_intro_section';
 
-    public function IsShow()
+    /** @var IntroSectionMods */
+    protected $sectionMods;
+
+
+    public function __construct()
     {
-        return get_theme_mod('is_enabled_hp_intro_section', true);
+        $this->sectionMods = new IntroSectionMods();
     }
 
 
     public function Headline()
     {
-        $msgTextMod = virgilsecurity_get_hp_intro_msg_text();
+        $msgTextMod = $this->sectionMods->getIntroMsgMod();
 
         if ($msgTextMod->isEnabled()) {
             return [
@@ -28,10 +35,10 @@ class IntroSectionModel extends BaseModel
 
     public function Links()
     {
-        $intro_links = virgilsecurity_get_hp_intro_links();
+        $introLinks = $this->sectionMods->getIntroLinksMod();
 
-        if ($intro_links->isEnabled()) {
-            $values = (array)$intro_links->getValue();
+        if ($introLinks->isEnabled()) {
+            $values = (array)$introLinks->getValue();
 
             return array_filter(
                 $values,
@@ -45,10 +52,10 @@ class IntroSectionModel extends BaseModel
 
     public function Langs()
     {
-        $intro_langs = virgilsecurity_get_hp_intro_langs();
+        $introLangsMod = $this->sectionMods->getIntroLangsMod();
 
-        if ($intro_langs->isEnabled()) {
-            $values = (array)$intro_langs->getValue();
+        if ($introLangsMod->isEnabled()) {
+            $values = (array)$introLangsMod->getValue();
 
             return array_filter(
                 $values,

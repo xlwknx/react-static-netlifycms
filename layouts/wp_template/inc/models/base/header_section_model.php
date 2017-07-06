@@ -3,26 +3,37 @@
 namespace VirgilSecurity\Models\Base;
 
 
-use VirgilSecurity\Models\Src\BaseModel;
+use VirgilSecurity\Customizer\HeaderSection\Modifications\Sections\HeaderSectionMods;
 
-class HeaderSectionModel extends BaseModel
+use VirgilSecurity\Models\Src\BaseSectionModel;
+
+class HeaderSectionModel extends BaseSectionModel
 {
+    const SHOW_SECTION_MOD = 'is_enabled_header_section';
 
-    public function IsShow()
+    /** @var HeaderSectionMods */
+    protected $sectionMods;
+
+
+    public function __construct()
     {
-        return get_theme_mod('is_enabled_header_section', true);
+        $this->sectionMods = new HeaderSectionMods();
     }
 
 
     public function HeaderMenu()
     {
-        return virgilsecurity_get_header_menu();
+        $menuCodeMod = $this->sectionMods->getMenuCodeMod();
+
+        if ($menuCodeMod->isEnabled()) {
+            return do_shortcode($menuCodeMod->getValue());
+        }
     }
 
 
     public function AuthLinks()
     {
-        $authLinksMod = virgilsecurity_get_header_auth_links();
+        $authLinksMod = $this->sectionMods->getAuthLinksMod();
 
         if ($authLinksMod->isEnabled()) {
             return $authLinksMod->getValue();
@@ -32,7 +43,7 @@ class HeaderSectionModel extends BaseModel
 
     public function Logo()
     {
-        $logoImageMod = virgilsecurity_get_header_logo_image();
+        $logoImageMod = $this->sectionMods->getLogoImageMod();
 
         if ($logoImageMod->isEnabled()) {
             return [
