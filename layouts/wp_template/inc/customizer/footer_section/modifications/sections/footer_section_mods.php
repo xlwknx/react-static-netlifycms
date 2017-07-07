@@ -3,8 +3,13 @@
 namespace VirgilSecurity\Customizer\FooterSection\Modifications\Sections;
 
 
+use VirgilSecurity\Customizer\FooterSection\Modifications\CopyrightMod;
+use VirgilSecurity\Customizer\FooterSection\Modifications\EmailMod;
 use VirgilSecurity\Customizer\FooterSection\Modifications\LogoDescriptionMod;
 use VirgilSecurity\Customizer\FooterSection\Modifications\LogoImageMod;
+use VirgilSecurity\Customizer\FooterSection\Modifications\NavCodeMod;
+use VirgilSecurity\Customizer\FooterSection\Modifications\PolicyLinkMod;
+use VirgilSecurity\Customizer\FooterSection\Modifications\PolicyLinkTextMod;
 use VirgilSecurity\Customizer\FooterSection\Modifications\SocialLinksMod;
 use VirgilSecurity\Customizer\Src\BaseSectionMods;
 
@@ -17,6 +22,16 @@ class FooterSectionMods extends BaseSectionMods
 
     protected $socialLinks;
 
+    protected $navCodeMod;
+
+    protected $emailMod;
+
+    protected $policyLinkTextMod;
+
+    protected $policyLinkMod;
+
+    protected $copyrightMod;
+
 
     public function setupDefaults()
     {
@@ -25,6 +40,11 @@ class FooterSectionMods extends BaseSectionMods
                 $this->getLogoImageMod(),
                 $this->getLogoDescription(),
                 $this->getSocialLinksMod(),
+                $this->getNavCodeMod(),
+                $this->getEmailMod(),
+                $this->getPolicyLinkTextMod(),
+                $this->getPolicyLinkMod(),
+                $this->getCopyrightMod(),
             ]
         );
     }
@@ -59,4 +79,53 @@ class FooterSectionMods extends BaseSectionMods
         return $this->socialLinks;
     }
 
+
+    public function getNavCodeMod()
+    {
+        if ($this->navCodeMod == null) {
+            $this->navCodeMod = new NavCodeMod();
+        }
+
+        return $this->navCodeMod;
+    }
+
+
+    public function getEmailMod()
+    {
+        if ($this->emailMod == null) {
+            $this->emailMod = new EmailMod();
+        }
+
+        return $this->emailMod;
+    }
+
+
+    public function getPolicyLinkTextMod()
+    {
+        if ($this->policyLinkTextMod == null) {
+            $this->policyLinkTextMod = new PolicyLinkTextMod();
+        }
+
+        return $this->policyLinkTextMod;
+    }
+
+
+    public function getPolicyLinkMod()
+    {
+        if ($this->policyLinkMod == null) {
+            $this->policyLinkMod = new PolicyLinkMod();
+        }
+
+        return $this->policyLinkMod;
+    }
+
+
+    public function getCopyrightMod()
+    {
+        if ($this->copyrightMod == null) {
+            $this->copyrightMod = new CopyrightMod();
+        }
+
+        return $this->copyrightMod;
+    }
 }

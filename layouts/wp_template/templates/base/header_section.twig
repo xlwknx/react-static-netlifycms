@@ -4,11 +4,11 @@
     <header class="header">
         <div class="header-logo">
             <a href="{{ header.logo.url }}">
-                <img src="{{ header.logo.image.src }}" alt="{{ header.logo.image.alt }}">
+                <img src="{{ header.logo.image.src }}" alt="{{ header.logo.image.alt|shortcodes }}">
             </a>
         </div>
 
-        {{ header.header_menu }}
+        {{ header.header_menu|shortcodes }}
 
         <div class="headerAuth">
             {% for item in header.auth_links %}

@@ -6,9 +6,9 @@
             <div class="wrapper">
                 <div class="footerContacts">
                     <div class="footerContacts-logo">
-                        <img src="{{ footer.logo.src }}" alt="{{ footer.logo.alt }}">
+                        <img src="{{ footer.logo.src }}" alt="{{ footer.logo.alt|shortcodes }}">
                     </div>
-                    <div class="footerContacts-hashtag">{{ footer.description }}</div>
+                    <div class="footerContacts-hashtag">{{ footer.description|shortcodes }}</div>
                     <ul class="footerContacts-socials">
                         {% for item in footer.social_links %}
                             <li>
@@ -19,11 +19,17 @@
                         {% endfor %}
                     </ul>
                 </div>
+                {{ footer.navigation|shortcodes }}
             </div>
         </div>
         <div class="footer-bottom">
             <div class="wrapper">
-                {#<?php dynamic_sidebar('footer-bottom'); ?>#}
+                <div class="footer-copyright">{{ footer.copyright|shortcodes }}</div>
+                <div class="footer-links">
+                    <a href="mailto:{{ footer.email }}" class="footer-email">{{ footer.email|shortcodes }}</a>
+                    <a href="{{ footer.terms_of_use.href }}"
+                       class="footer-policy">{{ footer.terms_of_use.text|shortcodes }}</a>
+                </div>
             </div>
         </div>
     </footer>

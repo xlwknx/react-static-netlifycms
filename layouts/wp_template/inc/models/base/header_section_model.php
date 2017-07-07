@@ -26,7 +26,7 @@ class HeaderSectionModel extends BaseSectionModel
         $menuCodeMod = $this->sectionMods->getMenuCodeMod();
 
         if ($menuCodeMod->isEnabled()) {
-            return do_shortcode($menuCodeMod->getValue());
+            return $menuCodeMod->getValue();
         }
     }
 

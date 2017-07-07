@@ -17,7 +17,7 @@
                         {% for lang in intro.langs %}
                             <li>
                                 <a href="{{ lang.lang_url }}"><img src="{{ lang.lang_image.src }}"
-                                                                   alt="{{ lang.lang_image.alt }}"></a>
+                                                                   alt="{{ lang.lang_image.alt|shortcodes }}"></a>
                             </li>
                         {% endfor %}
                     </ul>
