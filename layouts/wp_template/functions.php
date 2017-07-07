@@ -26,6 +26,9 @@ if (!class_exists('Timber')) {
 Timber::$dirname = ['templates'];
 
 
+/**
+ * TODO: upload all images from assets
+ */
 if (!function_exists('virgilsecurity_setup')) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
