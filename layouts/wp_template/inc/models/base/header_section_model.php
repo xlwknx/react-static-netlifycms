@@ -36,7 +36,9 @@ class HeaderSectionModel extends BaseSectionModel
         $authLinksMod = $this->sectionMods->getAuthLinksMod();
 
         if ($authLinksMod->isEnabled()) {
-            return $authLinksMod->getValue();
+            $values = (array)$authLinksMod->getValue();
+
+            return $this->filterCollection($values);
         }
     }
 
@@ -47,7 +49,7 @@ class HeaderSectionModel extends BaseSectionModel
 
         if ($logoImageMod->isEnabled()) {
             return [
-                'image' => $logoImageMod->getValue(),
+                'image' => $this->imageModValueToModel($logoImageMod->getValue()),
                 'url'   => site_url(),
             ];
         }

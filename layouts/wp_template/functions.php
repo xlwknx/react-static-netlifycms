@@ -199,9 +199,13 @@ if (!function_exists('virgilsecurity_setup')) :
 
     function setup_starter_content($content, $config)
     {
-        //set_theme_mod('hp_intro_area_github_text', 'Github s | [github_starz_count]');
-
         return [
+            //'attachments' => [
+            //    'featured-image-logo' => [
+            //        'post_title' => 'Logo',
+            //        'file'       => 'assets/logo.png',
+            //    ],
+            //],
             'options' => [
                 'show_on_front' => 'page',
                 'page_on_front' => '{{homepage}}',
@@ -582,18 +586,19 @@ if (!function_exists('virgilsecurity_setup')) :
         return 0;
     }
 
-    function wp_get_attachment( $attachment_id ) {
+    function wp_get_attachment($attachment_id)
+    {
 
-        $attachment = get_post( $attachment_id );
+        $attachment = get_post($attachment_id);
 
-        return array(
-            'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
-            'caption' => $attachment->post_excerpt,
+        return [
+            'alt'         => get_post_meta($attachment->ID, '_wp_attachment_image_alt', true),
+            'caption'     => $attachment->post_excerpt,
             'description' => $attachment->post_content,
-            'href' => get_permalink( $attachment->ID ),
-            'src' => $attachment->guid,
-            'title' => $attachment->post_title
-        );
+            'href'        => get_permalink($attachment->ID),
+            'src'         => $attachment->guid,
+            'title'       => $attachment->post_title,
+        ];
     }
 
     function store_github_stars()

@@ -40,12 +40,7 @@ class IntroSectionModel extends BaseSectionModel
         if ($introLinks->isEnabled()) {
             $values = (array)$introLinks->getValue();
 
-            return array_filter(
-                $values,
-                function ($value) {
-                    return $value['is_hidden'] == false;
-                }
-            );
+            return $this->filterCollection($values);
         }
     }
 
@@ -55,13 +50,14 @@ class IntroSectionModel extends BaseSectionModel
         $introLangsMod = $this->sectionMods->getIntroLangsMod();
 
         if ($introLangsMod->isEnabled()) {
-            $values = (array)$introLangsMod->getValue();
 
-            return array_filter(
-                $values,
-                function ($value) {
-                    return $value['is_hidden'] == false;
-                }
+            return $this->filterCollection(
+                (array)$introLangsMod->getValue(),
+                [
+                    'lang_image' => [
+                        [$this, 'imageModValueToModel'],
+                    ],
+                ]
             );
         }
     }

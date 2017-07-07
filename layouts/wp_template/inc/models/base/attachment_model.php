@@ -7,29 +7,22 @@ use VirgilSecurity\Models\Src\BaseModel;
 
 class AttachmentModel extends BaseModel
 {
-    /**
-     * @var null
-     */
+    /** @var string */
     private $src;
-    /**
-     * @var null
-     */
+
+    /** @var string */
     private $href;
-    /**
-     * @var null
-     */
+
+    /** @var string */
     private $alt;
-    /**
-     * @var null
-     */
+
+    /** @var string */
     private $title;
-    /**
-     * @var null
-     */
+
+    /** @var string */
     private $description;
-    /**
-     * @var null
-     */
+
+    /** @var string */
     private $caption;
 
 
@@ -47,6 +40,36 @@ class AttachmentModel extends BaseModel
         $this->title = $title;
         $this->description = $description;
         $this->caption = $caption;
+    }
+
+
+    public static function createFromImageUrl($imageUrl)
+    {
+        $logoImageId = attachment_url_to_postid($imageUrl);
+
+        if ($logoImageId != 0) {
+            $meta = wp_get_attachment($logoImageId);
+
+            return new AttachmentModel(
+                $meta['src'], $meta['href'], $meta['alt'], $meta['title'], $meta['description'], $meta['caption']
+            );
+        } else {
+            return new AttachmentModel($imageUrl, $imageUrl);
+        }
+    }
+
+
+    public static function createFromImageId($imageId)
+    {
+        if ($imageId != 0) {
+            $meta = wp_get_attachment($imageId);
+
+            return new AttachmentModel(
+                $meta['src'], $meta['href'], $meta['alt'], $meta['title'], $meta['description'], $meta['caption']
+            );
+        } else {
+            return new AttachmentModel();
+        }
     }
 
 

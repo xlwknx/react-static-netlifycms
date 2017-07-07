@@ -26,19 +26,7 @@ class FooterSectionModel extends BaseSectionModel
         $logoImageMod = $this->sectionMods->getLogoImageMod();
 
         if ($logoImageMod->isEnabled()) {
-            $logoImageUrl = $logoImageMod->getValue();
-
-            $logoImageId = attachment_url_to_postid($logoImageUrl);
-
-            if ($logoImageId != 0) {
-                $meta = wp_get_attachment($logoImageId);
-
-                return new AttachmentModel(
-                    $meta['src'], $meta['href'], $meta['alt'], $meta['title'], $meta['description'], $meta['caption']
-                );
-            } else {
-                return new AttachmentModel($logoImageUrl, $logoImageUrl);
-            }
+            return $this->imageModValueToModel($logoImageMod->getValue());
         }
     }
 
@@ -60,12 +48,7 @@ class FooterSectionModel extends BaseSectionModel
         if ($socialLinks->isEnabled()) {
             $values = (array)$socialLinks->getValue();
 
-            return array_filter(
-                $values,
-                function ($value) {
-                    return $value['is_hidden'] == false;
-                }
-            );
+            return $this->filterCollection($values);
         }
     }
 }
