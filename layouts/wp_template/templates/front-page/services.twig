@@ -1,3 +1,68 @@
-<div class="services">
+{% extends 'common/section.twig' %}
 
-</div>
+{% block content %}
+
+    <div class="services">
+        <div class="wrapper">
+            <div class="servicesContentBlock">
+                <div class="services-caption">features</div>
+                <div class="blockMsg">
+                    <h2 class="blockMsg-headline">More encryption, <br>less code</h2>
+                    <p class="blockMsg-text">Virgil offers four ways to secure your data. Choose a use case that fits
+                        your scenario.</p>
+                </div>
+                <ul class="serviceList">
+                    <li class="serviceItem" data-tilt="" data-tilt-max="15">
+                        <a href="https://developer.virgilsecurity.com/docs/get-started/encrypted-communication"
+                           class="serviceItem-link">
+                            <img src="/wp-content/themes/virgilsecurity/assets/home-services-conversation.svg" alt=""
+                                 class="serviceItem-image">
+                            <span class="serviceItem-linkText">Encrypted communication</span>
+                            <span class="serviceItem-linkHoverText">
+                <span>Learn More</span>
+                <i class="icon icon-arrowRight-white" aria-hidden="true"></i>
+              </span>
+                        </a>
+                    </li>
+                    <li class="serviceItem" data-tilt="" data-tilt-max="15">
+                        <a href="https://developer.virgilsecurity.com/docs/get-started/passwordless-authentication"
+                           class="serviceItem-link">
+                            <img src="/wp-content/themes/virgilsecurity/assets/home-services-user.svg" alt=""
+                                 class="serviceItem-image">
+                            <span class="serviceItem-linkText">Passwordless authentication</span>
+                            <span class="serviceItem-linkHoverText">
+                <span>Learn More</span>
+                <i class="icon icon-arrowRight-white" aria-hidden="true"></i>
+              </span>
+                        </a>
+                    </li>
+                    <li class="serviceItem" data-tilt="" data-tilt-max="15">
+                        <a href="https://developer.virgilsecurity.com/docs/get-started/encrypted-storage"
+                           class="serviceItem-link">
+                            <img src="/wp-content/themes/virgilsecurity/assets/home-services-box.svg" alt=""
+                                 class="serviceItem-image">
+                            <span class="serviceItem-linkText">Encrypted storage</span>
+                            <span class="serviceItem-linkHoverText">
+                <span>Learn More</span>
+                <i class="icon icon-arrowRight-white" aria-hidden="true"></i>
+              </span>
+                        </a>
+                    </li>
+                    <li class="serviceItem" data-tilt="" data-tilt-max="15">
+                        <a href="https://developer.virgilsecurity.com/docs/get-started/data-integrity"
+                           class="serviceItem-link">
+                            <img src="/wp-content/themes/virgilsecurity/assets/home-services-cloud.svg" alt=""
+                                 class="serviceItem-image">
+                            <span class="serviceItem-linkText">Data integrity</span>
+                            <span class="serviceItem-linkHoverText">
+                <span>Learn More</span>
+                <i class="icon icon-arrowRight-white" aria-hidden="true"></i>
+              </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

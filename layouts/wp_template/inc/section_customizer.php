@@ -7,6 +7,7 @@ use VirgilSecurity\Customizer\FooterSection\FooterSectionCustomizer;
 
 
 use VirgilSecurity\Customizer\FrontPage\IntroSection\IntroSectionCustomizer;
+use VirgilSecurity\Customizer\FrontPage\ServicesSection\ServicesSectionCustomizer;
 use VirgilSecurity\Customizer\FrontPage\UseCasesSection\UseCasesSectionCustomizer;
 use VirgilSecurity\Customizer\HeaderSection\HeaderSectionCustomizer;
 use VirgilSecurity\Customizer\Src\ConfigInterface;
@@ -38,6 +39,7 @@ class SectionCustomizer
 
                 $this->getFrontPageIntroSection($wpCustomizer),
                 $this->getFrontPageUseCasesSection($wpCustomizer),
+                $this->getFrontPageServicesSection($wpCustomizer),
             ]
         );
     }
@@ -77,6 +79,17 @@ class SectionCustomizer
         return $useCasesSectionCustomizer->getSection(
             $this->sectionModifications->getFrontPageSectionMods()
                                        ->getUseCasesSectionMods()
+        );
+    }
+
+
+    public function getFrontPageServicesSection(WP_Customize_Manager $wpCustomizer)
+    {
+        $servicesSectionCustomizer = new ServicesSectionCustomizer($this->config, $wpCustomizer);
+
+        return $servicesSectionCustomizer->getSection(
+            $this->sectionModifications->getFrontPageSectionMods()
+                                       ->getServicesSectionMods()
         );
     }
 

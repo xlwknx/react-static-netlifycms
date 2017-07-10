@@ -6,9 +6,9 @@
 
     {% include 'front-page/use_cases.twig' with{ 'use_cases': models.use_cases_section, 'visible': models.use_cases_section.is_show  } only %}
 
-    {#{% include 'front-page/clients.twig' with{ 'clients': clients_section } only %}#}
+    {% include 'front-page/services.twig' with{ 'services': services_section, 'visible': models.services_section.is_show } only %}
 
-    {#{% include 'front-page/services.twig' with{ 'intro': usage_section } only %}#}
+    {#{% include 'front-page/clients.twig' with{ 'clients': clients_section } only %}#}
 
     {#{% include 'front-page/usage.twig' with{ 'intro': usage_section } only %}#}
 
