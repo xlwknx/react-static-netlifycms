@@ -4,28 +4,6 @@ use VirgilSecurity\SectionModifications;
 
 require_once get_parent_theme_file_path('/inc/autoloader_register.php');
 
-if (!class_exists('Timber')) {
-    add_action(
-        'admin_notices',
-        function () {
-            echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' .
-                 esc_url(admin_url('plugins.php#timber')) . '">' . esc_url(admin_url('plugins.php')) . '</a></p></div>';
-        }
-    );
-
-    add_filter(
-        'template_include',
-        function ($template) {
-            return get_stylesheet_directory() . '/static/no-timber.html';
-        }
-    );
-
-    return;
-}
-
-Timber::$dirname = ['templates'];
-
-
 /**
  * TODO: upload all images from assets
  * TODO: update content from production to default theme modifications.
@@ -1049,5 +1027,7 @@ endif; // virgilsecurity_setup
 add_action('after_setup_theme', 'virgilsecurity_setup');
 
 require_once get_parent_theme_file_path('/inc/customizer_init.php');
+
+require_once get_parent_theme_file_path('/inc/timber_init.php');
 
 require_once get_parent_theme_file_path('/inc/customizer_preview.php');
