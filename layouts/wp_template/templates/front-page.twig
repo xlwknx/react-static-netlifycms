@@ -14,6 +14,6 @@
 
     {% include 'front_page/benefits_section.twig' with{ 'benefits': models.benefits_section, 'visible': models.benefits_section.is_show } only %}
 
-    {#{% include 'front_page/conclusion.twig' with{ 'intro': conclusion_section } only %}#}
+    {% include 'front_page/conclusion_section.twig' with{ 'conclusion': models.conclusion_section, 'visible': models.conclusion_section.is_show } only %}
 
 {% endblock %}

@@ -8,6 +8,7 @@ use VirgilSecurity\Customizer\FooterSection\FooterSectionCustomizer;
 
 use VirgilSecurity\Customizer\FrontPage\BenefitsSection\BenefitsSectionCustomizer;
 use VirgilSecurity\Customizer\FrontPage\ClientsSection\ClientsSectionCustomizer;
+use VirgilSecurity\Customizer\FrontPage\ConclusionSection\ConclusionSectionCustomizer;
 use VirgilSecurity\Customizer\FrontPage\IntroSection\IntroSectionCustomizer;
 use VirgilSecurity\Customizer\FrontPage\ServicesSection\ServicesSectionCustomizer;
 use VirgilSecurity\Customizer\FrontPage\UsageSection\UsageSectionCustomizer;
@@ -46,6 +47,7 @@ class SectionCustomizer
                 $this->getFrontPageClientsSection($wpCustomizer),
                 $this->getFrontPageUsageSection($wpCustomizer),
                 $this->getFrontPageBenefitsSection($wpCustomizer),
+                $this->getFrontPageConclusionSection($wpCustomizer),
             ]
         );
     }
@@ -129,6 +131,17 @@ class SectionCustomizer
         return $usageSectionCustomizer->getSection(
             $this->sectionModifications->getFrontPageSectionMods()
                                        ->getBenefitsSectionMods()
+        );
+    }
+
+
+    public function getFrontPageConclusionSection(WP_Customize_Manager $wpCustomizer)
+    {
+        $conclusionSectionCustomizer = new ConclusionSectionCustomizer($this->config, $wpCustomizer);
+
+        return $conclusionSectionCustomizer->getSection(
+            $this->sectionModifications->getFrontPageSectionMods()
+                                       ->getConclusionSectionMods()
         );
     }
 
