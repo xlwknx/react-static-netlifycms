@@ -1,0 +1,43 @@
+<?php
+
+namespace VirgilSecurity\Customizer\{{ page_namespace }}\{{ section_namespace }}\Modifications\Sections;
+
+
+{% for mod in section_mods %}
+use VirgilSecurity\Customizer\{{ page_namespace }}\{{ section_namespace }}\Modifications\{{ mod }};
+{% endfor %}
+
+use VirgilSecurity\Customizer\Src\BaseSectionMods;
+
+class {{ section_mods_name }} extends BaseSectionMods
+{
+{% for mod in section_mods %}
+    protected ${{ mod }};
+{% endfor %}
+
+
+    public function setupDefaults()
+    {
+        $this->setup(
+            [
+{% for mod in section_mods %}
+                $this->get{{ mod }}(),
+{% endfor %}
+            ]
+        );
+    }
+
+
+{% for mod in section_mods %}
+    public function get{{ mod }}()
+    {
+        if ($this->{{ mod }} == null) {
+            $this->{{ mod }} = new {{ mod }}();
+        }
+
+        return $this->{{ mod }};
+    }
+
+
+{% endfor %}
+}
