@@ -10,7 +10,7 @@
 
     {% include 'front_page/clients_section.twig' with{ 'clients': models.clients_section, 'visible': models.clients_section.is_show } only %}
 
-    {#{% include 'front_page/usage.twig' with{ 'intro': usage_section } only %}#}
+    {% include 'front_page/usage_section.twig' with{ 'intro': models.usage_section, 'visible': models.usage_section.is_show } only %}
 
     {#{% include 'front_page/conclusion.twig' with{ 'intro': conclusion_section } only %}#}
 
