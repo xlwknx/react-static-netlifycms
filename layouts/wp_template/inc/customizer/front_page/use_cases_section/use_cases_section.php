@@ -3,11 +3,11 @@
 namespace VirgilSecurity\Customizer\FrontPage\UseCasesSection;
 
 
-use VirgilSecurity\Customizer\Src\BaseSection;
+use VirgilSecurity\Customizer\FrontPage\FrontPageSection;
 
 use VirgilSecurity\Templates\FrontPage\UseCasesSectionTemplate;
 
-class UseCasesSection extends BaseSection
+class UseCasesSection extends FrontPageSection
 {
     protected $optional = true;
 
@@ -37,11 +37,5 @@ class UseCasesSection extends BaseSection
     public function getSectionTemplate()
     {
         return new UseCasesSectionTemplate();
-    }
-
-
-    public function getActiveCallback()
-    {
-        return is_front_page();
     }
 }

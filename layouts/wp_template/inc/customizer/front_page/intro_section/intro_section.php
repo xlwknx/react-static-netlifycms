@@ -3,11 +3,11 @@
 namespace VirgilSecurity\Customizer\FrontPage\IntroSection;
 
 
-use VirgilSecurity\Customizer\Src\BaseSection;
+use VirgilSecurity\Customizer\FrontPage\FrontPageSection;
 
 use VirgilSecurity\Templates\FrontPage\IntroSectionTemplate;
 
-class IntroSection extends BaseSection
+class IntroSection extends FrontPageSection
 {
     protected $optional = true;
 
@@ -37,11 +37,5 @@ class IntroSection extends BaseSection
     public function getSectionTemplate()
     {
         return new IntroSectionTemplate();
-    }
-
-
-    public function getActiveCallback()
-    {
-        return is_front_page();
     }
 }

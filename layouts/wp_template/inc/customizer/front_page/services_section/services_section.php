@@ -3,11 +3,12 @@
 namespace VirgilSecurity\Customizer\FrontPage\ServicesSection;
 
 
-use VirgilSecurity\Customizer\Src\BaseSection;
+use VirgilSecurity\Customizer\FrontPage\FrontPageSection;
+
 use VirgilSecurity\Templates\FrontPage\ServicesSectionTemplate;
 
 
-class ServicesSection extends BaseSection
+class ServicesSection extends FrontPageSection
 {
     protected $optional = true;
 
@@ -37,11 +38,5 @@ class ServicesSection extends BaseSection
     public function getSectionTemplate()
     {
         return new ServicesSectionTemplate();
-    }
-
-
-    public function getActiveCallback()
-    {
-        return is_front_page();
     }
 }
