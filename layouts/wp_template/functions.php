@@ -28,6 +28,7 @@ Timber::$dirname = ['templates'];
 
 /**
  * TODO: upload all images from assets
+ * TODO: update content from production to default theme modifications.
  */
 if (!function_exists('virgilsecurity_setup')) :
     /**
