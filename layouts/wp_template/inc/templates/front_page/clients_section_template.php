@@ -3,13 +3,12 @@
 namespace VirgilSecurity\Templates\FrontPage;
 
 
-use VirgilSecurity\Models\FrontPage\ServicesSectionModel;
-
+use VirgilSecurity\Models\FrontPage\ClientsSectionModel;
 use VirgilSecurity\Templates\Src\Template;
 
-class ServicesSectionTemplate extends Template
+class ClientsSectionTemplate extends Template
 {
-    const ENTRY_KEY = 'services';
+    const ENTRY_KEY = 'clients';
 
 
     /**
@@ -17,7 +16,7 @@ class ServicesSectionTemplate extends Template
      */
     public function getTemplatePath()
     {
-        return 'front_page/services.twig';
+        return 'front_page/clients_section.twig';
     }
 
 
@@ -26,6 +25,6 @@ class ServicesSectionTemplate extends Template
      */
     public function getModel()
     {
-        return new ServicesSectionModel();
+        return new ClientsSectionModel();
     }
 }

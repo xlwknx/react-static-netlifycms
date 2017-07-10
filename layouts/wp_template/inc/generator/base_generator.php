@@ -44,7 +44,7 @@ class BaseGenerator
         }
 
         if ($section) {
-            $path .= $section . '/';
+            $path .= $section . '_section/';
         }
 
         mkdir($path, 0777, true);
@@ -90,7 +90,7 @@ class BaseGenerator
         }
 
         if ($section) {
-            $path .= $section . '/';
+            $path .= $section . '_section/';
         }
 
         $path .= 'modifications/sections/';
@@ -109,7 +109,7 @@ class BaseGenerator
         }
 
         if ($section) {
-            $path .= $section . '/';
+            $path .= $section . '_section/';
         }
 
         $path .= 'modifications/';

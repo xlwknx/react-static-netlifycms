@@ -18,7 +18,7 @@ class UseCasesSectionTemplate extends Template
      */
     public function getTemplatePath()
     {
-        return 'front-page/use_cases_section.twig';
+        return 'front_page/use_cases_section.twig';
     }
 
 

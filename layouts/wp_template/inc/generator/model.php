@@ -12,9 +12,12 @@ class Model extends BaseGenerator
         $pageName = $this->placeholderToName($page);
 
         $templatePath = '';
+        $showSectionMod = 'is_enabled_' . $name . '_section';
 
         if ($page) {
             $templatePath .= $page . '/';
+            $showSectionMod = 'is_enabled_' . $page . '_' . $name . '_section';
+
         }
 
         $templatePath .= $name . '_model.twig';

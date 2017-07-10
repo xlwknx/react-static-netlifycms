@@ -17,7 +17,7 @@ class IntroSectionTemplate extends Template
      */
     public function getTemplatePath()
     {
-        return 'front-page/intro_section.twig';
+        return 'front_page/intro_section.twig';
     }
 
 
