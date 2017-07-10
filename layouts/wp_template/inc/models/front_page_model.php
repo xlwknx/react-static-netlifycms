@@ -10,6 +10,7 @@ use VirgilSecurity\Models\FrontPage\UseCasesSectionModel;
 use VirgilSecurity\Models\FrontPage\ServicesSectionModel;
 use VirgilSecurity\Models\FrontPage\ClientsSectionModel;
 use VirgilSecurity\Models\FrontPage\UsageSectionModel;
+use VirgilSecurity\Models\FrontPage\BenefitsSectionModel;
 
 class FrontPageModel extends LayoutModel
 {
@@ -41,5 +42,11 @@ class FrontPageModel extends LayoutModel
     public function UsageSection()
     {
         return new UsageSectionModel();
+    }
+
+
+    public function BenefitsSection()
+    {
+        return new BenefitsSectionModel();
     }
 }

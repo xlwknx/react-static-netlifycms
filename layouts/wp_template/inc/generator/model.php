@@ -27,7 +27,7 @@ class Model extends BaseGenerator
             'section_namespace'  => $modelName . 'Section',
             'section_mods_name'  => $modelName . 'SectionMods',
             'section_model_name' => $modelName . 'SectionModel',
-            'show_section_mod'   => 'is_enabled_' . $name . '_section',
+            'show_section_mod'   => $showSectionMod,
         ];
 
         $path = $this->createPathToModels($name, $page);
