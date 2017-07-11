@@ -16,6 +16,9 @@
 }
 
 .customize-partial-edit-shortcut-hp_clients_section {
+    position: relative;
+    left: 70px;
+    top: 60px;
 }
 
 .customize-partial-edit-shortcut-hp_usage_section {

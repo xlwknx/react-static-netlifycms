@@ -20,7 +20,7 @@ abstract class BaseSectionModel extends BaseModel
 
     public function imageModValueToModel($image)
     {
-        if (preg_match('/^\\d$/', $image)) {
+        if (preg_match('/^[0-9]*$/', $image)) {
             return AttachmentModel::createFromImageId($image);
         }
 

@@ -4,69 +4,18 @@
     <div class="clients">
         <div class="wrapper">
             <div class="clientsContentBlock">
-                <a href="" class="clientsLink">
-            <span class="clientsLinkItem">
-              <img
-                      width="130"
-                      height="35"
-                      src="/wp-content/themes/virgilsecurity/assets/home-clients-trustlook.png"
-                      srcset="/wp-content/themes/virgilsecurity/assets/home-clients-trustlook@2x.png 2x"
-                      class="clientsLinkItem-image"
-                      alt="">
-            </span>
-                    <span class="clientsLinkItem">
-              <img
-                      width="100"
-                      height="20"
-                      src="/wp-content/themes/virgilsecurity/assets/home-clients-soraa.png"
-                      srcset="/wp-content/themes/virgilsecurity/assets/home-clients-soraa@2x.png 2x"
-                      class="clientsLinkItem-image"
-                      alt="">
-            </span>
-                    <span class="clientsLinkItem">
-              <img
-                      width="98"
-                      height="50"
-                      src="/wp-content/themes/virgilsecurity/assets/home-clients-atomicorp.png"
-                      srcset="/wp-content/themes/virgilsecurity/assets/home-clients-atomicorp@2x.png 2x"
-                      class="clientsLinkItem-image"
-                      alt="">
-            </span>
-                    <span class="clientsLinkItem">
-              <img
-                      width="101"
-                      height="30"
-                      src="/wp-content/themes/virgilsecurity/assets/home-clients-twilio.png"
-                      srcset="/wp-content/themes/virgilsecurity/assets/home-clients-twilio@2x.png 2x"
-                      class="clientsLinkItem-image"
-                      alt="">
-            </span>
-                    <span class="clientsLinkItem">
-              <img
-                      src="/wp-content/themes/virgilsecurity/assets/home-clients-sikka.png"
-                      srcset="/wp-content/themes/virgilsecurity/assets/home-clients-sikka@2x.png 2x"
-                      class="clientsLinkItem-image"
-                      alt="">
-            </span>
-                    <span class="clientsLinkItem">
-              <img
-                      width="40"
-                      height="50"
-                      src="/wp-content/themes/virgilsecurity/assets/home-clients-dd.png"
-                      srcset="/wp-content/themes/virgilsecurity/assets/home-clients-dd@2x.png 2x"
-                      class="clientsLinkItem-image"
-                      alt="">
-            </span>
-                    <span class="clientsLinkItem">
-              <img
-                      width="99"
-                      height="27"
-                      src="/wp-content/themes/virgilsecurity/assets/home-clients-yubico.png"
-                      srcset="/wp-content/themes/virgilsecurity/assets/home-clients-yubico@2x.png 2x"
-                      class="clientsLinkItem-image"
-                      alt="">
-            </span>
-                    <span class="clientsLinkButton button-raisedRed-static">see our clients</span>
+                <a href="{{ clients.link }}" class="clientsLink">
+                    {% for client in clients.collection %}
+                        <span class="clientsLinkItem">
+                            <img
+                                    width="{{ client.width }}"
+                                    height="{{ client.height }}"
+                                    src="{{ client.image.src }}"
+                                    srcset="{{ client.image.src | retina(2) }} 2x"
+                                    class="clientsLinkItem-image"
+                                    alt="{{ client.image.alt|shortcodes }}">
+                        </span>
+                    {% endfor %}
                 </a>
             </div>
         </div>

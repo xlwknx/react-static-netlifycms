@@ -100,5 +100,6 @@ class FrontPageSectionMods extends BaseSectionMods
         $this->usageSectionMods->setupDefaults();
         $this->benefitsSectionMods->setupDefaults();
         $this->conclusionSectionMods->setupDefaults();
+        $this->clientsSectionMods->setupDefaults();
     }
 }

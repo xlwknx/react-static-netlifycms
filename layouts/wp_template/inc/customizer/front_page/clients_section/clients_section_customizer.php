@@ -3,6 +3,8 @@
 namespace VirgilSecurity\Customizer\FrontPage\ClientsSection;
 
 
+use VirgilSecurity\Customizer\FrontPage\ClientsSection\Fields\ClientsLinkField;
+use VirgilSecurity\Customizer\FrontPage\ClientsSection\Groups\ClientsListGroup;
 use VirgilSecurity\Customizer\FrontPage\ClientsSection\Modifications\Sections\ClientsSectionMods;
 
 use WP_Customize_Manager;
@@ -25,6 +27,14 @@ class ClientsSectionCustomizer
     public function getSection(ClientsSectionMods $clientsSectionMods)
     {
         $section = new ClientsSection($this->config, $this->wpCustomizer);
+
+        $section->addField(
+            ClientsLinkField::createWithMod($clientsSectionMods->getClientsLinkMod())
+        );
+
+        $section->addField(
+            ClientsListGroup::createWithMod($clientsSectionMods->getClientsListMod())
+        );
 
 
         return $section;

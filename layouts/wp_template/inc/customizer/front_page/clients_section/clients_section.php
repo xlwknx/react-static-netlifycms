@@ -13,7 +13,7 @@ class ClientsSection extends FrontPageSection
 
     protected $priority = 29;
 
-    protected $selector = '.page .clients .wrapper .clientsContentBlock';
+    protected $selector = '.page .clients';
 
 
     public function getSection()

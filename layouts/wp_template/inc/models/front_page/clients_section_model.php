@@ -19,4 +19,32 @@ class ClientsSectionModel extends BaseSectionModel
     {
         $this->sectionMods = new ClientsSectionMods();
     }
+
+
+    public function Link()
+    {
+        $mod = $this->sectionMods->getClientsLinkMod();
+
+        if ($mod->isEnabled()) {
+            return $mod->getValue();
+        }
+    }
+
+
+    public function Collection()
+    {
+        $mod = $this->sectionMods->getClientsListMod();
+
+        if ($mod->isEnabled()) {
+            return $this->filterCollection(
+                (array)$mod->getValue(),
+                [
+                    'image' => [
+                        [$this, 'imageModValueToModel'],
+                    ],
+                ]
+            );
+            
+        }
+    }
 }
