@@ -39,4 +39,7 @@
 }
 
 .customize-partial-edit-shortcut-hp_conclusion_section {
+    position: relative;
+    left: 680px;
+    top: 160px;
 }

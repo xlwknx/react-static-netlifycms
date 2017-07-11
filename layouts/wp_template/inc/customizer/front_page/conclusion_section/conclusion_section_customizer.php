@@ -3,6 +3,9 @@
 namespace VirgilSecurity\Customizer\FrontPage\ConclusionSection;
 
 
+use VirgilSecurity\Customizer\FrontPage\ConclusionSection\Fields\ConclusionHeadlineField;
+use VirgilSecurity\Customizer\FrontPage\ConclusionSection\Fields\ConclusionTextField;
+use VirgilSecurity\Customizer\FrontPage\ConclusionSection\Groups\ConclusionLinksGroup;
 use VirgilSecurity\Customizer\FrontPage\ConclusionSection\Modifications\Sections\ConclusionSectionMods;
 
 use WP_Customize_Manager;
@@ -25,6 +28,18 @@ class ConclusionSectionCustomizer
     public function getSection(ConclusionSectionMods $conclusionSectionMods)
     {
         $section = new ConclusionSection($this->config, $this->wpCustomizer);
+
+        $section->addField(
+            ConclusionHeadlineField::createWithMod($conclusionSectionMods->getConclusionHeadlineMod())
+        );
+
+        $section->addField(
+            ConclusionTextField::createWithMod($conclusionSectionMods->getConclusionTextMod())
+        );
+
+        $section->addField(
+            ConclusionLinksGroup::createWithMod($conclusionSectionMods->getConclusionLinksListMod())
+        );
 
 
         return $section;
