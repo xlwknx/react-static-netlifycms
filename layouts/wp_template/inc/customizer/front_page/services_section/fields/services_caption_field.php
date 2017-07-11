@@ -1,11 +1,11 @@
 <?php
 
-namespace VirgilSecurity\Customizer\FrontPage\UseCasesSection\Fields;
+namespace VirgilSecurity\Customizer\FrontPage\ServicesSection\Fields;
 
 
 use VirgilSecurity\Customizer\Fields\TextField;
 
-class UseCasesCaptionField extends TextField
+class ServicesCaptionField extends TextField
 {
     protected $optional = true;
 

@@ -17,7 +17,7 @@ class ServicesSectionTemplate extends Template
      */
     public function getTemplatePath()
     {
-        return 'front_page/services.twig';
+        return 'front_page/services_section.twig';
     }
 
 

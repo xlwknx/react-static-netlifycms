@@ -29,8 +29,8 @@ abstract class BaseField
 
     public function __construct($settings = null, $label = null)
     {
-        $this->settings = $settings;
-        $this->label = $label;
+        $this->settings = trim($settings);
+        $this->label = trim($label);
     }
 
 

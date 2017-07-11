@@ -22,6 +22,9 @@ class ServicesSectionMods extends BaseSectionMods
         $this->setup(
             [
                 $this->getServicesCaptionMod(),
+                $this->getServicesHeadlineMod(),
+                $this->getServicesTextMod(),
+                $this->getServicesListMod(),
             ]
         );
     }

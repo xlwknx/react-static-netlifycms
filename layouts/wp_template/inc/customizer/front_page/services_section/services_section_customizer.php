@@ -3,6 +3,10 @@
 namespace VirgilSecurity\Customizer\FrontPage\ServicesSection;
 
 
+use VirgilSecurity\Customizer\FrontPage\ServicesSection\Fields\ServicesCaptionField;
+use VirgilSecurity\Customizer\FrontPage\ServicesSection\Fields\ServicesHeadlineField;
+use VirgilSecurity\Customizer\FrontPage\ServicesSection\Fields\ServicesMessageField;
+use VirgilSecurity\Customizer\FrontPage\ServicesSection\Groups\ServicesListGroup;
 use VirgilSecurity\Customizer\FrontPage\ServicesSection\Modifications\Sections\ServicesSectionMods;
 
 use WP_Customize_Manager;
@@ -26,6 +30,21 @@ class ServicesSectionCustomizer
     {
         $section = new ServicesSection($this->config, $this->wpCustomizer);
 
+        $section->addField(
+            ServicesHeadlineField::createWithMod($servicesSectionMods->getServicesHeadlineMod())
+        );
+
+        $section->addField(
+            ServicesMessageField::createWithMod($servicesSectionMods->getServicesTextMod())
+        );
+
+        $section->addField(
+            ServicesCaptionField::createWithMod($servicesSectionMods->getServicesCaptionMod())
+        );
+
+        $section->addField(
+            ServicesListGroup::createWithMod($servicesSectionMods->getServicesListMod())
+        );
 
         return $section;
     }

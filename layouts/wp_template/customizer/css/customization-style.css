@@ -10,6 +10,9 @@
 }
 
 .customize-partial-edit-shortcut-hp_services_section {
+    position: relative;
+    top: 220px;
+    left: 80px;
 }
 
 .customize-partial-edit-shortcut-hp_clients_section {

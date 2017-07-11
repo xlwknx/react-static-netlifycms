@@ -14,7 +14,7 @@ class ServicesSection extends FrontPageSection
 
     protected $priority = 28;
 
-    protected $selector = '.page .services .wrapper .servicesContentBlock .blockMsg';
+    protected $selector = '.page .services';
 
 
     public function getSection()
