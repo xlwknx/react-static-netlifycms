@@ -24,10 +24,13 @@
 .customize-partial-edit-shortcut-hp_usage_section {
     position: relative;
     left: 80px;
-    top: 0px;
+    top: 0;
 }
 
 .customize-partial-edit-shortcut-hp_benefits_section {
+    position: relative;
+    left: 80px;
+    top: 20px;
 }
 
 .customize-partial-edit-shortcut-hp_use_cases_section {

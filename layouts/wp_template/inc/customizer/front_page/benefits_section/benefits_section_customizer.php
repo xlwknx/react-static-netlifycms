@@ -3,6 +3,7 @@
 namespace VirgilSecurity\Customizer\FrontPage\BenefitsSection;
 
 
+use VirgilSecurity\Customizer\FrontPage\BenefitsSection\Groups\BenefitsListGroup;
 use VirgilSecurity\Customizer\FrontPage\BenefitsSection\Modifications\Sections\BenefitsSectionMods;
 
 use WP_Customize_Manager;
@@ -25,6 +26,10 @@ class BenefitsSectionCustomizer
     public function getSection(BenefitsSectionMods $benefitsSectionMods)
     {
         $section = new BenefitsSection($this->config, $this->wpCustomizer);
+
+        $section->addField(
+            BenefitsListGroup::createWithMod($benefitsSectionMods->getBenefitsListMod())
+        );
 
 
         return $section;

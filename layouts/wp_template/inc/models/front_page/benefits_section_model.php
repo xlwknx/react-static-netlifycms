@@ -19,4 +19,23 @@ class BenefitsSectionModel extends BaseSectionModel
     {
         $this->sectionMods = new BenefitsSectionMods();
     }
+
+
+    public function Collection()
+    {
+        $mod = $this->sectionMods->getBenefitsListMod();
+
+        if ($mod->isEnabled()) {
+            return $this->filterCollection(
+                (array)$mod->getValue(),
+                [
+                    'image' => [
+                        [$this, 'imageModValueToModel'],
+                    ],
+                ]
+            );
+
+        }
+    }
+
 }
