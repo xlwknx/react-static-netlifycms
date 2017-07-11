@@ -21,44 +21,44 @@ class UseCasesSectionModel extends BaseSectionModel
     }
 
 
-    //public function Headline()
-    //{
-    //    $msgTextMod = $this->sectionMods->getIntroMsgMod();
-    //
-    //    if ($msgTextMod->isEnabled()) {
-    //        return [
-    //            'text' => $msgTextMod->getValue(),
-    //        ];
-    //    }
-    //}
-    //
-    //
-    //public function Links()
-    //{
-    //    $introLinks = $this->sectionMods->getIntroLinksMod();
-    //
-    //    if ($introLinks->isEnabled()) {
-    //        $values = (array)$introLinks->getValue();
-    //
-    //        return $this->filterCollection($values);
-    //    }
-    //}
-    //
-    //
-    //public function Langs()
-    //{
-    //    $introLangsMod = $this->sectionMods->getIntroLangsMod();
-    //
-    //    if ($introLangsMod->isEnabled()) {
-    //
-    //        return $this->filterCollection(
-    //            (array)$introLangsMod->getValue(),
-    //            [
-    //                'lang_image' => [
-    //                    [$this, 'imageModValueToModel'],
-    //                ],
-    //            ]
-    //        );
-    //    }
-    //}
+    public function Headline()
+    {
+        $mod = $this->sectionMods->getUseCasesHeadlineMod();
+
+        if ($mod->isEnabled()) {
+            return $mod->getValue();
+        }
+    }
+
+
+    public function Text()
+    {
+        $mod = $this->sectionMods->getUseCasesTextMod();
+
+        if ($mod->isEnabled()) {
+            return $mod->getValue();
+        }
+    }
+
+
+    public function Links()
+    {
+        $mod = $this->sectionMods->getUseCasesLinksMod();
+
+        if ($mod->isEnabled()) {
+            return $this->filterCollection(
+                (array)$mod->getValue()
+            );
+        }
+    }
+
+
+    public function Caption()
+    {
+        $mod = $this->sectionMods->getUseCasesListCaptionMod();
+
+        if ($mod->isEnabled()) {
+            return $mod->getValue();
+        }
+    }
 }

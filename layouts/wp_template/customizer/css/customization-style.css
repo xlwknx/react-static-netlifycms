@@ -22,6 +22,8 @@
 }
 
 .customize-partial-edit-shortcut-hp_use_cases_section {
+    position: relative;
+    margin-left: -600px;
 }
 
 .customize-partial-edit-shortcut-hp_conclusion_section {

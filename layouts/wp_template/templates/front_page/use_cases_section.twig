@@ -5,19 +5,18 @@
         <div class="wrapper">
             <div class="useCasesContentBlock">
                 <div class="blockMsg">
-                    <h2 class="blockMsg-headline">Stay safe with <strong>Virgil Security</strong></h2>
-                    <p class="blockMsg-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
-                        consectetur.</p>
+                    <h2 class="blockMsg-headline">{{ use_cases.headline|shortcodes }}</h2>
+                    <p class="blockMsg-text">{{ use_cases.text|shortcodes }}</p>
                     <div class="blockMsg-links">
-                        <a href="" class="button-raisedRed">How to stay save</a>
-                        {#<a href="" class="button-flat">About us</a>#}
+                        {% for link in use_cases.links %}
+                            {% include 'common/link_button/' ~ link.link_button_skin ~ '.twig' with {'item': link} %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
         <div class="useCaseList">
-            <div class="useCaseList-caption">use cases</div>
+            <div class="useCaseList-caption">{{ use_cases.caption|shortcodes }}</div>
             <div class="useCaseList-image"></div>
         </div>
     </div>

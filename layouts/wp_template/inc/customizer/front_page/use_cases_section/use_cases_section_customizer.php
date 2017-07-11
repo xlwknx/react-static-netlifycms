@@ -3,6 +3,10 @@
 namespace VirgilSecurity\Customizer\FrontPage\UseCasesSection;
 
 
+use VirgilSecurity\Customizer\FrontPage\UseCasesSection\Groups\UseCasesLinksGroup;
+use VirgilSecurity\Customizer\FrontPage\UseCasesSection\Fields\UseCasesCaptionField;
+use VirgilSecurity\Customizer\FrontPage\UseCasesSection\Fields\UseCasesHeadlineField;
+use VirgilSecurity\Customizer\FrontPage\UseCasesSection\Fields\UseCasesMessageField;
 use VirgilSecurity\Customizer\FrontPage\UseCasesSection\Modifications\Sections\UseCasesSectionMods;
 
 use WP_Customize_Manager;
@@ -22,21 +26,30 @@ class UseCasesSectionCustomizer
     }
 
 
-    public function getSection(UseCasesSectionMods $introSectionMods)
+    public function getSection(UseCasesSectionMods $useCasesSectionMods)
     {
         $section = new UseCasesSection($this->config, $this->wpCustomizer);
 
-        //$section->addField(
-        //    IntroMsgField::createWithMod($introSectionMods->getIntroMsgMod())
-        //);
-        //
-        //$section->addField(
-        //    IntroLinksGroup::createWithMod($introSectionMods->getIntroLinksMod())
-        //);
-        //
-        //$section->addField(
-        //    IntroLangsGroup::createWithMod($introSectionMods->getIntroLangsMod())
-        //);
+        $section->addField(
+            UseCasesHeadlineField::createWithMod($useCasesSectionMods->getUseCasesHeadlineMod())
+        );
+
+        $section->addField(
+            UseCasesMessageField::createWithMod($useCasesSectionMods->getUseCasesTextMod())
+        );
+
+        $section->addField(
+            UseCasesLinksGroup::createWithMod(
+                $useCasesSectionMods->getUseCasesLinksMod()
+            )
+        );
+
+        $section->addField(
+            UseCasesCaptionField::createWithMod(
+                $useCasesSectionMods->getUseCasesListCaptionMod()
+            )
+        );
+
 
         return $section;
     }

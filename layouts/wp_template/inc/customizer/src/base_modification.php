@@ -5,7 +5,7 @@ namespace VirgilSecurity\Customizer\Src;
 
 abstract class BaseModification implements ModificationInterface
 {
-    private $defaultValue;
+    protected $defaultValue;
 
 
     public function __construct($defaultValue = null)
@@ -22,7 +22,7 @@ abstract class BaseModification implements ModificationInterface
      */
     public function getValue()
     {
-        return get_theme_mod($this->getName());
+        return get_theme_mod($this->getName(), $this->defaultValue);
     }
 
 

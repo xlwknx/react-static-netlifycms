@@ -1,10 +1,13 @@
 <?php
+
 namespace VirgilSecurity\Customizer\Fields;
 
 
 class ButtonSkinSelectField extends SelectField
 {
     protected $multiple = 0;
+
+    protected $default = 'none';
 
 
     public function getChoices()

@@ -13,7 +13,7 @@ class UseCasesSection extends FrontPageSection
 
     protected $priority = 27;
 
-    protected $selector = '.page .useCases .wrapper .useCasesContentBlock .blockMsg .blockMsg-headline';
+    protected $selector = '.page .useCases';
 
 
     public function getSection()
