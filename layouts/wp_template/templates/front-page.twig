@@ -1,19 +1,25 @@
 {% extends "base.twig" %}
 
-{% block content %}
+{% block body_content %}
+    <div class="page homePage" data-vs-page="home">
+        {% block header %}
+            {{ parent() }}
+        {% endblock %}
 
-    {% include 'front_page/intro_section.twig' with{ 'intro': models.intro_section, 'visible': models.intro_section.is_show } only %}
+        {% block content %}
+            <div class="container">
+                {% include 'front_page/intro_section.twig' with{ 'intro': models.intro_section, 'visible': models.intro_section.is_show } only %}
+                {% include 'front_page/use_cases_section.twig' with{ 'use_cases': models.use_cases_section, 'visible': models.use_cases_section.is_show  } only %}
+                {% include 'front_page/services_section.twig' with{ 'services': models.services_section, 'visible': models.services_section.is_show } only %}
+                {% include 'front_page/clients_section.twig' with{ 'clients': models.clients_section, 'visible': models.clients_section.is_show } only %}
+                {% include 'front_page/usage_section.twig' with{ 'usage': models.usage_section, 'visible': models.usage_section.is_show } only %}
+                {% include 'front_page/benefits_section.twig' with{ 'benefits': models.benefits_section, 'visible': models.benefits_section.is_show } only %}
+                {% include 'front_page/conclusion_section.twig' with{ 'conclusion': models.conclusion_section, 'visible': models.conclusion_section.is_show } only %}
+            </div>
+        {% endblock %}
 
-    {% include 'front_page/use_cases_section.twig' with{ 'use_cases': models.use_cases_section, 'visible': models.use_cases_section.is_show  } only %}
-
-    {% include 'front_page/services_section.twig' with{ 'services': models.services_section, 'visible': models.services_section.is_show } only %}
-
-    {% include 'front_page/clients_section.twig' with{ 'clients': models.clients_section, 'visible': models.clients_section.is_show } only %}
-
-    {% include 'front_page/usage_section.twig' with{ 'usage': models.usage_section, 'visible': models.usage_section.is_show } only %}
-
-    {% include 'front_page/benefits_section.twig' with{ 'benefits': models.benefits_section, 'visible': models.benefits_section.is_show } only %}
-
-    {% include 'front_page/conclusion_section.twig' with{ 'conclusion': models.conclusion_section, 'visible': models.conclusion_section.is_show } only %}
-
+        {% block footer %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
 {% endblock %}

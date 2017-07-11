@@ -1,3 +1,7 @@
+.customize-partial-edit-shortcut-header_section {
+    left: 35px;
+}
+
 .customize-partial-edit-shortcut-hp_intro_section {
     top: 300px;
     left: 80px;
@@ -21,6 +25,10 @@
 
 .customize-partial-edit-shortcut-hp_benefits_section {
     left: 100px;
+}
+
+.customize-partial-edit-shortcut-hp_use_cases_section {
+    left: 35px;
 }
 
 .customize-partial-edit-shortcut-hp_conclusion_section {

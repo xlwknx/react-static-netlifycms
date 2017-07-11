@@ -1,19 +1,87 @@
 {% extends 'common/section.twig' %}
 
 {% block content %}
+
     <header class="header">
-        <div class="header-logo">
-            <a href="{{ header.logo.url }}">
-                <img src="{{ header.logo.image.src }}" alt="{{ header.logo.image.alt|shortcodes }}">
-            </a>
+        <div class="headerFull" data-vs-sticky-header>
+            <div class="headerLogo">
+                <a href="{{ header.logo.url }}"><img src="{{ header.logo.image.src }}" width="145"
+                                                     height="47" alt="{{ header.logo.image.alt|shortcodes }}"></a>
+            </div>
+            {{ header.header_menu|shortcodes }}
+            <div class="headerAuth">
+                {% for item in header.auth_links %}
+                    {% include 'common/link_button/' ~ item.link_button_skin ~ '.twig' %}
+                {% endfor %}
+            </div>
+            <button data-vs-sideNav-open class="headerOpenButton">
+                <i class="icon icon-menu-red"></i>
+            </button>
         </div>
-
-        {{ header.header_menu|shortcodes }}
-
-        <div class="headerAuth">
-            {% for item in header.auth_links %}
-                {% include 'common/link_button/' ~ item.link_button_skin ~ '.twig' %}
-            {% endfor %}
+        <div class="headerSideBar" data-vs-sideNav-target>
+            <div class="headerCloseButton">
+                <button data-vs-sideNav-close>
+                    <i class="icon icon-close-red"></i>
+                </button>
+            </div>
+            <nav class="headerNav">
+                <ul class="firstLevel-list">
+                    <li class="firstLevel-item">
+                        <div class="firstLevel-itemLink">Get started</div>
+                        <ul class="secondLevel-list">
+                            <li class="secondLevel-item">
+                                <a href="" class="secondLevel-itemLink">Encrypted communication</a>
+                            </li>
+                            <li class="secondLevel-item">
+                                <a href="" class="secondLevel-itemLink">Encrypted storage</a>
+                            </li>
+                            <li class="secondLevel-item">
+                                <a href="" class="secondLevel-itemLink">Passwordless Authentication</a>
+                            </li>
+                            <li class="secondLevel-item">
+                                <a href="" class="secondLevel-itemLink">Data Integrity</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="firstLevel-item">
+                        <div class="firstLevel-itemLink">Developers</div>
+                        <ul class="secondLevel-list">
+                            <li class="secondLevel-item">
+                                <a href="" class="secondLevel-itemLink">Documentation</a>
+                            </li>
+                            <li class="secondLevel-item">
+                                <a href="" class="secondLevel-itemLink">API references</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="firstLevel-item">
+                        <div class="firstLevel-itemLink">Company</div>
+                        <ul class="secondLevel-list">
+                            <li class="secondLevel-item">
+                                <a href="" class="secondLevel-itemLink headerNav-about">About Virgil</a>
+                            </li>
+                            <li class="secondLevel-item">
+                                <a href="" class="secondLevel-itemLink headerNav-clients">Clients</a>
+                            </li>
+                            <li class="secondLevel-item">
+                                <a href="" class="secondLevel-itemLink">Blog</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="firstLevel-item">
+                        <a class="firstLevel-itemLink">Features</a>
+                    </li>
+                    <li class="firstLevel-item">
+                        <a class="firstLevel-itemLink">Pricing</a>
+                    </li>
+                    <li class="firstLevel-item">
+                        <a class="firstLevel-itemLink">Contacts</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="headerAuth">
+                <a href="" class="headerAuth-link"><span>Login / Sign In</span></a>
+            </div>
         </div>
     </header>
 {% endblock %}

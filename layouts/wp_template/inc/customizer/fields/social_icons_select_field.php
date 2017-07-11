@@ -11,12 +11,12 @@ class SocialIconsSelectField extends SelectField
     public function getChoices()
     {
         return [
-            'none'                 => __('None'),
-            'fa-facebook-official' => __('Facebook'),
-            'fa-github'            => __('Github'),
-            'fa-twitter'           => __('Twitter'),
-            'fa-linkedin-square'   => __('Linkedin'),
-            'fa-medium'            => __('Medium'),
+            'none'          => __('None'),
+            'icon-facebook' => __('Facebook'),
+            'icon-github'   => __('Github'),
+            'icon-twitter'  => __('Twitter'),
+            'icon-linkedin' => __('Linkedin'),
+            'icon-medium'   => __('Medium'),
         ];
     }
 

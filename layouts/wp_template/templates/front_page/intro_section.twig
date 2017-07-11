@@ -16,8 +16,11 @@
                     <ul class="introLangList">
                         {% for lang in intro.langs %}
                             <li>
-                                <a href="{{ lang.lang_url }}"><img src="{{ lang.lang_image.src }}"
-                                                                   alt="{{ lang.lang_image.alt|shortcodes }}"></a>
+                                <a href="{{ lang.lang_url }}">
+                                    <img width="{{ lang.width }}" height="{{ lang.height }}"
+                                         src="{{ lang.lang_image.src }}"
+                                         alt="{{ lang.lang_image.alt|shortcodes }}">
+                                </a>
                             </li>
                         {% endfor %}
                     </ul>

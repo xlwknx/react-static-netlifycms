@@ -2,6 +2,7 @@
 <html {{ site.language_attributes }}>
 <head>
     <meta charset="{{ site.charset }}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
     {% include 'base/html_header/favicons.twig' with {'site': site, 'visible': not models.common.has_site_icon} only %}
 
@@ -10,16 +11,25 @@
     {% endblock %}
 </head>
 <body {{ body_class }}>
-<div class="{{ models.common.post.type }} {{ models.common.static_page_class }}">
-    {% include 'base/header_section.twig' with {'header': models.header_section, 'visible': models.header_section.is_show} only %}
+
+{% block body_content %}
+    {% block header %}
+        {% include 'base/header_section.twig' with {'header': models.header_section, 'visible': models.header_section.is_show} only %}
+    {% endblock %}
 
     {% block content %}{% endblock %}
 
-    {% include 'base/footer_section.twig' with {'footer': models.footer_section, 'visible': models.footer_section.is_show} only %}
+    {% block footer %}
+        {% include 'base/footer_section.twig' with {'footer': models.footer_section, 'visible': models.footer_section.is_show} only %}
 
-    {% block wp_footer %}
-        {{ function('wp_footer') }}
+        <div class="scrollToTop" data-vs-sticky-scrollToTop>
+            <div class="scrollToTop-btn button-raisedRed"><i class="icon icon-arrowTop-white"></i></div>
+        </div>
+        <div class="overlay" data-vs-sideNav-overlay></div>
     {% endblock %}
-</div>
+{% endblock %}
+{% block wp_footer %}
+    {{ function('wp_footer') }}
+{% endblock %}
 </body>
 </html>

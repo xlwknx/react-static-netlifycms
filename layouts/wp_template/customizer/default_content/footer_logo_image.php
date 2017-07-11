@@ -1,3 +1,3 @@
 <?php
 
-return get_template_directory_uri() . '/assets/logo.png';
+return get_template_directory_uri() . '/assets/logo-white.svg';

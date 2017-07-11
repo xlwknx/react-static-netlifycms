@@ -6,14 +6,17 @@
             <div class="wrapper">
                 <div class="footerContacts">
                     <div class="footerContacts-logo">
-                        <img src="{{ footer.logo.src }}" alt="{{ footer.logo.alt|shortcodes }}">
+                        <a href="">
+                            <img src="{{ footer.logo.src }}" width="145" height="47"
+                                 alt="{{ footer.logo.alt|shortcodes }}">
+                        </a>
                     </div>
                     <div class="footerContacts-hashtag">{{ footer.description|shortcodes }}</div>
                     <ul class="footerContacts-socials">
                         {% for item in footer.social_links %}
                             <li>
                                 <a href="{{ item.link_url }}">
-                                    <i class="fa {{ item.link_icon }}" aria-hidden="false"></i>
+                                    <i class="icon {{ item.link_icon }}" aria-hidden="false"></i>
                                 </a>
                             </li>
                         {% endfor %}
