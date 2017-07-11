@@ -20,7 +20,7 @@ return [
         'image'     => get_template_directory_uri() . '/assets/home-clients-atomicorp.png',
         'width'     => 98,
         'height'    => 50,
-        'is_hidden' => false,
+        'is_hidden' => true,
     ],
     [
         'name'      => 'twillo',
@@ -41,13 +41,13 @@ return [
         'image'     => get_template_directory_uri() . '/assets/home-clients-dd.png',
         'width'     => 40,
         'height'    => 50,
-        'is_hidden' => false,
+        'is_hidden' => true,
     ],
     [
         'name'      => 'yubico',
         'image'     => get_template_directory_uri() . '/assets/home-clients-yubico.png',
         'width'     => 99,
         'height'    => 27,
-        'is_hidden' => false,
+        'is_hidden' => true,
     ],
 ];
