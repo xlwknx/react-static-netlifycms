@@ -14,7 +14,7 @@ class FooterSection extends BaseSection
 
     protected $priority = 200;
 
-    protected $selector = '.page .footer';
+    protected $selector = '.page .footer .footer-top .wrapper';
 
 
     public function getSection()

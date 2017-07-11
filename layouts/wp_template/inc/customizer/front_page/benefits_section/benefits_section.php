@@ -13,7 +13,7 @@ class BenefitsSection extends FrontPageSection
 
     protected $priority = 31;
 
-    protected $selector = '.page .benefits';
+    protected $selector = '.page .benefits .wrapper .benefitsContentBlock';
 
 
     public function getSection()

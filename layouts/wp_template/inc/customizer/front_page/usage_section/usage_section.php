@@ -13,7 +13,7 @@ class UsageSection extends FrontPageSection
 
     protected $priority = 30;
 
-    protected $selector = '.page .usage';
+    protected $selector = '.page .usage .wrapper .usageContentBlock .blockMsg';
 
 
     public function getSection()
