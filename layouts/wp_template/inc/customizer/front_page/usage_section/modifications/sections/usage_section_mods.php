@@ -5,7 +5,7 @@ namespace VirgilSecurity\Customizer\FrontPage\UsageSection\Modifications\Section
 
 use VirgilSecurity\Customizer\FrontPage\UsageSection\Modifications\UsageHeadlineMod;
 use VirgilSecurity\Customizer\FrontPage\UsageSection\Modifications\UsageTextMod;
-use VirgilSecurity\Customizer\FrontPage\UsageSection\Modifications\UsageUsageListMod;
+use VirgilSecurity\Customizer\FrontPage\UsageSection\Modifications\UsageSlideListMod;
 
 use VirgilSecurity\Customizer\Src\BaseSectionMods;
 
@@ -13,7 +13,7 @@ class UsageSectionMods extends BaseSectionMods
 {
     protected $UsageHeadlineMod;
     protected $UsageTextMod;
-    protected $UsageUsageListMod;
+    protected $UsageSlideListMod;
 
 
     public function setupDefaults()
@@ -22,7 +22,7 @@ class UsageSectionMods extends BaseSectionMods
             [
                 $this->getUsageHeadlineMod(),
                 $this->getUsageTextMod(),
-                $this->getUsageUsageListMod(),
+                $this->getUsageSlideListMod(),
             ]
         );
     }
@@ -48,13 +48,13 @@ class UsageSectionMods extends BaseSectionMods
     }
 
 
-    public function getUsageUsageListMod()
+    public function getUsageSlideListMod()
     {
-        if ($this->UsageUsageListMod == null) {
-            $this->UsageUsageListMod = new UsageUsageListMod();
+        if ($this->UsageSlideListMod == null) {
+            $this->UsageSlideListMod = new UsageSlideListMod();
         }
 
-        return $this->UsageUsageListMod;
+        return $this->UsageSlideListMod;
     }
 
 

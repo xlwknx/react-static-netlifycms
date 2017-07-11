@@ -6,106 +6,47 @@
         <div class="wrapper">
             <div class="usageContentBlock">
                 <div class="blockMsg">
-                    <h2 class="blockMsg-headline">Easy for developers</h2>
-                    <p class="blockMsg-text">We believe that security is a problem rooted in code. We obsessively
-                        seek out elegant, composable abstractions that enable robust, scalable, flexible
-                        integrations. We eliminate needless complexity and extraneous details, you can get up and
-                        running Virgil in just a couple of minutes.</p>
+                    <h2 class="blockMsg-headline">{{ usage.headline|shortcodes }}</h2>
+                    <p class="blockMsg-text">{{ usage.text|shortcodes }}</p>
                 </div>
-                <div id="homeUsageStepsCarousel" class="usageStepsCarousel carousel slide"
-                     data-pause="hover" data-wrap="false">
-                    <ul class="usageStepsCarousel-controls carousel-indicators">
-                        <li class="usageStepsCarousel-control active" data-target="#homeUsageStepsCarousel"
-                            data-slide-to="0">
-                            <i>1</i>
-                            <span>Encryption</span>
-                        </li>
-                        <li class="usageStepsCarousel-control" data-target="#homeUsageStepsCarousel"
-                            data-slide-to="1">
-                            <i>2</i>
-                            <span>Decryption</span>
-                        </li>
-                        <li class="usageStepsCarousel-control" data-target="#homeUsageStepsCarousel"
-                            data-slide-to="2">
-                            <i>3</i>
-                            <span>Create signature</span>
-                        </li>
-                        <li class="usageStepsCarousel-control" data-target="#homeUsageStepsCarousel"
-                            data-slide-to="3">
-                            <i>4</i>
-                            <span>Verify signature</span>
-                        </li>
-                    </ul>
-                    <div class="usageSteps">
-                        <a href="#homeUsageStepsCarousel" class="usageStepsCarousel-previous" data-slide="prev"></a>
-                        <ul class="usageStepList carousel-inner">
-                            <li class="usageStepItem carousel-item active">
-                                <a href="https://developer.virgilsecurity.com/docs" class="usageStepItem-link">
-                                    <img
-                                            width="930"
-                                            height="325"
-                                            src="/wp-content/themes/virgilsecurity/assets/home-usage-encryption.png"
-                                            srcset="/wp-content/themes/virgilsecurity/assets/home-usage-encryption@2x.png 2x"
-                                            class="usageStepItem-linkImage"
-                                            alt="">
-                                    <span class="usageStepItem-linkButton button-raisedWhite-static">
-                      <i class="icon icon-book-black"></i>
-                      <span>Documentation</span>
-                    </span>
-                                </a>
-                            </li>
-                            <li class="usageStepItem carousel-item">
-                                <a href="https://developer.virgilsecurity.com/docs/overview/decryption"
-                                   class="usageStepItem-link">
-                                    <img
-                                            width="930"
-                                            height="325"
-                                            src="/wp-content/themes/virgilsecurity/assets/home-usage-decryption.png"
-                                            srcset="/wp-content/themes/virgilsecurity/assets/home-usage-decryption@2x.png 2x"
-                                            class="usageStepItem-linkImage"
-                                            alt="">
-                                    <span class="usageStepItem-linkButton button-raisedWhite-static">
-                      <i class="icon icon-book-black"></i>
-                      <span>Documentation</span>
-                    </span>
-                                </a>
-                            </li>
-                            <li class="usageStepItem carousel-item">
-                                <a href="https://developer.virgilsecurity.com/docs/overview/creating-signature"
-                                   class="usageStepItem-link">
-                                    <img
-                                            width="930"
-                                            height="325"
-                                            src="/wp-content/themes/virgilsecurity/assets/home-usage-create.png"
-                                            srcset="/wp-content/themes/virgilsecurity/assets/home-usage-create@2x.png 2x"
-                                            class="usageStepItem-linkImage"
-                                            alt="">
-                                    <span class="usageStepItem-linkButton button-raisedWhite-static">
-                      <i class="icon icon-book-black"></i>
-                      <span>Documentation</span>
-                    </span>
-                                </a>
-                            </li>
-                            <li class="usageStepItem carousel-item">
-                                <a href="https://developer.virgilsecurity.com/docs/overview/verifying-signature"
-                                   class="usageStepItem-link">
-                                    <img
-                                            width="930"
-                                            height="325"
-                                            src="/wp-content/themes/virgilsecurity/assets/home-usage-verify.png"
-                                            srcset="/wp-content/themes/virgilsecurity/assets/home-usage-verify@2x.png 2x"
-                                            class="usageStepItem-linkImage"
-                                            alt="">
-                                    <span class="usageStepItem-linkButton button-raisedWhite-static">
-                      <i class="icon icon-book-black"></i>
-                      <span>Documentation</span>
-                    </span>
-                                </a>
-                            </li>
+                {% if usage.slider %}
+                    <div id="homeUsageStepsCarousel" class="usageStepsCarousel carousel slide"
+                         data-pause="hover" data-wrap="false">
+                        <ul class="usageStepsCarousel-controls carousel-indicators">
+                            {% for slide in usage.slider %}
+                                <li class="usageStepsCarousel-control {{ loop.index == 1 ? 'active' }}"
+                                    data-target="#homeUsageStepsCarousel"
+                                    data-slide-to="{{ loop.index-1 }}">
+                                    <i>{{ loop.index }}</i>
+                                    <span>{{ slide.name|shortcodes }}</span>
+                                </li>
+                            {% endfor %}
                         </ul>
-                        <a href="#homeUsageStepsCarousel" class="usageStepsCarousel-next" data-slide="next"></a>
+                        <div class="usageSteps">
+                            <a href="#homeUsageStepsCarousel" class="usageStepsCarousel-previous" data-slide="prev"></a>
+                            <ul class="usageStepList carousel-inner">
+                                {% for slide in usage.slider %}
+                                    <li class="usageStepItem carousel-item {{ loop.index == 1 ? 'active' }}">
+                                        <a href="{{ slide.link }}" class="usageStepItem-link">
+                                            <img
+                                                    width="930"
+                                                    height="325"
+                                                    src="{{ slide.image.src }}"
+                                                    srcset="{{ slide.image.src | retina(2) }} 2x"
+                                                    class="usageStepItem-linkImage"
+                                                    alt="{{ slide.image.alt }}">
+                                            <span class="usageStepItem-linkButton button-raisedWhite-static">
+                                            <i class="icon icon-book-black"></i>
+                                            <span>Documentation</span>
+                                        </span>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <a href="#homeUsageStepsCarousel" class="usageStepsCarousel-next" data-slide="next"></a>
+                        </div>
                     </div>
-                </div>
+                {% endif %}
             </div>
         </div>
     </div>

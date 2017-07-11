@@ -5,6 +5,10 @@ namespace VirgilSecurity\Customizer\FrontPage\UsageSection;
 
 use VirgilSecurity\Customizer\FrontPage\UsageSection\Modifications\Sections\UsageSectionMods;
 
+use VirgilSecurity\Customizer\FrontPage\UsageSection\Fields\UsageHeadlineField;
+use VirgilSecurity\Customizer\FrontPage\UsageSection\Fields\UsageTextField;
+use VirgilSecurity\Customizer\FrontPage\UsageSection\Groups\UsageSlideListGroup;
+
 use WP_Customize_Manager;
 
 class UsageSectionCustomizer
@@ -25,6 +29,18 @@ class UsageSectionCustomizer
     public function getSection(UsageSectionMods $usageSectionMods)
     {
         $section = new UsageSection($this->config, $this->wpCustomizer);
+
+        $section->addField(
+            UsageHeadlineField::createWithMod($usageSectionMods->getUsageHeadlineMod())
+        );
+
+        $section->addField(
+            UsageTextField::createWithMod($usageSectionMods->getUsageTextMod())
+        );
+
+        $section->addField(
+            UsageSlideListGroup::createWithMod($usageSectionMods->getUsageSlideListMod())
+        );
 
 
         return $section;
