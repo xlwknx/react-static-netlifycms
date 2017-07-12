@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block body_content %}
+    <div class="page pricingPage" data-vs-page="pricing">
+        {% block header %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block content %}
+            <div class="container">
+                {#{% include 'front_page/intro_section.twig' with{ 'intro': models.intro_section, 'visible': models.intro_section.is_show } only %}#}
+            </div>
+        {% endblock %}
+
+        {% block footer %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}

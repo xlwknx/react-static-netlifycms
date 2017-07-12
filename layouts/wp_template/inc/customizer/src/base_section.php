@@ -11,6 +11,7 @@ use VirgilSecurity\Templates\Src\TemplateInterface;
 use WP_Customize_Manager;
 
 use VirgilSecurity\Customizer\Fields\ToggleField;
+use WP_Query;
 
 abstract class BaseSection implements SectionInterface
 {
@@ -91,7 +92,11 @@ abstract class BaseSection implements SectionInterface
                 'description'     => $this->getDescription(),
                 'priority'        => $this->getPriority(),
                 'panel'           => $panel,
-                'active_callback' => [$this, 'getActiveCallback'],
+                'active_callback' => function () {
+                    global $wp_query;
+
+                    return $this->getActiveCallback($wp_query);
+                },
             ]
         );
 
@@ -125,7 +130,7 @@ abstract class BaseSection implements SectionInterface
     }
 
 
-    public function getActiveCallback()
+    public function getActiveCallback(WP_Query $wp_query)
     {
         return $this->active_callback;
     }

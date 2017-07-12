@@ -3,6 +3,8 @@
 namespace VirgilSecurity\Customizer\Src;
 
 
+use WP_Query;
+
 interface SectionInterface
 {
     public function addField(RegisterFieldInterface $field);
@@ -23,7 +25,7 @@ interface SectionInterface
     public function getPartialRefresh();
 
 
-    public function getActiveCallback();
+    public function getActiveCallback(WP_Query $wp_query);
 
 
     public function isOptional();
