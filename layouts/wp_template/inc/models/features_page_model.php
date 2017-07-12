@@ -3,6 +3,7 @@
 namespace VirgilSecurity\Models;
 
 
+use VirgilSecurity\Models\FeaturesPage\ComponentsSectionModel;
 use VirgilSecurity\Models\FeaturesPage\CryptogramSectionModel;
 use VirgilSecurity\Models\FeaturesPage\IntroSectionModel;
 
@@ -20,5 +21,11 @@ class FeaturesPageModel extends LayoutModel
     public function CryptogramSection()
     {
         return new CryptogramSectionModel();
+    }
+
+
+    public function ComponentsSection()
+    {
+        return new ComponentsSectionModel();
     }
 }

@@ -1,1 +1,3 @@
-<a href="{{ item.link_url }}" class="button-flatWhite">{{ item.link_text|shortcodes }}</a>
+{% block content %}
+    {% include 'common/link_button/_prototype.twig' with {'url': link.link_url, 'text': link.link_text, 'css': 'button-flatWhite', 'icon': link.link_icon} only %}
+{% endblock %}

@@ -69,6 +69,9 @@ class SectionCustomizer
 
             $featuresPageSectionsCustomizer->getCryptogramSectionCustomizer()
                                            ->getSection($featuresPageSectionMods->getCryptogramSectionMods()),
+
+            $featuresPageSectionsCustomizer->getComponentsSectionCustomizer()
+                                           ->getSection($featuresPageSectionMods->getComponentsSectionMods()),
         ];
 
     }

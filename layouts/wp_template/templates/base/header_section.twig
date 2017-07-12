@@ -13,7 +13,7 @@
             {{ header.header_menu|shortcodes }}
             <div class="headerAuth">
                 {% for item in header.auth_links %}
-                    {% include 'common/link_button/' ~ item.link_button_skin ~ '.twig' %}
+                    {% include 'common/link_button/' ~ item.link_button_skin ~ '.twig' with {'link': item} %}
                 {% endfor %}
             </div>
             <button data-vs-sideNav-open class="headerOpenButton">

@@ -1,1 +1,3 @@
-<a href="{{ item.link_url }}">{{ item.link_text|shortcodes }}</a>
+{% block content %}
+    <a href="{{ url|shortcodes }}">{{ text|shortcodes }}</a>
+{% endblock %}

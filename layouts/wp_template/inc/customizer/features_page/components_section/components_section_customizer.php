@@ -3,6 +3,9 @@
 namespace VirgilSecurity\Customizer\FeaturesPage\ComponentsSection;
 
 
+use VirgilSecurity\Customizer\FeaturesPage\ComponentsSection\Fields\ComponentsHeadlineField;
+use VirgilSecurity\Customizer\FeaturesPage\ComponentsSection\Groups\ComponentsLinksGroup;
+use VirgilSecurity\Customizer\FeaturesPage\ComponentsSection\Groups\ComponentsListGroup;
 use VirgilSecurity\Customizer\FeaturesPage\ComponentsSection\Modifications\Sections\ComponentsSectionMods;
 
 use WP_Customize_Manager;
@@ -25,6 +28,18 @@ class ComponentsSectionCustomizer
     public function getSection(ComponentsSectionMods $componentsSectionMods)
     {
         $section = new ComponentsSection($this->config, $this->wpCustomizer);
+
+        $section->addField(
+            ComponentsHeadlineField::createWithMod($componentsSectionMods->getComponentsHeadlineMod())
+        );
+
+        $section->addField(
+            ComponentsListGroup::createWithMod($componentsSectionMods->getComponentsListMod())
+        );
+
+        $section->addField(
+            ComponentsLinksGroup::createWithMod($componentsSectionMods->getComponentsLinksMod())
+        );
 
         return $section;
     }

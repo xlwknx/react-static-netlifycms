@@ -11,7 +11,7 @@ class ComponentsSection extends FeaturesPageSection
 {
     protected $optional = 1;
 
-    protected $priority = 26;
+    protected $priority = 27;
 
     protected $selector = '.featuresPage .components';
 
