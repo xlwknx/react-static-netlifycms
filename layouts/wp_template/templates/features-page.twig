@@ -10,6 +10,9 @@
             <div class="container">
                 {% include 'features_page/intro_section.twig' with{ 'intro': models.intro_section, 'visible': models.intro_section.is_show } only %}
                 {% include 'features_page/cryptogram_section.twig' with{ 'cryptogram': models.cryptogram_section, 'visible': models.cryptogram_section.is_show } only %}
+                {% include 'features_page/components_section.twig' with{ 'components': models.components_section, 'visible': models.components_section.is_show } only %}
+                {% include 'features_page/features_section.twig' with{ 'features': models.features_section, 'visible': models.features_section.is_show } only %}
+                {% include 'features_page/faq_section.twig' with{ 'faq': models.faq_section, 'visible': models.faq.is_show } only %}
             </div>
         {% endblock %}
 
