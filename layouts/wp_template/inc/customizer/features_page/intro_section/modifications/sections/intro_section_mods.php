@@ -3,9 +3,9 @@
 namespace VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications\Sections;
 
 
-use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications\IntroIntroHeadlineMod;
-use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications\IntroIntroTextMod;
-use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications\IntroIntroListMod;
+use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications\IntroHeadlineMod;
+use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications\IntroListMod;
+use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications\IntroTextMod;
 use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications\IntroCryptogramHeadlineMod;
 use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications\IntroCryptogramListMod;
 
@@ -13,9 +13,9 @@ use VirgilSecurity\Customizer\Src\BaseSectionMods;
 
 class IntroSectionMods extends BaseSectionMods
 {
-    protected $IntroIntroHeadlineMod;
-    protected $IntroIntroTextMod;
-    protected $IntroIntroListMod;
+    protected $IntroHeadlineMod;
+    protected $IntroTextMod;
+    protected $IntroListMod;
     protected $IntroCryptogramHeadlineMod;
     protected $IntroCryptogramListMod;
 
@@ -24,9 +24,9 @@ class IntroSectionMods extends BaseSectionMods
     {
         $this->setup(
             [
-                $this->getIntroIntroHeadlineMod(),
-                $this->getIntroIntroTextMod(),
-                $this->getIntroIntroListMod(),
+                $this->getIntroHeadlineMod(),
+                $this->getIntroTextMod(),
+                $this->getIntroListMod(),
                 $this->getIntroCryptogramHeadlineMod(),
                 $this->getIntroCryptogramListMod(),
             ]
@@ -34,33 +34,33 @@ class IntroSectionMods extends BaseSectionMods
     }
 
 
-    public function getIntroIntroHeadlineMod()
+    public function getIntroHeadlineMod()
     {
-        if ($this->IntroIntroHeadlineMod == null) {
-            $this->IntroIntroHeadlineMod = new IntroIntroHeadlineMod();
+        if ($this->IntroHeadlineMod == null) {
+            $this->IntroHeadlineMod = new IntroHeadlineMod();
         }
 
-        return $this->IntroIntroHeadlineMod;
+        return $this->IntroHeadlineMod;
     }
 
 
-    public function getIntroIntroTextMod()
+    public function getIntroTextMod()
     {
-        if ($this->IntroIntroTextMod == null) {
-            $this->IntroIntroTextMod = new IntroIntroTextMod();
+        if ($this->IntroTextMod == null) {
+            $this->IntroTextMod = new IntroTextMod();
         }
 
-        return $this->IntroIntroTextMod;
+        return $this->IntroTextMod;
     }
 
 
-    public function getIntroIntroListMod()
+    public function getIntroListMod()
     {
-        if ($this->IntroIntroListMod == null) {
-            $this->IntroIntroListMod = new IntroIntroListMod();
+        if ($this->IntroListMod == null) {
+            $this->IntroListMod = new IntroListMod();
         }
 
-        return $this->IntroIntroListMod;
+        return $this->IntroListMod;
     }
 
 

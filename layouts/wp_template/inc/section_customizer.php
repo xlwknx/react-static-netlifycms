@@ -3,17 +3,14 @@
 namespace VirgilSecurity;
 
 
+use VirgilSecurity\Customizer\FeaturesPage\FeaturesPageSectionsCustomizer;
+
 use VirgilSecurity\Customizer\FooterSection\FooterSectionCustomizer;
 
-
-use VirgilSecurity\Customizer\FrontPage\BenefitsSection\BenefitsSectionCustomizer;
-use VirgilSecurity\Customizer\FrontPage\ClientsSection\ClientsSectionCustomizer;
-use VirgilSecurity\Customizer\FrontPage\ConclusionSection\ConclusionSectionCustomizer;
-use VirgilSecurity\Customizer\FrontPage\IntroSection\IntroSectionCustomizer;
-use VirgilSecurity\Customizer\FrontPage\ServicesSection\ServicesSectionCustomizer;
-use VirgilSecurity\Customizer\FrontPage\UsageSection\UsageSectionCustomizer;
-use VirgilSecurity\Customizer\FrontPage\UseCasesSection\UseCasesSectionCustomizer;
 use VirgilSecurity\Customizer\HeaderSection\HeaderSectionCustomizer;
+
+use VirgilSecurity\Customizer\FrontPage\FrontPageSectionsCustomizer;
+
 use VirgilSecurity\Customizer\Src\ConfigInterface;
 use VirgilSecurity\Customizer\Src\SectionInterface;
 
@@ -28,28 +25,66 @@ class SectionCustomizer
 
     public function __construct(ConfigInterface $config, SectionModifications $sectionModifications)
     {
-
         $this->config = $config;
         $this->sectionModifications = $sectionModifications;
     }
 
 
+    public function getFrontPageSections(FrontPageSectionsCustomizer $frontPageSectionsCustomizer)
+    {
+        $frontPageSectionMods = $this->sectionModifications->getFrontPageSectionMods();
+
+        return [
+            $frontPageSectionsCustomizer->getIntroSectionCustomizer()
+                                        ->getSection($frontPageSectionMods->getIntroSectionMods()),
+
+            $frontPageSectionsCustomizer->getBenefitsSectionCustomizer()
+                                        ->getSection($frontPageSectionMods->getBenefitsSectionMods()),
+
+            $frontPageSectionsCustomizer->getClientsSectionCustomizer()
+                                        ->getSection($frontPageSectionMods->getClientsSectionMods()),
+
+            $frontPageSectionsCustomizer->getConclusionSectionCustomizer()
+                                        ->getSection($frontPageSectionMods->getConclusionSectionMods()),
+
+            $frontPageSectionsCustomizer->getUseCasesSectionCustomizer()
+                                        ->getSection($frontPageSectionMods->getUseCasesSectionMods()),
+
+            $frontPageSectionsCustomizer->getUsageSectionCustomizer()
+                                        ->getSection($frontPageSectionMods->getUsageSectionMods()),
+
+            $frontPageSectionsCustomizer->getServicesSectionCustomizer()
+                                        ->getSection($frontPageSectionMods->getServicesSectionMods()),
+        ];
+    }
+
+
+    public function getFeaturesPageSections(FeaturesPageSectionsCustomizer $featuresPageSectionsCustomizer)
+    {
+        $featuresPageSectionMods = $this->sectionModifications->getFeaturesPageSectionMods();
+
+        return [
+            $featuresPageSectionsCustomizer->getIntroSectionCustomizer()
+                                           ->getSection($featuresPageSectionMods->getIntroSectionMods()),
+        ];
+
+    }
+
+
     public function registerDefaults(WP_Customize_Manager $wpCustomizer)
     {
+        $featuresPageSectionsCustomizer = new FeaturesPageSectionsCustomizer($this->config, $wpCustomizer);
+        $frontPageSectionsCustomizer = new FrontPageSectionsCustomizer($this->config, $wpCustomizer);
+
         $this->register(
             [
                 $this->getHeaderSection($wpCustomizer),
                 $this->getFooterSection($wpCustomizer),
-
-                $this->getFrontPageIntroSection($wpCustomizer),
-                $this->getFrontPageUseCasesSection($wpCustomizer),
-                $this->getFrontPageServicesSection($wpCustomizer),
-                $this->getFrontPageClientsSection($wpCustomizer),
-                $this->getFrontPageUsageSection($wpCustomizer),
-                $this->getFrontPageBenefitsSection($wpCustomizer),
-                $this->getFrontPageConclusionSection($wpCustomizer),
             ]
         );
+
+        $this->register($this->getFrontPageSections($frontPageSectionsCustomizer));
+        $this->register($this->getFeaturesPageSections($featuresPageSectionsCustomizer));
     }
 
 
@@ -66,83 +101,6 @@ class SectionCustomizer
         $headerSectionCustomizer = new HeaderSectionCustomizer($this->config, $wpCustomizer);
 
         return $headerSectionCustomizer->getSection($this->sectionModifications->getHeaderSectionMods());
-    }
-
-
-    public function getFrontPageIntroSection(WP_Customize_Manager $wpCustomizer)
-    {
-        $introSectionCustomizer = new IntroSectionCustomizer($this->config, $wpCustomizer);
-
-        return $introSectionCustomizer->getSection(
-            $this->sectionModifications->getFrontPageSectionMods()
-                                       ->getIntroSectionMods()
-        );
-    }
-
-
-    public function getFrontPageUseCasesSection(WP_Customize_Manager $wpCustomizer)
-    {
-        $useCasesSectionCustomizer = new UseCasesSectionCustomizer($this->config, $wpCustomizer);
-
-        return $useCasesSectionCustomizer->getSection(
-            $this->sectionModifications->getFrontPageSectionMods()
-                                       ->getUseCasesSectionMods()
-        );
-    }
-
-
-    public function getFrontPageServicesSection(WP_Customize_Manager $wpCustomizer)
-    {
-        $servicesSectionCustomizer = new ServicesSectionCustomizer($this->config, $wpCustomizer);
-
-        return $servicesSectionCustomizer->getSection(
-            $this->sectionModifications->getFrontPageSectionMods()
-                                       ->getServicesSectionMods()
-        );
-    }
-
-
-    public function getFrontPageClientsSection(WP_Customize_Manager $wpCustomizer)
-    {
-        $clientsSectionCustomizer = new ClientsSectionCustomizer($this->config, $wpCustomizer);
-
-        return $clientsSectionCustomizer->getSection(
-            $this->sectionModifications->getFrontPageSectionMods()
-                                       ->getClientsSectionMods()
-        );
-    }
-
-
-    public function getFrontPageUsageSection(WP_Customize_Manager $wpCustomizer)
-    {
-        $usageSectionCustomizer = new UsageSectionCustomizer($this->config, $wpCustomizer);
-
-        return $usageSectionCustomizer->getSection(
-            $this->sectionModifications->getFrontPageSectionMods()
-                                       ->getUsageSectionMods()
-        );
-    }
-
-
-    public function getFrontPageBenefitsSection(WP_Customize_Manager $wpCustomizer)
-    {
-        $usageSectionCustomizer = new BenefitsSectionCustomizer($this->config, $wpCustomizer);
-
-        return $usageSectionCustomizer->getSection(
-            $this->sectionModifications->getFrontPageSectionMods()
-                                       ->getBenefitsSectionMods()
-        );
-    }
-
-
-    public function getFrontPageConclusionSection(WP_Customize_Manager $wpCustomizer)
-    {
-        $conclusionSectionCustomizer = new ConclusionSectionCustomizer($this->config, $wpCustomizer);
-
-        return $conclusionSectionCustomizer->getSection(
-            $this->sectionModifications->getFrontPageSectionMods()
-                                       ->getConclusionSectionMods()
-        );
     }
 
 

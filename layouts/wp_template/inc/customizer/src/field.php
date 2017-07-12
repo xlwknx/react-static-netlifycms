@@ -7,14 +7,7 @@ class Field extends BaseField implements FieldInterface
 {
     protected $sanitizeCallback = 'wp_kses_post';
 
-
     protected $transport = Transports::POST_MESSAGE;
-
-
-    public function getSanitizeCallback()
-    {
-        return $this->sanitizeCallback;
-    }
 
 
     protected function getKirkiArguments(SectionInterface $section)

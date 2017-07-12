@@ -26,6 +26,8 @@ abstract class BaseField
     /** @var ModificationInterface */
     protected $modification;
 
+    protected $sanitizeCallback;
+
 
     public function __construct($settings = null, $label = null)
     {
@@ -147,6 +149,12 @@ abstract class BaseField
         } else {
             $this->default = $default;
         }
+    }
+
+
+    public function getSanitizeCallback()
+    {
+        return $this->sanitizeCallback;
     }
 
 

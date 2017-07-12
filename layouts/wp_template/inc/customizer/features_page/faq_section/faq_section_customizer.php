@@ -1,9 +1,7 @@
 <?php
 
-namespace VirgilSecurity\Customizer\FrontPage\FaqSection;
+namespace VirgilSecurity\Customizer\FeaturesPage\FaqSection;
 
-
-use VirgilSecurity\Customizer\FeaturesPage\FaqSection\FaqSection;
 
 use VirgilSecurity\Customizer\FeaturesPage\FaqSection\Modifications\Sections\FaqSectionMods;
 

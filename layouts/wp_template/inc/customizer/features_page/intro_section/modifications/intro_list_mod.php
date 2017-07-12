@@ -4,10 +4,10 @@ namespace VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications;
 
 use VirgilSecurity\Customizer\Src\BaseModification;
 
-class IntroIntroListMod extends BaseModification
+class IntroListMod extends BaseModification
 {
     public function getName()
     {
-        return 'features_page_intro_intro_list';
+        return 'features_page_intro_list';
     }
 }

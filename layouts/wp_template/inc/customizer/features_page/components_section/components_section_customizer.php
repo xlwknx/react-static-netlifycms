@@ -1,6 +1,6 @@
 <?php
 
-namespace VirgilSecurity\Customizer\FrontPage\ComponentsSection;
+namespace VirgilSecurity\Customizer\FeaturesPage\ComponentsSection;
 
 
 use VirgilSecurity\Customizer\FeaturesPage\ComponentsSection\ComponentsSection;

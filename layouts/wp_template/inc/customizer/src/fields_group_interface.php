@@ -3,7 +3,7 @@
 namespace VirgilSecurity\Customizer\Src;
 
 
-interface FieldsGroupInterface extends RegisterFieldInterface
+interface FieldsGroupInterface extends FieldInterface
 {
     public function setField(FieldInterface $field);
 
@@ -21,4 +21,7 @@ interface FieldsGroupInterface extends RegisterFieldInterface
 
 
     public function getDefault();
+
+
+    public function getChoices();
 }

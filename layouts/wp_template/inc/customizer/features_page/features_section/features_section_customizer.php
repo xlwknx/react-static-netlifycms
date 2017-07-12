@@ -1,11 +1,10 @@
 <?php
 
-namespace VirgilSecurity\Customizer\FrontPage\FeaturesSection;
+namespace VirgilSecurity\Customizer\FeaturesPage\FeaturesSection;
 
-
-use VirgilSecurity\Customizer\FeaturesPage\FeaturesSection\FeaturesSection;
 
 use VirgilSecurity\Customizer\FeaturesPage\FeaturesSection\Modifications\Sections\FeaturesSectionMods;
+
 use WP_Customize_Manager;
 
 class FeaturesSectionCustomizer

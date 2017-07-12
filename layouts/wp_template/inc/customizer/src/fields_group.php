@@ -17,6 +17,8 @@ class FieldsGroup extends BaseField implements FieldsGroupInterface
 
     protected $rowLabel = [];
 
+    protected $limit = false;
+
 
     public function __construct($settings = null, $label = null)
     {
@@ -55,17 +57,31 @@ class FieldsGroup extends BaseField implements FieldsGroupInterface
     }
 
 
+    public function getChoices()
+    {
+        if ($this->limit) {
+            return [
+                'limit' => $this->limit,
+            ];
+        }
+
+        return [];
+    }
+
+
     protected function getKirkiArguments(SectionInterface $section)
     {
         return [
-            'section'   => $section->getSection(),
-            'type'      => $this->getType(),
-            'settings'  => $this->getSettings(),
-            'label'     => $this->getLabel(),
-            'priority'  => $this->getPriority(),
-            'default'   => $this->getDefault(),
-            'row_label' => $this->getRowLabel(),
-            'fields'    => $this->getOrderedFields(),
+            'section'           => $section->getSection(),
+            'type'              => $this->getType(),
+            'settings'          => $this->getSettings(),
+            'label'             => $this->getLabel(),
+            'priority'          => $this->getPriority(),
+            'default'           => $this->getDefault(),
+            'row_label'         => $this->getRowLabel(),
+            'fields'            => $this->getOrderedFields(),
+            'sanitize_callback' => $this->getSanitizeCallback(),
+            'choices'           => $this->getChoices(),
         ];
     }
 
