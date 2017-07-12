@@ -3,8 +3,6 @@
 namespace VirgilSecurity\Customizer\FeaturesPage\ComponentsSection;
 
 
-use VirgilSecurity\Customizer\FeaturesPage\ComponentsSection\ComponentsSection;
-
 use VirgilSecurity\Customizer\FeaturesPage\ComponentsSection\Modifications\Sections\ComponentsSectionMods;
 
 use WP_Customize_Manager;

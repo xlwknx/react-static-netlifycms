@@ -6,8 +6,6 @@ namespace VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications\Sect
 use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications\IntroHeadlineMod;
 use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications\IntroListMod;
 use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications\IntroTextMod;
-use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications\IntroCryptogramHeadlineMod;
-use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications\IntroCryptogramListMod;
 
 use VirgilSecurity\Customizer\Src\BaseSectionMods;
 
@@ -16,8 +14,6 @@ class IntroSectionMods extends BaseSectionMods
     protected $IntroHeadlineMod;
     protected $IntroTextMod;
     protected $IntroListMod;
-    protected $IntroCryptogramHeadlineMod;
-    protected $IntroCryptogramListMod;
 
 
     public function setupDefaults()
@@ -27,8 +23,6 @@ class IntroSectionMods extends BaseSectionMods
                 $this->getIntroHeadlineMod(),
                 $this->getIntroTextMod(),
                 $this->getIntroListMod(),
-                $this->getIntroCryptogramHeadlineMod(),
-                $this->getIntroCryptogramListMod(),
             ]
         );
     }
@@ -62,26 +56,4 @@ class IntroSectionMods extends BaseSectionMods
 
         return $this->IntroListMod;
     }
-
-
-    public function getIntroCryptogramHeadlineMod()
-    {
-        if ($this->IntroCryptogramHeadlineMod == null) {
-            $this->IntroCryptogramHeadlineMod = new IntroCryptogramHeadlineMod();
-        }
-
-        return $this->IntroCryptogramHeadlineMod;
-    }
-
-
-    public function getIntroCryptogramListMod()
-    {
-        if ($this->IntroCryptogramListMod == null) {
-            $this->IntroCryptogramListMod = new IntroCryptogramListMod();
-        }
-
-        return $this->IntroCryptogramListMod;
-    }
-
-
 }

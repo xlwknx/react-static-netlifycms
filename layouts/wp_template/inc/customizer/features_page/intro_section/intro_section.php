@@ -13,7 +13,7 @@ class IntroSection extends FeaturesPageSection
 
     protected $priority = 25;
 
-    protected $selector = '.page .intro';
+    protected $selector = '.featuresPage .intro';
 
 
     public function getSection()

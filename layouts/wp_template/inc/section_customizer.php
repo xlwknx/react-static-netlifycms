@@ -66,6 +66,9 @@ class SectionCustomizer
         return [
             $featuresPageSectionsCustomizer->getIntroSectionCustomizer()
                                            ->getSection($featuresPageSectionMods->getIntroSectionMods()),
+
+            $featuresPageSectionsCustomizer->getCryptogramSectionCustomizer()
+                                           ->getSection($featuresPageSectionMods->getCryptogramSectionMods()),
         ];
 
     }

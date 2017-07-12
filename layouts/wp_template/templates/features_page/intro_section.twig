@@ -1,7 +1,26 @@
 {% extends 'common/section.twig' %}
 
 {% block content %}
-    <div class="intro cryptogram">
+    <div class="intro">
 
+        <div class="wrapper">
+            <div class="introContentBlock">
+                <div class="blockMsg">
+                    <h1 class="blockMsg-headline">{{ intro.headline|shortcodes }}</h1>
+                    <p class="blockMsg-text">{{ intro.text|shortcodes }}</p>
+                </div>
+                <ul class="introFeatures">
+                    {% for item in intro.collection %}
+                        <li class="introFeature">
+                            <div class="introFeature-image">
+                                <img width="{{ item.width }}" height="{{ item.height }}" src="{{ item.image.src }}"
+                                     alt="{{ item.image.alt }}">
+                            </div>
+                            <div class="introFeature-text">{{ item.text|shortcodes }}</div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
     </div>
 {% endblock %}

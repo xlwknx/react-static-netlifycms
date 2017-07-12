@@ -3,10 +3,8 @@
 namespace VirgilSecurity\Customizer\FeaturesPage\IntroSection;
 
 
-use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Fields\IntroCryptogramHeadlineField;
 use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Fields\IntroHeadlineField;
 use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Fields\IntroTextField;
-use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Groups\IntroCryptogramListGroup;
 
 use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Groups\IntroListGroup;
 use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications\Sections\IntroSectionMods;
@@ -42,14 +40,6 @@ class IntroSectionCustomizer
 
         $section->addField(
             IntroListGroup::createWithMod($introSectionMods->getIntroListMod())
-        );
-
-        $section->addField(
-            IntroCryptogramHeadlineField::createWithMod($introSectionMods->getIntroCryptogramHeadlineMod())
-        );
-
-        $section->addField(
-            IntroCryptogramListGroup::createWithMod($introSectionMods->getIntroCryptogramListMod())
         );
 
         return $section;

@@ -1,11 +1,11 @@
 <?php
 
-namespace VirgilSecurity\Customizer\FeaturesPage\IntroSection\Fields;
+namespace VirgilSecurity\Customizer\FeaturesPage\CryptogramSection\Fields;
 
 
 use VirgilSecurity\Customizer\Fields\SelectField;
 
-class IntroCryptogramListSkinField extends SelectField
+class CryptogramListSkinField extends SelectField
 {
     protected $multiple = 0;
 
