@@ -13,7 +13,7 @@ class HeaderSection extends BaseSection
 
     protected $priority = 25;
 
-    protected $selector = '.page .header .headerFull';
+    protected $selector = '.page .header';
 
 
     public function getSection()

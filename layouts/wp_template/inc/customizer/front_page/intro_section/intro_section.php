@@ -13,7 +13,7 @@ class IntroSection extends FrontPageSection
 
     protected $priority = 26;
 
-    protected $selector = '.page .intro .wrapper .introContentBlock .blockMsg';
+    protected $selector = '.page .intro';
 
 
     public function getSection()

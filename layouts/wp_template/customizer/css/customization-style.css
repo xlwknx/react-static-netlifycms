@@ -1,12 +1,20 @@
 .customize-partial-edit-shortcut-header_section {
     top: 20px;
+    position: relative;
+    z-index: 10001;
     left: 35px;
 }
 
 .customize-partial-edit-shortcut-hp_intro_section {
+    position: relative;
+    top: 290px;
+    left: 80px;
 }
 
 .customize-partial-edit-shortcut-footer_section {
+    position: relative;
+    top: 80px;
+    left: 80px;
 }
 
 .customize-partial-edit-shortcut-hp_services_section {

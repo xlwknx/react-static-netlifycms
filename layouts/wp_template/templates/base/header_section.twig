@@ -5,8 +5,10 @@
     <header class="header">
         <div class="headerFull" data-vs-sticky-header>
             <div class="headerLogo">
-                <a href="{{ header.logo.url }}"><img src="{{ header.logo.image.src }}" width="145"
-                                                     height="47" alt="{{ header.logo.image.alt|shortcodes }}"></a>
+                {% if header.logo %}
+                    <a href="{{ header.logo.url }}"><img src="{{ header.logo.image.src }}" width="145"
+                                                         height="47" alt="{{ header.logo.image.alt|shortcodes }}"></a>
+                {% endif %}
             </div>
             {{ header.header_menu|shortcodes }}
             <div class="headerAuth">

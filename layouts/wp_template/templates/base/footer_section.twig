@@ -6,10 +6,12 @@
             <div class="wrapper">
                 <div class="footerContacts">
                     <div class="footerContacts-logo">
-                        <a href="">
-                            <img src="{{ footer.logo.src }}" width="145" height="47"
-                                 alt="{{ footer.logo.alt|shortcodes }}">
-                        </a>
+                        {% if footer.logo %}
+                            <a href="{{ footer.logo.url }}">
+                                <img src="{{ footer.logo.image.src }}" width="145" height="47"
+                                     alt="{{ footer.logo.image.alt|shortcodes }}">
+                            </a>
+                        {% endif %}
                     </div>
                     <div class="footerContacts-hashtag">{{ footer.description|shortcodes }}</div>
                     <ul class="footerContacts-socials">

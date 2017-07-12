@@ -26,7 +26,10 @@ class FooterSectionModel extends BaseSectionModel
         $logoImageMod = $this->sectionMods->getLogoImageMod();
 
         if ($logoImageMod->isEnabled()) {
-            return $this->imageModValueToModel($logoImageMod->getValue());
+            return [
+                'image' => $this->imageModValueToModel($logoImageMod->getValue()),
+                'url'   => site_url(),
+            ];
         }
     }
 
