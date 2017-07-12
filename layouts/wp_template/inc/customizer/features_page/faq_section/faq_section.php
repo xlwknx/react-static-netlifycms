@@ -13,7 +13,7 @@ class FaqSection extends FeaturesPageSection
 
     protected $priority = 28;
 
-    protected $selector = '.page .faq';
+    protected $selector = '.featuresPage .faq';
 
 
     public function getSection()

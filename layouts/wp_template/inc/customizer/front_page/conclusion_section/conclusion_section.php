@@ -13,7 +13,7 @@ class ConclusionSection extends FrontPageSection
 
     protected $priority = 32;
 
-    protected $selector = '.page .conclusion';
+    protected $selector = '.homePage .conclusion';
 
 
     public function getSection()

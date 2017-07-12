@@ -13,7 +13,7 @@ class FeaturesSection extends FeaturesPageSection
 
     protected $priority = 27;
 
-    protected $selector = '.page .features';
+    protected $selector = '.featuresPage .features';
 
 
     public function getSection()

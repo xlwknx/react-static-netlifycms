@@ -13,7 +13,7 @@ class UseCasesSection extends FrontPageSection
 
     protected $priority = 27;
 
-    protected $selector = '.page .useCases';
+    protected $selector = '.homePage .useCases';
 
 
     public function getSection()
