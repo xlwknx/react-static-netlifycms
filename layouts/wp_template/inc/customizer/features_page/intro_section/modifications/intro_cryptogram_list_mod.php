@@ -1,5 +1,5 @@
 <?php
-namespace VirgilSecurity\Customizer\FeaturesPage\IntroCryptogramSection\Modifications;
+namespace VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications;
 
 
 use VirgilSecurity\Customizer\Src\BaseModification;
