@@ -19,4 +19,26 @@ class ConclusionSectionModel extends BaseSectionModel
     {
         $this->sectionMods = new ConclusionSectionMods();
     }
+
+
+    public function Headline()
+    {
+        $mod = $this->sectionMods->getConclusionHeadlineMod();
+
+        if ($mod->isEnabled()) {
+            return $mod->getValue();
+        }
+    }
+
+
+    public function Links()
+    {
+        $mod = $this->sectionMods->getConclusionLinksMod();
+
+        if ($mod->isEnabled()) {
+            return $this->filterCollection(
+                $mod->getValue()
+            );
+        }
+    }
 }

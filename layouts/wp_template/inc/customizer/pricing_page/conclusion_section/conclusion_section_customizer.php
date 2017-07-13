@@ -3,6 +3,8 @@
 namespace VirgilSecurity\Customizer\PricingPage\ConclusionSection;
 
 
+use VirgilSecurity\Customizer\PricingPage\ConclusionSection\Fields\ConclusionHeadlineField;
+use VirgilSecurity\Customizer\PricingPage\ConclusionSection\Groups\ConclusionLinksGroup;
 use VirgilSecurity\Customizer\PricingPage\ConclusionSection\Modifications\Sections\ConclusionSectionMods;
 
 use WP_Customize_Manager;
@@ -25,6 +27,14 @@ class ConclusionSectionCustomizer
     public function getSection(ConclusionSectionMods $conclusionSectionMods)
     {
         $section = new ConclusionSection($this->config, $this->wpCustomizer);
+
+        $section->addField(
+            ConclusionHeadlineField::createWithMod($conclusionSectionMods->getConclusionHeadlineMod())
+        );
+
+        $section->addField(
+            ConclusionLinksGroup::createWithMod($conclusionSectionMods->getConclusionLinksMod())
+        );
 
         return $section;
     }
