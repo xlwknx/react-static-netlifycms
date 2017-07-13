@@ -4,6 +4,7 @@ namespace VirgilSecurity\Models;
 
 
 use VirgilSecurity\Models\PricingPage\EnterpriseSectionModel;
+use VirgilSecurity\Models\PricingPage\IncludesSectionModel;
 use VirgilSecurity\Models\PricingPage\IntroSectionModel;
 
 use VirgilSecurity\Models\Src\LayoutModel;
@@ -20,5 +21,11 @@ class PricingPageModel extends LayoutModel
     public function EnterpriseSection()
     {
         return new EnterpriseSectionModel();
+    }
+
+
+    public function IncludesSection()
+    {
+        return new IncludesSectionModel();
     }
 }

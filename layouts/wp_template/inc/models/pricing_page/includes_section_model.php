@@ -19,4 +19,41 @@ class IncludesSectionModel extends BaseSectionModel
     {
         $this->sectionMods = new IncludesSectionMods();
     }
+
+
+    public function Headline()
+    {
+        $mod = $this->sectionMods->getIncludesHeadlineMod();
+
+        if ($mod->isEnabled()) {
+            return $mod->getValue();
+        }
+    }
+
+
+    public function Text()
+    {
+        $mod = $this->sectionMods->getIncludesTextMod();
+
+        if ($mod->isEnabled()) {
+            return $mod->getValue();
+        }
+    }
+
+
+    public function Collection()
+    {
+        $mod = $this->sectionMods->getIncludesListMod();
+
+        if ($mod->isEnabled()) {
+            return $this->filterCollection(
+                $mod->getValue(),
+                [
+                    'image' => [
+                        [$this, 'imageModValueToModel'],
+                    ],
+                ]
+            );
+        }
+    }
 }
