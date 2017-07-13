@@ -3,6 +3,7 @@
 namespace VirgilSecurity;
 
 
+use VirgilSecurity\Customizer\ContactsPage\ContactsPageSectionMods;
 use VirgilSecurity\Customizer\FeaturesPage\FeaturesPageSectionMods;
 use VirgilSecurity\Customizer\PricingPage\PricingPageSectionMods;
 use VirgilSecurity\Customizer\FooterSection\Modifications\Sections\FooterSectionMods;
@@ -28,6 +29,9 @@ class SectionModifications
     /** @var PricingPageSectionMods */
     protected $pricingPageSectionMods;
 
+    /** @var ContactsPageSectionMods */
+    protected $contactsPageSectionMods;
+
 
     public function __construct()
     {
@@ -35,6 +39,7 @@ class SectionModifications
         $this->frontPageSectionMods = new FrontPageSectionMods();
         $this->featuresPageSectionMods = new FeaturesPageSectionMods();
         $this->pricingPageSectionMods = new PricingPageSectionMods();
+        $this->contactsPageSectionMods = new ContactsPageSectionMods();
         $this->footerSectionMods = new FooterSectionMods();
     }
 
@@ -86,6 +91,7 @@ class SectionModifications
         $this->featuresPageSectionMods->setupDefaults();
         $this->footerSectionMods->setupDefaults();
         $this->pricingPageSectionMods->setupDefaults();
+        $this->contactsPageSectionMods->setupDefaults();
 
         set_theme_mod(self::SECTIONS_INIT_MOD, true);
     }
@@ -94,5 +100,14 @@ class SectionModifications
     public function isInitialized()
     {
         return get_theme_mod(self::SECTIONS_INIT_MOD, false);
+    }
+
+
+    /**
+     * @return ContactsPageSectionMods
+     */
+    public function getContactsPageSectionMods()
+    {
+        return $this->contactsPageSectionMods;
     }
 }

@@ -3,6 +3,8 @@
 namespace VirgilSecurity;
 
 
+use VirgilSecurity\Customizer\ContactsPage\ContactsPageSectionsCustomizer;
+
 use VirgilSecurity\Customizer\FeaturesPage\FeaturesPageSectionsCustomizer;
 
 use VirgilSecurity\Customizer\FooterSection\FooterSectionCustomizer;
@@ -29,6 +31,21 @@ class SectionCustomizer
     {
         $this->config = $config;
         $this->sectionModifications = $sectionModifications;
+    }
+
+
+    public function getContactsPageSections(ContactsPageSectionsCustomizer $contactsPageSectionsCustomizer)
+    {
+        $contactsPageSectionMods = $this->sectionModifications->getContactsPageSectionMods();
+
+        return [
+            $contactsPageSectionsCustomizer->getContactUsSectionCustomizer()
+                                           ->getSection($contactsPageSectionMods->getContactUsSectionMods()),
+            $contactsPageSectionsCustomizer->getPartnershipSectionCustomizer()
+                                           ->getSection($contactsPageSectionMods->getPartnershipSectionMods()),
+            $contactsPageSectionsCustomizer->getMapSectionCustomizer()
+                                           ->getSection($contactsPageSectionMods->getMapSectionMods()),
+        ];
     }
 
 
@@ -110,6 +127,7 @@ class SectionCustomizer
         $featuresPageSectionsCustomizer = new FeaturesPageSectionsCustomizer($this->config, $wpCustomizer);
         $frontPageSectionsCustomizer = new FrontPageSectionsCustomizer($this->config, $wpCustomizer);
         $pricingPageSectionsCustomizer = new PricingPageSectionsCustomizer($this->config, $wpCustomizer);
+        $contactsPageSectionsCustomizer = new ContactsPageSectionsCustomizer($this->config, $wpCustomizer);
 
         $this->register(
             [
@@ -121,6 +139,7 @@ class SectionCustomizer
         $this->register($this->getFrontPageSections($frontPageSectionsCustomizer));
         $this->register($this->getFeaturesPageSections($featuresPageSectionsCustomizer));
         $this->register($this->getPricingPageSections($pricingPageSectionsCustomizer));
+        $this->register($this->getContactsPageSections($contactsPageSectionsCustomizer));
     }
 
 
