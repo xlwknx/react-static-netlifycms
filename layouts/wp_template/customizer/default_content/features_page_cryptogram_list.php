@@ -5,7 +5,6 @@ return [
     [
         'image'     => get_template_directory_uri() . '/assets/features-cryptogram-ecies.png',
         'items'     => implode("\n\n", ['sender’s ephemeral public key', 'tag', 'encrypted content']),
-        'skin'      => 'regular',
         'is_hidden' => false,
     ],
     [
@@ -20,7 +19,6 @@ return [
                 'user’s encrypted data',
             ]
         ),
-        'skin'      => 'highlighted',
         'is_hidden' => false,
     ],
     [
@@ -29,7 +27,6 @@ return [
             "\n\n",
             ['algorithms identifiers', 'sender’s ephemeral public key', 'tag', 'encrypted content']
         ),
-        'skin'      => 'regular',
         'is_hidden' => false,
     ],
 ];

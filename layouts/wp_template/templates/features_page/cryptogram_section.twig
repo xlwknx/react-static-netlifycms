@@ -9,7 +9,7 @@
                 </div>
                 <div class="comparisonBlock cryptogramList">
                     {% for cryptogram in cryptogram.collection %}
-                        <div class="comparisonItem cryptogramItem {{ cryptogram.skin == "highlighted" ? 'comparisonItem--highlight cryptogramItem--highlight' }}">
+                        <div class="comparisonItem cryptogramItem {{ loop.index == 2 ? 'comparisonItem--highlight cryptogramItem--highlight' }}">
                             <div class="cryptogramItem-image">
                                 <img src="{{ cryptogram.image.src }}"
                                      srcset="{{ cryptogram.image.src | retina(2) }} 2x"

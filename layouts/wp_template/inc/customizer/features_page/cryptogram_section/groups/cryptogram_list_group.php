@@ -21,9 +21,6 @@ class CryptogramListGroup extends FieldsGroup
     {
         $this->setField(new ImageField('image', __('Image')));
         $this->setField(new TextareaField('items', __('Items list (separated by empty line)')));
-        $this->setField(new CryptogramListSkinField('skin', __('Skin')));
-
-        $this->setRowLabel('skin', __('item'));
 
         parent::__construct('features_page_cryptogram_list', __('Cryptogram list'));
     }
