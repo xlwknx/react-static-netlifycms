@@ -19,6 +19,8 @@ class LinksGroup extends FieldsGroup
         $this->setField(new ButtonSkinSelectField('link_button_skin'));
         $this->setField(new IconSelectField('link_icon'));
 
+        $this->setRowLabel('link_text', __('link'));
+
 
         parent::__construct($settings, __($label));
     }
