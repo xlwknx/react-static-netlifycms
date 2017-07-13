@@ -4,6 +4,7 @@ namespace VirgilSecurity;
 
 
 use VirgilSecurity\Customizer\FeaturesPage\FeaturesPageSectionMods;
+use VirgilSecurity\Customizer\PricingPage\PricingPageSectionMods;
 use VirgilSecurity\Customizer\FooterSection\Modifications\Sections\FooterSectionMods;
 use VirgilSecurity\Customizer\HeaderSection\Modifications\Sections\HeaderSectionMods;
 
@@ -24,12 +25,16 @@ class SectionModifications
     /** @var FooterSectionMods */
     protected $footerSectionMods;
 
+    /** @var PricingPageSectionMods */
+    protected $pricingPageSectionMods;
+
 
     public function __construct()
     {
         $this->headerSectionMods = new HeaderSectionMods();
         $this->frontPageSectionMods = new FrontPageSectionMods();
         $this->featuresPageSectionMods = new FeaturesPageSectionMods();
+        $this->pricingPageSectionMods = new PricingPageSectionMods();
         $this->footerSectionMods = new FooterSectionMods();
     }
 
@@ -62,6 +67,12 @@ class SectionModifications
     }
 
 
+    public function getPricingPageSectionMods()
+    {
+        return $this->pricingPageSectionMods;
+    }
+
+
     public function getFooterSectionMods()
     {
         return $this->footerSectionMods;
@@ -74,6 +85,7 @@ class SectionModifications
         $this->frontPageSectionMods->setupDefaults();
         $this->featuresPageSectionMods->setupDefaults();
         $this->footerSectionMods->setupDefaults();
+        $this->pricingPageSectionMods->setupDefaults();
 
         set_theme_mod(self::SECTIONS_INIT_MOD, true);
     }

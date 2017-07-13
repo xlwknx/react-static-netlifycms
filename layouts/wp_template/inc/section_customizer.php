@@ -11,6 +11,8 @@ use VirgilSecurity\Customizer\HeaderSection\HeaderSectionCustomizer;
 
 use VirgilSecurity\Customizer\FrontPage\FrontPageSectionsCustomizer;
 
+use VirgilSecurity\Customizer\PricingPage\PricingPageSectionsCustomizer;
+
 use VirgilSecurity\Customizer\Src\ConfigInterface;
 use VirgilSecurity\Customizer\Src\SectionInterface;
 
@@ -83,10 +85,31 @@ class SectionCustomizer
     }
 
 
+    public function getPricingPageSections(PricingPageSectionsCustomizer $pricingPageSectionsCustomizer)
+    {
+        $pricingPageSectionMods = $this->sectionModifications->getPricingPageSectionMods();
+
+        return [
+            $pricingPageSectionsCustomizer->getIntroSectionCustomizer()
+                                          ->getSection($pricingPageSectionMods->getIntroSectionMods()),
+
+            $pricingPageSectionsCustomizer->getEnterpriseSectionCustomizer()
+                                          ->getSection($pricingPageSectionMods->getEnterpriseSectionMods()),
+
+            $pricingPageSectionsCustomizer->getIncludesSectionCustomizer()
+                                          ->getSection($pricingPageSectionMods->getIncludesSectionMods()),
+
+            $pricingPageSectionsCustomizer->getConclusionSectionCustomizer()
+                                          ->getSection($pricingPageSectionMods->getConclusionSectionMods()),
+        ];
+    }
+
+
     public function registerDefaults(WP_Customize_Manager $wpCustomizer)
     {
         $featuresPageSectionsCustomizer = new FeaturesPageSectionsCustomizer($this->config, $wpCustomizer);
         $frontPageSectionsCustomizer = new FrontPageSectionsCustomizer($this->config, $wpCustomizer);
+        $pricingPageSectionsCustomizer = new PricingPageSectionsCustomizer($this->config, $wpCustomizer);
 
         $this->register(
             [
@@ -97,6 +120,7 @@ class SectionCustomizer
 
         $this->register($this->getFrontPageSections($frontPageSectionsCustomizer));
         $this->register($this->getFeaturesPageSections($featuresPageSectionsCustomizer));
+        $this->register($this->getPricingPageSections($pricingPageSectionsCustomizer));
     }
 
 
