@@ -3,8 +3,10 @@
 namespace VirgilSecurity\Customizer\FeaturesPage\FaqSection;
 
 
+use VirgilSecurity\Customizer\FeaturesPage\FaqSection\Fields\FaqCaptionField;
 use VirgilSecurity\Customizer\FeaturesPage\FaqSection\Modifications\Sections\FaqSectionMods;
 
+use VirgilSecurity\Customizer\FeaturesPage\FaqSection\Groups\FaqQuestionsListGroup;
 use WP_Customize_Manager;
 
 class FaqSectionCustomizer
@@ -25,6 +27,14 @@ class FaqSectionCustomizer
     public function getSection(FaqSectionMods $faqSectionMods)
     {
         $section = new FaqSection($this->config, $this->wpCustomizer);
+
+        $section->addField(
+            FaqCaptionField::createWithMod($faqSectionMods->getFaqCaptionMod())
+        );
+
+        $section->addField(
+            FaqQuestionsListGroup::createWithMod($faqSectionMods->getFaqQuestionsListMod())
+        );
 
         return $section;
     }

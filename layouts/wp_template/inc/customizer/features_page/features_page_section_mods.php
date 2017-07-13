@@ -5,6 +5,7 @@ namespace VirgilSecurity\Customizer\FeaturesPage;
 
 use VirgilSecurity\Customizer\FeaturesPage\ComponentsSection\Modifications\Sections\ComponentsSectionMods;
 use VirgilSecurity\Customizer\FeaturesPage\CryptogramSection\Modifications\Sections\CryptogramSectionMods;
+use VirgilSecurity\Customizer\FeaturesPage\FaqSection\Modifications\Sections\FaqSectionMods;
 use VirgilSecurity\Customizer\FeaturesPage\FeaturesSection\Modifications\Sections\FeaturesSectionMods;
 use VirgilSecurity\Customizer\FeaturesPage\IntroSection\Modifications\Sections\IntroSectionMods;
 
@@ -16,6 +17,7 @@ class FeaturesPageSectionMods extends BaseSectionMods
     protected $cryptogramSectionMods;
     protected $componentsSectionMods;
     protected $featuresSectionMods;
+    protected $faqSectionMods;
 
 
     public function __construct()
@@ -24,6 +26,7 @@ class FeaturesPageSectionMods extends BaseSectionMods
         $this->cryptogramSectionMods = new CryptogramSectionMods();
         $this->componentsSectionMods = new ComponentsSectionMods();
         $this->featuresSectionMods = new FeaturesSectionMods();
+        $this->faqSectionMods = new FaqSectionMods();
     }
 
 
@@ -33,6 +36,7 @@ class FeaturesPageSectionMods extends BaseSectionMods
         $this->cryptogramSectionMods->setupDefaults();
         $this->componentsSectionMods->setupDefaults();
         $this->featuresSectionMods->setupDefaults();
+        $this->faqSectionMods->setupDefaults();
     }
 
 
@@ -69,5 +73,14 @@ class FeaturesPageSectionMods extends BaseSectionMods
     public function getFeaturesSectionMods()
     {
         return $this->featuresSectionMods;
+    }
+
+
+    /**
+     * @return FaqSectionMods
+     */
+    public function getFaqSectionMods()
+    {
+        return $this->faqSectionMods;
     }
 }

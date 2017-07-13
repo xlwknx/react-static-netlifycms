@@ -4,44 +4,29 @@
     <div class="faq">
         <div class="wrapper">
             <div class="faqContentBlock">
-                <h2 class="faq-caption">FAQ</h2>
+                <h2 class="faq-caption">{{ faq.caption|shortcodes }}</h2>
                 <ul class="faqList" data-vs-faq-answerlist="">
-                    <li id="faq-q1" data-vs-faq-answer="" class="faqItem active">
-                        <div class="faqItem-count">01</div>
-                        <div class="faqItem-text">
-                            <p>Virgil consists of an open-source encryption library, which implements
-                                Cryptographic Message Syntax (CMS) and Elliptic Curve Integrated Encryption Scheme
-                                (ECIES) (including RSA schema), a Key Management API, and a cloud-based Key
-                                Management Service (Virgil Keys). The Virgil Keys Service consists of a public key
-                                service and a private key escrow service..</p>
-                            <p>See our Technical Specifications for the up-to-date list of programming languages and
-                                platforms supported by our library. Generally all modern platforms and programming
-                                languages are supported.</p>
-                        </div>
-                    </li>
-                    <li id="faq-q2" data-vs-faq-answer="" class="faqItem">
-                        <div class="faqItem-count">02</div>
-                        <div class="faqItem-text">
-                            <p>No. Only the AES encryption key used to secure the payload (default AES-256) will
-                                be re-encrypted for each individual recipient. The payload itself will not be
-                                re-encrypted.</p>
-                        </div>
-                    </li>
+                    {% for qa in faq.collection %}
+                        <li id="faq-q{{ loop.index }}" data-vs-faq-answer=""
+                            class="faqItem {{ loop.index == 1 ? 'active' }}">
+                            <div class="faqItem-count">{{ loop.index < 10 ? 0 ~ loop.index : loop.index }}</div>
+                            <div class="faqItem-text">
+                                {{ qa.answer|shortcodes }}
+                            </div>
+                        </li>
+                    {% endfor %}
                 </ul>
                 <div class="faqContents layeredBlock layeredBlock--top">
                     <ul class="faqContentList layeredBlockContent">
-                        <li class="faqContentItem">
-                            <a href="#faq-q1" data-vs-faq-question="" class="faqContentItem-link active">
-                                <span class="faqContentItem-linkCount">01</span>
-                                <span class="faqContentItem-linkText">If I send a message to a channel that contains many recipients does it mean that the message will be encrypted as many times as there are recipients in the channel?</span>
-                            </a>
-                        </li>
-                        <li class="faqContentItem">
-                            <a href="#faq-q2" data-vs-faq-question="" class="faqContentItem-link">
-                                <span class="faqContentItem-linkCount">02</span>
-                                <span class="faqContentItem-linkText">If I send a message to a channel that contains many recipients does it mean that the message will be encrypted as many times as there are recipients in the channel?</span>
-                            </a>
-                        </li>
+                        {% for qa in faq.collection %}
+                            <li class="faqContentItem">
+                                <a href="#faq-q{{ loop.index }}" data-vs-faq-question=""
+                                   class="faqContentItem-link {{ loop.index == 1 ? 'active' }}">
+                                    <span class="faqContentItem-linkCount">{{ loop.index < 10 ? 0 ~ loop.index : loop.index }}</span>
+                                    <span class="faqContentItem-linkText">{{ qa.question|shortcodes }}</span>
+                                </a>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>

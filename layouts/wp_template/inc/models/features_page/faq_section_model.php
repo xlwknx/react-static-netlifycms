@@ -19,4 +19,24 @@ class FaqSectionModel extends BaseSectionModel
     {
         $this->sectionMods = new FaqSectionMods();
     }
+
+
+    public function Caption()
+    {
+        $mod = $this->sectionMods->getFaqCaptionMod();
+
+        if ($mod->isEnabled()) {
+            return $mod->getValue();
+        }
+    }
+
+
+    public function Collection()
+    {
+        $mod = $this->sectionMods->getFaqQuestionsListMod();
+
+        if ($mod->isEnabled()) {
+            return (array)$mod->getValue();
+        }
+    }
 }
