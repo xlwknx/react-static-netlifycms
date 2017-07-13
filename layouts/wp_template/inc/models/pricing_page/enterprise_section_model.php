@@ -19,4 +19,54 @@ class EnterpriseSectionModel extends BaseSectionModel
     {
         $this->sectionMods = new EnterpriseSectionMods();
     }
+
+
+    public function Title()
+    {
+        $mod = $this->sectionMods->getEnterpriseTitleMod();
+
+        if ($mod->isEnabled()) {
+            return $mod->getValue();
+        }
+    }
+
+
+    public function Text()
+    {
+        $mod = $this->sectionMods->getEnterpriseTextMod();
+
+        if ($mod->isEnabled()) {
+            return $mod->getValue();
+        }
+    }
+
+
+    public function Image()
+    {
+        $mod = $this->sectionMods->getEnterpriseImageMod();
+
+        if ($mod->isEnabled()) {
+            return $this->imageModValueToModel($mod->getValue());
+        }
+    }
+
+
+    public function Links()
+    {
+        $mod = $this->sectionMods->getEnterpriseLinksMod();
+
+        if ($mod->isEnabled()) {
+            return $this->filterCollection($mod->getValue());
+        }
+    }
+
+
+    public function Collection()
+    {
+        $mod = $this->sectionMods->getEnterpriseListMod();
+
+        if ($mod->isEnabled()) {
+            return $this->filterCollection($mod->getValue());
+        }
+    }
 }

@@ -1,0 +1,33 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+    <div class="enterprise">
+        <div class="wrapper">
+            <div class="enterpriseContentBlock">
+                <div class="enterpriseOffer">
+                    <div class="enterpriseOffer-image">
+                        <img width="80" height="80" src="{{ enterprise.image.src }}"
+                             alt="{{ enterprise.image.alt|shortcodes }}">
+                    </div>
+                    <div class="enterpriseOffer-msg">
+                        <h3 class="enterpriseOffer-headline">{{ enterprise.title|shortcodes }}</h3>
+                        <p class="enterpriseOffer-text">{{ enterprise.text|shortcodes }}</p>
+                    </div>
+                    <ul class="enterpriseOffer-list">
+                        {% for item in enterprise.collection %}
+                            <li>
+                                <i class="icon icon-check-red" aria-hidden="true"></i>
+                                <span>{{ item.title|shortcodes }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="enterprise-links">
+                    {% for link in enterprise.links %}
+                        {% include 'common/link_button/' ~ link.link_button_skin ~ '.twig' with {'link': link} %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
