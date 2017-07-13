@@ -5,90 +5,12 @@
         <div class="wrapper">
             <div class="featuresContentBlock">
                 <ul class="featureList">
-                    <li>
-                        <img width="62" height="70" src="assets/features-features-c.png"
-                             srcset="assets/features-features-c@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="61" height="70" src="assets/features-features-cplusplus.png"
-                             srcset="assets/features-features-cplusplus@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="62" height="70" src="assets/features-features-csharp.png"
-                             srcset="assets/features-features-csharp@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="65" height="65" src="assets/features-features-js.png"
-                             srcset="assets/features-features-js@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="70" height="70" src="assets/features-features-python.png"
-                             srcset="assets/features-features-python@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="66" height="62" src="assets/features-features-ruby.png"
-                             srcset="assets/features-features-ruby@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="61" height="70" src="assets/features-features-node.png"
-                             srcset="assets/features-features-node@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="62" height="54" src="assets/features-features-swift.png"
-                             srcset="assets/features-features-swift@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="42" height="50" src="assets/features-features-apple.png"
-                             srcset="assets/features-features-apple@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="80" height="48" src="assets/features-features-go.png"
-                             srcset="assets/features-features-go@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="59" height="80" src="assets/features-features-java.png"
-                             srcset="assets/features-features-java@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="86" height="50" src="assets/features-features-dotnet.png"
-                             srcset="assets/features-features-dotnet@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="92" height="44" src="assets/features-features-php.png"
-                             srcset="assets/features-features-php@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="74" height="58" src="assets/features-features-asmjs.png"
-                             srcset="assets/features-features-asmjs@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="110" height="24" src="assets/features-features-android.png"
-                             srcset="assets/features-features-android@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="150" height="32" src="assets/features-features-windows.png"
-                             srcset="assets/features-features-windows@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="50" height="25" src="assets/features-features-ios.png"
-                             srcset="assets/features-features-ios@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="100" height="26" src="assets/features-features-macos.png"
-                             srcset="assets/features-features-macos@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="100" height="28" src="assets/features-features-ff.png"
-                             srcset="assets/features-features-ff@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="140" height="36" src="assets/features-features-chrome.png"
-                             srcset="assets/features-features-chrome@2x.png 2x" alt="">
-                    </li>
-                    <li>
-                        <img width="58" height="42" src="assets/features-features-nrf52.png"
-                             srcset="assets/features-features-nrf52@2x.png 2x" alt="">
-                    </li>
+                    {% for feature in features.collection %}
+                        <li>
+                            <img width="{{ feature.width }}" height="{{ feature.height }}" src="{{ feature.image.src }}"
+                                 srcset="{{ feature.image.src| retina(2) }} 2x" alt="{{ feature.image.alt }}">
+                        </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>

@@ -19,4 +19,21 @@ class FeaturesSectionModel extends BaseSectionModel
     {
         $this->sectionMods = new FeaturesSectionMods();
     }
+
+
+    public function Collection()
+    {
+        $mod = $this->sectionMods->getFeaturesListMod();
+
+        if ($mod->isEnabled()) {
+            return $this->filterCollection(
+                (array)$mod->getValue(),
+                [
+                    'image' => [
+                        [$this, 'imageModValueToModel'],
+                    ],
+                ]
+            );
+        }
+    }
 }

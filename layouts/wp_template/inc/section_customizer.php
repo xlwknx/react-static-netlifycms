@@ -72,6 +72,9 @@ class SectionCustomizer
 
             $featuresPageSectionsCustomizer->getComponentsSectionCustomizer()
                                            ->getSection($featuresPageSectionMods->getComponentsSectionMods()),
+
+            $featuresPageSectionsCustomizer->getFeaturesSectionCustomizer()
+                                           ->getSection($featuresPageSectionMods->getFeaturesSectionMods()),
         ];
 
     }
