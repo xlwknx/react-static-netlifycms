@@ -43,9 +43,7 @@ class CryptogramSectionModel extends BaseSectionModel
                         [$this, 'imageModValueToModel'],
                     ],
                     'items' => [
-                        function ($items) {
-                            return explode(',', $items);
-                        },
+                        [$this, 'textModValueToList'],
                     ],
                 ]
             );

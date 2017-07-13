@@ -28,6 +28,16 @@ abstract class BaseSectionModel extends BaseModel
     }
 
 
+    public function textModValueToList($items)
+    {
+        if (!$items) {
+            return;
+        }
+
+        return explode("\n\n", $items);
+    }
+
+
     protected function filterCollection($collection, $filters = [])
     {
         $values = array_filter(

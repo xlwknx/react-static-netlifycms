@@ -20,7 +20,7 @@ class CryptogramListGroup extends FieldsGroup
     public function __construct()
     {
         $this->setField(new ImageField('image', __('Image')));
-        $this->setField(new TextareaField('items', __('Items list (separated by `,`)')));
+        $this->setField(new TextareaField('items', __('Items list (separated by empty line)')));
         $this->setField(new CryptogramListSkinField('skin', __('Skin')));
 
         $this->setRowLabel('skin', __('item'));

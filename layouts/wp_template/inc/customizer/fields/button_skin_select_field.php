@@ -29,8 +29,6 @@ class ButtonSkinSelectField extends SelectField
             'raised_white_border'        => __('Raised white, border'),
             'raised_white_border_black'  => __('Raised white, border black'),
             'raised_white_border_static' => __('Raised white, border static'),
-
-            'disabled' => __('Disabled'),
         ];
     }
 

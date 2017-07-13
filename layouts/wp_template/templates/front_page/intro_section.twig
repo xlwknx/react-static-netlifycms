@@ -9,7 +9,7 @@
                         <h1 class="blockMsg-headline">{{ intro.headline.text }}</h1>
                         <div class="blockMsg-links">
                             {% for link in intro.links %}
-                                {% include 'common/link_button/' ~ link.link_button_skin ~ '.twig' with {'item': link} %}
+                                {% include 'common/link_button/' ~ link.link_button_skin ~ '.twig' with {'link': link} %}
                             {% endfor %}
                         </div>
                     </div>

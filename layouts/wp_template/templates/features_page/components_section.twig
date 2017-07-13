@@ -27,7 +27,7 @@
                     </ul>
                     <div class="componentLinks">
                         {% for link in components.links %}
-                            {% include 'common/link_button/' ~ link.link_button_skin ~ '.twig' with {'item': link} %}
+                            {% include 'common/link_button/' ~ link.link_button_skin ~ '.twig' with {'link': link} %}
                         {% endfor %}
                     </div>
                 </div>

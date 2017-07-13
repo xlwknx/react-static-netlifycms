@@ -3,6 +3,11 @@
 namespace VirgilSecurity\Customizer\PricingPage\IntroSection;
 
 
+use VirgilSecurity\Customizer\PricingPage\IntroSection\Fields\IntroHeadlineField;
+use VirgilSecurity\Customizer\PricingPage\IntroSection\Fields\IntroTextField;
+
+use VirgilSecurity\Customizer\PricingPage\IntroSection\Groups\IntroPlansListGroup;
+
 use VirgilSecurity\Customizer\PricingPage\IntroSection\Modifications\Sections\IntroSectionMods;
 
 use WP_Customize_Manager;
@@ -25,6 +30,18 @@ class IntroSectionCustomizer
     public function getSection(IntroSectionMods $introSectionMods)
     {
         $section = new IntroSection($this->config, $this->wpCustomizer);
+
+        $section->addField(
+            IntroHeadlineField::createWithMod($introSectionMods->getIntroHeadlineMod())
+        );
+
+        $section->addField(
+            IntroTextField::createWithMod($introSectionMods->getIntroTextMod())
+        );
+
+        $section->addField(
+            IntroPlansListGroup::createWithMod($introSectionMods->getIntroPlansListMod())
+        );
 
         return $section;
     }

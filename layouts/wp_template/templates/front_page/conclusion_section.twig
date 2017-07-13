@@ -9,7 +9,7 @@
                     <p class="blockMsg-text">{{ conclusion.text|shortcodes }}</p>
                     <div class="blockMsg-links">
                         {% for link in conclusion.links %}
-                            {% include 'common/link_button/' ~ link.link_button_skin ~ '.twig' with {'item': link} %}
+                            {% include 'common/link_button/' ~ link.link_button_skin ~ '.twig' with {'link': link} %}
                         {% endfor %}
                     </div>
                 </div>
