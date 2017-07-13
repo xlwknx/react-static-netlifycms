@@ -6,7 +6,6 @@ namespace VirgilSecurity\Customizer\FooterSection;
 use VirgilSecurity\Customizer\Src\BaseSection;
 use VirgilSecurity\Templates\Base\FooterSectionTemplate;
 use VirgilSecurity\Templates\Src\TemplateInterface;
-use VirgilSecurity\Templates\Base\HeaderSectionTemplate;
 
 class FooterSection extends BaseSection
 {

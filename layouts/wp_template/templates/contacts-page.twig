@@ -8,7 +8,9 @@
 
         {% block content %}
             <div class="container">
-                {#{% include 'front_page/intro_section.twig' with{ 'intro': models.intro_section, 'visible': models.intro_section.is_show } only %}#}
+                {% include 'contacts_page/contact_us_section.twig' with{ 'contact_us': models.contact_us_section, 'visible': models.contact_us_section.is_show } only %}
+                {% include 'contacts_page/partnership_secction.twig' with{ 'partnership': models.partnership_section, 'visible': models.partnership_section.is_show } only %}
+                {% include 'contacts_page/map_section.twig' with{ 'map': models.map_section, 'visible': models.map_section.is_show } only %}
             </div>
         {% endblock %}
 

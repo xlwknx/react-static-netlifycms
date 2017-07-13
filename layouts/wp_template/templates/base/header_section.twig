@@ -3,7 +3,7 @@
 {% block content %}
 
     <header class="header">
-        <div class="headerFull" data-vs-sticky-header>
+        <div class="headerFull {{ header.skin == 'dark' ? 'headerFull--dark' }}" data-vs-sticky-header>
             <div class="headerLogo">
                 {% if header.logo %}
                     <a href="{{ header.logo.url }}"><img src="{{ header.logo.image.src }}" width="145"
