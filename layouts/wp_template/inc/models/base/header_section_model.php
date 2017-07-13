@@ -26,11 +26,11 @@ class HeaderSectionModel extends BaseSectionModel
         //TOD:dirty hack, need to refactor at the future
         global $wp_query;
 
-        if ($wp_query->is_page('contacts')) {
-            return 'dark';
+        if (!$wp_query->is_page('contacts')) {
+            return 'light';
         }
 
-        return 'light';
+        return 'dark';
     }
 
 

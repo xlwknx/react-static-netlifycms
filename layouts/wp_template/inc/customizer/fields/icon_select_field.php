@@ -3,6 +3,7 @@
 namespace VirgilSecurity\Customizer\Fields;
 
 
+//TODO:add facebook,twitter icons etc...
 class IconSelectField extends SelectField
 {
     protected $multiple = 0;
