@@ -21,4 +21,7 @@ interface SectionInterface
 
 
     public function getPartialRefresh();
+
+
+    public function getActiveCallback();
 }

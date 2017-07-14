@@ -1,6 +1,13 @@
 <?php
 // TODO: rename all function with virgilsecurity prefix to aloid collision
+use VirgilSecurity\SectionModifications;
+
 require_once get_parent_theme_file_path('/inc/autoloader_register.php');
+
+global $virgilsecurity_section_mods;
+
+$virgilsecurity_section_mods = new SectionModifications();
+
 
 if (!function_exists('virgilsecurity_setup')) :
     /**
@@ -116,6 +123,19 @@ if (!function_exists('virgilsecurity_setup')) :
         add_editor_style('editor-style.css');
 
         store_github_stars();
+    }
+
+    function virgilsecurity_do_shortcode($value)
+    {
+        if (is_array($value)) {
+            foreach ($value as $key => $child) {
+                $value[$key] = virgilsecurity_do_shortcode($child);
+            }
+        } else {
+            $value = do_shortcode($value);
+        }
+
+        return $value;
     }
 
     function get_static_page_class()
