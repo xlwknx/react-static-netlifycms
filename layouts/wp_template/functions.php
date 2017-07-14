@@ -192,53 +192,6 @@ if (!function_exists('virgilsecurity_setup')) :
                 'page_on_front' => '{{homepage}}',
             ],
             'widgets' => [
-                'top-menu'        => get_starter_content("widgets", "header", "top_menu"),
-                'mobile-top-menu' => get_starter_content("widgets", "header", "mobile_top_menu"),
-                'footer-top'      => get_starter_content("widgets", "footer", "footer_top"),
-                'footer-bottom'   => get_starter_content("widgets", "footer", "footer_bottom"),
-
-
-                'hp-intro-area-headline'      => get_starter_content("widgets", "hp", "intro_area_headline"),
-                'hp-intro-area-links'         => get_starter_content("widgets", "hp", "intro_area_links"),
-                'hp-intro-langs'              => get_starter_content("widgets", "hp", "intro_langs"),
-                'hp-use-case-content'         => get_starter_content("widgets", "hp", "use_case_content"),
-                'hp-use-cases-list'           => get_starter_content("widgets", "hp", "use_case_list"),
-                'hp-client-content'           => get_starter_content("widgets", "hp", "client_content"),
-                'hp-services-content-block'   => get_starter_content("widgets", "hp", "services_content"),
-                'hp-usage-content-block'      => get_starter_content("widgets", "hp", "usage_content"),
-                'hp-benefits-content-block'   => get_starter_content("widgets", "hp", "benefits_content"),
-                'hp-conclusion-content-block' => get_starter_content("widgets", "hp", "conclusion_content"),
-
-
-                'pricing-intro-block'            => get_starter_content("widgets", "pricing", "intro_block"),
-                'pricing-plans-list'             => get_starter_content("widgets", "pricing", "plans_list"),
-                'pricing-enterprise-offer-msg'   => get_starter_content("widgets", "pricing", "enterprise_offer_msg"),
-                'pricing-enterprise-offer-list'  => get_starter_content("widgets", "pricing", "enterprise_offer_list"),
-                'pricing-enterprise-offer-links' => get_starter_content("widgets", "pricing", "enterprise_offer_links"),
-                'pricing-includes-list'          => get_starter_content("widgets", "pricing", "includes_list"),
-                'pricing-includes-msg'           => get_starter_content("widgets", "pricing", "includes_msg"),
-                'pricing-conclusion-msg'         => get_starter_content("widgets", "pricing", "conclusion_msg"),
-
-
-                'contact-us-msg'               => get_starter_content("widgets", "contacts", "contact_us_msg"),
-                'contact-us-block'             => get_starter_content("widgets", "contacts", "contact_us_block"),
-                'contact-partnership-msg'      => get_starter_content("widgets", "contacts", "contact_partnership_msg"),
-                'contact-partnership-contacts' => get_starter_content(
-                    "widgets",
-                    "contacts",
-                    "contact_partnership_contacts"
-                ),
-                'contact-map-address'          => get_starter_content("widgets", "contacts", "contact_map_address"),
-
-
-                'features-intro-msg'       => get_starter_content("widgets", "features", "features_intro_msg"),
-                'features-intro-feature'   => get_starter_content("widgets", "features", "features_intro_feature"),
-                'features-cryptogram-msg'  => get_starter_content("widgets", "features", "features_cryptogram_msg"),
-                'features-cryptogram-list' => get_starter_content("widgets", "features", "features_cryptogram_list"),
-                'features-components'      => get_starter_content("widgets", "features", "features_components"),
-                'features-languages'       => get_starter_content("widgets", "features", "features_languages"),
-                'features-faq'             => get_starter_content("widgets", "features", "features_faq"),
-
                 'about-virgil-intro-msg'        => get_starter_content(
                     "widgets",
                     "about-virgil",
