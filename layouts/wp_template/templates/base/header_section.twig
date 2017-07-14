@@ -17,18 +17,19 @@
                 {% endfor %}
             </div>
             <button data-vs-sideNav-open class="headerOpenButton">
-                <i class="icon icon-menu-red"></i>
+                {% include 'common/icons/menu_red.twig' only %}
             </button>
         </div>
         <div class="headerSideBar" data-vs-sideNav-target>
             <div class="headerCloseButton">
                 <button data-vs-sideNav-close>
-                    <i class="icon icon-close-red"></i>
+                    {% include 'common/icons/close_red.twig' only %}
                 </button>
             </div>
             {{ header.mobile.menu|shortcodes }}
             <div class="headerAuth">
-                <a href="{{ header.mobile.link.url|shortcodes }}" class="headerAuth-link"><span>{{ header.mobile.link.text|shortcodes }}</span></a>
+                <a href="{{ header.mobile.link.url|shortcodes }}"
+                   class="headerAuth-link"><span>{{ header.mobile.link.text|shortcodes }}</span></a>
             </div>
         </div>
     </header>

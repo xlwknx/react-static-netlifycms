@@ -23,7 +23,7 @@
                                 <span class="serviceItem-linkText">{{ service.text|shortcodes }}</span>
                                 <span class="serviceItem-linkHoverText">
                                     <span>{{ service.hover_text|shortcodes }}</span>
-                                    <i class="icon icon-arrowRight-white" aria-hidden="true"></i>
+                                    {% include 'common/icons/arrow_right_white.twig' only %}
                                 </span>
                             </a>
                         </li>

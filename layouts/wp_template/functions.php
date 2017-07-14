@@ -475,13 +475,7 @@ if (!function_exists('virgilsecurity_setup')) :
 
     function virgilsecurity_header_nav_item($atts = [])
     {
-        $availableIcons = ['book', 'bookmark', 'shield', 'case', 'medium'];
-
         $icon = isset($atts['icon']) ? $atts['icon'] : '';
-
-        if (!in_array($icon, $availableIcons)) {
-            $icon = '';
-        }
 
         $availableLevels = ['first', 'second', 'third'];
 

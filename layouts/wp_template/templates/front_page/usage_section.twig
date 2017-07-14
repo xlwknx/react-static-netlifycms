@@ -36,9 +36,9 @@
                                                     class="usageStepItem-linkImage"
                                                     alt="{{ slide.image.alt }}">
                                             <span class="usageStepItem-linkButton button-raisedWhite-static">
-                                            <i class="icon icon-book-black"></i>
-                                            <span>Documentation</span>
-                                        </span>
+                                                {% include 'common/icons/book_black.twig' only %}
+                                                <span>Documentation</span>
+                                            </span>
                                         </a>
                                     </li>
                                 {% endfor %}

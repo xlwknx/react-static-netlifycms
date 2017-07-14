@@ -12,11 +12,28 @@ class SocialIconsSelectField extends SelectField
     {
         return [
             'none'          => __('None'),
-            'icon-facebook' => __('Facebook'),
-            'icon-github'   => __('Github'),
-            'icon-twitter'  => __('Twitter'),
-            'icon-linkedin' => __('Linkedin'),
-            'icon-medium'   => __('Medium'),
+
+            'facebook'       => __('Facebook'),
+            'facebook_white' => __('Facebook white'),
+
+            'github'       => __('Github'),
+            'github_black' => __('Github black'),
+            'github_white' => __('Github white'),
+
+
+            'twitter'       => __('Twitter'),
+            'twitter_red'   => __('Twitter red'),
+            'twitter_white' => __('Twitter white'),
+
+
+            'linkedin'       => __('Linkedin'),
+            'linkedin_red'   => __('Linkedin red'),
+            'linkedin_white' => __('Linkedin white'),
+
+
+            'medium'       => __('Medium'),
+            'medium_red'   => __('Medium red'),
+            'medium_white' => __('Medium white'),
         ];
     }
 

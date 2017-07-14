@@ -23,7 +23,9 @@
         {% include 'base/footer_section.twig' with {'footer': models.footer_section, 'visible': models.footer_section.is_show} only %}
 
         <div class="scrollToTop" data-vs-sticky-scrollToTop>
-            <div class="scrollToTop-btn button-raisedRed"><i class="icon icon-arrowTop-white"></i></div>
+            <div class="scrollToTop-btn button-raisedRed">
+                {% include 'common/icons/arrow_top_white.twig' only %}
+            </div>
         </div>
         <div class="overlay" data-vs-sideNav-overlay></div>
     {% endblock %}

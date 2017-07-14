@@ -14,23 +14,29 @@
                             <div class="partnershipContact-name">{{ partner.name|shortcodes }}</div>
                             <div class="partnershipContact-position">{{ partner.position|shortcodes }}</div>
                             <ul class="partnershipContact-contacts">
-
                                 {% if partner.is_show_linkedin %}
-                                    <li><a href="{{ partner.linkedin|shortcodes }}"><i
-                                                    class="icon icon-linkedin-red"></i></a></li>
+                                    <li>
+                                        <a href="{{ partner.linkedin|shortcodes }}">
+                                            {% include 'common/icons/linkedin_red.twig' only %}
+                                        </a>
+                                    </li>
                                 {% endif %}
 
                                 {% if partner.is_show_twitter %}
-                                    <li><a href="{{ partner.twitter|shortcodes }}"><i class="icon icon-twitter-red"></i></a>
+                                    <li>
+                                        <a href="{{ partner.twitter|shortcodes }}">
+                                            {% include 'common/icons/twitter_red.twig' only %}
+                                        </a>
                                     </li>
                                 {% endif %}
 
                                 {% if partner.is_show_email %}
-                                    <li class="partnershipContact-email"><a
-                                                href="mailto:{{ partner.email }}">{{ partner.email|shortcodes }}</a>
+                                    <li class="partnershipContact-email">
+                                        <a href="mailto:{{ partner.email }}">
+                                            {{ partner.email|shortcodes }}
+                                        </a>
                                     </li>
                                 {% endif %}
-
                             </ul>
                         </li>
                     {% endfor %}

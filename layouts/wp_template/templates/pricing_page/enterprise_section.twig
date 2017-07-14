@@ -16,7 +16,7 @@
                     <ul class="enterpriseOffer-list">
                         {% for item in enterprise.collection %}
                             <li>
-                                <i class="icon icon-check-red" aria-hidden="true"></i>
+                                {% include 'common/icons/check_red.twig' only %}
                                 <span>{{ item.title|shortcodes }}</span>
                             </li>
                         {% endfor %}

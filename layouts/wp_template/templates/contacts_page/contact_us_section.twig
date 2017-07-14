@@ -13,7 +13,6 @@
                         <h3 class="contactUsForm-headline">
                             <span>{{ contact_us.form.title|shortcodes }}</span>
                             {% include 'common/icons/'~ contact_us.form.icon|default('none') ~'.twig' only %}
-                            {#<i class="icon icon-mail-red" aria-hidden="true"></i>#}
                         </h3>
                         {{ contact_us.form.code|shortcodes }}
                     </div>
@@ -24,7 +23,6 @@
                                 <div class="contactUsInfo-field contactUsInfo-field{{ field.type|capitalize }}">
                                     <div class="contactUsInfo-fieldImage">
                                         {% include 'common/icons/'~ field.icon|default('none') ~'.twig' only %}
-                                        {#<i class="icon icon-geo-white" aria-hidden="true"></i>#}
                                     </div>
                                     <div class="contactUsInfo-fieldText">
                                         {{ field.text|shortcodes }}
@@ -36,7 +34,7 @@
                             {% for social in contact_us.contacts.socials %}
                                 <li>
                                     <a href="{{ social.link_url|shortcodes }}">
-                                        <i class="icon {{ social.link_icon }}" aria-hidden="false"></i>
+                                        {% include 'common/icons/'~ social.link_icon|default('none') ~'.twig' only %}
                                     </a>
                                 </li>
                             {% endfor %}

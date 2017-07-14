@@ -21,8 +21,11 @@
                             <ul class="cryptogramItem-features">
                                 {% for item in cryptogram.items %}
                                     <li class="cryptogramItem-feature">
-                                        <i class="icon icon-check-{{ cryptogram.skin == "highlighted" ? 'white' : 'grey' }}"
-                                           aria-hidden="true"></i>
+                                        {% if cryptogram.skin == "highlighted" %}
+                                            {% include 'common/icons/check_white.twig' only %}
+                                        {% else %}
+                                            {% include 'common/icons/check_grey.twig' only %}
+                                        {% endif %}
                                         <span>{{ item|shortcodes }}</span>
                                     </li>
                                 {% endfor %}

@@ -16,7 +16,7 @@ return [
     [
         'type' => 'phone',
         //'icon' => 'phone_white',
-        'text' => '<a href="tel:">(800) 900-200-300</a>',
+        'text' => '<a href="tel:+1-571-348-4601">+1-571-348-4601</a>',
         'is_hidden' => false,
     ],
 ];

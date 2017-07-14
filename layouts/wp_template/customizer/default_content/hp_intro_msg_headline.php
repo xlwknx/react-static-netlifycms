@@ -1,3 +1,3 @@
 <?php
 
-return 'Easy to use security<br>cryptographic building blocks';
+return 'The simplest and strongest<br> way to secure your apps';

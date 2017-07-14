@@ -1,3 +1,3 @@
 <?php
 
-return "#EncryptEverything";
+return "#SecuredByVirgil";
