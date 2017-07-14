@@ -76,6 +76,12 @@
     left: 170px;
 }
 
+.customize-partial-edit-shortcut-features_page_faq_section {
+    position: relative;
+    top: 0;
+    left: 70px;
+}
+
 .customize-partial-edit-shortcut-pricing_page_intro_section {
     position: relative;
     left: 570px;
@@ -92,4 +98,28 @@
     position: relative;
     top: 160px;
     left: 590px;
+}
+
+.customize-partial-edit-shortcut-pricing_page_conclusion_section {
+    position: relative;
+    top: 83px;
+    left: 480px;
+}
+
+.customize-partial-edit-shortcut-contacts_page_contact_us_section {
+    position: relative;
+    top: 20px;
+    left: 90px;
+}
+
+.customize-partial-edit-shortcut-contacts_page_partnership_section {
+    position: relative;
+    top: 100px;
+    left: 90px;
+}
+
+.customize-partial-edit-shortcut-contacts_page_map_section {
+    position: relative;
+    top: 50px;
+    left: 70px;
 }

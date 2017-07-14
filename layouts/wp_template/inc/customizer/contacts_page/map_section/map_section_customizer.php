@@ -3,6 +3,7 @@
 namespace VirgilSecurity\Customizer\ContactsPage\MapSection;
 
 
+use VirgilSecurity\Customizer\ContactsPage\MapSection\Fields\MapAddressField;
 use VirgilSecurity\Customizer\ContactsPage\MapSection\Modifications\Sections\MapSectionMods;
 
 use WP_Customize_Manager;
@@ -25,6 +26,10 @@ class MapSectionCustomizer
     public function getSection(MapSectionMods $mapSectionMods)
     {
         $section = new MapSection($this->config, $this->wpCustomizer);
+
+        $section->addField(
+            MapAddressField::createWithMod($mapSectionMods->getMapAddressMod())
+        );
 
         return $section;
     }

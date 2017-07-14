@@ -13,7 +13,7 @@ class MapSection extends ContactsPageSection
 
     protected $priority = 25;
 
-    protected $selector = '.page .map';
+    protected $selector = '.contactsPage .map';
 
 
     public function getSection()

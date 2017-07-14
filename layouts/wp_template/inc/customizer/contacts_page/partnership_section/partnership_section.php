@@ -13,7 +13,7 @@ class PartnershipSection extends ContactsPageSection
 
     protected $priority = 25;
 
-    protected $selector = '.page .partnership';
+    protected $selector = '.contactsPage .partnership';
 
 
     public function getSection()

@@ -1,9 +1,15 @@
-<div class="map">
-    <div class="wrapper">
-        <div class="mapContentBlock">
-            <div class="map-address">
-                <p>9296 Sumner Lake Blvd,<br>Manassas, VA 20110, USA</p>
+{% extends 'common/section.twig' %}
+
+{% block content %}
+    <div class="map">
+        <div class="wrapper">
+            <div class="mapContentBlock">
+                {% if map.address %}
+                    <div class="map-address">
+                        {{ map.address|shortcodes }}
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>
-</div>
+{% endblock %}

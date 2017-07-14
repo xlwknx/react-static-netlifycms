@@ -13,7 +13,7 @@ class ConclusionSection extends PricingPageSection
 
     protected $priority = 25;
 
-    protected $selector = '.page .conclusion';
+    protected $selector = '.pricingPage .conclusion';
 
 
     public function getSection()

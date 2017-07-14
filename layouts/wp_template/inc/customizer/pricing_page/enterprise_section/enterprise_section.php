@@ -13,7 +13,7 @@ class EnterpriseSection extends PricingPageSection
 
     protected $priority = 25;
 
-    protected $selector = '.page .enterprise';
+    protected $selector = '.pricingPage .enterprise';
 
 
     public function getSection()

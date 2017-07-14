@@ -19,4 +19,14 @@ class MapSectionModel extends BaseSectionModel
     {
         $this->sectionMods = new MapSectionMods();
     }
+
+
+    public function Address()
+    {
+        $mod = $this->sectionMods->getMapAddressMod();
+
+        if ($mod->isEnabled()) {
+            return $mod->getValue();
+        }
+    }
 }

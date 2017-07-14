@@ -13,7 +13,7 @@ class IncludesSection extends PricingPageSection
 
     protected $priority = 25;
 
-    protected $selector = '.page .includes';
+    protected $selector = '.pricingPage .includes';
 
 
     public function getSection()
