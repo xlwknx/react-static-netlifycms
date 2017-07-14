@@ -19,4 +19,34 @@ class PartnershipSectionModel extends BaseSectionModel
     {
         $this->sectionMods = new PartnershipSectionMods();
     }
+
+
+    public function Headline()
+    {
+        $mod = $this->sectionMods->getPartnershipHeadlineMod();
+
+        if ($mod->isEnabled()) {
+            return $mod->getValue();
+        }
+    }
+
+
+    public function Text()
+    {
+        $mod = $this->sectionMods->getPartnershipTextMod();
+
+        if ($mod->isEnabled()) {
+            return $mod->getValue();
+        }
+    }
+
+
+    public function Collection()
+    {
+        $mod = $this->sectionMods->getPartnershipContactsListMod();
+
+        if ($mod->isEnabled()) {
+            return $this->filterCollection($mod->getValue());
+        }
+    }
 }
