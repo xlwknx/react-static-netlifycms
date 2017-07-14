@@ -6,7 +6,6 @@ require_once get_parent_theme_file_path('/inc/autoloader_register.php');
 
 /**
  * TODO: upload all images from assets
- * TODO: update content from production to default theme modifications.
  */
 if (!function_exists('virgilsecurity_setup')) :
     /**

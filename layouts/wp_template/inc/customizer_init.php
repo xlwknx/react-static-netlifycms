@@ -10,7 +10,7 @@ call_user_func(
     function () {
 
         $section_mods = SectionModifications::getInstance();
-        $section_mods->setupDefaults();
+        //$section_mods->setupDefaults();
 
         if (!is_customize_preview()) {
             return;
