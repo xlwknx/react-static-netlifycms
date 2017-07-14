@@ -21,6 +21,6 @@ return "
     [header_nav_item_close]
     [header_nav_item slug=features class=headerNav-features label='Features']
     [header_nav_item slug=pricing class=headerNav-pricing label='Pricing']
-    [header_nav_item slug=contacts class=headerNav-contacts label='Contacts']
+    [header_nav_item slug=contact class=headerNav-contacts label='Contacts']
 [header_nav_close]
 ";

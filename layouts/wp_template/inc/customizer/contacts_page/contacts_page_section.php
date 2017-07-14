@@ -11,6 +11,6 @@ abstract class ContactsPageSection extends BaseSection
 {
     public function getActiveCallback(WP_Query $wp_query)
     {
-        return $wp_query->is_page('contacts');
+        return $wp_query->is_page('contact');
     }
 }

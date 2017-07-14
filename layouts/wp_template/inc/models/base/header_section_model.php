@@ -26,7 +26,7 @@ class HeaderSectionModel extends BaseSectionModel
         //TOD:dirty hack, need to refactor at the future
         global $wp_query;
 
-        if (!$wp_query->is_page('contacts')) {
+        if (!$wp_query->is_page('contact')) {
             return 'light';
         }
 
@@ -41,6 +41,28 @@ class HeaderSectionModel extends BaseSectionModel
         if ($menuCodeMod->isEnabled()) {
             return $menuCodeMod->getValue();
         }
+    }
+
+
+    public function Mobile()
+    {
+        $model = [];
+        $menuMod = $this->sectionMods->getMobileMenuCodeMod();
+        $linkUrlMod = $this->sectionMods->getMobileLinkUrlMod();
+        $linkTextMod = $this->sectionMods->getMobileLinkTextMod();
+
+        if ($menuMod->isEnabled()) {
+            $model['menu'] = $menuMod->getValue();
+        }
+
+        if ($linkUrlMod->isEnabled()) {
+            $model['link'] = [
+                'url'  => $linkUrlMod->getValue(),
+                'text' => $linkTextMod->getValue(),
+            ];
+        }
+
+        return $model;
     }
 
 
