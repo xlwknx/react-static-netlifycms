@@ -14,12 +14,11 @@
             <div class="pricingPlansContentBlock">
                 <div class="comparisonBlock pricingPlanList">
                     {% for plan in intro.plans %}
-                        <div class="comparisonItem comparisonItem{{ loop.index == 2 ? "--highlight pricingPlanItem pricingPlanItem--highlight" }}">
+                        <div class="comparisonItem pricingPlanItem {{ loop.index == 2 ? "comparisonItem--highlight pricingPlanItem--highlight" }}">
                             <div class="pricingPlanItem-title">{{ plan.title|shortcodes }}</div>
                             <div class="pricingPlanItem-price">
                                 {% if plan.is_free != true %}
-                                    <sup>$</sup><strong>{{ plan.price|shortcodes }}</strong>/
-                                    <sub>{{ plan.duration|shortcodes }}</sub>
+                                    <sup>$</sup><strong>{{ plan.price|shortcodes }}</strong>/<sub>{{ plan.duration|shortcodes }}</sub>
                                 {% else %}
                                     <strong>free</strong>
                                 {% endif %}
