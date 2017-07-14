@@ -70,7 +70,7 @@ abstract class BaseSection implements SectionInterface
         if ($field->isOptional()) {
 
             $optionalSwitchField = new ToggleField(
-                'is_enabled_' . $field->getSettings(), __('Show ' . $field->getLabel())
+                'is_enabled_' . $field->getSettings(), __('Show ' . strtolower($field->getLabel()))
             );
 
             $optionalSwitchField->setPriority($priority + 1);

@@ -22,7 +22,7 @@ class FieldsGroup extends BaseField implements FieldsGroupInterface
 
     public function __construct($settings = null, $label = null)
     {
-        if ($this->optional) {
+        if ($this->isOptional()) {
             $optionalSwitchField = new CheckboxField('is_hidden', __('Hidden'));
             $optionalSwitchField->setPriority(0);
 
