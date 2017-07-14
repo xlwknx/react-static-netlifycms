@@ -2,10 +2,10 @@
 namespace VirgilSecurity\Customizer\Fields;
 
 
-use VirgilSecurity\Customizer\Src\BaseField;
+use VirgilSecurity\Customizer\Src\Field;
 use VirgilSecurity\Customizer\Src\SectionInterface;
 
-abstract class CodeField extends BaseField
+class CodeField extends Field
 {
     protected $type = 'kirki-code';
 

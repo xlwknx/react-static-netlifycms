@@ -8,4 +8,10 @@ interface RegisterFieldInterface
 
 
     public function getSettings();
+
+
+    public function setModification(ModificationInterface $modification);
+
+
+    public function getModification();
 }

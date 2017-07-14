@@ -5,9 +5,11 @@ namespace VirgilSecurity\Customizer\Src;
 
 use Kirki;
 
+use VirgilSecurity\Customizer\Src\FieldInterface;
+
 abstract class BaseSection implements SectionInterface
 {
-    /** @var \VirgilSecurity\Customizer\Src\FieldInterface[] */
+    /** @var FieldInterface[] */
     protected $fields = [];
 
     protected $priority = 10;
@@ -64,5 +66,11 @@ abstract class BaseSection implements SectionInterface
         foreach ($this->fields as $field) {
             $field->registerField($this);
         }
+    }
+
+
+    public function getFields()
+    {
+        return $this->fields;
     }
 }
