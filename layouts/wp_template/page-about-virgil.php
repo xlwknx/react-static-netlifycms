@@ -1,4 +1,5 @@
 <? get_template_part('header/about', 'virgil') ?>
+
 <div class="container">
     <div class="intro">
         <div class="wrapper">
