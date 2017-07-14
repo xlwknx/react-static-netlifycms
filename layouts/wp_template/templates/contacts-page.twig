@@ -1,0 +1,21 @@
+{% extends "base.twig" %}
+
+{% block body_content %}
+    <div class="page contactsPage" data-vs-page="contacts">
+        {% block header %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block content %}
+            <div class="container">
+                {% include 'contacts_page/contact_us_section.twig' with{ 'contact_us': models.contact_us_section, 'visible': models.contact_us_section.is_show } only %}
+                {% include 'contacts_page/partnership_secction.twig' with{ 'partnership': models.partnership_section, 'visible': models.partnership_section.is_show } only %}
+                {% include 'contacts_page/map_section.twig' with{ 'map': models.map_section, 'visible': models.map_section.is_show } only %}
+            </div>
+        {% endblock %}
+
+        {% block footer %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}

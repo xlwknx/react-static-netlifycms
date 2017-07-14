@@ -1,0 +1,4 @@
+{% block content %}
+    {% include 'common/link_button/_prototype.twig' with {'url': link.link_url, 'text': link.link_text, 'css': 'button-raisedRedBorder-static', 'icon': link.link_icon, 'is_disabled': link.link_is_disabled} %}
+{% endblock %}
+

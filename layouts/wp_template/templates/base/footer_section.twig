@@ -1,0 +1,41 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="wrapper">
+                <div class="footerContacts">
+                    <div class="footerContacts-logo">
+                        {% if footer.logo %}
+                            <a href="{{ footer.logo.url }}">
+                                <img src="{{ footer.logo.image.src }}" width="145" height="47"
+                                     alt="{{ footer.logo.image.alt|shortcodes }}">
+                            </a>
+                        {% endif %}
+                    </div>
+                    <div class="footerContacts-hashtag">{{ footer.description|shortcodes }}</div>
+                    <ul class="footerContacts-socials">
+                        {% for item in footer.social_links %}
+                            <li>
+                                <a href="{{ item.link_url }}">
+                                    {% include 'common/icons/'~ item.link_icon|default('none') ~'.twig' only %}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {{ footer.navigation|shortcodes }}
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="wrapper">
+                <div class="footer-copyright">{{ footer.copyright|shortcodes }}</div>
+                <div class="footer-links">
+                    <a href="mailto:{{ footer.email }}" class="footer-email">{{ footer.email|shortcodes }}</a>
+                    <a href="{{ footer.terms_of_use.href }}"
+                       class="footer-policy">{{ footer.terms_of_use.text|shortcodes }}</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

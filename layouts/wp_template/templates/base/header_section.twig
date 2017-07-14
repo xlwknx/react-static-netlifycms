@@ -1,0 +1,36 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+
+    <header class="header">
+        <div class="headerFull {{ header.skin == 'dark' ? 'headerFull--dark' }}" data-vs-sticky-header>
+            <div class="headerLogo">
+                {% if header.logo %}
+                    <a href="{{ header.logo.url }}"><img src="{{ header.logo.image.src }}" width="145"
+                                                         height="47" alt="{{ header.logo.image.alt|shortcodes }}"></a>
+                {% endif %}
+            </div>
+            {{ header.header_menu|shortcodes }}
+            <div class="headerAuth">
+                {% for item in header.auth_links %}
+                    {% include 'common/link_button/' ~ item.link_button_skin ~ '.twig' with {'link': item} %}
+                {% endfor %}
+            </div>
+            <button data-vs-sideNav-open class="headerOpenButton">
+                {% include 'common/icons/menu_red.twig' only %}
+            </button>
+        </div>
+        <div class="headerSideBar" data-vs-sideNav-target>
+            <div class="headerCloseButton">
+                <button data-vs-sideNav-close>
+                    {% include 'common/icons/close_red.twig' only %}
+                </button>
+            </div>
+            {{ header.mobile.menu|shortcodes }}
+            <div class="headerAuth">
+                <a href="{{ header.mobile.link.url|shortcodes }}"
+                   class="headerAuth-link"><span>{{ header.mobile.link.text|shortcodes }}</span></a>
+            </div>
+        </div>
+    </header>
+{% endblock %}

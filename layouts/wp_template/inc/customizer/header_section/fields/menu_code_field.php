@@ -7,7 +7,7 @@ use VirgilSecurity\Customizer\Fields\CodeField;
 
 class MenuCodeField extends CodeField
 {
-    protected $priority = 2;
+    protected $optional = true;
 
 
     public function getLabel()

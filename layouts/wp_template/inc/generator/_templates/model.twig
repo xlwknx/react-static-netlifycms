@@ -1,0 +1,22 @@
+<?php
+
+namespace VirgilSecurity\Models\{{ page_namespace }};
+
+
+use VirgilSecurity\Customizer\{{ page_namespace }}\{{ section_namespace }}\Modifications\Sections\{{ section_mods_name }};
+
+use VirgilSecurity\Models\Src\BaseSectionModel;
+
+class {{ section_model_name }} extends BaseSectionModel
+{
+    const SHOW_SECTION_MOD = '{{ show_section_mod }}';
+
+    /** @var {{ section_mods_name }} */
+    protected $sectionMods;
+
+
+    public function __construct()
+    {
+        $this->sectionMods = new {{ section_mods_name }}();
+    }
+}

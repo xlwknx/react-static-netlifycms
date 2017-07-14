@@ -1,4 +1,5 @@
 <?php
+
 namespace VirgilSecurity\Customizer\HeaderSection\Groups;
 
 
@@ -6,7 +7,7 @@ use VirgilSecurity\Customizer\Groups\LinksGroup;
 
 class AuthLinksGroup extends LinksGroup
 {
-    protected $priority = 3;
+    protected $optional = true;
 
 
     public function __construct()

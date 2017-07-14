@@ -1,28 +1,28 @@
 <?php
+
 namespace VirgilSecurity\Customizer\Src;
 
 
 abstract class BaseModification implements ModificationInterface
 {
-    private $defaultValue;
+    protected $defaultValue;
 
 
     public function __construct($defaultValue = null)
     {
         $this->defaultValue = $defaultValue;
-
-        foreach ($this->getFilters() as $filter) {
-            add_filter('theme_mod_' . $this->getName(), $filter);
-        }
     }
 
 
     abstract function getName();
 
 
+    /**
+     * @return mixed
+     */
     public function getValue()
     {
-        return get_theme_mod($this->getName());
+        return get_theme_mod($this->getName(), $this->defaultValue);
     }
 
 
@@ -31,16 +31,6 @@ abstract class BaseModification implements ModificationInterface
         set_theme_mod($this->getName(), $value);
 
         return $this;
-    }
-
-
-    public function getFilters()
-    {
-        if (!is_customize_preview()) {
-            return ['virgilsecurity_do_shortcode'];
-        }
-
-        return [];
     }
 
 
@@ -64,5 +54,11 @@ abstract class BaseModification implements ModificationInterface
 
             return $defaultContent;
         }
+    }
+
+
+    public function isEnabled()
+    {
+        return get_theme_mod('is_enabled_' . $this->getName(), true);
     }
 }

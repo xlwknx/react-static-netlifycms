@@ -1,0 +1,18 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+    <div class="features">
+        <div class="wrapper">
+            <div class="featuresContentBlock">
+                <ul class="featureList">
+                    {% for feature in features.collection %}
+                        <li>
+                            <img width="{{ feature.width }}" height="{{ feature.height }}" src="{{ feature.image.src }}"
+                                 srcset="{{ feature.image.src| retina(2) }} 2x" alt="{{ feature.image.alt }}">
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

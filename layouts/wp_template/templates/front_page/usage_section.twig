@@ -1,0 +1,54 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+
+    <div class="usage">
+        <div class="wrapper">
+            <div class="usageContentBlock">
+                <div class="blockMsg">
+                    <h2 class="blockMsg-headline">{{ usage.headline|shortcodes }}</h2>
+                    <p class="blockMsg-text">{{ usage.text|shortcodes }}</p>
+                </div>
+                {% if usage.slider %}
+                    <div id="homeUsageStepsCarousel" class="usageStepsCarousel carousel slide"
+                         data-pause="hover" data-wrap="false">
+                        <ul class="usageStepsCarousel-controls carousel-indicators">
+                            {% for slide in usage.slider %}
+                                <li class="usageStepsCarousel-control {{ loop.index == 1 ? 'active' }}"
+                                    data-target="#homeUsageStepsCarousel"
+                                    data-slide-to="{{ loop.index-1 }}">
+                                    <i>{{ loop.index }}</i>
+                                    <span>{{ slide.name|shortcodes }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="usageSteps">
+                            <a href="#homeUsageStepsCarousel" class="usageStepsCarousel-previous" data-slide="prev"></a>
+                            <ul class="usageStepList carousel-inner">
+                                {% for slide in usage.slider %}
+                                    <li class="usageStepItem carousel-item {{ loop.index == 1 ? 'active' }}">
+                                        <a href="{{ slide.link }}" class="usageStepItem-link">
+                                            <img
+                                                    width="930"
+                                                    height="325"
+                                                    src="{{ slide.image.src }}"
+                                                    srcset="{{ slide.image.src | retina(2) }} 2x"
+                                                    class="usageStepItem-linkImage"
+                                                    alt="{{ slide.image.alt }}">
+                                            <span class="usageStepItem-linkButton button-raisedWhite-static">
+                                                {% include 'common/icons/book_black.twig' only %}
+                                                <span>Documentation</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <a href="#homeUsageStepsCarousel" class="usageStepsCarousel-next" data-slide="next"></a>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

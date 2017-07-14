@@ -1,0 +1,41 @@
+<?php
+
+namespace VirgilSecurity\Customizer\{{ page_namespace }}\{{ section_name }};
+
+
+use VirgilSecurity\Customizer\{{ page_namespace }}\{{ base_section_name }};
+
+use VirgilSecurity\Templates\{{ page_namespace }}\{{ section_name_template }};
+
+class {{ section_name }} extends {{ base_section_name }}
+{
+    protected $optional = {{ section_optional }};
+
+    protected $priority = {{ section_priority }};
+
+    protected $selector = '{{ section_selector }}';
+
+
+    public function getSection()
+    {
+        return '{{ section_mod }}';
+    }
+
+
+    public function getTitle()
+    {
+        return __('{{ section_title }}');
+    }
+
+
+    public function getDescription()
+    {
+        return __('{{ section_description }}');
+    }
+
+
+    public function getSectionTemplate()
+    {
+        return new {{ section_name_template }}();
+    }
+}

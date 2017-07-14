@@ -1,0 +1,36 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+
+    <div class="services">
+        <div class="wrapper">
+            <div class="servicesContentBlock">
+                <div class="services-caption">{{ services.caption|shortcodes }}</div>
+                <div class="blockMsg">
+                    <h2 class="blockMsg-headline">{{ services.headline|shortcodes }}</h2>
+                    <p class="blockMsg-text">{{ services.text|shortcodes }}.</p>
+                </div>
+                <ul class="serviceList">
+
+                    {% for service in services.collection %}
+                        <li class="serviceItem" data-tilt data-tilt-max="15">
+                            <a href="{{ service.url }}" class="serviceItem-link">
+
+                                <img width="{{ service.width }}" height="{{ service.height }}"
+                                     src="{{ service.image.src }}"
+                                     class="serviceItem-image" alt="{{ service.image.alt|shortcodes }}">
+
+                                <span class="serviceItem-linkText">{{ service.text|shortcodes }}</span>
+                                <span class="serviceItem-linkHoverText">
+                                    <span>{{ service.hover_text|shortcodes }}</span>
+                                    {% include 'common/icons/arrow_right_white.twig' only %}
+                                </span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

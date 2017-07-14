@@ -1,4 +1,5 @@
 <?php
+
 namespace VirgilSecurity\Customizer\Src;
 
 
@@ -16,5 +17,5 @@ interface ModificationInterface
     public function getDefaultValue();
 
 
-    public function getFilters();
+    public function isEnabled();
 }

@@ -1,0 +1,19 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+    <div class="conclusion">
+        <div class="wrapper">
+            <div class="conclusionContentBlock">
+                <div class="blockMsg">
+                    <h2 class="blockMsg-headline">{{ conclusion.headline|shortcodes }}</h2>
+                    <p class="blockMsg-text">{{ conclusion.text|shortcodes }}</p>
+                    <div class="blockMsg-links">
+                        {% for link in conclusion.links %}
+                            {% include 'common/link_button/' ~ link.link_button_skin ~ '.twig' with {'link': link} %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

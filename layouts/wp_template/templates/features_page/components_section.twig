@@ -1,0 +1,37 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+    <div class="components">
+        <div class="wrapper">
+            <div class="componentsContentBlock layeredBlock layeredBlock--right">
+                <div class="componentsOverview layeredBlockContent">
+                    <div class="blockMsg">
+                        <h2 class="blockMsg-headline">{{ components.headline|shortcodes }}</h2>
+                    </div>
+                    <ul class="componentList">
+                        {% for component in components.collection %}
+                            <li class="componentItem">
+                                <div class="componentItem-image">
+                                    <img width="{{ component.width }}"
+                                         height="{{ component.height }}"
+                                         src="{{ component.image.src }}"
+                                         alt="{{ component.image.alt }}"
+                                    >
+                                </div>
+                                <div class="componentItem-info">
+                                    <h3 class="componentItem-headline">{{ component.title|shortcodes }}</h3>
+                                    <p class="componentItem-text">{{ component.text|shortcodes }}</p>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="componentLinks">
+                        {% for link in components.links %}
+                            {% include 'common/link_button/' ~ link.link_button_skin ~ '.twig' with {'link': link} %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

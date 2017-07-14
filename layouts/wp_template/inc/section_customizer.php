@@ -1,24 +1,24 @@
 <?php
+
 namespace VirgilSecurity;
 
 
-use Kirki;
-use VirgilSecurity\Customizer\Fields\TextField;
-use VirgilSecurity\Customizer\HeaderSection\Fields\LogoImageField;
-use VirgilSecurity\Customizer\HeaderSection\Fields\MenuCodeField;
+use VirgilSecurity\Customizer\ContactsPage\ContactsPageSectionsCustomizer;
 
-use VirgilSecurity\Customizer\HeaderSection\Groups\AuthLinksGroup;
+use VirgilSecurity\Customizer\FeaturesPage\FeaturesPageSectionsCustomizer;
 
-use VirgilSecurity\Customizer\HeaderSection\HeaderSection;
+use VirgilSecurity\Customizer\FooterSection\FooterSectionCustomizer;
 
-use VirgilSecurity\Customizer\Hp\IntroSection\Fields\IntroMsgField;
-use VirgilSecurity\Customizer\Hp\IntroSection\Groups\IntroLangsGroup;
-use VirgilSecurity\Customizer\Hp\IntroSection\IntroSection;
-use VirgilSecurity\Customizer\Hp\IntroSection\Groups\IntroLinksGroup;
+use VirgilSecurity\Customizer\HeaderSection\HeaderSectionCustomizer;
+
+use VirgilSecurity\Customizer\FrontPage\FrontPageSectionsCustomizer;
+
+use VirgilSecurity\Customizer\PricingPage\PricingPageSectionsCustomizer;
+
 use VirgilSecurity\Customizer\Src\ConfigInterface;
 use VirgilSecurity\Customizer\Src\SectionInterface;
 
-use VirgilSecurity\Customizer\VirgilSecurityConfig;
+use WP_Customize_Manager;
 
 class SectionCustomizer
 {
@@ -29,82 +29,133 @@ class SectionCustomizer
 
     public function __construct(ConfigInterface $config, SectionModifications $sectionModifications)
     {
-
         $this->config = $config;
         $this->sectionModifications = $sectionModifications;
     }
 
 
-    public function registerDefaults()
+    public function getContactsPageSections(ContactsPageSectionsCustomizer $contactsPageSectionsCustomizer)
     {
+        $contactsPageSectionMods = $this->sectionModifications->getContactsPageSectionMods();
+
+        return [
+            $contactsPageSectionsCustomizer->getContactUsSectionCustomizer()
+                                           ->getSection($contactsPageSectionMods->getContactUsSectionMods()),
+            $contactsPageSectionsCustomizer->getPartnershipSectionCustomizer()
+                                           ->getSection($contactsPageSectionMods->getPartnershipSectionMods()),
+            $contactsPageSectionsCustomizer->getMapSectionCustomizer()
+                                           ->getSection($contactsPageSectionMods->getMapSectionMods()),
+        ];
+    }
+
+
+    public function getFrontPageSections(FrontPageSectionsCustomizer $frontPageSectionsCustomizer)
+    {
+        $frontPageSectionMods = $this->sectionModifications->getFrontPageSectionMods();
+
+        return [
+            $frontPageSectionsCustomizer->getIntroSectionCustomizer()
+                                        ->getSection($frontPageSectionMods->getIntroSectionMods()),
+
+            $frontPageSectionsCustomizer->getBenefitsSectionCustomizer()
+                                        ->getSection($frontPageSectionMods->getBenefitsSectionMods()),
+
+            $frontPageSectionsCustomizer->getClientsSectionCustomizer()
+                                        ->getSection($frontPageSectionMods->getClientsSectionMods()),
+
+            $frontPageSectionsCustomizer->getConclusionSectionCustomizer()
+                                        ->getSection($frontPageSectionMods->getConclusionSectionMods()),
+
+            $frontPageSectionsCustomizer->getUseCasesSectionCustomizer()
+                                        ->getSection($frontPageSectionMods->getUseCasesSectionMods()),
+
+            $frontPageSectionsCustomizer->getUsageSectionCustomizer()
+                                        ->getSection($frontPageSectionMods->getUsageSectionMods()),
+
+            $frontPageSectionsCustomizer->getServicesSectionCustomizer()
+                                        ->getSection($frontPageSectionMods->getServicesSectionMods()),
+        ];
+    }
+
+
+    public function getFeaturesPageSections(FeaturesPageSectionsCustomizer $featuresPageSectionsCustomizer)
+    {
+        $featuresPageSectionMods = $this->sectionModifications->getFeaturesPageSectionMods();
+
+        return [
+            $featuresPageSectionsCustomizer->getIntroSectionCustomizer()
+                                           ->getSection($featuresPageSectionMods->getIntroSectionMods()),
+
+            $featuresPageSectionsCustomizer->getCryptogramSectionCustomizer()
+                                           ->getSection($featuresPageSectionMods->getCryptogramSectionMods()),
+
+            $featuresPageSectionsCustomizer->getComponentsSectionCustomizer()
+                                           ->getSection($featuresPageSectionMods->getComponentsSectionMods()),
+
+            $featuresPageSectionsCustomizer->getFeaturesSectionCustomizer()
+                                           ->getSection($featuresPageSectionMods->getFeaturesSectionMods()),
+
+            $featuresPageSectionsCustomizer->getFaqSectionCustomizer()
+                                           ->getSection($featuresPageSectionMods->getFaqSectionMods()),
+        ];
+
+    }
+
+
+    public function getPricingPageSections(PricingPageSectionsCustomizer $pricingPageSectionsCustomizer)
+    {
+        $pricingPageSectionMods = $this->sectionModifications->getPricingPageSectionMods();
+
+        return [
+            $pricingPageSectionsCustomizer->getIntroSectionCustomizer()
+                                          ->getSection($pricingPageSectionMods->getIntroSectionMods()),
+
+            $pricingPageSectionsCustomizer->getEnterpriseSectionCustomizer()
+                                          ->getSection($pricingPageSectionMods->getEnterpriseSectionMods()),
+
+            $pricingPageSectionsCustomizer->getIncludesSectionCustomizer()
+                                          ->getSection($pricingPageSectionMods->getIncludesSectionMods()),
+
+            $pricingPageSectionsCustomizer->getConclusionSectionCustomizer()
+                                          ->getSection($pricingPageSectionMods->getConclusionSectionMods()),
+        ];
+    }
+
+
+    public function registerDefaults(WP_Customize_Manager $wpCustomizer)
+    {
+        $featuresPageSectionsCustomizer = new FeaturesPageSectionsCustomizer($this->config, $wpCustomizer);
+        $frontPageSectionsCustomizer = new FrontPageSectionsCustomizer($this->config, $wpCustomizer);
+        $pricingPageSectionsCustomizer = new PricingPageSectionsCustomizer($this->config, $wpCustomizer);
+        $contactsPageSectionsCustomizer = new ContactsPageSectionsCustomizer($this->config, $wpCustomizer);
+
         $this->register(
             [
-                $this->getHeaderSection(),
-
-                $this->getHpIntroSection(),
+                $this->getHeaderSection($wpCustomizer),
+                $this->getFooterSection($wpCustomizer),
             ]
         );
+
+        $this->register($this->getFrontPageSections($frontPageSectionsCustomizer));
+        $this->register($this->getFeaturesPageSections($featuresPageSectionsCustomizer));
+        $this->register($this->getPricingPageSections($pricingPageSectionsCustomizer));
+        $this->register($this->getContactsPageSections($contactsPageSectionsCustomizer));
     }
 
 
-    public function getHeaderSection()
+    public function getFooterSection(WP_Customize_Manager $wpCustomizer)
     {
+        $footerSectionCustomizer = new FooterSectionCustomizer($this->config, $wpCustomizer);
 
-        $section = new HeaderSection($this->config);
-
-        $section->addField(
-            LogoImageField::createWithMod(
-                $this->sectionModifications->getHeaderSectionMods()
-                                           ->getLogoImageMod()
-            )
-        );
-
-        $section->addField(
-            MenuCodeField::createWithMod(
-                $this->sectionModifications->getHeaderSectionMods()
-                                           ->getMenuCodeMod()
-            )
-        );
-        $section->addField(
-            AuthLinksGroup::createWithMod(
-                $this->sectionModifications->getHeaderSectionMods()
-                                           ->getAuthLinksMod()
-            )
-        );
-
-        return $section;
+        return $footerSectionCustomizer->getSection($this->sectionModifications->getFooterSectionMods());
     }
 
 
-    public function getHpIntroSection()
+    public function getHeaderSection(WP_Customize_Manager $wpCustomizer)
     {
-        $section = new IntroSection($this->config);
+        $headerSectionCustomizer = new HeaderSectionCustomizer($this->config, $wpCustomizer);
 
-        $section->addField(
-            IntroMsgField::createWithMod(
-                $this->sectionModifications->getHpSectionMods()
-                                           ->getIntroSectionMods()
-                                           ->getIntroMsgMod()
-            )
-        );
-
-        $section->addField(
-            IntroLinksGroup::createWithMod(
-                $this->sectionModifications->getHpSectionMods()
-                                           ->getIntroSectionMods()
-                                           ->getIntroLinksMod()
-            )
-        );
-
-        $section->addField(
-            IntroLangsGroup::createWithMod(
-                $this->sectionModifications->getHpSectionMods()
-                                           ->getIntroSectionMods()
-                                           ->getIntroLangsMod()
-            )
-        );
-
-        return $section;
+        return $headerSectionCustomizer->getSection($this->sectionModifications->getHeaderSectionMods());
     }
 
 

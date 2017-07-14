@@ -1,0 +1,26 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+    <div class="includes">
+        <div class="wrapper">
+            <div class="includesContentBlock">
+                <div class="blockMsg">
+                    <h2 class="blockMsg-headline">{{ includes.headline|shortcodes }}</h2>
+                    <p class="blockMsg-text">{{ includes.text|shortcodes }}</p>
+                </div>
+                <ul class="includesList">
+                    {% for include in includes.collection %}
+                        <li class="includesItem">
+                            <div class="includesItem-image">
+                                <img width="80" height="80" src="{{ include.image.src }}"
+                                     alt="{{ include.image.alt|shortcodes }}">
+                            </div>
+                            <h3 class="includesItem-headline">{{ include.headline|shortcodes }}</h3>
+                            <p class="includesItem-text">{{ include.text|shortcodes }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

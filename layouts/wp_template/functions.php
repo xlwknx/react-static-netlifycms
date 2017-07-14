@@ -4,11 +4,9 @@ use VirgilSecurity\SectionModifications;
 
 require_once get_parent_theme_file_path('/inc/autoloader_register.php');
 
-global $virgilsecurity_section_mods;
-
-$virgilsecurity_section_mods = new SectionModifications();
-
-
+/**
+ * TODO: upload all images from assets
+ */
 if (!function_exists('virgilsecurity_setup')) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
@@ -123,6 +121,12 @@ if (!function_exists('virgilsecurity_setup')) :
         add_editor_style('editor-style.css');
 
         store_github_stars();
+
+        $virgilsecurity_section_mods = SectionModifications::getInstance();
+
+        if (!$virgilsecurity_section_mods->isInitialized()) {
+            $virgilsecurity_section_mods->setupDefaults();
+        }
     }
 
     function virgilsecurity_do_shortcode($value)
@@ -144,7 +148,7 @@ if (!function_exists('virgilsecurity_setup')) :
             ''                            => 'homePage',
             'homepage'                    => 'homePage',
             'about-virgil'                => 'aboutPage',
-            'contacts'                    => 'contactsPage',
+            'contact'                    => 'contactsPage',
             'features'                    => 'featuresPage',
             'pricing'                     => 'pricingPage',
             'terms-of-use-privacy-policy' => 'contentPage termsPage',
@@ -176,9 +180,13 @@ if (!function_exists('virgilsecurity_setup')) :
 
     function setup_starter_content($content, $config)
     {
-        //set_theme_mod('hp_intro_area_github_text', 'Github s | [github_starz_count]');
-
         return [
+            //'attachments' => [
+            //    'featured-image-logo' => [
+            //        'post_title' => 'Logo',
+            //        'file'       => 'assets/logo.png',
+            //    ],
+            //],
             'options' => [
                 'show_on_front' => 'page',
                 'page_on_front' => '{{homepage}}',
@@ -479,13 +487,7 @@ if (!function_exists('virgilsecurity_setup')) :
 
     function virgilsecurity_header_nav_item($atts = [])
     {
-        //$availableIcons = ['book', 'bookmark', 'shield', 'case', 'medium-red'];
-
         $icon = isset($atts['icon']) ? $atts['icon'] : '';
-
-        //if (!in_array($icon, $availableIcons)) {
-        //    $icon = '';
-        //}
 
         $availableLevels = ['first', 'second', 'third'];
 
@@ -570,6 +572,21 @@ if (!function_exists('virgilsecurity_setup')) :
         }
 
         return 0;
+    }
+
+    function wp_get_attachment($attachment_id)
+    {
+
+        $attachment = get_post($attachment_id);
+
+        return [
+            'alt'         => get_post_meta($attachment->ID, '_wp_attachment_image_alt', true),
+            'caption'     => $attachment->post_excerpt,
+            'description' => $attachment->post_content,
+            'href'        => get_permalink($attachment->ID),
+            'src'         => $attachment->guid,
+            'title'       => $attachment->post_title,
+        ];
     }
 
     function store_github_stars()
@@ -1026,6 +1043,6 @@ add_action('after_setup_theme', 'virgilsecurity_setup');
 
 require_once get_parent_theme_file_path('/inc/customizer_init.php');
 
-require_once get_parent_theme_file_path('/inc/customizer_preview.php');
+require_once get_parent_theme_file_path('/inc/timber_init.php');
 
-require_once get_parent_theme_file_path('/inc/theme_mod_functions.php');
+require_once get_parent_theme_file_path('/inc/customizer_preview.php');

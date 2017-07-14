@@ -1,0 +1,35 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+    <div class="faq">
+        <div class="wrapper">
+            <div class="faqContentBlock">
+                <h2 class="faq-caption">{{ faq.caption|shortcodes }}</h2>
+                <ul class="faqList" data-vs-faq-answerlist="">
+                    {% for qa in faq.collection %}
+                        <li id="faq-q{{ loop.index }}" data-vs-faq-answer=""
+                            class="faqItem {{ loop.index == 1 ? 'active' }}">
+                            <div class="faqItem-count">{{ loop.index < 10 ? 0 ~ loop.index : loop.index }}</div>
+                            <div class="faqItem-text">
+                                {{ qa.answer|shortcodes }}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="faqContents layeredBlock layeredBlock--top">
+                    <ul class="faqContentList layeredBlockContent">
+                        {% for qa in faq.collection %}
+                            <li class="faqContentItem">
+                                <a href="#faq-q{{ loop.index }}" data-vs-faq-question=""
+                                   class="faqContentItem-link {{ loop.index == 1 ? 'active' }}">
+                                    <span class="faqContentItem-linkCount">{{ loop.index < 10 ? 0 ~ loop.index : loop.index }}</span>
+                                    <span class="faqContentItem-linkText">{{ qa.question|shortcodes }}</span>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

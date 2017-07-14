@@ -1,4 +1,5 @@
 <?php
+
 namespace VirgilSecurity\Customizer;
 
 
@@ -25,7 +26,7 @@ class VirgilSecurityConfig implements ConfigInterface
     }
 
 
-    public static function create()
+    public static function getInstance()
     {
         if (!self::$instance) {
             self::$instance = new self();

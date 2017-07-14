@@ -1,0 +1,3 @@
+<?php
+
+return "our cryptogram";

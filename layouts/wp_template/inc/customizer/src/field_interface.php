@@ -1,12 +1,10 @@
 <?php
+
 namespace VirgilSecurity\Customizer\Src;
 
 
 interface FieldInterface extends RegisterFieldInterface
 {
-    public function getLabel();
-
-
     public function getType();
 
 
@@ -16,11 +14,17 @@ interface FieldInterface extends RegisterFieldInterface
     public function getTransport();
 
 
+    public function setTransport($transport);
+
+
     public function getSanitizeCallback();
 
 
     public function getDefault();
 
 
-    public function getPartialRefresh();
+    public function setOptional($optional);
+
+
+    public function setDefault($default);
 }

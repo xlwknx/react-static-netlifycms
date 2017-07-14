@@ -1,0 +1,23 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+    <div class="clients">
+        <div class="wrapper">
+            <div class="clientsContentBlock">
+                <a href="{{ clients.link }}" class="clientsLink">
+                    {% for client in clients.collection %}
+                        <span class="clientsLinkItem">
+                            <img
+                                    width="{{ client.width }}"
+                                    height="{{ client.height }}"
+                                    src="{{ client.image.src }}"
+                                    srcset="{{ client.image.src | retina(2) }} 2x"
+                                    class="clientsLinkItem-image"
+                                    alt="{{ client.image.alt|shortcodes }}">
+                        </span>
+                    {% endfor %}
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
