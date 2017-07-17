@@ -171,8 +171,9 @@ if (!function_exists('virgilsecurity_setup')) :
             //    ],
             //],
             'options' => [
-                'show_on_front' => 'page',
-                'page_on_front' => '{{homepage}}',
+                'show_on_front'  => 'page',
+                'page_on_front'  => '{{homepage}}',
+                'page_for_posts' => '{{blogpage}}',
             ],
             'widgets' => [
                 'about-virgil-intro-msg'        => virgilsecurity_get_starter_content(
@@ -245,6 +246,12 @@ if (!function_exists('virgilsecurity_setup')) :
                     'post_type'    => 'page',
                     'post_name'    => 'contact',
                     'post_title'   => __('Contact', 'virgilsecurity'),
+                    'post_content' => __return_empty_string(),
+                ],
+                'blogpage'         => [
+                    'post_type'    => 'page',
+                    'post_name'    => 'blogpage',
+                    'post_title'   => __('Blogpage', 'virgilsecurity'),
                     'post_content' => __return_empty_string(),
                 ],
                 'homepage'         => [

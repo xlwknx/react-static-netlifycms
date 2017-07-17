@@ -1,33 +1,6 @@
-<? get_template_part('header/page') ?>
+<?php
+use VirgilSecurity\Templates\Base\PageTemplate;
 
-<div class="container">
-    <?php while (have_posts() && is_singular('page')) : the_post(); ?>
-        <?php $postContentMenuItems = get_post_meta(get_the_ID(), 'content_menu_item'); ?>
-        <div class="intro">
-            <div class="wrapper">
-                <div class="introContentBlock">
-                    <div class="blockMsg">
-                        <h1 class="blockMsg-headline"><?php the_title(); ?></h1>
-                    </div>
+$template = new PageTemplate();
 
-                    <ul class="introNav">
-                        <? foreach ($postContentMenuItems as $link): ?>
-                            <li class="<?= strpos($link, virgilsecurity_get_slug()) ? "active" : '' ?>">
-                                <?= $link ?>
-                            </li>
-                        <? endforeach; ?>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="article">
-            <div class="wrapper">
-                <div class="articleContentBlock">
-                    <? the_content(); ?>
-                </div>
-            </div>
-        </div>
-    <? endwhile; // End of the loop. ?>
-</div>
-
-<?php get_footer() ?>
+$template->render();
