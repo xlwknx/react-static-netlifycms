@@ -12,7 +12,7 @@
 
                     <ul class="introNav">
                         <? foreach ($postContentMenuItems as $link): ?>
-                            <li class="<?= strpos($link, get_slug()) ? "active" : '' ?>">
+                            <li class="<?= strpos($link, virgilsecurity_get_slug()) ? "active" : '' ?>">
                                 <?= $link ?>
                             </li>
                         <? endforeach; ?>

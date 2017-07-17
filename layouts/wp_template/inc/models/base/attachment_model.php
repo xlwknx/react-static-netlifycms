@@ -48,7 +48,7 @@ class AttachmentModel extends BaseModel
         $logoImageId = attachment_url_to_postid($imageUrl);
 
         if ($logoImageId != 0) {
-            $meta = wp_get_attachment($logoImageId);
+            $meta = virgilsecurity_wp_get_attachment($logoImageId);
 
             return new AttachmentModel(
                 $meta['src'], $meta['href'], $meta['alt'], $meta['title'], $meta['description'], $meta['caption']
@@ -62,7 +62,7 @@ class AttachmentModel extends BaseModel
     public static function createFromImageId($imageId)
     {
         if ($imageId != 0) {
-            $meta = wp_get_attachment($imageId);
+            $meta = virgilsecurity_wp_get_attachment($imageId);
 
             return new AttachmentModel(
                 $meta['src'], $meta['href'], $meta['alt'], $meta['title'], $meta['description'], $meta['caption']

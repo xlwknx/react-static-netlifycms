@@ -22,6 +22,6 @@ class CommonModel extends BaseModel
 
     public function StaticPageClass()
     {
-        return get_static_page_class();
+        return virgilsecurity_get_static_page_class();
     }
 }

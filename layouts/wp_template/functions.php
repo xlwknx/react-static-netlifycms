@@ -4,9 +4,6 @@ use VirgilSecurity\SectionModifications;
 
 require_once get_parent_theme_file_path('/inc/autoloader_register.php');
 
-/**
- * TODO: upload all images from assets
- */
 if (!function_exists('virgilsecurity_setup')) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
@@ -41,16 +38,6 @@ if (!function_exists('virgilsecurity_setup')) :
          */
         add_theme_support('post-thumbnails');
 
-        ///**
-        // * Add support for two custom navigation menus.
-        // */
-        //register_nav_menus(
-        //    [
-        //        'primary'   => __('Primary Menu', 'virgilsecurity'),
-        //        'secondary' => __('Secondary Menu', 'virgilsecurity'),
-        //    ]
-        //);
-
         /**
          * Enable support for the following post formats:
          * aside, gallery, quote, image, and video
@@ -63,7 +50,7 @@ if (!function_exists('virgilsecurity_setup')) :
 
 
         add_shortcode('current_year', 'virgilsecurity_current_year');
-        add_shortcode('github_starz_count', 'get_github_stars');
+        add_shortcode('github_starz_count', 'virgilsecurity_get_github_stars');
 
         add_shortcode('header_nav_open', 'virgilsecurity_header_nav_open');
         add_shortcode('header_nav_close', 'virgilsecurity_header_nav_close');
@@ -86,7 +73,7 @@ if (!function_exists('virgilsecurity_setup')) :
         add_action('widgets_init', 'virgilsecurity_widgets_init');
 
 
-        add_filter('get_theme_starter_content', 'setup_starter_content', 10, 2);
+        add_filter('get_theme_starter_content', 'virgilsecurity_setup_starter_content', 10, 2);
         add_filter('widget_text', 'do_shortcode');
         add_filter('black_studio_tinymce_before_text', '__return_empty_string');
         add_filter('black_studio_tinymce_after_text', '__return_empty_string');
@@ -120,13 +107,22 @@ if (!function_exists('virgilsecurity_setup')) :
 
         add_editor_style('editor-style.css');
 
-        store_github_stars();
+        virgilsecurity_store_github_stars();
+
+        //Set up user roles
+        virgilsecurity_setup_roles();
 
         $virgilsecurity_section_mods = SectionModifications::getInstance();
 
         if (!$virgilsecurity_section_mods->isInitialized()) {
             $virgilsecurity_section_mods->setupDefaults();
         }
+    }
+
+    function virgilsecurity_setup_roles()
+    {
+        $editor = get_role('editor');
+        $editor->add_cap('edit_theme_options');
     }
 
     function virgilsecurity_do_shortcode($value)
@@ -142,43 +138,30 @@ if (!function_exists('virgilsecurity_setup')) :
         return $value;
     }
 
-    function get_static_page_class()
+    function virgilsecurity_get_static_page_class()
     {
         $staticPageClasses = [
             ''                            => 'homePage',
             'homepage'                    => 'homePage',
             'about-virgil'                => 'aboutPage',
-            'contact'                    => 'contactsPage',
+            'contact'                     => 'contactsPage',
             'features'                    => 'featuresPage',
             'pricing'                     => 'pricingPage',
             'terms-of-use-privacy-policy' => 'contentPage termsPage',
         ];
 
-        return isset($staticPageClasses[get_slug()]) ? $staticPageClasses[get_slug()] : 'contentPage';
+        return isset($staticPageClasses[virgilsecurity_get_slug()]) ? $staticPageClasses[virgilsecurity_get_slug(
+        )] : 'contentPage';
     }
 
-    function get_header_dark_class()
-    {
-        if (get_slug() == "contact") {
-            return "header--dark";
-        } else {
-            return "";
-        }
-    }
-
-    function get_slug()
+    function virgilsecurity_get_slug()
     {
         global $post;
 
         return $post_slug = $post->post_name;
     }
 
-    function get_assetic_file_path($file)
-    {
-        return get_template_directory() . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . $file;
-    }
-
-    function setup_starter_content($content, $config)
+    function virgilsecurity_setup_starter_content($content, $config)
     {
         return [
             //'attachments' => [
@@ -192,42 +175,42 @@ if (!function_exists('virgilsecurity_setup')) :
                 'page_on_front' => '{{homepage}}',
             ],
             'widgets' => [
-                'about-virgil-intro-msg'        => get_starter_content(
+                'about-virgil-intro-msg'        => virgilsecurity_get_starter_content(
                     "widgets",
                     "about-virgil",
                     "about_virgil_intro_msg"
                 ),
-                'about-virgil-intro-list'       => get_starter_content(
+                'about-virgil-intro-list'       => virgilsecurity_get_starter_content(
                     "widgets",
                     "about-virgil",
                     "about_virgil_intro_list"
                 ),
-                'about-virgil-mission'          => get_starter_content(
+                'about-virgil-mission'          => virgilsecurity_get_starter_content(
                     "widgets",
                     "about-virgil",
                     "about_virgil_mission"
                 ),
-                'about-virgil-leadership'       => get_starter_content(
+                'about-virgil-leadership'       => virgilsecurity_get_starter_content(
                     "widgets",
                     "about-virgil",
                     "about_virgil_leadership"
                 ),
-                'about-virgil-highlights-msg'   => get_starter_content(
+                'about-virgil-highlights-msg'   => virgilsecurity_get_starter_content(
                     "widgets",
                     "about-virgil",
                     "about_virgil_highlights_msg"
                 ),
-                'about-virgil-highlights-items' => get_starter_content(
+                'about-virgil-highlights-items' => virgilsecurity_get_starter_content(
                     "widgets",
                     "about-virgil",
                     "about_virgil_highlights_items"
                 ),
-                'about-virgil-awards'           => get_starter_content(
+                'about-virgil-awards'           => virgilsecurity_get_starter_content(
                     "widgets",
                     "about-virgil",
                     "about_virgil_awards"
                 ),
-                'about-virgil-investors'        => get_starter_content(
+                'about-virgil-investors'        => virgilsecurity_get_starter_content(
                     "widgets",
                     "about-virgil",
                     "about_virgil_investors"
@@ -274,13 +257,13 @@ if (!function_exists('virgilsecurity_setup')) :
                     'post_type'    => 'page',
                     'post_name'    => 'terms-of-service',
                     'post_title'   => __('Terms Of Service', 'virgilsecurity'),
-                    'post_content' => get_starter_content('pages', 'terms-of-service'),
+                    'post_content' => virgilsecurity_get_starter_content('pages', 'terms-of-service'),
                 ],
                 'privacy-policy'   => [
                     'post_type'    => 'page',
                     'post_name'    => 'privacy-policy',
                     'post_title'   => __('Privacy Policy', 'virgilsecurity'),
-                    'post_content' => get_starter_content('pages', 'privacy-policy'),
+                    'post_content' => virgilsecurity_get_starter_content('pages', 'privacy-policy'),
                 ],
             ],
             //'nav_menus' => [
@@ -368,18 +351,18 @@ if (!function_exists('virgilsecurity_setup')) :
         $slug = isset($atts['slug']) ? $atts['slug'] : '';
 
         if ($link == '') {
-            $link = get_permalink_by_slug($slug);
+            $link = virgilsecurity_get_permalink_by_slug($slug);
         }
 
         return sprintf('<li><a href="%s">%s</a></li>', $link, $label);
     }
 
-    function get_permalink_by_slug($slug)
+    function virgilsecurity_get_permalink_by_slug($slug)
     {
         return get_permalink(get_page_by_path($slug));
     }
 
-    function get_starter_content(...$path_args)
+    function virgilsecurity_get_starter_content(...$path_args)
     {
         $file_path = '';
         $file_name = array_pop($path_args);
@@ -456,12 +439,12 @@ if (!function_exists('virgilsecurity_setup')) :
         $post_id = isset($atts['post_id']) ? $atts['post_id'] : '';
         $label = isset($atts['label']) ? $atts['label'] : '';
 
-        if ($slug != '' && get_slug() == $slug || get_the_ID() !== false && get_the_ID() == $post_id) {
+        if ($slug != '' && virgilsecurity_get_slug() == $slug || get_the_ID() !== false && get_the_ID() == $post_id) {
             $cssClass .= ' active';
         }
 
         if ($link == '') {
-            $link = get_permalink_by_slug($slug);
+            $link = virgilsecurity_get_permalink_by_slug($slug);
         }
 
         $aClass = '';
@@ -513,7 +496,7 @@ if (!function_exists('virgilsecurity_setup')) :
         wp_enqueue_script('core', get_theme_file_uri('main.bundle.js'), [], false, true);
     }
 
-    function get_github_stars()
+    function virgilsecurity_get_github_stars()
     {
         $input = file_get_contents(get_theme_file_path('storage/github.json'));
 
@@ -527,7 +510,7 @@ if (!function_exists('virgilsecurity_setup')) :
         return 0;
     }
 
-    function wp_get_attachment($attachment_id)
+    function virgilsecurity_wp_get_attachment($attachment_id)
     {
 
         $attachment = get_post($attachment_id);
@@ -542,12 +525,12 @@ if (!function_exists('virgilsecurity_setup')) :
         ];
     }
 
-    function store_github_stars()
+    function virgilsecurity_store_github_stars()
     {
-        store_github_stars_to_file(get_theme_file_path('storage/github.json'));
+        virgilsecurit_store_github_stars_to_file(get_theme_file_path('storage/github.json'));
     }
 
-    function store_github_stars_to_file($pathToFile, $minutes = 60)
+    function virgilsecurit_store_github_stars_to_file($pathToFile, $minutes = 60)
     {
         $updatedAt = 0;
 
@@ -600,302 +583,6 @@ if (!function_exists('virgilsecurity_setup')) :
 
     function virgilsecurity_widgets_init()
     {
-
-        //Header
-        register_sidebar(
-            [
-                'name'          => __('Top Menu', 'virgilsecurity'),
-                'id'            => 'top-menu',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Mobile Top Menu', 'virgilsecurity'),
-                'id'            => 'mobile-top-menu',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        // Front Page
-        register_sidebar(
-            [
-                'name'          => __('Use Case Content', 'virgilsecurity'),
-                'id'            => 'hp-use-case-content',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Use Case List', 'virgilsecurity'),
-                'id'            => 'hp-use-cases-list',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Client Content', 'virgilsecurity'),
-                'id'            => 'hp-client-content',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Services Content Block', 'virgilsecurity'),
-                'id'            => 'hp-services-content-block',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Intro Langs', 'virgilsecurity'),
-                'id'            => 'hp-intro-langs',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Intro Area Headline', 'virgilsecurity'),
-                'id'            => 'hp-intro-area-headline',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Intro Area Buttons', 'virgilsecurity'),
-                'id'            => 'hp-intro-area-links',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Usage Content Block', 'virgilsecurity'),
-                'id'            => 'hp-usage-content-block',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Benefits Content Block', 'virgilsecurity'),
-                'id'            => 'hp-benefits-content-block',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Conclusion Content Block', 'virgilsecurity'),
-                'id'            => 'hp-conclusion-content-block',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-
-        //Pricing
-        register_sidebar(
-            [
-                'name'          => __('Intro Block', 'virgilsecurity'),
-                'id'            => 'pricing-intro-block',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Plans List', 'virgilsecurity'),
-                'id'            => 'pricing-plans-list',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Enterprise Offer Msg', 'virgilsecurity'),
-                'id'            => 'pricing-enterprise-offer-msg',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Enterprise Offer List', 'virgilsecurity'),
-                'id'            => 'pricing-enterprise-offer-list',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Enterprise Offer Links', 'virgilsecurity'),
-                'id'            => 'pricing-enterprise-offer-links',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Includes Msg', 'virgilsecurity'),
-                'id'            => 'pricing-includes-msg',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Includes List', 'virgilsecurity'),
-                'id'            => 'pricing-includes-list',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Conclusion Msg', 'virgilsecurity'),
-                'id'            => 'pricing-conclusion-msg',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        //Contacts
-        register_sidebar(
-            [
-                'name'          => __('Contact Us Msg', 'virgilsecurity'),
-                'id'            => 'contact-us-msg',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Contact Us Block', 'virgilsecurity'),
-                'id'            => 'contact-us-block',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Partnership Msg', 'virgilsecurity'),
-                'id'            => 'contact-partnership-msg',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Partnership Contacts', 'virgilsecurity'),
-                'id'            => 'contact-partnership-contacts',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Map Address', 'virgilsecurity'),
-                'id'            => 'contact-map-address',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-
-        //Features
-        register_sidebar(
-            [
-                'name'          => __('Intro Msg', 'virgilsecurity'),
-                'id'            => 'features-intro-msg',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Intro Features', 'virgilsecurity'),
-                'id'            => 'features-intro-feature',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Intro Cryptogram Msg', 'virgilsecurity'),
-                'id'            => 'features-cryptogram-msg',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Intro Cryptogram List', 'virgilsecurity'),
-                'id'            => 'features-cryptogram-list',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Components', 'virgilsecurity'),
-                'id'            => 'features-components',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Languages', 'virgilsecurity'),
-                'id'            => 'features-languages',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('FAQ', 'virgilsecurity'),
-                'id'            => 'features-faq',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
         //About Virgil
         register_sidebar(
             [
@@ -964,26 +651,6 @@ if (!function_exists('virgilsecurity_setup')) :
             [
                 'name'          => __('About Virgil Investors', 'virgilsecurity'),
                 'id'            => 'about-virgil-investors',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-
-        //Footer
-        register_sidebar(
-            [
-                'name'          => __('Footer Top', 'virgilsecurity'),
-                'id'            => 'footer-top',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('Footer Bottom', 'virgilsecurity'),
-                'id'            => 'footer-bottom',
                 'before_widget' => __return_empty_string(),
                 'after_widget'  => __return_empty_string(),
             ]
