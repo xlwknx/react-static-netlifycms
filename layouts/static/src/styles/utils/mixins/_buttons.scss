@@ -13,7 +13,12 @@
   transition: all 0.5s;
 
   .icon {
-    margin: -2px 2px 0;
+    margin-top: -2px;
+  }
+
+  span + .icon {
+    margin-left: 2px;
+    margin-right: 2px;
   }
 }
 
