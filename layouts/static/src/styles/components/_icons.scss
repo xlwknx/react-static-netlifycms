@@ -51,6 +51,8 @@
   }
 
   &-clock-grey {
+    width: 15px;
+    height: 15px;
     background-image: url("../assets/images/ui/icons/icon-clock-grey.svg");
   }
 
@@ -123,6 +125,13 @@
     width: 7px;
     height: 10px;
     background-image: url("../assets/images/ui/icons/icon-arrowRight-black.svg");
+    vertical-align: baseline;
+  }
+
+  &-arrowRight-red {
+    width: 7px;
+    height: 10px;
+    background-image: url("../assets/images/ui/icons/icon-arrowRight-red.svg");
     vertical-align: baseline;
   }
 

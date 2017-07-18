@@ -13,7 +13,7 @@
   transition: all 0.5s;
 
   .icon {
-    margin-top: -2px;
+    margin: -2px 2px 0;
   }
 }
 
@@ -22,9 +22,9 @@
   padding: 0 30px;
 }
 
-@mixin _button-baseFlat() {
+@mixin _button-baseFlat($margin: 30px) {
   @include _button-base();
-  margin: 0 30px;
+  margin: 0 $margin;
 }
 
 @mixin _button-baseRaised-red() {
@@ -125,4 +125,9 @@
 @mixin button-flatWhite {
   @include _button-baseFlat();
   color: $vs-color-white;
+}
+
+@mixin button-flatRed {
+  @include _button-baseFlat(0);
+  color: $vs-color-darkRed1;
 }
