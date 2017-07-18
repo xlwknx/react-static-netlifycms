@@ -26,7 +26,7 @@ class HeaderSectionModel extends BaseSectionModel
         //TOD:dirty hack, need to refactor at the future
         global $wp_query;
 
-        if (!$wp_query->is_page('contact')) {
+        if (!$wp_query->is_page('contact') && !$wp_query->is_home()) {
             return 'light';
         }
 

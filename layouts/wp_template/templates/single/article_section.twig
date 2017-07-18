@@ -1,0 +1,71 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+    <div class="article">
+        <div class="wrapper">
+            <div class="articleContentBlock">
+                <div class="articleContent">{{ post.content|shortcodes }}</div>
+                {#<div class="articleSidebar">#}
+                    {#<div class="referenceBlock">#}
+                        {#<div class="referenceList">#}
+                            {#<h3 class="referenceList-headline">Related use cases</h3>#}
+                            {#<ul class="referenceList-list">#}
+                                {#<li><a href="">Encrypted communication</a></li>#}
+                                {#<li><a href="">Encrypted storage</a></li>#}
+                            {#</ul>#}
+                        {#</div>#}
+                        {#<div class="referenceList">#}
+                            {#<h3 class="referenceList-headline">Related posts</h3>#}
+                            {#<ul class="referenceList-list">#}
+                                {#<li><a href="">Ecrypted truth: top 5 cryptology myths</a></li>#}
+                                {#<li><a href="">Examining Decentralized Social Networks</a></li>#}
+                                {#<li><a href="">INSIDE DESIGN: LENDINGTREE</a></li>#}
+                                {#<li><a href="">FREE PRODUCT DESIGN E-COURSE FROM TINDER’S SCOTT HURFF</a></li>#}
+                            {#</ul>#}
+                        {#</div>#}
+                        {#<div class="referenceList">#}
+                            {#<h3 class="referenceList-headline">Tags</h3>#}
+                            {#<ul class="referenceList-list">#}
+                                {#<li><a href="">encrypt virgil security verification data it programming</a></li>#}
+                            {#</ul>#}
+                        {#</div>#}
+                    {#</div>#}
+                    {#<div class="articleSidebar-actions">#}
+                        {#<a href="" class="button-flatRed">#}
+                            {#<span>Start to encrypt</span>#}
+                            {#<i class="icon icon-arrowRight-red"></i>#}
+                        {#</a>#}
+                    {#</div>#}
+                {#</div>#}
+                <div class="articleReferenceList">
+                    <div class="articleReference">
+                        {% if post.prev %}
+                            <div class="articleReference-label">Previous</div>
+                            <a href="{{ post.prev.link }}" class="articleReference-link">
+                                <span>{{ post.prev.title }}</span>
+                                <i class="icon icon-arrowLeft-black" aria-hidden="true"></i>
+                            </a>
+                            <div class="articleReference-data">
+                                <span>{{ post.prev.author.display_name|shortcodes }}</span> —
+                                <span>{{ post.prev.post_date|shortcodes|date("F jS, Y") }}</span>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="articleReference">
+                        {% if post.next %}
+                            <div class="articleReference-label">Next</div>
+                            <a href="{{ post.next.link }}" class="articleReference-link">
+                                <span>{{ post.next.title }}</span>
+                                <i class="icon icon-arrowRight-black" aria-hidden="true"></i>
+                            </a>
+                            <div class="articleReference-data">
+                                <span>{{ post.next.author.display_name|shortcodes }}</span> —
+                                <span>{{ post.next.post_date|shortcodes|date("F jS, Y") }}</span>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

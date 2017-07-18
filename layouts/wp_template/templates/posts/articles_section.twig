@@ -1,0 +1,78 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+    <div class="articles">
+        <div class="wrapper">
+            <div class="articlesContentBlock">
+                <div class="articleList">
+                    {% for article in articles.posts %}
+                        <a href="{{ article.link|shortcodes }}" class="articleItem">
+                            <div class="articleItem-image">
+                                <img width="700" height="265"
+                                     src="{{ article.thumbnail.src|default(bloginfo('stylesheet_directory')~'/assets/stubs/articles_thumbnail_stub.jpg')|resize(700, 265) }}"
+                                     srcset="{{ article.thumbnail.src|default(bloginfo('stylesheet_directory')~'/assets/stubs/articles_thumbnail_stub.jpg')|resize(700, 265)|retina(2) }} 2x"
+                                     alt="Image for {{ article.title }}">
+                            </div>
+                            <div class="articleItem-content">
+                                <h2 class="articleItem-headline">{{ article.title|shortcodes }}</h2>
+                                <p class="articleItem-text">{{ article.content|excerpt(30)|shortcodes }}</p>
+                                <div class="articleItem-info">
+                                    <div class="articleItem-data">
+                                        <span>{{ article.author.display_name|shortcodes }}</span> —
+                                        <span>{{ article.post_date|shortcodes|date("F jS, Y") }}</span>
+                                    </div>
+                                    <div class="articleItem-time">
+                                        <span>{{ article.post_date|time_ago|trim('ago') }}</span><i
+                                                class="icon icon-clock-grey" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+                <div class="articlesSidebar">
+                    <div class="referenceBlock">
+                        {% if articles.top_posts %}
+                            <div class="referenceList">
+                                <h3 class="referenceList-headline">Top posts</h3>
+                                <ul class="referenceList-list">
+                                    {% for top_post in articles.top_posts %}
+                                        <li><a href="{{ top_post.link }}">{{ top_post.title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+
+                        {% if articles.tags %}
+                            {% for tag in articles.tags %}
+                                <div class="referenceList">
+                                    <h3 class="referenceList-headline">Tags by {{ tag.name }}</h3>
+                                    <ul class="referenceList-list">
+                                        {% for link in tag.links %}
+                                            <li>
+                                                <a href="{{ link.link }}">{{ link.title }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <div class="articlesSidebar-actions">
+                        <a href="" class="button-flatRed">
+                            <span>Start to encrypt</span>
+                            <i class="icon icon-arrowRight-red"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="articlesActions">
+                    {% if articles.pagination.next %}
+                        <a href="{{ articles.pagination.next.link }}"
+                           class="button-raisedRed next {{ articles.pagination.next.link|length ? '' : 'invisible' }}">Load
+                            more</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

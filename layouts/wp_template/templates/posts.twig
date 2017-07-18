@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block body_content %}
+    <div class="page articleListPage">
+        {% block header %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block content %}
+            <div class="container">
+                {% include 'posts/articles_section.twig' with{ 'articles': models.articles_section, 'visible': models.articles_section.is_show } only %}
+            </div>
+        {% endblock %}
+
+        {% block footer %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
