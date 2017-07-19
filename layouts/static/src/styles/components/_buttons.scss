@@ -46,6 +46,10 @@
   @include button-flatWhite();
 }
 
+.button-flatRed {
+  @include button-flatRed();
+}
+
 .button-disabled {
   opacity: 0.1;
   cursor: default;

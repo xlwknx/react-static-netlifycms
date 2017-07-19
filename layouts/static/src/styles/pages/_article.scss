@@ -1,8 +1,14 @@
 .articleItemPage {
+  background: $vs-color-lightGrey1;
+
   .intro {
-    @include block-bg($vs-color-black);
-    background-image: url("../assets/images/bg/article/article-intro-bg@2x.jpg");
-    background-size: 2560px 480px;
+    //@include block-bg($vs-color-black);
+    //background-image: url("../assets/images/bg/article/article-intro-bg@2x.jpg");
+    //background-size: 2560px 480px;
+
+    @include block-bg($vs-color-darkBlue5);
+    background-image: url("../assets/images/bg/content/content-intro-bg.svg");
+    background-position: center bottom;
 
     .introContentBlock {
       height: 480px;
@@ -22,27 +28,38 @@
   }
 
   .article {
-    padding-top: 40px;
+    padding-top: 105px;
     font-size: 0.88rem;
 
     .articleContentBlock {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center;
+
+      @media (min-width: $vs-breakpoint-md) {
+        justify-content: space-between;
+      }
 
       @media (min-width: $vs-breakpoint-lg) {
-        padding: 0 100px;
+        padding: 0 105px;
       }
     }
 
     .articleContent {
-      width: 675px;
+      max-width: 690px;
+
+      @media (min-width: $vs-breakpoint-md) {
+        width: 70%;
+      }
 
       h2 {
         margin: 65px 0 35px;
         font-size: inherit;
         font-weight: bold;
+
+        &:first-of-type {
+          margin-top: 0;
+        }
       }
 
       a {
@@ -73,40 +90,25 @@
     }
 
     .articleSidebar {
-      width: 250px;
-      padding: 33px 25px;
-      background: $vs-color-lightGrey1;
-    }
+      order: 3;
+      width: 100%;
+      max-width: 690px;
+      margin-top: 55px;
 
-      .articleSidebarLinks {
-        & + .articleSidebarLinks {
-          margin-top: 45px;
-        }
-
-        &-headline {
-          @include font-muller();
-          font-size: 0.61rem;
-          color: $vs-color-lightGrey4;
-        }
-
-        &-list {
-          li {
-            margin-top: 20px;
-            line-height: 1;
-          }
-
-          a {
-            @include font-muller();
-            font-size: 0.61rem;
-
-            &:hover {
-              color: $vs-color-darkRed1;
-            }
-          }
-        }
+      @media (min-width: $vs-breakpoint-md) {
+        order: 2;
+        width: 25%;
+        max-width: 250px;
+        margin-top: 0;
       }
 
+      &-actions {
+        margin-top: 20px;
+      }
+    }
+
     .articleReferenceList {
+      order: 2;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -114,6 +116,10 @@
       margin-top: 100px;
       border-top: 1px solid $vs-color-lightGrey3;
       padding-top: 40px;
+
+      @media (min-width: $vs-breakpoint-md) {
+        order: 3;
+      }
     }
 
       .articleReference {

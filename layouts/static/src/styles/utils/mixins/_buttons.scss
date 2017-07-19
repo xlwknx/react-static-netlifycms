@@ -15,6 +15,11 @@
   .icon {
     margin-top: -2px;
   }
+
+  span + .icon {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
 }
 
 @mixin _button-baseRaised($lineHeight: 44px) {
@@ -22,9 +27,9 @@
   padding: 0 30px;
 }
 
-@mixin _button-baseFlat() {
+@mixin _button-baseFlat($margin: 30px) {
   @include _button-base();
-  margin: 0 30px;
+  margin: 0 $margin;
 }
 
 @mixin _button-baseRaised-red() {
@@ -125,4 +130,9 @@
 @mixin button-flatWhite {
   @include _button-baseFlat();
   color: $vs-color-white;
+}
+
+@mixin button-flatRed {
+  @include _button-baseFlat(0);
+  color: $vs-color-darkRed1;
 }
