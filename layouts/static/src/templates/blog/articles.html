@@ -6,7 +6,7 @@
   <title>Virgil Security</title>
 </head>
 <body>
-<div class="page articleListPage">
+<div class="page articleListPage" data-vs-page="articles">
   <header class="header">
     <div class="headerFull headerFull--dark" data-vs-sticky-header>
       <div class="headerLogo">
@@ -163,7 +163,7 @@
     <div class="articles">
       <div class="wrapper">
         <div class="articlesContentBlock">
-          <div class="articleList">
+          <div class="articleList" data-article-list="">
             <a href="" class="articleItem">
               <div class="articleItem-image">
                 <img
@@ -289,7 +289,13 @@
             </div>
           </div>
           <div class="articlesActions">
-            <button class="button-raisedRed">Load more</button>
+            <button data-load-more=""
+                    data-load-more-url="http://localhost:8080/blog/%page%"
+                    data-load-more-current-page="2"
+                    data-load-more-pages-count="4"
+
+                    class="button-raisedRed">Load more
+            </button>
           </div>
         </div>
       </div>

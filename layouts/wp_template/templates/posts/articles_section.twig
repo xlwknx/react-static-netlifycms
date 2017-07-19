@@ -4,7 +4,7 @@
     <div class="articles">
         <div class="wrapper">
             <div class="articlesContentBlock">
-                <div class="articleList">
+                <div class="articleList" data-article-list="">
                     {% for article in articles.posts %}
                         <a href="{{ article.link|shortcodes }}" class="articleItem">
                             <div class="articleItem-image">
@@ -59,18 +59,20 @@
                         {% endif %}
                     </div>
                     <div class="articlesSidebar-actions">
-                        <a href="" class="button-flatRed">
+                        <a href="https://developer.virgilsecurity.com/account/signup" class="button-flatRed">
                             <span>Start to encrypt</span>
                             <i class="icon icon-arrowRight-red"></i>
                         </a>
                     </div>
                 </div>
                 <div class="articlesActions">
-                    {% if articles.pagination.next %}
-                        <a href="{{ articles.pagination.next.link }}"
-                           class="button-raisedRed next {{ articles.pagination.next.link|length ? '' : 'invisible' }}">Load
-                            more</a>
-                    {% endif %}
+                    <button data-load-more=""
+                            data-load-more-url="{{ articles.load_more.pattern }}"
+                            data-load-more-current-page="{{ articles.pagination.current }}"
+                            data-load-more-pages-count="{{ articles.pagination.total }}"
+
+                            class="button-raisedRed">Load more
+                    </button>
                 </div>
             </div>
         </div>

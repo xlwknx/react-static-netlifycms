@@ -56,6 +56,9 @@ class PostsModel extends LayoutModel
                 },
                 $this->siteTags
             ),
+            'load_more'  => [
+                'pattern' => get_permalink(get_option('page_for_posts')) . 'page/%page%',
+            ],
         ];
     }
 }
