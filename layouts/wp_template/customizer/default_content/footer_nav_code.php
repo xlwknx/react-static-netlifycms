@@ -19,7 +19,7 @@ return "
 
     [footer_nav_block_open label='Contact us']
         [footer_nav_item slug=contact  label=Contacts]
-        [footer_nav_item link='https://medium.com/@VirgilSecurity' label=Blog]
+        [header_nav_item slug=blog label='Blog']
     [footer_nav_block_close]
 [footer_nav_close]
 ";

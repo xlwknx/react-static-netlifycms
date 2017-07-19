@@ -27,6 +27,16 @@ class PostsModel extends LayoutModel
 
     public function ArticlesSection()
     {
+        global $wp_query;
+
+        $loadMoreUrl = get_permalink(get_option('page_for_posts'));
+
+        if ($wp_query->is_tag()) {
+            $tag = $wp_query->get_queried_object();
+
+            $loadMoreUrl = get_tag_link($tag->term_id);
+        }
+
         return [
             'posts'      => Timber::get_posts(),
             'pagination' => Timber::get_pagination(),
@@ -38,26 +48,15 @@ class PostsModel extends LayoutModel
             ),
             'tags'       => array_map(
                 function (WP_Term $tag) {
-
-
-                    $links = get_posts(
-                        ['tag' => $tag->name, 'numberposts' => 3]
-                    );
-
                     return [
-                        'name'  => $tag->name,
-                        'links' => array_map(
-                            function ($link) {
-                                return new Post($link);
-                            },
-                            $links
-                        ),
+                        'title' => $tag->name,
+                        'link'  => get_tag_link($tag->term_id),
                     ];
                 },
                 $this->siteTags
             ),
             'load_more'  => [
-                'pattern' => get_permalink(get_option('page_for_posts')) . 'page/%page%',
+                'pattern' => $loadMoreUrl . 'page/%page%',
             ],
         ];
     }

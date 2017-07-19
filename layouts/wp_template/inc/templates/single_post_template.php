@@ -37,6 +37,6 @@ class SinglePostTemplate extends Template
      */
     public function getModel()
     {
-        return new SinglePostModel();
+        return new SinglePostModel(get_post());
     }
 }

@@ -160,7 +160,18 @@ if (!function_exists('virgilsecurity_setup')) :
     {
         global $post;
 
-        return $post_slug = $post->post_name;
+        if (is_home()) {
+            $pageForPostsId = get_option('page_for_posts');
+
+            $pageForPosts = get_post($pageForPostsId);
+
+            $post_slug = $pageForPosts->post_name;
+        } else {
+            $post_slug = $post->post_name;
+        }
+
+
+        return $post_slug;
     }
 
     function virgilsecurity_setup_starter_content($content, $config)
@@ -252,8 +263,8 @@ if (!function_exists('virgilsecurity_setup')) :
                 ],
                 'blogpage'         => [
                     'post_type'    => 'page',
-                    'post_name'    => 'blogpage',
-                    'post_title'   => __('Blogpage', 'virgilsecurity'),
+                    'post_name'    => 'blog',
+                    'post_title'   => __('Blog', 'virgilsecurity'),
                     'post_content' => __return_empty_string(),
                 ],
                 'homepage'         => [

@@ -34,7 +34,7 @@
                     <div class="referenceBlock">
                         {% if articles.top_posts %}
                             <div class="referenceList">
-                                <h3 class="referenceList-headline">Top posts</h3>
+                                <h3 class="referenceList-headline">Recent posts</h3>
                                 <ul class="referenceList-list">
                                     {% for top_post in articles.top_posts %}
                                         <li><a href="{{ top_post.link }}">{{ top_post.title }}</a></li>
@@ -44,18 +44,14 @@
                         {% endif %}
 
                         {% if articles.tags %}
-                            {% for tag in articles.tags %}
-                                <div class="referenceList">
-                                    <h3 class="referenceList-headline">Tags by {{ tag.name }}</h3>
-                                    <ul class="referenceList-list">
-                                        {% for link in tag.links %}
-                                            <li>
-                                                <a href="{{ link.link }}">{{ link.title }}</a>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                            {% endfor %}
+                            <div class="referenceList">
+                                <h3 class="referenceList-headline">Posts by tags</h3>
+                                <ul class="referenceList-list">
+                                    {% for tag in articles.tags %}
+                                        <li><a href="{{ tag.link }}">{{ tag.title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         {% endif %}
                     </div>
                     <div class="articlesSidebar-actions">
