@@ -17,6 +17,10 @@
         {% include 'base/header_section.twig' with {'header': models.header_section, 'visible': models.header_section.is_show} only %}
     {% endblock %}
 
+    {% block dark_header %}
+        {% include 'base/dark_header_section.twig' with {'header': models.header_section, 'visible': models.header_section.is_show} only %}
+    {% endblock %}
+
     {% block content %}{% endblock %}
 
     {% block footer %}

@@ -1,0 +1,10 @@
+{% extends "base/header_section.twig" %}
+
+{% block header_full %}
+    <div class="headerFull headerFull--dark" data-vs-sticky-header>
+        {% block header_full_content %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+
+{% endblock %}

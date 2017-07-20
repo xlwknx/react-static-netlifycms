@@ -21,19 +21,6 @@ class HeaderSectionModel extends BaseSectionModel
     }
 
 
-    public function Skin()
-    {
-        //TOD:dirty hack, need to refactor at the future
-        global $wp_query;
-
-        if (!$wp_query->is_page('contact') && !$wp_query->is_home() && !$wp_query->is_tag()) {
-            return 'light';
-        }
-
-        return 'dark';
-    }
-
-
     public function HeaderMenu()
     {
         $menuCodeMod = $this->sectionMods->getMenuCodeMod();

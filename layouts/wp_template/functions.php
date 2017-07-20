@@ -160,6 +160,8 @@ if (!function_exists('virgilsecurity_setup')) :
     {
         global $post;
 
+        $post_slug = '';
+
         if (is_home()) {
             $pageForPostsId = get_option('page_for_posts');
 
@@ -167,7 +169,9 @@ if (!function_exists('virgilsecurity_setup')) :
 
             $post_slug = $pageForPosts->post_name;
         } else {
-            $post_slug = $post->post_name;
+            if ($post) {
+                $post_slug = $post->post_name;
+            }
         }
 
 
