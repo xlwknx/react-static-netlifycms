@@ -44,6 +44,7 @@
 
       &-headline {
         @include font-muller();
+        font-weight: bold;
         font-size: 0.61rem;
         color: $vs-color-lightGrey4;
       }
@@ -57,6 +58,7 @@
         a {
           @include font-muller();
           font-size: 0.61rem;
+          font-weight: bold;
           line-height: 1.2;
 
           &:hover {

@@ -8,7 +8,8 @@
 
     @include block-bg($vs-color-darkBlue5);
     background-image: url("../assets/images/bg/content/content-intro-bg.svg");
-    background-position: center bottom;
+    background-position-y: bottom;
+    background-size: 105%;
 
     .introContentBlock {
       height: 480px;
@@ -38,6 +39,7 @@
 
       @media (min-width: $vs-breakpoint-md) {
         justify-content: space-between;
+        padding: 0 40px;
       }
 
       @media (min-width: $vs-breakpoint-lg) {
@@ -47,7 +49,6 @@
 
     .articleContent {
       max-width: 690px;
-      word-wrap: break-word;
 
       @media (min-width: $vs-breakpoint-md) {
         width: 70%;
@@ -88,6 +89,10 @@
       li {
         margin: 0.5rem;
       }
+
+      &-actions {
+        margin-top: 35px;
+      }
     }
 
     .articleSidebar {
@@ -123,30 +128,32 @@
       }
     }
 
-    .articleReference {
-      &-label {
-        @include font-muller();
-        font-size: 0.61rem;
-        color: $vs-color-lightGrey4;
-      }
+      .articleReference {
+        max-width: 45%;
 
-      &-link {
-        @include font-muller();
-        display: block;
-        margin-top: 15px;
-        font-size: 0.77rem;
-        transition: 0.5s color;
+        &-label {
+          @include font-muller();
+          font-size: 0.61rem;
+          color: $vs-color-lightGrey4;
+        }
 
-        &:hover {
-          color: $vs-color-darkRed1;
+        &-link {
+          @include font-muller();
+          display: block;
+          margin-top: 15px;
+          font-size: 0.77rem;
+          transition: 0.5s color;
+
+          &:hover {
+            color: $vs-color-darkRed1;
+          }
+        }
+
+        &-data {
+          margin-top: 5px;
+          font-size: 0.66rem;
+          color: $vs-color-lightGrey4;
         }
       }
-
-      &-data {
-        margin-top: 5px;
-        font-size: 0.66rem;
-        color: $vs-color-lightGrey4;
-      }
-    }
   }
 }
