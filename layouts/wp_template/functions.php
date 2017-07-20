@@ -95,18 +95,18 @@ if (!function_exists('virgilsecurity_setup')) :
         //add_filter('wp_editor_widget_content', 'shortcode_unautop');
         //add_filter('wp_editor_widget_content', 'do_shortcode', 11);
 
-        //add_filter(
-        //    'wpcf7_form_elements',
-        //    function ($content) {
-        //        $content = preg_replace(
-        //            '/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i',
-        //            '\2',
-        //            $content
-        //        );
-        //
-        //        return $content;
-        //    }
-        //);
+        add_filter(
+            'wpcf7_form_elements',
+            function ($content) {
+                $content = preg_replace(
+                    '/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i',
+                    '\2',
+                    $content
+                );
+
+                return $content;
+            }
+        );
 
         //remove_filter('the_content', 'wpautop');
 

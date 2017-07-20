@@ -11,6 +11,9 @@
     {% endblock %}
 </head>
 <body {{ body_class }}>
+{% block after_body %}
+    {{ models.components.google_tag_manager }}
+{% endblock %}
 
 {% block body_content %}
     {% block header %}

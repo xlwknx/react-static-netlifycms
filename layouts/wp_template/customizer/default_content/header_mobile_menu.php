@@ -15,7 +15,7 @@ return "
     [header_nav_item_close]
     [header_nav_item slug=pricing  label='Pricing']
     [header_nav_item_open label='Company']
-        [header_nav_item level=second link='https://medium.com/@VirgilSecurity' label='Blog']
+        [header_nav_item level=second slug=blog label='Blog']
     [header_nav_item_close]
     [header_nav_item slug=contact label='Contacts']
 [header_nav_close]
