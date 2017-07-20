@@ -1,6 +1,6 @@
 .homePage {
   .intro {
-    @include block-bg($vs-color-darkBlue5);
+    @include block-bg($vs-color-black);
     background-image: url("../assets/images/bg/home/home-intro-bg@2x.jpg");
     background-size: 2560px 920px;
     background-position: center bottom;
