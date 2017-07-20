@@ -28,10 +28,10 @@ if (!function_exists('virgilsecurity_setup')) :
          */
         load_theme_textdomain('virgilsecurity', get_template_directory() . '/languages');
 
-        /**
-         * Add default posts and comments RSS feed links to <head>.
-         */
-        add_theme_support('automatic-feed-links');
+        ///**
+        // * Add default posts and comments RSS feed links to <head>.
+        // */
+        //add_theme_support('automatic-feed-links');
 
         /**
          * Enable support for post thumbnails and featured images.
@@ -73,41 +73,46 @@ if (!function_exists('virgilsecurity_setup')) :
         add_action('wp_enqueue_scripts', 'virgilsecurity_enqueue_style');
         add_action('wp_enqueue_scripts', 'virgilsecurity_enqueue_script');
         add_action('widgets_init', 'virgilsecurity_widgets_init');
+        add_action('admin_menu', 'virgilsecurity_customize_meta_boxes');
+        //add_action('admin_head-post.php', 'virgilsecurity_hide_publishing_actions');
+        //add_action('admin_head-post-new.php', 'virgilsecurity_hide_publishing_actions');
 
+        add_action('admin_head-post-new.php', 'virgilsecurity_load_admin_style');
+        add_action('admin_head-post.php', 'virgilsecurity_load_admin_style');
 
         add_filter('get_theme_starter_content', 'virgilsecurity_setup_starter_content', 10, 2);
         add_filter('widget_text', 'do_shortcode');
-        add_filter('black_studio_tinymce_before_text', '__return_empty_string');
-        add_filter('black_studio_tinymce_after_text', '__return_empty_string');
+        //add_filter('black_studio_tinymce_before_text', '__return_empty_string');
+        //add_filter('black_studio_tinymce_after_text', '__return_empty_string');
 
 
-        remove_all_filters('wp_editor_widget_content');
+        //remove_all_filters('wp_editor_widget_content');
 
-        add_filter('wp_editor_widget_content', 'wptexturize');
-        add_filter('wp_editor_widget_content', 'convert_smilies');
-        add_filter('wp_editor_widget_content', 'convert_chars');
-        //add_filter( 'wp_editor_widget_content', 'wpautop' );
-        add_filter('wp_editor_widget_content', 'shortcode_unautop');
-        add_filter('wp_editor_widget_content', 'do_shortcode', 11);
+        //add_filter('wp_editor_widget_content', 'wptexturize');
+        //add_filter('wp_editor_widget_content', 'convert_smilies');
+        //add_filter('wp_editor_widget_content', 'convert_chars');
+        ////add_filter( 'wp_editor_widget_content', 'wpautop' );
+        //add_filter('wp_editor_widget_content', 'shortcode_unautop');
+        //add_filter('wp_editor_widget_content', 'do_shortcode', 11);
 
-        add_filter(
-            'wpcf7_form_elements',
-            function ($content) {
-                $content = preg_replace(
-                    '/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i',
-                    '\2',
-                    $content
-                );
+        //add_filter(
+        //    'wpcf7_form_elements',
+        //    function ($content) {
+        //        $content = preg_replace(
+        //            '/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i',
+        //            '\2',
+        //            $content
+        //        );
+        //
+        //        return $content;
+        //    }
+        //);
 
-                return $content;
-            }
-        );
-
-        remove_filter('the_content', 'wpautop');
+        //remove_filter('the_content', 'wpautop');
 
         //add_filter( 'black_studio_tinymce_hide_empty', '__return_true' );
 
-        add_editor_style('editor-style.css');
+        //add_editor_style('editor-style.css');
 
         virgilsecurity_store_github_stars();
 
@@ -119,6 +124,53 @@ if (!function_exists('virgilsecurity_setup')) :
         if (!$virgilsecurity_section_mods->isInitialized()) {
             $virgilsecurity_section_mods->setupDefaults();
         }
+    }
+
+    function virgilsecurity_load_admin_style()
+    {
+        wp_enqueue_style('admin_css', get_template_directory_uri() . '/admin-style.css', false, '1.0.0');
+    }
+
+    //function virgilsecurity_hide_publishing_actions()
+    //{
+    //    $my_post_type = 'POST_TYPE';
+    //    global $post;
+    //
+    //    if ($post->post_type == $my_post_type) {
+    //        echo '
+    //            <style type="text/css">
+    //                #misc-publishing-actions{
+    //                    display:none;
+    //                }
+    //            </style>
+    //        ';
+    //    }
+    //}
+
+    function virgilsecurity_customize_meta_boxes()
+    {
+        //if (!current_user_can('manage_options')) {
+        //    remove_meta_box('linktargetdiv', 'link', 'normal');
+        //    remove_meta_box('linkxfndiv', 'link', 'normal');
+        //    remove_meta_box('linkadvanceddiv', 'link', 'normal');
+        //
+        //    remove_meta_box('postexcerpt', 'post', 'normal');
+        //    remove_meta_box('trackbacksdiv', 'post', 'normal');
+        //    remove_meta_box('postcustom', 'post', 'normal');
+        //    remove_meta_box('commentstatusdiv', 'post', 'normal');
+        //    remove_meta_box('commentsdiv', 'post', 'normal');
+        //    remove_meta_box('revisionsdiv', 'post', 'normal');
+        //    remove_meta_box('authordiv', 'post', 'normal');
+        //    remove_meta_box('sqpt-meta-tags', 'post', 'normal');
+        //}
+
+        //remove_meta_box('submitdiv', 'post', 'normal');
+        remove_meta_box('formatdiv', 'post', 'normal');
+        remove_meta_box('categorydiv', 'post', 'normal');
+
+        remove_meta_box('pageparentdiv', 'page', 'normal');
+
+        //remove_meta_box('submitdiv', 'page', 'normal');
     }
 
     function virgilsecurity_setup_roles()

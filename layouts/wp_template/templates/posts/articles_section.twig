@@ -16,7 +16,7 @@
                                 </div>
                                 <div class="articleItem-content">
                                     <h2 class="articleItem-headline">{{ article.title|shortcodes }}</h2>
-                                    <p class="articleItem-text">{{ article.content|excerpt(30)|shortcodes }}</p>
+                                    <p class="articleItem-text">{{ article.post_excerpt|shortcodes }}</p>
                                     <div class="articleItem-info">
                                         <div class="articleItem-data">
                                             <span>{{ article.author.display_name|shortcodes }}</span> —

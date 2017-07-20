@@ -47,6 +47,7 @@
 
     .articleContent {
       max-width: 690px;
+      word-wrap: break-word;
 
       @media (min-width: $vs-breakpoint-md) {
         width: 70%;
@@ -122,30 +123,30 @@
       }
     }
 
-      .articleReference {
-        &-label {
-          @include font-muller();
-          font-size: 0.61rem;
-          color: $vs-color-lightGrey4;
-        }
+    .articleReference {
+      &-label {
+        @include font-muller();
+        font-size: 0.61rem;
+        color: $vs-color-lightGrey4;
+      }
 
-        &-link {
-          @include font-muller();
-          display: block;
-          margin-top: 15px;
-          font-size: 0.77rem;
-          transition: 0.5s color;
+      &-link {
+        @include font-muller();
+        display: block;
+        margin-top: 15px;
+        font-size: 0.77rem;
+        transition: 0.5s color;
 
-          &:hover {
-            color: $vs-color-darkRed1;
-          }
-        }
-
-        &-data {
-          margin-top: 5px;
-          font-size: 0.66rem;
-          color: $vs-color-lightGrey4;
+        &:hover {
+          color: $vs-color-darkRed1;
         }
       }
+
+      &-data {
+        margin-top: 5px;
+        font-size: 0.66rem;
+        color: $vs-color-lightGrey4;
+      }
+    }
   }
 }
