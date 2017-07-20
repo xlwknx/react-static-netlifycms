@@ -18,10 +18,10 @@ class PostsModel extends LayoutModel
     private $siteTags;
 
 
-    public function __construct($topPosts, $siteTags = [])
+    public function __construct($topPosts = [], $siteTags = [])
     {
-        $this->topPosts = $topPosts;
-        $this->siteTags = $siteTags;
+        $this->topPosts = is_array($topPosts) ? $topPosts : [];
+        $this->siteTags = is_array($siteTags) ? $siteTags : [];
     }
 
 
