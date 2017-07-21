@@ -9,7 +9,7 @@
                         {% for article in articles.posts %}
                             <a href="{{ article.link|shortcodes }}" class="articleItem">
                                 <div class="articleItem-image">
-                                    <img width="700" height="265"
+                                    <img width="700"
                                          src="{{ article.thumbnail.src|default(bloginfo('stylesheet_directory')~'/assets/stubs/articles_thumbnail_stub.jpg')|resize(700, 265) }}"
                                          srcset="{{ article.thumbnail.src|default(bloginfo('stylesheet_directory')~'/assets/stubs/articles_thumbnail_stub.jpg')|resize(700, 265)|retina(2) }} 2x"
                                          alt="Image for {{ article.title }}">
