@@ -117,7 +117,6 @@
       order: 2;
       display: flex;
       justify-content: space-between;
-      align-items: center;
       width: 100%;
       margin-top: 100px;
       border-top: 1px solid $vs-color-lightGrey3;
@@ -129,6 +128,8 @@
     }
 
       .articleReference {
+        display: flex;
+        flex-direction: column;
         max-width: 45%;
 
         &-label {
@@ -139,6 +140,7 @@
 
         &-link {
           @include font-muller();
+          flex: 1 1;
           display: block;
           margin-top: 15px;
           font-size: 0.77rem;

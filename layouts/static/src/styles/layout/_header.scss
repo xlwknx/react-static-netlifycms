@@ -80,7 +80,9 @@
   }
 
   .headerLogo {
-    flex: 1 0;
+    @media (min-width: $vs-breakpoint-lg) {
+      flex: 1 0;
+    }
 
     a {
       display: inline-block;
