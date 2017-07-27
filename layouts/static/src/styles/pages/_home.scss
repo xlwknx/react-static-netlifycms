@@ -10,7 +10,28 @@
       padding-bottom: 45px;
 
       @media (min-width: $vs-breakpoint-sm) and (max-width: $vs-breakpoint-lg) {
-        min-height: 720px;
+        //min-height: 720px;
+      }
+    }
+
+    .newsMsg {
+      &-headline {
+        text-align: center;
+      }
+
+      a {
+        color: $vs-color-white;
+        transition: 0.5s all;
+
+        &:hover {
+          color: $vs-color-darkRed1;
+        }
+      }
+    }
+
+    .newsMsg + .blockMsg {
+      @media (min-width: $vs-breakpoint-lg) {
+        margin-top: 0;
       }
     }
 
