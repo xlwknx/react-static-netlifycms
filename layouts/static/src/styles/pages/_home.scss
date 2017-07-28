@@ -1,4 +1,64 @@
 .homePage {
+  .pageMsg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px 5px 10px;
+    background: $vs-color-darkRed1;
+    font-size: 0.88rem;
+    color: $vs-color-white;
+    transition: 0.5s all;
+
+    @media (min-width: $vs-breakpoint-md) {
+      flex-wrap: wrap;
+      height: 40px;
+      padding: 0 30px;
+    }
+
+    &.collapsed {
+      display: none;
+    }
+
+    a {
+      text-transform: uppercase;
+      border-bottom: 1px solid $vs-color-white;
+      color: $vs-color-white;
+    }
+
+    &-text {
+      order: 2;
+      text-align: center;
+
+      @media (min-width: $vs-breakpoint-md) {
+        order: initial;
+        text-align: initial;
+      }
+    }
+
+    &-textLink-ns {
+      @include font-muller();
+      margin-right: 10px;
+
+      @media (min-width: $vs-breakpoint-sm) {
+        margin-right: 20px;
+      }
+
+      @media (min-width: $vs-breakpoint-md) {
+        margin-right: 35px;
+      }
+    }
+
+    &-text {
+      @media (min-width: $vs-breakpoint-md) {
+        align-self: flex-end;
+      }
+    }
+
+    &-close {
+      align-self: flex-end;
+    }
+  }
+
   .intro {
     @include block-bg($vs-color-black);
     background-image: url("../assets/images/bg/home/home-intro-bg@2x.jpg");
@@ -10,28 +70,7 @@
       padding-bottom: 45px;
 
       @media (min-width: $vs-breakpoint-sm) and (max-width: $vs-breakpoint-lg) {
-        //min-height: 720px;
-      }
-    }
-
-    .newsMsg {
-      &-headline {
-        text-align: center;
-      }
-
-      a {
-        color: $vs-color-white;
-        transition: 0.5s all;
-
-        &:hover {
-          color: $vs-color-darkRed1;
-        }
-      }
-    }
-
-    .newsMsg + .blockMsg {
-      @media (min-width: $vs-breakpoint-lg) {
-        margin-top: 0;
+        min-height: 720px;
       }
     }
 
