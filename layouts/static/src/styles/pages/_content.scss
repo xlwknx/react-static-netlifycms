@@ -2,6 +2,8 @@
   .intro {
     @include block-bg($vs-color-darkBlue5);
     background-image: url("../assets/images/bg/content/content-intro-bg.svg");
+    background-position-y: bottom;
+    background-size: 105%;
 
     .introContentBlock {
       height: 400px;

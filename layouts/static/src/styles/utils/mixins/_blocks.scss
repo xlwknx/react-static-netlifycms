@@ -1,17 +1,16 @@
-@mixin block-bg($color, $max-height: calc(100% - 18px), $max-width: 2560px) {
+@mixin block-bg($color, $max-height: 100%, $width: 2560px) {
   overflow: hidden;
   position: relative;
 
   &:before {
     content: '';
     position: absolute;
-    top: 0;
+    top: -20px;
     left: 50%;
-    transform: translate(-50%);
+    margin-left: calc(#{$width} / 2 * -1);
     z-index: -1;
-    width: 100%;
-    height: calc(100% - 18px);
-    max-width: $max-width;
+    width: $width;
+    height: 100%;
     max-height: $max-height;
     background-color: $color;
   }
@@ -24,6 +23,7 @@
   letter-spacing: 3px;
   line-height: 1;
   color: $vs-color-lightGrey7;
+  user-select: none;
 
   @media (min-width: $vs-breakpoint-sm) {
     font-size: $font-size-sm;

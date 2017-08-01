@@ -214,7 +214,7 @@
           <div class="blockMsg">
             <h2 class="blockMsg-headline">Our cryptogram</h2>
           </div>
-          <div class="comparisonBlock cryptogramList">
+          <div class="comparisonBlock comparisonBlock--white cryptogramList">
             <div class="comparisonItem cryptogramItem">
               <div class="cryptogramItem-image">
                 <img
@@ -529,10 +529,18 @@
       <div class="wrapper">
         <div class="faqContentBlock">
           <h2 class="faq-caption">FAQ</h2>
-          <ul class="faqList" data-vs-faq-answerList>
-            <li id="faq-q1" data-vs-faq-answer class="faqItem">
-              <div class="faqItem-count">01</div>
-              <div class="faqItem-text">
+          <ul class="faqList">
+            <li id="faq-q1" data-vs-faq-item class="faqItem">
+              <div class="faqItem-question1">
+                <a href="#faq-q1" data-vs-faq-link="#faq-q1" class="faqItem-question">
+                  <i class="icon icon-minus-red"></i>
+                  <i class="icon icon-plus-red"></i>
+                  <span>
+                    If I send a message to a channel that contains many recipients does it mean that the message will be encrypted as many times as there are recipients in the channel?
+                  </span>
+                </a>
+              </div>
+              <div class="faqItem-answer">
                 <p>Virgil consists of an open-source encryption library, which implements
                   Cryptographic Message Syntax (CMS) and Elliptic Curve Integrated Encryption Scheme
                   (ECIES) (including RSA schema), a Key Management API, and a cloud-based Key
@@ -543,30 +551,62 @@
                   languages are supported.</p>
               </div>
             </li>
-            <li id="faq-q2" data-vs-faq-answer class="faqItem">
-              <div class="faqItem-count">02</div>
-              <div class="faqItem-text">
-                <p>No. Only the AES encryption key used to secure the payload (default AES-256) will
-                  be re-encrypted for each individual recipient. The payload itself will not be
-                  re-encrypted.</p>
+            <li id="faq-q2" data-vs-faq-item class="faqItem">
+              <div class="faqItem-question">
+                <a href="#faq-q2" data-vs-faq-link="#faq-q2" class="faqItem-question">
+                  <i class="icon icon-minus-red"></i>
+                  <i class="icon icon-plus-red"></i>
+                  <span>
+                    If I send a message to a channel that contains many recipients does it mean that the message will be encrypted as many times as there are recipients in the channel?
+                  </span>
+                </a>
+              </div>
+              <div class="faqItem-answer">
+                <p>Virgil consists of an open-source encryption library, which implements
+                  Cryptographic Message Syntax (CMS) and Elliptic Curve Integrated Encryption Scheme
+                  (ECIES) (including RSA schema), a Key Management API, and a cloud-based Key
+                  Management Service (Virgil Keys). The Virgil Keys Service consists of a public key
+                  service and a private key escrow service..</p>
+                <p>See our Technical Specifications for the up-to-date list of programming languages and
+                  platforms supported by our library. Generally all modern platforms and programming
+                  languages are supported.</p>
               </div>
             </li>
           </ul>
-          <div class="faqContents layeredBlock layeredBlock--top">
-            <ul class="faqContentList layeredBlockContent">
-              <li class="faqContentItem">
-                <a href="#faq-q1" data-vs-faq-question class="faqContentItem-link">
-                  <span class="faqContentItem-linkCount">01</span>
-                  <span class="faqContentItem-linkText">If I send a message to a channel that contains many recipients does it mean that the message will be encrypted as many times as there are recipients in the channel?</span>
-                </a>
-              </li>
-              <li class="faqContentItem">
-                <a href="#faq-q2" data-vs-faq-question class="faqContentItem-link">
-                  <span class="faqContentItem-linkCount">02</span>
-                  <span class="faqContentItem-linkText">If I send a message to a channel that contains many recipients does it mean that the message will be encrypted as many times as there are recipients in the channel?</span>
-                </a>
-              </li>
-            </ul>
+          <div class="form askUsForm">
+            <h3 class="askUsForm-headline">Ask us a question</h3>
+            <div class="formFields askUsForm-fields">
+              <div class="formField formFieldText askUsForm-fieldName">
+                <label for="askUsFormName" class="formField-label formFieldText-label">Name</label>
+                <input id="askUsFormName" type="text" class="formField-input formFieldText-input" placeholder="Julius Ceasar">
+              </div>
+              <div class="formField formFieldText askUsForm-fieldEmail">
+                <label for="askUsFormEmail" class="formField-label formFieldText-label">Email address</label>
+                <input id="askUsFormEmail" type="email" class="formField-input formFieldText-input" placeholder="Encrypteverything@mail.com">
+              </div>
+              <div class="formField formFieldText askUsForm-fieldMsg">
+                <label for="askUsFormMsg" class="formField-label formFieldText-label">Message</label>
+                <textarea id="askUsFormMsg" class="formField-input formFieldText-input" placeholder="Hi there!"></textarea>
+              </div>
+            </div>
+            <div class="formActions askUsForm-actions">
+              <button class="button-raisedRedBorder">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="conclusion">
+      <div class="wrapper">
+        <div class="conclusionContentBlock">
+          <div class="blockMsg">
+            <h2 class="blockMsg-headline">
+              Ready to get started?
+              <br>Get in touch, or create an account.
+            </h2>
+            <div class="blockMsg-links">
+              <a href="" class="button-raisedRed">Create free account</a>
+            </div>
           </div>
         </div>
       </div>

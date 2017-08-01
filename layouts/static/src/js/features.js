@@ -1,54 +1,49 @@
 'use strict';
 
 function initFAQ() {
-  const $questions = $('[data-vs-faq-question]');
-  const $answers = $('[data-vs-faq-answer]');
-  const $answerList = $('[data-vs-faq-answerList]');
+  const $items = $('[data-vs-faq-item]');
+  const $links = $('[data-vs-faq-link]');
   const $header = $('[data-vs-sticky-header]');
 
-  var $activeQuestion = $questions.first();
-  var $activeAnswer = $answers.first();
+  initActive(getItemByHash());
 
-  if ($answers.filter(location.hash).length) {
-    $activeQuestion = getLinkByHash(location.hash);
-    $activeAnswer = getTextByHash(location.hash);
-  }
-
-  init($activeQuestion, $activeAnswer);
-
-  // Events
   $(window).on('hashchange', function(event) {
-    init(getLinkByHash(location.hash), getTextByHash(location.hash));
+    initActive(getItemByHash());
   });
 
-  // Helpers
-  function init($link, $text) {
-    if ($link.length && $text.length) {
-      resetActive();
-      setActive($link, $text);
+  $links.on('click', function(event) {
+    event.preventDefault();
 
-      if (location.hash) {
-        window.scrollTo(0, ($answerList.offset().top - $header.height()));
-      }
+    const $link = $(event.currentTarget);
+    const $item = $link.parents('[data-vs-faq-item]');
+    const hash = $link.attr('data-vs-faq-link');
+
+    if (location.hash === hash) {
+      toggleActive($item);
+    } else {
+      location.hash = hash;
     }
+  });
+
+  function setActive($item) {
+    $item.length && $item.addClass('active');
   }
 
-  function resetActive() {
-    $questions.removeClass('active');
-    $answers.removeClass('active');
+  function toggleActive($item) {
+    $item.length && $item.toggleClass('active');
   }
 
-  function setActive($link, $text) {
-    $link.addClass('active');
-    $text.addClass('active');
+  function scrollTo($item) {
+    $item.length && $('html, body').animate({scrollTop: ($item.offset().top - $header.height())}, 'fast');
   }
 
-  function getLinkByHash(hash) {
-    return $questions.filter('[href$="' + hash + '"]');
+  function getItemByHash() {
+    return $items.has('[data-vs-faq-link$="' + location.hash + '"]');
   }
 
-  function getTextByHash(hash) {
-    return $answers.filter(hash);
+  function initActive($item) {
+    setActive($item);
+    scrollTo($item);
   }
 }
 

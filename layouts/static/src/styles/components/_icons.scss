@@ -114,6 +114,18 @@
     background-size: 20px 20px;
   }
 
+  &-minus-red {
+    background-image: url("../assets/images/ui/icons/icon-minus-red.svg");
+    width: 14px;
+    height: 14px;
+  }
+
+  &-plus-red {
+    background-image: url("../assets/images/ui/icons/icon-plus-red.svg");
+    width: 14px;
+    height: 14px;
+  }
+
   /** ---------------------- Arrows ----------------------**/
   &-arrowTop-white {
     height: 13px;

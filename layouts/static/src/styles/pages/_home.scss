@@ -60,22 +60,24 @@
   }
 
   .intro {
-    @include block-bg($vs-color-black);
+    //@include block-bg($vs-color-black);
+    background-color: $vs-color-black;
     background-image: url("../assets/images/bg/home/home-intro-bg@2x.jpg");
-    background-size: 2560px 920px;
     background-position: center bottom;
+    background-size: 2560px 920px;
 
     .introContentBlock {
+      align-items: initial;
+      justify-content: initial;
       min-height: 810px;
       padding-bottom: 45px;
 
-      @media (min-width: $vs-breakpoint-sm) and (max-width: $vs-breakpoint-lg) {
-        min-height: 720px;
-      }
+      //@media (min-width: $vs-breakpoint-sm) and (max-width: $vs-breakpoint-lg) {
+      //  min-height: 720px;
+      //}
     }
 
     .blockMsg {
-      align-self: flex-start;
       margin-top: 55px;
       color: $vs-color-white;
 
@@ -105,26 +107,37 @@
       }
     }
 
-    .introLangList {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      margin: -20px;
+    .introServices {
+      margin-top: 80px;
 
-      li {
-        margin: 20px;
-        opacity: 0.65;
-        transition: 0.5s opacity;
-
-        &:hover {
-          opacity: 1;
-        }
-
-        a, img {
-          display: block;
-        }
+      &-headline {
+        @include font-muller-bold();
+        font-size: 0.66rem;
+        color: $vs-color-white;
       }
+
+      .introServiceList {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+        margin: 5px -12px -12px;
+      }
+
+        .introServiceItem {
+          margin: 12px;
+
+          &-link {
+            display: block;
+            height: 50px;
+
+            img {
+              position: relative;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
     }
   }
 
@@ -165,40 +178,6 @@
 
       @media (min-width: $vs-breakpoint-md) {
         margin-top: 120px;
-      }
-
-      &-caption {
-        @include block-caption(5.55rem, 5.55rem);
-        position: absolute;
-        z-index: -1;
-        top: -100px;
-
-        @media (min-width: $vs-breakpoint-md) {
-          top: 0;
-          padding: 0 15px;
-        }
-      }
-
-      &-image {
-        max-width: 100%;
-        width: 440px;
-        height: 1245px;
-        background: url("../assets/images/bg/home/home-useCases-mobile@2x.png") center top no-repeat;
-        background-size: 440px 1245px;
-
-        @media (min-width: $vs-breakpoint-md) {
-          width: 960px;
-          height: 580px;
-          background-image: url("../assets/images/bg/home/home-useCases-tablet@2x.png");
-          background-size: 960px 580px;
-        }
-
-        @media (min-width: $vs-breakpoint-md) {
-          width: 1420px;
-          height: 475px;
-          background-image: url("../assets/images/bg/home/home-useCases-desktop@2x.png");
-          background-size: 1420px 475px;
-        }
       }
     }
   }
@@ -261,103 +240,44 @@
 
   .services {
     position: relative;
-    padding: 150px 0 130px;
+    padding: 140px 0 130px;
 
     .servicesContentBlock {
       position: relative;
-      display: flex;
-      flex-direction: column;
-
-      @media (min-width: $vs-breakpoint-md) {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
     }
 
     &-caption {
-      @include block-caption(3.33rem, 4.44rem);
+      @include block-caption(3rem, 4.44rem);
       position: absolute;
-      top: -30px;
       z-index: -1;
+      top: -25px;
       width: 100%;
       text-align: center;
 
       @media (min-width: $vs-breakpoint-md) {
-        top: -40px;
-        padding: 0 20px;
-        text-align: left;
+        top: -35px;
       }
 
       @media (min-width: $vs-breakpoint-lg) {
-        top: 0;
-        padding: 0 225px;
+        top: 155px;
       }
     }
 
     .blockMsg {
       text-align: center;
-
-      @media (min-width: $vs-breakpoint-md) {
-        width: 485px;
-        max-width: 45%;
-        text-align: left;
-      }
     }
 
     .serviceList {
-      align-self: center;
       display: flex;
-      flex-direction: column;
       flex-wrap: wrap;
-      align-items: center;
-      width: 500px;
-      height: 600px;
-      max-width: 100%;
-      margin-top: 50px;
-
-      @media (min-width: $vs-breakpoint-md) {
-        width: 465px;
-        max-width: 55%;
-        margin-top: 0;
-      }
-
-      @media (min-width: $vs-breakpoint-lg) {
-        width: 485px;
-      }
+      justify-content: center;
+      margin: 70px -20px -20px;
     }
 
       .serviceItem {
-        margin-top: 70px;
+        margin: 20px;
         width: 205px;
-        max-width: 45%;
         height: 225px;
-
-        @media (min-width: $vs-breakpoint-md) {
-          align-self: flex-start;
-        }
-
-        @media (min-width: $vs-breakpoint-lg) {
-          margin-top: 80px;
-        }
-
-        &:first-child {
-          margin-top: 50px;
-        }
-
-        &:nth-child(3) {
-          margin-top: 0;
-
-          @media (min-width: $vs-breakpoint-md) {
-            align-self: flex-end;
-          }
-        }
-
-        &:nth-child(4) {
-          @media (min-width: $vs-breakpoint-md) {
-            align-self: flex-end;
-          }
-        }
 
         &-link {
           @include font-muller();
@@ -367,7 +287,7 @@
           align-items: center;
           height: 100%;
           border-radius: 3px;
-          padding: 45px 35px 30px ;
+          padding: 40px 25px 30px ;
           background: $vs-color-darkRed1;
           background: linear-gradient(to right, $vs-color-red1 0%, $vs-color-darkRed1 100%);
           font-size: 0.77rem;
@@ -394,18 +314,29 @@
           }
         }
 
-        &-linkText {
-          height: auto;
-          transition: 0.5s opacity, 0.5s hidden;
-        }
+          &-image {
+            height: 75px;
 
-        &-linkHoverText {
-          height: 0;
-          opacity: 0;
-          visibility: hidden;
-          white-space: nowrap;
-          transition: 0.5s opacity, 0.5s hidden;
-        }
+            img {
+              position: relative;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+
+          &-linkText {
+            height: auto;
+            transition: 0.5s opacity, 0.5s hidden;
+          }
+
+          &-linkHoverText {
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+            white-space: nowrap;
+            transition: 0.5s opacity, 0.5s hidden;
+          }
       }
   }
 

@@ -39,19 +39,44 @@ module.exports = {
       },
       {
         test: /\.(otf|ttf|eot|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-        loader: ['file-loader?name=assets/[name].[ext]']
-      },
-      {
-        test: /\.(gif|jpe?g|png|svg)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: 'assets/[name].[ext]'
+              name: 'assets/fonts/[name].[ext]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(gif|jpe?g|png|svg)$/,
+        include: [
+          path.resolve(__dirname, 'src/images')
+        ],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/images/content/[name].[ext]'
             }
           },
           {
             loader: 'image-webpack-loader'
+          }
+        ]
+      },
+      {
+        test: /\.(gif|jpe?g|png|svg)$/,
+        include: [
+          path.resolve(__dirname, 'src/styles/assets/images')
+        ],
+        use: [
+          {
+            loader: 'base64-inline-loader',
+            options: {
+              limit: 5000,
+              name: 'assets/images/ui/[name].[ext]'
+            }
           }
         ]
       }

@@ -2,12 +2,7 @@ $vs-contacts-contactUs-shift: 45px;
 
 .contactsPage {
   .contactUs {
-    padding-top: (145px - $vs-contacts-contactUs-shift);
     background: $vs-color-lightGrey1;
-
-    @media (min-width: $vs-breakpoint-md) {
-      padding-top: (190px - $vs-contacts-contactUs-shift);
-    }
 
     .contactUsContentBlock {
       position: relative;
@@ -15,11 +10,16 @@ $vs-contacts-contactUs-shift: 45px;
       z-index: 1;
       display: flex;
       flex-direction: column;
+      padding-top: (120px - $vs-contacts-contactUs-shift);
     }
 
     .blockMsg {
       @media (min-width: $vs-breakpoint-md) {
         width: 700px;
+      }
+
+      &-text {
+        margin: 0;
       }
     }
 
@@ -36,11 +36,11 @@ $vs-contacts-contactUs-shift: 45px;
     }
 
     .contactUsForm {
-      padding: 35px 20px 50px;
+      padding: 35px 20px 30px;
       background: $vs-color-white;
 
       @media (min-width: $vs-breakpoint-sm) {
-        padding: 35px 40px 50px;
+        padding: 35px 40px 30px;
       }
 
       @media (min-width: $vs-breakpoint-md) {
@@ -86,16 +86,16 @@ $vs-contacts-contactUs-shift: 45px;
         }
 
         textarea {
-          height: 185px;
+          height: 95px;
         }
       }
 
       &-actions {
         text-align: left;
 
-        //@media (min-width: $vs-breakpoint-md) {
-        //  text-align: right;
-        //}
+        @media (min-width: $vs-breakpoint-md) {
+          text-align: right;
+        }
       }
     }
 
@@ -103,7 +103,7 @@ $vs-contacts-contactUs-shift: 45px;
       @include font-muller();
       display: flex;
       flex-direction: column;
-      padding: 35px 20px 50px;
+      padding: 35px 20px 30px;
       background: $vs-color-darkRed1;
       background: linear-gradient(to bottom, $vs-color-red1 0%, $vs-color-darkRed1 100%);
       font-size: 0.66rem;
@@ -111,7 +111,7 @@ $vs-contacts-contactUs-shift: 45px;
       color: $vs-color-white;
 
       @media (min-width: $vs-breakpoint-sm) {
-        padding: 35px 40px 50px;
+        padding: 35px 40px 30px;
       }
 
       @media (min-width: $vs-breakpoint-md) {
@@ -178,16 +178,7 @@ $vs-contacts-contactUs-shift: 45px;
   }
 
   .partnership {
-    padding: (100px + $vs-contacts-contactUs-shift) 0 130px;
-
-    @media (min-width: $vs-breakpoint-md) {
-      padding: (200px + $vs-contacts-contactUs-shift) 0 130px;
-    }
-
-    .partnershipContentBlock {
-      border-top: 1px solid $vs-color-lightGrey3;
-      padding-top: 130px;
-    }
+    padding: (95px + $vs-contacts-contactUs-shift) 0 95px;
 
     .blockMsg {
       @media (min-width: $vs-breakpoint-md) {
@@ -236,13 +227,20 @@ $vs-contacts-contactUs-shift: 45px;
           margin-top: 25px;
 
           li + li {
-            margin-left: 25px;
+            margin-left: 15px;
+
+            @media (min-width: $vs-breakpoint-sm) {
+              margin-left: 25px;
+            }
           }
 
           li:last-child {
-            margin-left: 22px;
             border-left: 1px solid $vs-color-lightGrey3;
-            padding-left: 22px;
+            padding-left: 15px;
+
+            @media (min-width: $vs-breakpoint-sm) {
+              padding-left: 25px;
+            }
           }
 
           a {

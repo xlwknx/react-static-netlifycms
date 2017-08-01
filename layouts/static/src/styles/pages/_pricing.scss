@@ -1,9 +1,12 @@
 .pricingPage {
   .intro {
     @include block-bg($vs-color-darkBlue5, 980px);
-    min-height: 980px;
     background-image: url("../assets/images/bg/pricing/pricing-intro-bg@2x.jpg");
     background-size: 2560px 980px;
+
+    .introContentBlock {
+      padding: 120px 0 0;
+    }
 
     .blockMsg {
       text-align: center;
@@ -13,8 +16,8 @@
         width: 720px;
       }
 
-      &-headline {
-        line-height: 1.5;
+      &-text {
+        margin: 0;
       }
     }
   }
@@ -24,82 +27,85 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 50px;
+      margin-top: 70px;
+      padding: 0 0 60px;
     }
 
-    .pricingPlanItem {
-      text-align: center;
+      .pricingPlanItem {
+        padding: 35px 50px;
 
-      &-price {
-        margin-top: 30px;
-        font-size: 1.94rem;
-
-        sup {
-          font-size: 1.38rem;
+        &:not(.comparisonItem--highlight) {
+          @media (min-width: $vs-breakpoint-lg) {
+            margin: 10px 0;
+          }
         }
 
-        strong {
-          font-size: 2.44rem;
-          font-weight: normal;
+        &--highlight {
+          padding: 45px 50px;
+
+          .pricingPlanItem-price {
+            strong {
+              font-weight: normal;
+            }
+          }
+
+          .pricingPlanItem-features {
+            li + li:before {
+              background: $vs-color-white;
+            }
+          }
         }
 
-        sub {
-          font-size: 1.11rem;
-          bottom: 0;
-        }
-      }
+        &-price {
+          margin-top: 20px;
+          font-size: 1.94rem;
 
-      &-features {
-        margin-top: 30px;
-        font-size: 0.77rem;
-
-        li + li:before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          width: 150px;
-          height: 1px;
-          margin: 0 auto;
-          background: $vs-color-lightGrey3;
-        }
-      }
-
-      &-feature {
-        position: relative;
-        padding: 25px 0;
-
-        &--disabled {
-          color: $vs-color-lightGrey3;
-        }
-      }
-
-      &-link {
-        margin-top: 35px;
-      }
-
-      &--highlight {
-        .pricingPlanItem-price {
-          color: $vs-color-lightRed2;
+          sup {
+            font-size: 1.38rem;
+          }
 
           strong {
+            font-size: 2.44rem;
             font-weight: normal;
-            color: $vs-color-white;
+          }
+
+          sub {
+            font-size: 1.11rem;
+            bottom: 0;
           }
         }
 
-        .pricingPlanItem-features {
-          li + li:before {
-            background: $vs-color-lightRed3;
-          }
+        &-features {
+          font-size: 0.77rem;
 
-          .pricingPlanItem-feature--disabled {
-            color: $vs-color-lightRed3;
+          li + li:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            margin: 0 auto;
+            background: $vs-color-grey;
+            opacity: 0.1;
           }
+        }
+
+        &-feature {
+          position: relative;
+          padding: 18px 0;
+
+          &--disabled {
+            & > span {
+              opacity: 0.2;
+            }
+          }
+        }
+
+        &-action {
+          margin-top: 20px;
         }
       }
-    }
 
     .pricingPlansDisclaimer {
       position: fixed;
@@ -123,7 +129,7 @@
   .enterprise {
     position: relative;
     z-index: 2;
-    margin-top: 110px;
+    margin-top: 80px;
 
     .enterpriseContentBlock {
       display: flex;
@@ -239,19 +245,15 @@
   .includes {
     position: relative;
     z-index: 1;
-    margin-top: -90px;
-    padding: 90px 0 270px;
+    margin-top: -130px;
+    padding-top: 130px;
     background: $vs-color-lightGrey1;
 
     .includesContentBlock {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 150px 0;
-
-      @media (min-width: $vs-breakpoint-md) {
-        padding: 190px 0;
-      }
+      padding: 100px 0 150px;
     }
 
     .blockMsg {
@@ -265,6 +267,7 @@
     .includesList {
       display: flex;
       flex-direction: column;
+      align-items: center;
       margin-top: 95px;
 
       @media (min-width: $vs-breakpoint-md) {
@@ -283,7 +286,6 @@
     }
 
       .includesItem {
-        align-self: flex-start;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -294,7 +296,8 @@
         text-align: center;
 
         @media (min-width: $vs-breakpoint-md) {
-          max-width: 34%;
+          width: auto;
+          max-width: 30%;
         }
 
         &-image {
@@ -313,46 +316,46 @@
         }
 
         &-text {
-          @include blockMsg-text(10px);
+          @include blockMsg-text(5px);
         }
       }
   }
 
   .conclusion {
-    margin-top: -250px;
-
-    .conclusionContentBlock {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+    margin-bottom: -30px;
+    padding-top: 80px;
 
     .blockMsg {
-      position: relative;
-      z-index: 2;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      border-radius: 3px;
-      padding: 85px 55px;
-      text-align: center;
-      background: $vs-color-darkRed1;
-      background: linear-gradient(to right, $vs-color-red1 0%, $vs-color-darkRed1 100%);
-      box-shadow: 0 25px 20px -20px rgba($vs-color-darkRed2, 0.5);
 
       @media (min-width: $vs-breakpoint-md) {
-        width: 850px;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      @media (min-width: $vs-breakpoint-lg) {
+        justify-content: space-between;
       }
 
       &-headline {
         font-size: 1.55rem;
-        color: $vs-color-white;
+        text-align: center;
+
+        @media (min-width: $vs-breakpoint-md) {
+          text-align: left;
+        }
+
+        @media (min-width: $vs-breakpoint-lg) {
+          margin-left: 65px;
+        }
       }
 
       &-links {
-        margin-top: 40px;
+        @media (min-width: $vs-breakpoint-md) {
+          margin: 0;
+        }
       }
     }
   }

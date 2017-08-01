@@ -99,7 +99,7 @@
       }
 
       li + li {
-        margin-left: 25px;
+        margin-left: 23px;
       }
 
       a {
@@ -116,7 +116,7 @@
     margin: 50px 0 0;
 
     @media (min-width: $vs-breakpoint-md) {
-      flex-basis: 790px;
+      flex-basis: 890px;
       flex-wrap: nowrap;
       margin: 0 0 0 50px;
     }
@@ -131,7 +131,7 @@
       }
 
       @media (min-width: $vs-breakpoint-md) {
-        min-width: 25%;
+        min-width: 20%;
         margin-bottom: 0;
       }
 
@@ -152,7 +152,7 @@
       }
 
       &-sources {
-        @media (min-width: $vs-breakpoint-md) {
+        @media (min-width: $vs-breakpoint-lg) {
           max-width: 45%;
 
           ul {
@@ -163,6 +163,12 @@
             flex-basis: 50%;
           }
         }
+      }
+
+      &-newsletter {
+        min-width: 245px;
+        padding: 0;
+        max-width: 100%;
       }
     }
   }
