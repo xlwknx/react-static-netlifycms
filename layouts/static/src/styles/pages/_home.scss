@@ -171,13 +171,34 @@
     }
 
     .useCaseList {
+      display: none;
       position: relative;
       z-index: 1;
       max-width: 100%;
-      margin-top: 240px;
+      margin-top: 120px;
 
       @media (min-width: $vs-breakpoint-md) {
-        margin-top: 120px;
+        display: block;
+      }
+
+      &-caption {
+        @include block-caption(5.55rem, 5.55rem);
+        position: absolute;
+        z-index: -1;
+        top: -100px;
+
+        @media (min-width: $vs-breakpoint-md) {
+          top: 0;
+          padding: 0 15px;
+        }
+      }
+
+      &-image {
+        max-width: 100%;
+        width: 1440px;
+        height: 503px;
+        background-image: url("../assets/images/bg/home/home-useCases-desktop@2x.png");
+        background-size: 1440px 503px;
       }
     }
   }
@@ -250,12 +271,12 @@
       @include block-caption(3rem, 4.44rem);
       position: absolute;
       z-index: -1;
-      top: -25px;
+      top: -30px;
       width: 100%;
       text-align: center;
 
       @media (min-width: $vs-breakpoint-md) {
-        top: -35px;
+        top: -65px;
       }
 
       @media (min-width: $vs-breakpoint-lg) {
