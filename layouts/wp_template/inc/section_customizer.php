@@ -54,6 +54,9 @@ class SectionCustomizer
         $frontPageSectionMods = $this->sectionModifications->getFrontPageSectionMods();
 
         return [
+            $frontPageSectionsCustomizer->getAnnouncementSectionCustomizer()
+                                        ->getSection($frontPageSectionMods->getAnnouncementSectionMods()),
+
             $frontPageSectionsCustomizer->getIntroSectionCustomizer()
                                         ->getSection($frontPageSectionMods->getIntroSectionMods()),
 

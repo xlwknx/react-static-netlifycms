@@ -5,6 +5,7 @@ namespace VirgilSecurity\Models;
 
 use VirgilSecurity\Models\Src\LayoutModel;
 
+use VirgilSecurity\Models\FrontPage\AnnouncementSectionModel;
 use VirgilSecurity\Models\FrontPage\IntroSectionModel;
 use VirgilSecurity\Models\FrontPage\UseCasesSectionModel;
 use VirgilSecurity\Models\FrontPage\ServicesSectionModel;
@@ -55,5 +56,11 @@ class FrontPageModel extends LayoutModel
     public function ConclusionSection()
     {
         return new ConclusionSectionModel();
+    }
+
+
+    public function AnnouncementSection()
+    {
+        return new AnnouncementSectionModel();
     }
 }

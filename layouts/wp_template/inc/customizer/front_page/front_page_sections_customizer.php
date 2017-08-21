@@ -3,6 +3,7 @@
 namespace VirgilSecurity\Customizer\FrontPage;
 
 
+use VirgilSecurity\Customizer\FrontPage\AnnouncementSection\AnnouncementSectionCustomizer;
 use VirgilSecurity\Customizer\FrontPage\BenefitsSection\BenefitsSectionCustomizer;
 use VirgilSecurity\Customizer\FrontPage\ClientsSection\ClientsSectionCustomizer;
 use VirgilSecurity\Customizer\FrontPage\ConclusionSection\ConclusionSectionCustomizer;
@@ -22,10 +23,12 @@ class FrontPageSectionsCustomizer
     protected $servicesSectionCustomizer;
     protected $usageSectionCustomizer;
     protected $useCasesSectionCustomizer;
+    protected $announcementSectionCustomizer;
 
 
     public function __construct($config, WP_Customize_Manager $wpCustomizer)
     {
+        $this->announcementSectionCustomizer = new AnnouncementSectionCustomizer($config, $wpCustomizer);
         $this->introSectionCustomizer = new IntroSectionCustomizer($config, $wpCustomizer);
         $this->benefitsSectionCustomizer = new BenefitsSectionCustomizer($config, $wpCustomizer);
         $this->clientsSectionCustomizer = new ClientsSectionCustomizer($config, $wpCustomizer);
@@ -97,6 +100,15 @@ class FrontPageSectionsCustomizer
     public function getUseCasesSectionCustomizer()
     {
         return $this->useCasesSectionCustomizer;
+    }
+
+
+    /**
+     * @return AnnouncementSectionCustomizer
+     */
+    public function getAnnouncementSectionCustomizer()
+    {
+        return $this->announcementSectionCustomizer;
     }
 
 }

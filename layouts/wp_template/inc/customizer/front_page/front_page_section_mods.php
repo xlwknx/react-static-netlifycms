@@ -3,6 +3,7 @@
 namespace VirgilSecurity\Customizer\FrontPage;
 
 
+use VirgilSecurity\Customizer\FrontPage\AnnouncementSection\Modifications\Sections\AnnouncementSectionMods;
 use VirgilSecurity\Customizer\FrontPage\BenefitsSection\Modifications\Sections\BenefitsSectionMods;
 use VirgilSecurity\Customizer\FrontPage\ClientsSection\Modifications\Sections\ClientsSectionMods;
 use VirgilSecurity\Customizer\FrontPage\ConclusionSection\Modifications\Sections\ConclusionSectionMods;
@@ -37,9 +38,13 @@ class FrontPageSectionMods extends BaseSectionMods
     /** @var ConclusionSectionMods */
     protected $conclusionSectionMods;
 
+    /** @var AnnouncementSectionMods */
+    protected $announcementSectionMods;
+
 
     public function __construct()
     {
+        $this->announcementSectionMods = new AnnouncementSectionMods();
         $this->introSectionMods = new IntroSectionMods();
         $this->useCasesSectionMods = new UseCasesSectionMods();
         $this->servicesSectionMods = new ServicesSectionMods();
@@ -92,6 +97,12 @@ class FrontPageSectionMods extends BaseSectionMods
     }
 
 
+    public function getAnnouncementSectionMods()
+    {
+        return $this->announcementSectionMods;
+    }
+
+
     public function setupDefaults()
     {
         $this->introSectionMods->setupDefaults();
@@ -101,5 +112,6 @@ class FrontPageSectionMods extends BaseSectionMods
         $this->benefitsSectionMods->setupDefaults();
         $this->conclusionSectionMods->setupDefaults();
         $this->clientsSectionMods->setupDefaults();
+        $this->announcementSectionMods->setupDefaults();
     }
 }
