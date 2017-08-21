@@ -13,17 +13,24 @@
                             {% endfor %}
                         </div>
                     </div>
-                    <ul class="introLangList">
-                        {% for lang in intro.langs %}
-                            <li>
-                                <a href="{{ lang.lang_url }}">
-                                    <img width="{{ lang.width }}" height="{{ lang.height }}"
-                                         src="{{ lang.lang_image.src }}"
-                                         alt="{{ lang.lang_image.alt|shortcodes }}">
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
+                    <div class="introServices">
+                        <h2 class="introServices-headline">{{ intro.services.headline }}</h2>
+                        <ul class="introServiceList">
+                            {% for service in intro.services.collection %}
+                                <li class="introServiceItem tooltip">
+                                    <a href="{{ service.url }}" class="introServiceItem-link">
+                                        <img width="{{ service.width }}" height="{{ service.height }}"
+                                             src="{{ service.image.src }}"
+                                             alt="{{ service.image.alt|shortcodes }}">
+                                    </a>
+                                    <div class="tooltipContent">
+                                        <h3 class="tooltipContent-headline">{{ service.tooltip_headline }}</h3>
+                                        <p class="tooltipContent-text">{{ service.tooltip_text }}</p>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
             </div>
         {% endblock %}

@@ -1,8 +1,10 @@
 <?php
+
 namespace VirgilSecurity\Customizer\FrontPage\IntroSection\Modifications\Sections;
 
 
-use VirgilSecurity\Customizer\FrontPage\IntroSection\Modifications\IntroLangsMod;
+use VirgilSecurity\Customizer\FrontPage\IntroSection\Modifications\IntroServicesHeadlineMod;
+use VirgilSecurity\Customizer\FrontPage\IntroSection\Modifications\IntroServicesMod;
 use VirgilSecurity\Customizer\FrontPage\IntroSection\Modifications\IntroLinksMod;
 use VirgilSecurity\Customizer\FrontPage\IntroSection\Modifications\IntroMsgMod;
 use VirgilSecurity\Customizer\Src\BaseSectionMods;
@@ -11,7 +13,8 @@ class IntroSectionMods extends BaseSectionMods
 {
     protected $introLinksMod;
     protected $introMsgMod;
-    protected $introLangsMod;
+    protected $introServicesMod;
+    protected $introServicesHeadlineMod;
 
 
     public function setupDefaults()
@@ -20,7 +23,8 @@ class IntroSectionMods extends BaseSectionMods
             [
                 $this->getIntroLinksMod(),
                 $this->getIntroMsgMod(),
-                $this->getIntroLangsMod()
+                $this->getIntroServicesMod(),
+                $this->getIntroServicesHeadlineMod(),
             ]
         );
     }
@@ -46,13 +50,23 @@ class IntroSectionMods extends BaseSectionMods
     }
 
 
-    public function getIntroLangsMod()
+    public function getIntroServicesMod()
     {
-        if ($this->introLangsMod == null) {
-            $this->introLangsMod = new IntroLangsMod();
+        if ($this->introServicesMod == null) {
+            $this->introServicesMod = new IntroServicesMod();
         }
 
-        return $this->introLangsMod;
+        return $this->introServicesMod;
+    }
+
+
+    public function getIntroServicesHeadlineMod()
+    {
+        if ($this->introServicesHeadlineMod == null) {
+            $this->introServicesHeadlineMod = new IntroServicesHeadlineMod();
+        }
+
+        return $this->introServicesHeadlineMod;
     }
 
 }

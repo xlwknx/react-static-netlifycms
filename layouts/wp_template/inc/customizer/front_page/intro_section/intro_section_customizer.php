@@ -3,9 +3,12 @@
 namespace VirgilSecurity\Customizer\FrontPage\IntroSection;
 
 
+use VirgilSecurity\Customizer\Fields\TextField;
 use VirgilSecurity\Customizer\FrontPage\IntroSection\Fields\IntroMsgField;
-use VirgilSecurity\Customizer\FrontPage\IntroSection\Groups\IntroLangsGroup;
+use VirgilSecurity\Customizer\FrontPage\IntroSection\Fields\IntroServicesHeadlineField;
+use VirgilSecurity\Customizer\FrontPage\IntroSection\Groups\IntroServicesGroup;
 use VirgilSecurity\Customizer\FrontPage\IntroSection\Groups\IntroLinksGroup;
+use VirgilSecurity\Customizer\FrontPage\IntroSection\Modifications\IntroServicesHeadlineMod;
 use VirgilSecurity\Customizer\FrontPage\IntroSection\Modifications\Sections\IntroSectionMods;
 
 use WP_Customize_Manager;
@@ -38,7 +41,11 @@ class IntroSectionCustomizer
         );
 
         $section->addField(
-            IntroLangsGroup::createWithMod($introSectionMods->getIntroLangsMod())
+            IntroServicesHeadlineField::createWithMod($introSectionMods->getIntroServicesHeadlineMod())
+        );
+
+        $section->addField(
+            IntroServicesGroup::createWithMod($introSectionMods->getIntroServicesMod())
         );
 
         return $section;

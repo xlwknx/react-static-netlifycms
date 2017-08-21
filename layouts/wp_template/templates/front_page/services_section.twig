@@ -15,11 +15,12 @@
                     {% for service in services.collection %}
                         <li class="serviceItem" data-tilt data-tilt-max="15">
                             <a href="{{ service.url }}" class="serviceItem-link">
-
-                                <img width="{{ service.width }}" height="{{ service.height }}"
-                                     src="{{ service.image.src }}"
-                                     class="serviceItem-image" alt="{{ service.image.alt|shortcodes }}">
-
+                                <span class="serviceItem-image">
+                                    <img height="{{ service.height }}"
+                                         width="{{ service.width }}"
+                                         src="{{ service.image.src }}"
+                                         alt="{{ service.image.alt|shortcodes }}">
+                                </span>
                                 <span class="serviceItem-linkText">{{ service.text|shortcodes }}</span>
                                 <span class="serviceItem-linkHoverText">
                                     <span>{{ service.hover_text|shortcodes }}</span>

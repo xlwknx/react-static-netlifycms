@@ -8,13 +8,16 @@ use VirgilSecurity\SectionModifications;
 
 call_user_func(
     function () {
-
         $section_mods = SectionModifications::getInstance();
-        //$section_mods->setupDefaults();
+
+        $migrations = new VirgilSecurity\Migrations();
 
         if (!is_customize_preview()) {
             return;
         }
+        //$section_mods->setupDefaults();
+        //$migrations->reset();
+        $migrations->migrate();
 
         if (class_exists('Kirki')) {
 

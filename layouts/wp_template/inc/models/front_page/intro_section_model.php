@@ -45,20 +45,29 @@ class IntroSectionModel extends BaseSectionModel
     }
 
 
-    public function Langs()
+    public function Services()
     {
-        $introLangsMod = $this->sectionMods->getIntroLangsMod();
+        $introServicesMod = $this->sectionMods->getIntroServicesMod();
+        $introServicesHeadlineMod = $this->sectionMods->getIntroServicesHeadlineMod();
 
-        if ($introLangsMod->isEnabled()) {
+        $services = [];
 
-            return $this->filterCollection(
-                (array)$introLangsMod->getValue(),
+        if ($introServicesMod->isEnabled()) {
+
+            $services['collection'] = $this->filterCollection(
+                (array)$introServicesMod->getValue(),
                 [
-                    'lang_image' => [
+                    'image' => [
                         [$this, 'imageModValueToModel'],
                     ],
                 ]
             );
         }
+
+        if ($introServicesHeadlineMod->isEnabled()) {
+            $services['headline'] = $introServicesHeadlineMod->getValue();
+        }
+
+        return $services;
     }
 }
