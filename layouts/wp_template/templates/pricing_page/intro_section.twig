@@ -18,21 +18,26 @@
                             <div class="pricingPlanItem-title">{{ plan.title|shortcodes }}</div>
                             <div class="pricingPlanItem-price">
                                 {% if plan.is_free != true %}
-                                    <sup>$</sup><strong>{{ plan.price|shortcodes }}</strong>/<sub>{{ plan.duration|shortcodes }}</sub>
+                                    <sup>$</sup><strong>{{ plan.price|shortcodes }}</strong>/
+                                    <sub>{{ plan.duration|shortcodes }}</sub>
                                 {% else %}
                                     <strong>free</strong>
                                 {% endif %}
                             </div>
                             <ul class="pricingPlanItem-features">
                                 {% for future in plan.features_list %}
-                                    <li class="pricingPlanItem-feature">{{ future|shortcodes }}</li>
+                                    <li class="pricingPlanItem-feature">
+                                        <span>{{ future|shortcodes }}</span>
+                                    </li>
                                 {% endfor %}
 
                                 {% for future in plan.features_list_disabled %}
-                                    <li class="pricingPlanItem-feature pricingPlanItem-feature--disabled">{{ future|shortcodes }}</li>
+                                    <li class="pricingPlanItem-feature pricingPlanItem-feature--disabled">
+                                        <span>{{ future|shortcodes }}</span>
+                                    </li>
                                 {% endfor %}
                             </ul>
-                            <div class="pricingPlanItem-link">
+                            <div class="pricingPlanItem-action">
                                 {% include 'common/link_button/' ~ plan.link.link_button_skin ~ '.twig' with {'link': plan.link} %}
                                 {#<a href="{{ plan.link.url|shortcodes }}"#}
                                 {#class="button-raisedWhiteBorder-static button-disabled">{{ plan.link.text|shortcodes }}</a>#}
