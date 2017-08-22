@@ -7,7 +7,6 @@ use VirgilSecurity\Customizer\ContactsPage\ContactUsSection\Fields\ContactUsCont
 use VirgilSecurity\Customizer\ContactsPage\ContactUsSection\Fields\ContactUsFormCodeField;
 use VirgilSecurity\Customizer\ContactsPage\ContactUsSection\Fields\ContactUsFormIconField;
 use VirgilSecurity\Customizer\ContactsPage\ContactUsSection\Fields\ContactUsFormTitleField;
-use VirgilSecurity\Customizer\ContactsPage\ContactUsSection\Fields\ContactUsHeadlineField;
 use VirgilSecurity\Customizer\ContactsPage\ContactUsSection\Fields\ContactUsTextField;
 use VirgilSecurity\Customizer\ContactsPage\ContactUsSection\Groups\ContactUsContactFieldsGroup;
 use VirgilSecurity\Customizer\ContactsPage\ContactUsSection\Groups\ContactUsContactSocialsGroup;
@@ -33,10 +32,6 @@ class ContactUsSectionCustomizer
     public function getSection(ContactUsSectionMods $contactUsSectionMods)
     {
         $section = new ContactUsSection($this->config, $this->wpCustomizer);
-
-        $section->addField(
-            ContactUsHeadlineField::createWithMod($contactUsSectionMods->getContactUsHeadlineMod())
-        );
 
         $section->addField(
             ContactUsTextField::createWithMod($contactUsSectionMods->getContactUsTextMod())

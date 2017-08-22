@@ -3,7 +3,6 @@
 namespace VirgilSecurity\Customizer\ContactsPage\ContactUsSection\Modifications\Sections;
 
 
-use VirgilSecurity\Customizer\ContactsPage\ContactUsSection\Modifications\ContactUsHeadlineMod;
 use VirgilSecurity\Customizer\ContactsPage\ContactUsSection\Modifications\ContactUsTextMod;
 use VirgilSecurity\Customizer\ContactsPage\ContactUsSection\Modifications\ContactUsFormTitleMod;
 use VirgilSecurity\Customizer\ContactsPage\ContactUsSection\Modifications\ContactUsFormIconMod;
@@ -16,7 +15,6 @@ use VirgilSecurity\Customizer\Src\BaseSectionMods;
 
 class ContactUsSectionMods extends BaseSectionMods
 {
-    protected $ContactUsHeadlineMod;
     protected $ContactUsTextMod;
     protected $ContactUsFormTitleMod;
     protected $ContactUsFormIconMod;
@@ -30,7 +28,6 @@ class ContactUsSectionMods extends BaseSectionMods
     {
         $this->setup(
             [
-                $this->getContactUsHeadlineMod(),
                 $this->getContactUsTextMod(),
                 $this->getContactUsFormTitleMod(),
                 $this->getContactUsFormIconMod(),
@@ -40,16 +37,6 @@ class ContactUsSectionMods extends BaseSectionMods
                 $this->getContactUsContactSocialsMod(),
             ]
         );
-    }
-
-
-    public function getContactUsHeadlineMod()
-    {
-        if ($this->ContactUsHeadlineMod == null) {
-            $this->ContactUsHeadlineMod = new ContactUsHeadlineMod();
-        }
-
-        return $this->ContactUsHeadlineMod;
     }
 
 

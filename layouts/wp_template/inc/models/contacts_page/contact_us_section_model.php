@@ -21,16 +21,6 @@ class ContactUsSectionModel extends BaseSectionModel
     }
 
 
-    public function Headline()
-    {
-        $mod = $this->sectionMods->getContactUsHeadlineMod();
-
-        if ($mod->isEnabled()) {
-            return $mod->getValue();
-        }
-    }
-
-
     public function Text()
     {
         $mod = $this->sectionMods->getContactUsTextMod();
