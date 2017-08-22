@@ -24,5 +24,3 @@ set_theme_mod(
     "features_page_faq_ask_question_headline",
     $loadDefaultContent("features_page_faq_ask_question_headline")
 );
-
-remove_theme_mod("contacts_page_contact_us_headline");
