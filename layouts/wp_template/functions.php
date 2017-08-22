@@ -95,6 +95,8 @@ if (!function_exists('virgilsecurity_setup')) :
         //add_filter('wp_editor_widget_content', 'shortcode_unautop');
         //add_filter('wp_editor_widget_content', 'do_shortcode', 11);
 
+        add_action('wpcf7_init', 'wpcf7_add_shortcode_submit_button');
+
         add_filter(
             'wpcf7_form_elements',
             function ($content) {
@@ -124,6 +126,38 @@ if (!function_exists('virgilsecurity_setup')) :
         if (!$virgilsecurity_section_mods->isInitialized()) {
             $virgilsecurity_section_mods->setupDefaults();
         }
+    }
+
+    function wpcf7_add_shortcode_submit_button()
+    {
+        wpcf7_add_form_tag('submit_button', 'wpcf7_submit_button_shortcode_handler');
+    }
+
+    function wpcf7_submit_button_shortcode_handler($tag)
+    {
+        $tag = new WPCF7_FormTag($tag);
+
+        $class = wpcf7_form_controls_class($tag->type);
+
+        $atts = [];
+
+        $atts['class'] = $tag->get_class_option($class);
+        $atts['id'] = $tag->get_id_option();
+        $atts['tabindex'] = $tag->get_option('tabindex', 'int', true);
+
+        $value = isset($tag->values[0]) ? $tag->values[0] : '';
+
+        if (empty($value)) {
+            $value = __('Send', 'contact-form-7');
+        }
+
+        $atts['type'] = 'submit';
+
+        $atts = wpcf7_format_atts($atts);
+
+        $html = sprintf('<button %1$s>%2$s</button>', $atts, $value);
+
+        return $html;
     }
 
     function virgilsecurity_load_admin_style()

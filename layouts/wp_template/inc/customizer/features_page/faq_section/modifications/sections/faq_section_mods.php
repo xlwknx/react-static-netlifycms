@@ -3,6 +3,8 @@
 namespace VirgilSecurity\Customizer\FeaturesPage\FaqSection\Modifications\Sections;
 
 
+use VirgilSecurity\Customizer\FeaturesPage\FaqSection\Modifications\FaqAskQuestionHeadlineMod;
+use VirgilSecurity\Customizer\FeaturesPage\FaqSection\Modifications\FaqAskQuestionMod;
 use VirgilSecurity\Customizer\FeaturesPage\FaqSection\Modifications\FaqCaptionMod;
 use VirgilSecurity\Customizer\FeaturesPage\FaqSection\Modifications\FaqQuestionsListMod;
 
@@ -12,6 +14,8 @@ class FaqSectionMods extends BaseSectionMods
 {
     protected $FaqCaptionMod;
     protected $FaqQuestionsListMod;
+    protected $faqAskQuestionFormMod;
+    protected $faqAskQuestionHeadlineMod;
 
 
     public function setupDefaults()
@@ -20,6 +24,8 @@ class FaqSectionMods extends BaseSectionMods
             [
                 $this->getFaqCaptionMod(),
                 $this->getFaqQuestionsListMod(),
+                $this->getFaqAskQuestionMod(),
+                $this->getFaqAskQuestionHeadlineMod(),
             ]
         );
     }
@@ -42,6 +48,26 @@ class FaqSectionMods extends BaseSectionMods
         }
 
         return $this->FaqQuestionsListMod;
+    }
+
+
+    public function getFaqAskQuestionMod()
+    {
+        if ($this->faqAskQuestionFormMod == null) {
+            $this->faqAskQuestionFormMod = new FaqAskQuestionMod();
+        }
+
+        return $this->faqAskQuestionFormMod;
+    }
+
+
+    public function getFaqAskQuestionHeadlineMod()
+    {
+        if ($this->faqAskQuestionHeadlineMod == null) {
+            $this->faqAskQuestionHeadlineMod = new FaqAskQuestionHeadlineMod();
+        }
+
+        return $this->faqAskQuestionHeadlineMod;
     }
 
 

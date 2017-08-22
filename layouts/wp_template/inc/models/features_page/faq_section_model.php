@@ -39,4 +39,23 @@ class FaqSectionModel extends BaseSectionModel
             return (array)$mod->getValue();
         }
     }
+
+
+    public function Form()
+    {
+        $form = [];
+
+        $headlineMod = $this->sectionMods->getFaqAskQuestionHeadlineMod();
+        $formCodeMod = $this->sectionMods->getFaqAskQuestionMod();
+
+        if ($headlineMod->isEnabled()) {
+            $form['headline'] = $headlineMod->getValue();
+        }
+
+        if ($formCodeMod->isEnabled()) {
+            $form['code'] = $formCodeMod->getValue();
+        }
+
+        return $form;
+    }
 }

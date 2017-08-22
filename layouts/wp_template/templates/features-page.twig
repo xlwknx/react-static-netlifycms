@@ -13,6 +13,7 @@
                 {% include 'features_page/components_section.twig' with{ 'components': models.components_section, 'visible': models.components_section.is_show } only %}
                 {% include 'features_page/features_section.twig' with{ 'features': models.features_section, 'visible': models.features_section.is_show } only %}
                 {% include 'features_page/faq_section.twig' with{ 'faq': models.faq_section, 'visible': models.faq.is_show } only %}
+                {% include 'features_page/conclusion_section.twig' with{ 'conclusion': models.conclusion_section, 'visible': models.conclusion_section.is_show } only %}
             </div>
         {% endblock %}
 

@@ -100,8 +100,10 @@ class SectionCustomizer
 
             $featuresPageSectionsCustomizer->getFaqSectionCustomizer()
                                            ->getSection($featuresPageSectionMods->getFaqSectionMods()),
-        ];
 
+            $featuresPageSectionsCustomizer->getConclusionSectionCustomizer()
+                                           ->getSection($featuresPageSectionMods->getConclusionSectionMods()),
+        ];
     }
 
 

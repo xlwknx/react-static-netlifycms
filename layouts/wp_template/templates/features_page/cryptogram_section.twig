@@ -7,7 +7,7 @@
                 <div class="blockMsg">
                     <h2 class="blockMsg-headline">{{ cryptogram.headline|shortcodes }}</h2>
                 </div>
-                <div class="comparisonBlock cryptogramList">
+                <div class="comparisonBlock comparisonBlock--white cryptogramList">
                     {% for cryptogram in cryptogram.collection %}
                         <div class="comparisonItem cryptogramItem {{ loop.index == 2 ? 'comparisonItem--highlight cryptogramItem--highlight' }}">
                             <div class="cryptogramItem-image">

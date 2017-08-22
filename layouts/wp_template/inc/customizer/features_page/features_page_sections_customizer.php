@@ -4,6 +4,7 @@ namespace VirgilSecurity\Customizer\FeaturesPage;
 
 
 use VirgilSecurity\Customizer\FeaturesPage\ComponentsSection\ComponentsSectionCustomizer;
+use VirgilSecurity\Customizer\FeaturesPage\ConclusionSection\ConclusionSectionCustomizer;
 use VirgilSecurity\Customizer\FeaturesPage\FaqSection\FaqSectionCustomizer;
 use VirgilSecurity\Customizer\FeaturesPage\FeaturesSection\FeaturesSectionCustomizer;
 use VirgilSecurity\Customizer\FeaturesPage\CryptogramSection\CryptogramSectionCustomizer;
@@ -18,6 +19,7 @@ class FeaturesPageSectionsCustomizer
     protected $faqSectionCustomizer;
     protected $featuresSectionCustomizer;
     protected $cryptogramSectionCustomizer;
+    protected $conclusionSectionCustomizer;
 
 
     public function __construct($config, WP_Customize_Manager $wpCustomizer)
@@ -25,6 +27,7 @@ class FeaturesPageSectionsCustomizer
         $this->introSectionCustomizer = new IntroSectionCustomizer($config, $wpCustomizer);
         $this->componentsSectionCustomizer = new ComponentsSectionCustomizer($config, $wpCustomizer);
         $this->faqSectionCustomizer = new FaqSectionCustomizer($config, $wpCustomizer);
+        $this->conclusionSectionCustomizer = new ConclusionSectionCustomizer($config, $wpCustomizer);
         $this->featuresSectionCustomizer = new FeaturesSectionCustomizer($config, $wpCustomizer);
         $this->cryptogramSectionCustomizer = new CryptogramSectionCustomizer($config, $wpCustomizer);
     }
@@ -72,5 +75,14 @@ class FeaturesPageSectionsCustomizer
     public function getCryptogramSectionCustomizer()
     {
         return $this->cryptogramSectionCustomizer;
+    }
+
+
+    /**
+     * @return ConclusionSectionCustomizer
+     */
+    public function getConclusionSectionCustomizer()
+    {
+        return $this->conclusionSectionCustomizer;
     }
 }

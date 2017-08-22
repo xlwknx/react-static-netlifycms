@@ -3,6 +3,8 @@
 namespace VirgilSecurity\Customizer\FeaturesPage\FaqSection;
 
 
+use VirgilSecurity\Customizer\FeaturesPage\FaqSection\Fields\FaqAskQuestionFormCodeField;
+use VirgilSecurity\Customizer\FeaturesPage\FaqSection\Fields\FaqAskQuestionFormHeadlineField;
 use VirgilSecurity\Customizer\FeaturesPage\FaqSection\Fields\FaqCaptionField;
 use VirgilSecurity\Customizer\FeaturesPage\FaqSection\Modifications\Sections\FaqSectionMods;
 
@@ -34,6 +36,14 @@ class FaqSectionCustomizer
 
         $section->addField(
             FaqQuestionsListGroup::createWithMod($faqSectionMods->getFaqQuestionsListMod())
+        );
+
+        $section->addField(
+            FaqAskQuestionFormHeadlineField::createWithMod($faqSectionMods->getFaqAskQuestionHeadlineMod())
+        );
+
+        $section->addField(
+            FaqAskQuestionFormCodeField::createWithMod($faqSectionMods->getFaqAskQuestionMod())
         );
 
         return $section;

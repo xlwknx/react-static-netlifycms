@@ -4,6 +4,7 @@ namespace VirgilSecurity\Customizer\FeaturesPage;
 
 
 use VirgilSecurity\Customizer\FeaturesPage\ComponentsSection\Modifications\Sections\ComponentsSectionMods;
+use VirgilSecurity\Customizer\FeaturesPage\ConclusionSection\Modifications\Sections\ConclusionSectionMods;
 use VirgilSecurity\Customizer\FeaturesPage\CryptogramSection\Modifications\Sections\CryptogramSectionMods;
 use VirgilSecurity\Customizer\FeaturesPage\FaqSection\Modifications\Sections\FaqSectionMods;
 use VirgilSecurity\Customizer\FeaturesPage\FeaturesSection\Modifications\Sections\FeaturesSectionMods;
@@ -18,6 +19,7 @@ class FeaturesPageSectionMods extends BaseSectionMods
     protected $componentsSectionMods;
     protected $featuresSectionMods;
     protected $faqSectionMods;
+    protected $conclusionSectionMods;
 
 
     public function __construct()
@@ -27,6 +29,7 @@ class FeaturesPageSectionMods extends BaseSectionMods
         $this->componentsSectionMods = new ComponentsSectionMods();
         $this->featuresSectionMods = new FeaturesSectionMods();
         $this->faqSectionMods = new FaqSectionMods();
+        $this->conclusionSectionMods = new ConclusionSectionMods();
     }
 
 
@@ -82,5 +85,14 @@ class FeaturesPageSectionMods extends BaseSectionMods
     public function getFaqSectionMods()
     {
         return $this->faqSectionMods;
+    }
+
+
+    /**
+     * @return ConclusionSectionMods
+     */
+    public function getConclusionSectionMods()
+    {
+        return $this->conclusionSectionMods;
     }
 }
