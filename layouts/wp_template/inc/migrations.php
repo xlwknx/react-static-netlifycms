@@ -15,18 +15,35 @@ class Migrations
     public function migrate()
     {
         $dir = new DirectoryIterator(self::MIGRATIONS_DIR);
-        $lastMigrationTimestamp = get_theme_mod(self::MIGRATION_TIMESTAMP_MOD, 0);
+        $sortedMigrations = [];
+
         foreach ($dir as $fileinfo) {
             if (!$fileinfo->isDot()) {
-                $migrationTimestamp = $fileinfo->getBasename(".php");
+
+                $sortedMigrations[$fileinfo->getBasename(".php")] = [
+                    'timestamp' => $fileinfo->getBasename(".php"),
+                    'filepath'  => $fileinfo->getRealPath(),
+                ];
+            }
+        }
+
+        ksort($sortedMigrations);
+
+        $lastMigrationTimestamp = get_theme_mod(self::MIGRATION_TIMESTAMP_MOD, 0);
+
+        array_map(
+            function (array $migrationFile) use (&$lastMigrationTimestamp) {
+
+                $migrationTimestamp = $migrationFile['timestamp'];
 
                 if ($lastMigrationTimestamp < $migrationTimestamp) {
-                    require $fileinfo->getRealPath();
+                    require $migrationFile['filepath'];
 
                     $lastMigrationTimestamp = $migrationTimestamp;
                 }
-            }
-        }
+            },
+            $sortedMigrations
+        );
 
         set_theme_mod(self::MIGRATION_TIMESTAMP_MOD, $lastMigrationTimestamp);
     }

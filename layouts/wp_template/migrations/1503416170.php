@@ -49,7 +49,7 @@ foreach ($conclusionLinks as &$item) {
 }
 
 set_theme_mod('pricing_page_conclusion_links', $conclusionLinks);
-
 set_theme_mod('pricing_page_conclusion_headline', 'Ready to get started?<br>Get in touch, or create an account.');
+set_theme_mod('is_enabled_hp_announcement_section', false);
 
 
