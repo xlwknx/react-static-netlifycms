@@ -111,7 +111,8 @@
       &-arrow {
         display: inline-block;
         height: 14px;
-        width: 5px;
+        width: 6px;
+        margin-right: 2px;
       }
     }
 
@@ -170,6 +171,7 @@
         flex-wrap: wrap;
         max-width: 100%;
         margin: 5px -12px -12px;
+        position: relative;
       }
 
         .introServiceItem {
@@ -178,6 +180,7 @@
           &-link {
             display: block;
             height: 50px;
+            position: relative;
 
             img {
               position: relative;
