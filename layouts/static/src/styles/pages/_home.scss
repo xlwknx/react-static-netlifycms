@@ -66,6 +66,55 @@
     background-position: center bottom;
     background-size: 2560px 920px;
 
+    .announcement {
+      background-color: rgba($vs-color-white, 0.1);
+      border-radius: 15px;
+      font-family: Muller;
+      font-weight: 200;
+      text-transform: uppercase;
+      letter-spacing: 0.75px;
+      opacity: 1;
+      height: 22px;
+      width: 260px;
+      display: flex;
+      align-items: center;
+      align-self: flex-start;
+      vertical-align: middle;
+      justify-content: space-around;
+
+      a {
+        font-size: 11px;
+        line-height: 11px;
+        color: $vs-color-white;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 248px;
+      }
+      
+      &-icon {
+        background-color:$vs-color-darkRed1; 
+        font-size: 8px;
+        height: 14px;
+        padding-top: 1px;
+        width: 30px;
+        line-height: 14px;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      &-text {
+        position: relative;
+        bottom: -1px;
+      }
+
+      &-arrow {
+        display: inline-block;
+        height: 14px;
+        width: 5px;
+      }
+    }
+
     .introContentBlock {
       align-items: initial;
       justify-content: initial;
@@ -124,7 +173,7 @@
       }
 
         .introServiceItem {
-          margin: 12px;
+          padding: 12px;
 
           &-link {
             display: block;
