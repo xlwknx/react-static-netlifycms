@@ -107,8 +107,25 @@
           }
         }
 
-        &-image {
-          align-self: center;
+        &-header {
+          display: flex;
+          align-items: center;
+        }
+
+        &-text {
+          flex-direction: column;
+          
+          margin-top: 5px;
+          margin-left: 15px;
+        }
+
+        &-title {
+          font-size: 16pt;
+        }
+
+        &-subtitle {
+          color: $vs-color-lightGrey4;
+          font-size: 9pt;
         }
 
         &-features {
