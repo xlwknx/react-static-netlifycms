@@ -61,14 +61,14 @@
 
   .intro {
     //@include block-bg($vs-color-black);
-    background-color: $vs-color-black;
-    background-image: url("../assets/images/bg/home/home-intro-bg@2x.jpg");
+
+    background-image: url("../assets/images/bg/home/home-intro-bg@2x.png");
     background-position: center bottom;
-    background-size: 2560px 920px;
+    background-size: 1970px 710px;
 
     .announcement {
       background-color: rgba($vs-color-white, 0.1);
-      border-radius: 15px;
+      border-radius: 10px;
       font-family: Muller;
       font-weight: 200;
       text-transform: uppercase;
@@ -99,7 +99,7 @@
         padding-top: 1px;
         width: 30px;
         line-height: 14px;
-        border-radius: 10px;
+        border-radius: 6px;
         text-align: center;
       }
 
@@ -119,7 +119,7 @@
     .introContentBlock {
       align-items: initial;
       justify-content: initial;
-      min-height: 810px;
+      min-height: 710px;
       padding-bottom: 45px;
 
       //@media (min-width: $vs-breakpoint-sm) and (max-width: $vs-breakpoint-lg) {
@@ -128,12 +128,8 @@
     }
 
     .blockMsg {
-      margin-top: 55px;
+      margin-top: 45px;
       color: $vs-color-white;
-
-      @media (min-width: $vs-breakpoint-lg) {
-        margin-top: 100px;
-      }
 
       &-headline {
         line-height: 1.5;
@@ -158,7 +154,7 @@
     }
 
     .introServices {
-      margin-top: 80px;
+      margin-top: 60px;
 
       &-headline {
         @include font-muller-bold();
@@ -213,7 +209,7 @@
 
       &-links {
         a + a {
-          margin-top: 10px;
+          margin-top: 48px;
 
           @media (min-width: $vs-breakpoint-sm) {
             margin-top: 0;

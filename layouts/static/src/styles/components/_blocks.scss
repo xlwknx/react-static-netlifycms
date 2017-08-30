@@ -28,7 +28,7 @@
     }
 
     &-links {
-      @include blockMsg-links();
+      @include blockMsg-links(49px);
     }
   }
 
