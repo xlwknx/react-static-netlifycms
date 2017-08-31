@@ -75,7 +75,7 @@
       letter-spacing: 0.75px;
       opacity: 1;
       height: 22px;
-      width: 260px;
+      min-width: 260px;
       display: flex;
       align-items: center;
       align-self: flex-start;
@@ -89,7 +89,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: space-between;
-        width: 248px;
+        min-width: 248px;
       }
       
       &-icon {

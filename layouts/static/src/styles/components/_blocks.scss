@@ -1,4 +1,12 @@
 .page {
+  background-color: $vs-color-white;
+
+  @media (min-width: $vs-breakpoint-xxl) {
+    max-width: 1922px;
+    border-left: 1px solid $vs-color-lightGrey3;
+    margin: 0 auto;
+  }
+
   .intro {
     background-repeat: no-repeat;
     background-position: center top;
