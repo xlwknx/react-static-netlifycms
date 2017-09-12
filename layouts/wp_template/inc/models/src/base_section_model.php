@@ -34,7 +34,11 @@ abstract class BaseSectionModel extends BaseModel
             return;
         }
 
-        return explode("\n\n", $items);
+        foreach ($itemsList = explode("\n", $items) as &$item) {
+            $item = ltrim($item, '-');
+        }
+
+        return $itemsList;
     }
 
 

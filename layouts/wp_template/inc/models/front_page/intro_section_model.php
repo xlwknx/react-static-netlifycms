@@ -70,4 +70,23 @@ class IntroSectionModel extends BaseSectionModel
 
         return $services;
     }
+
+
+    public function Announcement()
+    {
+        $announcement = [];
+
+        $introAnnounceMsgMod = $this->sectionMods->getIntroAnnounceMsgMod();
+        $introAnnounceLinkMod = $this->sectionMods->getIntroAnnounceLinkMod();
+
+        if ($introAnnounceLinkMod->isEnabled()) {
+            $announcement['url'] = $introAnnounceLinkMod->getValue();
+        }
+
+        if ($introAnnounceMsgMod->isEnabled()) {
+            $announcement['text'] = $introAnnounceMsgMod->getValue();
+        }
+
+        return $announcement;
+    }
 }
