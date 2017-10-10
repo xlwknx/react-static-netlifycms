@@ -60,16 +60,27 @@
   }
 
   .intro {
-    //@include block-bg($vs-color-black);
 
-    background-image: url("../assets/images/bg/home/home-intro-bg@2x.png");
+    background-image: url("../assets/images/bg/home/home-intro-bg.jpg");
     background-position: center bottom;
-    background-size: 1970px 710px;
+    background-size: 1920px 710px;
+
+    @media
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      background-image: url("../assets/images/bg/home/home-intro-bg@2x.jpg");
+    }
+
+    @media
+    (max-width: 480px) {
+      background-image: url("../assets/images/bg/home/home-intro-bg-mobile@2x.jpg");
+      background-size: cover;
+    }
 
     .announcement {
       background-color: rgba($vs-color-white, 0.1);
       border-radius: 10px;
-      font-family: Muller;
+      font-family: Muller, sans-serif;
       font-weight: 200;
       text-transform: uppercase;
       letter-spacing: 0.75px;
