@@ -257,8 +257,14 @@ $vs-contacts-contactUs-shift: 45px;
 
   .map {
     margin-bottom: -$vs-footer-padding;
-    background: url("../assets/images/bg/contacts/contacts-map-bg@2x.jpg") center top no-repeat;
+    background: url("../assets/images/bg/contacts/contacts-map-bg.jpg") center top no-repeat;
     background-size: 1920px 700px;
+
+    @media
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      background-image: url("../assets/images/bg/contacts/contacts-map-bg@2x.jpg");
+    }
 
     .mapContentBlock {
       display: flex;
