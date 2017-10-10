@@ -1,8 +1,20 @@
 .featuresPage {
   .intro {
     background-color: $vs-color-darkBlue5;
-    background-image: url("../assets/images/bg/features/features-intro-bg@2x.jpg");
-    background-size: 2560px 830px;
+    background-image: url("../assets/images/bg/features/features-intro-bg.jpg");
+    background-size: 1920px 830px;
+
+    @media
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      background-image: url("../assets/images/bg/features/features-intro-bg@2x.jpg");
+    }
+
+    @media
+    (max-width: 480px) {
+      background-image: url("../assets/images/bg/features/features-intro-bg-mobile@2x.jpg");
+      background-size: 480px 830px;
+    }
 
     .introContentBlock {
       justify-content: initial;
@@ -70,8 +82,14 @@
 
   .cryptogram {
     @include block-bg($vs-color-darkBlue5, 580px);
-    background: url("../assets/images/bg/features/features-cryptogram-bg@2x.jpg") center center no-repeat;
-    background-size: 2560px 580px;
+    background: url("../assets/images/bg/features/features-cryptogram-bg.jpg") center center no-repeat;
+    background-size: 1920px 580px;
+
+    @media
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      background-image: url("../assets/images/bg/features/features-cryptogram-bg@2x.jpg");
+    }
 
     @media (min-width: $vs-breakpoint-lg) {
       background-position: center top;
@@ -166,11 +184,17 @@
       width: 1010px;
       height: 900px;
       max-width: 50%;
-      background: url("../assets/images/bg/features/features-components-bg@2x.png") left top no-repeat;
+      background: url("../assets/images/bg/features/features-components-bg.png") left top no-repeat;
       background-size: 1011px 989px;
 
       @media (min-width: $vs-breakpoint-md) {
         display: block;
+      }
+
+      @media
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi) {
+        background-image: url("../assets/images/bg/features/features-components-bg@2x.png");
       }
     }
 
