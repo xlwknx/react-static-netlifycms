@@ -423,8 +423,20 @@
   .usage {
     @include block-bg($vs-color-darkBlue5, 760px);
     padding: 140px 0;
-    background: url("../assets/images/bg/home/home-usage-bg@2x.jpg") center top no-repeat;
-    background-size: 2560px 760px;
+    background: url("../assets/images/bg/home/home-usage-bg.jpg") center top no-repeat;
+    background-size: 1920px 760px;
+
+    @media
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      background-image: url("../assets/images/bg/home/home-usage-bg@2x.jpg");
+    }
+
+    @media
+    (max-width: 480px) {
+      background-image: url("../assets/images/bg/home/home-usage-bg-mobile@2x.jpg");
+      background-size: cover;
+    }
 
     @media (min-width: $vs-breakpoint-lg) {
       padding: 140px 0 0;
