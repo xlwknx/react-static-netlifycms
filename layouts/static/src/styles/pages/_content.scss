@@ -55,6 +55,34 @@
       }
     }
 
+    .termsList {
+      list-style: none; 
+      counter-reset: li;
+      list-style-type: none;
+
+      h2 {
+        font-size: 24px;
+      }
+
+      li:before  {
+        font-weight: bold;
+        counter-increment: li; 
+        content: counters(li,".") ". "
+      }
+
+      li {
+        text-decoration: none;
+      }
+
+      .grayText {
+        color: $vs-color-lightGrey4;        
+      }
+
+      .termsDate {
+        margin: 1em 0;
+      }
+    }
+
     h2 {
       @include font-muller();
       margin-bottom: 18px;
@@ -79,7 +107,7 @@
       margin-top: 35px;
     }
 
-    ul, ol {
+    ul {
       padding: 0 1.5rem;
       list-style: initial;
     }
