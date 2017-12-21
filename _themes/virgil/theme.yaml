@@ -1,7 +1,0 @@
----
-theme_name: Virgil Security
-globals:
-  - 
-    name: phone
-    display: Phone
-    value: 555-555-5555
