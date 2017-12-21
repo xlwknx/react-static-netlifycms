@@ -1,0 +1,14 @@
+ @mixin font-muller($line-height: 1.3) {
+   font-family: "Muller", sans-serif;
+   line-height: $line-height;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+ }
+
+ @mixin font-muller-bold($line-height: 1.3) {
+   font-family: "Muller", sans-serif;
+   font-weight: bold;
+   line-height: $line-height;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+ }

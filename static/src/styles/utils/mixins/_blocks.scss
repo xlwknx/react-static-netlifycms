@@ -1,0 +1,58 @@
+@mixin block-bg($color, $max-height: 100%, $width: 2560px) {
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    margin-left: calc(#{$width} / 2 * -1);
+    z-index: -1;
+    width: $width;
+    height: 100%;
+    max-height: $max-height;
+    background-color: $color;
+  }
+}
+
+@mixin block-caption($font-size-xs: 6.66rem, $font-size-sm: 6.66rem, $font-size-md: 6.66rem) {
+  @include font-muller();
+  font-size: $font-size-xs;
+  font-weight: bold;
+  letter-spacing: 3px;
+  line-height: 1;
+  color: $vs-color-lightGrey7;
+  user-select: none;
+
+  @media (min-width: $vs-breakpoint-sm) {
+    font-size: $font-size-sm;
+  }
+
+  @media (min-width: $vs-breakpoint-md) {
+    font-size: $font-size-md;
+  }
+}
+
+@mixin blockMsg-headline() {
+  @include font-muller();
+  font-size: 1.88rem;
+
+  @media (max-width: $vs-breakpoint-sm) {
+    font-size: 1.3rem;
+  }
+
+  strong {
+    font-weight: normal;
+    color: $vs-color-darkRed1;
+  }
+}
+
+@mixin blockMsg-text($top: 15px) {
+  margin-top: $top;
+  line-height: 1.65;
+}
+
+@mixin blockMsg-links($top: 55px) {
+  margin-top: $top;
+}

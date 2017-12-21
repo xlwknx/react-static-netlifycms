@@ -1,0 +1,29 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+
+    <div class="benefits">
+        <div class="wrapper">
+            {% if benefits.collection %}
+                <div class="benefitsContentBlock">
+                    <ul class="benefitList">
+                        {% for benefit in benefits.collection %}
+                            <li class="benefitItem">
+                                <div class="benefitItem-image">
+                                    <img width="{{ benefit.width }}" height="{{ benefit.height }}"
+                                         src="{{ benefit.image.src }}"
+                                         alt="{{ benefit.image.alt }}">
+                                </div>
+                                <div class="benefitItem-msg">
+                                    <h4 class="benefitItem-headline">{{ benefit.title|shortcodes }}</h4>
+                                    <p class="benefitItem-text">{{ benefit.text|shortcodes }}</p>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

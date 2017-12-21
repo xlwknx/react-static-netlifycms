@@ -1,0 +1,5 @@
+{% block content %}
+    <a href="{{ url|shortcodes }}" class="{{ css }} {{ is_disabled ? 'button-disabled' }}">
+        {% include 'common/icons/'~ icon|default('none') ~'.twig' with {'text': text|shortcodes } %}
+    </a>
+{% endblock %}

@@ -1,0 +1,120 @@
+.contentPage {
+  .intro {
+    @include block-bg($vs-color-darkBlue5);
+    background-image: url("../assets/images/bg/content/content-intro-bg.svg");
+    background-position-y: bottom;
+    background-size: 105%;
+
+    .introContentBlock {
+      height: 400px;
+    }
+
+    .blockMsg {
+      text-align: center;
+      color: $vs-color-white;
+    }
+
+    .introNav {
+      @include font-muller();
+      display: flex;
+      align-items: center;
+      margin-top: 60px;
+      font-size: 0.77rem;
+
+      li {
+        border-bottom: 2px solid transparent;
+        opacity: 0.5;
+        transition: all 0.5s;
+
+        &:hover,
+        &.active {
+          border-color: $vs-color-white;
+          opacity: 1;
+        }
+      }
+
+      li + li {
+        margin-left: 35px;
+      }
+
+      a {
+        display: block;
+        padding: 5px;
+        color: $vs-color-white;
+      }
+    }
+  }
+
+  .article {
+    padding-top: 120px;
+    font-size: 0.88rem;
+
+    .articleContentBlock {
+      @media (min-width: $vs-breakpoint-lg) {
+        padding: 0 190px;
+      }
+    }
+
+    .termsList {
+      list-style: none; 
+      counter-reset: li;
+      list-style-type: none;
+      text-align: justify;
+
+      h2 {
+        font-size: 24px;
+      }
+
+      li:before  {
+        font-weight: bold;
+        counter-increment: li; 
+        content: counters(li,".") ". "
+      }
+
+      li {
+        text-decoration: none;
+      }
+
+      .grayText {
+        color: $vs-color-lightGrey4;        
+      }
+
+      .termsDate {
+        margin: 1em 0;
+      }
+    }
+
+    h2 {
+      @include font-muller();
+      margin-bottom: 18px;
+      font-size: 1.55rem;
+    }
+
+    h3 {
+      margin: 65px 0 35px;
+      font-size: inherit;
+      font-weight: bold;
+    }
+
+    a {
+      color: $vs-color-darkRed1;
+    }
+
+    p {
+      line-height: 1.9;
+    }
+
+    * + p {
+      margin-top: 35px;
+    }
+
+    ul {
+      padding: 0 1.5rem;
+      list-style: initial;
+    }
+
+    li {
+      margin: 0.5rem;
+    }
+  }
+}

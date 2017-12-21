@@ -1,21 +1,19 @@
-/design-v3-static/node_modules
-.idea/cms.virgilsecurity.local.iml
-.idea/*
-vendor/*
-_cache/*
-# OS generated files #
-######################
+/bootstrap/compiled.php
+/vendor
+composer.phar
+composer.lock
+.env.*.php
+.env.php
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
+bower_components
+node_modules
+.template-cache
+*.log
+app/storage/views/
 
+# compiled output
+dist
 
-# Statamic files #
-######################
-!_cache/index.html
-_logs/*
-!_logs/index.html
+# IDEs and editors
+/.idea

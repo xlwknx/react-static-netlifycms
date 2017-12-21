@@ -1,0 +1,11 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+    <div class="article">
+        <div class="wrapper">
+            <div class="articleContentBlock">
+                {{ article.content|shortcodes }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

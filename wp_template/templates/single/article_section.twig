@@ -1,0 +1,59 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+    <div class="article">
+        <div class="wrapper">
+            <div class="articleContentBlock">
+                <div class="articleContent">{{ post.content|shortcodes }}</div>
+                <div class="articleSidebar">
+                    {% if article.related %}
+                        <div class="referenceBlock">
+                            <div class="referenceList">
+                                <h3 class="referenceList-headline">Related posts</h3>
+                                <ul class="referenceList-list">
+                                    {% for related in article.related %}
+                                        <li><a href="{{ related.link }}">{{ related.title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="articleSidebar-actions">
+                        <a href="https://developer.virgilsecurity.com/account/signup" class="button-flatRed">
+                            <span>Start to encrypt</span>
+                            <i class="icon icon-arrowRight-red"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="articleReferenceList">
+                    <div class="articleReference">
+                        {% if post.prev %}
+                            <div class="articleReference-label">Previous</div>
+                            <a href="{{ post.prev.link }}" class="articleReference-link">
+                                <span>{{ post.prev.title }}</span>
+                                <i class="icon icon-arrowRight-black" aria-hidden="true"></i>
+                            </a>
+                            <div class="articleReference-data">
+                                <span>{{ post.prev.author.display_name|shortcodes }}</span> —
+                                <span>{{ post.prev.post_date|shortcodes|date("F jS, Y") }}</span>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="articleReference">
+                        {% if post.next %}
+                            <div class="articleReference-label">Next</div>
+                            <a href="{{ post.next.link }}" class="articleReference-link">
+                                <span>{{ post.next.title }}</span>
+                                <i class="icon icon-arrowRight-black" aria-hidden="true"></i>
+                            </a>
+                            <div class="articleReference-data">
+                                <span>{{ post.next.author.display_name|shortcodes }}</span> —
+                                <span>{{ post.next.post_date|shortcodes|date("F jS, Y") }}</span>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

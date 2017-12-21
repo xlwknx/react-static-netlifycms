@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+
+{% block body_content %}
+    <div class="page articleItemPage">
+        {% block header %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block content %}
+            <div class="container">
+                {% include 'single/intro_section.twig' with{ 'intro': models.intro_section, 'visible': models.intro_section.is_show, 'post': post } only %}
+                {% include 'single/article_section.twig' with{ 'article': models.article_section, 'visible': models.articles_section.is_show, 'post': post, 'pagination': pagination } only %}
+            </div>
+        {% endblock %}
+
+        {% block footer %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}

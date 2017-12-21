@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Virgil Security</title>
+</head>
+<body>
+<div class="page featuresPage" data-vs-page="features">
+  <header class="header">
+    <div class="headerFull" data-vs-sticky-header>
+      <div class="headerLogo">
+        <a href=""><img src="../images/shared/logo-red.svg" width="145" height="47" alt=""></a>
+      </div>
+      <nav class="headerNav">
+        <ul class="firstLevel-list">
+          <li class="firstLevel-item headerNav-home">
+            <a class="firstLevel-itemLink">Home</a>
+          </li>
+          <li class="firstLevel-item headerNav-documentation">
+            <div class="firstLevel-itemLink">Developers</div>
+            <ul class="secondLevel-list">
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">
+                  <i class="icon icon-book-red" aria-hidden="true"></i>
+                  <span>Documentation</span>
+                </a>
+              </li>
+              <li class="secondLevel-item">
+                <div class="thirdLevel-caption">Get started</div>
+                <ul class="thirdLevel-list">
+                  <li class="thirdLevel-item">
+                    <a href="">Encrypted communication</a>
+                  </li>
+                  <li class="thirdLevel-item">
+                    <a href="">Encrypted storage</a>
+                  </li>
+                  <li class="thirdLevel-item">
+                    <a href="">Passwordless Authentication</a>
+                  </li>
+                  <li class="thirdLevel-item">
+                    <a href="">Data Integrity</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">
+                  <i class="icon icon-bookmark-red" aria-hidden="true"></i>
+                  <span>API references</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="firstLevel-item headerNav-about">
+            <div class="firstLevel-itemLink">Company</div>
+            <ul class="secondLevel-list">
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">
+                  <i class="icon icon-shield-red" aria-hidden="true"></i>
+                  <span>About Virgil</span>
+                </a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">
+                  <i class="icon icon-case-red" aria-hidden="true"></i>
+                  <span>Clients</span>
+                </a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">
+                  <i class="icon icon-medium-red" aria-hidden="true"></i>
+                  <span>Blog</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="firstLevel-item headerNav-features">
+            <a class="firstLevel-itemLink">Features</a>
+          </li>
+          <li class="firstLevel-item headerNav-pricing">
+            <a class="firstLevel-itemLink">Pricing</a>
+          </li>
+          <li class="firstLevel-item headerNav-contacts">
+            <a class="firstLevel-itemLink">Contacts</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="headerAuth">
+        <a href="" class="button-flatWhite">Login</a>
+        <a href="" class="button-raisedWhiteBorder">Get started</a>
+      </div>
+      <button data-vs-sideNav-open class="headerOpenButton">
+        <i class="icon icon-menu-red"></i>
+      </button>
+    </div>
+    <div class="headerSideBar" data-vs-sideNav-target>
+      <div class="headerCloseButton">
+        <button data-vs-sideNav-close>
+          <i class="icon icon-close-red"></i>
+        </button>
+      </div>
+      <nav class="headerNav">
+        <ul class="firstLevel-list">
+          <li class="firstLevel-item">
+            <div class="firstLevel-itemLink">Get started</div>
+            <ul class="secondLevel-list">
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Encrypted communication</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Encrypted storage</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Passwordless Authentication</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Data Integrity</a>
+              </li>
+            </ul>
+          </li>
+          <li class="firstLevel-item">
+            <div class="firstLevel-itemLink">Developers</div>
+            <ul class="secondLevel-list">
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Documentation</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">API references</a>
+              </li>
+            </ul>
+          </li>
+          <li class="firstLevel-item">
+            <div class="firstLevel-itemLink">Company</div>
+            <ul class="secondLevel-list">
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink headerNav-about">About Virgil</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink headerNav-clients">Clients</a>
+              </li>
+              <li class="secondLevel-item">
+                <a href="" class="secondLevel-itemLink">Blog</a>
+              </li>
+            </ul>
+          </li>
+          <li class="firstLevel-item">
+            <a class="firstLevel-itemLink">Features</a>
+          </li>
+          <li class="firstLevel-item">
+            <a class="firstLevel-itemLink">Pricing</a>
+          </li>
+          <li class="firstLevel-item">
+            <a class="firstLevel-itemLink">Contacts</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="headerAuth">
+        <a href="" class="headerAuth-link"><span>Login / Sign In</span></a>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="intro">
+      <div class="wrapper">
+        <div class="introContentBlock">
+          <div class="blockMsg">
+            <h1 class="blockMsg-headline">Our features</h1>
+            <p class="blockMsg-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur.</p>
+          </div>
+          <ul class="introFeatures">
+            <li class="introFeature">
+              <div class="introFeature-image">
+                <img width="61" height="58" src="../images/pages/features/intro/features-intro-icon-1.svg" alt="">
+              </div>
+              <div class="introFeature-text">Everything you need to deploy end-to-end security in your application.</div>
+            </li>
+            <li class="introFeature">
+              <div class="introFeature-image">
+                <img width="46" height="60" src="../images/pages/features/intro/features-intro-icon-2.svg" alt="">
+              </div>
+              <div class="introFeature-text">Continuous support for the most modern development languages and platforms.</div>
+            </li>
+            <li class="introFeature">
+              <div class="introFeature-image">
+                <img width="60" height="60" src="../images/pages/features/intro/features-intro-icon-3.svg" alt="">
+              </div>
+              <div class="introFeature-text">Embedded applications support: ARM Cortex M0 and other deeply embedded systems.</div>
+            </li>
+            <li class="introFeature">
+              <div class="introFeature-image">
+                <img width="58" height="58" src="../images/pages/features/intro/features-intro-icon-4.svg" alt="">
+              </div>
+              <div class="introFeature-text">Open Source, modern, transparent cryptography with support from Virgil and ARM.</div>
+            </li>
+            <li class="introFeature">
+              <div class="introFeature-image">
+                <img width="48" height="63" src="../images/pages/features/intro/features-intro-icon-5.svg" alt="">
+              </div>
+              <div class="introFeature-text">World’s most agile crypto library with per datagram cryptographic agility.</div>
+            </li>
+            <li class="introFeature">
+              <div class="introFeature-image">
+                <img width="60" height="60" src="../images/pages/features/intro/features-intro-icon-6.svg" alt="">
+              </div>
+              <div class="introFeature-text">Global, verifiable, flexible key infrastructure in the core of the ecosystem.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="cryptogram">
+      <div class="wrapper">
+        <div class="cryptogramContentBlock">
+          <div class="blockMsg">
+            <h2 class="blockMsg-headline">Our cryptogram</h2>
+          </div>
+          <div class="comparisonBlock comparisonBlock--white cryptogramList">
+            <div class="comparisonItem cryptogramItem">
+              <div class="cryptogramItem-header">
+                <img
+                  width="40"
+                  height="54"
+                  src="../images/pages/features/cryptogram/features-cryptogram-icon.svg"
+                  alt="cryptoicon" />
+                <div class="cryptogramItem-text">
+                  <h6 class="cryptogramItem-subtitle">Cryptogram</h6>
+                  <h2 class="cryptogramItem-title"><span class="font-red">ECIES</span> iso-18033-2</h2>
+                </div>
+              </div>
+              <ul class="cryptogramItem-features">
+                <li class="cryptogramItem-feature">
+                  <i class="icon icon-check-grey" aria-hidden="true"></i>
+                  <span>Sender’s ephemeral public key</span>
+                </li>
+                <li class="cryptogramItem-feature">
+                  <i class="icon icon-check-grey" aria-hidden="true"></i>
+                  <span>Tag</span>
+                </li>
+                <li class="cryptogramItem-feature">
+                  <i class="icon icon-check-grey" aria-hidden="true"></i>
+                  <span>Encrypted content</span>
+                </li>
+              </ul>
+            </div>
+            <div class="comparisonItem comparisonItem--highlight cryptogramItem cryptogramItem--highlight">
+              <div class="cryptogramItem-image">
+                <img
+                  width="166"
+                  height="60"
+                  src="../images/pages/features/cryptogram/features-cryptogram-vs.png"
+                  srcset="../images/pages/features/cryptogram/features-cryptogram-vs@2x.png"
+                  alt="">
+              </div>
+              <ul class="cryptogramItem-features">
+                <li class="cryptogramItem-feature">
+                  <i class="icon icon-check-white" aria-hidden="true"></i>
+                  <span>Algorithms identifiers</span>
+                </li>
+                <li class="cryptogramItem-feature">
+                  <i class="icon icon-check-white" aria-hidden="true"></i>
+                  <span>Sender’s ephemeral public key</span>
+                </li>
+                <li class="cryptogramItem-feature">
+                  <i class="icon icon-check-white" aria-hidden="true"></i>
+                  <span>Tag</span>
+                </li>
+                <li class="cryptogramItem-feature">
+                  <i class="icon icon-check-white" aria-hidden="true"></i>
+                  <span>Encrypted content</span>
+                </li>
+                <li class="cryptogramItem-feature">
+                  <i class="icon icon-check-white" aria-hidden="true"></i>
+                  <span>User’s encrypted data</span>
+                </li>
+              </ul>
+            </div>
+            <div class="comparisonItem cryptogramItem">
+              <div class="cryptogramItem-header">
+                <img
+                  width="40"
+                  height="54"
+                  src="../images/pages/features/cryptogram/features-cryptogram-icon.svg"
+                  alt="cryptoicon" />
+                <div class="cryptogramItem-text">
+                  <h6 class="cryptogramItem-subtitle">Cryptogram</h6>
+                  <h2 class="cryptogramItem-title">
+                    <span class="font-red">CMS</span> RFC 5653
+                  </h2>
+                </div>
+              </div>
+              <ul class="cryptogramItem-features">
+                <li class="cryptogramItem-feature">
+                  <i class="icon icon-check-grey" aria-hidden="true"></i>
+                  <span>Algorithms identifiers</span>
+                </li>
+                <li class="cryptogramItem-feature">
+                  <i class="icon icon-check-grey" aria-hidden="true"></i>
+                  <span>Sender’s ephemeral public key</span>
+                </li>
+                <li class="cryptogramItem-feature">
+                  <i class="icon icon-check-grey" aria-hidden="true"></i>
+                  <span>Tag</span>
+                </li>
+                <li class="cryptogramItem-feature">
+                  <i class="icon icon-check-grey" aria-hidden="true"></i>
+                  <span>Encrypted content</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="components">
+      <div class="wrapper">
+        <div class="componentsContentBlock layeredBlock layeredBlock--right">
+          <div class="componentsOverview layeredBlockContent">
+            <div class="blockMsg">
+              <h2 class="blockMsg-headline">Add Security everywhere you want just In Minutes using Virgil tools</h2>
+            </div>
+            <ul class="componentList">
+              <li class="componentItem">
+                <div class="componentItem-image">
+                  <img width="74" height="70" src="../images/pages/features/components/features-components-service.svg" alt="">
+                </div>
+                <div class="componentItem-info">
+                  <h3 class="componentItem-headline">Virgil Keys Service</h3>
+                  <p class="componentItem-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna utenim ad minim veniam</p>
+                </div>
+              </li>
+              <li class="componentItem">
+                <div class="componentItem-image">
+                  <img width="55" height="70" src="../images/pages/features/components/features-components-api.svg" alt="">
+                </div>
+                <div class="componentItem-info">
+                  <h3 class="componentItem-headline">Virgil Keys API</h3>
+                  <p class="componentItem-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna utenim ad minim veniam</p>
+                </div>
+              </li>
+              <li class="componentItem">
+                <div class="componentItem-image">
+                  <img width="66" height="79" src="../images/pages/features/components/features-components-library.svg" alt="">
+                </div>
+                <div class="componentItem-info">
+                  <h3 class="componentItem-headline">Virgil Crypto Libary</h3>
+                  <p class="componentItem-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna utenim ad minim veniam</p>
+                </div>
+              </li>
+            </ul>
+            <div class="componentLinks">
+              <a href="" class="button-raisedWhiteBorder-black">
+                <i class="icon icon-book-white"></i>
+                <span>Documentation</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="features">
+      <div class="wrapper">
+        <div class="featuresContentBlock">
+          <ul class="featureList">
+            <li>
+              <img
+                width="62"
+                height="70"
+                src="../images/pages/features/features/features-features-c.png"
+                srcset="../images/pages/features/features/features-features-c@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="61"
+                height="70"
+                src="../images/pages/features/features/features-features-cplusplus.png"
+                srcset="../images/pages/features/features/features-features-cplusplus@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="62"
+                height="70"
+                src="../images/pages/features/features/features-features-csharp.png"
+                srcset="../images/pages/features/features/features-features-csharp@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="65"
+                height="65"
+                src="../images/pages/features/features/features-features-js.png"
+                srcset="../images/pages/features/features/features-features-js@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="70"
+                height="70"
+                src="../images/pages/features/features/features-features-python.png"
+                srcset="../images/pages/features/features/features-features-python@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="66"
+                height="62"
+                src="../images/pages/features/features/features-features-ruby.png"
+                srcset="../images/pages/features/features/features-features-ruby@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="61"
+                height="70"
+                src="../images/pages/features/features/features-features-node.png"
+                srcset="../images/pages/features/features/features-features-node@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="62"
+                height="54"
+                src="../images/pages/features/features/features-features-swift.png"
+                srcset="../images/pages/features/features/features-features-swift@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="42"
+                height="50"
+                src="../images/pages/features/features/features-features-apple.png"
+                srcset="../images/pages/features/features/features-features-apple@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="80"
+                height="48"
+                src="../images/pages/features/features/features-features-go.png"
+                srcset="../images/pages/features/features/features-features-go@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="59"
+                height="80"
+                src="../images/pages/features/features/features-features-java.png"
+                srcset="../images/pages/features/features/features-features-java@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="86"
+                height="50"
+                src="../images/pages/features/features/features-features-dotnet.png"
+                srcset="../images/pages/features/features/features-features-dotnet@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="92"
+                height="44"
+                src="../images/pages/features/features/features-features-php.png"
+                srcset="../images/pages/features/features/features-features-php@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="74"
+                height="58"
+                src="../images/pages/features/features/features-features-asmjs.png"
+                srcset="../images/pages/features/features/features-features-asmjs@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="110"
+                height="24"
+                src="../images/pages/features/features/features-features-android.png"
+                srcset="../images/pages/features/features/features-features-android@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="150"
+                height="32"
+                src="../images/pages/features/features/features-features-windows.png"
+                srcset="../images/pages/features/features/features-features-windows@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="50"
+                height="25"
+                src="../images/pages/features/features/features-features-ios.png"
+                srcset="../images/pages/features/features/features-features-ios@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="100"
+                height="26"
+                src="../images/pages/features/features/features-features-macos.png"
+                srcset="../images/pages/features/features/features-features-macos@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="100"
+                height="28"
+                src="../images/pages/features/features/features-features-ff.png"
+                srcset="../images/pages/features/features/features-features-ff@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="140"
+                height="36"
+                src="../images/pages/features/features/features-features-chrome.png"
+                srcset="../images/pages/features/features/features-features-chrome@2x.png"
+                alt="">
+            </li>
+            <li>
+              <img
+                width="58"
+                height="42"
+                src="../images/pages/features/features/features-features-nrf52.png"
+                srcset="../images/pages/features/features/features-features-nrf52@2x.png"
+                alt="">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="faq">
+      <div class="wrapper">
+        <div class="faqContentBlock">
+          <h2 class="faq-caption">FAQ</h2>
+          <ul class="faqList">
+            <li id="faq-q1" data-vs-faq-item class="faqItem">
+              <div class="faqItem-question1">
+                <a href="#faq-q1" data-vs-faq-link="#faq-q1" class="faqItem-question">
+                  <i class="icon icon-minus-red"></i>
+                  <i class="icon icon-plus-red"></i>
+                  <span>
+                    If I send a message to a channel that contains many recipients does it mean that the message will be encrypted as many times as there are recipients in the channel?
+                  </span>
+                </a>
+              </div>
+              <div class="faqItem-answer">
+                <p>Virgil consists of an open-source encryption library, which implements
+                  Cryptographic Message Syntax (CMS) and Elliptic Curve Integrated Encryption Scheme
+                  (ECIES) (including RSA schema), a Key Management API, and a cloud-based Key
+                  Management Service (Virgil Keys). The Virgil Keys Service consists of a public key
+                  service and a private key escrow service..</p>
+                <p>See our Technical Specifications for the up-to-date list of programming languages and
+                  platforms supported by our library. Generally all modern platforms and programming
+                  languages are supported.</p>
+              </div>
+            </li>
+            <li id="faq-q2" data-vs-faq-item class="faqItem">
+              <div class="faqItem-question">
+                <a href="#faq-q2" data-vs-faq-link="#faq-q2" class="faqItem-question">
+                  <i class="icon icon-minus-red"></i>
+                  <i class="icon icon-plus-red"></i>
+                  <span>
+                    If I send a message to a channel that contains many recipients does it mean that the message will be encrypted as many times as there are recipients in the channel?
+                  </span>
+                </a>
+              </div>
+              <div class="faqItem-answer">
+                <p>Virgil consists of an open-source encryption library, which implements
+                  Cryptographic Message Syntax (CMS) and Elliptic Curve Integrated Encryption Scheme
+                  (ECIES) (including RSA schema), a Key Management API, and a cloud-based Key
+                  Management Service (Virgil Keys). The Virgil Keys Service consists of a public key
+                  service and a private key escrow service..</p>
+                <p>See our Technical Specifications for the up-to-date list of programming languages and
+                  platforms supported by our library. Generally all modern platforms and programming
+                  languages are supported.</p>
+              </div>
+            </li>
+          </ul>
+          <div class="form askUsForm">
+            <h3 class="askUsForm-headline">Ask us a question</h3>
+            <div class="formFields askUsForm-fields">
+              <div class="formField formFieldText askUsForm-fieldName">
+                <label for="askUsFormName" class="formField-label formFieldText-label">Name</label>
+                <input id="askUsFormName" type="text" class="formField-input formFieldText-input" placeholder="Julius Ceasar">
+              </div>
+              <div class="formField formFieldText askUsForm-fieldEmail">
+                <label for="askUsFormEmail" class="formField-label formFieldText-label">Email address</label>
+                <input id="askUsFormEmail" type="email" class="formField-input formFieldText-input" placeholder="Encrypteverything@mail.com">
+              </div>
+              <div class="formField formFieldText askUsForm-fieldMsg">
+                <label for="askUsFormMsg" class="formField-label formFieldText-label">Message</label>
+                <textarea id="askUsFormMsg" class="formField-input formFieldText-input" placeholder="Hi there!"></textarea>
+              </div>
+            </div>
+            <div class="formActions askUsForm-actions">
+              <button class="button-raisedRedBorder">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="conclusion">
+      <div class="wrapper">
+        <div class="conclusionContentBlock">
+          <div class="blockMsg">
+            <h2 class="blockMsg-headline">
+              Ready to get started?
+              <br>Get in touch, or create an account.
+            </h2>
+            <div class="blockMsg-links">
+              <a href="" class="button-raisedRed">Create free account</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="wrapper">
+        <div class="footerContacts">
+          <div class="footerContacts-logo">
+            <a href=""><img src="../images/shared/logo-white.svg" width="145" height="47" alt=""></a>
+          </div>
+          <div class="footerContacts-hashtag">#EncryptEverything</div>
+          <ul class="footerContacts-socials">
+            <li><a href=""><i class="icon icon-facebook"></i></a></li>
+            <li><a href=""><i class="icon icon-github"></i></a></li>
+            <li><a href=""><i class="icon icon-twitter"></i></a></li>
+            <li><a href=""><i class="icon icon-linkedin"></i></a></li>
+            <li><a href=""><i class="icon icon-medium"></i></a></li>
+          </ul>
+        </div>
+        <nav class="footerNav">
+          <div class="footerNavBlock footerNavBlock-sources">
+            <div class="footerNavBlock-caption">Navigation</div>
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="">Developers</a></li>
+              <li><a href="">About</a></li>
+              <li><a href="">Features</a></li>
+              <li><a href="">Clients</a></li>
+              <li><a href="">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="footerNavBlock">
+            <div class="footerNavBlock-caption">Developers</div>
+            <ul>
+              <li><a href="">Documentation</a></li>
+              <li><a href="">API reference</a></li>
+              <li><a href="">Applications</a></li>
+              <li><a href="">Dashboard</a></li>
+            </ul>
+          </div>
+          <div class="footerNavBlock">
+            <div class="footerNavBlock-caption">Contact us</div>
+            <ul>
+              <li><a href="">Contacts</a></li>
+              <li><a href="mailto:">support@virgil.net</a></li>
+              <li><a href="">Blog</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="wrapper">
+        <div class="footer-copyright">&copy; 2017 Virgil Security, Inc.</div>
+        <div class="footer-links">
+          <a href="mailto:" class="footer-email">support@virgilsecurity.com</a>
+          <a href="" class="footer-policy">Terms of Use & Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="scrollToTop" data-vs-sticky-scrollToTop>
+    <div class="scrollToTop-btn button-raisedRed"><i class="icon icon-arrowTop-white"></i></div>
+  </div>
+  <div class="overlay" data-vs-sideNav-overlay></div>
+</div>
+</body>
+</html>

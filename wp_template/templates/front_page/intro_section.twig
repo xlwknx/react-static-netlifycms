@@ -1,0 +1,50 @@
+{% extends 'common/section.twig' %}
+
+{% block content %}
+    <div class="intro">
+        {% block intro_section_content %}
+            <div class="wrapper">
+                <div class="introContentBlock">
+                    {% if intro.announcement.url %}
+                        <div class="announcement">
+                            <a href="{{ intro.announcement.url }}" class="announcement-link">
+                                <span class="announcement-icon">new</span>
+                                <span class="announcement-text">{{ intro.announcement.text }}</span>
+                                <img class="announcement-arrow"
+                                     src="{{ bloginfo('stylesheet_directory') }}/assets/images/content/next-arrow.svg"
+                                     width="60" alt="">
+                            </a>
+                        </div>
+                    {% endif %}
+                    <div class="blockMsg">
+                        <h1 class="blockMsg-headline">{{ intro.headline.text }}</h1>
+                        <div class="blockMsg-links">
+                            {% for link in intro.links %}
+                                {% include 'common/link_button/' ~ link.link_button_skin ~ '.twig' with {'link': link} %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="introServices">
+                        <h2 class="introServices-headline">{{ intro.services.headline }}</h2>
+                        <ul class="introServiceList">
+                            {% for service in intro.services.collection %}
+                                <li class="introServiceItem tooltip">
+                                    <a href="{{ service.url }}" class="introServiceItem-link">
+                                        <img width="{{ service.width }}" height="{{ service.height }}"
+                                             src="{{ service.image.src }}"
+                                             alt="{{ service.image.alt|shortcodes }}">
+                                        <div class="tooltipContent-triangle"></div>
+                                    </a>
+                                    <div class="tooltipContent">
+                                        <h3 class="tooltipContent-headline">{{ service.tooltip_headline }}</h3>
+                                        <p class="tooltipContent-text">{{ service.tooltip_text }}</p>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #bb241d;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Shield-Icon.svg" class="cls-1" d="M1385.98,1084c-2.75,0-6.81.89-7.98,1.64v8.18c1.96,5.25,4.84,7.05,7.98,8.18,3.15-1.13,6.05-2.93,8.02-8.18v-8.18c-1.18-.75-5.27-1.64-8.02-1.64h0Zm-0.98,6h2v4h-2v-4Z" transform="translate(-1378 -1084)"/>
+</svg>

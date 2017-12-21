@@ -1,0 +1,131 @@
+.customize-partial-edit-shortcut-header_section {
+    top: 20px;
+    position: relative;
+    z-index: 10001;
+    left: 35px;
+}
+
+.customize-partial-edit-shortcut-hp_intro_section {
+    position: relative;
+    top: 290px;
+    left: 80px;
+}
+
+.customize-partial-edit-shortcut-footer_section {
+    position: relative;
+    top: 80px;
+    left: 80px;
+}
+
+.customize-partial-edit-shortcut-hp_services_section {
+    position: relative;
+    top: 220px;
+    left: 80px;
+}
+
+.customize-partial-edit-shortcut-hp_clients_section {
+    position: relative;
+    left: 70px;
+    top: 60px;
+}
+
+.customize-partial-edit-shortcut-hp_usage_section {
+    position: relative;
+    left: 80px;
+    top: 0;
+}
+
+.customize-partial-edit-shortcut-hp_benefits_section {
+    position: relative;
+    left: 80px;
+    top: 20px;
+}
+
+.customize-partial-edit-shortcut-hp_use_cases_section {
+    position: relative;
+    margin-left: -600px;
+}
+
+.customize-partial-edit-shortcut-hp_conclusion_section {
+    position: relative;
+    left: 680px;
+    top: 160px;
+}
+
+.customize-partial-edit-shortcut-features_page_cryptogram_section {
+    position: relative;
+    left: 500px;
+    top: 140px;
+}
+
+.customize-partial-edit-shortcut-features_page_intro_section {
+    position: relative;
+    top: 190px;
+    left: 360px;
+}
+
+.customize-partial-edit-shortcut-features_page_features_section {
+    position: relative;
+    top: 100px;
+    left: 80px;
+}
+
+.customize-partial-edit-shortcut-features_page_components_section {
+    position: relative;
+    top: 120px;
+    left: 170px;
+}
+
+.customize-partial-edit-shortcut-features_page_faq_section {
+    position: relative;
+    top: 0;
+    left: 70px;
+}
+
+.customize-partial-edit-shortcut-features_page_conclusion_section {
+    position: relative;
+    top: 0;
+    left: 70px;
+}
+
+.customize-partial-edit-shortcut-pricing_page_intro_section {
+    position: relative;
+    left: 570px;
+    top: 180px;
+}
+
+.customize-partial-edit-shortcut-pricing_page_enterprise_section {
+    position: relative;
+    top: 20px;
+    left: 170px;
+}
+
+.customize-partial-edit-shortcut-pricing_page_includes_section {
+    position: relative;
+    top: 160px;
+    left: 590px;
+}
+
+.customize-partial-edit-shortcut-pricing_page_conclusion_section {
+    position: relative;
+    top: 83px;
+    left: 480px;
+}
+
+.customize-partial-edit-shortcut-contacts_page_contact_us_section {
+    position: relative;
+    top: 20px;
+    left: 90px;
+}
+
+.customize-partial-edit-shortcut-contacts_page_partnership_section {
+    position: relative;
+    top: 100px;
+    left: 90px;
+}
+
+.customize-partial-edit-shortcut-contacts_page_map_section {
+    position: relative;
+    top: 50px;
+    left: 70px;
+}

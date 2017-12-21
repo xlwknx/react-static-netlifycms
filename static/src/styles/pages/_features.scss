@@ -1,0 +1,465 @@
+.featuresPage {
+  .intro {
+    background-color: $vs-color-darkBlue5;
+    background-image: url("../assets/images/bg/features/features-intro-bg.jpg");
+    background-size: 1920px 830px;
+
+    @media
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      background-image: url("../assets/images/bg/features/features-intro-bg@2x.jpg");
+    }
+
+    @media
+    (max-width: 480px) {
+      background-image: url("../assets/images/bg/features/features-intro-bg-mobile@2x.jpg");
+      background-size: 480px 830px;
+    }
+
+    .introContentBlock {
+      justify-content: initial;
+      min-height: 750px;
+      padding-bottom: 65px;
+    }
+
+    .blockMsg {
+      text-align: center;
+      color: $vs-color-white;
+
+      @media (min-width: $vs-breakpoint-md) {
+        width: 720px;
+      }
+
+      &-headline {
+        line-height: 1.5;
+      }
+    }
+
+    .introFeatures {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: baseline;
+      margin-top: 130px;
+
+      @media (min-width: $vs-breakpoint-md) {
+        justify-content: space-between;
+      }
+    }
+
+      .introFeature {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 45px;
+        font-size: 0.88rem;
+        line-height: 1.5;
+        text-align: center;
+        color: $vs-color-white;
+
+        @media (min-width: $vs-breakpoint-md) {
+          flex-direction: row;
+          align-items: initial;
+          width: 30%;
+          text-align: left;
+        }
+
+        &-image {
+          width: 65px;
+        }
+
+        &-text {
+          flex: 1;
+          margin: 10px 0 0;
+
+          @media (min-width: $vs-breakpoint-md) {
+            margin: 0 0 0 25px;
+          }
+        }
+      }
+  }
+
+  .cryptogram {
+    @include block-bg($vs-color-darkBlue5, 580px);
+    background: url("../assets/images/bg/features/features-cryptogram-bg.jpg") center center no-repeat;
+    background-size: 1920px 580px;
+
+    @media
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      background-image: url("../assets/images/bg/features/features-cryptogram-bg@2x.jpg");
+    }
+
+    @media (min-width: $vs-breakpoint-lg) {
+      background-position: center top;
+    }
+
+    .cryptogramContentBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 580px;
+      border-top: 1px solid $vs-color-grey;
+      padding: 100px 0;
+    }
+
+    .blockMsg {
+      width: 720px;
+      text-align: center;
+      color: $vs-color-white;
+
+      &-headline {
+        line-height: 1.5;
+      }
+    }
+
+    .cryptogramList {
+      margin-top: 75px;
+    }
+
+      .cryptogramItem {
+        &--highlight {
+          > ul {
+            margin-top: 60px;
+          }
+        }
+
+        &-header {
+          display: flex;
+          align-items: center;
+        }
+
+        &-text {
+          flex-direction: column;
+          
+          margin-top: 5px;
+          margin-left: 15px;
+        }
+
+        &-title {
+          font-size: 16pt;
+        }
+
+        &-subtitle {
+          color: $vs-color-lightGrey4;
+          font-size: 9pt;
+        }
+
+        &-features {
+          margin-top: 50px;
+          font-size: 0.77rem;
+
+          > li + li {
+            margin-top: 18px;
+          }
+        }
+
+          &-feature {
+            display: flex;
+            align-items: center;
+
+            span {
+              flex: 1;
+            }
+          }
+      }
+  }
+
+  .components {
+    position: relative;
+    z-index: 2;
+
+    @media (min-width: $vs-breakpoint-md) {
+      padding: 60px 0 130px;
+    }
+
+    &:after {
+      content: '';
+      display: none;
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      bottom: 0;
+      width: 1010px;
+      height: 900px;
+      max-width: 50%;
+      background: url("../assets/images/bg/features/features-components-bg.png") left top no-repeat;
+      background-size: 1011px 989px;
+
+      @media (min-width: $vs-breakpoint-md) {
+        display: block;
+      }
+
+      @media
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi) {
+        background-image: url("../assets/images/bg/features/features-components-bg@2x.png");
+      }
+    }
+
+    .componentsContentBlock {
+      color: $vs-color-white;
+    }
+
+    .componentsOverview {
+      @media (min-width: $vs-breakpoint-md) {
+        padding: 80px 100px 95px;
+      }
+    }
+
+    .blockMsg {
+      &-headline {
+        @media (min-width: $vs-breakpoint-md) {
+          font-size: 2.33rem;
+          line-height: 1.4;
+        }
+      }
+    }
+
+    .componentList {
+      margin-top: 85px;
+
+      @media (min-width: $vs-breakpoint-md) {
+        width: 520px;
+      }
+
+      > li + li {
+        margin-top: 75px;
+      }
+    }
+
+      .componentItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: $vs-breakpoint-md) {
+          flex-direction: row;
+          align-items: initial;
+        }
+
+        &-image {
+          width: 75px;
+        }
+
+        &-info {
+          flex: 1 1;
+          margin: 30px 0 0;
+          text-align: center;
+
+          @media (min-width: $vs-breakpoint-md) {
+            margin: 0 0 0 30px;
+            text-align: left;
+          }
+        }
+
+        &-headline {
+          @include blockMsg-headline();
+          font-size: 1.11rem;
+        }
+
+        &-text {
+          @include blockMsg-text(10px);
+          font-size: 0.88rem;
+          line-height: 1.9;
+          color: $vs-color-lightGrey4;
+        }
+      }
+
+    .componentLinks {
+      margin-top: 60px;
+      text-align: center;
+
+      @media (min-width: $vs-breakpoint-md) {
+        text-align: left;
+      }
+    }
+  }
+
+  .features {
+    padding: 90px 0;
+    background: $vs-color-lightGrey1;
+
+    .featureList {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      margin: -30px -20px;
+
+      @media (min-width: $vs-breakpoint-lg) {
+        margin: -30px -45px;
+      }
+
+      li {
+        margin: 30px 45px;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .faq {
+    padding: 105px 0 85px;
+
+    .faqContentBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      @media (min-width: $vs-breakpoint-md) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+
+    &-caption {
+      @include block-caption();
+      width: 100%;
+    }
+
+    .faqList {
+      width: 100%;
+      margin-top: 15px;
+      padding: 0 10px;
+
+      @media (min-width: $vs-breakpoint-md) {
+        max-width: 60%;
+      }
+
+      @media (min-width: $vs-breakpoint-lg) {
+        max-width: 750px;
+      }
+
+      li + li {
+        border-top: 1px solid $vs-color-lightGrey3;
+      }
+    }
+
+      .faqItem {
+        padding: 30px 0;
+
+        &.active {
+          .icon-plus-red {
+            visibility: hidden;
+            opacity: 0;
+            width: 0;
+          }
+
+          .faqItem-answer {
+            display: block;
+          }
+        }
+
+        &:not(.active) {
+          .icon-minus-red {
+            visibility: hidden;
+            opacity: 0;
+            width: 0;
+          }
+        }
+
+        .icon {
+          margin: ((1rem * 0.9) / 2) 0;
+          transition: 0.5s opacity, 0.5s visibility;
+        }
+
+        &-question {
+          display: flex;
+          align-items: stretch;
+
+          span {
+            flex: 1 1;
+            margin-left: 15px;
+            font-weight: bold;
+            line-height: 1.7;
+            vertical-align: initial;
+          }
+        }
+
+        &-answer {
+          display: none;
+          margin: 10px 0 0 30px;
+          font-size: 0.88rem;
+          line-height: 1.9;
+
+          p + p {
+            margin-top: 10px;
+          }
+        }
+      }
+
+    .askUsForm {
+      width: 100%;
+      margin-top: 35px;
+      padding: 30px;
+      box-shadow: 0 5px 25px 0 rgba($vs-color-black, 0.1);
+
+      @media (min-width: $vs-breakpoint-md) {
+        max-width: 35%;
+      }
+
+      @media (min-width: $vs-breakpoint-lg) {
+        max-width: 350px;
+        margin-top: -100px;
+      }
+
+      &-headline {
+        @include font-muller();
+      }
+
+      &-fieldMsg {
+        textarea {
+          height: 95px;
+        }
+      }
+
+      &-actions {
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .conclusion {
+    margin-bottom: -($vs-footer-padding + 20);
+    padding: 115px 0 $vs-footer-padding;
+    background: $vs-color-lightGrey1;;
+
+    .blockMsg {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media (min-width: $vs-breakpoint-md) {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      @media (min-width: $vs-breakpoint-lg) {
+        justify-content: space-between;
+      }
+
+      &-headline {
+        font-size: 1.55rem;
+        text-align: center;
+
+        @media (min-width: $vs-breakpoint-md) {
+          text-align: left;
+        }
+      }
+
+      &-links {
+        @media (min-width: $vs-breakpoint-md) {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

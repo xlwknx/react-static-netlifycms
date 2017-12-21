@@ -1,0 +1,66 @@
+.form {}
+
+  .formFields {
+    @include font-muller();
+  }
+
+    .formField {
+      display: flex;
+      margin-top: 35px;
+    }
+
+      .formFieldText {
+        flex-direction: column;
+
+        &-label {
+          margin-bottom: 10px;
+          font-size: 0.55rem;
+          cursor: pointer;
+        }
+
+        &-input {
+          padding: 12px 15px;
+          border: 1px solid $vs-color-lightGrey3;
+          font-size: 0.77rem;
+
+          &::placeholder {
+            font-size: 0.77rem;
+            color: $vs-color-lightGrey4;
+          }
+        }
+
+        textarea {
+          resize: none;
+        }
+      }
+
+      .formFieldSubmit {
+        margin-top: 22px;
+        border: 1px solid $vs-color-darkBlue6;
+        background: $vs-color-darkBlue1;
+
+        &-input {
+          flex: 1;
+          outline: none;
+          border: none;
+          padding: 15px 10px;
+          background: none;
+          font-size: 0.77rem;
+          color: $vs-color-lightGrey2;
+
+          &::placeholder {
+            font-size: 0.77rem;
+            color: $vs-color-lightGrey2;
+          }
+        }
+
+        &-button {
+          padding: 0 10px;
+          opacity: 0.4;
+        }
+      }
+
+    .formActions {
+      margin-top: 40px;
+      text-align: right;
+    }
