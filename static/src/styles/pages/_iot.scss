@@ -1,6 +1,12 @@
 .iotPage {
-  main.container > div:nth-child(even) {
-	background: #FAFAFA;
+  .container {
+	& > div:nth-child(even) {
+	  background: #FAFAFA;
+	}
+
+	@media (max-width: $vs-breakpoint-sm) {
+	  padding-bottom: 0;
+	}
   }
 
   .intro {
@@ -41,16 +47,32 @@
 		background: url("../assets/images/ui/icons/icon-documentation.svg") no-repeat center;
 	  }
 	}
+
+	@media (max-width: $vs-breakpoint-sm) {
+	  .introContentBlock {
+		padding-top: 160px;
+		padding-bottom: 80px;
+	  }
+
+	  .introActions {
+		a {
+		  width: 100%;
+		  margin: 15px 0;
+		}
+	  }
+	}
   }
 
   .iotFeatures {
 	display: flex;
+	flex-wrap: wrap;
 	font-size: 14px;
 	border-top: 1px solid rgba(255,255,255,.1);
 	justify-content: space-between;
+	padding-top: 70px;
 
 	.iotFeature {
-	  margin: 70px 0;
+	  margin-bottom: 70px;
 	  padding-left: 103px; /* 78px width of bg image + 25px distance to text */
 	  width: 268px;
 	  background: no-repeat left top;
@@ -70,6 +92,10 @@
 	  &.firmware-integrity {
 		background-image: url("../assets/images/bg/iot/features/icon-firmware.svg");
 	  }
+
+	  @media (max-width: $vs-breakpoint-sm) {
+		width: 100%;
+	  }
 	}
 
 	.iotFeature-title {
@@ -81,6 +107,7 @@
 	.iotFeature-description {
 	  letter-spacing: .2px;
 	}
+
   }
 
   .openSource {
@@ -92,6 +119,10 @@
 	  padding-top: 100px;
 	  padding-bottom: 80px;
 	  max-width: 60%;
+
+	  @media (max-width: $vs-breakpoint-sm) {
+		max-width: 100%;
+	  }
 	}
 
 	.githubLinkContainer {
@@ -123,6 +154,10 @@
 
 	.blockMsg-headline {
 	  text-align: center;
+
+	  @media (max-width: $vs-breakpoint-sm) {
+		text-align: left;
+	  }
 	}
 
 	.blockMsg-text {
@@ -130,6 +165,11 @@
 	  margin-left: auto;
 	  margin-right: auto;
 	  text-align: center;
+
+	  @media (max-width: $vs-breakpoint-sm) {
+		max-width: 100%;
+		text-align: left;
+	  }
 	}
 
 	.companyName {
@@ -148,6 +188,10 @@
 	  height: 390px;
 	  margin-bottom: 15px;
 	  background: #F3F3F3;
+
+	  @media (max-width: $vs-breakpoint-sm) {
+		height: auto;
+	  }
 	}
 
 	.iotUseCase-content {
@@ -201,16 +245,31 @@
 	  @include button-flatRed();
 	  @include withRightArrow()
 	}
+
+	@media (max-width: $vs-breakpoint-sm) {
+	  .iotUseCase-image {
+		display: none;
+	  }
+	}
   }
 
   .conclusion {
 	.conclusion-content {
 	  display: flex;
 	  margin-bottom: -180px;
+
+	  @media (max-width: $vs-breakpoint-sm) {
+		padding: 100px 0 80px 0;
+		margin-bottom: 0;
+	  }
 	}
 
 	.appsImage {
-	  margin-left: -100px
+	  margin-left: -100px;
+
+	  @media (max-width: $vs-breakpoint-sm) {
+		display: none;
+	  }
 	}
 
 	.blockMsg {
