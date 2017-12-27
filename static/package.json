@@ -31,8 +31,8 @@
     "webpack-dev-server": "^2.7.1"
   },
   "scripts": {
-    "start": "./node_modules/.bin/webpack --env=dev --config webpack.config.js --watch --display-error-details",
-    "build:prod": "./node_modules/.bin/webpack --env=prod --config webpack.config.js --display-error-details --optimize-minimize",
-    "serve": "./node_modules/.bin/webpack-dev-server --env=dev --config webpack.config.js --watch"
+    "start": "webpack --env=dev --config webpack.config.js --watch --display-error-details",
+    "build:prod": "webpack --env=prod --config webpack.config.js --display-error-details --optimize-minimize",
+    "serve": "webpack-dev-server --env=dev --config webpack.config.js --watch"
   }
 }

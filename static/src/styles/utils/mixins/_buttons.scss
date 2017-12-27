@@ -136,3 +136,20 @@
   @include _button-baseFlat(0);
   color: $vs-color-darkRed1;
 }
+
+@mixin withRightArrow {
+  position: relative;
+  padding-right: 14px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -6px;
+    display: inline-block;
+    width: 6px;
+    height: 12px;
+    background: url("../../assets/images/ui/arrowRight-red.svg") no-repeat center;
+  }
+}
