@@ -1,6 +1,6 @@
 'use strict';
 
-import Tilt from 'vanilla-tilt';
+import 'vanilla-tilt';
 
 import Layout from 'js/layout';
 import Home from 'js/home';
