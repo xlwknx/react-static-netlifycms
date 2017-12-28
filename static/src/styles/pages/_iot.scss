@@ -113,6 +113,10 @@
   .openSource {
 	.openSource-bg {
 	  background: url("../assets/images/bg/iot/open-source/github-big.svg") no-repeat right center;
+
+	  @media (max-width: $vs-breakpoint-sm) {
+		background: none;
+	  }
 	}
 
 	.openSource-content {
