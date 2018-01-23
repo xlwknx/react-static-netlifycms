@@ -152,6 +152,11 @@ module.exports = {
         filename: 'iot.html',
         template: 'src/templates/iot.html'
     }),
+    new HtmlWebpackPlugin({
+		  favicon: 'src/favicon.png',
+		  filename: 'chat.html',
+		  template: 'src/templates/chat.html'
+	  }),
     new HtmlStringReplace({
       enable: true,
       patterns: [

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<title>Virgil Security And IoT</title>
+</head>
+<body>
+<div class="page chatPage" data-vs-page="chat">
+	<header class="header">
+		<div class="headerFull" data-vs-sticky-header>
+			<div class="headerLogo">
+				<a href=""><img src="../images/shared/logo-red.svg" width="145" height="47" alt=""></a>
+			</div>
+			<nav class="headerNav">
+				<ul class="firstLevel-list">
+					<li class="firstLevel-item headerNav-home">
+						<a class="firstLevel-itemLink">Home</a>
+					</li>
+					<li class="firstLevel-item headerNav-documentation">
+						<div class="firstLevel-itemLink">Developers</div>
+						<ul class="secondLevel-list">
+							<li class="secondLevel-item">
+								<a href="" class="secondLevel-itemLink">
+									<i class="icon icon-book-red" aria-hidden="true"></i>
+									<span>Documentation</span>
+								</a>
+							</li>
+							<li class="secondLevel-item">
+								<div class="thirdLevel-caption">Get started</div>
+								<ul class="thirdLevel-list">
+									<li class="thirdLevel-item">
+										<a href="">Encrypted communication</a>
+									</li>
+									<li class="thirdLevel-item">
+										<a href="">Encrypted storage</a>
+									</li>
+									<li class="thirdLevel-item">
+										<a href="">Passwordless Authentication</a>
+									</li>
+									<li class="thirdLevel-item">
+										<a href="">Data Integrity</a>
+									</li>
+								</ul>
+							</li>
+							<li class="secondLevel-item">
+								<a href="" class="secondLevel-itemLink">
+									<i class="icon icon-bookmark-red" aria-hidden="true"></i>
+									<span>API references</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="firstLevel-item headerNav-about">
+						<div class="firstLevel-itemLink">Company</div>
+						<ul class="secondLevel-list">
+							<li class="secondLevel-item">
+								<a href="" class="secondLevel-itemLink">
+									<i class="icon icon-shield-red" aria-hidden="true"></i>
+									<span>About Virgil</span>
+								</a>
+							</li>
+							<li class="secondLevel-item">
+								<a href="" class="secondLevel-itemLink">
+									<i class="icon icon-case-red" aria-hidden="true"></i>
+									<span>Clients</span>
+								</a>
+							</li>
+							<li class="secondLevel-item">
+								<a href="" class="secondLevel-itemLink">
+									<i class="icon icon-medium-red" aria-hidden="true"></i>
+									<span>Blog</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="firstLevel-item headerNav-features">
+						<a class="firstLevel-itemLink">Features</a>
+					</li>
+					<li class="firstLevel-item headerNav-pricing">
+						<a class="firstLevel-itemLink">Pricing</a>
+					</li>
+					<li class="firstLevel-item headerNav-contacts">
+						<a class="firstLevel-itemLink">Contacts</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="headerAuth">
+				<a href="" class="button-flatWhite">Login</a>
+				<a href="" class="button-raisedWhiteBorder">Get started</a>
+			</div>
+			<button data-vs-sideNav-open class="headerOpenButton">
+				<i class="icon icon-menu-red"></i>
+			</button>
+		</div>
+		<div class="headerSideBar" data-vs-sideNav-target>
+			<div class="headerCloseButton">
+				<button data-vs-sideNav-close>
+					<i class="icon icon-close-red"></i>
+				</button>
+			</div>
+			<nav class="headerNav">
+				<ul class="firstLevel-list">
+					<li class="firstLevel-item">
+						<div class="firstLevel-itemLink">Get started</div>
+						<ul class="secondLevel-list">
+							<li class="secondLevel-item">
+								<a href="" class="secondLevel-itemLink">Encrypted communication</a>
+							</li>
+							<li class="secondLevel-item">
+								<a href="" class="secondLevel-itemLink">Encrypted storage</a>
+							</li>
+							<li class="secondLevel-item">
+								<a href="" class="secondLevel-itemLink">Passwordless Authentication</a>
+							</li>
+							<li class="secondLevel-item">
+								<a href="" class="secondLevel-itemLink">Data Integrity</a>
+							</li>
+						</ul>
+					</li>
+					<li class="firstLevel-item">
+						<div class="firstLevel-itemLink">Developers</div>
+						<ul class="secondLevel-list">
+							<li class="secondLevel-item">
+								<a href="" class="secondLevel-itemLink">Documentation</a>
+							</li>
+							<li class="secondLevel-item">
+								<a href="" class="secondLevel-itemLink">API references</a>
+							</li>
+						</ul>
+					</li>
+					<li class="firstLevel-item">
+						<div class="firstLevel-itemLink">Company</div>
+						<ul class="secondLevel-list">
+							<li class="secondLevel-item">
+								<a href="" class="secondLevel-itemLink headerNav-about">About Virgil</a>
+							</li>
+							<li class="secondLevel-item">
+								<a href="" class="secondLevel-itemLink headerNav-clients">Clients</a>
+							</li>
+							<li class="secondLevel-item">
+								<a href="" class="secondLevel-itemLink">Blog</a>
+							</li>
+						</ul>
+					</li>
+					<li class="firstLevel-item">
+						<a class="firstLevel-itemLink">Features</a>
+					</li>
+					<li class="firstLevel-item">
+						<a class="firstLevel-itemLink">Pricing</a>
+					</li>
+					<li class="firstLevel-item">
+						<a class="firstLevel-itemLink">Contacts</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="headerAuth">
+				<a href="" class="headerAuth-link"><span>Login / Sign In</span></a>
+			</div>
+		</div>
+	</header>
+	<main class="container">
+		<section class="intro">
+			<div class="wrapper">
+				<div class="introContentBlock">
+					<div class="blockMsg">
+						<h1 class="blockMsg-headline">Add end-to-end encryptionto your chat app in 10 minutes</h1>
+					</div>
+					<div class="introActions">
+						<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRed">Get Started</a>
+					</div>
+				</div>
+				<div class="chatFeatures">
+					<div class="chatFeature manufacturing">
+						<div class="chatFeature-title">END-TO-END ENCRYPTED</div>
+						<div class="chatFeature-description">Virgil's E2EE tech makes peekingimpossible for cloud providers,governments, hackers.</div>
+					</div>
+					<div class="chatFeature onboarding">
+						<div class="chatFeature-title">Ready to Go & Open Source</div>
+						<div class="chatFeature-description">Fully functional open source chat app,licensed under ISC, yours to reuse &customize in your app.</div>
+					</div>
+					<div class="chatFeature blockchain-storage">
+						<div class="chatFeature-title">Start Freee</div>
+						<div class="chatFeature-description">Start up for free. Pay only whenyou're ready for prime time.</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="chatFavoriteTech">
+			<div class="wrapper">
+				<div class="chatFavoriteTech-container">
+					
+				</div>
+			</div>
+		</section>
+		<section class="chatDevelopSteps">
+			<div class="wrapper">
+				<div class="stepsBg">
+					<div class="stepsControls">
+						<button class="stepControl active">STEP 1</button>
+						<button class="stepControl">STEP 2</button>
+						<button class="stepControl">STEP 3</button>
+					</div>
+					<div class="stepContent">
+						<h3 class="stepTitle">Send an Encrypted Message</h3>
+						<p>Look up Bob by his email address, encrypt a message for him and send the message with your favorite message delivery tech!</p>
+						<img src="http://via.placeholder.com/440x185/" /> 
+						<p>
+							This is how the data looks like over the wire and in the database:
+						</p>
+						<img src="http://via.placeholder.com/440x75/" />
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="companies">
+			<div class="wrapper">
+				<h3 class="companies-title">Empowering these awesome companies</h3>
+				<div class="companies-list">
+					<div class="company heltha">
+						<h5 class="company-title">Heltha</h5>
+						<h6 class="company-location">Boston, MA</h6>
+						<p class="company-description">
+							Performance medicine service, E2EE chat between clients & doctors.
+						</p>
+					</div>
+					<div class="company heltha">
+						<h5 class="company-title">Heltha</h5>
+						<h6 class="company-location">Boston, MA</h6>
+						<p class="company-description">
+							Performance medicine service, E2EE chat between clients & doctors.
+						</p>
+					</div>
+					<div class="company heltha">
+						<h5 class="company-title">Heltha</h5>
+						<h6 class="company-location">Boston, MA</h6>
+						<p class="company-description">
+							Performance medicine service, E2EE chat between clients & doctors.
+						</p>
+					</div>
+					<div class="company heltha">
+						<h5 class="company-title">Heltha</h5>
+						<h6 class="company-location">Boston, MA</h6>
+						<p class="company-description">
+							Performance medicine service, E2EE chat between clients & doctors.
+						</p>
+					</div>
+					<div class="company heltha">
+						<h5 class="company-title">Heltha</h5>
+						<h6 class="company-location">Boston, MA</h6>
+						<p class="company-description">
+							Performance medicine service, E2EE chat between clients & doctors.
+						</p>
+					</div>
+					<div class="company heltha">
+						<h5 class="company-title">Heltha</h5>
+						<h6 class="company-location">Boston, MA</h6>
+						<p class="company-description">
+							Performance medicine service, E2EE chat between clients & doctors.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="pricing">
+			<div class="wrapper">
+				<h3 class="pricing-title">START UP FOR FREE, PAY ONLY WHEN IN PRODUCTION</h3>
+
+			</div>
+		</section>
+	</main>
+	<footer class="footer">
+		<div class="footer-top">
+			<div class="wrapper">
+				<div class="footerContacts">
+					<div class="footerContacts-logo">
+						<a href=""><img src="../images/shared/logo-white.svg" width="145" height="47" alt=""></a>
+					</div>
+					<div class="footerContacts-hashtag">#EncryptEverything</div>
+					<ul class="footerContacts-socials">
+						<li><a href=""><i class="icon icon-facebook"></i></a></li>
+						<li><a href=""><i class="icon icon-github"></i></a></li>
+						<li><a href=""><i class="icon icon-twitter"></i></a></li>
+						<li><a href=""><i class="icon icon-linkedin"></i></a></li>
+						<li><a href=""><i class="icon icon-medium"></i></a></li>
+					</ul>
+				</div>
+				<nav class="footerNav">
+					<div class="footerNavBlock footerNavBlock-sources">
+						<div class="footerNavBlock-caption">Navigation</div>
+						<ul>
+							<li><a href="">Home</a></li>
+							<li><a href="">Developers</a></li>
+							<li><a href="">About</a></li>
+							<li><a href="">Features</a></li>
+							<li><a href="">Clients</a></li>
+							<li><a href="">Pricing</a></li>
+						</ul>
+					</div>
+					<div class="footerNavBlock">
+						<div class="footerNavBlock-caption">Developers</div>
+						<ul>
+							<li><a href="">Documentation</a></li>
+							<li><a href="">API reference</a></li>
+							<li><a href="">Applications</a></li>
+							<li><a href="">Dashboard</a></li>
+						</ul>
+					</div>
+					<div class="footerNavBlock">
+						<div class="footerNavBlock-caption">Contact us</div>
+						<ul>
+							<li><a href="">Contacts</a></li>
+							<li><a href="mailto:">support@virgil.net</a></li>
+							<li><a href="">Blog</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="wrapper">
+				<div class="footer-copyright">&copy; 2017 Virgil Security, Inc.</div>
+				<div class="footer-links">
+					<a href="mailto:" class="footer-email">support@virgilsecurity.com</a>
+					<a href="" class="footer-policy">Terms of Use & Privacy Policy</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<div class="scrollToTop" data-vs-sticky-scrollToTop>
+		<div class="scrollToTop-btn button-raisedRed"><i class="icon icon-arrowTop-white"></i></div>
+	</div>
+	<div class="overlay" data-vs-sideNav-overlay></div>
+</div>
+</body>
+</html>

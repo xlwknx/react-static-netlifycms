@@ -1,0 +1,189 @@
+@mixin section-title($width: 500px) {
+	padding-left: 25px;
+	border-left: 8px solid $vs-color-darkRed2;
+	font-size: 38px;
+	max-width: $width;
+	@include font-muller();
+}
+
+.chatPage {
+	.container {
+		@media (max-width: $vs-breakpoint-sm) {
+			padding-bottom: 0;
+		}
+	}
+	.introContentBlock {
+		padding-top: 220px;
+		padding-bottom: 150px;
+		margin: 0 auto;
+		max-width: 700px;
+		color: white;
+	}
+	.intro {
+		background-image: url('http://via.placeholder.com/1920x710/');
+		min-height: 710px;
+
+		.blockMsg {
+			margin-bottom: 50px;
+		}
+		.blockMsg-headline {
+			font-size: 38px;
+			font-weight: 500;
+			text-align: center;
+		}
+		@media (max-width: $vs-breakpoint-md) {
+			background-image: none;
+			background: linear-gradient(304deg, $vs-color-darkRed2 0%, rgb(8, 68, 220) 50%, #181A1F 100%);
+
+			.introContentBlock {
+				padding-top: 100px;
+				padding-bottom: 0px;
+
+				.blockMsg-headline {
+					font-size: 24px;
+				}
+			}
+
+			.introActions {
+				a {
+					width: 100%;
+					margin: 15px 0;
+				}
+			}
+		}
+	}
+	.chatFeatures {
+		display: flex;
+		flex-wrap: wrap;
+		font-size: 14px;
+		justify-content: space-between;
+		padding-top: 70px;
+		.chatFeature {
+			padding-left: 80px; /* 78px width of bg image + 25px distance to text */
+			max-width: 310px;
+			background: no-repeat left top;
+			&.manufacturing {
+				background-image: url("../assets/images/bg/iot/features/icon-manufacturing.svg");
+			}
+			&.onboarding {
+				background-image: url("../assets/images/bg/iot/features/icon-onboarding.svg");
+			}
+			&.blockchain-storage {
+				background-image: url("../assets/images/bg/iot/features/icon-blockchain.svg");
+			}
+			&.firmware-integrity {
+				background-image: url("../assets/images/bg/iot/features/icon-firmware.svg");
+			}
+		}
+		.chatFeature-title {
+			@include font-muller;
+			color: white;
+			font-size: 16px;
+			font-weight: bold;
+			text-transform: uppercase;
+			margin-bottom: 1.4em;
+		}
+		.chatFeature-description {
+			letter-spacing: .2px;
+			color: white;
+			opacity: 0.75;
+		}
+
+		@media (max-width: $vs-breakpoint-md) {
+			justify-content: center;
+		}
+	}
+	.chatFavoriteTech {
+		&-container {
+			height: 100px;
+			border-bottom: 1px solid $vs-color-lightGrey3;
+		}
+	}
+	.chatDevelopSteps {
+		.stepsBg {
+			margin-top: 100px;
+			height: 750px;
+			background-image: url('http://via.placeholder.com/600x750/');
+			background-repeat: no-repeat;
+			padding-left: 600px + 80px;
+
+			@media (max-width: $vs-breakpoint-md) {
+				background-image: none;
+				padding-left: 20px;
+			}
+		}
+
+		.stepControl {
+			margin-right: 40px;
+			padding: 10px 5px;
+			color: $vs-color-lightGrey4;
+			@include font-muller-bold();
+			font-size: 16px;
+
+			&.active {
+				color: $vs-color-grey;
+				border-bottom: 2px solid $vs-color-darkRed2;
+			}
+		}
+
+		.stepContent {
+			padding-top: 60px;
+
+			.stepTitle {
+				font-size: 26px;
+				@include font-muller-bold();
+			}
+
+			p {
+				padding: 30px 0;
+				font-size: 14px;
+			}
+		}
+	}
+	.companies {
+		background-color: navy;
+		min-height: 685px;
+		padding: 120px 0;
+		color: white;
+
+		&-title {
+			@include section-title();
+		}
+
+		&-list {
+			margin-top: 85px;
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.company {
+			padding-left: 80px + 30px;
+			margin-bottom: 80px;
+			width: 345px;
+
+			&-title {
+				font-family: "Muller", sans-serif;
+				font-size: 26px;
+				font-weight: bold;
+			}
+
+			&-location {
+				@include font-muller();
+				color: $vs-color-darkRed2;
+			}
+
+			&-description {
+				font-size: 14px;
+				opacity: 0.75;
+			}
+		}
+	}
+
+	.pricing {
+		padding-top: 100px;
+
+		&-title {
+			@include section-title(660px);
+		}
+	}
+}
