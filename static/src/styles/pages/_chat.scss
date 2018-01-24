@@ -8,9 +8,7 @@
 
 .chatPage {
 	.container {
-		@media (max-width: $vs-breakpoint-sm) {
-			padding-bottom: 0;
-		}
+		padding-bottom: 100px;
 	}
 	.introContentBlock {
 		padding-top: 220px;
@@ -20,7 +18,10 @@
 		color: white;
 	}
 	.intro {
-		background-image: url('http://via.placeholder.com/1920x710/');
+		background-image: url('../assets/images/bg/chat/Top-Image@2x.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
 		min-height: 710px;
 
 		.blockMsg {
@@ -54,25 +55,22 @@
 	}
 	.chatFeatures {
 		display: flex;
-		flex-wrap: wrap;
+		flex-shrink: 1;
 		font-size: 14px;
 		justify-content: space-between;
 		padding-top: 70px;
 		.chatFeature {
-			padding-left: 80px; /* 78px width of bg image + 25px distance to text */
-			max-width: 310px;
+			padding-left: 80px;
+			max-width: 370px;
 			background: no-repeat left top;
-			&.manufacturing {
-				background-image: url("../assets/images/bg/iot/features/icon-manufacturing.svg");
+			&.end2end {
+				background-image: url("../assets/images/bg/chat/features/Icon-1.svg");
 			}
-			&.onboarding {
-				background-image: url("../assets/images/bg/iot/features/icon-onboarding.svg");
+			&.ready2go {
+				background-image: url("../assets/images/bg/chat/features/Icon-2.svg");
 			}
-			&.blockchain-storage {
-				background-image: url("../assets/images/bg/iot/features/icon-blockchain.svg");
-			}
-			&.firmware-integrity {
-				background-image: url("../assets/images/bg/iot/features/icon-firmware.svg");
+			&.start-free {
+				background-image: url("../assets/images/bg/chat/features/Icon-3.svg");
 			}
 		}
 		.chatFeature-title {
@@ -81,7 +79,7 @@
 			font-size: 16px;
 			font-weight: bold;
 			text-transform: uppercase;
-			margin-bottom: 1.4em;
+			margin-bottom: 15px;
 		}
 		.chatFeature-description {
 			letter-spacing: .2px;
@@ -91,12 +89,51 @@
 
 		@media (max-width: $vs-breakpoint-md) {
 			justify-content: center;
+			flex-wrap: wrap;
+			.chatFeature {
+				max-width: 400px;
+				margin-bottom: 40px;
+			}
 		}
 	}
 	.chatFavoriteTech {
 		&-container {
-			height: 100px;
+			min-height: 100px;
 			border-bottom: 1px solid $vs-color-lightGrey3;
+			display: flex;
+			flex-wrap: wrap;			
+			justify-content: space-around;
+			align-items: center;
+		}
+
+		.favoriteTech {
+			background: no-repeat left center;
+			background-size: contain;
+			width: 140px;
+			height: 50px;
+			@include font-muller();
+			font-size: 13px;
+			color: black;
+			padding-top: 10px;
+			margin: 0 20px;
+
+			@media (max-width: $vs-breakpoint-md) {
+				margin-bottom: 20px;
+				margin-top: 20px;
+			}
+
+			&.text {
+				opacity: 0.2;
+			}
+			&.twillio {
+				background-image: url("../assets/images/bg/chat/logos/Logo-Twilio.svg");
+			}
+			&.nexmo {
+				background-image: url("../assets/images/bg/chat/logos/Logo-Nexmo.svg");
+			}
+			&.parse {
+				background-image: url("../assets/images/bg/chat/logos/Logo-Parse.svg");
+			}
 		}
 	}
 	.chatDevelopSteps {
@@ -141,7 +178,10 @@
 		}
 	}
 	.companies {
-		background-color: navy;
+		background-image: url('../assets/images/bg/chat/Partners@2x.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
 		min-height: 685px;
 		padding: 120px 0;
 		color: white;
@@ -154,12 +194,20 @@
 			margin-top: 85px;
 			display: flex;
 			flex-wrap: wrap;
+			justify-content: space-between;
+
+			@media (max-width: $vs-breakpoint-lg) {
+				justify-content: space-around;
+			}
 		}
 
 		.company {
-			padding-left: 80px + 30px;
+			padding-left: 70px + 30px;
 			margin-bottom: 80px;
-			width: 345px;
+			width: 380px;
+			letter-spacing: 0.025em;
+			background: no-repeat left top;
+			background-size: 80px;
 
 			&-title {
 				font-family: "Muller", sans-serif;
@@ -175,6 +223,31 @@
 			&-description {
 				font-size: 14px;
 				opacity: 0.75;
+				margin-top: 1em;
+			}
+
+			&.heltha {
+				background-image: url('../assets/images/bg/chat/companies/SLogo-Heltha@2x.png');
+			}
+
+			&.sikka {
+				background-image: url('../assets/images/bg/chat/companies/SLogo-Sikka@2x.png');
+			}
+
+			&.hushed {
+				background-image: url('../assets/images/bg/chat/companies/SLogo-Hushed@2x.png');
+			}
+
+			&.appfriends {
+				background-image: url('../assets/images/bg/chat/companies/SLogo-App@2x.png');
+			}
+
+			&.cloackroom {
+				background-image: url('../assets/images/bg/chat/companies/SLogo-Cloak@2x.png');
+			}
+
+			&.mybeepr {
+				background-image: url('../assets/images/bg/chat/companies/SLogo-Beepr@2x.png');
 			}
 		}
 	}
@@ -191,8 +264,13 @@
 			margin-top: 60px;
 			width: 100%;
 			display: flex;
+			justify-content: center;
 			flex-direction: row;
-			flex-wrap: wrap;
+			flex-shrink: 0;
+
+			@media (max-width: $vs-breakpoint-md) {
+				flex-wrap: wrap;
+			}
 
 			.pricing-description {
 				font-weight: bold;
@@ -200,9 +278,11 @@
 
 			.pricing-column {
 				width: 200px;
+				max-width: 250px;
 				display: flex;
-				flex: 0 0 auto;
+				flex: 1 0 auto;
 				flex-direction: column;
+				align-items: stretch;
 			}
 
 			.pricing-plan .pricing-cell {
@@ -243,7 +323,7 @@
 			}
 
 			.hide-on-mobile {
-				@media (max-width: $vs-breakpoint-md) {
+				@media (max-width: $vs-breakpoint-lg) {
 					display: none;
 				}
 			}
@@ -264,6 +344,69 @@
 		.pricing-cell.dot {
 			color: #DDDDDD;
 			font-size: 14px;
+		}
+	}
+
+	.footer-twillio {
+		height: 540px;
+		background-image: url('../assets/images/bg/chat/BGtwillio.svg');
+
+		.wrapper {
+			height: 100%;
+		}
+
+		.quote-container {
+			display: flex;
+			flex: 0 0 auto;
+			align-items: flex-end;
+			height: 100%;
+			width: 100%;
+
+			.quote-image {
+				@media (max-width: $vs-breakpoint-md) {
+					display: none;
+				}
+			}
+
+			.quote-content {
+				margin-bottom: 140px;
+				margin-left: 40px;
+				width: 485px;
+				color: white;
+
+				@media (max-width: $vs-breakpoint-md) {
+					margin-bottom: 80px;
+				}
+			}
+
+			.quote-symbol {
+				color: $vs-color-darkRed2;
+				font-size: 100px;
+				font-weight: 900;
+				line-height: 55px;
+			}
+			
+			.quote-text {
+				font-size: 72px;
+				font-family: 'Muller', sans-serif;
+				font-weight: bold;
+				line-height: 80px;
+
+				@media (max-width: $vs-breakpoint-md) {
+					font-size: 48px;
+				}
+			}
+
+			.quote-author, .quote-author-position {
+				opacity: 0.25;
+			}
+
+			.quote-author {
+				margin-top: 40px;
+				text-transform: uppercase;
+				font-family: 'Muller', sans-serif;
+				letter-spacing: 0.025em;
+			}
 		}
 	}
 }
