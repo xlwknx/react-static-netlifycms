@@ -6,6 +6,7 @@ import Layout from 'js/layout';
 import Home from 'js/home';
 import Features from 'js/features';
 import Articles from 'js/blog/articles';
+import Chat from 'js/chat';
 
 $(document).ready(function () {
   const pageName = $('[data-vs-page]').data('vs-page');
@@ -24,6 +25,9 @@ $(document).ready(function () {
     case 'articles':
       Articles.init();
       break;
+
+    case 'chat':
+      Chat.init();
   }
 });
 
