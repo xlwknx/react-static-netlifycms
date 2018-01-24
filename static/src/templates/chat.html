@@ -1,512 +1,590 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 	<title>Virgil Security And IoT</title>
 </head>
+
 <body>
-<div class="page chatPage" data-vs-page="chat">
-	<header class="header">
-		<div class="headerFull" data-vs-sticky-header>
-			<div class="headerLogo">
-				<a href=""><img src="../images/shared/logo-red.svg" width="145" height="47" alt=""></a>
-			</div>
-			<nav class="headerNav">
-				<ul class="firstLevel-list">
-					<li class="firstLevel-item headerNav-home">
-						<a class="firstLevel-itemLink">Home</a>
-					</li>
-					<li class="firstLevel-item headerNav-documentation">
-						<div class="firstLevel-itemLink">Developers</div>
-						<ul class="secondLevel-list">
-							<li class="secondLevel-item">
-								<a href="" class="secondLevel-itemLink">
-									<i class="icon icon-book-red" aria-hidden="true"></i>
-									<span>Documentation</span>
-								</a>
-							</li>
-							<li class="secondLevel-item">
-								<div class="thirdLevel-caption">Get started</div>
-								<ul class="thirdLevel-list">
-									<li class="thirdLevel-item">
-										<a href="">Encrypted communication</a>
-									</li>
-									<li class="thirdLevel-item">
-										<a href="">Encrypted storage</a>
-									</li>
-									<li class="thirdLevel-item">
-										<a href="">Passwordless Authentication</a>
-									</li>
-									<li class="thirdLevel-item">
-										<a href="">Data Integrity</a>
-									</li>
-								</ul>
-							</li>
-							<li class="secondLevel-item">
-								<a href="" class="secondLevel-itemLink">
-									<i class="icon icon-bookmark-red" aria-hidden="true"></i>
-									<span>API references</span>
-								</a>
-							</li>
-						</ul>
-					</li>
-					<li class="firstLevel-item headerNav-about">
-						<div class="firstLevel-itemLink">Company</div>
-						<ul class="secondLevel-list">
-							<li class="secondLevel-item">
-								<a href="" class="secondLevel-itemLink">
-									<i class="icon icon-shield-red" aria-hidden="true"></i>
-									<span>About Virgil</span>
-								</a>
-							</li>
-							<li class="secondLevel-item">
-								<a href="" class="secondLevel-itemLink">
-									<i class="icon icon-case-red" aria-hidden="true"></i>
-									<span>Clients</span>
-								</a>
-							</li>
-							<li class="secondLevel-item">
-								<a href="" class="secondLevel-itemLink">
-									<i class="icon icon-medium-red" aria-hidden="true"></i>
-									<span>Blog</span>
-								</a>
-							</li>
-						</ul>
-					</li>
-					<li class="firstLevel-item headerNav-features">
-						<a class="firstLevel-itemLink">Features</a>
-					</li>
-					<li class="firstLevel-item headerNav-pricing">
-						<a class="firstLevel-itemLink">Pricing</a>
-					</li>
-					<li class="firstLevel-item headerNav-contacts">
-						<a class="firstLevel-itemLink">Contacts</a>
-					</li>
-				</ul>
-			</nav>
-			<div class="headerAuth">
-				<a href="" class="button-flatWhite">Login</a>
-				<a href="" class="button-raisedWhiteBorder">Get started</a>
-			</div>
-			<button data-vs-sideNav-open class="headerOpenButton">
-				<i class="icon icon-menu-red"></i>
-			</button>
-		</div>
-		<div class="headerSideBar" data-vs-sideNav-target>
-			<div class="headerCloseButton">
-				<button data-vs-sideNav-close>
-					<i class="icon icon-close-red"></i>
+	<div class="page chatPage" data-vs-page="chat">
+		<header class="header">
+			<div class="headerFull" data-vs-sticky-header>
+				<div class="headerLogo">
+					<a href="">
+						<img src="../images/shared/logo-red.svg" width="145" height="47" alt="">
+					</a>
+				</div>
+				<nav class="headerNav">
+					<ul class="firstLevel-list">
+						<li class="firstLevel-item headerNav-home">
+							<a class="firstLevel-itemLink">Home</a>
+						</li>
+						<li class="firstLevel-item headerNav-documentation">
+							<div class="firstLevel-itemLink">Developers</div>
+							<ul class="secondLevel-list">
+								<li class="secondLevel-item">
+									<a href="" class="secondLevel-itemLink">
+										<i class="icon icon-book-red" aria-hidden="true"></i>
+										<span>Documentation</span>
+									</a>
+								</li>
+								<li class="secondLevel-item">
+									<div class="thirdLevel-caption">Get started</div>
+									<ul class="thirdLevel-list">
+										<li class="thirdLevel-item">
+											<a href="">Encrypted communication</a>
+										</li>
+										<li class="thirdLevel-item">
+											<a href="">Encrypted storage</a>
+										</li>
+										<li class="thirdLevel-item">
+											<a href="">Passwordless Authentication</a>
+										</li>
+										<li class="thirdLevel-item">
+											<a href="">Data Integrity</a>
+										</li>
+									</ul>
+								</li>
+								<li class="secondLevel-item">
+									<a href="" class="secondLevel-itemLink">
+										<i class="icon icon-bookmark-red" aria-hidden="true"></i>
+										<span>API references</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="firstLevel-item headerNav-about">
+							<div class="firstLevel-itemLink">Company</div>
+							<ul class="secondLevel-list">
+								<li class="secondLevel-item">
+									<a href="" class="secondLevel-itemLink">
+										<i class="icon icon-shield-red" aria-hidden="true"></i>
+										<span>About Virgil</span>
+									</a>
+								</li>
+								<li class="secondLevel-item">
+									<a href="" class="secondLevel-itemLink">
+										<i class="icon icon-case-red" aria-hidden="true"></i>
+										<span>Clients</span>
+									</a>
+								</li>
+								<li class="secondLevel-item">
+									<a href="" class="secondLevel-itemLink">
+										<i class="icon icon-medium-red" aria-hidden="true"></i>
+										<span>Blog</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="firstLevel-item headerNav-features">
+							<a class="firstLevel-itemLink">Features</a>
+						</li>
+						<li class="firstLevel-item headerNav-pricing">
+							<a class="firstLevel-itemLink">Pricing</a>
+						</li>
+						<li class="firstLevel-item headerNav-contacts">
+							<a class="firstLevel-itemLink">Contacts</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="headerAuth">
+					<a href="" class="button-flatWhite">Login</a>
+					<a href="" class="button-raisedWhiteBorder">Get started</a>
+				</div>
+				<button data-vs-sideNav-open class="headerOpenButton">
+					<i class="icon icon-menu-red"></i>
 				</button>
 			</div>
-			<nav class="headerNav">
-				<ul class="firstLevel-list">
-					<li class="firstLevel-item">
-						<div class="firstLevel-itemLink">Get started</div>
-						<ul class="secondLevel-list">
-							<li class="secondLevel-item">
-								<a href="" class="secondLevel-itemLink">Encrypted communication</a>
-							</li>
-							<li class="secondLevel-item">
-								<a href="" class="secondLevel-itemLink">Encrypted storage</a>
-							</li>
-							<li class="secondLevel-item">
-								<a href="" class="secondLevel-itemLink">Passwordless Authentication</a>
-							</li>
-							<li class="secondLevel-item">
-								<a href="" class="secondLevel-itemLink">Data Integrity</a>
-							</li>
-						</ul>
-					</li>
-					<li class="firstLevel-item">
-						<div class="firstLevel-itemLink">Developers</div>
-						<ul class="secondLevel-list">
-							<li class="secondLevel-item">
-								<a href="" class="secondLevel-itemLink">Documentation</a>
-							</li>
-							<li class="secondLevel-item">
-								<a href="" class="secondLevel-itemLink">API references</a>
-							</li>
-						</ul>
-					</li>
-					<li class="firstLevel-item">
-						<div class="firstLevel-itemLink">Company</div>
-						<ul class="secondLevel-list">
-							<li class="secondLevel-item">
-								<a href="" class="secondLevel-itemLink headerNav-about">About Virgil</a>
-							</li>
-							<li class="secondLevel-item">
-								<a href="" class="secondLevel-itemLink headerNav-clients">Clients</a>
-							</li>
-							<li class="secondLevel-item">
-								<a href="" class="secondLevel-itemLink">Blog</a>
-							</li>
-						</ul>
-					</li>
-					<li class="firstLevel-item">
-						<a class="firstLevel-itemLink">Features</a>
-					</li>
-					<li class="firstLevel-item">
-						<a class="firstLevel-itemLink">Pricing</a>
-					</li>
-					<li class="firstLevel-item">
-						<a class="firstLevel-itemLink">Contacts</a>
-					</li>
-				</ul>
-			</nav>
-			<div class="headerAuth">
-				<a href="" class="headerAuth-link"><span>Login / Sign In</span></a>
-			</div>
-		</div>
-	</header>
-	<main class="container">
-		<section class="intro">
-			<div class="wrapper">
-				<div class="introContentBlock">
-					<div class="blockMsg">
-						<h1 class="blockMsg-headline">Add end-to-end encryptionto your chat app in 10 minutes</h1>
-					</div>
-					<div class="introActions">
-						<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRed">Get Started</a>
-					</div>
+			<div class="headerSideBar" data-vs-sideNav-target>
+				<div class="headerCloseButton">
+					<button data-vs-sideNav-close>
+						<i class="icon icon-close-red"></i>
+					</button>
 				</div>
-				<div class="chatFeatures">
-					<div class="chatFeature end2end">
-						<div class="chatFeature-title">END-TO-END ENCRYPTED</div>
-						<div class="chatFeature-description">Virgil's E2EE tech makes peekingimpossible for cloud providers,governments, hackers.</div>
-					</div>
-					<div class="chatFeature ready2go">
-						<div class="chatFeature-title">Ready to Go & Open Source</div>
-						<div class="chatFeature-description">Fully functional open source chat app,licensed under ISC, yours to reuse &customize in your app.</div>
-					</div>
-					<div class="chatFeature start-free">
-						<div class="chatFeature-title">Start Freee</div>
-						<div class="chatFeature-description">Start up for free. Pay only whenyou're ready for prime time.</div>
-					</div>
+				<nav class="headerNav">
+					<ul class="firstLevel-list">
+						<li class="firstLevel-item">
+							<div class="firstLevel-itemLink">Get started</div>
+							<ul class="secondLevel-list">
+								<li class="secondLevel-item">
+									<a href="" class="secondLevel-itemLink">Encrypted communication</a>
+								</li>
+								<li class="secondLevel-item">
+									<a href="" class="secondLevel-itemLink">Encrypted storage</a>
+								</li>
+								<li class="secondLevel-item">
+									<a href="" class="secondLevel-itemLink">Passwordless Authentication</a>
+								</li>
+								<li class="secondLevel-item">
+									<a href="" class="secondLevel-itemLink">Data Integrity</a>
+								</li>
+							</ul>
+						</li>
+						<li class="firstLevel-item">
+							<div class="firstLevel-itemLink">Developers</div>
+							<ul class="secondLevel-list">
+								<li class="secondLevel-item">
+									<a href="" class="secondLevel-itemLink">Documentation</a>
+								</li>
+								<li class="secondLevel-item">
+									<a href="" class="secondLevel-itemLink">API references</a>
+								</li>
+							</ul>
+						</li>
+						<li class="firstLevel-item">
+							<div class="firstLevel-itemLink">Company</div>
+							<ul class="secondLevel-list">
+								<li class="secondLevel-item">
+									<a href="" class="secondLevel-itemLink headerNav-about">About Virgil</a>
+								</li>
+								<li class="secondLevel-item">
+									<a href="" class="secondLevel-itemLink headerNav-clients">Clients</a>
+								</li>
+								<li class="secondLevel-item">
+									<a href="" class="secondLevel-itemLink">Blog</a>
+								</li>
+							</ul>
+						</li>
+						<li class="firstLevel-item">
+							<a class="firstLevel-itemLink">Features</a>
+						</li>
+						<li class="firstLevel-item">
+							<a class="firstLevel-itemLink">Pricing</a>
+						</li>
+						<li class="firstLevel-item">
+							<a class="firstLevel-itemLink">Contacts</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="headerAuth">
+					<a href="" class="headerAuth-link">
+						<span>Login / Sign In</span>
+					</a>
 				</div>
 			</div>
-		</section>
-		<section class="chatFavoriteTech">
-			<div class="wrapper">
-				<div class="chatFavoriteTech-container">
-					<div class="favoriteTech text">Work with your favirite tech</div>
-					<div class="favoriteTech twillio"></div>
-					<div class="favoriteTech nexmo"></div>
-					<div class="favoriteTech parse"></div>
-				</div>
-			</div>
-		</section>
-		<section class="chatDevelopSteps">
-			<div class="wrapper">
-				<div class="stepsContainer">
-					<div class="stepsImage"></div>
-					<div id="step-tabs" class="stepsTabs">
-						<div class="stepsControls">
-							<button data-tab="step1" class="stepControl current">STEP 1</button>
-							<button data-tab="step2" class="stepControl">STEP 2</button>
-							<button data-tab="step3" class="stepControl">STEP 3</button>
+		</header>
+		<main class="container">
+			<section class="intro">
+				<div class="wrapper">
+					<div class="introContentBlock">
+						<div class="blockMsg">
+							<h1 class="blockMsg-headline">Add end-to-end encryptionto your chat app in 10 minutes</h1>
 						</div>
-						<div id="step1" class="stepContent current">
-							<h3 class="stepTitle">Send an Encrypted Message</h3>
-							<p>Look up Bob by his email address, encrypt a message for him and send the message with your favorite message delivery tech!</p>
-							<img src="http://via.placeholder.com/440x185/" /> 
-							<p>
-								This is how the data looks like over the wire and in the database:
+						<div class="introActions">
+							<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRed">Get Started</a>
+						</div>
+					</div>
+					<div class="chatFeatures">
+						<div class="chatFeature end2end">
+							<div class="chatFeature-title">END-TO-END ENCRYPTED</div>
+							<div class="chatFeature-description">Virgil's E2EE tech makes peekingimpossible for cloud providers,governments, hackers.</div>
+						</div>
+						<div class="chatFeature ready2go">
+							<div class="chatFeature-title">Ready to Go & Open Source</div>
+							<div class="chatFeature-description">Fully functional open source chat app,licensed under ISC, yours to reuse &customize in your app.</div>
+						</div>
+						<div class="chatFeature start-free">
+							<div class="chatFeature-title">Start Freee</div>
+							<div class="chatFeature-description">Start up for free. Pay only whenyou're ready for prime time.</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="chatFavoriteTech">
+				<div class="wrapper">
+					<div class="chatFavoriteTech-container">
+						<div class="favoriteTech text">Work with your favirite tech</div>
+						<div class="favoriteTech twillio"></div>
+						<div class="favoriteTech nexmo"></div>
+						<div class="favoriteTech parse"></div>
+					</div>
+				</div>
+			</section>
+			<section class="chatDevelopSteps">
+				<div class="wrapper">
+					<div class="stepsContainer">
+						<div class="stepsImage"></div>
+						<div id="step-tabs" class="stepsTabs">
+							<div class="stepsControls">
+								<button data-tab="step1" class="stepControl current">STEP 1</button>
+								<button data-tab="step2" class="stepControl">STEP 2</button>
+								<button data-tab="step3" class="stepControl">STEP 3</button>
+							</div>
+							<div id="step1" class="stepContent current">
+								<h3 class="stepTitle">Send an Encrypted Message</h3>
+								<p>Look up Bob by his email address, encrypt a message for him and send the message with your favorite
+									message delivery tech!</p>
+								<img src="http://via.placeholder.com/440x185/" />
+								<p>
+									This is how the data looks like over the wire and in the database:
+								</p>
+								<img src="http://via.placeholder.com/440x75/" />
+							</div>
+							<div id="step2" class="stepContent">
+								<h3 class="stepTitle">Send an Encrypted Message 2</h3>
+								<p>Look up Bob by his email address, encrypt a message for him and send the message with your favorite
+									message delivery tech!</p>
+								<img src="http://via.placeholder.com/440x185/" />
+								<p>
+									This is how the data looks like over the wire and in the database:
+								</p>
+								<img src="http://via.placeholder.com/440x75/" />
+							</div>
+							<div id="step3" class="stepContent">
+								<h3 class="stepTitle">Send an Encrypted Message 3</h3>
+								<p>Look up Bob by his email address, encrypt a message for him and send the message with your favorite
+									message delivery tech!</p>
+								<img src="http://via.placeholder.com/440x185/" />
+								<p>
+									This is how the data looks like over the wire and in the database:
+								</p>
+								<img src="http://via.placeholder.com/440x75/" />
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<section class="companies">
+				<div class="wrapper">
+					<h3 class="companies-title">Empowering these awesome companies</h3>
+					<div class="companies-list">
+						<div class="company heltha">
+							<h5 class="company-title">Heltha</h5>
+							<h6 class="company-location">Boston, MA</h6>
+							<p class="company-description">
+								Performance medicine service, E2EE chat between clients & doctors.
 							</p>
-							<img src="http://via.placeholder.com/440x75/" />
 						</div>
-						<div id="step2" class="stepContent">
-							<h3 class="stepTitle">Send an Encrypted Message 2</h3>
-							<p>Look up Bob by his email address, encrypt a message for him and send the message with your favorite message delivery tech!</p>
-							<img src="http://via.placeholder.com/440x185/" /> 
-							<p>
-								This is how the data looks like over the wire and in the database:
-							</p>
-							<img src="http://via.placeholder.com/440x75/" />
-						</div>
-						<div id="step3" class="stepContent">
-							<h3 class="stepTitle">Send an Encrypted Message 3</h3>
-							<p>Look up Bob by his email address, encrypt a message for him and send the message with your favorite message delivery tech!</p>
-							<img src="http://via.placeholder.com/440x185/" /> 
-							<p>
-								This is how the data looks like over the wire and in the database:
-							</p>
-							<img src="http://via.placeholder.com/440x75/" />
-						</div>
-					</div>
-					
-				</div>
-			</div>
-		</section>
-		<section class="companies">
-			<div class="wrapper">
-				<h3 class="companies-title">Empowering these awesome companies</h3>
-				<div class="companies-list">
-					<div class="company heltha">
-						<h5 class="company-title">Heltha</h5>
-						<h6 class="company-location">Boston, MA</h6>
-						<p class="company-description">
-							Performance medicine service, E2EE chat between clients & doctors.
-						</p>
-					</div>
-					<div class="company hushed">
-						<h5 class="company-title">Hushed</h5>
-						<h6 class="company-location">Ontario, CANADA</h6>
-						<p class="company-description">
+						<div class="company hushed">
+							<h5 class="company-title">Hushed</h5>
+							<h6 class="company-location">Ontario, CANADA</h6>
+							<p class="company-description">
 								E2EE messaging for private disposablephone numbers.
-						</p>
-					</div>
-					<div class="company appfriends">
-						<h5 class="company-title">Appfriends</h5>
-						<h6 class="company-location">NEW YORK, NY</h6>
-						<p class="company-description">
-							E2EE private in-app messaging & userengagement platform.
-						</p>
-					</div>
-					<div class="company sikka">
-						<h5 class="company-title">Sikka Chat</h5>
-						<h6 class="company-location">San Jose, CA</h6>
-						<p class="company-description">
-							E2EE chat service for patients &doctors at private practices.
-						</p>
-					</div>
-					<div class="company cloackroom">
-						<h5 class="company-title">Cloackroom</h5>
-						<h6 class="company-location">WASHINGTON, D.C.</h6>
-						<p class="company-description">
-							The invite-only E2EE social chat appin and near the U.S. White House.
-						</p>
-					</div>
-					<div class="company mybeepr">
-						<h5 class="company-title">Mybeepr</h5>
-						<h6 class="company-location">Sydney, AUSTRALIA</h6>
-						<p class="company-description">
-							Australia’s most trusted solution formobile healthcare communication, E2EE.
-						</p>
+							</p>
+						</div>
+						<div class="company appfriends">
+							<h5 class="company-title">Appfriends</h5>
+							<h6 class="company-location">NEW YORK, NY</h6>
+							<p class="company-description">
+								E2EE private in-app messaging & userengagement platform.
+							</p>
+						</div>
+						<div class="company sikka">
+							<h5 class="company-title">Sikka Chat</h5>
+							<h6 class="company-location">San Jose, CA</h6>
+							<p class="company-description">
+								E2EE chat service for patients &doctors at private practices.
+							</p>
+						</div>
+						<div class="company cloackroom">
+							<h5 class="company-title">Cloackroom</h5>
+							<h6 class="company-location">WASHINGTON, D.C.</h6>
+							<p class="company-description">
+								The invite-only E2EE social chat appin and near the U.S. White House.
+							</p>
+						</div>
+						<div class="company mybeepr">
+							<h5 class="company-title">Mybeepr</h5>
+							<h6 class="company-location">Sydney, AUSTRALIA</h6>
+							<p class="company-description">
+								Australia’s most trusted solution formobile healthcare communication, E2EE.
+							</p>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-		<section class="pricing">
-			<div class="wrapper">
-				<h3 class="pricing-title">START UP FOR FREE, PAY ONLY WHEN IN PRODUCTION</h3>
-				<div class="pricing-table">
-					<div class="pricing-column pricing-description hide-on-mobile">
-						<div class="pricing-cell pricing-header">Save with annual pre-payment</div>
-						<div class="pricing-cell">Best for</div>
-						<div class="pricing-cell">Registered user keys</div>
-						<div class="pricing-cell hide-on-mobile">Slack community support</div>
-						<div class="pricing-cell hide-on-mobile">Guaranted SLA</div>
-						<div class="pricing-cell hide-on-mobile">Dev/staging/production enviroments</div>
-						<div class="pricing-cell hide-on-mobile">Global geo-balancing</div>
-						<div class="pricing-cell hide-on-mobile">24/7 support</div>
-						<div class="pricing-cell hide-on-mobile">Dedicated customer support engineer</div>
-						<div class="pricing-cell hide-on-mobile">On-premise hosted Virgil backend services</div>
-						<div class="pricing-cell hide-on-mobile">Country-specific data location</div>
-						<div class="pricing-cell hide-on-mobile pricing-footer">Save with annual pre-payment</div>
-					</div>
-					<div class="pricing-column pricing-plan">
-						<div class="pricing-cell pricing-header">
-							<div>
-								<b class="pricing-plan-title">Basic</b>
+			</section>
+			<section class="pricing">
+				<div class="wrapper">
+					<h3 class="pricing-title">START UP FOR FREE, PAY ONLY WHEN IN PRODUCTION</h3>
+					<div class="pricing-table">
+						<div class="pricing-column pricing-description hide-on-mobile">
+							<div class="pricing-cell pricing-header">
+								Save with annual pre-payment
+								<div data-switch class="switch-container">
+									<div data-switch-control class="switch-control off"></div>
+								</div>
+							</div>
+							<div class="pricing-cell">Best for</div>
+							<div class="pricing-cell">Registered user keys</div>
+							<div class="pricing-cell hide-on-mobile">Slack community support</div>
+							<div class="pricing-cell hide-on-mobile">Guaranted SLA</div>
+							<div class="pricing-cell hide-on-mobile">Dev/staging/production enviroments</div>
+							<div class="pricing-cell hide-on-mobile">Global geo-balancing</div>
+							<div class="pricing-cell hide-on-mobile">24/7 support</div>
+							<div class="pricing-cell hide-on-mobile">Dedicated customer support engineer</div>
+							<div class="pricing-cell hide-on-mobile">On-premise hosted Virgil backend services</div>
+							<div class="pricing-cell hide-on-mobile">Country-specific data location</div>
+							<div class="pricing-cell hide-on-mobile pricing-footer">
+								Save with annual pre-payment
+								<div data-switch class="switch-container">
+									<div data-switch-control class="switch-control off"></div>
+								</div>
+							</div>
+						</div>
+						<div class="pricing-column pricing-plan">
+							<div class="pricing-cell pricing-header">
+								<div>
+									<b class="pricing-plan-title">Basic</b>
+									<p class="pricing-plan-price">Free</p>
+									<button class="button-raisedRedBorder">GET STARTED</button>
+								</div>
+							</div>
+							<div class="pricing-cell">Good for development & non-critical apps</div>
+							<div class="pricing-cell">Up to 250</div>
+							<div class="pricing-cell dot hide-on-mobile">
+								<span class="check" />
+							</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell pricing-footer hide-on-mobile">
 								<p class="pricing-plan-price">Free</p>
 								<button class="button-raisedRedBorder">GET STARTED</button>
 							</div>
 						</div>
-						<div class="pricing-cell">Good for development & non-critical apps</div>
-						<div class="pricing-cell">Up to 250</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell pricing-footer hide-on-mobile">
-							<p class="pricing-plan-price">Free</p>
-							<button class="button-raisedRedBorder">GET STARTED</button>
-						</div>
-					</div>
-					<div class="pricing-column pricing-plan active">
-						<div class="pricing-cell pricing-header">
-							<div>
-								<b class="pricing-plan-title">Production</b>
-								<p class="pricing-plan-price">$49 / mo</p>
+						<div class="pricing-column pricing-plan active">
+							<div class="pricing-cell pricing-header">
+								<div>
+									<b class="pricing-plan-title">Production</b>
+									<p class="pricing-plan-price">$
+										<span data-price>49</span> / mo</p>
+									<button class="button-raisedRedBorder">GET STARTED</button>
+								</div>
+							</div>
+							<div class="pricing-cell">Ideal for production apps</div>
+							<div class="pricing-cell">Up to 2,500</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell pricing-footer hide-on-mobile">
+								<p class="pricing-plan-price">$
+									<span data-price>49</span> / mo</p>
 								<button class="button-raisedRedBorder">GET STARTED</button>
 							</div>
 						</div>
-						<div class="pricing-cell">Ideal for production apps</div>
-						<div class="pricing-cell">Up to 2,500</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell pricing-footer hide-on-mobile">
-							<p class="pricing-plan-price">$49 / mo</p>
-							<button class="button-raisedRedBorder">GET STARTED</button>
-						</div>
-					</div>
-					<div class="pricing-column pricing-plan">
-						<div class="pricing-cell pricing-header">
-							<div>
-								<b class="pricing-plan-title">Business</b>
-								<p class="pricing-plan-price">$499 / mo</p>
+						<div class="pricing-column pricing-plan">
+							<div class="pricing-cell pricing-header">
+								<div>
+									<b class="pricing-plan-title">Business</b>
+									<p class="pricing-plan-price">$
+										<span data-price>499</span> / mo</p>
+									<button class="button-raisedRedBorder">GET STARTED</button>
+								</div>
+							</div>
+							<div class="pricing-cell">Good for development & non-critical apps</div>
+							<div class="pricing-cell">Up to 25,000</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell pricing-footer hide-on-mobile">
+								<p class="pricing-plan-price">$
+									<span data-price>499</span> / mo</p>
 								<button class="button-raisedRedBorder">GET STARTED</button>
 							</div>
 						</div>
-						<div class="pricing-cell">Good for development & non-critical apps</div>
-						<div class="pricing-cell">Up to 25,000</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell pricing-footer hide-on-mobile">
-							<p class="pricing-plan-price">$499 / mo</p>
-							<button class="button-raisedRedBorder">GET STARTED</button>
-						</div>
-					</div>
-					<div class="pricing-column pricing-plan">
-						<div class="pricing-cell pricing-header">
-							<div>
-								<b class="pricing-plan-title">Mega</b>
-								<p class="pricing-plan-price">$1999 / mo</p>
+						<div class="pricing-column pricing-plan">
+							<div class="pricing-cell pricing-header">
+								<div>
+									<b class="pricing-plan-title">Mega</b>
+									<p class="pricing-plan-price">$
+										<span data-price>1999</span> / mo</p>
+									<button class="button-raisedRedBorder">GET STARTED</button>
+								</div>
+							</div>
+							<div class="pricing-cell">Good for development & non-critical apps</div>
+							<div class="pricing-cell">Up to 100,000</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell pricing-footer hide-on-mobile">
+								<p class="pricing-plan-price">$
+									<span data-price>1999</span> / mo</p>
 								<button class="button-raisedRedBorder">GET STARTED</button>
 							</div>
 						</div>
-						<div class="pricing-cell">Good for development & non-critical apps</div>
-						<div class="pricing-cell">Up to 100,000</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell pricing-footer hide-on-mobile">
-							<p class="pricing-plan-price">$1999 / mo</p>
-							<button class="button-raisedRedBorder">GET STARTED</button>
-						</div>
-					</div>
-					<div class="pricing-column pricing-plan">
-						<div class="pricing-cell pricing-header">
-							<div>
-								<b class="pricing-plan-title">Enterprise</b>
+						<div class="pricing-column pricing-plan">
+							<div class="pricing-cell pricing-header">
+								<div>
+									<b class="pricing-plan-title">Enterprise</b>
+									<p class="pricing-plan-price">Custom pricing</p>
+									<button class="button-raisedRedBorder">Contact Us</button>
+								</div>
+							</div>
+							<div class="pricing-cell">Good for development & non-critical apps</div>
+							<div class="pricing-cell">More then 100,000</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
+							<div class="pricing-cell pricing-footer hide-on-mobile">
 								<p class="pricing-plan-price">Custom pricing</p>
-								<button class="button-raisedRedBorder">Contact Us</button>
+								<button class="button-raisedRedBorder">GET STARTED</button>
 							</div>
 						</div>
-						<div class="pricing-cell">Good for development & non-critical apps</div>
-						<div class="pricing-cell">More then 100,000</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
-						<div class="pricing-cell pricing-footer hide-on-mobile">
-							<p class="pricing-plan-price">Custom pricing</p>
-							<button class="button-raisedRedBorder">GET STARTED</button>
+					</div>
+				</div>
+			</section>
+		</main>
+		<div class="footer-twillio">
+			<div class="wrapper">
+				<div class="quote-container">
+					<svg class="quote-image" preserveAspectRatio="xMinYMin" width="539" version="1.1" xmlns="http://www.w3.org/2000/svg"
+					    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 539 546">
+						<defs>
+							<mask maskUnits="objectBoundingBox" id="canTopMask" style="mask-type: alpha;">
+								<image width="539" height="546" xlink:href="src/images/pages/chat/Photo-Mask@2x.png"></image>
+							</mask>
+						</defs>
+						<image mask="url(#canTopMask)" id="canTop" width="539" height="546" xlink:href="src/images/pages/chat/Photo@2x.jpg"></image>
+					</svg>
+					<div class="quote-content">
+						<p class="quote-symbol">“</p>
+						<p class="quote-text">Don't chat without Virgil.</p>
+						<p class="quote-author">Marc Boroditsky.</p>
+						<p class="quote-author-position">Twilio’s Senior Vice President</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="footer-top">
+				<div class="wrapper">
+					<div class="footerContacts">
+						<div class="footerContacts-logo">
+							<a href="">
+								<img src="../images/shared/logo-white.svg" width="145" height="47" alt="">
+							</a>
 						</div>
+						<div class="footerContacts-hashtag">#EncryptEverything</div>
+						<ul class="footerContacts-socials">
+							<li>
+								<a href="">
+									<i class="icon icon-facebook"></i>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<i class="icon icon-github"></i>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<i class="icon icon-twitter"></i>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<i class="icon icon-linkedin"></i>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<i class="icon icon-medium"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<nav class="footerNav">
+						<div class="footerNavBlock footerNavBlock-sources">
+							<div class="footerNavBlock-caption">Navigation</div>
+							<ul>
+								<li>
+									<a href="">Home</a>
+								</li>
+								<li>
+									<a href="">Developers</a>
+								</li>
+								<li>
+									<a href="">About</a>
+								</li>
+								<li>
+									<a href="">Features</a>
+								</li>
+								<li>
+									<a href="">Clients</a>
+								</li>
+								<li>
+									<a href="">Pricing</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footerNavBlock">
+							<div class="footerNavBlock-caption">Developers</div>
+							<ul>
+								<li>
+									<a href="">Documentation</a>
+								</li>
+								<li>
+									<a href="">API reference</a>
+								</li>
+								<li>
+									<a href="">Applications</a>
+								</li>
+								<li>
+									<a href="">Dashboard</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footerNavBlock">
+							<div class="footerNavBlock-caption">Contact us</div>
+							<ul>
+								<li>
+									<a href="">Contacts</a>
+								</li>
+								<li>
+									<a href="mailto:">support@virgil.net</a>
+								</li>
+								<li>
+									<a href="">Blog</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="wrapper">
+					<div class="footer-copyright">&copy; 2017 Virgil Security, Inc.</div>
+					<div class="footer-links">
+						<a href="mailto:" class="footer-email">support@virgilsecurity.com</a>
+						<a href="" class="footer-policy">Terms of Use & Privacy Policy</a>
 					</div>
 				</div>
 			</div>
-		</section>
-	</main>
-	<div class="footer-twillio">
-		<div class="wrapper">
-			<div class="quote-container">
-				<svg class="quote-image" preserveAspectRatio="xMinYMin" width="539" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-					viewBox="0 0 539 546">
-					<defs>
-						<mask maskUnits="objectBoundingBox" id="canTopMask" style="mask-type: alpha;">
-							<image width="539" height="546" xlink:href="src/images/pages/chat/Photo-Mask@2x.png"></image>
-						</mask>
-					</defs>
-					<image mask="url(#canTopMask)" id="canTop" width="539" height="546" xlink:href="src/images/pages/chat/Photo@2x.jpg"></image>
-				</svg>
-				<div class="quote-content">
-					<p class="quote-symbol">“</p>
-					<p class="quote-text">Don't chat without Virgil.</p>
-					<p class="quote-author">Marc Boroditsky.</p>
-					<p class="quote-author-position">Twilio’s Senior Vice President</p>
-				</div>
+		</footer>
+		<div class="scrollToTop" data-vs-sticky-scrollToTop>
+			<div class="scrollToTop-btn button-raisedRed">
+				<i class="icon icon-arrowTop-white"></i>
 			</div>
 		</div>
+		<div class="overlay" data-vs-sideNav-overlay></div>
 	</div>
-	<footer class="footer">
-		<div class="footer-top">
-			<div class="wrapper">
-				<div class="footerContacts">
-					<div class="footerContacts-logo">
-						<a href=""><img src="../images/shared/logo-white.svg" width="145" height="47" alt=""></a>
-					</div>
-					<div class="footerContacts-hashtag">#EncryptEverything</div>
-					<ul class="footerContacts-socials">
-						<li><a href=""><i class="icon icon-facebook"></i></a></li>
-						<li><a href=""><i class="icon icon-github"></i></a></li>
-						<li><a href=""><i class="icon icon-twitter"></i></a></li>
-						<li><a href=""><i class="icon icon-linkedin"></i></a></li>
-						<li><a href=""><i class="icon icon-medium"></i></a></li>
-					</ul>
-				</div>
-				<nav class="footerNav">
-					<div class="footerNavBlock footerNavBlock-sources">
-						<div class="footerNavBlock-caption">Navigation</div>
-						<ul>
-							<li><a href="">Home</a></li>
-							<li><a href="">Developers</a></li>
-							<li><a href="">About</a></li>
-							<li><a href="">Features</a></li>
-							<li><a href="">Clients</a></li>
-							<li><a href="">Pricing</a></li>
-						</ul>
-					</div>
-					<div class="footerNavBlock">
-						<div class="footerNavBlock-caption">Developers</div>
-						<ul>
-							<li><a href="">Documentation</a></li>
-							<li><a href="">API reference</a></li>
-							<li><a href="">Applications</a></li>
-							<li><a href="">Dashboard</a></li>
-						</ul>
-					</div>
-					<div class="footerNavBlock">
-						<div class="footerNavBlock-caption">Contact us</div>
-						<ul>
-							<li><a href="">Contacts</a></li>
-							<li><a href="mailto:">support@virgil.net</a></li>
-							<li><a href="">Blog</a></li>
-						</ul>
-					</div>
-				</nav>
-			</div>
-		</div>
-		<div class="footer-bottom">
-			<div class="wrapper">
-				<div class="footer-copyright">&copy; 2017 Virgil Security, Inc.</div>
-				<div class="footer-links">
-					<a href="mailto:" class="footer-email">support@virgilsecurity.com</a>
-					<a href="" class="footer-policy">Terms of Use & Privacy Policy</a>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<div class="scrollToTop" data-vs-sticky-scrollToTop>
-		<div class="scrollToTop-btn button-raisedRed"><i class="icon icon-arrowTop-white"></i></div>
-	</div>
-	<div class="overlay" data-vs-sideNav-overlay></div>
-</div>
 </body>
+
 </html>

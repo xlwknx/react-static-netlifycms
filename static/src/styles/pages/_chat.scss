@@ -331,7 +331,6 @@
 
 			.pricing-footer {
 				height: 145px;
-				justify-content: space-between;
 				padding-top: 30px;
 				padding-bottom: 30px;
 			}
@@ -356,12 +355,43 @@
 
 		.pricing-plan-price {
 			font-size: 20px;
-			padding-bottom: 20px;
+			padding-bottom: 15px;
 		}
 
 		.pricing-cell.dot {
 			color: #DDDDDD;
 			font-size: 14px;
+		}
+
+		.check {
+			
+		}
+
+		.switch-container {
+			width: 32px;
+			height: 18px;
+			background-color: $vs-color-lightGrey2;
+			opacity: 0.4;
+			border-radius: 9px;
+			position: relative;
+		}
+		
+		.switch-control {
+			width: 14px;
+			height: 14px;
+			border-radius: 14px;
+			background-color: white;
+			position: absolute;
+			top: 2px;
+			transition: all 0.5s;
+			
+			&.off {
+				left: 2px;
+			}
+		
+			&.on {
+				left: 16px;
+			}
 		}
 	}
 
