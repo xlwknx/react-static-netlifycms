@@ -205,7 +205,10 @@
 			<section class="chatDevelopSteps">
 				<div class="wrapper">
 					<div class="stepsContainer">
-						<div class="stepsImage"></div>
+						<div class="stepsImageContainer">
+							<div class="stepsImage iphone1 frontIphone"></div>
+							<div class="stepsImage iphone2 rearIphone"></div>
+						</div>
 						<div id="step-tabs" class="stepsTabs">
 							<div class="stepsControls">
 								<button data-tab="step1" class="stepControl current">STEP 1</button>
@@ -213,10 +216,24 @@
 								<button data-tab="step3" class="stepControl">STEP 3</button>
 							</div>
 							<div id="step1" class="stepContent current">
-								<h3 class="stepTitle">Send an Encrypted Message</h3>
-								<p>Look up Bob by his email address, encrypt a message for him and send the message with your favorite
-									message delivery tech!</p>
-								<img src="http://via.placeholder.com/440x185/" />
+								<h3 class="stepTitle">Create User Key at Signup</h3>
+								<p>Give your users the gift of a strong private key that never leaves their device.</p>
+								<pre class="code-editor">
+									<code class="code-line">// generate private key for Alice's user account</code>
+									<code class="code-line">let aliceKey = virgil.keys.generateKey();</code>
+									<code class="code-line"></code>
+									<code class="code-line">// save the key on the device</code>
+									<code class="code-line">try! aliceKey.store(withName: @”alice@yourapp.io”,</code>
+									<code class="code-line">password: @"UseHerPasswordToEncryptHerKey")</code>
+									<code class="code-line"></code>
+									<code class="code-line">// create public Virgil card for Alice to allow the   world of Bobs to find & message her</code>
+									<code class="code-line">let aliceIdentity = virgil.identities.createUserIdentity(withValue: “alice@yourapp.io”,   type: "email")</code>
+									<code class="code-line"></code>
+									<code class="code-line">let aliceCard = try! virgil.cards.createCard(with:   aliceIdentity, ownerKey:aliceKey)</code>
+									<code class="code-line"></code>
+									<code class="code-line">// Send Virgil card to your web app to verify Alice   (txt msg her) and publish it</code>
+									<code class="code-line">TransmitToServer(aliceCard.exportData())</code>
+								</pre>
 								<p>
 									This is how the data looks like over the wire and in the database:
 								</p>

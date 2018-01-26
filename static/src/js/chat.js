@@ -5,6 +5,14 @@ function initTabs() {
 
             $('.stepContent').removeClass('current');
             $('.stepControl').removeClass('current');
+
+            if (tab_id === 'step3') {
+                $('.iphone1').addClass('slideOut').removeClass('slideIn');
+                $('.iphone2').addClass('slideIn').removeClass('slideOut');
+            } else if ($('.iphone1').hasClass('slideOut')) {
+                $('.iphone1').removeClass('slideOut rearIphone').addClass('slideIn frontIphone');
+                $('.iphone2').removeClass('slideIn frontIphone').addClass('slideOut rearIphone');
+            }
     
             $(this).addClass('current');
             $("#" + tab_id).addClass('current');
