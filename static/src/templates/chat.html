@@ -315,7 +315,8 @@
 									<code class="code-line"><span class="hljs-comment">// decrypt the message and verify if it’s indeed from Alice</span></code>
 									<code class="code-line">virgil.cards.getCard(withId: “[<span class="hljs-type">ALICE_CARD_ID</span>]”)</code>
 									<code class="code-line">   { aliceCard, error <span class="hljs-keyword">in</span></code>
-									<code class="code-line">      <span class="hljs-keyword">let</span> message = <span class="hljs-type">String</span>(data: <span class="hljs-keyword">try</span>! bobKey.decryptThenVerify(base64:         ciphertext, from: aliceCard!), encoding: .utf8)!</code>
+									<code class="code-line">      <span class="hljs-keyword">let</span> message = <span class="hljs-type">String</span>(data: <span class="hljs-keyword">try</span>! bobKey.decryptThenVerify(base64:</code>
+									<code class="code-line">        ciphertext, from: aliceCard!), encoding: .utf8)!</code>
 									<code class="code-line">   }</code>
 								</pre>
 							</div>
@@ -379,10 +380,20 @@
 					<div class="pricing-table">
 						<div class="pricing-column pricing-description hide-on-mobile">
 							<div class="pricing-cell pricing-header">
-								Save with annual pre-payment
-								<div data-switch class="switch-container">
-									<div data-switch-control class="switch-control off"></div>
+								<div class="switch-annotation">
+									<span >
+										Bill
+										<p class="switch-annotation-big">MONTHLY</p>
+									</span>
+									<div data-switch class="switch-container">
+										<div data-switch-control class="switch-control off"></div>
+									</div>
+									<span>
+										Bill
+										<p class="switch-annotation-big">ANNUAL</p>
+									</span>
 								</div>
+								<p class="switch-subtitle">Save with annual pre-payment</p>
 							</div>
 							<div class="pricing-cell">Best for</div>
 							<div class="pricing-cell">Registered user keys</div>
@@ -395,10 +406,20 @@
 							<div class="pricing-cell hide-on-mobile">On-premise hosted Virgil backend services</div>
 							<div class="pricing-cell hide-on-mobile">Country-specific data location</div>
 							<div class="pricing-cell hide-on-mobile pricing-footer">
-								Save with annual pre-payment
-								<div data-switch class="switch-container">
-									<div data-switch-control class="switch-control off"></div>
+								<div class="switch-annotation">
+									<span >
+										Bill
+										<p class="switch-annotation-big">MONTHLY</p>
+									</span>
+									<div data-switch class="switch-container">
+										<div data-switch-control class="switch-control off"></div>
+									</div>
+									<span>
+										Bill
+										<p class="switch-annotation-big">ANNUAL</p>
+									</span>
 								</div>
+								<p class="switch-subtitle">Save with annual pre-payment</p>
 							</div>
 						</div>
 						<div class="pricing-column pricing-plan">
@@ -406,7 +427,7 @@
 								<div>
 									<b class="pricing-plan-title">Basic</b>
 									<p class="pricing-plan-price">Free</p>
-									<button class="button-raisedRedBorder">GET STARTED</button>
+									<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRedBorder">Get Started</a>
 								</div>
 							</div>
 							<div class="pricing-cell">Good for development & non-critical apps</div>
@@ -423,7 +444,7 @@
 							<div class="pricing-cell dot hide-on-mobile">&#x2022;</div>
 							<div class="pricing-cell pricing-footer hide-on-mobile">
 								<p class="pricing-plan-price">Free</p>
-								<button class="button-raisedRedBorder">GET STARTED</button>
+								<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRedBorder">Get Started</a>
 							</div>
 						</div>
 						<div class="pricing-column pricing-plan active">
@@ -432,7 +453,7 @@
 									<b class="pricing-plan-title">Production</b>
 									<p class="pricing-plan-price">$
 										<span data-price>49</span> / mo</p>
-									<button class="button-raisedRedBorder">GET STARTED</button>
+									<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRedBorder">Get Started</a>
 								</div>
 							</div>
 							<div class="pricing-cell">Ideal for production apps</div>
@@ -454,7 +475,7 @@
 							<div class="pricing-cell pricing-footer hide-on-mobile">
 								<p class="pricing-plan-price">$
 									<span data-price>49</span> / mo</p>
-								<button class="button-raisedRedBorder">GET STARTED</button>
+								<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRedBorder">Get Started</a>
 							</div>
 						</div>
 						<div class="pricing-column pricing-plan">
@@ -463,7 +484,7 @@
 									<b class="pricing-plan-title">Business</b>
 									<p class="pricing-plan-price">$
 										<span data-price>499</span> / mo</p>
-									<button class="button-raisedRedBorder">GET STARTED</button>
+									<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRedBorder">Get Started</a>
 								</div>
 							</div>
 							<div class="pricing-cell">Good for development & non-critical apps</div>
@@ -489,7 +510,7 @@
 							<div class="pricing-cell pricing-footer hide-on-mobile">
 								<p class="pricing-plan-price">$
 									<span data-price>499</span> / mo</p>
-								<button class="button-raisedRedBorder">GET STARTED</button>
+								<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRedBorder">Get Started</a>
 							</div>
 						</div>
 						<div class="pricing-column pricing-plan">
@@ -498,7 +519,7 @@
 									<b class="pricing-plan-title">Mega</b>
 									<p class="pricing-plan-price">$
 										<span data-price>1999</span> / mo</p>
-									<button class="button-raisedRedBorder">GET STARTED</button>
+									<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRedBorder">Get Started</a>
 								</div>
 							</div>
 							<div class="pricing-cell">Good for development & non-critical apps</div>
@@ -526,7 +547,7 @@
 							<div class="pricing-cell pricing-footer hide-on-mobile">
 								<p class="pricing-plan-price">$
 									<span data-price>1999</span> / mo</p>
-								<button class="button-raisedRedBorder">GET STARTED</button>
+								<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRedBorder">Get Started</a>
 							</div>
 						</div>
 						<div class="pricing-column pricing-plan">
@@ -565,7 +586,7 @@
 							</div>
 							<div class="pricing-cell pricing-footer hide-on-mobile">
 								<p class="pricing-plan-price">Custom pricing</p>
-								<button class="button-raisedRedBorder">GET STARTED</button>
+								<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRedBorder">Get Started</a>
 							</div>
 						</div>
 					</div>

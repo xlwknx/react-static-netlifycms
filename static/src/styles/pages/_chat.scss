@@ -191,9 +191,7 @@
 			.step1-loading {
 				position: absolute;
 				top: 280px;
-				margin: 0 auto;
-				width: 100%;
-				text-align: center;
+				left: 180px;
 				color: white;
 				opacity: 0.4;
 			}
@@ -239,7 +237,7 @@
 		}
 
 		.frontIphone {
-			z-index: 10;
+			z-index: 2;
 			transform: translateX(75px) scale(1, 1);
 			filter: blur(0px);
 		}
@@ -247,7 +245,7 @@
 		.rearIphone {
 			z-index: 1;
 			transform: scale(0.9, 0.9);
-			filter: blur(3px);
+			filter: blur(2px);
 		}
 
 		.reverse {
@@ -268,7 +266,7 @@
 		
 		@keyframes slideOut {
 			0% {
-				z-index: 10;
+				z-index: 2;
 				transform: translateX(75px) scale(1, 1);
 			}
 		
@@ -279,27 +277,27 @@
 		
 			51% {
 				transform: translateX(0px) translateY(754px);
-				filter: blur(3px);
+				filter: blur(2px);
 			}
 		
 			100% {
 				z-index: 1;
 				transform: translateY(0) scale(0.9, 0.9);
-				filter: blur(3px);				
+				filter: blur(2px);
 			}
 		}
 		
 		@keyframes slideId {
 			100% {
-				z-index: 10;
+				z-index: 2;
 				transform: translateX(75px) scale(1, 1);
-				filter: blur(0px);				
+				filter: blur(0px);
 			}
 		
 			0% {
 				z-index: 1;
 				transform: translateX(0px) scale(0.9, 0.9);
-				filter: blur(3px);				
+				filter: blur(2px);
 			}
 		}
 
@@ -347,14 +345,17 @@
 		@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
 		pre {
-			font-size: 0;
 			font-family: Inconsolata, monospace;
+			font-size: 0;
+			line-height: 0px;
+			white-space: pre-line;
 		}
 
 		code {
 			line-height: 15px;
 			font-size: 12px;
 			font-family: 'Source Code Pro', monospace;
+			white-space: pre;
 		}
 
 		pre.code-editor {
@@ -566,6 +567,25 @@
 			background-image: url('../assets/images/ui/icons/icon-check.svg');
 			width: 13px;
 			height: 10px;
+		}
+
+		.switch-annotation {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 8px;
+			font-family: 'Muller', sans-serif;
+			width: 100%;
+
+			&-big {
+				font-size: 11px;
+			}
+		}
+
+		.switch-subtitle {
+			color: $vs-color-darkRed1;
+			font-size: 12px;
+			margin-top: 20px;
 		}
 
 		.switch-container {

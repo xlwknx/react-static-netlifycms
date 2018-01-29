@@ -27,7 +27,7 @@ function initTabs() {
         var message = 'Hey Bob, are you crazy?';
         var currentMessage = '';
         
-        interval2 = setInterval(startTyping, 200);
+        interval2 = setInterval(startTyping, 100);
 
         function startTyping() {
             var currentChar = currentMessage.length;
