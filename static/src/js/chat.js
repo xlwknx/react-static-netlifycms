@@ -10,7 +10,9 @@ function initTabs() {
 
         function loading() {
             var text = $('.step1-loading').text();
-            text = text.replace(/\.+/, (match) => match.length < 3 ? match + '.' : '.');
+            text = text.replace(/\.+/, function(match) {
+                return match.length < 3 ? match + '.' : '.';
+            });
             $('.step1-loading').text(text);
         }
         
@@ -42,7 +44,9 @@ function initTabs() {
     function startScene3() {
         endScene1();
         endScene2();
-        interval3 = setInterval(() => $('#step3-message').removeClass('hidden'), 2000)
+        interval3 = setInterval(function() {
+            $('#step3-message').removeClass('hidden')
+        }, 2000);
     }
 
     function endScene1() {
@@ -105,7 +109,7 @@ function initSwapPrices() {
         var status = enabled ? 'on' : 'off';
         var oldStaus = !enabled ? 'on' : 'off';
 
-        $("div[data-switch-control]").each((i, el) => {
+        $("div[data-switch-control]").each(function(i, el) {
             $(el).removeClass(oldStaus).addClass(status);
         });
 
@@ -122,7 +126,9 @@ function initSwapPrices() {
         el.innerHTML = Math.round(price * 12 / 10);
     }
 
-    $("div[data-switch]").each((i, el) => $(el).click(swipePrices));
+    $("div[data-switch]").each(function(i, el) {
+        $(el).click(swipePrices);
+    });
 }
   
 function init() {
