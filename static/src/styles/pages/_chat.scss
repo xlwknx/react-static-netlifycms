@@ -166,31 +166,88 @@
 		.stepsImage {
 			background-repeat: no-repeat;
 			position: absolute;
-			bottom: 0;
+			bottom: -100px;
 			background-size: cover;
 			transform-origin: 0% 100%;
+			color: white;
+			font-size: 16px;
+			letter-spacing: 0.025em;
+
+			width: 440px;
+			height: 854px;
 
 			&.iphone1 {
-				background-image: url('../assets/images/bg/chat/Phone-White@2x.jpg');
-				width: 440px;
-				height: 750px;
+				background-image: url('../assets/images/bg/chat/Phone-White@2x.png');
 			}
 
 			&.iphone2 {
-				background-image: url('../assets/images/bg/chat/Phone-Red@2x.jpg');
-				width: 440px;
-				height: 750px;
+				background-image: url('../assets/images/bg/chat/Phone-Red@2x.png');
+			}
+
+			.hidden {
+				display: none!important;
+			}
+			
+			.step1-loading {
+				position: absolute;
+				top: 280px;
+				margin: 0 auto;
+				width: 100%;
+				text-align: center;
+				color: white;
+				opacity: 0.4;
+			}
+
+			.iphone-display {
+				padding: 80px 38px 264px;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				height: 754px;
+			}
+
+			.step-message {
+				display: inline-block;
+				max-width: 270px;
+				padding: 15px;
+				background-color: $vs-color-darkBlue1;
+				border-radius: 3px;
+				margin-bottom: 18px;
+			}
+
+			.step2-sending-message {
+				position: absolute;
+				left: 46px;
+				top: 504px;
+			}
+
+			.step2-send-button {
+				position: absolute;
+				top: 504px;
+				right: 46px;
+				opacity: 0.25;
+			}
+
+			.incoming {
+				align-self: flex-end;
+				background-color: #4A4E57;
+			}
+
+			.outcoming {
+				align-self: flex-start;
 			}
 		}
 
 		.frontIphone {
 			z-index: 10;
 			transform: translateX(75px) scale(1, 1);
+			filter: blur(0px);
 		}
 
 		.rearIphone {
 			z-index: 1;
 			transform: scale(0.9, 0.9);
+			filter: blur(3px);
 		}
 
 		.reverse {
@@ -216,16 +273,19 @@
 			}
 		
 			49% {
-				transform: translateX(75px) translateY(750px);
+				transform: translateX(75px) translateY(754px);
+				filter: blur(0px);
 			}
 		
 			51% {
-				transform: translateX(0px) translateY(750px);
+				transform: translateX(0px) translateY(754px);
+				filter: blur(3px);
 			}
 		
 			100% {
 				z-index: 1;
 				transform: translateY(0) scale(0.9, 0.9);
+				filter: blur(3px);				
 			}
 		}
 		
@@ -233,11 +293,13 @@
 			100% {
 				z-index: 10;
 				transform: translateX(75px) scale(1, 1);
+				filter: blur(0px);				
 			}
 		
 			0% {
 				z-index: 1;
 				transform: translateX(0px) scale(0.9, 0.9);
+				filter: blur(3px);				
 			}
 		}
 
@@ -265,7 +327,7 @@
 			}
 
 			p {
-				padding: 30px 0;
+				padding: 26px 0;
 				font-size: 14px;
 			}
 
@@ -282,23 +344,17 @@
 			display: block;
 		}
 
-		.code-editor {
-			padding-top: 16px;
-			padding-bottom: 16px;
-			padding-right: 25px;
-			width: 100%;
-			max-width: 600px;
-			overflow-y: scroll;
-			background-color: $vs-color-darkBlue4;
-			color: $vs-color-codetext;
-			border-radius: 3px;
+		@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+		pre {
 			font-size: 0;
 			font-family: Inconsolata, monospace;
-			
-			.code-line {
-				line-height: 1.5em;
-				font-size: 12px;
-			}
+		}
+
+		code {
+			line-height: 15px;
+			font-size: 12px;
+			font-family: 'Source Code Pro', monospace;
 		}
 
 		pre.code-editor {
@@ -316,6 +372,26 @@
 			text-align: right;
 			display: inline-block;
 		}
+
+		.code-editor {
+			padding-top: 16px;
+			padding-bottom: 16px;
+			padding-right: 25px;
+			width: 100%;
+			max-width: 600px;
+			overflow-y: scroll;
+			background-color: $vs-color-darkBlue4;
+			color: $vs-color-codetext;
+			border-radius: 3px;
+		}
+
+		.code-data {
+			background-color: $vs-color-darkRed2;
+			color: white;
+			padding: 18px 20px;
+			border-radius: 3px;
+		}
+
 	}
 	.companies {
 		background-image: url('../assets/images/bg/chat/Partners@2x.jpg');

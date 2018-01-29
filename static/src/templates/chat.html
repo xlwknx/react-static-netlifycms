@@ -207,8 +207,37 @@
 				<div class="wrapper">
 					<div class="stepsContainer">
 						<div class="stepsImageContainer">
-							<div class="stepsImage iphone1 frontIphone"></div>
-							<div class="stepsImage iphone2 rearIphone"></div>
+							<div class="stepsImage iphone1 frontIphone">
+								<span class="step1-loading">Logging in.</span>
+								<span id="step2-scene" class="step2-scene hidden">
+									<div class="iphone-display">
+										<span class="step-message incoming">
+											God is dead. God remains dead.
+											And we have killed him. Yet his shadow still looms.
+											How shall we comfort ourselves, the the murderers of all murderers?
+										</span>
+										<span id="step2-message" class="step-message outcoming hidden">
+											Hey Bob, are you crazy?
+										</span>
+									</div>
+									<span class="step2-sending-message"></span>
+									<span class="step2-send-button">Send</span>
+								</span>
+							</div>
+							<div class="stepsImage iphone2 rearIphone">
+								<span id="step3-scene">
+									<div class="iphone-display">
+										<span class="step-message outcoming">
+											God is dead. God remains dead.
+											And we have killed him. Yet his shadow still looms.
+											How shall we comfort ourselves, the the murderers of all murderers?
+										</span>
+										<span id="step3-message" class="step-message incoming hidden">
+											Hey Bob, are you crazy?
+										</span>
+									</div>
+								</span>
+							</div>
 						</div>
 						<div id="step-tabs" class="stepsTabs">
 							<div class="stepsControls">
@@ -240,30 +269,55 @@
 									<code class="code-line"></code>
 									<code class="code-line"><span class="hljs-type">TransmitToServer</span>(aliceCard.exportData())</code>
 								</pre>
-								<p class="grey-text" >
-									Code snippets here given in Swift, for plenty other languages please check our 
+								<p class="grey-text">
+									Code snippets here given in Swift, for plenty other languages please check our
 									<a class="red-text" href="//developer.virgilsecurity.com/" target="_blanc">documentation.</a>
 								</p>
 							</div>
 							<div id="step2" class="stepContent">
-								<h3 class="stepTitle">Send an Encrypted Message 2</h3>
-								<p>Look up Bob by his email address, encrypt a message for him and send the message with your favorite
-									message delivery tech!</p>
-								<img src="http://via.placeholder.com/440x185/" />
+								<h3 class="stepTitle">Encrypt Message & Send It</h3>
+								<p>Encrypt a message to Bob by simply referring to his email address (or user ID).</p>
+								<pre class="code-editor">
+									<code class="code-line"><span class="hljs-comment">// search for Bob's card in Virgil’s Card Cloud</span></code>
+									<code class="code-line">virgil.cards.searchCards(withIdentities: [“bob@yourapp.io”]) { bobCards,</code>
+									<code class="code-line">    error <span class="hljs-keyword">in</span></code>
+									<code class="code-line"></code>
+									<code class="code-line">    <span class="hljs-comment">// prepare the message</span></code>
+									<code class="code-line">    <span class="hljs-keyword">let</span> message = <span class="hljs-string">"Hey Bob, are you crazy?"</span></code>
+									<code class="code-line"></code>
+									<code class="code-line">    <span class="hljs-comment">// encrypt the message using found Virgil Cards</span></code>
+									<code class="code-line">    <span class="hljs-keyword">let</span> ciphertext = (<span class="hljs-keyword">try</span>! aliceKey.signThenEncrypt(message, <span class="hljs-keyword">for</span>: bobCards!))</code>
+									<code class="code-line">        .base64EncodedString()</code>
+									<code class="code-line"> </code>
+									<code class="code-line">    <span class="hljs-comment">// send encrypted message with Twilio</span></code>
+									<code class="code-line">    <span class="hljs-keyword">let</span> message = <span class="hljs-keyword">self</span>.channel.messages.createMessageWithBody(ciphertext)</code>
+									<code class="code-line">    <span class="hljs-keyword">self</span>.channel.messages.sendMessage(message) { (result) <span class="hljs-keyword">in</span></code>
+									<code class="code-line">          <span class="hljs-comment">/// Message sent.</span></code>
+									<code class="code-line">    }</code>
+									<code class="code-line">}</code>
+								</pre>
 								<p>
 									This is how the data looks like over the wire and in the database:
 								</p>
-								<img src="http://via.placeholder.com/440x75/" />
+								<pre class="code-data">
+									<code class="code-data-line">SGVsbG8gd29ybGQsIEknbSBibGEgYmFvaGZvIGZ3aXVociB3doZm4gc2FkbmZwaUhJVUJJVVdFR1JG</code>
+									<code class="code-data-line">IElXRSA3V0VGV0U=</code>
+								</pre>
+								<p>Decryption keys never leave the device.</p>
 							</div>
 							<div id="step3" class="stepContent">
-								<h3 class="stepTitle">Send an Encrypted Message 3</h3>
-								<p>Look up Bob by his email address, encrypt a message for him and send the message with your favorite
-									message delivery tech!</p>
-								<img src="http://via.placeholder.com/440x185/" />
-								<p>
-									This is how the data looks like over the wire and in the database:
-								</p>
-								<img src="http://via.placeholder.com/440x75/" />
+								<h3 class="stepTitle">Decrypt Message</h3>
+								<p>Decrypt and verify if the message is really from Alice.</p>
+								<pre class="code-editor">
+									<code class="code-line"><span class="hljs-comment">// load a Virgil Key from device storage</span></code>
+									<code class="code-line"><span class="hljs-keyword">let</span> bobKey = <span class="hljs-keyword">try</span>! virgil.keys.loadKey(withName: “bob@yourapp.io”)</code>
+									<code class="code-line"></code>
+									<code class="code-line"><span class="hljs-comment">// decrypt the message and verify if it’s indeed from Alice</span></code>
+									<code class="code-line">virgil.cards.getCard(withId: “[<span class="hljs-type">ALICE_CARD_ID</span>]”)</code>
+									<code class="code-line">   { aliceCard, error <span class="hljs-keyword">in</span></code>
+									<code class="code-line">      <span class="hljs-keyword">let</span> message = <span class="hljs-type">String</span>(data: <span class="hljs-keyword">try</span>! bobKey.decryptThenVerify(base64:         ciphertext, from: aliceCard!), encoding: .utf8)!</code>
+									<code class="code-line">   }</code>
+								</pre>
 							</div>
 						</div>
 
