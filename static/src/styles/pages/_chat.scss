@@ -136,6 +136,7 @@
 			}
 		}
 	}
+
 	.chatDevelopSteps {
 		overflow: hidden;
 
@@ -151,7 +152,7 @@
 		}
 
 		.stepsImageContainer {
-			width: 600px;
+			width: 525px;
 			height: 100%;
 			flex: 0 0 auto;
 			margin-right: 80px;
@@ -166,24 +167,25 @@
 			background-repeat: no-repeat;
 			position: absolute;
 			bottom: 0;
-
+			background-size: cover;
 			transform-origin: 0% 100%;
+
 			&.iphone1 {
-				background-color: coral;
-				width: 450px;
+				background-image: url('../assets/images/bg/chat/Phone-White@2x.jpg');
+				width: 440px;
 				height: 750px;
 			}
 
 			&.iphone2 {
-				background-color: navy;
-				width: 450px;
+				background-image: url('../assets/images/bg/chat/Phone-Red@2x.jpg');
+				width: 440px;
 				height: 750px;
 			}
 		}
 
 		.frontIphone {
 			z-index: 10;
-			transform: translateX(150px) scale(1, 1);
+			transform: translateX(75px) scale(1, 1);
 		}
 
 		.rearIphone {
@@ -210,11 +212,11 @@
 		@keyframes slideOut {
 			0% {
 				z-index: 10;
-				transform: translateX(150px) scale(1, 1);
+				transform: translateX(75px) scale(1, 1);
 			}
 		
 			49% {
-				transform: translateX(150px) translateY(750px);
+				transform: translateX(75px) translateY(750px);
 			}
 		
 			51% {
@@ -230,7 +232,7 @@
 		@keyframes slideId {
 			100% {
 				z-index: 10;
-				transform: translateX(150px) scale(1, 1);
+				transform: translateX(75px) scale(1, 1);
 			}
 		
 			0% {
@@ -240,10 +242,10 @@
 		}
 
 		.stepControl {
+			@include font-muller-bold();
 			margin-right: 40px;
 			padding: 10px 5px;
 			color: $vs-color-lightGrey4;
-			@include font-muller-bold();
 			font-size: 16px;
 
 			&.current {
@@ -257,14 +259,22 @@
 			display: none;
 			
 			.stepTitle {
-				font-size: 26px;
 				@include font-muller-bold();
+				font-size: 26px;
 				text-transform: capitalize;
 			}
 
 			p {
 				padding: 30px 0;
 				font-size: 14px;
+			}
+
+			.grey-text {
+				color: $vs-color-lightGrey4;
+			}
+
+			.red-text {
+				color: $vs-color-darkRed2;
 			}
 		}
 
@@ -273,11 +283,11 @@
 		}
 
 		.code-editor {
-			padding-top: 25px;
-			padding-bottom: 25px;
+			padding-top: 16px;
+			padding-bottom: 16px;
 			padding-right: 25px;
 			width: 100%;
-			max-width: 440px;
+			max-width: 600px;
 			overflow-y: scroll;
 			background-color: $vs-color-darkBlue4;
 			color: $vs-color-codetext;
@@ -287,7 +297,7 @@
 			
 			.code-line {
 				line-height: 1.5em;
-				font-size: 16px;
+				font-size: 12px;
 			}
 		}
 

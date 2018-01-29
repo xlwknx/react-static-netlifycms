@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 	<title>Virgil Security And IoT</title>
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/styles/atom-one-dark.min.css">
 </head>
 
 <body>
@@ -219,25 +220,30 @@
 								<h3 class="stepTitle">Create User Key at Signup</h3>
 								<p>Give your users the gift of a strong private key that never leaves their device.</p>
 								<pre class="code-editor">
-									<code class="code-line">// generate private key for Alice's user account</code>
-									<code class="code-line">let aliceKey = virgil.keys.generateKey();</code>
+									<code class="code-line"><span class="hljs-comment">// generate private key for Alice's user account</span></code>
+									<code class="code-line"><span class="hljs-keyword">let</span> aliceKey = virgil.keys.generateKey()</code>
 									<code class="code-line"></code>
-									<code class="code-line">// save the key on the device</code>
-									<code class="code-line">try! aliceKey.store(withName: @”alice@yourapp.io”,</code>
-									<code class="code-line">password: @"UseHerPasswordToEncryptHerKey")</code>
+									<code class="code-line"><span class="hljs-comment">// save the key on the device</span></code>
+									<code class="code-line"><span class="hljs-keyword">try</span>! aliceKey.store(withName: @”alice@yourapp.io”, password:</code>
+									<code class="code-line">    @<span class="hljs-string">"UseHerPasswordToEncryptHerKey"</span>)</code>
 									<code class="code-line"></code>
-									<code class="code-line">// create public Virgil card for Alice to allow the   world of Bobs to find & message her</code>
-									<code class="code-line">let aliceIdentity = virgil.identities.createUserIdentity(withValue: “alice@yourapp.io”,   type: "email")</code>
+									<code class="code-line"><span class="hljs-comment">// create public Virgil card for Alice to allow the world of Bobs to find</span></code>
+									<code class="code-line"><span class="hljs-comment">// &amp; message her</span></code>
+									<code class="code-line"><span class="hljs-keyword">let</span> aliceIdentity = virgil.identities.createUserIdentity(withValue:</code>
+									<code class="code-line">    “alice@yourapp.io”, type: <span class="hljs-string">"email"</span>)</code>
 									<code class="code-line"></code>
-									<code class="code-line">let aliceCard = try! virgil.cards.createCard(with:   aliceIdentity, ownerKey:aliceKey)</code>
+									<code class="code-line"><span class="hljs-keyword">let</span> aliceCard = <span class="hljs-keyword">try</span>! virgil.cards.createCard(with: aliceIdentity, </code>
+									<code class="code-line">    ownerKey:aliceKey)</code>
 									<code class="code-line"></code>
-									<code class="code-line">// Send Virgil card to your web app to verify Alice   (txt msg her) and publish it</code>
-									<code class="code-line">TransmitToServer(aliceCard.exportData())</code>
+									<code class="code-line"><span class="hljs-comment">// Send Virgil card to your web app to verify Alice (txt msg her) and</span></code>
+									<code class="code-line"><span class="hljs-comment">// publish it</span></code>
+									<code class="code-line"></code>
+									<code class="code-line"><span class="hljs-type">TransmitToServer</span>(aliceCard.exportData())</code>
 								</pre>
-								<p>
-									This is how the data looks like over the wire and in the database:
+								<p class="grey-text" >
+									Code snippets here given in Swift, for plenty other languages please check our 
+									<a class="red-text" href="//developer.virgilsecurity.com/" target="_blanc">documentation.</a>
 								</p>
-								<img src="http://via.placeholder.com/440x75/" />
 							</div>
 							<div id="step2" class="stepContent">
 								<h3 class="stepTitle">Send an Encrypted Message 2</h3>
