@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="650" viewBox="0 0 1920 650">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #2b303b;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="BGtwillio.svg" class="cls-1" d="M0,3939.99L1920,3860v650H0V3939.99Z" transform="translate(0 -3860)"/>
+</svg>
