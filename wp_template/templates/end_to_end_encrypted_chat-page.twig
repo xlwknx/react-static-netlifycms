@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+
+    {% block wp_head %}
+        <link rel="stylesheet"
+              href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/styles/atom-one-dark.min.css">
+        {{ parent() }}
+    {% endblock %}
+
+{% block body_content %}
+<div class="page chatPage" data-vs-page="chat">
+    {% block header %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block content %}
+    <div class="container">
+        {% include 'end_to_end_encrypted_chat_page/intro_section.twig' %}
+        {% include 'end_to_end_encrypted_chat_page/chat_favorite_tech_section.twig' %}
+        {% include 'end_to_end_encrypted_chat_page/chat_develop_steps_section.twig' %}
+        {% include 'end_to_end_encrypted_chat_page/companies_section.twig' %}
+        {% include 'end_to_end_encrypted_chat_page/pricing_section.twig' %}
+    </div>
+    {% include 'end_to_end_encrypted_chat_page/twillo_footer.twig' %}
+
+    {% endblock %}
+    {% block footer %}
+        {{ parent() }}
+    {% endblock %}
+</div>
+{% endblock %}
