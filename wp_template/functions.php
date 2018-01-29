@@ -72,7 +72,6 @@ if (!function_exists('virgilsecurity_setup')) :
 
         add_action('wp_enqueue_scripts', 'virgilsecurity_enqueue_style');
         add_action('wp_enqueue_scripts', 'virgilsecurity_enqueue_script');
-        add_action('widgets_init', 'virgilsecurity_widgets_init');
         add_action('admin_menu', 'virgilsecurity_customize_meta_boxes');
         //add_action('admin_head-post.php', 'virgilsecurity_hide_publishing_actions');
         //add_action('admin_head-post-new.php', 'virgilsecurity_hide_publishing_actions');
@@ -267,113 +266,65 @@ if (!function_exists('virgilsecurity_setup')) :
     function virgilsecurity_setup_starter_content($content, $config)
     {
         return [
-            //'attachments' => [
-            //    'featured-image-logo' => [
-            //        'post_title' => 'Logo',
-            //        'file'       => 'assets/logo.png',
-            //    ],
-            //],
             'options' => [
                 'show_on_front'  => 'page',
                 'page_on_front'  => '{{homepage}}',
                 'page_for_posts' => '{{blogpage}}',
             ],
-            'widgets' => [
-                'about-virgil-intro-msg'        => virgilsecurity_get_starter_content(
-                    "widgets",
-                    "about-virgil",
-                    "about_virgil_intro_msg"
-                ),
-                'about-virgil-intro-list'       => virgilsecurity_get_starter_content(
-                    "widgets",
-                    "about-virgil",
-                    "about_virgil_intro_list"
-                ),
-                'about-virgil-mission'          => virgilsecurity_get_starter_content(
-                    "widgets",
-                    "about-virgil",
-                    "about_virgil_mission"
-                ),
-                'about-virgil-leadership'       => virgilsecurity_get_starter_content(
-                    "widgets",
-                    "about-virgil",
-                    "about_virgil_leadership"
-                ),
-                'about-virgil-highlights-msg'   => virgilsecurity_get_starter_content(
-                    "widgets",
-                    "about-virgil",
-                    "about_virgil_highlights_msg"
-                ),
-                'about-virgil-highlights-items' => virgilsecurity_get_starter_content(
-                    "widgets",
-                    "about-virgil",
-                    "about_virgil_highlights_items"
-                ),
-                'about-virgil-awards'           => virgilsecurity_get_starter_content(
-                    "widgets",
-                    "about-virgil",
-                    "about_virgil_awards"
-                ),
-                'about-virgil-investors'        => virgilsecurity_get_starter_content(
-                    "widgets",
-                    "about-virgil",
-                    "about_virgil_investors"
-                ),
-            ],
             'posts'   => [
-                'about_virgil'     => [
-                    'post_type'    => 'page',
-                    'post_name'    => 'about-virgil',
-                    'post_title'   => __('About Virgil', 'virgilsecurity'),
-                    'post_content' => __return_empty_string(),
-                ],
-                'clients'          => [
-                    'post_type'    => 'page',
-                    'post_name'    => 'clients',
-                    'post_title'   => __('Clients', 'virgilsecurity'),
-                    'post_content' => __return_empty_string(),
-                ],
-                'features'         => [
+                'features'                  => [
                     'post_type'    => 'page',
                     'post_name'    => 'features',
                     'post_title'   => __('Features', 'virgilsecurity'),
                     'post_content' => __return_empty_string(),
                 ],
-                'pricing'          => [
+                'pricing'                   => [
                     'post_type'    => 'page',
                     'post_name'    => 'pricing',
                     'post_title'   => __('Pricing', 'virgilsecurity'),
                     'post_content' => __return_empty_string(),
                 ],
-                'contact'          => [
+                'contact'                   => [
                     'post_type'    => 'page',
                     'post_name'    => 'contact',
                     'post_title'   => __('Contact', 'virgilsecurity'),
                     'post_content' => __return_empty_string(),
                 ],
-                'blogpage'         => [
+                'blogpage'                  => [
                     'post_type'    => 'page',
                     'post_name'    => 'blog',
                     'post_title'   => __('Blog', 'virgilsecurity'),
                     'post_content' => __return_empty_string(),
                 ],
-                'homepage'         => [
+                'homepage'                  => [
                     'post_type'    => 'page',
                     'post_name'    => 'homepage',
                     'post_title'   => __('Homepage', 'virgilsecurity'),
                     'post_content' => __return_empty_string(),
                 ],
-                'terms-of-service' => [
+                'terms-of-service'          => [
                     'post_type'    => 'page',
                     'post_name'    => 'terms-of-service',
                     'post_title'   => __('Terms Of Service', 'virgilsecurity'),
                     'post_content' => virgilsecurity_get_starter_content('pages', 'terms-of-service'),
                 ],
-                'privacy-policy'   => [
+                'privacy-policy'            => [
                     'post_type'    => 'page',
                     'post_name'    => 'privacy-policy',
                     'post_title'   => __('Privacy Policy', 'virgilsecurity'),
                     'post_content' => virgilsecurity_get_starter_content('pages', 'privacy-policy'),
+                ],
+                'iot'                       => [
+                    'post_type'    => 'page',
+                    'post_name'    => 'iot',
+                    'post_title'   => __('Internet Of Things', 'virgilsecurity'),
+                    'post_content' => __return_empty_string(),
+                ],
+                'end-to-end-encrypted-chat' => [
+                    'post_type'    => 'page',
+                    'post_name'    => 'end-to-end-encrypted-chat',
+                    'post_title'   => __('End To End Encrypted Chat', 'virgilsecurity'),
+                    'post_content' => __return_empty_string(),
                 ],
             ],
             //'nav_menus' => [
@@ -689,82 +640,6 @@ if (!function_exists('virgilsecurity_setup')) :
         }
 
         curl_close($ch);
-    }
-
-    function virgilsecurity_widgets_init()
-    {
-        //About Virgil
-        register_sidebar(
-            [
-                'name'          => __('About Virgil Intro Msg', 'virgilsecurity'),
-                'id'            => 'about-virgil-intro-msg',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('About Virgil Intro List', 'virgilsecurity'),
-                'id'            => 'about-virgil-intro-list',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('About Virgil Mission', 'virgilsecurity'),
-                'id'            => 'about-virgil-mission',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('About Virgil Leadership', 'virgilsecurity'),
-                'id'            => 'about-virgil-leadership',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('About Virgil Highlights Msg', 'virgilsecurity'),
-                'id'            => 'about-virgil-highlights-msg',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('About Virgil Highlights Items', 'virgilsecurity'),
-                'id'            => 'about-virgil-highlights-items',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('About Virgil Awards', 'virgilsecurity'),
-                'id'            => 'about-virgil-awards',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
-
-        register_sidebar(
-            [
-                'name'          => __('About Virgil Investors', 'virgilsecurity'),
-                'id'            => 'about-virgil-investors',
-                'before_widget' => __return_empty_string(),
-                'after_widget'  => __return_empty_string(),
-            ]
-        );
     }
 
 endif; // virgilsecurity_setup
