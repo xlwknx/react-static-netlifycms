@@ -169,9 +169,9 @@
 		<main class="container">
 			<section class="intro">
 				<div class="wrapper">
-					<div class="introContentBlock">
+					<div class="introBlock">
 						<div class="blockMsg">
-							<h1 class="blockMsg-headline">Add end-to-end encryptionto your chat app in 10 minutes</h1>
+							<h1 class="blockMsg-headline">Add end-to-end encryption to your chat app in 10 minutes</h1>
 						</div>
 						<div class="introActions">
 							<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRed">Get Started</a>
@@ -180,15 +180,15 @@
 					<div class="chatFeatures">
 						<div class="chatFeature end2end">
 							<div class="chatFeature-title">END-TO-END ENCRYPTED</div>
-							<div class="chatFeature-description">Virgil's E2EE tech makes peekingimpossible for cloud providers,governments, hackers.</div>
+							<div class="chatFeature-description">Virgil's E2EE tech makes peeking impossible for cloud providers, governments, hackers.</div>
 						</div>
 						<div class="chatFeature ready2go">
 							<div class="chatFeature-title">Ready to Go & Open Source</div>
-							<div class="chatFeature-description">Fully functional open source chat app,licensed under ISC, yours to reuse &customize in your app.</div>
+							<div class="chatFeature-description">Fully functional open source chat app, licensed under ISC, yours to reuse & customize.</div>
 						</div>
 						<div class="chatFeature start-free">
-							<div class="chatFeature-title">Start Freee</div>
-							<div class="chatFeature-description">Start up for free. Pay only whenyou're ready for prime time.</div>
+							<div class="chatFeature-title">Start Free</div>
+							<div class="chatFeature-description">Start up for free. Pay only when you're ready for prime time.</div>
 						</div>
 					</div>
 				</div>
@@ -196,7 +196,7 @@
 			<section class="chatFavoriteTech">
 				<div class="wrapper">
 					<div class="chatFavoriteTech-container">
-						<div class="favoriteTech text">Work with your favirite tech</div>
+						<div class="favoriteTech text">Works with your favorite tech</div>
 						<div class="favoriteTech twillio"></div>
 						<div class="favoriteTech nexmo"></div>
 						<div class="favoriteTech parse"></div>
@@ -221,8 +221,8 @@
 										</span>
 									</div>
 									<span class="step2-sending-message"></span>
-									<span class="step2-send-button">Send</span>
 								</span>
+								<span class="step2-send-button">Send</span>
 							</div>
 							<div class="stepsImage iphone2 rearIphone">
 								<span id="step3-scene">
@@ -235,6 +235,7 @@
 										<span id="step3-message" class="step-message incoming hidden">
 											Hey Bob, are you crazy?
 										</span>
+										<span class="step2-send-button">Send</span>
 									</div>
 								</span>
 							</div>
@@ -253,40 +254,41 @@
 									<code class="code-line"><span class="hljs-keyword">let</span> aliceKey = virgil.keys.generateKey()</code>
 									<code class="code-line"></code>
 									<code class="code-line"><span class="hljs-comment">// save the key on the device</span></code>
-									<code class="code-line"><span class="hljs-keyword">try</span>! aliceKey.store(withName: @”alice@yourapp.io”, password:</code>
+									<code class="code-line"><span class="hljs-keyword">try</span>! aliceKey.store(withName: @”alice@yourapp.io”, password:</code>
 									<code class="code-line">    @<span class="hljs-string">"UseHerPasswordToEncryptHerKey"</span>)</code>
 									<code class="code-line"></code>
-									<code class="code-line"><span class="hljs-comment">// create public Virgil card for Alice to allow the world of Bobs to find</span></code>
-									<code class="code-line"><span class="hljs-comment">// &amp; message her</span></code>
-									<code class="code-line"><span class="hljs-keyword">let</span> aliceIdentity = virgil.identities.createUserIdentity(withValue:</code>
+									<code class="code-line"><span class="hljs-comment">// create public Virgil card for Alice to allow the world of Bobs </span></code>
+									<code class="code-line"><span class="hljs-comment">// to find &amp; message her</span></code>
+									<code class="code-line"><span class="hljs-keyword">let</span> aliceIdentity = virgil.identities.createUserIdentity(withValue:</code>
 									<code class="code-line">    “alice@yourapp.io”, type: <span class="hljs-string">"email"</span>)</code>
 									<code class="code-line"></code>
-									<code class="code-line"><span class="hljs-keyword">let</span> aliceCard = <span class="hljs-keyword">try</span>! virgil.cards.createCard(with: aliceIdentity, </code>
+									<code class="code-line"><span class="hljs-keyword">let</span> aliceCard = <span class="hljs-keyword">try</span>! virgil.cards.createCard(with: aliceIdentity, </code>
 									<code class="code-line">    ownerKey:aliceKey)</code>
 									<code class="code-line"></code>
-									<code class="code-line"><span class="hljs-comment">// Send Virgil card to your web app to verify Alice (txt msg her) and</span></code>
+									<code class="code-line"><span class="hljs-comment">// Send Virgil card to your web app to verify Alice (txt msg her) and</span></code>
 									<code class="code-line"><span class="hljs-comment">// publish it</span></code>
 									<code class="code-line"></code>
 									<code class="code-line"><span class="hljs-type">TransmitToServer</span>(aliceCard.exportData())</code>
 								</pre>
-								<p class="grey-text">
+								<span class="grey-text">
 									Code snippets here given in Swift, for plenty other languages please check our
 									<a class="red-text" href="//developer.virgilsecurity.com/" target="_blanc">documentation.</a>
-								</p>
+								</span>
 							</div>
 							<div id="step2" class="stepContent">
 								<h3 class="stepTitle">Encrypt Message & Send It</h3>
 								<p>Encrypt a message to Bob by simply referring to his email address (or user ID).</p>
 								<pre class="code-editor">
 									<code class="code-line"><span class="hljs-comment">// search for Bob's card in Virgil’s Card Cloud</span></code>
-									<code class="code-line">virgil.cards.searchCards(withIdentities: [“bob@yourapp.io”]) { bobCards,</code>
+									<code class="code-line">virgil.cards.searchCards(withIdentities: [“bob@yourapp.io”]) { bobCards,</code>
 									<code class="code-line">    error <span class="hljs-keyword">in</span></code>
 									<code class="code-line"></code>
 									<code class="code-line">    <span class="hljs-comment">// prepare the message</span></code>
 									<code class="code-line">    <span class="hljs-keyword">let</span> message = <span class="hljs-string">"Hey Bob, are you crazy?"</span></code>
 									<code class="code-line"></code>
 									<code class="code-line">    <span class="hljs-comment">// encrypt the message using found Virgil Cards</span></code>
-									<code class="code-line">    <span class="hljs-keyword">let</span> ciphertext = (<span class="hljs-keyword">try</span>! aliceKey.signThenEncrypt(message, <span class="hljs-keyword">for</span>: bobCards!))</code>
+									<code class="code-line">    <span class="hljs-keyword">let</span> ciphertext =</code>
+									<code class="code-line">        (<span class="hljs-keyword">try</span>! aliceKey.signThenEncrypt(message, <span class="hljs-keyword">for</span>: bobCards!))</code>
 									<code class="code-line">        .base64EncodedString()</code>
 									<code class="code-line"> </code>
 									<code class="code-line">    <span class="hljs-comment">// send encrypted message with Twilio</span></code>
@@ -300,7 +302,7 @@
 									This is how the data looks like over the wire and in the database:
 								</p>
 								<pre class="code-data">
-									<code class="code-data-line">SGVsbG8gd29ybGQsIEknbSBibGEgYmFvaGZvIGZ3aXVociB3doZm4gc2FkbmZwaUhJVUJJVVdFR1JG</code>
+									<code class="code-data-line">SGVsbG8gd29ybGQsIEknbSBibGEgYmFvaGZvIGZ3aXVociB3doZm4gc2FkbmZwaUhJVUJJVVdFR1JG</code>
 									<code class="code-data-line">IElXRSA3V0VGV0U=</code>
 								</pre>
 								<p>Decryption keys never leave the device.</p>
@@ -315,7 +317,7 @@
 									<code class="code-line"><span class="hljs-comment">// decrypt the message and verify if it’s indeed from Alice</span></code>
 									<code class="code-line">virgil.cards.getCard(withId: “[<span class="hljs-type">ALICE_CARD_ID</span>]”)</code>
 									<code class="code-line">   { aliceCard, error <span class="hljs-keyword">in</span></code>
-									<code class="code-line">      <span class="hljs-keyword">let</span> message = <span class="hljs-type">String</span>(data: <span class="hljs-keyword">try</span>! bobKey.decryptThenVerify(base64:</code>
+									<code class="code-line">      <span class="hljs-keyword">let</span> message = <span class="hljs-type">String</span>(data: <span class="hljs-keyword">try</span>! bobKey.decryptThenVerify(base64:</code>
 									<code class="code-line">        ciphertext, from: aliceCard!), encoding: .utf8)!</code>
 									<code class="code-line">   }</code>
 								</pre>
@@ -340,35 +342,35 @@
 							<h5 class="company-title">Hushed</h5>
 							<h6 class="company-location">Ontario, CANADA</h6>
 							<p class="company-description">
-								E2EE messaging for private disposablephone numbers.
+								E2EE messaging for private disposable phone numbers.
 							</p>
 						</div>
 						<div class="company appfriends">
 							<h5 class="company-title">Appfriends</h5>
 							<h6 class="company-location">NEW YORK, NY</h6>
 							<p class="company-description">
-								E2EE private in-app messaging & userengagement platform.
+								E2EE private in-app messaging & user engagement platform.
 							</p>
 						</div>
 						<div class="company sikka">
 							<h5 class="company-title">Sikka Chat</h5>
 							<h6 class="company-location">San Jose, CA</h6>
 							<p class="company-description">
-								E2EE chat service for patients &doctors at private practices.
+								E2EE chat service for patients & doctors at private practices.
 							</p>
 						</div>
 						<div class="company cloackroom">
 							<h5 class="company-title">Cloackroom</h5>
 							<h6 class="company-location">WASHINGTON, D.C.</h6>
 							<p class="company-description">
-								The invite-only E2EE social chat appin and near the U.S. White House.
+								The invite-only E2EE social chat app in and near the U.S. White House.
 							</p>
 						</div>
 						<div class="company mybeepr">
 							<h5 class="company-title">Mybeepr</h5>
 							<h6 class="company-location">Sydney, AUSTRALIA</h6>
 							<p class="company-description">
-								Australia’s most trusted solution formobile healthcare communication, E2EE.
+								Australia’s most trusted solution for mobile healthcare communication, E2EE.
 							</p>
 						</div>
 					</div>
@@ -478,16 +480,16 @@
 								<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRedBorder">Get Started</a>
 							</div>
 						</div>
-						<div class="pricing-column pricing-plan">
+						<div class="pricing-column pricing-plan selected">
 							<div class="pricing-cell pricing-header">
 								<div>
 									<b class="pricing-plan-title">Business</b>
 									<p class="pricing-plan-price">$
 										<span data-price>499</span> / mo</p>
-									<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRedBorder">Get Started</a>
+									<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRed">Get Started</a>
 								</div>
 							</div>
-							<div class="pricing-cell">Good for development & non-critical apps</div>
+							<div class="pricing-cell">Ideal for mission critical apps</div>
 							<div class="pricing-cell">Up to 25,000</div>
 							<div class="pricing-cell dot hide-on-mobile">
 								<span class="check" />
@@ -510,7 +512,7 @@
 							<div class="pricing-cell pricing-footer hide-on-mobile">
 								<p class="pricing-plan-price">$
 									<span data-price>499</span> / mo</p>
-								<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRedBorder">Get Started</a>
+								<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRed">Get Started</a>
 							</div>
 						</div>
 						<div class="pricing-column pricing-plan">
@@ -522,7 +524,7 @@
 									<a href="https://developer.virgilsecurity.com/account/signup" class="button-raisedRedBorder">Get Started</a>
 								</div>
 							</div>
-							<div class="pricing-cell">Good for development & non-critical apps</div>
+							<div class="pricing-cell">Mission critical app with a large number of active users</div>
 							<div class="pricing-cell">Up to 100,000</div>
 							<div class="pricing-cell dot hide-on-mobile">
 								<span class="check" />
@@ -558,8 +560,8 @@
 									<button class="button-raisedRedBorder">Contact Us</button>
 								</div>
 							</div>
-							<div class="pricing-cell">Good for development & non-critical apps</div>
-							<div class="pricing-cell">More then 100,000</div>
+							<div class="pricing-cell">Large apps with users beyond 10K active users</div>
+							<div class="pricing-cell">More than 100,000</div>
 							<div class="pricing-cell dot hide-on-mobile">
 								<span class="check" />
 							</div>
@@ -572,7 +574,7 @@
 							<div class="pricing-cell dot hide-on-mobile">
 								<span class="check" />
 							</div>
-							<div class="pricing-cell dot hide-on-mobile">
+							<div class="pricing-cell dot hide-on-mobile">п
 								<span class="check" />
 							</div>
 							<div class="pricing-cell dot hide-on-mobile">
@@ -593,27 +595,6 @@
 				</div>
 			</section>
 		</main>
-		<div class="footer-twillio">
-			<div class="wrapper">
-				<div class="quote-container">
-					<svg class="quote-image" preserveAspectRatio="xMinYMin" width="539" version="1.1" xmlns="http://www.w3.org/2000/svg"
-					    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 539 546">
-						<defs>
-							<mask maskUnits="objectBoundingBox" id="canTopMask" style="mask-type: alpha;">
-								<image width="539" height="546" xlink:href="src/images/pages/chat/Photo-Mask@2x.png"></image>
-							</mask>
-						</defs>
-						<image mask="url(#canTopMask)" id="canTop" width="539" height="546" xlink:href="src/images/pages/chat/Photo@2x.jpg"></image>
-					</svg>
-					<div class="quote-content">
-						<p class="quote-symbol">“</p>
-						<p class="quote-text">Don't chat without Virgil.</p>
-						<p class="quote-author">Marc Boroditsky.</p>
-						<p class="quote-author-position">Twilio’s Senior Vice President</p>
-					</div>
-				</div>
-			</div>
-		</div>
 		<footer class="footer">
 			<div class="footer-top">
 				<div class="wrapper">
@@ -716,6 +697,7 @@
 					<div class="footer-links">
 						<a href="mailto:" class="footer-email">support@virgilsecurity.com</a>
 						<a href="" class="footer-policy">Terms of Use & Privacy Policy</a>
+						<a href="https://virgilsecurity.slack.com/"  target="_blanc" class="footer-policy">Join Our Slack</a>
 					</div>
 				</div>
 			</div>

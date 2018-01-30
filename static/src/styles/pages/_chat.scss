@@ -1,40 +1,63 @@
-@mixin section-title($width: 500px) {
+@mixin section-title($width: 550px, $fontSize: 38px) {
 	padding-left: 25px;
-	border-left: 8px solid $vs-color-darkRed2;
-	font-size: 38px;
+	font-size: $fontSize;
+	line-height: 1.5em;
 	max-width: $width;
-	@include font-muller();
+	font-family: 'Muller', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	position: relative;
+	border-left: 8px solid $vs-color-darkRed1;
+
+	@media (max-width: $vs-breakpoint-md) {
+		font-size: 28px;
+	}
 }
 
 .chatPage {
 	.container {
 		padding-bottom: 100px;
 	}
-	.introContentBlock {
+	.introBlock {
 		padding-top: 220px;
 		padding-bottom: 150px;
 		margin: 0 auto;
 		max-width: 700px;
 		color: white;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.button-raisedRed {
+			height: 60px;
+			display: flex;
+			align-items: center;
+			font-size: 20px;
+		}
+
+		@media (max-width: $vs-breakpoint-md) {
+			padding-top: 170px;
+			padding-bottom: 100px;
+		}
 	}
 	.intro {
-		background-image: url('../assets/images/bg/chat/Top-Image@2x.jpg');
+		background-image: url('../assets/images/bg/chat/Top-Image.jpg');
+		@include image-2x("../assets/images/bg/chat/Top-Image@2x.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
 		min-height: 710px;
 
 		.blockMsg {
-			margin-bottom: 50px;
+			margin-bottom: 30px;
 		}
 		.blockMsg-headline {
 			font-size: 38px;
-			font-weight: 500;
 			text-align: center;
+			font-weight: 500;
+			line-height: 1.5em;
 		}
 		@media (max-width: $vs-breakpoint-md) {
-			background-image: none;
-			background: linear-gradient(304deg, $vs-color-darkRed2 0%, rgb(8, 68, 220) 50%, #181A1F 100%);
 
 			.introContentBlock {
 				padding-top: 100px;
@@ -58,11 +81,14 @@
 		flex-shrink: 1;
 		font-size: 14px;
 		justify-content: space-between;
-		padding-top: 70px;
+
 		.chatFeature {
 			padding-left: 80px;
+			margin: 0 20px;
+
 			max-width: 370px;
 			background: no-repeat left top;
+
 			&.end2end {
 				background-image: url("../assets/images/bg/chat/features/Icon-1.svg");
 			}
@@ -77,19 +103,20 @@
 			@include font-muller;
 			color: white;
 			font-size: 16px;
-			font-weight: bold;
+			font-weight: 500;
 			text-transform: uppercase;
-			margin-bottom: 15px;
+			margin-bottom: 10px;
 		}
 		.chatFeature-description {
 			letter-spacing: .2px;
 			color: white;
-			opacity: 0.75;
+			opacity: 0.50;
 		}
 
 		@media (max-width: $vs-breakpoint-md) {
 			justify-content: center;
 			flex-wrap: wrap;
+
 			.chatFeature {
 				max-width: 400px;
 				margin-bottom: 40px;
@@ -101,7 +128,7 @@
 			min-height: 100px;
 			border-bottom: 1px solid $vs-color-lightGrey3;
 			display: flex;
-			flex-wrap: wrap;			
+			flex-wrap: wrap;
 			justify-content: space-around;
 			align-items: center;
 		}
@@ -111,11 +138,14 @@
 			background-size: contain;
 			width: 140px;
 			height: 50px;
-			@include font-muller();
-			font-size: 13px;
-			color: black;
-			padding-top: 10px;
 			margin: 0 20px;
+			padding-top: 10px;
+			
+			@include font-muller();
+			color: black;
+			font-size: 13px;
+			letter-spacing: 0.05em;
+			text-align: right;
 
 			@media (max-width: $vs-breakpoint-md) {
 				margin-bottom: 20px;
@@ -124,6 +154,7 @@
 
 			&.text {
 				opacity: 0.2;
+				font-weight: bold;
 			}
 			&.twillio {
 				background-image: url("../assets/images/bg/chat/logos/Logo-Twilio.svg");
@@ -143,11 +174,17 @@
 		.stepsContainer {
 			margin-top: 100px;
 			height: 750px;
-			display: flex;
+			min-width: 350px;
+
+			@media (min-width: $vs-breakpoint-md) {
+				display: flex;
+				justify-content: space-between;
+			}
 	
 			@media (max-width: $vs-breakpoint-md) {
 				background-image: none;
-				padding-left: 20px;
+				padding-left: 0px;
+				margin-top: 20px;
 			}
 		}
 
@@ -155,11 +192,22 @@
 			width: 525px;
 			height: 100%;
 			flex: 0 0 auto;
-			margin-right: 80px;
 			position: relative;
+			margin-right: 20px;
 
 			@media (max-width: $vs-breakpoint-md) {
 				display: none;
+			}
+		}
+
+		.stepsTabs {
+			
+			@media (min-width: $vs-breakpoint-md) and (max-width: $vs-breakpoint-lg) {
+				min-width: 400px;
+			}
+
+			@media (min-width: $vs-breakpoint-lg) {
+				min-width: 600px;
 			}
 		}
 
@@ -175,19 +223,22 @@
 
 			width: 440px;
 			height: 854px;
+			pointer-events: none;
 
 			&.iphone1 {
-				background-image: url('../assets/images/bg/chat/Phone-White@2x.png');
+				background-image: url('../assets/images/bg/chat/Phone-White.png');
+				@include image-2x("../assets/images/bg/chat/Phone-White@2x.png");
 			}
 
 			&.iphone2 {
-				background-image: url('../assets/images/bg/chat/Phone-Red@2x.png');
+				background-image: url('../assets/images/bg/chat/Phone-Red.png');
+				@include image-2x("../assets/images/bg/chat/Phone-Red@2x.png");
 			}
 
 			.hidden {
 				display: none!important;
 			}
-			
+
 			.step1-loading {
 				position: absolute;
 				top: 280px;
@@ -222,17 +273,17 @@
 			.step2-send-button {
 				position: absolute;
 				top: 504px;
-				right: 46px;
+				right: 52px;
 				opacity: 0.25;
 			}
 
 			.incoming {
-				align-self: flex-end;
-				background-color: #4A4E57;
+				align-self: flex-start;
 			}
 
 			.outcoming {
-				align-self: flex-start;
+				align-self: flex-end;
+				background-color: #4A4E57;
 			}
 		}
 
@@ -301,6 +352,11 @@
 			}
 		}
 
+		.stepsControls {
+			margin-top: 20px;
+			margin-bottom: 40px;
+		}
+
 		.stepControl {
 			@include font-muller-bold();
 			margin-right: 40px;
@@ -315,7 +371,6 @@
 		}
 
 		.stepContent {
-			padding-top: 60px;
 			display: none;
 			
 			.stepTitle {
@@ -326,15 +381,21 @@
 
 			p {
 				padding: 26px 0;
-				font-size: 14px;
+				font-size: 16px;
 			}
 
 			.grey-text {
+				display: inline-block;
+				padding-top: 10px;
+				font-size: 14px;
 				color: $vs-color-lightGrey4;
 			}
 
 			.red-text {
-				color: $vs-color-darkRed2;
+				color: $vs-color-darkRed1;
+				&:hover {
+					color: $vs-color-red1;
+				}
 			}
 		}
 
@@ -342,13 +403,15 @@
 			display: block;
 		}
 
-		@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
-
 		pre {
 			font-family: Inconsolata, monospace;
 			font-size: 0;
 			line-height: 0px;
 			white-space: pre-line;
+			
+			@media (min-width: $vs-breakpoint-md) {
+				max-width: 600px;
+			}
 		}
 
 		code {
@@ -378,12 +441,17 @@
 			padding-top: 16px;
 			padding-bottom: 16px;
 			padding-right: 25px;
-			width: 100%;
-			max-width: 600px;
-			overflow-y: scroll;
+			overflow-x: auto;
+			overflow-y: hidden;
 			background-color: $vs-color-darkBlue4;
 			color: $vs-color-codetext;
 			border-radius: 3px;
+
+			@media (max-width: $vs-breakpoint-md) {
+				margin-left: -20px;
+				margin-right: -45px;
+			}
+			
 		}
 
 		.code-data {
@@ -395,7 +463,8 @@
 
 	}
 	.companies {
-		background-image: url('../assets/images/bg/chat/Partners@2x.jpg');
+		background-image: url('../assets/images/bg/chat/Partners.jpg');
+		@include image-2x("../assets/images/bg/chat/Partners@2x.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
@@ -406,6 +475,7 @@
 
 		&-title {
 			@include section-title();
+			font-weight: 500;
 		}
 
 		&-list {
@@ -430,52 +500,61 @@
 			&-title {
 				font-family: "Muller", sans-serif;
 				font-size: 26px;
-				font-weight: bold;
+				font-weight: 500;
 			}
 
 			&-location {
 				@include font-muller();
-				color: $vs-color-darkRed2;
+				color: $vs-color-darkRed1;
+				font-weight: 500;				
 			}
 
 			&-description {
 				font-size: 14px;
-				opacity: 0.75;
+				opacity: 0.50;
 				margin-top: 1em;
 			}
 
 			&.heltha {
-				background-image: url('../assets/images/bg/chat/companies/SLogo-Heltha@2x.png');
+				background-image: url('../assets/images/bg/chat/companies/SLogo-Heltha.png');
+				@include image-2x('../assets/images/bg/chat/companies/SLogo-Heltha@2x.png');
 			}
 
 			&.sikka {
-				background-image: url('../assets/images/bg/chat/companies/SLogo-Sikka@2x.png');
+				background-image: url('../assets/images/bg/chat/companies/SLogo-Sikka.png');
+				@include image-2x('../assets/images/bg/chat/companies/SLogo-Sikka@2x.png');
 			}
 
 			&.hushed {
-				background-image: url('../assets/images/bg/chat/companies/SLogo-Hushed@2x.png');
+				background-image: url('../assets/images/bg/chat/companies/SLogo-Hushed.png');
+				@include image-2x('../assets/images/bg/chat/companies/SLogo-Hushed@2x.png');
 			}
 
 			&.appfriends {
-				background-image: url('../assets/images/bg/chat/companies/SLogo-App@2x.png');
+				background-image: url('../assets/images/bg/chat/companies/SLogo-App.png');
+				@include image-2x('../assets/images/bg/chat/companies/SLogo-App@2x.png');
 			}
 
 			&.cloackroom {
-				background-image: url('../assets/images/bg/chat/companies/SLogo-Cloak@2x.png');
+				background-image: url('../assets/images/bg/chat/companies/SLogo-Cloak.png');
+				@include image-2x('../assets/images/bg/chat/companies/SLogo-Cloak@2x.png');
 			}
 
 			&.mybeepr {
-				background-image: url('../assets/images/bg/chat/companies/SLogo-Beepr@2x.png');
+				background-image: url('../assets/images/bg/chat/companies/SLogo-Beepr.png');
+				@include image-2x('../assets/images/bg/chat/companies/SLogo-Beepr@2x.png');
 			}
 		}
 	}
 
 	.pricing {
 		padding-top: 100px;
+		padding-bottom: 80px;
 		font-size: 14px;
 
 		&-title {
 			@include section-title(660px);
+			font-weight: 700;
 		}
 
 		.pricing-table {
@@ -511,12 +590,20 @@
 				display: flex;
 				flex: 0 0 auto;
 				align-items: flex-start;
-				border-bottom: 1px solid $vs-color-lightGrey3;
 				padding-right: 20px;
 				flex-direction: column;
 				justify-content: center;
 				height: 80px;
 				letter-spacing: 0.025em;
+				border-bottom: 1px solid $vs-color-lightGrey3;
+				
+				@media (max-width: $vs-breakpoint-lg) {
+					border-bottom: 0;
+
+					&:nth-child(3) {
+						border-bottom: 1px solid $vs-color-lightGrey3;
+					}
+				}
 			}
 
 			.pricing-cell:last-child {
@@ -535,8 +622,10 @@
 				padding-bottom: 30px;
 			}
 
-			.pricing-plan:hover {
-				box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.2);
+			.pricing-plan.selected {
+				@media (min-width: $vs-breakpoint-md) {
+					box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.2);
+				}
 			}
 
 			.hide-on-mobile {
@@ -575,24 +664,24 @@
 			align-items: center;
 			font-size: 8px;
 			font-family: 'Muller', sans-serif;
-			width: 100%;
-
+			width: 90%;
+			text-transform: uppercase;
+			
 			&-big {
 				font-size: 11px;
 			}
 		}
 
 		.switch-subtitle {
-			color: $vs-color-darkRed1;
+			color: $vs-color-red1;
 			font-size: 12px;
-			margin-top: 20px;
+			margin-top: 15px;
 		}
 
 		.switch-container {
 			width: 32px;
 			height: 18px;
 			background-color: $vs-color-lightGrey2;
-			opacity: 0.4;
 			border-radius: 9px;
 			position: relative;
 		}
@@ -612,69 +701,6 @@
 		
 			&.on {
 				left: 16px;
-			}
-		}
-	}
-
-	.footer-twillio {
-		height: 540px;
-		background-image: url('../assets/images/bg/chat/BGtwillio.svg');
-
-		.wrapper {
-			height: 100%;
-		}
-
-		.quote-container {
-			display: flex;
-			flex: 0 0 auto;
-			align-items: flex-end;
-			height: 100%;
-			width: 100%;
-
-			.quote-image {
-				@media (max-width: $vs-breakpoint-md) {
-					display: none;
-				}
-			}
-
-			.quote-content {
-				margin-bottom: 140px;
-				margin-left: 40px;
-				width: 485px;
-				color: white;
-
-				@media (max-width: $vs-breakpoint-md) {
-					margin-bottom: 80px;
-				}
-			}
-
-			.quote-symbol {
-				color: $vs-color-darkRed2;
-				font-size: 100px;
-				font-weight: 900;
-				line-height: 55px;
-			}
-			
-			.quote-text {
-				font-size: 72px;
-				font-family: 'Muller', sans-serif;
-				font-weight: bold;
-				line-height: 80px;
-
-				@media (max-width: $vs-breakpoint-md) {
-					font-size: 48px;
-				}
-			}
-
-			.quote-author, .quote-author-position {
-				opacity: 0.25;
-			}
-
-			.quote-author {
-				margin-top: 40px;
-				text-transform: uppercase;
-				font-family: 'Muller', sans-serif;
-				letter-spacing: 0.025em;
 			}
 		}
 	}

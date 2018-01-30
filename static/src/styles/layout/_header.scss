@@ -15,6 +15,10 @@
     padding: 0 $vs-wrapper-padding-lg;
   }
 
+  @media (max-width: $vs-breakpoint-sm) {
+    height: 50px;
+  }
+
   &.pinned {
     position: fixed;
     margin-bottom: 0;
@@ -93,6 +97,13 @@
     img {
       display: block;
       filter: grayscale(100%) brightness(4);
+    }
+
+    @media (max-width: $vs-breakpoint-sm) {
+      img {
+        height: 30px;
+        width: auto;
+      }
     }
   }
 

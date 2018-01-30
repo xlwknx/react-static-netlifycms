@@ -22,7 +22,6 @@ function initTabs() {
     function startScene2() {
         endScene1();
         endScene3();
-
         $('.step2-scene').removeClass('hidden');
         var message = 'Hey Bob, are you crazy?';
         var currentMessage = '';
@@ -44,6 +43,9 @@ function initTabs() {
     function startScene3() {
         endScene1();
         endScene2();
+        $('.step2-scene').removeClass('hidden');
+        $('#step2-message').removeClass('hidden');
+        
         interval3 = setInterval(function() {
             $('#step3-message').removeClass('hidden')
         }, 2000);
@@ -59,11 +61,14 @@ function initTabs() {
         $('#step2-message').addClass('hidden');
         $('.step2-sending-message').removeClass('hidden');
         $('.step2-sending-message').text('');
+        
         clearInterval(interval2);
     }
 
     function endScene3() {
         clearInterval(interval3);
+        $('.step2-scene').addClass('hidden');
+        $('#step2-message').addClass('hidden');
         $('#step3-message').addClass('hidden');
     }
 

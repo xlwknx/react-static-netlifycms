@@ -94,10 +94,10 @@
   color: $vs-color-darkRed1;
 
   &:hover {
-    background: $vs-color-darkRed1;
+    background: $vs-color-red1;
     border-color: transparent;
     color: $vs-color-white;
-    box-shadow: 0 18px 20px -15px rgba($vs-color-darkRed2, 0.5);
+    box-shadow: 0 18px 20px -15px rgba($vs-color-red1, 0.5);
   }
 }
 

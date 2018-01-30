@@ -19,3 +19,16 @@
   url('https://cdn.virgilsecurity.com/assets/fonts/Muller/muller-bold.woff') format('woff'),
   url('https://cdn.virgilsecurity.com/assets/fonts/Muller/muller-bold.ttf') format('truetype');
 }
+
+@font-face {
+	font-family: 'Muller';
+  font-weight: 500;
+	font-style: normal;
+	src: url('https://cdn.virgilsecurity.com/assets/fonts/Muller/muller-medium.eot');
+	src: url('https://cdn.virgilsecurity.com/assets/fonts/Muller/muller-medium.eot?#iefix') format('embedded-opentype'),
+	url('https://cdn.virgilsecurity.com/assets/fonts/Muller/muller-medium.woff2') format('woff2'),
+	url('https://cdn.virgilsecurity.com/assets/fonts/Muller/muller-medium.woff') format('woff'),
+	url('https://cdn.virgilsecurity.com/assets/fonts/Muller/muller-medium.ttf') format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
