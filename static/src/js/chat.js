@@ -23,7 +23,7 @@ function initTabs() {
         endScene1();
         endScene3();
         $('.step2-scene').removeClass('hidden');
-        var message = 'Hey Bob, are you crazy?';
+        var message = 'Woodchuck can\'t chuck wood';
         var currentMessage = '';
         
         interval2 = setInterval(startTyping, 100);
