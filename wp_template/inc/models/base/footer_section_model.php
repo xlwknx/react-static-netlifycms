@@ -95,4 +95,14 @@ class FooterSectionModel extends BaseSectionModel
             return $copyright->getValue();
         }
     }
+
+    public function Slack()
+    {
+        $slackLinkMod = $this->sectionMods->getSlackLinkMod();
+        $slackLinkTextMod = $this->sectionMods->getSlackLinkTextMod();
+
+        if ($slackLinkMod->isEnabled()) {
+            return new LinkModel($slackLinkMod->getValue(), $slackLinkTextMod->getValue());
+        }
+    }
 }

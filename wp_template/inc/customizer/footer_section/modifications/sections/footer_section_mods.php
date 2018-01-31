@@ -3,6 +3,7 @@
 namespace VirgilSecurity\Customizer\FooterSection\Modifications\Sections;
 
 
+use VirgilSecurity\Customizer\FooterSection\Fields\SlackLinkTextField;
 use VirgilSecurity\Customizer\FooterSection\Modifications\CopyrightMod;
 use VirgilSecurity\Customizer\FooterSection\Modifications\EmailMod;
 use VirgilSecurity\Customizer\FooterSection\Modifications\LogoDescriptionMod;
@@ -10,6 +11,8 @@ use VirgilSecurity\Customizer\FooterSection\Modifications\LogoImageMod;
 use VirgilSecurity\Customizer\FooterSection\Modifications\NavCodeMod;
 use VirgilSecurity\Customizer\FooterSection\Modifications\PolicyLinkMod;
 use VirgilSecurity\Customizer\FooterSection\Modifications\PolicyLinkTextMod;
+use VirgilSecurity\Customizer\FooterSection\Modifications\SlackLinkMod;
+use VirgilSecurity\Customizer\FooterSection\Modifications\SlackLinkTextMod;
 use VirgilSecurity\Customizer\FooterSection\Modifications\SocialLinksMod;
 use VirgilSecurity\Customizer\Src\BaseSectionMods;
 
@@ -31,6 +34,12 @@ class FooterSectionMods extends BaseSectionMods
     protected $policyLinkMod;
 
     protected $copyrightMod;
+
+    protected $slack;
+
+    protected $slackLinkTexMod;
+
+    protected $slackLinkMod;
 
 
     public function setupDefaults()
@@ -127,5 +136,25 @@ class FooterSectionMods extends BaseSectionMods
         }
 
         return $this->copyrightMod;
+    }
+
+
+    public function getSlackLinkTextMod()
+    {
+        if ($this->slackLinkTexMod == null) {
+            $this->slackLinkTexMod = new SlackLinkTextMod();
+        }
+
+        return $this->slackLinkTexMod;
+    }
+
+
+    public function getSlackLinkMod()
+    {
+        if ($this->slackLinkMod == null) {
+            $this->slackLinkMod = new SlackLinkMod();
+        }
+
+        return $this->slackLinkMod;
     }
 }

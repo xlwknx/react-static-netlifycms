@@ -11,6 +11,8 @@ use VirgilSecurity\Customizer\FooterSection\Fields\LogoImageField;
 use VirgilSecurity\Customizer\FooterSection\Fields\NavCodeField;
 use VirgilSecurity\Customizer\FooterSection\Fields\PolicyLinkField;
 use VirgilSecurity\Customizer\FooterSection\Fields\PolicyLinkTextField;
+use VirgilSecurity\Customizer\FooterSection\Fields\SlackLinkField;
+use VirgilSecurity\Customizer\FooterSection\Fields\SlackLinkTextField;
 use VirgilSecurity\Customizer\FooterSection\Modifications\CopyrightMod;
 use VirgilSecurity\Customizer\FooterSection\Modifications\Sections\FooterSectionMods;
 
@@ -66,6 +68,14 @@ class FooterSectionCustomizer
 
         $section->addField(
             PolicyLinkField::createWithMod($footerSectionMods->getPolicyLinkMod())
+        );
+
+        $section->addField(
+            SlackLinkTextField::createWithMod($footerSectionMods->getSlackLinkTextMod())
+        );
+
+        $section->addField(
+            SlackLinkField::createWithMod($footerSectionMods->getSlackLinkMod())
         );
 
         return $section;
