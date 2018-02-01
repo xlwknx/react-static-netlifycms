@@ -11,12 +11,12 @@
                 <ul class="includesList">
                     {% for include in includes.collection %}
                         <li class="includesItem">
-                            <div class="includesItem-image">
-                                <img width="80" height="80" src="{{ include.image.src }}"
-                                     alt="{{ include.image.alt|shortcodes }}">
+                            <img class="includesItem-image" width="80" height="80" src="{{ include.image.src }}"
+                                 alt="{{ include.image.alt|shortcodes }}">
+                            <div class="includesItem-content">
+                                <h3 class="includesItem-headline">{{ include.headline|shortcodes }}</h3>
+                                <p class="includesItem-text">{{ include.text|shortcodes }}</p>
                             </div>
-                            <h3 class="includesItem-headline">{{ include.headline|shortcodes }}</h3>
-                            <p class="includesItem-text">{{ include.text|shortcodes }}</p>
                         </li>
                     {% endfor %}
                 </ul>

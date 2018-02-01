@@ -5,45 +5,12 @@
         <div class="wrapper">
             <div class="introContentBlock">
                 <div class="blockMsg">
-                    <h1 class="blockMsg-headline">{{ intro.headline|shortcodes }}</h1>
+                    <h1 class="blockMsg-title">
+                        {{ intro.headline|shortcodes }}
+                    </h1>
                     <p class="blockMsg-text">
                         {{ intro.text|shortcodes }}
                     </p>
-                </div>
-            </div>
-            <div class="pricingPlansContentBlock">
-                <div class="comparisonBlock pricingPlanList">
-                    {% for plan in intro.plans %}
-                        <div class="comparisonItem pricingPlanItem {{ loop.index == 2 ? "comparisonItem--highlight pricingPlanItem--highlight" }}">
-                            <div class="pricingPlanItem-title">{{ plan.title|shortcodes }}</div>
-                            <div class="pricingPlanItem-price">
-                                {% if plan.is_free != true %}
-                                    <sup>$</sup><strong>{{ plan.price|shortcodes }}</strong>/
-                                    <sub>{{ plan.duration|shortcodes }}</sub>
-                                {% else %}
-                                    <strong>free</strong>
-                                {% endif %}
-                            </div>
-                            <ul class="pricingPlanItem-features">
-                                {% for future in plan.features_list %}
-                                    <li class="pricingPlanItem-feature">
-                                        <span>{{ future|shortcodes }}</span>
-                                    </li>
-                                {% endfor %}
-
-                                {% for future in plan.features_list_disabled %}
-                                    <li class="pricingPlanItem-feature pricingPlanItem-feature--disabled">
-                                        <span>{{ future|shortcodes }}</span>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                            <div class="pricingPlanItem-action">
-                                {% include 'common/link_button/' ~ plan.link.link_button_skin ~ '.twig' with {'link': plan.link} %}
-                                {#<a href="{{ plan.link.url|shortcodes }}"#}
-                                {#class="button-raisedWhiteBorder-static button-disabled">{{ plan.link.text|shortcodes }}</a>#}
-                            </div>
-                        </div>
-                    {% endfor %}
                 </div>
             </div>
         </div>
