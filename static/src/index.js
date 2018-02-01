@@ -7,6 +7,7 @@ import Home from 'js/home';
 import Features from 'js/features';
 import Articles from 'js/blog/articles';
 import Chat from 'js/chat';
+import Pricing from 'js/pricing';
 
 $(document).ready(function () {
   const pageName = $('[data-vs-page]').data('vs-page');
@@ -27,7 +28,13 @@ $(document).ready(function () {
       break;
 
     case 'chat':
+      Pricing.init();
       Chat.init();
+      break;      
+
+    case 'pricing':
+      Pricing.init();
+      break;      
   }
 });
 
