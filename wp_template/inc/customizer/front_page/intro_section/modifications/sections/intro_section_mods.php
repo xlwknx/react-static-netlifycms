@@ -3,8 +3,7 @@
 namespace VirgilSecurity\Customizer\FrontPage\IntroSection\Modifications\Sections;
 
 
-use VirgilSecurity\Customizer\FrontPage\IntroSection\Modifications\IntroAnnounceLinkMod;
-use VirgilSecurity\Customizer\FrontPage\IntroSection\Modifications\IntroAnnounceMsgMod;
+use VirgilSecurity\Customizer\FrontPage\IntroSection\Modifications\IntroAnnouncementsMod;
 use VirgilSecurity\Customizer\FrontPage\IntroSection\Modifications\IntroServicesHeadlineMod;
 use VirgilSecurity\Customizer\FrontPage\IntroSection\Modifications\IntroServicesMod;
 use VirgilSecurity\Customizer\FrontPage\IntroSection\Modifications\IntroLinksMod;
@@ -17,7 +16,7 @@ class IntroSectionMods extends BaseSectionMods
     protected $introMsgMod;
     protected $introServicesMod;
     protected $introServicesHeadlineMod;
-    protected $introAnnounceMsgMod;
+    protected $introAnnouncementsMod;
     protected $introAnnounceLinkMod;
 
 
@@ -29,8 +28,7 @@ class IntroSectionMods extends BaseSectionMods
                 $this->getIntroMsgMod(),
                 $this->getIntroServicesMod(),
                 $this->getIntroServicesHeadlineMod(),
-                $this->getIntroAnnounceLinkMod(),
-                $this->getIntroAnnounceMsgMod(),
+                $this->getIntroAnnouncementsMod(),
             ]
         );
     }
@@ -76,23 +74,13 @@ class IntroSectionMods extends BaseSectionMods
     }
 
 
-    public function getIntroAnnounceLinkMod()
+    public function getIntroAnnouncementsMod()
     {
-        if ($this->introAnnounceLinkMod == null) {
-            $this->introAnnounceLinkMod = new IntroAnnounceLinkMod();
+        if ($this->introAnnouncementsMod == null) {
+            $this->introAnnouncementsMod = new IntroAnnouncementsMod();
         }
 
-        return $this->introAnnounceLinkMod;
-    }
-
-
-    public function getIntroAnnounceMsgMod()
-    {
-        if ($this->introAnnounceMsgMod == null) {
-            $this->introAnnounceMsgMod = new IntroAnnounceMsgMod();
-        }
-
-        return $this->introAnnounceMsgMod;
+        return $this->introAnnouncementsMod;
     }
 
 }

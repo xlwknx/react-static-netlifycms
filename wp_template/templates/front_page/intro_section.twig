@@ -5,17 +5,17 @@
         {% block intro_section_content %}
             <div class="wrapper">
                 <div class="introContentBlock">
-                    {% if intro.announcement.url %}
-                        <div class="announcement">
-                            <a href="{{ intro.announcement.url }}" class="announcement-link">
+                    {% for announcement in intro.announcements.collection %}
+                        <div class="announcement {{ loop.index != 1 ? 'announcement-next' : '' }}">
+                            <a href="{{ announcement.url }}" class="announcement-link">
                                 <span class="announcement-icon">new</span>
-                                <span class="announcement-text">{{ intro.announcement.text }}</span>
+                                <span class="announcement-text">{{ announcement.text }}</span>
                                 <img class="announcement-arrow"
                                      src="{{ bloginfo('stylesheet_directory') }}/assets/images/content/next-arrow.svg"
                                      width="60" alt="">
                             </a>
                         </div>
-                    {% endif %}
+                    {% endfor %}
                     <div class="blockMsg">
                         <h1 class="blockMsg-headline">{{ intro.headline.text }}</h1>
                         <div class="blockMsg-links">

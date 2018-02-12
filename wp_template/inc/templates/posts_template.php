@@ -25,7 +25,13 @@ class PostsTemplate extends Template
     {
         //$title = get_the_title(get_option('page_for_posts'));
 
-        $recentPosts = wp_get_recent_posts(['numberposts' => 3], OBJECT);
+        $recentPosts = wp_get_recent_posts(
+            [
+                'numberposts' => 3,
+                'post_status' => 'publish',
+            ],
+            OBJECT
+        );
 
         $tagsList = get_tags();
 

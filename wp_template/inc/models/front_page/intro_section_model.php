@@ -72,21 +72,17 @@ class IntroSectionModel extends BaseSectionModel
     }
 
 
-    public function Announcement()
+    public function Announcements()
     {
-        $announcement = [];
+        $announcements = [];
 
-        $introAnnounceMsgMod = $this->sectionMods->getIntroAnnounceMsgMod();
-        $introAnnounceLinkMod = $this->sectionMods->getIntroAnnounceLinkMod();
+        $introAnnouncementsMod = $this->sectionMods->getIntroAnnouncementsMod();
 
-        if ($introAnnounceLinkMod->isEnabled()) {
-            $announcement['url'] = $introAnnounceLinkMod->getValue();
+        if ($introAnnouncementsMod->isEnabled()) {
+
+            $announcements['collection'] = $this->filterCollection($introAnnouncementsMod->getValue());
         }
 
-        if ($introAnnounceMsgMod->isEnabled()) {
-            $announcement['text'] = $introAnnounceMsgMod->getValue();
-        }
-
-        return $announcement;
+        return $announcements;
     }
 }

@@ -3,10 +3,9 @@
 namespace VirgilSecurity\Customizer\FrontPage\IntroSection;
 
 
-use VirgilSecurity\Customizer\FrontPage\IntroSection\Fields\IntroAnnounceLinkField;
-use VirgilSecurity\Customizer\FrontPage\IntroSection\Fields\IntroAnnounceMsgField;
 use VirgilSecurity\Customizer\FrontPage\IntroSection\Fields\IntroMsgField;
 use VirgilSecurity\Customizer\FrontPage\IntroSection\Fields\IntroServicesHeadlineField;
+use VirgilSecurity\Customizer\FrontPage\IntroSection\Groups\IntroAnnouncementGroup;
 use VirgilSecurity\Customizer\FrontPage\IntroSection\Groups\IntroServicesGroup;
 use VirgilSecurity\Customizer\FrontPage\IntroSection\Groups\IntroLinksGroup;
 use VirgilSecurity\Customizer\FrontPage\IntroSection\Modifications\Sections\IntroSectionMods;
@@ -33,11 +32,7 @@ class IntroSectionCustomizer
         $section = new IntroSection($this->config, $this->wpCustomizer);
 
         $section->addField(
-            IntroAnnounceMsgField::createWithMod($introSectionMods->getIntroAnnounceMsgMod())
-        );
-
-        $section->addField(
-            IntroAnnounceLinkField::createWithMod($introSectionMods->getIntroAnnounceLinkMod())
+            IntroAnnouncementGroup::createWithMod($introSectionMods->getIntroAnnouncementsMod())
         );
 
         $section->addField(
