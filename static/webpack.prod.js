@@ -32,9 +32,9 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract({
+        use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader!postcss-loader!resolve-url-loader!sass-loader?sourceMap'
+          loader: 'css-loader!postcss-loader!resolve-url-loader!sass-loader?sourceMap'
         })
       },
       {
