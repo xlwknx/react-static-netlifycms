@@ -33,6 +33,6 @@
   "scripts": {
     "start": "webpack --env=dev --config webpack.config.js --watch --display-error-details",
     "build:prod": "webpack --env=prod --config webpack.config.js --display-error-details --optimize-minimize",
-    "serve": "webpack-dev-server --env=dev --config webpack.config.js --watch"
+    "serve": "webpack-dev-server --env=dev --config webpack.config.js --watch --host 0.0.0.0"
   }
 }
