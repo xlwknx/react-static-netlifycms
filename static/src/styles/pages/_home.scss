@@ -173,6 +173,7 @@
 
     .introServices {
       margin-top: 60px;
+      margin-bottom: 60px;
 
       &-headline {
         @include font-muller-bold();
@@ -204,6 +205,75 @@
             }
           }
         }
+    }
+  }
+
+  .worldTourBannerContainer {
+    position: relative;
+
+    .worldTourBanner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: no-repeat url("../assets/images/bg/home/home-worldtour-banner.jpg");
+      background-size: cover;
+      text-align: center;
+      padding: 23px;
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+
+      &:hover {
+        filter: contrast(125%);
+      }
+    }
+
+    .worldTourBannerHeading {
+      @include font-muller-bold(1);
+      font-size: 30px;
+      text-transform: initial;
+      margin-bottom: 16px;
+      color: #fff;
+      @media (max-width: $vs-breakpoint-lg) {
+        font-size: 1.3rem;
+      }
+
+      &:after {
+        content: "";
+        display: inline-block;
+        width: 30px;
+        height: 15px;
+        margin-left: .5em;
+        opacity: .75;
+        background: no-repeat url('data:image/svg+xml;utf8,\
+        <svg height="15" viewBox="0 0 30 15" width="30" xmlns="http://www.w3.org/2000/svg">\
+          <g fill="none" stroke="#fff" stroke-width="3">\
+            <path d="m21.239 13.811 6.377-6.291-6.369-6.332"/>\
+            <path d="m26.662 7.5h-26.662"/>\
+          </g>\
+        </svg>') center;
+      }
+    }
+
+    .worldTourBannerStops {
+      color: #fff;
+
+      li {
+        @include font-muller-bold(1);
+        display: inline-block;
+        font-size: 16px;
+        opacity: .5;
+
+        @media (max-width: $vs-breakpoint-lg) {
+          font-size: .66rem;
+        }
+
+        &:not(:last-of-type):after {
+          content: "\2022";
+          margin-left: .3em;
+        }
+      }
     }
   }
 
