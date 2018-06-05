@@ -653,6 +653,13 @@ if (!function_exists('virgilsecurity_setup')) :
 
 endif; // virgilsecurity_setup
 
+add_filter('wp_calculate_image_sizes', 'virgil_calculate_post_image_sizes');
+
+function virgil_calculate_post_image_sizes ($sources)
+{
+	return '(min-width: 690px) 690px, calc(100vw - 30px)';
+}
+
 add_action('after_setup_theme', 'virgilsecurity_setup');
 
 require_once get_parent_theme_file_path('/inc/customizer_init.php');
