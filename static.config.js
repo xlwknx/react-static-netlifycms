@@ -42,7 +42,7 @@ function getPosts () {
 }
 
 export default {
-
+  webpack: console.log,
   getSiteData: () => ({
     title: 'React Static with Netlify CMS',
   }),
