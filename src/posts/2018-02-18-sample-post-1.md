@@ -1,9 +1,11 @@
 ---
 layout: blog
 title: 'Sample Post #1'
+author: Another Author
 date: 2018-02-19T00:45:43.212Z
 thumbnail: /uploads/image2.jpg
-rating: '5'
+tags:
+  - javascript switft E2EE
 ---
 This is sample post #1.
 
