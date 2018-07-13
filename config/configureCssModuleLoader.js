@@ -45,7 +45,7 @@ module.exports = function configureCssModuleLoader(config, args) {
             // both options are optional
             filename: "[name].css",
             chunkFilename: "[id].css"
-          }))
+        }))
     }
     return {
         test: /\.css$/,

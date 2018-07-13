@@ -16,9 +16,7 @@ const App = () => (
                     <Link to="/blog">Blog</Link>
                 </div>
             </nav>
-            <div>
-                <Routes />
-            </div>
+            <Routes />
         </React.Fragment>
     </Router>
 );

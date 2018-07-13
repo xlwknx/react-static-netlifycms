@@ -12,6 +12,7 @@
   "dependencies": {
     "animejs": "^2.2.0",
     "axios": "^0.16.2",
+    "classnames": "^2.2.6",
     "gray-matter": "^3.1.1",
     "klaw": "^2.1.1",
     "react-markdown": "^3.1.0",

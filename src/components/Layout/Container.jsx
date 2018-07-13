@@ -5,12 +5,6 @@ import PropTypes from 'prop-types';
 const styles = require('./Container.css');
 const classNames = cn.bind(styles);
 
-Container.propTypes = {
-    backgroundClass: PropTypes.string,
-    className: PropTypes.string,
-    children: PropTypes.node.isRequired
-};
-
 export default class Container extends React.Component {
 	render() {
 		const containerStyle = classNames(styles.Container, this.props.className);
@@ -26,3 +20,9 @@ export default class Container extends React.Component {
 		}
 	}
 }
+
+Container.propTypes = {
+    backgroundClass: PropTypes.string,
+    className: PropTypes.string,
+    children: PropTypes.node.isRequired
+};

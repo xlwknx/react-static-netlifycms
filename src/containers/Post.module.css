@@ -1,0 +1,19 @@
+@import '../assets/styles/fonts.css';
+
+.back {
+    margin: 20px 0;
+    display: block;
+}
+
+.title {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+.img {
+    width: 100%;
+    margin: 20px 0;
+}

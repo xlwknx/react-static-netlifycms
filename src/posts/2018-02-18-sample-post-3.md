@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: 'Sample Post #3'
+author: 'Alexey Smirnov'
 date: 2018-02-19T00:48:58.232Z
 thumbnail: /uploads/image3.jpg
 rating: '5'
