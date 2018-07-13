@@ -7,4 +7,4 @@ thumbnail: /uploads/image2.jpg
 tags:
   - Test Javascript
 ---
-Privet vsem v etom chatike
+Privet vsem v etom chatike yo
