@@ -5,7 +5,9 @@ author: Alexey Smirnov
 date: 2018-02-19T00:46:54.386Z
 thumbnail: /uploads/image.jpg
 tags:
-  - ee2e swift privet
+  - ee2e
+  - swift
+  - privet
 ---
 This is sample post #2.
 
