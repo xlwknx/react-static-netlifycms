@@ -1,10 +1,11 @@
 ---
 layout: blog
 title: 'Sample Post #2'
-author: 'Alexey Smirnov'
+author: Alexey Smirnov
 date: 2018-02-19T00:46:54.386Z
 thumbnail: /uploads/image.jpg
-rating: '5'
+tags:
+  - ee2e swift privet
 ---
 This is sample post #2.
 
