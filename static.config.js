@@ -1,4 +1,5 @@
 const getPosts = require('./config/getBlogPosts');
+const getTags = require('./config/getTags');
 const configureCssModuleLoader = require('./config/configureCssModuleLoader');
 
 export default {
@@ -7,10 +8,13 @@ export default {
     }),
     getRoutes: async () => {
         const posts = await getPosts();
+        const tags = getTags(posts);
+        console.log('tags', tags);
         return [{
             path: '/blog',
             getData: () => ({
                 posts,
+                tags
             }),
             children: posts.map(post => ({
                 path: `/post/${post.data.slug}`,

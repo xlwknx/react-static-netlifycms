@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 class BlogPage extends React.Component {
     render() {
+        console.log(this.props)
         return (
             <Container>
                 <h1>It's blog time.</h1>
@@ -20,10 +21,9 @@ class BlogPage extends React.Component {
                 </ul>
                 <p>Tags</p>
                 <ul>
-                    {this.props.tags.map(post => (
-                        <li key={post.data.slug}>
-                            <Link to={`/blog/post/${post.data.slug}`}>{post.data.title}</Link>
-                            - {post.data.author}
+                    {this.props.tags.map(tag => (
+                        <li key={tag}>
+                            <Link to={`/blog/tag/${tag}`}>{tag}</Link>
                         </li>
                     ))}
                 </ul>
