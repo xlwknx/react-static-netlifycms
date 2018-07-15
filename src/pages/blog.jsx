@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 class BlogPage extends React.Component {
     render() {
-        console.log(this.props)
         return (
             <Container>
                 <h1>It's blog time.</h1>

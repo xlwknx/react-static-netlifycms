@@ -9,7 +9,7 @@ export default {
     getRoutes: async () => {
         const posts = await getPosts();
         const tags = getTags(posts);
-        console.log('tags', tags);
+
         return [{
             path: '/blog',
             getData: () => ({
@@ -36,7 +36,7 @@ export default {
             oneOf: [
                 defaultLoaders.jsLoader,
                 cssModuleLoader,
-                // defaultLoaders.cssLoader,
+                defaultLoaders.cssLoader,
                 defaultLoaders.fileLoader,
             ],
         }, ];

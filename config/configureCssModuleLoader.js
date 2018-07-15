@@ -48,7 +48,7 @@ module.exports = function configureCssModuleLoader(config, args) {
         }))
     }
     return {
-        test: /\.css$/,
+        test: /\.module\.css$/,
         use: loaders
     }
 }
