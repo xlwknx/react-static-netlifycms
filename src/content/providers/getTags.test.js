@@ -1,4 +1,4 @@
-import getTags from './getTags';
+import { getTags } from './getTags';
 
 describe('getTags', () => {
     it('return array if post are empty array', () => {
@@ -22,6 +22,6 @@ describe('getTags', () => {
         expect(tags).toContain('firstTag');
         expect(tags).toContain('secondTag');
         expect(tags).toContain('thirdTag');
-        expect(tags.length).toBe(3)
+        expect(tags.length).toBe(3);
     });
 });

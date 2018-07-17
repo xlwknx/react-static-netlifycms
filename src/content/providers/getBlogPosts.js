@@ -1,9 +1,9 @@
-const fs = require('fs');
-const path = require('path');
-const klaw = require('klaw');
-const matter = require('gray-matter');
+import fs from 'fs';
+import path from 'path';
+import klaw from 'klaw';
+import matter from 'gray-matter';
 
-module.exports = function getBlogPosts() {
+export function getBlogPosts() {
     const items = [];
     // Walk ("klaw") through posts directory and push file paths into items array //
     const getFiles = () =>

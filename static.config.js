@@ -1,6 +1,6 @@
-const getPosts = require('./src/content/providers/getBlogPosts');
-const getTags = require('./src/content/providers/getTags');
-const configureCssModuleLoader = require('./config/configureCssModuleLoader');
+import { getBlogPosts } from './src/content/providers/getBlogPosts';
+import { getTags } from './src/content/providers/getTags';
+import { configureCssModuleLoader } from './config/configureCssModuleLoader';
 
 export default {
     bundleAnalyzer: true,
@@ -8,7 +8,7 @@ export default {
         title: 'React Static with Netlify CMS',
     }),
     getRoutes: async () => {
-        const posts = await getPosts();
+        const posts = await getBlogPosts();
         const tags = getTags(posts);
 
         return [{

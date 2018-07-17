@@ -1,8 +1,8 @@
-const autoprefixer = require('autoprefixer')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const appPath = require('./appPath')
+import autoprefixer from 'autoprefixer';
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import appPath from './appPath';
 
-module.exports = function configureCssModuleLoader(config, args) {
+export function configureCssModuleLoader(config, args) {
     let loaders = [];
     if (args.stage === 'dev') loaders.push('style-loader');
     loaders.push({
@@ -37,18 +37,18 @@ module.exports = function configureCssModuleLoader(config, args) {
                 }),
             ],
         },
-    })
+    });
     if (args.stage !== 'dev') {
-        loaders = [MiniCssExtractPlugin.loader].concat(loaders) // seeing
+        loaders = [MiniCssExtractPlugin.loader].concat(loaders); // seeing
         config.plugins.push(new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
             filename: "[name].css",
             chunkFilename: "[id].css"
-        }))
+        }));
     }
     return {
         test: /\.module\.css$/,
         use: loaders
-    }
-}
+    };
+};
