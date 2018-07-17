@@ -7,7 +7,8 @@
     "start": "react-static start",
     "stage": "react-static build --staging",
     "build": "react-static build",
-    "serve": "serve dist -p 3000"
+    "serve": "serve dist -p 3000",
+    "test": "NODE_ENV=test BABEL_ENV=test jest"
   },
   "dependencies": {
     "animejs": "^2.2.0",
@@ -19,9 +20,13 @@
     "react-static": "6.0.0-beta.8"
   },
   "devDependencies": {
+    "babel-jest": "^23.4.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "eslint": "^5.1.0",
     "eslint-config-react-tools": "1.x.x",
     "eslint-plugin-react": "^7.10.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.4.1",
     "mini-css-extract-plugin": "^0.4.1",
     "normalize.css": "^8.0.0",
     "postcss-import": "^11.1.0",

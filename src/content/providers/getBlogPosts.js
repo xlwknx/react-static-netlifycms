@@ -29,9 +29,7 @@ module.exports = function getBlogPosts() {
                             items.push(dataObj);
                         }
                     })
-                    .on('error', e => {
-                        console.log(e);
-                    })
+                    .on('error', console.error)
                     .on('end', () => {
                         // Resolve promise for async getRoutes request //
                         // posts = items for below routes //

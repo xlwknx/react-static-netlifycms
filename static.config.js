@@ -1,8 +1,9 @@
-const getPosts = require('./config/getBlogPosts');
-const getTags = require('./config/getTags');
+const getPosts = require('./src/content/providers/getBlogPosts');
+const getTags = require('./src/content/providers/getTags');
 const configureCssModuleLoader = require('./config/configureCssModuleLoader');
 
 export default {
+    bundleAnalyzer: true,
     getSiteData: () => ({
         title: 'React Static with Netlify CMS',
     }),
@@ -41,5 +42,8 @@ export default {
             ],
         }, ];
         return config;
+    },
+    devServer: {
+        hot: false,
     },
 };

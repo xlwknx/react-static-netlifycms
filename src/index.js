@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
+// Disable HOT until it will work
+// import { AppContainer } from 'react-hot-loader';
 
 // Your top level component
 import App from './App';
@@ -13,9 +14,10 @@ if (typeof document !== 'undefined') {
     const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate || ReactDOM.render;
     const render = Comp => {
         renderMethod(
-            <AppContainer>
+            // <AppContainer>
                 <Comp />
-            </AppContainer>,
+            // </AppContainer>
+            ,
             document.getElementById('root'),
         );
     };
@@ -23,7 +25,7 @@ if (typeof document !== 'undefined') {
     // Render!
     render(App);
     // Hot Module Replacement
-    if (module.hot) {
-        module.hot.accept('./App', () => render(require('./App').default));
-    }
+    // if (module.hot) {
+    //     module.hot.accept('./App', () => render(require('./App').default));
+    // }
 }

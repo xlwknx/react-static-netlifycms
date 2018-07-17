@@ -3,7 +3,6 @@ module.exports = function getTags(posts) {
         const filteredTags = post.data.tags ? post.data.tags.filter(tag => {
             return !tags.includes(tag);
         }) : [];
-        console.log('filteredTags', filteredTags);
         return  filteredTags.concat(tags);
     }, []);
 };
