@@ -1,5 +1,6 @@
 import autoprefixer from 'autoprefixer';
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+// import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import appPath from './appPath';
 
 export function configureCssModuleLoader(config, args) {
@@ -39,15 +40,20 @@ export function configureCssModuleLoader(config, args) {
         },
     });
     if (args.stage !== 'dev') {
-        loaders = [MiniCssExtractPlugin.loader].concat(loaders); // seeing
-        config.plugins.push(new MiniCssExtractPlugin({
-            // Options similar to the same options in webpackOptions.output
-            // both options are optional
-            filename: "[name].css"
-        }));
+        loaders = ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: loaders
+        });
+        config.plugins.push(new ExtractTextPlugin('style.css'));
+        // loaders = [MiniCssExtractPlugin.loader].concat(loaders); // seeing
+        // config.plugins.push(new MiniCssExtractPlugin({
+        //     // Options similar to the same options in webpackOptions.output
+        //     // both options are optional
+        //     filename: "[name].css"
+        // }));
     }
     return {
         test: /\.module\.css$/,
         use: loaders
     };
-};
+}

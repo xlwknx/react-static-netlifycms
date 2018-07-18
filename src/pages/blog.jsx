@@ -34,11 +34,11 @@ class BlogPage extends React.Component {
 BlogPage.propTypes = {
     posts: PropTypes.arrayOf(
         PropTypes.shape({
-            data: {
+            data: PropTypes.shape({
                 author: PropTypes.author,
                 slug: PropTypes.string,
                 title: PropTypes.string,
-            },
+            }),
         }),
     ),
     tags: PropTypes.arrayOf(PropTypes.string)

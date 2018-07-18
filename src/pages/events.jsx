@@ -1,8 +1,8 @@
 
 import React from 'react';
+import { Calendar } from 'virgil-frontend-ui';
 import Container from '../components/Layout/Container';
 import styles from './events.module.css';
-import { Calendar } from 'virgil-frontend-ui';
 
 export default class EventsPage extends React.Component {
 

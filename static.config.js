@@ -1,6 +1,12 @@
-import { getBlogPosts } from './src/content/providers/getBlogPosts';
-import { getTags } from './src/content/providers/getTags';
-import { configureCssModuleLoader } from './config/configureCssModuleLoader';
+import {
+    getBlogPosts
+} from './src/content/providers/getBlogPosts';
+import {
+    getTags
+} from './src/content/providers/getTags';
+import {
+    configureCssModuleLoader
+} from './config/configureCssModuleLoader';
 
 export default {
     bundleAnalyzer: false,
@@ -11,33 +17,34 @@ export default {
         const posts = await getBlogPosts();
         const tags = getTags(posts);
 
-        return [
-            {
+        return [{
                 path: '/',
                 component: 'src/pages/index',
-              },
-              {
+            },
+            {
                 path: '/about',
                 component: 'src/pages/about',
-              },
-              {
+            },
+            {
                 path: '/events',
                 component: 'src/pages/events',
-              },
-              {
-            path: '/blog',
-            getData: () => ({
-                posts,
-                tags
-            }),
-            children: posts.map(post => ({
-                path: `/post/${post.data.slug}`,
-                component: 'src/containers/Post',
+            },
+            {
+                path: '/blog',
+                component: 'src/pages/blog',
                 getData: () => ({
-                    post,
+                    posts,
+                    tags
                 }),
-            })),
-        }, ];
+                children: posts.map(post => ({
+                    path: `/post/${post.data.slug}`,
+                    component: 'src/containers/Post',
+                    getData: () => ({
+                        post,
+                    }),
+                })),
+            },
+        ];
     },
     webpack: (config, {
         stage,
