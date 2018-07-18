@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // Disable HOT until it will work
 // import { AppContainer } from 'react-hot-loader';
+import './assets/styles/index.css';
+import 'virgil-frontend-ui/dist/styles.css';
 
 // Your top level component
 import App from './App';

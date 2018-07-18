@@ -13,6 +13,7 @@ const App = () => (
                         Home
                     </Link>
                     <Link to="/about">About</Link>
+                    <Link to="/events">Events</Link>
                     <Link to="/blog">Blog</Link>
                 </div>
             </nav>

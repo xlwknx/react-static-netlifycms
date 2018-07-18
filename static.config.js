@@ -3,7 +3,7 @@ import { getTags } from './src/content/providers/getTags';
 import { configureCssModuleLoader } from './config/configureCssModuleLoader';
 
 export default {
-    bundleAnalyzer: true,
+    bundleAnalyzer: false,
     getSiteData: () => ({
         title: 'React Static with Netlify CMS',
     }),

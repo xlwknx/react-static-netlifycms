@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames/bind';
 import PropTypes from 'prop-types';
 
-const styles = require('./Container.css');
+const styles = require('./Container.module.css');
 const classNames = cn.bind(styles);
 
 export default class Container extends React.Component {
