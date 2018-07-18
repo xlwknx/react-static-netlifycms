@@ -31,6 +31,6 @@ collections:
     # Remove any that aren't needed for posts
       - {label: "Layout", name: "layout", widget: "hidden", default: "event"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Event Date", name: "date", widget: "datetime"}
+      - {label: "Event Date", name: "date", widget: "date"}
       - {label: "Body", name: "body", widget: "markdown"}
 
