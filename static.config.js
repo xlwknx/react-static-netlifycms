@@ -9,6 +9,7 @@ import {
 } from './config/configureCssModuleLoader';
 
 export default {
+    extractCssChunks: true,
     bundleAnalyzer: false,
     getSiteData: () => ({
         title: 'React Static with Netlify CMS',
