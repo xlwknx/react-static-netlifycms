@@ -11,7 +11,20 @@ export default {
         const posts = await getBlogPosts();
         const tags = getTags(posts);
 
-        return [{
+        return [
+            {
+                path: '/',
+                component: 'src/pages/index',
+              },
+              {
+                path: '/about',
+                component: 'src/pages/about',
+              },
+              {
+                path: '/events',
+                component: 'src/pages/events',
+              },
+              {
             path: '/blog',
             getData: () => ({
                 posts,
