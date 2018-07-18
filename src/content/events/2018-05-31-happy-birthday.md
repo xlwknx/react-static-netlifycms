@@ -1,6 +1,6 @@
 ---
 layout: event
-title: 'Sample Post #1'
+title: GDPR Selebration Day
 date: '2018-08-30'
 ---
 # GDPR Selebration Day
