@@ -17,7 +17,7 @@ export function getBlogPosts() {
                             // If markdown file, read contents //
                             const data = fs.readFileSync(item.path, 'utf8');
                             // Convert to frontmatter object and markdown content //
-                            const dataObj = matter(data);
+                            const dataObj = matter(data, );
                             // Create slug for URL //
                             dataObj.data.slug = dataObj.data.title
                                 .toLowerCase()
@@ -29,7 +29,7 @@ export function getBlogPosts() {
                             items.push(dataObj);
                         }
                     })
-                    .on('error', console.error)
+                    .on('error', (e) => { throw e; })
                     .on('end', () => {
                         // Resolve promise for async getRoutes request //
                         // posts = items for below routes //
