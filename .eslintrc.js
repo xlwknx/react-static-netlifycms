@@ -22,6 +22,7 @@ module.exports = {
     "rules": {
         "react/display-name": 0,
         "react/no-unescaped-entities": 0,
+        "react/prop-types": 0,
         "semi": 1,
         "no-console": 0
     }

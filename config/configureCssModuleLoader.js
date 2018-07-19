@@ -23,7 +23,8 @@ export function configureCssModuleLoader(config, args) {
             // https://github.com/facebookincubator/create-react-app/issues/2677
             ident: 'postcss',
             plugins: () => [
-                require('postcss-flexbugs-fixes'),
+                require('postcss-retina-bg-img')({ retinaSuffix: '@2x'}),
+                require('postcss-flexbugs-fixes')(),
                 require('postcss-import')({
                     root: appPath,
                 }),
