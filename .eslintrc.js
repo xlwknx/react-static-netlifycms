@@ -23,5 +23,6 @@ module.exports = {
         "react/display-name": 0,
         "react/no-unescaped-entities": 0,
         "semi": 1,
+        "no-console": 0
     }
 }

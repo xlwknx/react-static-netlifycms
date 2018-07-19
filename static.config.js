@@ -7,10 +7,12 @@ import {
 import {
     configureCssModuleLoader
 } from './config/configureCssModuleLoader';
+import chalk from 'chalk';
 
-console.log('process.env.DEPLOY_PRIME_URL:', process.env.DEPLOY_PRIME_URL, '\nprocess.env.DEPLOY_URL:', process.env.DEPLOY_URL, '\nprocess.env.URL:', process.env.URL);
+console.log(chalk.magenta('process.env', JSON.stringify(process.env, null, 4)));
 export default {
-    siteRoot: process.env.DEPLOY_PRIME_URL,
+    // need to define static path, production and deploy url are different
+    siteRoot: process.env.CONTEXT === 'production' ? process.env.URL : process.env.DEPLOY_URL,
     bundleAnalyzer: false,
     getSiteData: () => ({
         title: 'React Static with Netlify CMS',
