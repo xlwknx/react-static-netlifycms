@@ -6,7 +6,7 @@
   "scripts": {
     "start": "react-static start",
     "stage": "react-static build --staging",
-    "build": "react-static build --debug",
+    "build": "NODE_ENV=production react-static build",
     "serve": "serve dist -p 3000",
     "test": "NODE_ENV=test BABEL_ENV=test jest"
   },
