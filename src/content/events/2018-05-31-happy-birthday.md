@@ -1,14 +1,8 @@
 ---
 layout: event
-title: 'Sample Post #1'
-author: 'Alexey Smirnov'
-date: 2018-02-19T00:45:43.212Z
-created: 
-thumbnail: /uploads/image2.jpg
-tags: ['privet', 'e2ee', 'JavaScript']
+title: GDPR Selebration Day
+date: '2018-08-30'
 ---
-# This is sample post #1.
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+# GDPR Selebration Day
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mi in nulla posuere sollicitudin aliquam. Turpis massa sed elementum tempus egestas. Tincidunt augue interdum velit euismod in. Orci dapibus ultrices in iaculis nunc sed augue. Fames ac turpis egestas maecenas pharetra convallis posuere morbi. At volutpat diam ut venenatis tellus in metus vulputate eu. Vel turpis nunc eget lorem dolor sed viverra ipsum. Convallis a cras semper auctor. Cras ornare arcu dui vivamus arcu felis bibendum ut tristique. Id aliquet lectus proin nibh. Tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse.
-
+Virgil Security makes app security MUCH easier for developers, but we know that you'll still have questions along the way. Join our weekly onboarding party webinar for a step-by-step guide to creating a Virgil account and building your own end-to-end encrypted chat. We'll have lots of interactive Q&A, so bring questions!
