@@ -19,26 +19,26 @@ export default {
 
         return [{
                 path: '/',
-                component: 'src/pages/index',
+                component: './src/pages/index',
             },
             {
                 path: '/about',
-                component: 'src/pages/about',
+                component: './src/pages/about',
             },
             {
                 path: '/events',
-                component: 'src/pages/events',
+                component: './src/pages/events',
             },
             {
                 path: '/blog',
-                component: 'src/pages/blog',
+                component: './src/pages/blog',
                 getData: () => ({
                     posts,
                     tags
                 }),
                 children: posts.map(post => ({
                     path: `/post/${post.data.slug}`,
-                    component: 'src/containers/Post',
+                    component: './src/containers/Post',
                     getData: () => ({
                         post,
                     }),
