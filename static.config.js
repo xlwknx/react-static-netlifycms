@@ -8,7 +8,9 @@ import {
     configureCssModuleLoader
 } from './config/configureCssModuleLoader';
 
+console.log('process.env.URL', process.env.URL);
 export default {
+    siteRoot: process.env.URL,
     bundleAnalyzer: false,
     getSiteData: () => ({
         title: 'React Static with Netlify CMS',
