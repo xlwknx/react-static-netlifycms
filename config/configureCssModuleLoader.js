@@ -12,6 +12,7 @@ export function configureCssModuleLoader(config, args) {
             importLoaders: 1,
             modules: true,
             sourceMap: true,
+            localIdentName: '[name]__[local]--[hash:base64:5]',
             minimize: args.stage === 'prod',
             camelCase: 'dashes',
         }

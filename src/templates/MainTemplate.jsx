@@ -15,7 +15,7 @@ export default class MainTemplate extends React.Component {
                         styles.navContainerBg,
                         this.props.headerClassName || styles.navDefault,
                     ].join(' ')}
-                    className={[this.props.className, styles.navContainer]}
+                    className={[this.props.className, styles.navContainer].join(' ')}
                 >
                     <nav className={styles.nav}>
                         <LogoWhite />

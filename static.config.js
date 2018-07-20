@@ -1,6 +1,6 @@
-import { getBlogPosts } from './src/content/providers/getBlogPosts';
 import { getTags } from './src/content/providers/getTags';
 import { configureCssModuleLoader } from './config/configureCssModuleLoader';
+import { getMarkdownFiles } from './src/content/providers/getMarkdownFiles';
 
 export default {
     // need to define static path, production and deploy url are different
@@ -10,9 +10,11 @@ export default {
         title: 'React Static with Netlify CMS',
     }),
     getRoutes: async () => {
-        const posts = await getBlogPosts();
+        const [posts, events] = await Promise.all([
+            getMarkdownFiles('posts'),
+            getMarkdownFiles('events'),
+        ]);
         const tags = getTags(posts);
-
         return [
             {
                 path: '/',
@@ -25,6 +27,9 @@ export default {
             {
                 path: '/events',
                 component: './src/pages/events',
+                getData: () => ({
+                    events,
+                }),
             },
             {
                 path: '/blog',
