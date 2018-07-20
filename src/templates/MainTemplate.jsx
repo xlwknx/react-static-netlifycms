@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-static';
 import styles from './MainTemplate.module.css';
 import { Button, ButtonTheme } from 'virgil-frontend-ui';
@@ -9,9 +10,15 @@ export default class MainTemplate extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Container backgroundClass={styles.navContainer}>
+                <Container
+                    backgroundClass={[
+                        styles.navContainerBg,
+                        this.props.headerClassName || styles.navDefault,
+                    ].join(' ')}
+                    className={[this.props.className, styles.navContainer]}
+                >
                     <nav className={styles.nav}>
-                        <LogoWhite/>
+                        <LogoWhite />
                         <div className={styles.container}>
                             <Link exact to="/">
                                 Home
@@ -25,9 +32,16 @@ export default class MainTemplate extends React.Component {
                             <Button theme={ButtonTheme.Outline}>Signup</Button>
                         </div>
                     </nav>
+                    <div className={styles.headerContent}>
+                        {this.props.headerContent}
+                    </div>
                 </Container>
                 {this.props.children}
             </React.Fragment>
         );
     }
 }
+
+MainTemplate.propTypes = {
+    headerClassName: PropTypes.string,
+};

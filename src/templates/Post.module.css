@@ -6,6 +6,8 @@
 }
 
 .title {
+    composes: muller-28;
+    color: white;
     text-align: center;
 }
 
@@ -16,4 +18,10 @@
 .img {
     width: 100%;
     margin: 20px 0;
+}
+
+.navPostBg {
+    height: 300px;
+    background-image: url('../assets/img/pics/post-header.jpg');
+    background-position: center 10%;
 }
