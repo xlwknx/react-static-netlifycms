@@ -11,11 +11,9 @@ export class PostTemplate extends React.Component {
         const { post } = this.props;
         return (
             <MainTemplate
-                headerContent={
-                    <h1 className={styles.title}>{post.data.title}</h1>
-                }
+                headerContent={<h1 className={styles.title}>{post.data.title}</h1>}
                 headerClassName={styles.navPostBg}
-                >
+            >
                 <Container>
                     <Link to="/blog/" className={styles.back}>
                         {'<'} Back
