@@ -7,7 +7,7 @@ export function configureCssModuleLoader(config, args) {
     let loaders = [];
     if (args.stage === 'dev') loaders.push('style-loader');
     loaders.push({
-        loader: 'css-loader',
+        loader: 'typings-for-css-modules-loader',
         options: {
             importLoaders: 1,
             modules: true,

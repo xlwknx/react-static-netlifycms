@@ -1,0 +1,41 @@
+export interface IPostModuleCss {
+  'muller-40': string;
+  'muller40': string;
+  'muller': string;
+  'muller-28-reg': string;
+  'muller28Reg': string;
+  'muller-28': string;
+  'muller28': string;
+  'muller-20': string;
+  'muller20': string;
+  'muller-18': string;
+  'muller18': string;
+  'muller-17': string;
+  'muller17': string;
+  'muller-16': string;
+  'muller16': string;
+  'muller-14': string;
+  'muller14': string;
+  'muller-14-thin': string;
+  'muller14Thin': string;
+  'muller-11': string;
+  'muller11': string;
+  'muller-11-thin': string;
+  'muller11Thin': string;
+  'lato-16': string;
+  'lato16': string;
+  'lato-14': string;
+  'lato14': string;
+  'lato-13': string;
+  'lato13': string;
+  'lato-12': string;
+  'lato12': string;
+  'OpaqueGray': string;
+  'back': string;
+  'title': string;
+  'subtitle': string;
+  'img': string;
+  'navPostBg': string;
+}
+
+export const locals: IPostModuleCss;

@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-static';
 import styles from './MainTemplate.module.css';
 import { Button, ButtonTheme } from 'virgil-frontend-ui';
-import Container from '../components/Layout/Container';
-import LogoWhite from '../components/Svg/LogoWhite';
+import Container from 'components/Layout/Container';
+import LogoWhite from 'components/Svg/LogoWhite';
 
 export default class MainTemplate extends React.Component {
     render() {
@@ -41,7 +40,3 @@ export default class MainTemplate extends React.Component {
         );
     }
 }
-
-MainTemplate.propTypes = {
-    headerClassName: PropTypes.string,
-};

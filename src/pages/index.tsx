@@ -1,8 +1,8 @@
 import React from 'react';
 import { withSiteData } from 'react-static';
 import { Button } from 'virgil-frontend-ui';
-import MainTemplate from '../templates/MainTemplate';
-import Container from '../components/Layout/Container';
+import MainTemplate from 'templates/MainTemplate';
+import Container from 'components/Layout/Container';
 import logoImg from '../logo.png';
 import styles from './index.module.css';
 

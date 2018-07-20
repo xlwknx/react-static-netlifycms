@@ -1,0 +1,55 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "module": "esnext",
+        "target": "esnext",
+        "lib": ["es2015", "dom", "es2016.array.include"],
+        "sourceMap": true,
+        "allowJs": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        "rootDir": "src",
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "noUnusedLocals": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "baseUrl": "./src",
+        "paths": {
+            "components/*": [
+                "components/*"
+            ],
+            "store/*": [
+                "store/*"
+            ],
+            "lib/*": [
+                "lib/*"
+            ],
+            "content/*": [
+                "content/*"
+            ],
+            "pages/*": [
+                "services/*"
+            ],
+            "ui/*": [
+                "ui/*"
+            ],
+            "assets/*": [
+                "assets/*"
+            ]
+        },
+        "typeRoots": [
+            "./node_modules/@types"
+        ]
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}

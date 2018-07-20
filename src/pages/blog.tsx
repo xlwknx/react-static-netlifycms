@@ -1,10 +1,13 @@
 import React from 'react';
 import { withRouteData, Link } from 'react-static';
-import Container from '../components/Layout/Container';
-import PropTypes from 'prop-types';
-import MainTemplate from '../templates/MainTemplate';
+import Container from 'components/Layout/Container';
+import MainTemplate from 'templates/MainTemplate';
 
-class BlogPage extends React.Component {
+export interface IBlogPage {
+    // posts: []
+}
+
+class BlogPage extends React.Component<IBlogPage> {
     render() {
         return (
             <MainTemplate>
@@ -33,18 +36,5 @@ class BlogPage extends React.Component {
         );
     }
 }
-
-BlogPage.propTypes = {
-    posts: PropTypes.arrayOf(
-        PropTypes.shape({
-            data: PropTypes.shape({
-                author: PropTypes.author,
-                slug: PropTypes.string,
-                title: PropTypes.string,
-            }),
-        }),
-    ),
-    tags: PropTypes.arrayOf(PropTypes.string),
-};
 
 export default withRouteData(BlogPage);

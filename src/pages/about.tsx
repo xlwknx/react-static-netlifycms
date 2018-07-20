@@ -1,8 +1,7 @@
 import React from 'react';
 import anime from 'animejs';
-import Container from '../components/Layout/Container';
-import styles from './about.module.css';
-import MainTemplate from '../templates/MainTemplate';
+import Container from 'components/Layout/Container';
+import MainTemplate from 'templates/MainTemplate';
 
 export default class AboutPage extends React.Component {
     componentDidMount() {
@@ -21,7 +20,6 @@ export default class AboutPage extends React.Component {
             <MainTemplate>
                 <Container>
                     <svg
-                        className={styles.logo}
                         xmlns="http://www.w3.org/2000/svg"
                         width="100%"
                         viewBox="0 0 144.875 46.875"

@@ -1,9 +1,9 @@
 
 import React from 'react';
-import { Calendar } from 'virgil-frontend-ui';
-import Container from '../components/Layout/Container';
+import Container from 'components/Layout/Container';
 import styles from './events.module.css';
-import MainTemplate from '../templates/MainTemplate';
+import MainTemplate from 'templates/MainTemplate';
+import { Calendar } from 'virgil-frontend-ui';
 import { withRouteData } from 'react-static';
 
 export class EventsPage extends React.Component {

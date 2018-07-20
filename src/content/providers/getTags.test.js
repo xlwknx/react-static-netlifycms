@@ -1,4 +1,4 @@
-import { getTags } from './getTags';
+import { getTags } from 'content/providers/getTags';
 
 describe('getTags', () => {
     it('return array if post are empty array', () => {

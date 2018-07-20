@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouteData, Link } from 'react-static';
 import Markdown from 'react-markdown';
-import Container from '../components/Layout/Container';
+import Container from 'components/Layout/Container';
 import MainTemplate from './MainTemplate';
 
 const styles = require('./Post.module.css');
