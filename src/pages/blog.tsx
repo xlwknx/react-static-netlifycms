@@ -2,9 +2,11 @@ import React from 'react';
 import { withRouteData, Link } from 'react-static';
 import Container from 'components/Layout/Container';
 import MainTemplate from 'templates/MainTemplate';
+import { IPostMatter } from 'content';
 
 export interface IBlogPage {
-    // posts: []
+    posts: IPostMatter[];
+    tags: string[];
 }
 
 class BlogPage extends React.Component<IBlogPage> {

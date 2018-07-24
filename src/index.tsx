@@ -17,8 +17,7 @@ if (typeof document !== 'undefined') {
         renderMethod(
             <AppContainer>
                 <Comp />
-            </AppContainer>
-            ,
+            </AppContainer>,
             document.getElementById('root'),
         );
     };

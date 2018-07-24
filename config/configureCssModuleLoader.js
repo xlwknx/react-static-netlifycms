@@ -1,7 +1,7 @@
 import autoprefixer from 'autoprefixer';
 // import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import appPath from './appPath';
+import paths from './paths';
 
 export function configureCssModuleLoader(config, args) {
     let loaders = [];
@@ -15,6 +15,7 @@ export function configureCssModuleLoader(config, args) {
             localIdentName: '[name]__[local]--[hash:base64:5]',
             minimize: args.stage === 'prod',
             camelCase: 'dashes',
+            namedExport: true
         }
     });
     loaders.push({
@@ -27,7 +28,7 @@ export function configureCssModuleLoader(config, args) {
                 require('postcss-retina-bg-img')({ retinaSuffix: '@2x'}),
                 require('postcss-flexbugs-fixes')(),
                 require('postcss-import')({
-                    root: appPath,
+                    root: paths.src,
                 }),
                 autoprefixer({
                     browsers: [

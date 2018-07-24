@@ -1,9 +1,5 @@
-export interface IMainTemplateModuleCss {
-  'navContainerBg': string;
-  'navContainer': string;
-  'navDefault': string;
-  'nav': string;
-  'headerContent': string;
-}
-
-export const locals: IMainTemplateModuleCss;
+export const navContainerBg: string;
+export const navContainer: string;
+export const navDefault: string;
+export const nav: string;
+export const headerContent: string;

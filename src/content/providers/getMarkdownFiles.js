@@ -4,7 +4,7 @@ import { existsSync, readFileSync } from 'fs';
 import path from 'path';
 
 export function getMarkdownFiles(folderName) {
-    const items = [];
+    const items= [];
     const folderPath = path.join('./src/content', folderName);
     return new Promise(resolve => {
         // Check if posts directory exists //
@@ -28,7 +28,7 @@ export function getMarkdownFiles(folderName) {
                         items.push(dataObj);
                     }
                 })
-                .on('error', (e) => {
+                .on('error', e => {
                     throw e;
                 })
                 .on('end', () => {

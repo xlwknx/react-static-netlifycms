@@ -1,5 +1,1 @@
-export interface IContainerModuleCss {
-  'Container': string;
-}
-
-export const locals: IContainerModuleCss;
+export const Container: string;

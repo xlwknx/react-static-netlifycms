@@ -3,10 +3,15 @@ import { withRouteData, Link } from 'react-static';
 import Markdown from 'react-markdown';
 import Container from 'components/Layout/Container';
 import MainTemplate from './MainTemplate';
+import { IPostMatter } from '../content/index';
 
 const styles = require('./Post.module.css');
 
-export class PostTemplate extends React.Component {
+export interface IPostTemplate {
+    post: IPostMatter;
+}
+
+export class PostTemplate extends React.Component<IPostTemplate> {
     render() {
         const { post } = this.props;
         return (

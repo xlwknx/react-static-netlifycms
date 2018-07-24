@@ -1,7 +1,3 @@
-export interface IEventsModuleCss {
-  'Container': string;
-  'Content': string;
-  'AsideRight': string;
-}
-
-export const locals: IEventsModuleCss;
+export const Container: string;
+export const Content: string;
+export const AsideRight: string;
