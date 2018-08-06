@@ -42,7 +42,7 @@ collections:
         name: "logos"
         file: "src/content/logos.json"
         fields:
-          - {label: file, name: file, widget: image }
+          - {label: "file", name: "file", widget: "image" }
 
 
 
