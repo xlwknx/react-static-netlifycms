@@ -2,6 +2,7 @@ const paths = require('./paths');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
@@ -110,7 +111,8 @@ const config = {
             inject: true,
             filename: './admin/index.html',
             template: paths.adminHTML
-        })
+        }),
+        new CopyWebpackPlugin([{ from: paths.netlifyConfig, to: paths.adminDist }])
     ]
 };
 
