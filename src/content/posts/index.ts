@@ -4,4 +4,5 @@ export interface IPost {
     date: string;
     thumbnail: string;
     tags: string[];
+    slug?: string;
 }

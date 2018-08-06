@@ -11,6 +11,4 @@ interface IFrontMatter<
     data: T;
 }
 
-export interface IPostMatter extends IFrontMatter<IPost> {
-    slug: string;
-}
+export interface IPostMatter extends IFrontMatter<IPost> {}

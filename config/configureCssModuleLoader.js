@@ -47,7 +47,13 @@ export function configureCssModuleLoader(config, args) {
             fallback: 'style-loader',
             use: loaders
         });
-        config.plugins.push(new ExtractTextPlugin('style.css'));
+        config.plugins.push(new ExtractTextPlugin({
+            filename:  (getPath) => {
+                const filepath = getPath('./styles.css');
+                process.env.cssPath = filepath;
+                return filepath;
+            }
+        }));
         // loaders = [MiniCssExtractPlugin.loader].concat(loaders); // seeing
         // config.plugins.push(new MiniCssExtractPlugin({
         //     // Options similar to the same options in webpackOptions.output

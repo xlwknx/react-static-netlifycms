@@ -1,6 +1,10 @@
-const path = require('path')
+const path = require('path');
 
-module.exports = {
-    root: process.cwd(),
-    src: path.resolve(process.cwd(), './src/')
-}
+const paths = {
+    root: process.cwd()
+};
+
+paths.src = path.resolve(paths.root, './src/');
+paths.cms = path.resolve(paths.src, './cms.tsx');
+
+module.exports = paths;
