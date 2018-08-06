@@ -1,0 +1,35 @@
+.navContainerBg {
+    width: 100%;
+    background-size: cover;
+}
+
+.navContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 70px;
+}
+
+.navDefault {
+    background-image: url('../assets/img/pics/home-intro-bg.jpg');
+    height: 300px;
+}
+
+.navContainerBg a {
+    color: white;
+    padding: 1rem;
+    display: inline-block;
+}
+
+.nav {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+}
