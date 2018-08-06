@@ -7,7 +7,7 @@ export function configureCssModuleLoader(config, args) {
     let loaders = [];
     if (args.stage === 'dev') loaders.push('style-loader');
     loaders.push({
-        loader: 'typings-for-css-modules-loader',
+        loader: 'css-loader',
         options: {
             importLoaders: 1,
             modules: true,
@@ -47,19 +47,7 @@ export function configureCssModuleLoader(config, args) {
             fallback: 'style-loader',
             use: loaders
         });
-        config.plugins.push(new ExtractTextPlugin({
-            filename:  (getPath) => {
-                const filepath = getPath('./styles.css');
-                process.env.cssPath = filepath;
-                return filepath;
-            }
-        }));
-        // loaders = [MiniCssExtractPlugin.loader].concat(loaders); // seeing
-        // config.plugins.push(new MiniCssExtractPlugin({
-        //     // Options similar to the same options in webpackOptions.output
-        //     // both options are optional
-        //     filename: "[name].css"
-        // }));
+        config.plugins.push(new ExtractTextPlugin('styles.[hash:8].css'));
     }
     return {
         test: /\.module\.css$/,
