@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   branch: new-static-engine
   repo: xlwknx/react-static-netlifycms
 
@@ -34,15 +34,3 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Event Date", name: "date", widget: "date"}
       - {label: "Body", name: "body", widget: "markdown"}
-  - label: "Images"
-    name: "images"
-    create: true # Allow users to create new documents in this collection
-    files:
-      - label: "Logos"
-        name: "logos"
-        file: "src/content/logos.json"
-        fields:
-          - {label: "file", name: "file", widget: "image" }
-
-
-

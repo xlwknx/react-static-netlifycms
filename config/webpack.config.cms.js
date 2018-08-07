@@ -113,7 +113,11 @@ const config = {
             template: paths.adminHTML
         }),
         new CopyWebpackPlugin([{ from: paths.netlifyConfig, to: paths.adminDist }])
-    ]
+    ],
+    devServer: {
+        contentBase: paths.dist,
+        port: 3000
+      }
 };
 
 module.exports = config;
