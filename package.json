@@ -21,7 +21,7 @@
     "classnames": "^2.2.6",
     "gray-matter": "^4.0.1",
     "klaw": "^2.1.1",
-    "netlify-cms": "^2.0.8",
+    "netlify-cms": "^1.9.3",
     "react-markdown": "^3.3.4",
     "react-static": "^5.9.7",
     "typescript": "^2.9.2",
