@@ -1,10 +1,13 @@
 ---
 layout: blog
 title: 'Sample Post #1'
-author: 'Alexey Smirnov'
+author: Alexey Smirnov Privet
 date: 2018-02-19T00:45:43.212Z
 thumbnail: /uploads/image2.jpg
-tags: ['privet', 'e2ee', 'JavaScript']
+tags:
+  - privet
+  - e2ee
+  - JavaScript
 ---
 # This is sample post #1.
 ![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
