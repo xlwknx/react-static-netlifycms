@@ -27,8 +27,8 @@ export function configureTsLoader(config, {
     config.resolve.alias = aliases;
     config.resolve.extensions.push('.ts', '.tsx');
     config.plugins.push(new ForkTsCheckerWebpackPlugin({
-        tslint: paths.tsconfig,
-        tsconfig: paths.tslint
+        tslint: paths.tslint,
+        tsconfig: paths.tsconfig
     }));
     config.resolve.symlinks = false;
 
