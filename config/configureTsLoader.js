@@ -33,4 +33,4 @@ export function configureTsLoader(config, {
     config.resolve.symlinks = false;
 
     return tsLoader;
-};
+}
