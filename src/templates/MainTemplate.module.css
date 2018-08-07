@@ -1,6 +1,7 @@
 .navContainerBg {
     width: 100%;
     background-size: cover;
+    min-width: 1024px;
 }
 
 .navContainer {

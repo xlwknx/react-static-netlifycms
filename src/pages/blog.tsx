@@ -25,14 +25,6 @@ class BlogPage extends React.Component<IBlogPage> {
                             </li>
                         ))}
                     </ul>
-                    <p>Tags</p>
-                    <ul>
-                        {this.props.tags.map(tag => (
-                            <li key={tag}>
-                                <Link to={`/blog/tag/${tag}`}>{tag}</Link>
-                            </li>
-                        ))}
-                    </ul>
                 </Container>
             </MainTemplate>
         );

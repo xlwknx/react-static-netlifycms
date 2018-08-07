@@ -27,10 +27,10 @@ export function configureTsLoader(config, {
     config.resolve.alias = aliases;
     config.resolve.extensions.push('.ts', '.tsx');
     config.plugins.push(new ForkTsCheckerWebpackPlugin({
-        tslint: paths.root + '/tslint.json',
-        tsconfig: paths.root + '/tsconfig.json'
+        tslint: paths.tslint,
+        tsconfig: paths.tsconfig
     }));
     config.resolve.symlinks = false;
 
     return tsLoader;
-};
+}

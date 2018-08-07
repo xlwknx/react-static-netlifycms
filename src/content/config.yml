@@ -1,0 +1,38 @@
+backend:
+  name: git-gateway
+  branch: master
+  repo: xlwknx/react-static-netlifycms
+
+media_folder: "public/uploads" # Media files will be stored in the repo under public/uploads
+public_folder: "/uploads" # Folder path where uploaded files will be accessed, relative to the base of the built site
+publish_mode: editorial_workflow
+
+collections:
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Post" # Used in the UI
+    folder: "src/content/posts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter.
+    # Remove any that aren't needed for posts
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list", default: []}
+
+  - name: "events" # Used in routes, e.g., /admin/collections/blog
+    label: "Event" # Used in the UI
+    folder: "src/content/events" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter.
+    # Remove any that aren't needed for posts
+      - {label: "Layout", name: "layout", widget: "hidden", default: "event"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Event Date", name: "date", widget: "date"}
+      - {label: "Body", name: "body", widget: "markdown"}
