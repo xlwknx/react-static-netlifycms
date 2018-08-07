@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: new-static-engine
+  branch: master
   repo: xlwknx/react-static-netlifycms
 
 media_folder: "public/uploads" # Media files will be stored in the repo under public/uploads
