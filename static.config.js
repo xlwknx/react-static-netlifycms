@@ -4,9 +4,9 @@ import { configureCssModuleLoader } from './config/configureCssModuleLoader';
 import { configureTsLoader } from './config/configureTsLoader';
 import { getMarkdownFiles } from './src/content/providers/getMarkdownFiles';
 
+console.log('process.env.CONTEXT', process.env.CONTEXT);
 export default {
     // need to define static path, production and deploy url are different
-    extractCssChunks: false,
     siteRoot: process.env.CONTEXT === 'production' ? process.env.URL : process.env.DEPLOY_URL,
     entry: path.join(__dirname, 'src', 'index.tsx'),
     bundleAnalyzer: false,
