@@ -4,10 +4,16 @@ import { configureCssModuleLoader } from './config/configureCssModuleLoader';
 import { configureTsLoader } from './config/configureTsLoader';
 import { getMarkdownFiles } from './src/content/providers/getMarkdownFiles';
 
-console.log('process.env.CONTEXT', process.env.CONTEXT);
+console.log(
+    'process.env.CONTEXT', process.env.CONTEXT,
+    '\nprocess.env.URL', process.env.URL,
+    '\nprocess.env.DEPLOY_URL', process.env.DEPLOY_URL,
+    '\nprocess.env.DEPLOY_PRIME_URL', process.env.DEPLOY_PRIME_URL,
+);
 export default {
     // need to define static path, production and deploy url are different
     siteRoot: process.env.CONTEXT === 'production' ? process.env.URL : process.env.DEPLOY_URL,
+
     entry: path.join(__dirname, 'src', 'index.tsx'),
     bundleAnalyzer: false,
     getSiteData: () => ({
