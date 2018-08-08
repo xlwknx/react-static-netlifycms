@@ -26,6 +26,9 @@
             "components/*": [
                 "components/*"
             ],
+            "containers/*": [
+                "containers/*"
+            ],
             "store/*": [
                 "store/*"
             ],

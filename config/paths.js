@@ -10,7 +10,7 @@ const paths = {
     tslint : path.resolve(__dirname, '../tslint.json'),
     tsconfig : path.resolve(__dirname, '../tsconfig.json'),
     adminHTML : path.resolve(__dirname, `../public/${adminRoute}/index.html`),
-    netlifyConfig : path.resolve(__dirname, '../src/content/config.yml'),
+    netlifyConfig : path.resolve(__dirname, `../public/${adminRoute}/config.yml`),
 };
 
 module.exports = paths;

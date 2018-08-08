@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from 'components/Layout/Container';
 import styles from './events.module.css';
-import MainTemplate from 'templates/MainTemplate';
+import MainTemplate from 'containers/MainTemplate';
 import { Calendar } from 'virgil-frontend-ui';
 import { withRouteData } from 'react-static';
 

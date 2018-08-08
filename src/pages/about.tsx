@@ -1,7 +1,7 @@
 import React from 'react';
 import anime from 'animejs';
 import Container from 'components/Layout/Container';
-import MainTemplate from 'templates/MainTemplate';
+import MainTemplate from 'containers/MainTemplate';
 
 export default class AboutPage extends React.Component {
     componentDidMount() {
