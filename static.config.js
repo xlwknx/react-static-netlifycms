@@ -12,8 +12,9 @@ console.log(
 );
 export default {
     // need to define static path, production and deploy url are different
-    // siteRoot: process.env.CONTEXT === 'production' ? process.env.URL : process.env.DEPLOY_URL,
-
+    siteRoot: process.env.CONTEXT === 'production' ? process.env.URL : process.env.DEPLOY_URL,
+    disableRoutePrefixing: true,
+    basePath: './',
     entry: path.join(__dirname, 'src', 'index.tsx'),
     bundleAnalyzer: false,
     getSiteData: () => ({
