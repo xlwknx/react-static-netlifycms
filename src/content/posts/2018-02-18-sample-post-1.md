@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: 'Sample Post #1'
-author: Alexey Smirnov Privet
+author: Alexey Smirnov
 date: 2018-02-19T00:45:43.212Z
 thumbnail: /uploads/image2.jpg
 tags:
