@@ -3,39 +3,13 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const autoprefixer = require('autoprefixer');
+const postCssLoader = require('./configureCssModuleLoader').postCssLoader;
 const webpack = require('webpack');
 
 const convPaths = require('convert-tsconfig-paths-to-webpack-aliases').default;
 const tsconfig = require('../tsconfig.json');
 
 const aliases = convPaths(tsconfig);
-const postcssLoader = {
-    loader: 'postcss-loader',
-    options: {
-        // Necessary for external CSS imports to work
-        // https://github.com/facebookincubator/create-react-app/issues/2677
-        ident: 'postcss',
-        plugins: () => [
-            require('postcss-retina-bg-img')({
-                retinaSuffix: '@2x'
-            }),
-            require('postcss-flexbugs-fixes')(),
-            require('postcss-import')({
-                root: paths.src,
-            }),
-            autoprefixer({
-                browsers: [
-                    '>1%',
-                    'last 4 versions',
-                    'Firefox ESR',
-                    'not ie < 9', // React doesn't support IE8 anyway
-                ],
-                flexbox: 'no-2009',
-            }),
-        ],
-    },
-}
 
 const config = {
     entry: paths.cms,
@@ -66,7 +40,7 @@ const config = {
                                 camelCase: 'dashes',
                                 namedExport: true
                             }
-                        }, postcssLoader]
+                        }, postCssLoader]
                     })
                 },
                 {
@@ -75,7 +49,7 @@ const config = {
                         fallback: 'style-loader',
                         use: [
                             require.resolve('css-loader'),
-                            postcssLoader
+                            postCssLoader
                         ]
                     })
                 },

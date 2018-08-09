@@ -1,8 +1,8 @@
-import autoprefixer from 'autoprefixer';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import paths from './paths';
+const autoprefixer = require('autoprefixer');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const paths = require('./paths');
 
-export const postCssLoader = {
+const postCssLoader = {
     loader: 'postcss-loader',
     options: {
         // Necessary for external CSS imports to work
@@ -29,7 +29,9 @@ export const postCssLoader = {
     },
 };
 
-export function configureCssModuleLoader(config, args) {
+module.exports.postCssLoader = postCssLoader;
+
+module.exports.configureCssModuleLoader = (config, args) => {
     let loaders = [];
     if (args.stage === 'dev') loaders.push('style-loader');
 
