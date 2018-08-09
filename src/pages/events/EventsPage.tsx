@@ -1,9 +1,9 @@
 import React from 'react';
 import Container from 'components/Layout/Container';
-import styles from './events.module.css';
-import MainTemplate from 'containers/MainTemplate';
-import { Calendar } from 'virgil-frontend-ui';
+import MainTemplate from 'components/Layout/MainLayout';
+import { Calendar } from 'virgil-frontend-ui/dist';
 import { withRouteData } from 'react-static';
+import styles from './EventsPage.module.css';
 
 export interface IEventPageProps {
     events: Array<{

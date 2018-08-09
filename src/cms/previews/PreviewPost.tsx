@@ -1,9 +1,7 @@
 import React from 'react';
-import { PostTemplate } from './Post';
+import { PostPage } from 'pages/blog/PostPage';
 import { IPostMatter } from 'content';
 import { IPost } from 'content/posts';
-
-import './PreviewPost.module.css';
 
 interface IPostWithBody extends IPost {
     body: string;
@@ -26,7 +24,7 @@ const BlogPostPreview: React.SFC<IPostPreviewProps> = ({ entry, widgetFor }) => 
     const post = entry.toJS();
     post.content = post.data.body;
 
-    return <PostTemplate post={post}>{widgetFor('body')}</PostTemplate>;
+    return <PostPage post={post}>{widgetFor('body')}</PostPage>;
 };
 
 export default BlogPostPreview;

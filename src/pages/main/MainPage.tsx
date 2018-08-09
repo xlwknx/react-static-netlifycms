@@ -1,9 +1,9 @@
 import React from 'react';
 import { withSiteData } from 'react-static';
-import { Button } from 'virgil-frontend-ui';
-import MainTemplate from 'containers/MainTemplate';
+import { Button } from 'virgil-frontend-ui/dist';
+import MainTemplate from 'components/Layout/MainLayout';
 import Container from 'components/Layout/Container';
-import styles from './index.module.css';
+import styles from './MainPage.module.css';
 
 export default withSiteData(() => (
     <MainTemplate>

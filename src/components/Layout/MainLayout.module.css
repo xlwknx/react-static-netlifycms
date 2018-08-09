@@ -12,7 +12,7 @@
 }
 
 .navDefault {
-    background-image: url('../assets/img/pics/home-intro-bg.jpg');
+    background-image: url('../../assets/img/pics/home-intro-bg.jpg');
     height: 300px;
 }
 

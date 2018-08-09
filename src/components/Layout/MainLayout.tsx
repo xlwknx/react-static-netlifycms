@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-static';
-import { Button } from 'virgil-frontend-ui';
+import { Button } from 'virgil-frontend-ui/dist';
 import Container from 'components/Layout/Container';
 import LogoWhite from 'components/Svg/LogoWhite';
-import styles from './MainTemplate.module.css';
+import styles from './MainLayout.module.css';
 
-export interface IMainTemplateProps {
+export interface IMainLayoutProps {
     headerClassName?: string;
     headerContent?: React.ReactNode;
     className?: string;
 }
 
-export default class MainTemplate extends React.Component<IMainTemplateProps> {
+export default class MainLayout extends React.Component<IMainLayoutProps> {
     render() {
         return (
             <React.Fragment>

@@ -1,7 +1,7 @@
 import React from 'react';
 import anime from 'animejs';
 import Container from 'components/Layout/Container';
-import MainTemplate from 'containers/MainTemplate';
+import MainLayout from 'components/Layout/MainLayout';
 
 export default class AboutPage extends React.Component {
     componentDidMount() {
@@ -17,7 +17,7 @@ export default class AboutPage extends React.Component {
 
     render() {
         return (
-            <MainTemplate>
+            <MainLayout>
                 <Container>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ export default class AboutPage extends React.Component {
                         />
                     </svg>
                 </Container>
-            </MainTemplate>
+            </MainLayout>
         );
     }
 }

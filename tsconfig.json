@@ -26,9 +26,6 @@
             "components/*": [
                 "components/*"
             ],
-            "containers/*": [
-                "containers/*"
-            ],
             "store/*": [
                 "store/*"
             ],
@@ -39,10 +36,7 @@
                 "content/*"
             ],
             "pages/*": [
-                "services/*"
-            ],
-            "ui/*": [
-                "ui/*"
+                "pages/*"
             ],
             "assets/*": [
                 "assets/*"

@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-
-const styles = require('components/Layout/Container.module.css');
+import styles from 'components/Layout/Container.module.css';
 
 export interface IContainerProps {
     className?: string;

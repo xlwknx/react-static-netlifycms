@@ -1,11 +1,38 @@
 import autoprefixer from 'autoprefixer';
-// import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import paths from './paths';
+
+export const postCssLoader = {
+    loader: 'postcss-loader',
+    options: {
+        // Necessary for external CSS imports to work
+        // https://github.com/facebookincubator/create-react-app/issues/2677
+        ident: 'postcss',
+        plugins: () => [
+            require('postcss-retina-bg-img')({
+                retinaSuffix: '@2x'
+            }),
+            require('postcss-flexbugs-fixes')(),
+            require('postcss-import')({
+                root: paths.src,
+            }),
+            autoprefixer({
+                browsers: [
+                    '>1%',
+                    'last 4 versions',
+                    'Firefox ESR',
+                    'not ie < 9', // React doesn't support IE8 anyway
+                ],
+                flexbox: 'no-2009',
+            }),
+        ],
+    },
+};
 
 export function configureCssModuleLoader(config, args) {
     let loaders = [];
     if (args.stage === 'dev') loaders.push('style-loader');
+
     loaders.push({
         loader: 'css-loader',
         options: {
@@ -18,30 +45,9 @@ export function configureCssModuleLoader(config, args) {
             namedExport: true
         }
     });
-    loaders.push({
-        loader: 'postcss-loader',
-        options: {
-            // Necessary for external CSS imports to work
-            // https://github.com/facebookincubator/create-react-app/issues/2677
-            ident: 'postcss',
-            plugins: () => [
-                require('postcss-retina-bg-img')({ retinaSuffix: '@2x'}),
-                require('postcss-flexbugs-fixes')(),
-                require('postcss-import')({
-                    root: paths.src,
-                }),
-                autoprefixer({
-                    browsers: [
-                        '>1%',
-                        'last 4 versions',
-                        'Firefox ESR',
-                        'not ie < 9', // React doesn't support IE8 anyway
-                    ],
-                    flexbox: 'no-2009',
-                }),
-            ],
-        },
-    });
+
+    loaders.push(postCssLoader);
+
     if (args.stage !== 'dev') {
         loaders = ExtractTextPlugin.extract({
             fallback: 'style-loader',

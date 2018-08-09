@@ -10,6 +10,7 @@ console.log(
     '\nprocess.env.DEPLOY_URL', process.env.DEPLOY_URL,
     '\nprocess.env.DEPLOY_PRIME_URL', process.env.DEPLOY_PRIME_URL,
 );
+
 export default {
     // need to define static path, production and deploy url are different
     siteRoot: process.env.CONTEXT === 'production' ? process.env.URL : process.env.DEPLOY_URL,
@@ -29,29 +30,29 @@ export default {
         return [
             {
                 path: '/',
-                component: './src/pages/index',
+                component: './src/pages/main/MainPage',
             },
             {
                 path: '/about',
-                component: './src/pages/about',
+                component: './src/pages/about/AboutPage',
             },
             {
                 path: '/events',
-                component: './src/pages/events',
+                component: './src/pages/events/EventsPage',
                 getData: () => ({
                     events,
                 }),
             },
             {
                 path: '/blog',
-                component: './src/pages/blog',
+                component: './src/pages/blog/BlogPage',
                 getData: () => ({
                     posts,
                     tags,
                 }),
                 children: posts.map(post => ({
                     path: `/post/${post.data.slug}`,
-                    component: './src/containers/Post',
+                    component: './src/pages/blog/PostPage',
                     getData: () => ({
                         post,
                     }),

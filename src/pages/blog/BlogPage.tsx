@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouteData, Link } from 'react-static';
 import Container from 'components/Layout/Container';
-import MainTemplate from 'containers/MainTemplate';
+import MainTemplate from 'components/Layout/MainLayout';
 import { IPostMatter } from 'content';
 
 export interface IBlogPage {
