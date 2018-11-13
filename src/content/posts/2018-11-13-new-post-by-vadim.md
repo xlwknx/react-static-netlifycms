@@ -8,4 +8,4 @@ tags: []
 ---
 # Hello there!
 
-This is just a sample. Don't worry, it won't look as ugly in production.
+This is just a sample. Don't worry, it won't look as ugly on your actual site.
