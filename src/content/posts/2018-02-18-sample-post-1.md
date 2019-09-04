@@ -17,4 +17,6 @@ Che kogo
 
 
 
+Kak dela
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mi in nulla posuere sollicitudin aliquam. Turpis massa sed elementum tempus egestas. Tincidunt augue interdum velit euismod in. Orci dapibus ultrices in iaculis nunc sed augue. Fames ac turpis egestas maecenas pharetra convallis posuere morbi. At volutpat diam ut venenatis tellus in metus vulputate eu. Vel turpis nunc eget lorem dolor sed viverra ipsum.
