@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "animejs": "^2.2.0",
-    "axios": "^0.16.2",
+    "axios": "^0.18.1",
     "chalk": "^2.4.1",
     "classnames": "^2.2.6",
     "gray-matter": "^4.0.1",
